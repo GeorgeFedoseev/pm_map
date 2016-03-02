@@ -99,7 +99,7 @@ namespace MaterialUI
 				else
 				{
 					thisMask = gameObject.AddComponent<Mask>();
-					thisMask.enabled = false;
+					//thisMask.enabled = false;
 				}
 			}
 
@@ -230,7 +230,7 @@ namespace MaterialUI
 				StartCoroutine(DragCheck (data.position));
 
 			if (thisMask && toggleMask)
-				thisMask.enabled = true;
+				//thisMask.enabled = true;
 
 			if (highlightWhen == HighlightActive.Clicked)
 			{
@@ -327,7 +327,7 @@ namespace MaterialUI
 			yield return new WaitForSeconds(1f);
 			if (!gameObject.GetComponentInChildren<RippleAnim>())
 			{
-				thisMask.enabled = false;
+				//thisMask.enabled = false;
 			}
 		}
 
