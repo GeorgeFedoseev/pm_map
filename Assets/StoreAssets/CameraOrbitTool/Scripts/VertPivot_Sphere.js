@@ -80,11 +80,11 @@ static function ClampAngle (angle : float, min : float, max : float) {
 	return Mathf.Clamp (angle, min, max);
 }
 
-function OnGUI() {
+/*function OnGUI() {
 
 		// to change to the pan orbit scene
 		if (GUI.Button(Rect(Screen.width - 100, 25, 75, 50), "Pan\nOrbit")){
 			Application.LoadLevel (0);
 		}
 		
-	}
+	}*/

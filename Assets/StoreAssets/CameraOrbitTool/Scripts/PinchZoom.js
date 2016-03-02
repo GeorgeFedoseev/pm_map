@@ -61,7 +61,7 @@ function Update () {
 }
 
 // simply delete these GUIs when you are no longer using them.
-function OnGUI() {
+/*function OnGUI() {
 	if(showGUI) {
 		// change the zooming speed.
 		GUI.Label(Rect(25,175,150,50), "Zoom Speed");
@@ -78,4 +78,4 @@ function OnGUI() {
 		maxIn = GUI.HorizontalSlider(Rect(250,230,100,20), maxIn, 15, 30);
 		GUI.Label(Rect(200,225,50,50), maxIn.ToString());
 	}
-}
+}*/
