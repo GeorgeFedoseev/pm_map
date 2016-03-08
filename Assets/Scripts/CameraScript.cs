@@ -19,17 +19,29 @@ public class CameraScript : MonoBehaviour {
 	float thetaTouchStart = 0;
 
 	public float zoom = 1f;
+	float zoomTouchStart;
 
 	public float cameraDistance = 10f;
-	float moveSpeed = 0.05f;
-	float rotateSpeed = 1f;
-	float zoomSpeed = 0.01f;
+	public float moveSpeed = 0.13f;
+	public float rotatePhiSpeed = 0.97f;
+	public float rotateThetaSpeed = 1.97f;
+	public float zoomSpeed = 0.01f;
+
+	bool touchRotatePhiMode = false;
+	public float touchRotatePhiThreshold = 3.06f;
+
+	bool touchRotateThetaMode = false;
+	public float touchRotateThetaThreshold = 8.9f;
+
+	bool touchZoomMode = false;
+	public float touchZoomThreshold = 4.4f;
+
 
 	void Awake(){
-		rotateAroundPos = new Vector3 (0, 4f, 0);
+		rotateAroundPos = new Vector3 (0, 0f, 0);
 	}
 
-	void Update () {
+	void LateUpdate () {
 		// mouse zooming
 		if (Input.GetAxis("Mouse ScrollWheel") > 0) {
 			// forward
@@ -62,7 +74,7 @@ public class CameraScript : MonoBehaviour {
 						- cameraRightDirection*touchDelta.x*moveSpeed;
 				}
 
-				Debug.LogWarning("Move"); 
+				Debug.LogWarning("Move "+(touchInput()?"touch":"mouse")+" input"); 
 
 				firstTouchInMoveMode = false;
 
@@ -73,8 +85,13 @@ public class CameraScript : MonoBehaviour {
 				if (firstTouchInRotateMode) {					
 					touch1StartPos = touch1Pos;
 
-					if (touchInput ())
+					if (touchInput ()) {
 						touch2StartPos = getTouch2Pos ();
+						zoomTouchStart = zoom;
+					}
+						
+
+
 					
 					phiTouchStart = phi;
 					thetaTouchStart = theta;
@@ -83,30 +100,75 @@ public class CameraScript : MonoBehaviour {
 						// rotate and zoom camera with 2 fingers
 						Vector2 touch2Pos = getTouch2Pos ();
 						var deltaDistance = (touch2Pos - touch1Pos).magnitude - (touch2StartPos - touch1StartPos).magnitude;
-						zoom += deltaDistance * zoomSpeed;
+
 
 						var startCenterPoint = (touch1StartPos + touch2StartPos) / 2f;
-						var startVector = touch1StartPos - startCenterPoint;
+						var startVector = touch1StartPos - touch2StartPos;
 
 						var currentCenterPoint = (touch1Pos + touch2Pos) / 2f;
-						var currentVector = touch1Pos - currentCenterPoint;
+						var currentVector = touch1Pos - touch2Pos;
+
+						// get signed vector
 						var deltaDegrees = Vector2.Angle (currentVector, startVector);
+						Vector3 cross = Vector3.Cross(currentVector, startVector);
+						if (cross.z > 0)
+							deltaDegrees *= -1;
 
 						var deltaY = currentCenterPoint.y - startCenterPoint.y;
 
-						phi = phiTouchStart - deltaDegrees*rotateSpeed;
+						Debug.LogWarning ("Delta degrees: "+deltaDegrees);
+						Debug.LogWarning ("Delta Y: "+deltaY);
+						Debug.LogWarning ("Delta distance: "+deltaDistance);
 
-						theta = thetaTouchStart - deltaY * rotateSpeed;
+
+
+						if (touchRotatePhiMode || touchRotateThetaMode || touchZoomMode) {
+							if (touchRotateThetaMode) {
+								//touchRotateThetaMode = true;
+								theta += deltaY * rotateThetaSpeed * zoom;
+							} else if (touchRotatePhiMode) {
+								//touchRotatePhiMode = true;
+								phi -= deltaDegrees * rotatePhiSpeed;					
+							} else if (touchZoomMode) {
+								//touchZoomMode = true;
+								zoom += deltaDistance * zoomSpeed * zoom;
+							} else {
+
+							}
+						} else {
+							if (Mathf.Abs (deltaY) > touchRotateThetaThreshold) {
+								touchRotateThetaMode = true;
+								//theta += deltaY * rotateSpeed * zoom;
+							} else if (Mathf.Abs (deltaDegrees) > touchRotatePhiThreshold) {
+								touchRotatePhiMode = true;
+								//phi -= deltaDegrees * rotateSpeed * 3f;					
+							} else if (Mathf.Abs (deltaDistance) > touchZoomThreshold) {
+								touchZoomMode = true;
+								//zoom += deltaDistance * zoomSpeed * zoom;
+							} else {
+
+							}
+						}
+							
+
+
+
+						//if (Mathf.Abs(deltaDegrees) > 30f) {
+							phiTouchStart = phi;
+							thetaTouchStart = theta;
+							touch1StartPos = touch1Pos;
+							touch2StartPos = touch2Pos;
+						//}
 
 					} else {
 						// rotate with mouse
 						Debug.LogWarning("Rotate with mouse");
 						var touchDelta = touch1Pos - touch1StartPos;
-						var deltaYRotation = touchDelta.x * rotateSpeed;
-						var deltaXRotation = touchDelta.y * rotateSpeed;
+						var deltaYRotation = touchDelta.x * rotatePhiSpeed;
+						var deltaXRotation = touchDelta.y * rotateThetaSpeed;
 
 						phi = phiTouchStart - deltaYRotation;
-						theta = thetaTouchStart - deltaXRotation;
+						theta = thetaTouchStart + deltaXRotation;
 					}
 
 					if (phi > 360f)
@@ -114,8 +176,8 @@ public class CameraScript : MonoBehaviour {
 					else if(phi < 0)
 						phi = phi + 360f;
 
-					if (theta < 10f)
-						theta = 10f;
+					if (theta < 30f)
+						theta = 30f;
 					else if(theta > 100f)
 						theta = 100f;
 				}
@@ -126,6 +188,10 @@ public class CameraScript : MonoBehaviour {
 		}else{
 			firstTouchInMoveMode = true;
 			firstTouchInRotateMode = true;
+
+			touchZoomMode = false;
+			touchRotatePhiMode = false;
+			touchRotateThetaMode = false;
 		}
 
 
@@ -194,6 +260,7 @@ public class CameraScript : MonoBehaviour {
 	}
 
 	protected bool touchInput(){
+		return true; // debug through unity remote
 		return (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.Android);
 	}
 
