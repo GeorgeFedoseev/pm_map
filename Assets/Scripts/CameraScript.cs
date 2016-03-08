@@ -74,7 +74,7 @@ public class CameraScript : MonoBehaviour {
 						- cameraRightDirection*touchDelta.x*moveSpeed;
 				}
 
-				Debug.LogWarning("Move "+(touchInput()?"touch":"mouse")+" input"); 
+				//Debug.LogWarning("Move "+(touchInput()?"touch":"mouse")+" input"); 
 
 				firstTouchInMoveMode = false;
 
@@ -116,9 +116,9 @@ public class CameraScript : MonoBehaviour {
 
 						var deltaY = currentCenterPoint.y - startCenterPoint.y;
 
-						Debug.LogWarning ("Delta degrees: "+deltaDegrees);
+						/*Debug.LogWarning ("Delta degrees: "+deltaDegrees);
 						Debug.LogWarning ("Delta Y: "+deltaY);
-						Debug.LogWarning ("Delta distance: "+deltaDistance);
+						Debug.LogWarning ("Delta distance: "+deltaDistance);*/
 
 
 
@@ -162,7 +162,7 @@ public class CameraScript : MonoBehaviour {
 
 					} else {
 						// rotate with mouse
-						Debug.LogWarning("Rotate with mouse");
+						//Debug.LogWarning("Rotate with mouse");
 						var touchDelta = touch1Pos - touch1StartPos;
 						var deltaYRotation = touchDelta.x * rotatePhiSpeed;
 						var deltaXRotation = touchDelta.y * rotateThetaSpeed;
