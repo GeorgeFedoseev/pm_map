@@ -21,9 +21,13 @@ public class CameraScript : MonoBehaviour {
 	public float zoom = 1f;
 	float zoomTouchStart;
 
+	public float maxZoom = 1f;
+	public float minZoom = 0.05f;
+
+
 	public float cameraDistance = 10f;
 	public float moveSpeed = 0.13f;
-	public float rotatePhiSpeed = 0.97f;
+	public float rotatePhiSpeed = 1.64f;
 	public float rotateThetaSpeed = 1.97f;
 	public float zoomSpeed = 0.01f;
 
@@ -42,6 +46,8 @@ public class CameraScript : MonoBehaviour {
 	}
 
 	void LateUpdate () {
+		var mltpl = Time.deltaTime * 20f;
+
 		// mouse zooming
 		if (Input.GetAxis("Mouse ScrollWheel") > 0) {
 			// forward
@@ -125,13 +131,13 @@ public class CameraScript : MonoBehaviour {
 						if (touchRotatePhiMode || touchRotateThetaMode || touchZoomMode) {
 							if (touchRotateThetaMode) {
 								//touchRotateThetaMode = true;
-								theta += deltaY * rotateThetaSpeed * zoom;
+								theta += deltaY * rotateThetaSpeed *mltpl;
 							} else if (touchRotatePhiMode) {
 								//touchRotatePhiMode = true;
-								phi -= deltaDegrees * rotatePhiSpeed;					
+								phi -= deltaDegrees * rotatePhiSpeed*mltpl;					
 							} else if (touchZoomMode) {
 								//touchZoomMode = true;
-								zoom += deltaDistance * zoomSpeed * zoom;
+								zoom += deltaDistance * zoomSpeed *mltpl;
 							} else {
 
 							}
@@ -195,10 +201,10 @@ public class CameraScript : MonoBehaviour {
 		}
 
 
-		if (zoom < 0.15f)
-			zoom = 0.15f;
-		else if (zoom > 1f) {
-			zoom = 1f;
+		if (zoom < minZoom)
+			zoom = minZoom;
+		else if (zoom > maxZoom) {
+			zoom = maxZoom;
 		}
 
 		// move camera
