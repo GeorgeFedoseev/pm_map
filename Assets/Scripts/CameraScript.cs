@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
 
 public class CameraScript : MonoBehaviour {
 
@@ -39,10 +38,12 @@ public class CameraScript : MonoBehaviour {
 
 	void Awake(){
 		rotateAroundPos = new Vector3 (0, 0f, 0);
+		Debug.LogWarning ("DPI: " + Screen.dpi);
 	}
 
 	void FixedUpdate () {
-		var mltpl = Time.deltaTime * 15f;
+		var mltpl = Time.deltaTime * 35f/Screen.dpi*82f;
+
 
 		if (hasTouches ()) {
 			Vector2 touch1Pos = getTouchPos ();
@@ -64,15 +65,15 @@ public class CameraScript : MonoBehaviour {
 					var touchDelta = touch1Pos - touch1StartPos;
 
 					var camToPointDist = (Camera.main.transform.position - worldInteractPoint).magnitude;
-					var h1 = Camera.main.nearClipPlane;
+					var h1 = 1f;//Camera.main.nearClipPlane;
 					var h2 = camToPointDist - h1;
 
 					var worldDelta = touchDelta /h1*h2;
 					var cameraForwardDirection = (Camera.main.transform.forward-new Vector3(0, Camera.main.transform.forward.y, 0)).normalized;
 					var cameraRightDirection = (Camera.main.transform.right-new Vector3(0, Camera.main.transform.right.y, 0)).normalized;
 
-					Camera.main.transform.position -= (cameraForwardDirection*worldDelta.y*Time.deltaTime*moveSpeed
-						+ cameraRightDirection*worldDelta.x*Time.deltaTime*moveSpeed);
+					Camera.main.transform.position -= (cameraForwardDirection*worldDelta.y*mltpl*moveSpeed
+						+ cameraRightDirection*worldDelta.x*mltpl*moveSpeed);
 					touch1StartPos = touch1Pos;						
 				}
 
@@ -118,7 +119,7 @@ public class CameraScript : MonoBehaviour {
 								var deltaTheta = deltaY * rotateThetaSpeed *mltpl;
 								Camera.main.transform.RotateAround (worldInteractPoint, Camera.main.transform.right, deltaTheta);
 							} else if (touchRotatePhiZoomMode) {
-								var deltaPhi = deltaDegrees * rotatePhiSpeed*mltpl;
+								var deltaPhi = deltaDegrees * rotatePhiSpeed/**mltpl*/;
 								var oldPos = Camera.main.transform.position;
 								Camera.main.transform.RotateAround (worldInteractPoint, Vector3.up, deltaPhi);
 								var heightCoeff = (Camera.main.transform.position.y - minHeight)/(maxHeight-minHeight);
@@ -165,7 +166,7 @@ public class CameraScript : MonoBehaviour {
 		var newRot = Camera.main.transform.rotation.eulerAngles;
 
 		if (newPos.y < minHeight || newPos.y > maxHeight
-			|| newRot.x < 20f || newRot.x > 90f) {
+			|| newRot.x < 20f || newRot.x > 85f) {
 			Camera.main.transform.position = oldCamPos;	
 			Camera.main.transform.rotation = oldCamRot;	
 		} else {
