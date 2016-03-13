@@ -1,8 +1,15 @@
 ﻿using UnityEngine;
 using UnityEditor;
-[CustomEditor(typeof(GameObject))]
+[CustomEditor(typeof(MonoBehaviour))]
 public class TestEditorScript : Editor {
-	void OnSceneGUI() {
+
+	public override void OnInspectorGUI () {
+		base.OnInspectorGUI ();
+	}
+
+	public void OnSceneGUI() {
+		
+
 		Event e = Event.current;
 
 		/*UnityEditor.Handles.color = Color.cyan;
@@ -52,5 +59,8 @@ public class TestEditorScript : Editor {
 
 		}
 
+
+		if (GUI.changed)
+			EditorUtility.SetDirty(target);
 	}
 }
