@@ -42,6 +42,8 @@ namespace MaterialUI
 		private Vector2 tempVector2;
 		private float positionCompensation;
 
+		public bool enableDrag;
+
 		void Awake()
 		{
 			thisRectTransform = gameObject.GetComponent<RectTransform>();
@@ -55,7 +57,7 @@ namespace MaterialUI
 			maxPosition = thisRectTransform.rect.width / 2;
 			minPosition = -maxPosition;
 
-			backgroundRectTransform.sizeDelta = new Vector2(Screen.width, backgroundRectTransform.sizeDelta.y);
+			backgroundRectTransform.sizeDelta = new Vector2(Screen.width*3, backgroundRectTransform.sizeDelta.y);
 		}
 
 		public void BackgroundTap()
@@ -128,11 +130,15 @@ namespace MaterialUI
 
 		public void OnBeginDrag(PointerEventData data)
 		{
+			if (!enableDrag)
+				return;
 			state = 0;
 		}
 
 		public void OnDrag(PointerEventData data)
 		{
+			if (!enableDrag)
+				return;
 			tempVector2 = thisRectTransform.position;
 			tempVector2.x += data.delta.x;
 
@@ -144,6 +150,9 @@ namespace MaterialUI
 
 		public void OnEndDrag(PointerEventData data)
 		{
+			if (!enableDrag)
+				return;
+			
 			if (Mathf.Abs(data.delta.x) >= 0.5f)
 			{
 				if (data.delta.x > 0.5f)
