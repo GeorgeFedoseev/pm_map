@@ -57,7 +57,7 @@ public class SearchTestScript : MonoBehaviour {
 		}
 
 		var pos = dialog.anchoredPosition;
-		pos.y = 10f - 58f * progress;
+		pos.y = -15f - 60f * progress;
 		dialog.anchoredPosition = pos;
 
 	}
