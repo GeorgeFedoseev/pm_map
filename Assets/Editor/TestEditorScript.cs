@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using UnityEditor;
-[CustomEditor(typeof(MonoBehaviour))]
+[CustomEditor(typeof(GameObject))]
 public class TestEditorScript : Editor {
 
-	public override void OnInspectorGUI () {
-		base.OnInspectorGUI ();
-	}
 
-	public void OnSceneGUI() {
+
+	void OnSceneGUI() {
 		
 
 		Event e = Event.current;

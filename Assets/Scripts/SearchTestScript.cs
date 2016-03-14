@@ -16,6 +16,7 @@ public class SearchTestScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {		
 		searchInputChanged ("");
+
 	}
 	
 	// Update is called once per frame
@@ -25,7 +26,7 @@ public class SearchTestScript : MonoBehaviour {
 
 
 	public void searchInputChanged(string text){
-		Debug.LogWarning ("text: "+input.text);
+		//Debug.LogWarning ("text: "+input.text);
 
 		if (input.text != "" && !dialogOpened) {
 			Loom.removeByName ("hide_dialog");

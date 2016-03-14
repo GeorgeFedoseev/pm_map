@@ -37,8 +37,7 @@ public class CameraScript : MonoBehaviour {
 	float maxHeight = 70f, minHeight = -4f;
 
 	void Awake(){
-		rotateAroundPos = new Vector3 (0, 0f, 0);
-		Debug.LogWarning ("DPI: " + Screen.dpi);
+		rotateAroundPos = new Vector3 (0, 0f, 0);	
 	}
 
 	void FixedUpdate () {
