@@ -25,7 +25,8 @@ public class FacilitiesDatabaseScript {
 	private string db_path;
 	
 	public FacilitiesDatabaseScript(){
-		db_path = Application.dataPath + "/Data/" + "data.db";
+		db_path = Constants.getDBPath ("data.db");			
+		Debug.LogWarning ("db_path: "+db_path);
 	}
 
 	public void addFacility(string name, string desc, string aliases, int gameObjectID){
@@ -62,11 +63,9 @@ public class FacilitiesDatabaseScript {
 	}
 
 	public void traceAllFacilities(){
-		using (var db = new SQLiteConnection(db_path)){			
-			// Делаем запрос на выборку данных
+		using (var db = new SQLiteConnection(db_path)){						
 			IEnumerable<FacilityRecord> list = db.Query<FacilityRecord>("SELECT * FROM facilities");
 
-			// Читаем и выводим результат
 			foreach (FacilityRecord f in list){
 				const string frmt = "Id: {0}; Name: {1}; Desc: {2};";
 				Debug.LogWarning(string.Format(frmt,
@@ -75,7 +74,7 @@ public class FacilitiesDatabaseScript {
 					f.description
 				));
 			}
-			// И не забываем закрыть соединение
+
 			db.Close();
 		}
 	}
