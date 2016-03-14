@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class CameraScript : MonoBehaviour {
 
@@ -40,9 +41,12 @@ public class CameraScript : MonoBehaviour {
 		rotateAroundPos = new Vector3 (0, 0f, 0);	
 	}
 
-	void FixedUpdate () {
-		var mltpl = Time.deltaTime * 35f/Screen.dpi*82f;
+	void LateUpdate () {
+		var mltpl = Time.deltaTime * 35f/Screen.dpi*82f  /2f;
 
+		// do nothing when over GUI
+		if (EventSystem.current.currentSelectedGameObject != null)
+			return;
 
 		if (hasTouches ()) {
 			Vector2 touch1Pos = getTouchPos ();
