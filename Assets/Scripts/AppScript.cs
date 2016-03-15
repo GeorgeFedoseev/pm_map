@@ -12,7 +12,10 @@ public class AppScript : MonoBehaviour {
 	public FacilitiesManager facilities;
 	public PoolSystem pool;
 
+	public CameraScript cam;
+
 	void Awake(){
+		cam = GetComponent<CameraScript> ();
 		facilities = new FacilitiesManager ();
 		pool = GameObject.FindObjectOfType<PoolSystem> ();
 	}

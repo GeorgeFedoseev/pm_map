@@ -32,13 +32,42 @@ public class CameraScript : MonoBehaviour {
 
 	bool touchRotateThetaMode = false;
 	public float touchRotateThetaThreshold = 8.9f;
-
-
-
 	float maxHeight = 70f, minHeight = -4f;
+
+
+
+	public bool flying = false;
+	public Vector3 lookTarget;
+	float flySpeed = 10f;
 
 	void Awake(){
 		rotateAroundPos = new Vector3 (0, 0f, 0);	
+	}
+
+	void Update(){
+		if (flying) {
+			// move
+			var cam_look_pos = lookTarget + Vector3.up*6f + Vector3.right*6f;
+			var delta_pos = cam_look_pos - transform.position;
+
+
+			transform.position += 0.8f*Time.deltaTime *(cam_look_pos - transform.position);
+
+			// rotate
+
+			var rot = Quaternion.LookRotation (lookTarget-transform.position, Vector3.up);
+			var delta_rot = Mathf.Abs(Quaternion.Angle(rot, transform.rotation));
+
+			transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 3.0f);
+
+			if (delta_pos.magnitude < 1f && delta_rot < 1f) {
+				flying = false;
+			}
+		}
+	}
+
+	void FlyComplete(){
+		
 	}
 
 	void LateUpdate () {
@@ -47,6 +76,8 @@ public class CameraScript : MonoBehaviour {
 		// do nothing when over GUI
 		if (EventSystem.current.currentSelectedGameObject != null)
 			return;
+
+		flying = false;
 
 		if (hasTouches ()) {
 			Vector2 touch1Pos = getTouchPos ();

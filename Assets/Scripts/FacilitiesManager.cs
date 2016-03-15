@@ -4,10 +4,15 @@ using System.Collections.Generic;
 
 public class FacilitiesManager {
 
+	AppScript app;
+
 	Dictionary<int, FacilityScript> facilities_map;
 	public FacilitiesDatabaseScript facilities_db;
 
+	FacilityScript target_facility;
+
 	public FacilitiesManager(){
+		app = AppScript.getSharedInstance ();
 		facilities_db = new FacilitiesDatabaseScript ();
 
 		initFacilities ();
@@ -44,6 +49,17 @@ public class FacilitiesManager {
 	}
 
 	public void flyToFacility(FacilityScript f){
-		
+		var flyTime = 1.5f;
+		var h = 5f;
+		var d = 5f;
+
+		target_facility = f;
+
+		app.cam.flying = true;
+		app.cam.lookTarget = f.transform.GetComponent<Renderer>().bounds.center;
 	}
+
+
+
+
 }

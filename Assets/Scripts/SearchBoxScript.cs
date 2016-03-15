@@ -60,9 +60,11 @@ public class SearchBoxScript : MonoBehaviour {
 						var _f = f;
 						r.button.onClick.AddListener (()=>{							
 							Debug.LogWarning("Clicked "+_f.name);	
+							app.facilities.flyToFacility(_f);
 						});
 
 						r.transform.SetParent (suggestionRowsContainer);
+						r.transform.localScale = Vector3.one;
 					}
 
 					// update suggestions box height

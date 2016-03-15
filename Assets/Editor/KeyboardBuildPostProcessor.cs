@@ -11,8 +11,10 @@ public class KeyboardBuildPostProcessor
 		Debug.Log ("OnPostProcessBuild");
 		if(target == BuildTarget.iOS)
 		{
-			string seed = "textField.clearButtonMode = UITextFieldViewModeWhileEditing;";
-			string add = "textField.autocapitalizationType = UITextAutocapitalizationTypeNone;";
+			//string seed = "textField.clearButtonMode = UITextFieldViewModeWhileEditing;";
+			//string add = "textField.autocapitalizationType = UITextAutocapitalizationTypeNone;";
+			string seed = "if(param.keyboardType == UIKeyboardTypeURL || param.keyboardType == UIKeyboardTypeEmailAddress)";
+			string replaceWith = "";
 
 
 
@@ -24,7 +26,7 @@ public class KeyboardBuildPostProcessor
 			if(filecontents.Contains(seed))
 			{
 				Debug.Log ("Replacing");
-				filecontents = filecontents.Replace(seed, seed + add);
+				filecontents = filecontents.Replace(seed, replaceWith);
 			}
 			else
 			{
