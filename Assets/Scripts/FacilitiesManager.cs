@@ -32,4 +32,18 @@ public class FacilitiesManager {
 			go.GetComponent<MeshRenderer> ().material.color = Color.red;
 		}
 	}
+
+	public List<FacilityScript> findFacilities(string query){
+		var res = new List<FacilityScript> ();
+
+		foreach (var f_r in facilities_db.findFacilities(query)) {
+			res.Add (facilities_map[f_r.gameObjectID]);
+		}
+
+		return res;
+	}
+
+	public void flyToFacility(FacilityScript f){
+		
+	}
 }

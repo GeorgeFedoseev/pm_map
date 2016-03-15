@@ -47,7 +47,7 @@ public class SearchBoxScript : MonoBehaviour {
 					app.pool.deactivate (r.gameObject);			
 				}
 
-				var found_facilities = app.facilities.facilities_db.findFacilities (query);
+				var found_facilities = app.facilities.findFacilities (query);
 
 				if (found_facilities.Count > 0) {
 					// create new rows for query results

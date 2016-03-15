@@ -53,8 +53,8 @@ public class FacilitiesDatabaseScript {
 
 	public List<FacilityRecord> findFacilities(string search_query){
 		using (var db = new SQLiteConnection(db_path)){			
-			var q = "SELECT * FROM facilities WHERE description || name || aliases LIKE ?";
-			var fs = db.Query<FacilityRecord> (q, "%"+search_query+"%");
+			var q = "SELECT * FROM facilities WHERE LOWER(name || ' ' || description || ' ' || aliases) LIKE ?";
+			var fs = db.Query<FacilityRecord> (q, "%"+search_query.ToLower()+"%");
 
 			return fs;
 		}
