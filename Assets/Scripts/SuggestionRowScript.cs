@@ -6,6 +6,12 @@ public class SuggestionRowScript : MonoBehaviour {
 
 	public Image icon;
 	public Text name, desc;
+	[HideInInspector]
+	public Button button;
+
+	void Awake(){
+		button = GetComponent<Button> ();
+	}
 
 	// Use this for initialization
 	void Start () {

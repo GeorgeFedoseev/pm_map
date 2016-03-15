@@ -56,6 +56,12 @@ public class SearchBoxScript : MonoBehaviour {
 						var r = app.pool.spawn<SuggestionRowScript> ("suggestion_row");
 						r.name.text = f.name;
 						r.desc.text = f.description;
+
+						var _f = f;
+						r.button.onClick.AddListener (()=>{							
+							Debug.LogWarning("Clicked "+_f.name);	
+						});
+
 						r.transform.SetParent (suggestionRowsContainer);
 					}
 
