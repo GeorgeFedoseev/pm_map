@@ -10,9 +10,11 @@ public class AppScript : MonoBehaviour {
 	}
 
 	public FacilitiesManager facilities;
+	public PoolSystem pool;
 
 	void Awake(){
 		facilities = new FacilitiesManager ();
+		pool = GameObject.FindObjectOfType<PoolSystem> ();
 	}
 
 	void Start () {
