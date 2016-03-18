@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class BottomPanelScript : MonoBehaviour {
 
@@ -44,7 +45,6 @@ public class BottomPanelScript : MonoBehaviour {
 
 	void OnEnable(){
 		UpdateLayout ();
-		UpdateSnapping ();
 		OnScroll (Vector2.zero);
 	}
 
@@ -70,8 +70,10 @@ public class BottomPanelScript : MonoBehaviour {
 		doFold = true;
 	}
 
-	public void OnDrag(){
+	public void OnDrag(BaseEventData e){
 		doFold = false;
+
+		e.Use ();
 
 		if (!dragging) {
 			//Debug.LogWarning ("Drag start");
@@ -160,6 +162,9 @@ public class BottomPanelScript : MonoBehaviour {
 		var canvasSize = app.canvas.GetComponent<RectTransform> ().rect.size;
 		if (canvasSize == oldScreenSize)
 			return;
+
+		UpdateSnapping ();
+
 		//Debug.LogWarning ("UPDATE BOTTOM PANEL LO: "+size);
 	//	Debug.LogWarning ("Size Delta: "+sizeDelta);
 

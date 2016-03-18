@@ -41,7 +41,7 @@ public class BottomPanelRowScript : MonoBehaviour {
 		
 		//Debug.LogWarning ("Size: "+size);
 	//	Debug.LogWarning ("UPDATE ROW LO Size Delta: "+sizeDelta);
-		layoutElem.preferredWidth = bottomPanel.rect.rect.size.x;
+		layoutElem.preferredWidth = bottomPanel.rect.rect.size.x-20f;
 
 		oldSize = bottomPanel.rect.rect.size;
 		//rect.anchoredPosition = new Vector2(0, rect.anchoredPosition.y);

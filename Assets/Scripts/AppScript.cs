@@ -21,6 +21,8 @@ public class AppScript : MonoBehaviour {
 		cam = GetComponent<CameraScript> ();
 		facilities = new FacilitiesManager ();
 		pool = GameObject.FindObjectOfType<PoolSystem> ();
+
+		Application.targetFrameRate = 60;
 	}
 
 	void Start () {

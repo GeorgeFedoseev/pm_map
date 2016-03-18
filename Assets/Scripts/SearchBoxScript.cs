@@ -9,8 +9,8 @@ public class SearchBoxScript : MonoBehaviour {
 
 	public RectTransform dialog;
 	public InputField input;
-
 	public Transform suggestionRowsContainer;
+	public Button clearButton;
 
 	bool dialogOpened = false;
 	float dialogAnimTime = 0.2f;
@@ -27,6 +27,11 @@ public class SearchBoxScript : MonoBehaviour {
 	
 	}
 
+	public void clearInput(){
+		input.text = "";
+		searchInputChanged ();
+	}
+
 
 	public void searchInputChanged(){
 		var app = AppScript.getSharedInstance ();
@@ -37,13 +42,15 @@ public class SearchBoxScript : MonoBehaviour {
 		if (query == "" && dialogOpened) {	
 			//Debug.LogWarning ("Hide search");
 			hideSuggestions ();
+			clearButton.gameObject.SetActive (false);
 		} else {
 			// SEARCH SUGGESTIONS
-			if (query != ""){
-				Debug.LogWarning ("q: "+query);
+			if (query != "") {
+				clearButton.gameObject.SetActive (true);
+				Debug.LogWarning ("q: " + query);
 				// FIND SUGGESTIONS
 				// clear old rows
-				foreach(var r in suggestionRowsContainer.GetComponentsInChildren<SuggestionRowScript>()){
+				foreach (var r in suggestionRowsContainer.GetComponentsInChildren<SuggestionRowScript>()) {
 					app.pool.deactivate (r.gameObject);			
 				}
 
@@ -58,9 +65,9 @@ public class SearchBoxScript : MonoBehaviour {
 						r.desc.text = f.description;
 
 						var _f = f;
-						r.button.onClick.AddListener (()=>{							
-							Debug.LogWarning("Clicked "+_f.name);	
-							app.facilities.flyToFacility(_f);
+						r.button.onClick.AddListener (() => {							
+							Debug.LogWarning ("Clicked " + _f.name);	
+							app.facilities.flyToFacility (_f);
 						});
 
 						r.transform.SetParent (suggestionRowsContainer);
@@ -73,12 +80,14 @@ public class SearchBoxScript : MonoBehaviour {
 						h = 350f;
 					dialog.sizeDelta = new Vector2 (dialog.sizeDelta.x, h);
 
-					if(!dialogOpened)
+					if (!dialogOpened)
 						showSuggestions ();
-				} else {
-					if(dialogOpened)
+				} else {					
+					if (dialogOpened)
 						hideSuggestions ();
 				}
+			} else {
+				clearButton.gameObject.SetActive (false);
 			}
 		}
 	}

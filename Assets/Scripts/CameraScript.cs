@@ -32,7 +32,7 @@ public class CameraScript : MonoBehaviour {
 
 	bool touchRotateThetaMode = false;
 	public float touchRotateThetaThreshold = 8.9f;
-	float maxHeight = 70f, minHeight = -4f;
+	float maxHeight = 120f, minHeight = -4f;
 
 
 
@@ -71,18 +71,40 @@ public class CameraScript : MonoBehaviour {
 	}
 
 	void LateUpdate () {
-		var mltpl = Time.deltaTime * 35f/Screen.dpi*82f  /2f;
+		var mltpl = Time.deltaTime * 35f/Screen.dpi*82f;
+
+
+
 
 		// do nothing when over GUI
-		if (EventSystem.current.currentSelectedGameObject == null 
-			|| EventSystem.current.currentSelectedGameObject.layer == LayerMask.NameToLayer("UI"))
-			return;
+		if (touchInput ()) {
+			foreach (Touch touch in Input.touches) {
+				int pointerID = touch.fingerId;
+				if (EventSystem.current.IsPointerOverGameObject (pointerID)) {
+					// at least on touch is over a canvas UI
+					return;
+				}
 
-		//Debug.LogWarning ("TARGET GO LAYER: "+LayerMask.LayerToName(EventSystem.current.currentSelectedGameObject.layer));
+				if (touch.phase == TouchPhase.Ended) {
+					// here we don't know if the touch was over an canvas UI
+					return;
+				}
+			}
+		} else {
+			if (EventSystem.current.IsPointerOverGameObject ()) {
+				// at least on touch is over a canvas UI
+				return;
+			}
+		}
+			
 
-		//flying = false;
+
+
 
 		if (hasTouches ()) {
+			flying = false;
+
+			//Debug.LogWarning ("World move");
 			Vector2 touch1Pos = getTouchPos ();
 
 			if (touchCount() == 1 && !Input.GetKey(KeyCode.LeftCommand)) {
@@ -199,16 +221,18 @@ public class CameraScript : MonoBehaviour {
 
 
 		// check camera
-		var newPos = Camera.main.transform.position;
-		var newRot = Camera.main.transform.rotation.eulerAngles;
+		if(!flying){
+			var newPos = Camera.main.transform.position;
+			var newRot = Camera.main.transform.rotation.eulerAngles;
 
-		if (newPos.y < minHeight || newPos.y > maxHeight
-			|| newRot.x < 20f || newRot.x > 85f) {
-			Camera.main.transform.position = oldCamPos;	
-			Camera.main.transform.rotation = oldCamRot;	
-		} else {
-			oldCamPos = Camera.main.transform.position;
-			oldCamRot = Camera.main.transform.rotation;
+			if (newPos.y < minHeight || newPos.y > maxHeight
+				|| newRot.x < 20f || newRot.x > 85f) {
+				Camera.main.transform.position = oldCamPos;	
+				Camera.main.transform.rotation = oldCamRot;	
+			} else {
+				oldCamPos = Camera.main.transform.position;
+				oldCamRot = Camera.main.transform.rotation;
+			}
 		}
 
 	}
