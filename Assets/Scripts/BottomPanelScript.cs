@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class BottomPanelScript : MonoBehaviour {
 
@@ -28,6 +29,7 @@ public class BottomPanelScript : MonoBehaviour {
 	Vector2 targetFoldPosition;
 	public float foldSpeed;
 	bool doFold = false;
+	bool foldHide = false;
 	bool folded = true;
 
 	Vector2 oldScreenSize;
@@ -46,27 +48,90 @@ public class BottomPanelScript : MonoBehaviour {
 	void OnEnable(){
 		UpdateLayout ();
 		OnScroll (Vector2.zero);
+		fold (true);
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (doFold) {
 			rect.anchoredPosition = Vector2.Lerp(rect.anchoredPosition, targetFoldPosition, foldSpeed * Time.deltaTime);
-			if (Mathf.Approximately(rect.anchoredPosition.y, targetFoldPosition.y)) doFold = false;	
+			if (Mathf.Approximately (rect.anchoredPosition.y, targetFoldPosition.y)) {
+				doFold = false;
+			}
 		}
 
 	}
 
 
-	public void OnTitleClick(){
-		if (folded) {
-			targetFoldPosition = new Vector2 (0, 0f);
-			folded = false;
-		} else {
-			targetFoldPosition = new Vector2 (0, -160f);
-			folded = true;
+	// METHODS
+
+	public void showFacilities(List<FacilityScript> facilities, string title_text = "РЕЗУЛЬТАТЫ"){
+		// clear old
+		foreach (var r in rowsContainer.GetComponentsInChildren<BottomPanelRowScript>()) {
+			app.pool.deactivate (r.gameObject);
 		}
 
+		// add new rows
+		foreach(var f in facilities){
+			var r = app.pool.spawn<BottomPanelRowScript> ("bottom_panel_row");
+			r.title.text = f.name;
+			r.desc.text = f.description;
+
+			/*var _f = f;
+			r.button.onClick.AddListener (() => {							
+				Debug.LogWarning ("Clicked " + _f.name);	
+				app.facilities.flyToFacility (_f);
+			});*/
+
+			r.transform.SetParent (rowsContainer);
+			r.transform.localScale = Vector3.one;
+		}
+
+		title.text = title_text;
+
+
+		UpdateSnapping ();
+		scrollRect.horizontalNormalizedPosition = 0;
+		unfold ();
+	}
+
+
+
+	// EVENTS
+	public void OnTitleClick(){
+		if (folded) {
+			unfold ();
+		} else {
+			fold ();
+		}
+	}
+
+	public void hide(){
+		gameObject.SetActive (false);
+	}
+
+	public void show(){
+		gameObject.SetActive (true);
+	}
+
+	public bool hidden(){
+		return !gameObject.activeInHierarchy;
+	}
+
+
+	public void fold(bool hide = false){
+		targetFoldPosition = new Vector2 (0, hide?-200f:-160f);
+		folded = true;
+		doFold = true;
+	}
+
+	public void unfold(){
+		if (hidden()) {
+			show ();
+		}
+
+		targetFoldPosition = new Vector2 (0, 0f);
+		folded = false;
 		doFold = true;
 	}
 
@@ -152,6 +217,7 @@ public class BottomPanelScript : MonoBehaviour {
 		var snapper = scrollRect.GetComponent<ScrollRectSnap> ();
 		snapper.screens = rowsContainer.childCount;
 		snapper.initSnapper ();
+		snapper.DragEnd ();
 	}
 
 

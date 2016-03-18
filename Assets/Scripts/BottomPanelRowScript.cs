@@ -11,6 +11,9 @@ public class BottomPanelRowScript : MonoBehaviour {
 	Vector2 oldSize;
 	LayoutElement layoutElem;
 
+	// inspector
+	public Text title, desc;
+
 	void Awake(){		
 		rect = GetComponent<RectTransform> ();
 		layoutElem = GetComponent<LayoutElement> ();

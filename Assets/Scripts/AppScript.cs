@@ -15,12 +15,19 @@ public class AppScript : MonoBehaviour {
 	public Canvas canvas;
 
 	public CameraScript cam;
+	[HideInInspector]
+	public SearchBoxScript searchBox;
+	[HideInInspector]
+	public BottomPanelScript bottomPanel;
 
 	void Awake(){
 		canvas = GameObject.FindObjectOfType<Canvas> ();
 		cam = GetComponent<CameraScript> ();
 		facilities = new FacilitiesManager ();
 		pool = GameObject.FindObjectOfType<PoolSystem> ();
+
+		searchBox = GameObject.FindObjectOfType<SearchBoxScript> ();
+		bottomPanel = GameObject.FindObjectOfType<BottomPanelScript> ();
 
 		Application.targetFrameRate = 60;
 	}

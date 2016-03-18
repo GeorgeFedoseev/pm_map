@@ -6,6 +6,7 @@ using MaterialUI;
 
 public class SearchBoxScript : MonoBehaviour {
 
+	AppScript app;
 
 	public RectTransform dialog;
 	public InputField input;
@@ -14,6 +15,10 @@ public class SearchBoxScript : MonoBehaviour {
 
 	bool dialogOpened = false;
 	float dialogAnimTime = 0.2f;
+
+	void Awake(){
+		app = AppScript.getSharedInstance ();
+	}
 
 	// Use this for initialization
 	void Start () {		
@@ -24,17 +29,28 @@ public class SearchBoxScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter)) {
+			showSearchResults (input.text);
+		}
 	}
 
 	public void clearInput(){
 		input.text = "";
 		searchInputChanged ();
+		app.bottomPanel.fold (true);
 	}
 
 
-	public void searchInputChanged(){
-		var app = AppScript.getSharedInstance ();
+	void showSearchResults(string query){
+		var found_facilities = app.facilities.findFacilities (query);
+		if (found_facilities.Count > 0) {
+			app.bottomPanel.show ();
+			app.bottomPanel.showFacilities (found_facilities, "РЕЗУЛЬТАТЫ ПОИСКА");
+		}
+		hideSuggestions();
+	}
+
+	public void searchInputChanged(){		
 		//Debug.LogWarning ("text: "+input.text);
 		var query = input.text;
 

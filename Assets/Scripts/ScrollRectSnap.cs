@@ -49,6 +49,8 @@ public class ScrollRectSnap : MonoBehaviour {
 		}
 	}
 
+
+
 	void Update()
 	{
 		if (LerpH)
