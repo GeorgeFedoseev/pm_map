@@ -24,14 +24,16 @@ public class SearchBoxScript : MonoBehaviour {
 	void Start () {		
 		dialogOpened = true;
 		searchInputChanged ();
-
+		input.onEndEdit.AddListener (keyboardDoneEdit);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter)) {
-			showSearchResults (input.text);
-		}
+		
+	}
+
+	void keyboardDoneEdit(string str){
+		showSearchResults (str);
 	}
 
 	public void clearInput(){
