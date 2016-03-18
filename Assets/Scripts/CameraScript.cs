@@ -74,10 +74,13 @@ public class CameraScript : MonoBehaviour {
 		var mltpl = Time.deltaTime * 35f/Screen.dpi*82f  /2f;
 
 		// do nothing when over GUI
-		if (EventSystem.current.currentSelectedGameObject != null)
+		if (EventSystem.current.currentSelectedGameObject == null 
+			|| EventSystem.current.currentSelectedGameObject.layer == LayerMask.NameToLayer("UI"))
 			return;
 
-		flying = false;
+		//Debug.LogWarning ("TARGET GO LAYER: "+LayerMask.LayerToName(EventSystem.current.currentSelectedGameObject.layer));
+
+		//flying = false;
 
 		if (hasTouches ()) {
 			Vector2 touch1Pos = getTouchPos ();

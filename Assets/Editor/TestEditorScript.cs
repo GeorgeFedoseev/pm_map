@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
-[CustomEditor(typeof(GameObject))]
+[CustomEditor(typeof(MonoBehaviour))]
 public class TestEditorScript : Editor {
 
 

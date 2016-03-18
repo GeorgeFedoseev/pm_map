@@ -29,6 +29,8 @@ public class BottomPanelScript : MonoBehaviour {
 	bool doFold = false;
 	bool folded = true;
 
+	Vector2 oldScreenSize;
+
 	void Awake(){
 		app = AppScript.getSharedInstance ();
 		rect = GetComponent<RectTransform> ();
@@ -41,6 +43,7 @@ public class BottomPanelScript : MonoBehaviour {
 	}
 
 	void OnEnable(){
+		UpdateLayout ();
 		UpdateSnapping ();
 		OnScroll (Vector2.zero);
 	}
@@ -71,12 +74,13 @@ public class BottomPanelScript : MonoBehaviour {
 		doFold = false;
 
 		if (!dragging) {
-			Debug.LogWarning ("Drag start");
-			drag_start_pos = Input.mousePosition;
+			//Debug.LogWarning ("Drag start");
+			drag_start_pos = (Vector2)Input.mousePosition;
 			drag_start_panel_y = rect.anchoredPosition.y;
 		}
 
 		var delta_pos = (Vector2)Input.mousePosition - drag_start_pos;
+		delta_pos /= app.canvas.scaleFactor;
 
 		var new_pos_y = drag_start_panel_y + delta_pos.y;
 
@@ -93,16 +97,16 @@ public class BottomPanelScript : MonoBehaviour {
 	}
 
 	public void OnEndDrag(){
-		Debug.LogWarning ("Drag end");
+		//Debug.LogWarning ("Drag end");
 		dragging = false;
 
 		var delta_pos = (Vector2)Input.mousePosition - drag_start_pos;
 		if (delta_pos.y < 0) {			
-			Debug.LogWarning ("Fold down");
+			//Debug.LogWarning ("Fold down");
 			targetFoldPosition = new Vector2 (0, -160f);
 			folded = true;
 		} else {
-			Debug.LogWarning ("Fold up");
+			//Debug.LogWarning ("Fold up");
 			targetFoldPosition = new Vector2 (0, 0f);
 			folded = false;
 		}
@@ -115,20 +119,25 @@ public class BottomPanelScript : MonoBehaviour {
 	void OnScroll(Vector2 scrollPos){
 		//Debug.LogWarning ("Scroll vel: "+scrollRect.velocity.x);
 		if(Mathf.Abs(scrollRect.velocity.x) < 1f){
-			int closest_row = (int)Mathf.Floor((float)rowsContainer.childCount * scrollRect.horizontalNormalizedPosition);
-			if (closest_row >= rowsContainer.childCount)
-				closest_row = rowsContainer.childCount - 1;
-			else if (closest_row < 0)
-				closest_row = 0;
-
-			pageCounter.text = (closest_row + 1) + " из " + rowsContainer.childCount;	
+			OnScrollStop ();
 		}
-
 	}
 
 	void OnRectTransformDimensionsChange(){
 		if(rect!=null)
 			UpdateLayout();
+	}
+
+
+	void OnScrollStop(){
+		// update page counter
+		int closest_row = (int)Mathf.Floor((float)rowsContainer.childCount * scrollRect.horizontalNormalizedPosition);
+		if (closest_row >= rowsContainer.childCount)
+			closest_row = rowsContainer.childCount - 1;
+		else if (closest_row < 0)
+			closest_row = 0;
+
+		pageCounter.text = (closest_row + 1) + " из " + rowsContainer.childCount;	
 	}
 
 
@@ -145,21 +154,25 @@ public class BottomPanelScript : MonoBehaviour {
 
 
 	void UpdateLayout(){
-		Debug.LogWarning ("UPDATE BOTTOM PANEL LO");
+		//Debug.LogWarning ("UPDATE BOTTOM PANEL LO");
 		var sizeDelta = rect.sizeDelta;
 		var size = rect.rect.size;
 		var canvasSize = app.canvas.GetComponent<RectTransform> ().rect.size;
-		Debug.LogWarning ("Size: "+size);
-		Debug.LogWarning ("Size Delta: "+sizeDelta);
+		if (canvasSize == oldScreenSize)
+			return;
+		//Debug.LogWarning ("UPDATE BOTTOM PANEL LO: "+size);
+	//	Debug.LogWarning ("Size Delta: "+sizeDelta);
 
 		if (canvasSize.x > 500f) {			
 			rect.sizeDelta = new Vector2 (500f - canvasSize.x, rect.sizeDelta.y);
-			Debug.LogWarning ("Size Delta: "+rect.sizeDelta);
+			//Debug.LogWarning ("Size Delta: "+rect.sizeDelta);
 		} else if(size.x < canvasSize.x) {
 			rect.sizeDelta = new Vector2 (20f, rect.sizeDelta.y);
 		}
 
 		rect.anchoredPosition = new Vector2(0, rect.anchoredPosition.y);
 		//Debug.LogWarning ("Size: "+size);
+
+		oldScreenSize = canvasSize;
 	}
 }
