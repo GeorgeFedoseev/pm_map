@@ -4,7 +4,7 @@ using System.Collections;
 public class BottomPanelScript : MonoBehaviour {
 
 	AppScript app;
-	RectTransform rect;
+	public RectTransform rect;
 
 	float maxWidth = 400f;
 
@@ -23,12 +23,13 @@ public class BottomPanelScript : MonoBehaviour {
 	}
 
 	void OnRectTransformDimensionsChange(){
-		//UpdateLayout();
+		if(rect!=null)
+			UpdateLayout();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		UpdateLayout ();
+		//UpdateLayout ();
 	}
 
 	void UpdateLayout(){
@@ -45,7 +46,7 @@ public class BottomPanelScript : MonoBehaviour {
 			rect.sizeDelta = new Vector2 (20f, rect.sizeDelta.y);
 		}
 
-		rect.anchoredPosition = Vector2.zero;
+		rect.anchoredPosition = new Vector2(0, rect.anchoredPosition.y);
 
 		//Debug.LogWarning ("Size: "+size);
 	}
