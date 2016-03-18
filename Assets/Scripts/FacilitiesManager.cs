@@ -56,7 +56,7 @@ public class FacilitiesManager {
 		target_facility = f;
 
 		app.cam.flying = true;
-		app.cam.lookTarget = f.transform.GetComponent<Renderer>().bounds.center;
+		app.cam.lookTarget = f;
 	}
 
 

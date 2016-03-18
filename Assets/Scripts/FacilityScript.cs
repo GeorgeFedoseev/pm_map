@@ -18,4 +18,8 @@ public class FacilityScript : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public Vector3 getCenter(){
+		return transform.GetComponent<Renderer>().bounds.center;
+	}
 }

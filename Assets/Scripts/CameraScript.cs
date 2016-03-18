@@ -37,7 +37,7 @@ public class CameraScript : MonoBehaviour {
 
 
 	public bool flying = false;
-	public Vector3 lookTarget;
+	public FacilityScript lookTarget;
 	float flySpeed = 10f;
 
 	void Awake(){
@@ -45,9 +45,9 @@ public class CameraScript : MonoBehaviour {
 	}
 
 	void Update(){
-		if (flying) {
+		if (flying && lookTarget != null) {
 			// move
-			var cam_look_pos = lookTarget + Vector3.up*6f + Vector3.right*6f;
+			var cam_look_pos = lookTarget.getCenter() + lookTarget.transform.up*10f + lookTarget.transform.forward*6f;
 			var delta_pos = cam_look_pos - transform.position;
 
 
@@ -55,12 +55,12 @@ public class CameraScript : MonoBehaviour {
 
 			// rotate
 
-			var rot = Quaternion.LookRotation (lookTarget-transform.position, Vector3.up);
+			var rot = Quaternion.LookRotation (lookTarget.getCenter()-transform.position, Vector3.up);
 			var delta_rot = Mathf.Abs(Quaternion.Angle(rot, transform.rotation));
 
 			transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 3.0f);
 
-			if (delta_pos.magnitude < 1f && delta_rot < 1f) {
+			if (delta_pos.magnitude < 1f && delta_rot < 10f) {
 				flying = false;
 			}
 		}
