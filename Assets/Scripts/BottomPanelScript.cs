@@ -18,8 +18,16 @@ public class BottomPanelScript : MonoBehaviour {
 
 
 	float maxWidth = 400f;
-	bool dragging = false;
 	Vector2 targetSnapPosition;
+
+	// panel dragging
+	bool dragging = false;
+	Vector2 drag_start_pos;
+	float drag_start_panel_y;
+	Vector2 targetFoldPosition;
+	public float foldSpeed;
+	bool doFold = false;
+	bool folded = true;
 
 	void Awake(){
 		app = AppScript.getSharedInstance ();
@@ -39,18 +47,83 @@ public class BottomPanelScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+		if (doFold) {
+			rect.anchoredPosition = Vector2.Lerp(rect.anchoredPosition, targetFoldPosition, foldSpeed * Time.deltaTime);
+			if (Mathf.Approximately(rect.anchoredPosition.y, targetFoldPosition.y)) doFold = false;	
+		}
+
 	}
 
-	void OnScroll(Vector2 scrollPos){
-		//Debug.LogWarning ("Scroll: "+scrollPos.x);
-		int closest_row = (int)Mathf.Floor((float)rowsContainer.childCount * scrollRect.horizontalNormalizedPosition);
-		if (closest_row >= rowsContainer.childCount)
-			closest_row = rowsContainer.childCount - 1;
-		else if (closest_row < 0)
-			closest_row = 0;
 
-		pageCounter.text = (closest_row + 1) + " из " + rowsContainer.childCount;
+	public void OnTitleClick(){
+		if (folded) {
+			targetFoldPosition = new Vector2 (0, 0f);
+			folded = false;
+		} else {
+			targetFoldPosition = new Vector2 (0, -160f);
+			folded = true;
+		}
+
+		doFold = true;
+	}
+
+	public void OnDrag(){
+		doFold = false;
+
+		if (!dragging) {
+			Debug.LogWarning ("Drag start");
+			drag_start_pos = Input.mousePosition;
+			drag_start_panel_y = rect.anchoredPosition.y;
+		}
+
+		var delta_pos = (Vector2)Input.mousePosition - drag_start_pos;
+
+		var new_pos_y = drag_start_panel_y + delta_pos.y;
+
+		if (new_pos_y < -160) {
+			new_pos_y = -160;
+		} else if (new_pos_y > 0) {
+			new_pos_y = 0;
+		}
+
+		rect.anchoredPosition = new Vector2 (rect.anchoredPosition.x, new_pos_y);
+
+
+		dragging = true;
+	}
+
+	public void OnEndDrag(){
+		Debug.LogWarning ("Drag end");
+		dragging = false;
+
+		var delta_pos = (Vector2)Input.mousePosition - drag_start_pos;
+		if (delta_pos.y < 0) {			
+			Debug.LogWarning ("Fold down");
+			targetFoldPosition = new Vector2 (0, -160f);
+			folded = true;
+		} else {
+			Debug.LogWarning ("Fold up");
+			targetFoldPosition = new Vector2 (0, 0f);
+			folded = false;
+		}
+
+		doFold = true;
+
+	}
+
+
+	void OnScroll(Vector2 scrollPos){
+		//Debug.LogWarning ("Scroll vel: "+scrollRect.velocity.x);
+		if(Mathf.Abs(scrollRect.velocity.x) < 1f){
+			int closest_row = (int)Mathf.Floor((float)rowsContainer.childCount * scrollRect.horizontalNormalizedPosition);
+			if (closest_row >= rowsContainer.childCount)
+				closest_row = rowsContainer.childCount - 1;
+			else if (closest_row < 0)
+				closest_row = 0;
+
+			pageCounter.text = (closest_row + 1) + " из " + rowsContainer.childCount;	
+		}
+
 	}
 
 	void OnRectTransformDimensionsChange(){
