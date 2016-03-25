@@ -20,6 +20,9 @@ public class AppScript : MonoBehaviour {
 	[HideInInspector]
 	public BottomPanelScript bottomPanel;
 
+
+	private Transform centerPanelContainer;
+
 	void Awake(){
 		canvas = GameObject.FindObjectOfType<Canvas> ();
 		cam = GetComponent<CameraScript> ();
@@ -29,15 +32,37 @@ public class AppScript : MonoBehaviour {
 		searchBox = GameObject.FindObjectOfType<SearchBoxScript> ();
 		bottomPanel = GameObject.FindObjectOfType<BottomPanelScript> ();
 
+		centerPanelContainer = GameObject.Find ("CenterPanelContainer").transform;
+		if (centerPanelContainer == null)
+			Debug.LogError ("cant find center panel container");
+
 		Application.targetFrameRate = 60;
 	}
 
 	void Start () {
-
+		
 	}
 	
 
 	void Update () {
 	
+	}
+
+	private void loadCenterPanel(string name){
+		// destroy old stuff
+		foreach(Transform t in centerPanelContainer){
+			Destroy (t.gameObject);
+		}
+
+		var go = Instantiate (Resources.Load("Prefabs/UI/CenterPanels/"+name)) as GameObject;
+		go.transform.SetParent (centerPanelContainer);
+		var rect = go.GetComponent<RectTransform> ();
+		rect.transform.localScale = Vector3.one;
+		rect.sizeDelta = Vector2.zero;
+		rect.anchoredPosition = Vector2.zero;
+	}
+
+	public void openTimetable(){
+		loadCenterPanel ("LoadTimetableCenterPanel");
 	}
 }

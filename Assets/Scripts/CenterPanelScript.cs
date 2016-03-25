@@ -47,6 +47,10 @@ public class CenterPanelScript : MonoBehaviour {
 
 	}
 
+	public void close(){
+		Destroy (gameObject);
+	}
+
 
 	// METHODS
 

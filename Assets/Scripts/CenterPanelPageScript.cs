@@ -32,6 +32,8 @@ public class CenterPanelPageScript : MonoBehaviour {
 	}
 
 	public void UpdateLayout(){
+		if (rect == null)
+			return;
 		var sizeDelta = rect.sizeDelta;
 		var size = rect.rect.size;
 
