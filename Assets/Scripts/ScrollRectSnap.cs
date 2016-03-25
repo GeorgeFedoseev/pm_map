@@ -108,6 +108,11 @@ public class ScrollRectSnap : MonoBehaviour {
 		LerpV = false;
 	}
 
+	public void scrollToPage(int pageIndex){
+		targetH = points[pageIndex];
+		LerpH = true;
+	}
+
 	int FindNearest(float f, float[] array)
 	{
 		float distance = Mathf.Infinity;
@@ -122,4 +127,10 @@ public class ScrollRectSnap : MonoBehaviour {
 		}
 		return output;
 	}
+
+	public int getCurrentPage(){
+		return FindNearest (targetH, points);
+	}
+
+
 }
