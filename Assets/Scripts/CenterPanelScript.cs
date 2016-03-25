@@ -16,6 +16,8 @@ public class CenterPanelScript : MonoBehaviour {
 	public ScrollRect scrollRect;
 	public RectTransform pagesContainer;
 
+	public Button backButton;
+
 
 	float maxWidth = 400f;
 	Vector2 targetSnapPosition;
@@ -31,6 +33,7 @@ public class CenterPanelScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		UpdateLayout ();
+		changePage (0);
 		OnScroll (Vector2.zero);
 	}
 
@@ -61,6 +64,11 @@ public class CenterPanelScript : MonoBehaviour {
 			Debug.LogError ("Center panel page index out of bounds");
 			return;
 		}
+
+		if (index == 0)
+			backButton.gameObject.SetActive (false);
+		else
+			backButton.gameObject.SetActive (true);
 
 		UpdateSnapping ().scrollToPage (index);
 	}
@@ -96,6 +104,7 @@ public class CenterPanelScript : MonoBehaviour {
 		UpdateSnapping ();
 		scrollRect.horizontalNormalizedPosition = 0;
 
+		changePage (0);
 	}
 
 

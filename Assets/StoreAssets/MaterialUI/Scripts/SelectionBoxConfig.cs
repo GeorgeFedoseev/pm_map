@@ -50,6 +50,7 @@ namespace MaterialUI
 		public bool autoMaxItemHeight;
 		public float percentageOfScreenHeight = 50f;
 		public int manualMaxItemHeight;
+		public float itemHeight = 36f;
 
 		public int currentSelection = -1;
 		public enum PopDirection {Popup, Center, Popdown};
@@ -79,7 +80,7 @@ namespace MaterialUI
 		RectTransform thisRect;
 		private Image thisImage;
 		CanvasGroup scrollbarCanvasGroup;
-		float originalHeight;
+		float originalHeight = -1;
 		float expandedPos;
 		float originalPos;
 
@@ -93,7 +94,7 @@ namespace MaterialUI
 
 		float animStartTime;
 		float animDeltaTime;
-		int state;
+		public int state;
 
 		bool scrollbarEnabled;
 
@@ -101,8 +102,15 @@ namespace MaterialUI
 		public PickItem ItemPicked;
 		private Transform parentTransform;
 
+		bool expanded = false;
+
 		void Start ()
 		{
+			Setup ();
+		}
+
+		void assignComponents(){
+
 			thisRect = gameObject.GetComponent<RectTransform> ();
 			thisImage = gameObject.GetComponent<Image>();
 			listCanvasGroup = listLayer.GetComponent<CanvasGroup> ();
@@ -110,11 +118,32 @@ namespace MaterialUI
 			shadowConfig = gameObject.GetComponent<ShadowConfig>();
 
 			listItemPrefab = Resources.Load ("SelectionListItem", typeof(GameObject)) as GameObject;
-			Setup ();
 		}
 
 		public void Setup ()
 		{
+
+			assignComponents ();
+
+			if (expanded) {
+				var tmp = thisRect.sizeDelta;
+				tmp.y = originalHeight;
+				thisRect.sizeDelta = tmp;
+
+				var tmp2 = thisRect.anchoredPosition;
+				tmp2.y = originalPos;
+				thisRect.anchoredPosition = tmp2;
+				ContractList ();
+			}
+
+			listLayer.GetComponent<RectTransform> ().anchoredPosition = Vector2.zero;
+
+			selectedText.text = "ВЫБРАТЬ";
+			Debug.LogWarning ("LIST HEIGHT: "+listheight);
+			Debug.LogWarning ("LIST LAYER HEIGHT: "+listLayerHeight);
+
+			currentSelection = -1;
+
 			contractedListColor = thisImage.color;
 			normalColor = expandedListColor;
 
@@ -125,6 +154,12 @@ namespace MaterialUI
 				textLineAlpha = textLine.color.a;
 
 			listItemObjects = new GameObject[listItems.Length];
+
+
+			// clear old
+			foreach(Transform r in listLayer.transform){
+				Destroy (r.gameObject);
+			}
 
 			for (int i = 0; i < listItems.Length; i++)
 			{
@@ -203,7 +238,9 @@ namespace MaterialUI
 			else
 				highlightColor.a = 0.2f;
 
+
 			originalHeight = thisRect.sizeDelta.y;
+			
 
 			originalPos = thisRect.anchoredPosition.y;
 			listLayer.SetActive (false);
@@ -213,10 +250,13 @@ namespace MaterialUI
 			listCanvasGroup.alpha = 0f;
 
 			listLayer.GetComponent<Image>().color = expandedListColor;
+
+
 		}
 
 		public void ExpandList ()
 		{
+			expanded = true;
 			originalPos = thisRect.anchoredPosition.y;
 
 			if (gameObject.GetComponent<ShadowConfig>())
@@ -250,16 +290,16 @@ namespace MaterialUI
 
 			if (autoMaxItemHeight)
 			{
-				float tempFloat = (Screen.height / 100f * percentageOfScreenHeight / 36f);
+				float tempFloat = (Screen.height / 100f * percentageOfScreenHeight / itemHeight);
 
 
 				if (tempFloat >= listItems.Length)
 				{
-					listheight = (listItems.Length * 36f) + 16f;
+					listheight = (listItems.Length * itemHeight) + 16f;
 				}
 				else
 				{
-					listheight = (tempFloat * 36f) - 8f;
+					listheight = (tempFloat * itemHeight) - 8f;
 					scrollbarEnabled = true;
 					scrollbar.enabled = true;
 					scrollbarCanvasGroup.interactable = true;
@@ -269,7 +309,7 @@ namespace MaterialUI
 			else if (manualMaxItemHeight > 0)
 			{
 
-				listheight = (manualMaxItemHeight * 36f) - 8f;
+				listheight = (manualMaxItemHeight * itemHeight) - 8f;
 				scrollbarEnabled = true;
 				scrollbar.enabled = true;
 				scrollbarCanvasGroup.interactable = true;
@@ -277,10 +317,10 @@ namespace MaterialUI
 			}
 			else
 			{
-				listheight = (listItems.Length * 36f) + 16f;
+				listheight = (listItems.Length * itemHeight) + 16f;
 			}
 
-			listLayerHeight = (listItems.Length * 36f) + 16f;
+			listLayerHeight = (listItems.Length * itemHeight) + 16f;
 
 			if (expandDirection == PopDirection.Popup)
 				expandedPos = originalPos + (listheight / 2f) - 24f;
@@ -304,6 +344,7 @@ namespace MaterialUI
 
 		public void ContractList ()
 		{
+			expanded = false;
 			icon.enabled = true;
 
 			if (hasShadows)
@@ -313,6 +354,11 @@ namespace MaterialUI
 			}
 
 			currentColor = thisImage.color;
+
+			if (!rippleConfig)
+				rippleConfig = gameObject.GetComponent<RippleConfig> ();
+			if (!thisButton)
+				thisButton = gameObject.GetComponent<Button> ();
 
 			rippleConfig.enabled = true;
 			thisButton.interactable = true;

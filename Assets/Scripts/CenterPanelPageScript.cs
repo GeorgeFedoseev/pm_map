@@ -26,6 +26,7 @@ public class CenterPanelPageScript : MonoBehaviour {
 	}
 
 	void OnRectTransformDimensionsChange(){
+		centerPanel = GameObject.FindObjectOfType<CenterPanelScript> ();
 		if(centerPanel!=null)
 			UpdateLayout();
 	}
