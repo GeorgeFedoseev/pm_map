@@ -137,7 +137,7 @@ public class CenterPanelScript : MonoBehaviour {
 	}
 
 	void OnRectTransformDimensionsChange(){
-		if(rect!=null && app.canvas != null)
+		if(rect!=null && app != null && app.canvas != null)
 			UpdateLayout();
 	}
 

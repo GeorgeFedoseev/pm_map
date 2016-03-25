@@ -7,15 +7,21 @@ using System.Collections.Generic;
 
 public class TTDoneSetupScript : MonoBehaviour {
 
+	public Transform loadingText;
+	public Transform doneText;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public Button doneButton;
+
+	public void Init(){		
+		loadingText.gameObject.SetActive (true);
+		doneText.gameObject.SetActive (false);
+		doneButton.interactable = false;
+
+		AppScript.getSharedInstance().timetableManager.getTimetable();
+
+		loadingText.gameObject.SetActive (false);
+		doneText.gameObject.SetActive (true);
+		doneButton.interactable = true;
 	}
 
 }

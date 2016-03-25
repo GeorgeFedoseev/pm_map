@@ -139,8 +139,8 @@ namespace MaterialUI
 			listLayer.GetComponent<RectTransform> ().anchoredPosition = Vector2.zero;
 
 			selectedText.text = "ВЫБРАТЬ";
-			Debug.LogWarning ("LIST HEIGHT: "+listheight);
-			Debug.LogWarning ("LIST LAYER HEIGHT: "+listLayerHeight);
+//			Debug.LogWarning ("LIST HEIGHT: "+listheight);
+//			Debug.LogWarning ("LIST LAYER HEIGHT: "+listLayerHeight);
 
 			currentSelection = -1;
 

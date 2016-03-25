@@ -31,17 +31,18 @@ public class TimetableManger {
 
 		if (!hasTimetable ()) {
 			Debug.LogWarning ("NO TIMETABLE");
-			getTimetable ();
-		} else {
-			Debug.LogWarning ("YES TIMETABLE");
-			restoreTimetableFromDatabase ();
 
-			Debug.LogWarning ("Current week: "+currentWeek);
+			getTimetable ();
+		} else {			
+			restoreTimetableFromDatabase ();
+			Debug.LogWarning ("Timetable recovered from database");
 		}
 	}
 
-	private void getTimetable(){
-		if (ConfigStorage.hasKey ("tt_study_timetable_link")) {
+	public void getTimetable(){
+		if (hasTimetableLink()) {
+			Debug.LogWarning ("Getting timetable from Internet...");
+
 			var timetable_url = ConfigStorage.getSting("tt_study_timetable_link");
 
 			var currentWeekStart = DateTime.Today.AddDays(-(int)(DateTime.Today.DayOfWeek-1)).Date;
@@ -52,9 +53,15 @@ public class TimetableManger {
 			var next_week_tt = TimetableParser.getTimetable (timetable_url, nextWeekStart);
 
 			saveTimetableToDatabase (current_week_tt, next_week_tt);
+
 		} else {
-			Debug.LogError ("No timetable link");
+			// do nothing - user will click on button and go through tour, than get link
+			Debug.LogWarning ("No link for getting timetable, waiting for user action.");
 		}
+	}
+
+	private bool hasTimetableLink(){
+		return ConfigStorage.hasKey ("tt_study_timetable_link");
 	}
 
 	private void restoreTimetableFromDatabase(){
@@ -135,11 +142,13 @@ public class TimetableManger {
 			}
 
 			db.Close();
+
+			Debug.LogWarning ("Timetable saved to database");
 		}
 	}
 
 
-	private bool hasTimetable(){
+	public bool hasTimetable(){
 		using (var db = new SQLiteConnection(db_path)){
 			var count = db.CreateCommand ("SELECT count(*) FROM timetable").ExecuteScalar<int>();
 
@@ -148,6 +157,8 @@ public class TimetableManger {
 			return false;
 		}
 	}
+
+
 
 	private void clearDb(){
 		using (var db = new SQLiteConnection(db_path)){			

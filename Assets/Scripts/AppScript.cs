@@ -45,7 +45,7 @@ public class AppScript : MonoBehaviour {
 	}
 
 	void Start () {
-		
+		clearCenterPanelContainer ();
 	}
 	
 
@@ -53,11 +53,15 @@ public class AppScript : MonoBehaviour {
 	
 	}
 
-	private void loadCenterPanel(string name){
-		// destroy old stuff
+
+	private void clearCenterPanelContainer(){		
 		foreach(Transform t in centerPanelContainer){
 			Destroy (t.gameObject);
 		}
+	}
+
+	private void loadCenterPanel(string name){
+		clearCenterPanelContainer ();
 
 		var go = Instantiate (Resources.Load("Prefabs/UI/CenterPanels/"+name)) as GameObject;
 		go.transform.SetParent (centerPanelContainer);
@@ -67,7 +71,13 @@ public class AppScript : MonoBehaviour {
 		rect.anchoredPosition = Vector2.zero;
 	}
 
-	public void openTimetable(){		
-		loadCenterPanel ("LoadTimetableCenterPanel");
+	public void openTimetable(){
+		if (timetableManager.hasTimetable ()) {
+			loadCenterPanel ("TimetableCenterPanel");
+		} else {
+			// tour for getting timetable link
+			loadCenterPanel ("LoadTimetableCenterPanel");
+		}
+
 	}
 }
