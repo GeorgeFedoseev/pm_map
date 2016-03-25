@@ -86,7 +86,7 @@ public class Pair {
 	}
 
 	private void parseRoom(){
-		var parser = new Regex(@"([0-9]*[А-Я]?)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+		var parser = new Regex(@", ([A-Za-zА-Яа-я \/0-9]*)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 		//Console.WriteLine ("Location: "+location);
 		room = parser.Match (location).Groups [1].Value;
 		//Console.WriteLine ("Room: "+room);

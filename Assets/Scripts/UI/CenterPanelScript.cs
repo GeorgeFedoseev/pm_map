@@ -64,17 +64,21 @@ public class CenterPanelScript : MonoBehaviour {
 
 	private void changePage(int index){
 		var pc = pageCount ();
-		if (index < 0 || index > pc - 1) {
-			Debug.LogError ("Center panel page index out of bounds");
-			return;
+
+		if (pc > 0) {
+			if (index < 0 || index > pc - 1) {
+				Debug.LogError ("Center panel page index out of bounds");
+				return;
+			}
+
+			if (index == 0)
+				backButton.gameObject.SetActive (false);
+			else
+				backButton.gameObject.SetActive (true);
+
+			UpdateSnapping ().scrollToPage (index);
 		}
 
-		if (index == 0)
-			backButton.gameObject.SetActive (false);
-		else
-			backButton.gameObject.SetActive (true);
-
-		UpdateSnapping ().scrollToPage (index);
 	}
 
 	private int getCurrentPage(){

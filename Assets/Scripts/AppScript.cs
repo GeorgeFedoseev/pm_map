@@ -10,6 +10,8 @@ public class AppScript : MonoBehaviour {
 	}
 
 	public FacilitiesManager facilities;
+	public TimetableManger timetableManager;
+
 	public PoolSystem pool;
 
 	public Canvas canvas;
@@ -26,7 +28,10 @@ public class AppScript : MonoBehaviour {
 	void Awake(){
 		canvas = GameObject.FindObjectOfType<Canvas> ();
 		cam = GetComponent<CameraScript> ();
+
 		facilities = new FacilitiesManager ();
+		timetableManager = new TimetableManger ();
+
 		pool = GameObject.FindObjectOfType<PoolSystem> ();
 
 		searchBox = GameObject.FindObjectOfType<SearchBoxScript> ();
@@ -62,7 +67,7 @@ public class AppScript : MonoBehaviour {
 		rect.anchoredPosition = Vector2.zero;
 	}
 
-	public void openTimetable(){
+	public void openTimetable(){		
 		loadCenterPanel ("LoadTimetableCenterPanel");
 	}
 }

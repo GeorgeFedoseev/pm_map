@@ -45,7 +45,7 @@ public class ScrollRectSnap : MonoBehaviour {
 		}
 		else
 		{
-			points[0] = 0;
+			points = new float[1]{0};
 		}
 	}
 
