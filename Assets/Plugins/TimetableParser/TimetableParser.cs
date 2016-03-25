@@ -49,6 +49,24 @@ public class WeekTimetable {
 
 		return t;			
 	}
+
+	public bool hasDayOfWeek(DayOfWeek dofw){
+		foreach (var d in days) {
+			if (d.day.DayOfWeek == dofw)
+				return true;
+		}
+
+		return false;
+	}
+
+	public DayTimetable getDayTimetable(DayOfWeek dofw){
+		foreach (var d in days) {
+			if (d.day.DayOfWeek == dofw)
+				return d;
+		}
+
+		return null;
+	}
 }
 
 public class DayTimetable {
@@ -85,7 +103,8 @@ public class Pair {
 		parseTime ();
 	}
 
-	private void parseRoom(){
+
+	private void parseRoom(){		
 		var parser = new Regex(@", ([A-Za-zА-Яа-я \/0-9]*)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 		//Console.WriteLine ("Location: "+location);
 		room = parser.Match (location).Groups [1].Value;

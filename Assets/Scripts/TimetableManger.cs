@@ -23,15 +23,20 @@ public class TimetableManger {
 
 	private string db_path;
 
+	public WeekTimetable currentWeek, nextWeek;
+
 	public TimetableManger(){
 		app = AppScript.getSharedInstance ();	
 		db_path = Constants.getDBPath ("data.db");
 
-		if (hasTimetable ()) {
+		if (!hasTimetable ()) {
 			Debug.LogWarning ("NO TIMETABLE");
 			getTimetable ();
 		} else {
 			Debug.LogWarning ("YES TIMETABLE");
+			restoreTimetableFromDatabase ();
+
+			Debug.LogWarning ("Current week: "+currentWeek);
 		}
 	}
 
@@ -40,8 +45,8 @@ public class TimetableManger {
 			var timetable_url = ConfigStorage.getSting("tt_study_timetable_link");
 
 			var currentWeekStart = DateTime.Today.AddDays(-(int)(DateTime.Today.DayOfWeek-1)).Date;
-			var nextWeek = DateTime.Now.AddDays (7).Date;
-			var nextWeekStart = nextWeek.AddDays(-(int)(nextWeek.DayOfWeek-1)).Date;
+			var nw = DateTime.Now.AddDays (7).Date;
+			var nextWeekStart = nw.AddDays(-(int)(nw.DayOfWeek-1)).Date;
 
 			var current_week_tt = TimetableParser.getTimetable (timetable_url, currentWeekStart);
 			var next_week_tt = TimetableParser.getTimetable (timetable_url, nextWeekStart);
@@ -53,7 +58,40 @@ public class TimetableManger {
 	}
 
 	private void restoreTimetableFromDatabase(){
-		
+		using (var db = new SQLiteConnection(db_path)){						
+			var pairRecords = db.Query<TimetableRecord>("SELECT * FROM timetable");
+
+			var currentWeekStart = DateTime.Today.AddDays(-(int)(DateTime.Today.DayOfWeek-1)).Date;
+			var nw = DateTime.Now.AddDays (7).Date;
+			var nextWeekStart = nw.AddDays(-(int)(nw.DayOfWeek-1)).Date;
+
+			var w1 = new WeekTimetable (currentWeekStart);
+			var w2 = new WeekTimetable (nextWeekStart);
+
+			foreach (TimetableRecord p in pairRecords){
+				var date = currentWeekStart.AddDays ((int)p.day - 1).Date;
+
+				var w = p.weekType == w1.weekType ? w1 : w2;
+
+				var pair = new Pair (
+					date,
+					p.name,
+					string.Format("{0}–{1}", p.startTime.ToString("HH:mm"), p.endTime.ToString("HH:mm")),
+					p.location,
+					p.lecturer
+				);
+
+				if (!w.hasDayOfWeek (p.day)) {
+					w.days.Add (new DayTimetable(date));
+				}
+				w.getDayTimetable (p.day).pairs.Add (pair);
+			}
+
+			currentWeek = w1;
+			nextWeek = w2;
+
+			db.Close();
+		}
 	}
 
 	private void saveTimetableToDatabase(WeekTimetable w1, WeekTimetable w2){
@@ -102,11 +140,10 @@ public class TimetableManger {
 
 
 	private bool hasTimetable(){
-		using (var db = new SQLiteConnection(db_path)){						
-			var rows = db.Query<TimetableRecord>("SELECT count(*) FROM timetable");
-			db.Close();
+		using (var db = new SQLiteConnection(db_path)){
+			var count = db.CreateCommand ("SELECT count(*) FROM timetable").ExecuteScalar<int>();
 
-			if (rows.Count > 0)
+			if (count > 0)
 				return true;
 			return false;
 		}
