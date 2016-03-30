@@ -3,11 +3,14 @@ using System.Collections;
 
 public class FacilityScript : MonoBehaviour {
 
-	public string name;
-	[TextArea()]
-	public string description;
-	[TextArea()]
-	public string aliases;
+	[HideInInspector]
+	public string _name;
+	[HideInInspector]
+	public string _description;
+	[HideInInspector]
+	public string _aliases;
+	[HideInInspector]
+	public string _room;
 
 	// Use this for initialization
 	void Start () {

@@ -45,6 +45,8 @@ public class AppScript : MonoBehaviour {
 	}
 
 	void Start () {
+		facilities.initFacilities ();
+
 		clearCenterPanelContainer ();
 	}
 	
@@ -77,6 +79,7 @@ public class AppScript : MonoBehaviour {
 		} else {
 			// tour for getting timetable link
 			loadCenterPanel ("LoadTimetableCenterPanel");
+			Debug.LogWarning ("Hello!");
 		}
 
 	}

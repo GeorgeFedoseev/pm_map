@@ -15,10 +15,10 @@ public class FacilitiesManager {
 		app = AppScript.getSharedInstance ();
 		facilities_db = new FacilitiesDatabaseScript ();
 
-		initFacilities ();
+	
 	}
 
-	private void initFacilities(){
+	public void initFacilities(){
 		// map all facilities
 		facilities_map = new Dictionary<int, FacilityScript>();
 		foreach (var f in GameObject.FindObjectsOfType<FacilityScript>()){
@@ -28,7 +28,7 @@ public class FacilitiesManager {
 		// rebuild facilites DB
 		facilities_db.clearDb ();
 		foreach(var f in GameObject.FindObjectsOfType<FacilityScript>()){
-			facilities_db.addFacility (f.name, f.description, f.aliases, f.gameObject.GetInstanceID());
+			facilities_db.addFacility (f._name, f._description, f._aliases, f._room, f.gameObject.GetInstanceID());
 		}
 
 		foreach(var f in facilities_db.findFacilities("кофе")){

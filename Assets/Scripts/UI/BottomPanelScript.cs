@@ -74,8 +74,8 @@ public class BottomPanelScript : MonoBehaviour {
 		// add new rows
 		foreach(var f in facilities){
 			var r = app.pool.spawn<BottomPanelRowScript> ("bottom_panel_row");
-			r.title.text = f.name;
-			r.desc.text = f.description;
+			r.title.text = f._name;
+			r.desc.text = f._description;
 
 			/*var _f = f;
 			r.button.onClick.AddListener (() => {							

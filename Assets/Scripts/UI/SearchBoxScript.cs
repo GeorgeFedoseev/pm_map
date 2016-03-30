@@ -79,12 +79,12 @@ public class SearchBoxScript : MonoBehaviour {
 
 					foreach (var f in found_facilities) {
 						var r = app.pool.spawn<SuggestionRowScript> ("suggestion_row");
-						r.name.text = f.name;
-						r.desc.text = f.description;
+						r.name.text = f._name;
+						r.desc.text = f._description;
 
 						var _f = f;
 						r.button.onClick.AddListener (() => {							
-							Debug.LogWarning ("Clicked " + _f.name);	
+							Debug.LogWarning ("Clicked " + _f._name);	
 							app.facilities.flyToFacility (_f);
 						});
 
