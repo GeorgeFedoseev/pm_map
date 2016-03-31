@@ -21,13 +21,13 @@ public class FacilitiesManager {
 	public void initFacilities(){
 		// map all facilities
 		facilities_map = new Dictionary<int, FacilityScript>();
-		foreach (var f in GameObject.FindObjectsOfType<FacilityScript>()){
+		foreach (var f in app.building.GetComponentsInChildren<FacilityScript>()){
 			facilities_map[f.gameObject.GetInstanceID()] = f;
 		}
 
 		// rebuild facilites DB
 		facilities_db.clearDb ();
-		foreach(var f in GameObject.FindObjectsOfType<FacilityScript>()){
+		foreach(var f in app.building.GetComponentsInChildren<FacilityScript>()){
 			facilities_db.addFacility (f._name, f._description, f._aliases, f._room, f.gameObject.GetInstanceID());
 		}
 
