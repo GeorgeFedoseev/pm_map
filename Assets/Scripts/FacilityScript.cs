@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FacilityScript : MonoBehaviour {
 
+	AppScript app;
+
 	[HideInInspector]
 	public string _name;
 	[HideInInspector]
@@ -14,12 +16,16 @@ public class FacilityScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		app = AppScript.getSharedInstance ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	void OnMouseDown(){
+		app.facilities.focusFacility (this, true);
 	}
 
 	public void highlight(){

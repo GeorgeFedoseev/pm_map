@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class AppScript : MonoBehaviour {
 
@@ -63,7 +64,26 @@ public class AppScript : MonoBehaviour {
 	
 
 	void Update () {
-	
+		if (Input.GetMouseButtonDown (0)) {
+		
+			Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
+			RaycastHit hit;
+
+			if(Physics.Raycast( ray, out hit, 1000))
+			{
+				if (hit.collider.gameObject.GetComponent<FacilityScript> () == null) {
+					facilities.clearFocus ();
+				}
+			}else{
+				facilities.clearFocus ();
+			}
+
+
+		}
+
+			
+
+
 	}
 
 	public void switchToFloor(int floor){

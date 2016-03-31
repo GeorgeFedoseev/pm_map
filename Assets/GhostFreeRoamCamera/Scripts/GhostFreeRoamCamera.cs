@@ -35,6 +35,13 @@ public class GhostFreeRoamCamera : MonoBehaviour
 
     private void Update()
     {
+
+		if (Input.GetMouseButtonDown (0)) {
+			GetComponent<CameraScript> ().enabled = false;
+		}else if(Input.GetMouseButtonUp (0)){
+			GetComponent<CameraScript> ().enabled = true;
+		}
+
         if (allowMovement)
         {
             bool lastMoving = moving;

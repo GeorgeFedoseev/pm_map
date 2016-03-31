@@ -48,7 +48,7 @@ public class FacilitiesManager {
 		return res;
 	}
 
-	public void flyToFacility(FacilityScript f){
+	public void focusFacility(FacilityScript f, bool showInfo = false){
 		var flyTime = 1.5f;
 		var h = 5f;
 		var d = 5f;
@@ -71,6 +71,16 @@ public class FacilitiesManager {
 
 		dehighlightAll ();
 		f.highlight ();
+
+		if (showInfo) {
+			app.bottomPanel.showFacilities(new List<FacilityScript>(){f}, "ОБЪЕКТ");
+		}
+	}
+
+	public void clearFocus(){
+		app.cam.flying = false;
+		app.cam.lookTarget = null;
+		dehighlightAll ();
 	}
 
 	public void dehighlightAll(){

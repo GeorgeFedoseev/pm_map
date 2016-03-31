@@ -53,23 +53,27 @@ public class CameraScript : MonoBehaviour {
 	void Update(){
 		if (flying && lookTarget != null) {
 			// move
-			var cam_look_pos = lookTarget.transform.position + lookTarget.transform.up*lookHeight + lookTarget.transform.forward*lookDistance;
+			var cam_look_pos = lookTarget.transform.position + lookTarget.transform.up * lookHeight + lookTarget.transform.forward * lookDistance;
 			var delta_pos = cam_look_pos - transform.position;
 
 
-			transform.position += 0.8f*Time.deltaTime *(cam_look_pos - transform.position);
+			transform.position += 0.8f * Time.deltaTime * (cam_look_pos - transform.position);
 
 			// rotate
 
-			var rot = Quaternion.LookRotation (lookTarget.transform.position-transform.position, Vector3.up);
-			var delta_rot = Mathf.Abs(Quaternion.Angle(rot, transform.rotation));
+			var rot = Quaternion.LookRotation (lookTarget.transform.position - transform.position, Vector3.up);
+			var delta_rot = Mathf.Abs (Quaternion.Angle (rot, transform.rotation));
 
-			transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 3.0f);
+			transform.rotation = Quaternion.Slerp (transform.rotation, rot, Time.deltaTime * 3.0f);
 
 			if (delta_pos.magnitude < 0.2f && delta_rot < 3f) {
 				flying = false;
 			}
-		}
+		} 
+
+
+
+
 	}
 
 	void FlyComplete(){
@@ -78,6 +82,8 @@ public class CameraScript : MonoBehaviour {
 
 	void LateUpdate () {
 		var mltpl = Time.deltaTime * 35f/Screen.dpi*82f;
+
+
 
 
 

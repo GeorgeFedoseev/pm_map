@@ -81,7 +81,7 @@ public class BottomPanelScript : MonoBehaviour {
 			var _f = f;
 			r.GetComponent<Button>().onClick.AddListener (() => {							
 				Debug.LogWarning ("Clicked " + _f.name);	
-				app.facilities.flyToFacility (_f);
+				app.facilities.focusFacility (_f);
 			});
 
 			r.transform.SetParent (rowsContainer);

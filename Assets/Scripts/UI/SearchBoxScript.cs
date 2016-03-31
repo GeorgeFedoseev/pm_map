@@ -55,6 +55,8 @@ public class SearchBoxScript : MonoBehaviour {
 		input.text = "";
 		searchInputChanged ();
 		app.bottomPanel.fold (true);
+		app.cam.lookTarget = null;
+		app.facilities.dehighlightAll ();
 	}
 
 
@@ -100,8 +102,8 @@ public class SearchBoxScript : MonoBehaviour {
 						var _f = f;
 						r.button.onClick.AddListener (() => {							
 							Debug.LogWarning ("Clicked " + _f._name);	
-							app.facilities.flyToFacility (_f);
-							app.bottomPanel.showFacilities(new List<FacilityScript>(){_f}, "ОБЪЕКТ");
+							app.facilities.focusFacility (_f, true);
+
 						});
 
 						r.transform.SetParent (suggestionRowsContainer);
