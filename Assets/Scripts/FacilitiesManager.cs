@@ -18,6 +18,8 @@ public class FacilitiesManager {
 	
 	}
 
+
+
 	public void initFacilities(){
 		// map all facilities
 		facilities_map = new Dictionary<int, FacilityScript>();
@@ -81,6 +83,7 @@ public class FacilitiesManager {
 		app.cam.flying = false;
 		app.cam.lookTarget = null;
 		dehighlightAll ();
+		app.bottomPanel.fold (true);
 	}
 
 	public void dehighlightAll(){

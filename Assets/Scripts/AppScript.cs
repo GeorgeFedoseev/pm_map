@@ -65,7 +65,7 @@ public class AppScript : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
-		
+
 			Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
 			RaycastHit hit;
 
@@ -80,9 +80,6 @@ public class AppScript : MonoBehaviour {
 
 
 		}
-
-			
-
 
 	}
 
