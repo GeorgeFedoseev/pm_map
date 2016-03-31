@@ -17,6 +17,9 @@ public class RoomScript : FacilityScript {
 		_room = room;
 		_aliases = aliases;
 
+		if(_description == "")
+			_description = "Кабинет";
+
 		// add room number
 		roomNumber = (Instantiate(Resources.Load("Prefabs/room_number")) as GameObject).GetComponent<TextMesh>();
 		roomNumber.transform.SetParent (transform);

@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 using MaterialUI;
+using System.Collections.Generic;
 
 public class SearchBoxScript : MonoBehaviour {
 
@@ -33,7 +34,21 @@ public class SearchBoxScript : MonoBehaviour {
 	}
 
 	void keyboardDoneEdit(string str){
-		showSearchResults (str);
+		
+		if (!input.wasCanceled) {
+			Debug.LogWarning ("Search");
+			showSearchResults (str);
+		} else {
+			Debug.LogWarning ("Canceled");
+		}	
+		
+
+	}
+
+	public void inputClick(){
+		if (input.text != "") {
+			showSuggestions ();
+		}
 	}
 
 	public void clearInput(){
@@ -86,6 +101,7 @@ public class SearchBoxScript : MonoBehaviour {
 						r.button.onClick.AddListener (() => {							
 							Debug.LogWarning ("Clicked " + _f._name);	
 							app.facilities.flyToFacility (_f);
+							app.bottomPanel.showFacilities(new List<FacilityScript>(){_f}, "ОБЪЕКТ");
 						});
 
 						r.transform.SetParent (suggestionRowsContainer);

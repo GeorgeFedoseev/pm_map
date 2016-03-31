@@ -56,7 +56,7 @@ public class FacilitiesManager {
 		target_facility = f;
 
 
-		var look_dst = f.getSize ();
+		var look_dst = f.getSize ()*4;
 		if (look_dst < 10f)
 			look_dst = 10f;
 		

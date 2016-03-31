@@ -90,10 +90,18 @@ public class BottomPanelScript : MonoBehaviour {
 
 		title.text = title_text;
 
+		if (facilities.Count > 1) {
+			pageCounter.gameObject.SetActive (true);
+		} else {
+			pageCounter.gameObject.SetActive (false);
+		}
+
 
 		UpdateSnapping ();
 		scrollRect.horizontalNormalizedPosition = 0;
 		unfold ();
+		var snapper = scrollRect.GetComponent<ScrollRectSnap> ();
+		snapper.scrollToPage (0);
 	}
 
 
