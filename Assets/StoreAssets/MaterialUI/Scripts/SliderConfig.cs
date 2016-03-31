@@ -65,7 +65,7 @@ namespace MaterialUI
 					if (hasPopup)
 					{
 						tempVec3 = popup.localScale;
-						tempVec3.x = Anim.Quint.Out(currentPopupScale, 1f, animDeltaTime, animationDuration);
+						tempVec3.x = Anim.Quint.Out(currentPopupScale, 1.8f, animDeltaTime, animationDuration);
 						tempVec3.y = tempVec3.x;
 						tempVec3.z = tempVec3.x;
 						popup.localScale = tempVec3;

@@ -35,6 +35,10 @@ public class FacilityScript : MonoBehaviour {
 		return transform.GetComponent<Renderer>().bounds.center;
 	}
 
+	public int getFloor(){
+		return int.Parse (LayerMask.LayerToName(gameObject.layer).Substring(0, 1));
+	}
+
 	public float getSize(){
 		return transform.GetComponent<Renderer> ().bounds.size.magnitude;
 	}

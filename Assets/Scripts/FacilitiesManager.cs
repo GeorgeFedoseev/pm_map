@@ -67,6 +67,8 @@ public class FacilitiesManager {
 		app.cam.flying = true;
 		app.cam.lookTarget = f;
 
+		app.switchToFloor (f.getFloor());
+
 		dehighlightAll ();
 		f.highlight ();
 	}

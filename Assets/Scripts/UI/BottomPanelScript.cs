@@ -60,6 +60,7 @@ public class BottomPanelScript : MonoBehaviour {
 			}
 		}
 
+		app.openTimetableButton.anchoredPosition = new Vector2 (rect.offsetMin.x + 50f, rect.anchoredPosition.y+rect.sizeDelta.y+20f);
 	}
 
 

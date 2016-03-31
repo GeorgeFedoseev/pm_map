@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class AppScript : MonoBehaviour {
 
@@ -9,20 +10,26 @@ public class AppScript : MonoBehaviour {
 		return sharedInstance == null ? sharedInstance = Camera.main.gameObject.GetComponent<AppScript>() : sharedInstance;
 	}
 
+
+	// inspector
+	public Transform building;
+
 	public FacilitiesManager facilities;
 	public TimetableManger timetableManager;
 
+	[HideInInspector]
 	public PoolSystem pool;
-
+	[HideInInspector]
 	public Canvas canvas;
-
+	[HideInInspector]
 	public CameraScript cam;
 	[HideInInspector]
 	public SearchBoxScript searchBox;
 	[HideInInspector]
 	public BottomPanelScript bottomPanel;
-
-
+	[HideInInspector]
+	public RectTransform openTimetableButton;
+	[HideInInspector]
 	private Transform centerPanelContainer;
 
 	void Awake(){
@@ -41,6 +48,8 @@ public class AppScript : MonoBehaviour {
 		if (centerPanelContainer == null)
 			Debug.LogError ("cant find center panel container");
 
+		openTimetableButton = GameObject.Find ("OpenTimetableButton").GetComponent<RectTransform> ();
+
 		Application.targetFrameRate = 60;
 	}
 
@@ -48,11 +57,25 @@ public class AppScript : MonoBehaviour {
 		facilities.initFacilities ();
 
 		clearCenterPanelContainer ();
+
+		switchToFloor (1);
 	}
 	
 
 	void Update () {
 	
+	}
+
+	public void switchToFloor(int floor){
+		int i = 0;
+		foreach(Transform fl in building){
+			if (i + 1 > floor) {
+				fl.gameObject.SetActive (false);
+			} else {
+				fl.gameObject.SetActive (true);
+			}
+			i++;
+		}
 	}
 
 

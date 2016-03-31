@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 
 public class CameraScript : MonoBehaviour {
 
+	AppScript app;
+
 	private Vector3 rotateAroundPos;
 
 	private Vector2 touch1StartPos;
@@ -44,6 +46,7 @@ public class CameraScript : MonoBehaviour {
 	public float lookDistance = 6f;
 
 	void Awake(){
+		app = AppScript.getSharedInstance ();
 		rotateAroundPos = new Vector3 (0, 0f, 0);	
 	}
 
@@ -185,6 +188,8 @@ public class CameraScript : MonoBehaviour {
 								var oldPos = Camera.main.transform.position;
 								Camera.main.transform.RotateAround (worldInteractPoint, Vector3.up, deltaPhi);
 								var heightCoeff = (Camera.main.transform.position.y - minHeight)/(maxHeight-minHeight);
+								if (heightCoeff < 0.1f)
+									heightCoeff = 0.1f;
 								var deltaZoom = deltaDistance * zoomSpeed * mltpl*heightCoeff;
 								var translation = (worldInteractPoint - Camera.main.transform.position).normalized * deltaZoom;
 
@@ -221,6 +226,8 @@ public class CameraScript : MonoBehaviour {
 			touchRotatePhiZoomMode = false;
 			touchRotateThetaMode = false;
 		}
+
+
 
 
 		// check camera
