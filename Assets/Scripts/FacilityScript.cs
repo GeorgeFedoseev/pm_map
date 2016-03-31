@@ -32,8 +32,7 @@ public class FacilityScript : MonoBehaviour {
 
 
 	public Vector3 getCenter(){
-		//return transform.GetComponent<Renderer>().bounds.center;
-		return transform.position;
+		return transform.GetComponent<Renderer>().bounds.center;
 	}
 
 	public float getSize(){
