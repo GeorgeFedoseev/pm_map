@@ -77,11 +77,11 @@ public class BottomPanelScript : MonoBehaviour {
 			r.title.text = f._name;
 			r.desc.text = f._description;
 
-			/*var _f = f;
-			r.button.onClick.AddListener (() => {							
+			var _f = f;
+			r.GetComponent<Button>().onClick.AddListener (() => {							
 				Debug.LogWarning ("Clicked " + _f.name);	
 				app.facilities.flyToFacility (_f);
-			});*/
+			});
 
 			r.transform.SetParent (rowsContainer);
 			r.transform.localScale = Vector3.one;

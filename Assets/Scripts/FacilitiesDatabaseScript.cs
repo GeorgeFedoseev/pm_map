@@ -18,6 +18,8 @@ public class FacilityRecord {
 	public string aliases { get; set; }
 	public string room { get; set; }
 	public int gameObjectID { get; set; }
+
+	public string search_string { get; set; }
 }
 
 
@@ -39,6 +41,11 @@ public class FacilitiesDatabaseScript {
 		f.room = room;
 		f.gameObjectID = gameObjectID;
 
+		f.search_string = (name!=null?name.ToLower():"")
+			+ " " + (desc!=null?desc.ToLower():"")
+			+ " " + (aliases!=null?aliases.ToLower():"")
+			+ " " + (room!=null?room.ToLower():"");
+
 		using (var db = new SQLiteConnection(db_path)){			
 			db.Insert (f);
 			db.Close();
@@ -55,7 +62,7 @@ public class FacilitiesDatabaseScript {
 
 	public List<FacilityRecord> findFacilities(string search_query){
 		using (var db = new SQLiteConnection(db_path)){			
-			var q = "SELECT * FROM facilities WHERE LOWER(name || ' ' || description || ' ' || aliases) LIKE ?";
+			var q = "SELECT * FROM facilities WHERE search_string LIKE ?";
 			var fs = db.Query<FacilityRecord> (q, "%"+search_query.ToLower()+"%");
 
 			return fs;

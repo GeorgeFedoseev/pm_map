@@ -31,11 +31,11 @@ public class FacilitiesManager {
 			facilities_db.addFacility (f._name, f._description, f._aliases, f._room, f.gameObject.GetInstanceID());
 		}
 
-		foreach(var f in facilities_db.findFacilities("кофе")){
+		/*foreach(var f in facilities_db.findFacilities("кофе")){
 			Debug.LogWarning ("Found "+f.name+" "+f.gameObjectID);
 			var go = facilities_map [f.gameObjectID];
 			go.GetComponent<MeshRenderer> ().material.color = Color.red;
-		}
+		}*/
 	}
 
 	public List<FacilityScript> findFacilities(string query){
@@ -55,8 +55,26 @@ public class FacilitiesManager {
 
 		target_facility = f;
 
+
+		var look_dst = f.getSize ();
+		if (look_dst < 10f)
+			look_dst = 10f;
+		
+		app.cam.lookDistance = look_dst;
+		app.cam.lookHeight = look_dst;
+
+
 		app.cam.flying = true;
 		app.cam.lookTarget = f;
+
+		dehighlightAll ();
+		f.highlight ();
+	}
+
+	public void dehighlightAll(){
+		foreach(var f in GameObject.FindObjectsOfType<FacilityScript>()){
+			f.dehighlight ();
+		}
 	}
 
 
