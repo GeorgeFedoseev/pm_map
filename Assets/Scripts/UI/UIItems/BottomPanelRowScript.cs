@@ -13,6 +13,7 @@ public class BottomPanelRowScript : MonoBehaviour {
 
 	// inspector
 	public Text title, desc;
+	public Image icon;
 
 	void Awake(){		
 		rect = GetComponent<RectTransform> ();

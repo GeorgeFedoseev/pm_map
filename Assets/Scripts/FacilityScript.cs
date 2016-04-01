@@ -14,6 +14,8 @@ public class FacilityScript : MonoBehaviour {
 	[HideInInspector]
 	public string _room;
 
+	public string _icon;
+
 	// Use this for initialization
 	void Start () {
 		app = AppScript.getSharedInstance ();

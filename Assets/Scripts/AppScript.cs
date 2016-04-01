@@ -31,7 +31,7 @@ public class AppScript : MonoBehaviour {
 	[HideInInspector]
 	public RectTransform openTimetableButton;
 	[HideInInspector]
-	private Transform centerPanelContainer;
+	public Transform centerPanelContainer;
 
 	void Awake(){
 		canvas = GameObject.FindObjectOfType<Canvas> ();
@@ -60,6 +60,9 @@ public class AppScript : MonoBehaviour {
 		clearCenterPanelContainer ();
 
 		switchToFloor (1);
+
+		// clear all 
+		PlayerPrefs.DeleteAll();
 	}
 	
 

@@ -17,6 +17,7 @@ public class FacilityRecord {
 	public string description { get; set; }
 	public string aliases { get; set; }
 	public string room { get; set; }
+	public string icon { get; set; }
 	public int gameObjectID { get; set; }
 
 	public string search_string { get; set; }
@@ -32,13 +33,14 @@ public class FacilitiesDatabaseScript {
 		Debug.LogWarning ("db_path: "+db_path);
 	}
 
-	public void addFacility(string name, string desc, string aliases, string room, int gameObjectID){
+	public void addFacility(string name, string desc, string aliases, string icon, string room, int gameObjectID){
 
 		var f = new FacilityRecord ();
 		f.name = name;
 		f.description = desc;
 		f.aliases = aliases;
 		f.room = room;
+		f.icon = icon;
 		f.gameObjectID = gameObjectID;
 
 		f.search_string = (name!=null?name.ToLower():"")

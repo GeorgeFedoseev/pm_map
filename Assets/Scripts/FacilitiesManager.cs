@@ -30,7 +30,7 @@ public class FacilitiesManager {
 		// rebuild facilites DB
 		facilities_db.clearDb ();
 		foreach(var f in app.building.GetComponentsInChildren<FacilityScript>()){
-			facilities_db.addFacility (f._name, f._description, f._aliases, f._room, f.gameObject.GetInstanceID());
+			facilities_db.addFacility (f._name, f._description, f._aliases, f._room, f._icon, f.gameObject.GetInstanceID());
 		}
 
 		/*foreach(var f in facilities_db.findFacilities("кофе")){

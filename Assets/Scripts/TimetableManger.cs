@@ -151,7 +151,7 @@ public class TimetableManger {
 	public bool hasTimetable(){
 		using (var db = new SQLiteConnection(db_path)){
 			var count = db.CreateCommand ("SELECT count(*) FROM timetable").ExecuteScalar<int>();
-
+			Debug.LogWarning ("table rows count: "+count);
 			if (count > 0)
 				return true;
 			return false;

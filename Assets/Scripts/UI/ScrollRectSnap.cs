@@ -27,6 +27,10 @@ public class ScrollRectSnap : MonoBehaviour {
 	bool dragInit = true;
 	int dragStartNearest;
 
+	void Awake(){
+		initSnapper ();
+	}
+
 	// Use this for initialization
 
 	public void initSnapper(){

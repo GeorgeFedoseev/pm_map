@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class CenterPanelScript : MonoBehaviour {
 
-	AppScript app;
+	protected AppScript app;
 	[HideInInspector]
 	public RectTransform rect;
 

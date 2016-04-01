@@ -73,9 +73,38 @@ public class DayTimetable {
 	public DateTime day;
 	public List<Pair> pairs;
 
+
+
 	public DayTimetable(DateTime _day){
 		day = _day;
 		pairs = new List<Pair> ();
+	}
+
+	public string getTranslatedDay(){
+		switch (day.DayOfWeek) {
+		case DayOfWeek.Monday:
+			return "Понедельник";
+			break;
+		case DayOfWeek.Tuesday:
+			return "Вторник";
+			break;
+		case DayOfWeek.Wednesday:
+			return "Среда";
+			break;
+		case DayOfWeek.Thursday:
+			return "Четверг";
+			break;
+		case DayOfWeek.Friday:
+			return "Пятница";
+			break;
+		case DayOfWeek.Saturday:
+			return "Суббота";
+			break;
+		case DayOfWeek.Sunday:
+			return "Воскресенье";
+			break;
+		}
+		return "";
 	}
 }
 
