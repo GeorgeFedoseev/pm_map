@@ -44,7 +44,12 @@ public class FacilityScript : MonoBehaviour {
 	}
 
 	public int getFloor(){
-		return int.Parse (LayerMask.LayerToName(gameObject.layer).Substring(0, 1));
+		int floor;
+		if (int.TryParse (LayerMask.LayerToName (gameObject.layer).Substring (0, 1), out floor)) {
+			return floor;
+		} else {
+			return 1;
+		}
 	}
 
 	public float getSize(){

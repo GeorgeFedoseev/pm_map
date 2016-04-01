@@ -8,6 +8,8 @@ public class RoomScript : FacilityScript {
 	[TextArea()]
 	public string aliases;
 
+	public bool auditory = false;
+
 
 	private TextMesh roomNumber;
 
@@ -16,6 +18,12 @@ public class RoomScript : FacilityScript {
 		_description = description;
 		_room = room;
 		_aliases = aliases;
+
+		if (auditory) {
+			_icon = "auditory";
+		} else {
+			_icon = "room";
+		}
 
 		if(_description == "")
 			_description = "Кабинет";
