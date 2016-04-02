@@ -99,8 +99,9 @@ public class SearchBoxScript : MonoBehaviour {
 						r.name.text = f._name;
 						r.desc.text = f._description;
 
+						var _f = f;
 						Loom.QueueOnMainThread (()=>{
-							var sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/"+f._icon);
+							var sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/"+_f._icon);
 							if(sprite == null)
 								sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/default");
 							r.icon.sprite = sprite;	
@@ -108,7 +109,6 @@ public class SearchBoxScript : MonoBehaviour {
 
 						
 
-						var _f = f;
 						r.button.onClick.AddListener (() => {							
 							Debug.LogWarning ("Clicked " + _f._name);	
 							app.facilities.focusFacility (_f, true);
