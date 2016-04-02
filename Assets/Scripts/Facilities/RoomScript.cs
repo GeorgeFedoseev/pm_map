@@ -25,8 +25,14 @@ public class RoomScript : FacilityScript {
 			_icon = "room";
 		}
 
-		if(_description == "")
-			_description = "Кабинет";
+		if (_description == "") {
+			if (auditory) {
+				_description = "Аудитория";
+			} else {
+				_description = "Кабинет";
+			}
+		}
+			
 
 		// add room number
 		roomNumber = (Instantiate(Resources.Load("Prefabs/room_number")) as GameObject).GetComponent<TextMesh>();

@@ -77,8 +77,18 @@ public class BottomPanelScript : MonoBehaviour {
 			var r = app.pool.spawn<BottomPanelRowScript> ("bottom_panel_row");
 			r.title.text = f._name;
 			r.desc.text = f._description;
-
 			var _f = f;
+
+	
+			Loom.QueueOnMainThread (()=>{
+				var sprite = Resources.Load<Sprite>("Prefabs/UI/icons/"+_f._icon);
+				if(sprite == null)
+					sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/default");
+				r.icon.sprite = sprite;	
+			});
+
+
+
 			r.GetComponent<Button>().onClick.AddListener (() => {							
 				Debug.LogWarning ("Clicked " + _f.name);	
 				app.facilities.focusFacility (_f);
