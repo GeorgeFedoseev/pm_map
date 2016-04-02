@@ -33,7 +33,7 @@ public class FacilitiesDatabaseScript {
 		Debug.LogWarning ("db_path: "+db_path);
 	}
 
-	public void addFacility(string name, string desc, string aliases, string icon, string room, int gameObjectID){
+	public void addFacility(string name, string desc, string aliases, string room, string icon, int gameObjectID){
 
 		var f = new FacilityRecord ();
 		f.name = name;
@@ -65,12 +65,24 @@ public class FacilitiesDatabaseScript {
 	public List<FacilityRecord> findFacilities(string search_query){
 		using (var db = new SQLiteConnection(db_path)){			
 			var q = "SELECT * FROM facilities WHERE search_string LIKE ?";
-			var fs = db.Query<FacilityRecord> (q, "%"+search_query.ToLower()+"%");
+			var fs = db.Query<FacilityRecord> (q, search_query.ToLower()+"%");
 
 			return fs;
 		}
 
 		return new List<FacilityRecord>();
+	}
+
+	public FacilityRecord getRoom(string room){
+		using (var db = new SQLiteConnection(db_path)){			
+			var q = "SELECT * FROM facilities WHERE room = ?";
+			var fs = db.Query<FacilityRecord> (q, room);
+			if (fs.Count > 0)
+				return fs [0];
+			return null;
+		}
+
+		return null;
 	}
 
 	public void traceAllFacilities(){

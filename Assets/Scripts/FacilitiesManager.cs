@@ -79,6 +79,14 @@ public class FacilitiesManager {
 		}
 	}
 
+	public void goToRoom(string room){
+		var res = facilities_db.getRoom (room);
+		if (res != null) {
+			var f = facilities_map[res.gameObjectID];
+			focusFacility (f, true);
+		}
+	}
+
 	public void clearFocus(){
 		app.cam.flying = false;
 		app.cam.lookTarget = null;

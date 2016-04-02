@@ -25,6 +25,7 @@ public class TTTimeScript : MonoBehaviour {
 
 		p.name.text = pair.name;
 		p.location.text = "["+pair.room+"]";
+		p.room = pair.room;
 	}
 
 	public void updateLayout(){

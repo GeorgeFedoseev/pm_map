@@ -69,13 +69,20 @@ public class AppScript : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
 
+			// do nothing when over GUI
+			if (EventSystem.current.IsPointerOverGameObject ()) {
+				// at least on touch is over a canvas UI
+				return;
+			}
+
+
 			Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
 			RaycastHit hit;
 
 			if(Physics.Raycast( ray, out hit, 1000))
 			{
 				if (hit.collider.gameObject.GetComponent<FacilityScript> () == null) {
-					facilities.clearFocus ();
+					//facilities.clearFocus ();
 				}
 			}else{
 				facilities.clearFocus ();
@@ -99,7 +106,7 @@ public class AppScript : MonoBehaviour {
 	}
 
 
-	private void clearCenterPanelContainer(){		
+	public void clearCenterPanelContainer(){		
 		foreach(Transform t in centerPanelContainer){
 			Destroy (t.gameObject);
 		}
