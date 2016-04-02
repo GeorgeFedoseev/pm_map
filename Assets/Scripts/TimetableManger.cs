@@ -26,8 +26,11 @@ public class TimetableManger {
 	public WeekTimetable currentWeek, nextWeek;
 
 	public TimetableManger(){
+		
 		app = AppScript.getSharedInstance ();	
 		db_path = Constants.getDBPath ("data.db");
+
+		clearDb ();
 
 		if (!hasTimetable ()) {
 			Debug.LogWarning ("NO TIMETABLE");
@@ -64,7 +67,10 @@ public class TimetableManger {
 		return ConfigStorage.hasKey ("tt_study_timetable_link");
 	}
 
-	private void restoreTimetableFromDatabase(){
+	public void restoreTimetableFromDatabase(){
+		// clear all 
+		PlayerPrefs.DeleteAll();
+
 		using (var db = new SQLiteConnection(db_path)){						
 			var pairRecords = db.Query<TimetableRecord>("SELECT * FROM timetable");
 

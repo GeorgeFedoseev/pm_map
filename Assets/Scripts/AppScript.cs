@@ -61,8 +61,7 @@ public class AppScript : MonoBehaviour {
 
 		switchToFloor (1);
 
-		// clear all 
-		PlayerPrefs.DeleteAll();
+
 	}
 	
 
