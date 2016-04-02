@@ -19,11 +19,14 @@ public class RoomScript : FacilityScript {
 		_room = room;
 		_aliases = aliases;
 
-		if (auditory) {
-			_icon = "auditory";
-		} else {
-			_icon = "room";
+		if (_icon == "") {
+			if (auditory) {
+				_icon = "auditory";
+			} else {
+				_icon = "room";
+			}
 		}
+
 
 		if (_description == "") {
 			if (auditory) {
