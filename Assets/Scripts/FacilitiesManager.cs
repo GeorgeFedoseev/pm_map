@@ -61,13 +61,8 @@ public class FacilitiesManager {
 		var look_dst = f.getSize ()*4;
 		if (look_dst < 10f)
 			look_dst = 10f;
-		
-		app.cam.lookDistance = look_dst;
-		app.cam.lookHeight = look_dst;
 
-
-		app.cam.flying = true;
-		app.cam.lookTarget = f;
+		app.cam.setTargetFacility(f, look_dst);
 
 		app.switchToFloor (f.getFloor());
 
@@ -88,8 +83,7 @@ public class FacilitiesManager {
 	}
 
 	public void clearFocus(){
-		app.cam.flying = false;
-		app.cam.lookTarget = null;
+		app.cam.stopFlying ();
 		dehighlightAll ();
 		app.bottomPanel.fold (true);
 	}

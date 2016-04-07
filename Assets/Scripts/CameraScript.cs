@@ -1,127 +1,113 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class CameraScript : MonoBehaviour {
-
 	AppScript app;
 
-	private Vector3 rotateAroundPos;
-
-	private Vector2 touch1StartPos;
-	private Vector2 touch2StartPos;
-
-	private Vector3 rotateAroundTouchStartPos;
-
-	private Vector3 worldInteractPoint;
-
-	Vector3 oldCamPos;
-	Quaternion oldCamRot;
-
-	bool firstTouchInMoveMode = true;
-	bool firstTouchInRotateMode = true;
-
-
+	// inspector
 	public float moveSpeed = 0.13f;
 	public float rotatePhiSpeed = 1.64f;
 	public float rotateThetaSpeed = 1.97f;
 	public float zoomSpeed = 0.01f;
-
-	bool touchRotatePhiZoomMode = false;
-
 	public float touchRotatePhiThreshold = 3.06f;
 	public float touchZoomThreshold = 4.4f;
-
-	bool touchRotateThetaMode = false;
 	public float touchRotateThetaThreshold = 8.9f;
-	float maxHeight = 120f, minHeight = -4f;
+
+	// in use
+	[HideInInspector]
+	public bool controlsInUse;
 
 
+	private Vector2 touch1StartPos;
+	private Vector2 touch2StartPos;
 
-	public bool flying = false;
-	public FacilityScript lookTarget;
-	float flySpeed = 10f;
+	bool firstTouchInMoveMode = true;
+	bool firstTouchInRotateMode = true;
 
-	public float lookHeight = 10f;
-	public float lookDistance = 6f;
+	private Vector3 worldInteractPoint;
+
+	// restricting camera movement
+	Vector3 oldCamPos;
+	Quaternion oldCamRot;
+	float minHeight = 0.5f;
+	float maxHeight = 150f;
+
+	// 2-finger modes
+	bool touchRotatePhiZoomMode = false;
+	bool touchRotateThetaMode = false;
+
+	// FLYING
+	bool flying = false;
+
+	Vector3 targetPosition;
+	Quaternion targetRotation;
+
+	float lookHeight = 10f;
+	float lookDistance = 6f;
+
+	// UI avoiding
+	private bool overUI = false;
+
 
 	void Awake(){
 		app = AppScript.getSharedInstance ();
-		rotateAroundPos = new Vector3 (0, 0f, 0);	
 	}
 
 	void Update(){
-		if (flying && lookTarget != null) {
+		if (flying) {
 			// move
-			var cam_look_pos = lookTarget.transform.position + lookTarget.transform.up * lookHeight + lookTarget.transform.forward * lookDistance;
-			var delta_pos = cam_look_pos - transform.position;
-
-
-			transform.position += 0.8f * Time.deltaTime * (cam_look_pos - transform.position);
+			var delta_pos = targetPosition - transform.position;
+			transform.position += 0.8f * Time.deltaTime * delta_pos;
 
 			// rotate
-
-			var rot = Quaternion.LookRotation (lookTarget.transform.position - transform.position, Vector3.up);
-			var delta_rot = Mathf.Abs (Quaternion.Angle (rot, transform.rotation));
-
-			transform.rotation = Quaternion.Slerp (transform.rotation, rot, Time.deltaTime * 3.0f);
+			var delta_rot = Mathf.Abs (Quaternion.Angle (targetRotation, transform.rotation));
+			transform.rotation = Quaternion.Slerp (transform.rotation, targetRotation, Time.deltaTime * 3.0f);
 
 			if (delta_pos.magnitude < 0.2f && delta_rot < 3f) {
-				flying = false;
+				// reached target
+				stopFlying();
 			}
 		} 
 
-
-
-
-	}
-
-	void FlyComplete(){
-		
-	}
-
-	void LateUpdate () {
-		var mltpl = Time.deltaTime * 35f/Screen.dpi*82f;
-
-
-
-
-
-
-		// do nothing when over GUI
-		if (touchInput ()) {
-			foreach (Touch touch in Input.touches) {
-				int pointerID = touch.fingerId;
-				if (EventSystem.current.IsPointerOverGameObject (pointerID)) {
-					// at least on touch is over a canvas UI
-					return;
-				}
-
-				if (touch.phase == TouchPhase.Ended) {
-					// here we don't know if the touch was over an canvas UI
-					return;
-				}
-			}
+		// over UI check
+		if(hasTouches()){
+			overUI = IsPointerOverUIObject();	
 		} else {
-			if (EventSystem.current.IsPointerOverGameObject ()) {
-				// at least on touch is over a canvas UI
-				return;
-			}
+			overUI = false;
 		}
-			
+
+	}
+
+	public void setTargetFacility(FacilityScript facility, float _lookHeight = 10f, float _lookDistance = 6f){
+		targetPosition = facility.transform.position + facility.transform.up * lookHeight + facility.transform.forward * lookDistance;
+		targetRotation = Quaternion.LookRotation (facility.transform.position - transform.position, Vector3.up);
+		lookHeight = _lookHeight;
+		lookDistance = _lookDistance;
+
+		flying = true;
+	}
+
+	public void stopFlying(){
+		flying = false;
+	}
 
 
-
-
+	// HANDLING TOUCH INPUT HERE
+	void LateUpdate () {
+		if (overUI && !controlsInUse)
+			return;
+		
+		var mltpl = Time.deltaTime * 35f/Screen.dpi*82f;
 		if (hasTouches ()) {
-			flying = false;
+			stopFlying ();
 
-			//Debug.LogWarning ("World move");
 			Vector2 touch1Pos = getTouchPos ();
-
 			if (touchCount() == 1 && !Input.GetKey(KeyCode.LeftCommand)) {
 				// moving
 				firstTouchInRotateMode = true;
+
 
 				if (firstTouchInMoveMode) {
 					Ray ray = Camera.main.ScreenPointToRay(touch1Pos);
@@ -133,7 +119,12 @@ public class CameraScript : MonoBehaviour {
 						touch1StartPos = touch1Pos;
 					}
 				} else {
+					
 					var touchDelta = touch1Pos - touch1StartPos;
+
+					if (touchDelta.magnitude > 0.5f) {
+						controlsInUse = true;
+					}
 
 					var camToPointDist = (Camera.main.transform.position - worldInteractPoint).magnitude;
 					var h1 = 1f;//Camera.main.nearClipPlane;
@@ -152,6 +143,7 @@ public class CameraScript : MonoBehaviour {
 				// rotating
 				firstTouchInMoveMode = true;
 
+
 				if (firstTouchInRotateMode) {					
 					touch1StartPos = touch1Pos;
 
@@ -168,6 +160,7 @@ public class CameraScript : MonoBehaviour {
 						firstTouchInRotateMode = false;
 					}
 				}else {
+					
 					if (touchInput ()) {
 						// rotate and zoom camera with 2 fingers
 						Vector2 touch2Pos = getTouch2Pos ();
@@ -179,7 +172,11 @@ public class CameraScript : MonoBehaviour {
 
 						// get signed vector
 						var deltaDegrees = Vector2.Angle (currentVector, startVector);
-						Vector3 cross = Vector3.Cross(currentVector, startVector);
+						if (Mathf.Abs(deltaDegrees) > 1f) {
+							controlsInUse = true;
+						}
+
+						Vector3 cross = Vector3.Cross (currentVector, startVector);
 						if (cross.z > 0)
 							deltaDegrees *= -1;
 
@@ -187,16 +184,16 @@ public class CameraScript : MonoBehaviour {
 
 						if (touchRotatePhiZoomMode || touchRotateThetaMode || touchRotatePhiZoomMode) {
 							if (touchRotateThetaMode) {								
-								var deltaTheta = deltaY * rotateThetaSpeed *mltpl;
+								var deltaTheta = deltaY * rotateThetaSpeed * mltpl;
 								Camera.main.transform.RotateAround (worldInteractPoint, Camera.main.transform.right, deltaTheta);
 							} else if (touchRotatePhiZoomMode) {
 								var deltaPhi = deltaDegrees * rotatePhiSpeed/**mltpl*/;
 								var oldPos = Camera.main.transform.position;
 								Camera.main.transform.RotateAround (worldInteractPoint, Vector3.up, deltaPhi);
-								var heightCoeff = (Camera.main.transform.position.y - minHeight)/(maxHeight-minHeight);
+								var heightCoeff = (Camera.main.transform.position.y - minHeight) / (maxHeight - minHeight);
 								if (heightCoeff < 0.1f)
 									heightCoeff = 0.1f;
-								var deltaZoom = deltaDistance * zoomSpeed * mltpl*heightCoeff;
+								var deltaZoom = deltaDistance * zoomSpeed * mltpl * heightCoeff;
 								var translation = (worldInteractPoint - Camera.main.transform.position).normalized * deltaZoom;
 
 								Camera.main.transform.Translate (translation, Space.World);	
@@ -207,7 +204,7 @@ public class CameraScript : MonoBehaviour {
 							if (Mathf.Abs (deltaY) > touchRotateThetaThreshold) {
 								touchRotateThetaMode = true;					
 							} else if (Mathf.Abs (deltaDegrees) > touchRotatePhiThreshold
-								|| Mathf.Abs (deltaDistance) > touchZoomThreshold) {
+							           || Mathf.Abs (deltaDistance) > touchZoomThreshold) {
 								touchRotatePhiZoomMode = true;
 							} else {
 
@@ -215,18 +212,12 @@ public class CameraScript : MonoBehaviour {
 						}
 						touch1StartPos = touch1Pos;
 						touch2StartPos = touch2Pos;
-					} else {
-						// rotate with mouse
-
-						var touchDelta = touch1Pos - touch1StartPos;
-						var deltaYRotation = touchDelta.x * rotatePhiSpeed;
-						var deltaXRotation = touchDelta.y * rotateThetaSpeed;
-
 					}
 				}
 			}
 
 		}else{
+			controlsInUse = false;
 			firstTouchInMoveMode = true;
 			firstTouchInRotateMode = true;
 			touchRotatePhiZoomMode = false;
@@ -234,29 +225,38 @@ public class CameraScript : MonoBehaviour {
 		}
 
 
+		// check camera borders
+		var newPos = Camera.main.transform.position;
+		var newRot = Camera.main.transform.rotation.eulerAngles;
 
+		// position borders
+		if (newPos.y < minHeight || newPos.y > maxHeight) {
+			Camera.main.transform.position = oldCamPos;	
 
-		// check camera
-		if(!flying){
-			var newPos = Camera.main.transform.position;
-			var newRot = Camera.main.transform.rotation.eulerAngles;
-
-			if (newPos.y < minHeight || newPos.y > maxHeight
-				|| newRot.x < 20f || newRot.x > 85f) {
-				Camera.main.transform.position = oldCamPos;	
-				Camera.main.transform.rotation = oldCamRot;	
-			} else {
-				oldCamPos = Camera.main.transform.position;
-				oldCamRot = Camera.main.transform.rotation;
-			}
+			//flying = true;
+		} else {
+			oldCamPos = Camera.main.transform.position;
 		}
 
+		// rotation borders
+		if (newRot.x < 20f || newRot.x > 85f) {
+			Camera.main.transform.rotation = oldCamRot;	
+		} else {
+			oldCamRot = Camera.main.transform.rotation;
+		}
+
+
 	}
 
-	void OnDrawGizmosSelected() {
-		Gizmos.color = Color.yellow;
-		Gizmos.DrawSphere(rotateAroundPos, 1);
+
+	public static bool IsPointerOverUIObject() {
+		PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+		eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+		List<RaycastResult> results = new List<RaycastResult>();
+		EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+		return results.Count > 0;
 	}
+
 
 	protected Vector2 getTouchPos(){
 		Vector2 touchPos = Vector2.zero;

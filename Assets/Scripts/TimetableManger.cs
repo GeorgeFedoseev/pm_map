@@ -36,6 +36,7 @@ public class TimetableManger {
 			Debug.LogWarning ("NO TIMETABLE");
 
 			getTimetable ();
+			restoreTimetableFromDatabase ();
 		} else {			
 			restoreTimetableFromDatabase ();
 			Debug.LogWarning ("Timetable recovered from database");

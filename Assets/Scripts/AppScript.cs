@@ -58,37 +58,12 @@ public class AppScript : MonoBehaviour {
 		facilities.initFacilities ();
 
 		clearCenterPanelContainer ();
-
 		switchToFloor (1);
-
-
 	}
 	
 
 	void Update () {
-		if (Input.GetMouseButtonDown (0)) {
-
-			// do nothing when over GUI
-			if (EventSystem.current.IsPointerOverGameObject ()) {
-				// at least on touch is over a canvas UI
-				return;
-			}
-
-
-			Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
-			RaycastHit hit;
-
-			if(Physics.Raycast( ray, out hit, 1000))
-			{
-				if (hit.collider.gameObject.GetComponent<FacilityScript> () == null) {
-					//facilities.clearFocus ();
-				}
-			}else{
-				facilities.clearFocus ();
-			}
-
-
-		}
+		
 
 	}
 
@@ -105,7 +80,8 @@ public class AppScript : MonoBehaviour {
 	}
 
 
-	public void clearCenterPanelContainer(){		
+	// CENTER PANEL
+	private void clearCenterPanelContainer(){		
 		foreach(Transform t in centerPanelContainer){
 			Destroy (t.gameObject);
 		}
@@ -122,6 +98,8 @@ public class AppScript : MonoBehaviour {
 		rect.anchoredPosition = Vector2.zero;
 	}
 
+
+	// TIMETABLE
 	public void openTimetable(){
 		if (timetableManager.hasTimetable ()) {
 			loadCenterPanel ("TimetableCenterPanel");
@@ -130,6 +108,9 @@ public class AppScript : MonoBehaviour {
 			loadCenterPanel ("LoadTimetableCenterPanel");
 			Debug.LogWarning ("Hello!");
 		}
+	}
 
+	public void closeTimetable(){
+		clearCenterPanelContainer ();
 	}
 }
