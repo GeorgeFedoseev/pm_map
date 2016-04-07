@@ -10,6 +10,6 @@ public class TTPairScript : MonoBehaviour {
 	public void goToRoom(){
 		var app = AppScript.getSharedInstance ();
 		app.facilities.goToRoom (room);
-		app.clearCenterPanelContainer ();
+		app.closeTimetable ();
 	}
 }

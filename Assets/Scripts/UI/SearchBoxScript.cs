@@ -55,7 +55,7 @@ public class SearchBoxScript : MonoBehaviour {
 		input.text = "";
 		searchInputChanged ();
 		app.bottomPanel.fold (true);
-		app.cam.lookTarget = null;
+		app.cam.stopFlying ();
 		app.facilities.dehighlightAll ();
 	}
 
