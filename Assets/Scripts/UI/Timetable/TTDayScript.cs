@@ -7,6 +7,7 @@ public class TTDayScript : MonoBehaviour {
 
 	public Text dayTitle;
 	public Transform timesContainer;
+	public RectTransform todayBadge;
 
 
 	void Awake(){
@@ -40,6 +41,10 @@ public class TTDayScript : MonoBehaviour {
 		foreach (var t in timesContainer.GetComponentsInChildren<TTTimeScript>()) {
 			t.updateLayout ();
 		}
+
+
+
+		todayBadge.anchoredPosition = new Vector2 (dayTitle.preferredWidth + 20f  , todayBadge.anchoredPosition.y);
 
 		var sumHeight = dayTitle.rectTransform.rect.size.y + timesContainer.GetComponent<VerticalLayoutGroup> ().padding.bottom;
 
