@@ -2,12 +2,17 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 public class TTDayScript : MonoBehaviour {
+
+	public DayTimetable _day;
 
 	public Text dayTitle;
 	public Transform timesContainer;
 	public RectTransform todayBadge;
+
+
 
 
 	void Awake(){
@@ -42,9 +47,14 @@ public class TTDayScript : MonoBehaviour {
 			t.updateLayout ();
 		}
 
+		if (_day.day.Date == DateTime.Today) {
+			todayBadge.gameObject.SetActive (true);
+			todayBadge.anchoredPosition = new Vector2 (dayTitle.preferredWidth + 20f, todayBadge.anchoredPosition.y);	
+		} else {
+			todayBadge.gameObject.SetActive (false);
+		}
 
 
-		todayBadge.anchoredPosition = new Vector2 (dayTitle.preferredWidth + 20f  , todayBadge.anchoredPosition.y);
 
 		var sumHeight = dayTitle.rectTransform.rect.size.y + timesContainer.GetComponent<VerticalLayoutGroup> ().padding.bottom;
 

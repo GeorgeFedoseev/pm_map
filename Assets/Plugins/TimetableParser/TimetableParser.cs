@@ -132,6 +132,14 @@ public class Pair {
 		parseTime ();
 	}
 
+	public bool now(){
+		var now = DateTime.Now;
+		if (now >= startTime && now <= endTime) {
+			return true;
+		}
+
+		return false;
+	}
 
 	private void parseRoom(){		
 		var parser = new Regex(@", ([A-Za-zА-Яа-я \/0-9]*)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);

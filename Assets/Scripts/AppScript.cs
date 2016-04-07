@@ -89,6 +89,12 @@ public class AppScript : MonoBehaviour {
 		}
 	}
 
+	public void disableAllInCentralPanelContainer(){
+		foreach(Transform t in centerPanelContainer){
+			t.gameObject.SetActive (false);
+		}
+	}
+
 	private void loadCenterPanel(string name){
 		clearCenterPanelContainer ();
 
@@ -103,6 +109,13 @@ public class AppScript : MonoBehaviour {
 
 	// TIMETABLE
 	public void openTimetable(){
+		foreach (Transform t in centerPanelContainer) {
+			if (t.gameObject.GetComponent<TTPanelScript> () != null) {
+				t.gameObject.SetActive (true);
+				return;
+			}
+		}
+
 		if (timetableManager.hasTimetable ()) {
 			loadCenterPanel ("TimetableCenterPanel");
 		} else {
@@ -113,6 +126,6 @@ public class AppScript : MonoBehaviour {
 	}
 
 	public void closeTimetable(){
-		clearCenterPanelContainer ();
+		disableAllInCentralPanelContainer ();
 	}
 }

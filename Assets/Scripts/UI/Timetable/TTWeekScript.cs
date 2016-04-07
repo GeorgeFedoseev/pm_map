@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TTWeekScript : MonoBehaviour {
 
+	public WeekTimetable _week;
+
 	public Transform daysContainer;
 
 	void Awake(){
@@ -19,6 +21,7 @@ public class TTWeekScript : MonoBehaviour {
 
 	public void addDay(DayTimetable day){
 		var d = (Instantiate (Resources.Load("Prefabs/UI/schedule/Day")) as GameObject).GetComponent<TTDayScript>();		
+		d._day = day;
 		d.transform.SetParent (daysContainer);
 		d.transform.localScale = Vector3.one;
 		d.dayTitle.text = day.getTranslatedDay();
