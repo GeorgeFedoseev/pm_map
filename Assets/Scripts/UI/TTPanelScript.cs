@@ -21,7 +21,7 @@ public class TTPanelScript : CenterPanelScript {
 
 		Loom.QueueOnMainThread (()=>{
 			currentWeek.updateLayout ();	
-		}, 0.5f);
+		}, 1.5f);
 
 
 		/*foreach(var d in app.timetableManager.nextWeek.days){

@@ -36,8 +36,11 @@ public class TTWeekScript : MonoBehaviour {
 			timePairDict [p.time].Add (p);
 		}
 
+		var i = 0;
 		foreach (var t in timePairDict) {
-			d.addTime (t.Key, t.Value);
+			var lastTime = i==timePairDict.Count-1;
+			d.addTime (t.Key, t.Value, lastTime);
+			i++;
 		}
 
 	}
@@ -51,6 +54,7 @@ public class TTWeekScript : MonoBehaviour {
 		var sumHeight = 0f;
 		foreach(Transform t in daysContainer){			
 			sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
+			var day = t.GetComponent<TTDayScript> ();
 		}
 		Debug.LogWarning ("sumHeight for Week : "+sumHeight);
 
