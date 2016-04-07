@@ -10,7 +10,7 @@ public class TTPanelScript : CenterPanelScript {
 
 	void Start(){		
 		currentWeek.GetComponent<LayoutElement> ().preferredWidth = GetComponent<RectTransform> ().rect.width;
-		nextWeek.GetComponent<LayoutElement> ().preferredWidth = GetComponent<RectTransform> ().rect.width;
+		//nextWeek.GetComponent<LayoutElement> ().preferredWidth = GetComponent<RectTransform> ().rect.width;
 
 		// pairs testing
 		foreach(var d in app.timetableManager.currentWeek.days){
@@ -18,13 +18,17 @@ public class TTPanelScript : CenterPanelScript {
 			currentWeek.addDay (d);
 		}
 
-		currentWeek.updateLayout ();
 
-		foreach(var d in app.timetableManager.nextWeek.days){
+		Loom.QueueOnMainThread (()=>{
+			currentWeek.updateLayout ();	
+		}, 0.5f);
+
+
+		/*foreach(var d in app.timetableManager.nextWeek.days){
 			nextWeek.addDay (d);
 		}
 
-		nextWeek.updateLayout ();
+		nextWeek.updateLayout ();*/
 
 	}
 

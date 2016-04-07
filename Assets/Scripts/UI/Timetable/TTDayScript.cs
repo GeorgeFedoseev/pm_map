@@ -11,8 +11,6 @@ public class TTDayScript : MonoBehaviour {
 
 	void Awake(){
 		clear ();
-
-		dayTitle.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
 	}
 
 	private void clear(){
@@ -22,11 +20,11 @@ public class TTDayScript : MonoBehaviour {
 	}
 
 	public void addTime(string time, List<Pair> pairs){
-		var t = (Instantiate (Resources.Load("Prefabs/UI/schedule/time_row")) as GameObject).GetComponent<TTTimeScript>();		
+		var t = (Instantiate (Resources.Load("Prefabs/UI/schedule/Time")) as GameObject).GetComponent<TTTimeScript>();		
 		t.transform.SetParent (timesContainer);
 		t.transform.localScale = Vector3.one;
 
-		t.time.text = time;
+		t.timeTitle.text = time;
 		foreach(var p in pairs){
 			t.addPair (p);
 		}
@@ -34,34 +32,18 @@ public class TTDayScript : MonoBehaviour {
 
 
 	public void updateLayout(){
-		var app = AppScript.getSharedInstance ();
-		dayTitle.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
-		timesContainer.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, -30);
-
-		var sd = timesContainer.GetComponent<RectTransform> ().sizeDelta;
-		sd.x = 0;
-		timesContainer.GetComponent<RectTransform> ().sizeDelta = sd;
-
-
+		
 		foreach (var t in timesContainer.GetComponentsInChildren<TTTimeScript>()) {
 			t.updateLayout ();
 		}
 
-		var sumHeight = 0f;
-		foreach(Transform t in timesContainer){
-			t.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, -sumHeight+50f);
-			Debug.LogWarning ("sumHeight: "+sumHeight);
-			sumHeight += t.GetComponent<RectTransform> ().rect.height;
+		var sumHeight = dayTitle.rectTransform.rect.size.y;
+		foreach(Transform t in timesContainer){						
+			sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
 		}
 
-		timesContainer.GetComponent<RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, sumHeight);
+		Debug.LogWarning ("sumHeight for Day : "+sumHeight);
 
-
-		GetComponent<LayoutElement> ().preferredHeight = sumHeight-20f;
-
-
-		//GetComponent<LayoutElement> ().preferredWidth = Screen.width;
-
-
+		GetComponent<LayoutElement> ().preferredHeight = sumHeight;
 	}
 }

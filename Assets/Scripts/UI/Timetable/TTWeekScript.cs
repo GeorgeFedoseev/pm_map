@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class TTWeekScript : MonoBehaviour {
 
@@ -17,10 +18,15 @@ public class TTWeekScript : MonoBehaviour {
 	}
 
 	public void addDay(DayTimetable day){
-		var d = (Instantiate (Resources.Load("Prefabs/UI/schedule/day_row")) as GameObject).GetComponent<TTDayScript>();		
+		var d = (Instantiate (Resources.Load("Prefabs/UI/schedule/Day")) as GameObject).GetComponent<TTDayScript>();		
 		d.transform.SetParent (daysContainer);
 		d.transform.localScale = Vector3.one;
 		d.dayTitle.text = day.getTranslatedDay();
+
+		var shadow = Instantiate (Resources.Load("Prefabs/UI/schedule/UnderShadow")) as GameObject;		
+		shadow.transform.SetParent (daysContainer);
+		shadow.transform.localScale = Vector3.one;
+
 
 		var timePairDict = new Dictionary<string, List<Pair>> ();
 		foreach (var p in day.pairs) {
@@ -38,22 +44,16 @@ public class TTWeekScript : MonoBehaviour {
 
 	public void updateLayout(){
 
-
 		foreach (var t in daysContainer.GetComponentsInChildren<TTDayScript>()) {
 			t.updateLayout ();
 		}
 
 		var sumHeight = 0f;
-		foreach(Transform t in daysContainer){
-			t.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, -sumHeight);
-			sumHeight += t.GetComponent<RectTransform> ().rect.height;
+		foreach(Transform t in daysContainer){			
+			sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
 		}
+		Debug.LogWarning ("sumHeight for Week : "+sumHeight);
 
-		GetComponent<RectTransform> ().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, sumHeight);
-
-
-		//GetComponent<RectTransform> ().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Screen.width);
-
-
+		GetComponent<LayoutElement> ().preferredHeight = sumHeight;
 	}
 }

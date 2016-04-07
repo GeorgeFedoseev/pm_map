@@ -30,7 +30,7 @@ public class TimetableManger {
 		app = AppScript.getSharedInstance ();	
 		db_path = Constants.getDBPath ("data.db");
 
-		clearDb ();
+		//clearDb ();
 
 		if (!hasTimetable ()) {
 			Debug.LogWarning ("NO TIMETABLE");

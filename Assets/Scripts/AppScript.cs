@@ -59,6 +59,8 @@ public class AppScript : MonoBehaviour {
 
 		clearCenterPanelContainer ();
 		switchToFloor (1);
+
+		openTimetable ();
 	}
 	
 
