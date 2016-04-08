@@ -49,7 +49,7 @@ public class RoomScript : FacilityScript {
 	}
 
 	void LateUpdate(){		
-		var vp_p = Camera.main.WorldToViewportPoint (getCenter());
+		/*var vp_p = Camera.main.WorldToViewportPoint (getCenter());
 		if (vp_p.x > 0 && vp_p.x < 1 && vp_p.y > 0 && vp_p.y < 1 && vp_p.z > 0) {
 			RaycastHit hit;
 			var rayDirection = roomNumber.transform.position - Camera.main.transform.position;
@@ -63,7 +63,7 @@ public class RoomScript : FacilityScript {
 		}else{
 			roomNumber.gameObject.SetActive (false);
 		}
-
+*/
 	}
 
 

@@ -51,7 +51,7 @@ public class AppScript : MonoBehaviour {
 
 		openTimetableButton = GameObject.Find ("OpenTimetableButton").GetComponent<RectTransform> ();
 
-		Application.targetFrameRate = 60;
+		Application.targetFrameRate = 30;
 	}
 
 	void Start () {
@@ -70,7 +70,7 @@ public class AppScript : MonoBehaviour {
 	}
 
 	public void disableCamera(){
-		cam.enabled = false;
+		cam.enabled = false;	
 	}
 
 	public void enableCamera(){
@@ -131,9 +131,12 @@ public class AppScript : MonoBehaviour {
 			loadCenterPanel ("LoadTimetableCenterPanel");
 			Debug.LogWarning ("Hello!");
 		}
+
+		disableCamera ();
 	}
 
 	public void closeTimetable(){
 		disableAllInCentralPanelContainer ();
+		enableCamera ();
 	}
 }
