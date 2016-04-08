@@ -128,11 +128,14 @@ public class AppScript : MonoBehaviour {
 			loadCenterPanel ("TimetableCenterPanel");
 		} else {
 			// tour for getting timetable link
-			loadCenterPanel ("LoadTimetableCenterPanel");
-			Debug.LogWarning ("Hello!");
+			openTimtableTour();
 		}
 
 		//disableCamera ();
+	}
+
+	public void openTimtableTour(){
+		loadCenterPanel ("LoadTimetableCenterPanel");
 	}
 
 	public void closeTimetable(){

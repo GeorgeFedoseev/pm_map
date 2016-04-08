@@ -3,16 +3,17 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class TTPanelScript : CenterPanelScript {
-
+	
 	public TTWeekScript currentWeek, nextWeek;
 
-	public GameObject editButton, doneButton;
+	public Button editButton, doneButton, downloadButton;
 
 	public Toggle switchWeekToggle;
-
 	public GameObject loadingOverlay;
 
 	bool loading = false;
+
+	bool firstLoadDone = false;
 
 	void Start(){		
 		UpdateContents ();
@@ -40,6 +41,15 @@ public class TTPanelScript : CenterPanelScript {
 	}
 
 	public void switchToMode(bool editMode){
+		if (loading)
+			return;
+
+		if (editMode) {
+			title.text = "Расписание (ред.)";
+		} else {
+			title.text = "Расписание";
+		}
+		
 		UpdateContents (editMode);		
 	}
 
@@ -51,6 +61,15 @@ public class TTPanelScript : CenterPanelScript {
 
 		switchWeekToggle.interactable = !_loading;
 
+		editButton.interactable = !_loading;
+		doneButton.interactable = !_loading;
+
+	}
+
+	public void downloadTimnetableClicked(){
+		Debug.LogWarning ("DOWNLOAD TIMETABLE");
+		app.closeTimetable ();
+		app.openTimtableTour ();
 	}
 
 	void UpdateContents(bool editMode = false){
@@ -63,8 +82,10 @@ public class TTPanelScript : CenterPanelScript {
 		nextWeek.clear ();
 
 
-		editButton.SetActive (!editMode);
-		doneButton.SetActive (editMode);
+		editButton.gameObject.SetActive (!editMode);
+		doneButton.gameObject.SetActive (editMode);
+
+		downloadButton.gameObject.SetActive (editMode);
 		 
 
 
@@ -119,10 +140,17 @@ public class TTPanelScript : CenterPanelScript {
 				}
 
 				setLoading(false);
+				firstLoadDone = true;
 			}, 0.5f);
 		}, 0.5f);
 
 
+	}
+
+
+	protected override void OnRectTransformDimensionsChange(){
+		if(firstLoadDone)
+			UpdateLayout ();
 	}
 
 
