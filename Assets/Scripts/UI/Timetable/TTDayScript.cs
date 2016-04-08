@@ -9,6 +9,8 @@ public class TTDayScript : MonoBehaviour {
 	public DayTimetable _day;
 
 	public Text dayTitle;
+	public Text date;
+
 	public Transform timesContainer;
 	public RectTransform todayBadge;
 

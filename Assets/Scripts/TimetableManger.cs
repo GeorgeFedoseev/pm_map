@@ -70,7 +70,7 @@ public class TimetableManger {
 
 	public void restoreTimetableFromDatabase(){
 		// clear all 
-		PlayerPrefs.DeleteAll();
+		//PlayerPrefs.DeleteAll();
 
 		using (var db = new SQLiteConnection(db_path)){						
 			var pairRecords = db.Query<TimetableRecord>("SELECT * FROM timetable");
@@ -82,10 +82,10 @@ public class TimetableManger {
 			var w1 = new WeekTimetable (currentWeekStart);
 			var w2 = new WeekTimetable (nextWeekStart);
 
-			foreach (TimetableRecord p in pairRecords){
-				var date = currentWeekStart.AddDays ((int)p.day - 1).Date;
+			foreach (TimetableRecord p in pairRecords){			
 
 				var w = p.weekType == w1.weekType ? w1 : w2;
+				var date = w.weekStartDay.AddDays ((int)p.day - 1).Date;
 
 				var pair = new Pair (
 					date,

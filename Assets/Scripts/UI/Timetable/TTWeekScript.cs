@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class TTWeekScript : MonoBehaviour {
 
 	public WeekTimetable _week;
-
 	public Transform daysContainer;
+	public ScrollRect scrollRect;
 
 	void Awake(){
+		scrollRect = GetComponent<ScrollRect> ();
 		clear ();
 	}
 
@@ -24,7 +25,9 @@ public class TTWeekScript : MonoBehaviour {
 		d._day = day;
 		d.transform.SetParent (daysContainer);
 		d.transform.localScale = Vector3.one;
+
 		d.dayTitle.text = day.getTranslatedDay();
+		d.date.text = day.day.ToString ("d MMM", System.Globalization.CultureInfo.GetCultureInfo("ru-RU"));
 
 		var shadow = Instantiate (Resources.Load("Prefabs/UI/schedule/UnderShadow")) as GameObject;		
 		shadow.transform.SetParent (daysContainer);
