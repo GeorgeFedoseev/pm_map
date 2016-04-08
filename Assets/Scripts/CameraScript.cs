@@ -80,6 +80,9 @@ public class CameraScript : MonoBehaviour {
 
 	}
 
+
+
+
 	public void setTargetFacility(FacilityScript facility, float _lookHeight = 10f, float _lookDistance = 6f){
 		targetPosition = facility.transform.position + facility.transform.up * lookHeight + facility.transform.forward * lookDistance;
 		targetRotation = Quaternion.LookRotation (facility.transform.position - transform.position, Vector3.up);

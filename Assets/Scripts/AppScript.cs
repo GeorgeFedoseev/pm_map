@@ -69,6 +69,14 @@ public class AppScript : MonoBehaviour {
 
 	}
 
+	public void disableCamera(){
+		cam.enabled = false;
+	}
+
+	public void enableCamera(){
+		cam.enabled = true;
+	}
+
 	public void switchToFloor(int floor){
 		int i = 0;
 		foreach(Transform fl in building){
