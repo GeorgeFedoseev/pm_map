@@ -132,11 +132,11 @@ public class AppScript : MonoBehaviour {
 			Debug.LogWarning ("Hello!");
 		}
 
-		disableCamera ();
+		//disableCamera ();
 	}
 
 	public void closeTimetable(){
 		disableAllInCentralPanelContainer ();
-		enableCamera ();
+		//enableCamera ();
 	}
 }
