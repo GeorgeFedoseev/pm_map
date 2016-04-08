@@ -13,7 +13,7 @@ public class TTWeekScript : MonoBehaviour {
 		clear ();
 	}
 
-	private void clear(){
+	public void clear(){
 		foreach(Transform t in daysContainer){
 			Destroy (t.gameObject);
 		}
@@ -61,6 +61,6 @@ public class TTWeekScript : MonoBehaviour {
 		}
 		Debug.LogWarning ("sumHeight for Week : "+sumHeight);
 
-		GetComponent<LayoutElement> ().preferredHeight = sumHeight;
+		//GetComponent<LayoutElement> ().preferredHeight = sumHeight;
 	}
 }
