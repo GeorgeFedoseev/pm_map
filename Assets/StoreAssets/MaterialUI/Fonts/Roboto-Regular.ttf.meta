@@ -1,13 +1,12 @@
 fileFormatVersion: 2
 guid: fbe3c09b43ce4304e86e7496c81bb9ed
 TrueTypeFontImporter:
-  serializedVersion: 2
+  serializedVersion: 3
   fontSize: 20
-  forceTextureCase: -2
+  forceTextureCase: -1
   characterSpacing: 1
   characterPadding: 0
   includeFontData: 1
-  use2xBehaviour: 0
   fontNames: []
   fallbackFontReferences:
   - {fileID: 12800000, guid: c5cecd61dc69a004cb14595341df0dfe, type: 3}
@@ -27,6 +26,7 @@ TrueTypeFontImporter:
   - {fileID: 12800000, guid: 97217e8f60f7bae47bea932e980faf0e, type: 3}
   customCharacters: 
   fontRenderingMode: 3
+  ascentCalculationMode: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
