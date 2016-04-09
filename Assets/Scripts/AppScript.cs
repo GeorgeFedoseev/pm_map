@@ -33,7 +33,8 @@ public class AppScript : MonoBehaviour {
 	[HideInInspector]
 	public Transform centerPanelContainer;
 
-	//private TTPanelScript timetablePanel;
+	[HideInInspector]
+	public TTPanelScript timetablePanel;
 
 	void Awake(){
 		canvas = GameObject.FindObjectOfType<Canvas> ();
@@ -132,7 +133,8 @@ public class AppScript : MonoBehaviour {
 		}
 
 		if (timetableManager.hasTimetable ()) {
-			loadCenterPanel ("TimetableCenterPanel").GetComponent<TTPanelScript> ().Prepare ();
+			timetablePanel = loadCenterPanel ("TimetableCenterPanel").GetComponent<TTPanelScript> ();
+			timetablePanel.Prepare ();
 		} else {
 			// tour for getting timetable link
 			openTimtableTour();
@@ -140,6 +142,8 @@ public class AppScript : MonoBehaviour {
 
 		//disableCamera ();
 	}
+
+
 
 	public void openTimtableTour(){
 		loadCenterPanel ("LoadTimetableCenterPanel");

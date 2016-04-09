@@ -25,7 +25,7 @@ public class WeekTimetable {
 		days = new List<DayTimetable> ();
 	}
 
-	private static int GetIso8601WeekNumber(DateTime date)
+	public static int GetIso8601WeekNumber(DateTime date)
 	{    var thursday = date.AddDays(3 - ((int)date.DayOfWeek + 6) % 7);
 		return 1 + (thursday.DayOfYear - 1) / 7;
 	}

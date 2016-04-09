@@ -10,5 +10,7 @@ public class EditPairDialogScript : MonoBehaviour {
 	public Button okButton, cancelButton;
 	public Text okButtonTitle, cancelButtonTitle;
 
+	public Text wrongInput;
+
 
 }

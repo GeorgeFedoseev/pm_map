@@ -17,6 +17,10 @@ public class TTPanelScript : CenterPanelScript {
 
 	bool _editMode = false;
 
+	bool _currentWeek = true;
+
+	float lastCurrentWeekScrollPos, lastNextWeekScrollPos;
+
 	public void Prepare(){
 		if (!firstLoadDone) {
 			UpdateContents ();
@@ -28,17 +32,25 @@ public class TTPanelScript : CenterPanelScript {
 	public void switchWeek(bool current, bool syncPos = true){		
 		if (loading)
 			return;
+
+
 		
-		if (syncPos) {
+		if (syncPos && current != _currentWeek) {
 			if (current) {
 				currentWeek.scrollRect.verticalNormalizedPosition = nextWeek.scrollRect.verticalNormalizedPosition;
 			} else {
 				nextWeek.scrollRect.verticalNormalizedPosition = currentWeek.scrollRect.verticalNormalizedPosition;
 			}
+		} else {
+			currentWeek.scrollRect.verticalNormalizedPosition = lastCurrentWeekScrollPos;
+			nextWeek.scrollRect.verticalNormalizedPosition = lastNextWeekScrollPos;
 		}
+
 
 		currentWeek.gameObject.SetActive (current);
 		nextWeek.gameObject.SetActive (!current);
+
+		_currentWeek = current;
 	}
 
 	public void switchValueChanged(bool notCurrent){
@@ -49,11 +61,7 @@ public class TTPanelScript : CenterPanelScript {
 		if (loading)
 			return;
 
-		if (editMode) {
-			Alerts.AskYesNo ("Режим редактирования", "Перейти в режим редактирования расписания?", ()=>{
-				Debug.LogWarning("Ok");
-			});
-		}
+	
 
 		_editMode = editMode;
 
@@ -80,13 +88,19 @@ public class TTPanelScript : CenterPanelScript {
 	}
 
 	public void downloadTimnetableClicked(){
-		Debug.LogWarning ("DOWNLOAD TIMETABLE");
-		app.closeTimetable ();
-		app.openTimtableTour ();
+		//Debug.LogWarning ("DOWNLOAD TIMETABLE");
+		Alerts.AskYesNo("Загрузка расписания", "Текущее расписание сотрется и будет загружено новое с сайта.", ()=>{
+			app.closeTimetable ();
+			app.openTimtableTour ();
+		}, null, "ОК", "ОТМЕНА");
+
 	}
 
-	void UpdateContents(bool editMode = false){
+	public void UpdateContents(bool editMode = false){
 		setLoading (true);
+
+		lastCurrentWeekScrollPos = currentWeek.scrollRect.verticalNormalizedPosition;
+		lastNextWeekScrollPos = nextWeek.scrollRect.verticalNormalizedPosition;
 
 		Loom.QueueOnMainThread (()=>{
 			currentWeek.gameObject.SetActive (true);
@@ -157,9 +171,9 @@ public class TTPanelScript : CenterPanelScript {
 
 				setLoading(false);
 
-				if(!firstLoadDone){
-					switchWeek (true, false);
-				}
+
+				switchWeek (_currentWeek, firstLoadDone);
+				
 
 				firstLoadDone = true;
 			}, 0.5f);

@@ -68,10 +68,60 @@ public class TimetableManger {
 		return ConfigStorage.hasKey ("tt_study_timetable_link");
 	}
 
+
+
+	public void updatePair(Pair oldPair, Pair newPair){
+		removePair (oldPair);
+		addPair (newPair);
+	}
+
+	public void removePair(Pair pair){
+		foreach (var d in currentWeek.days) {
+			if (d.pairs.Contains (pair)) {
+				d.pairs.Remove (pair);
+				Debug.LogWarning ("Pair removed in currentWeek");
+			}
+		}
+
+		foreach (var d in nextWeek.days) {
+			if (d.pairs.Contains (pair)) {
+				d.pairs.Remove (pair);
+				Debug.LogWarning ("Pair removed in nextWeek");
+			}
+		}
+
+		saveTimetableToDatabase (currentWeek, nextWeek);
+		restoreTimetableFromDatabase ();
+
+	}
+
+	public void addPair(Pair pair){
+		using (var db = new SQLiteConnection (db_path)) {		
+			var pr = new TimetableRecord ();
+			pr.weekType = WeekTimetable.GetIso8601WeekNumber(pair.day.Date)%2==0?WeekType.Even:WeekType.Odd;
+			pr.day = pair.day.DayOfWeek;
+			pr.startTime = pair.startTime;
+			pr.endTime = pair.endTime;
+			pr.name = pair.name;
+			pr.lecturer = pair.lecturer;
+			pr.location = pair.location;
+			pr.room = pair.room;
+
+			Debug.LogWarning ("ADDING PAIR: "+pair.name);
+
+			db.Insert (pr);	
+
+			db.Close();
+
+			//saveTimetableToDatabase (currentWeek, nextWeek);
+			restoreTimetableFromDatabase ();
+		}
+	}
+
 	public void restoreTimetableFromDatabase(){
 		// clear all 
 		//PlayerPrefs.DeleteAll();
-
+		Debug.LogWarning ("RESTORING TIMETABLE FROM DB");
 		using (var db = new SQLiteConnection(db_path)){						
 			var pairRecords = db.Query<TimetableRecord>("SELECT * FROM timetable");
 
@@ -100,15 +150,23 @@ public class TimetableManger {
 				}
 				w.getDayTimetable (p.day).pairs.Add (pair);
 			}
-
+							
 			currentWeek = w1;
 			nextWeek = w2;
+
+			// sort pairs
+			foreach(var d in currentWeek.days){
+				d.pairs.Sort( (p1,p2)=>p1.startTime.CompareTo(p2.startTime) );
+			}
+			foreach(var d in nextWeek.days){
+				d.pairs.Sort( (p1,p2)=>p1.startTime.CompareTo(p2.startTime) );
+			}
 
 			db.Close();
 		}
 	}
 
-	public void saveTimetableToDatabase(WeekTimetable w1, WeekTimetable w2){
+	private void saveTimetableToDatabase(WeekTimetable w1, WeekTimetable w2){
 		clearDb ();
 
 		using (var db = new SQLiteConnection (db_path)) {		

@@ -58,11 +58,30 @@ public class TTTimeScript : MonoBehaviour {
 			if (editMode) {
 				p.editButton.onClick.AddListener (()=>{
 					Alerts.editPair("Редактировать пару", pair,
-						(Pair newPair) => {
+						(Pair oldPair, Pair newPair) => {
 							Debug.LogWarning("UPDATE PAIR");
-						}
-					);
+							Loom.QueueOnMainThread(()=>{
+								app.timetableManager.updatePair(oldPair, newPair);
+								Loom.QueueOnMainThread(()=>{
+									app.timetablePanel.UpdateContents(true);
+								});
+							});
+
+
+
+					});
 				});
+
+				p.deleteButton.onClick.AddListener (()=>{		
+					Alerts.AskYesNo("Удаление пары", "Вы уверены, что хотите удалить пару?", ()=>{
+						app.timetableManager.removePair(pair);
+						Loom.QueueOnMainThread(()=>{
+							app.timetablePanel.UpdateContents(true);
+						});	
+					}, null, "УДАЛИТЬ", "ОТМЕНА", true);
+				});
+
+
 			} else {
 				p.locationButtonContainer.gameObject.SetActive (false);
 			}
