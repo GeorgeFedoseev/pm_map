@@ -20,7 +20,7 @@ public class TTWeekScript : MonoBehaviour {
 		}
 	}
 
-	public void addDay(DayTimetable day){
+	public void addDay(DayTimetable day, bool editMode = false){
 		var d = (Instantiate (Resources.Load("Prefabs/UI/schedule/Day")) as GameObject).GetComponent<TTDayScript>();		
 		d._day = day;
 		d.transform.SetParent (daysContainer);
@@ -45,16 +45,16 @@ public class TTWeekScript : MonoBehaviour {
 		var i = 0;
 		foreach (var t in timePairDict) {
 			var lastTime = i==timePairDict.Count-1;
-			d.addTime (t.Key, t.Value, lastTime);
+			d.addTime (t.Key, t.Value, lastTime, editMode);
 			i++;
 		}
 
 	}
 
-	public void updateLayout(){
+	public void UpdateLayout(bool editMode = false){
 
 		foreach (var t in daysContainer.GetComponentsInChildren<TTDayScript>()) {
-			t.updateLayout ();
+			t.UpdateLayout ();
 		}
 
 		var sumHeight = 0f;
@@ -62,7 +62,7 @@ public class TTWeekScript : MonoBehaviour {
 			sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
 			var day = t.GetComponent<TTDayScript> ();
 		}
-		Debug.LogWarning ("sumHeight for Week : "+sumHeight);
+//		Debug.LogWarning ("sumHeight for Week : "+sumHeight);
 
 		//GetComponent<LayoutElement> ().preferredHeight = sumHeight;
 	}

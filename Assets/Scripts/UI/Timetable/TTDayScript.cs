@@ -27,7 +27,7 @@ public class TTDayScript : MonoBehaviour {
 		}
 	}
 
-	public void addTime(string time, List<Pair> pairs, bool lastTime = false){
+	public void addTime(string time, List<Pair> pairs, bool lastTime = false, bool editMode = false){
 		var t = (Instantiate (Resources.Load("Prefabs/UI/schedule/Time")) as GameObject).GetComponent<TTTimeScript>();		
 		t.transform.SetParent (timesContainer);
 		t.transform.localScale = Vector3.one;
@@ -37,16 +37,16 @@ public class TTDayScript : MonoBehaviour {
 		var i = 0;
 		foreach(var p in pairs){
 			var lastPair = i == pairs.Count - 1;
-			t.addPair (p, lastTime && lastPair);
+			t.addPair (p, lastTime && lastPair, editMode);
 			i++;
 		}
 	}
 
 
-	public void updateLayout(){
+	public void UpdateLayout(){
 		
 		foreach (var t in timesContainer.GetComponentsInChildren<TTTimeScript>()) {
-			t.updateLayout ();
+			t.UpdateLayout ();
 		}
 
 		if (_day.day.Date == DateTime.Today) {
@@ -64,7 +64,7 @@ public class TTDayScript : MonoBehaviour {
 			sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
 		}
 
-		Debug.LogWarning ("sumHeight for Day : "+sumHeight);
+//		Debug.LogWarning ("sumHeight for Day : "+sumHeight);
 
 		GetComponent<LayoutElement> ().preferredHeight = sumHeight;
 	}

@@ -20,8 +20,8 @@ public class TTTimeScript : MonoBehaviour {
 		}
 	}
 
-	public void addPair(Pair pair, bool lastPair = false){
-		var p = (Instantiate (Resources.Load("Prefabs/UI/schedule/Pair")) as GameObject).GetComponent<TTPairScript>();		
+	public void addPair(Pair pair, bool lastPair = false, bool editMode = false){
+		var p = (Instantiate (Resources.Load("Prefabs/UI/schedule/Pair"+(editMode?"_editable":""))) as GameObject).GetComponent<TTPairScript>();		
 		p._pair = pair;
 		p.transform.SetParent (pairsContainer);
 		p.transform.localScale = Vector3.one;
@@ -32,14 +32,17 @@ public class TTTimeScript : MonoBehaviour {
 		if (lastPair)
 			p.divider.SetActive (false);
 
-		if (pair.now ()) {
-			p.nowCircle.SetActive (true);
-		} else {
-			p.nowCircle.SetActive (false);			
+		if (!editMode) {
+			if (pair.now ()) {
+				p.nowCircle.SetActive (true);
+			} else {
+				p.nowCircle.SetActive (false);			
+			}
 		}
 
+
 		// actions
-		if (app.facilities.hasRoom (pair.room)) {
+		if (!editMode && app.facilities.hasRoom (pair.room) ) {
 			p.locationText.gameObject.SetActive (false);
 			p.locationButtonContainer.gameObject.SetActive (true);
 
@@ -51,17 +54,21 @@ public class TTTimeScript : MonoBehaviour {
 			});
 		} else {
 			p.locationText.gameObject.SetActive (true);
-			p.locationButtonContainer.gameObject.SetActive (false);
+
+			if (!editMode) {
+				p.locationButtonContainer.gameObject.SetActive (false);
+			}
+
 		}
 	}
 
-	public void updateLayout(){
+	public void UpdateLayout(){
 		var sumHeight = timeTitle.rectTransform.rect.size.y;
 		foreach(Transform t in pairsContainer){			
 			sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
 		}
 
-		Debug.LogWarning ("sumHeight for Time: "+sumHeight);
+//		Debug.LogWarning ("sumHeight for Time: "+sumHeight);
 
 		//Debug.LogWarning ("component is null: "+(GetComponent ("LayoutElement")==null));
 		GetComponent<LayoutElement> ().preferredHeight = sumHeight;

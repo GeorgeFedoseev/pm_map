@@ -15,8 +15,13 @@ public class TTPanelScript : CenterPanelScript {
 
 	bool firstLoadDone = false;
 
-	void Start(){		
-		UpdateContents ();
+	bool _editMode = false;
+
+	public void Prepare(){
+		if (!firstLoadDone) {
+			UpdateContents ();
+		}
+			
 	}
 
 
@@ -43,6 +48,8 @@ public class TTPanelScript : CenterPanelScript {
 	public void switchToMode(bool editMode){
 		if (loading)
 			return;
+
+		_editMode = editMode;
 
 		if (editMode) {
 			title.text = "Расписание (ред.)";
@@ -75,35 +82,38 @@ public class TTPanelScript : CenterPanelScript {
 	void UpdateContents(bool editMode = false){
 		setLoading (true);
 
-		currentWeek.gameObject.SetActive (true);
-		nextWeek.gameObject.SetActive (true);
+		Loom.QueueOnMainThread (()=>{
+			currentWeek.gameObject.SetActive (true);
+			nextWeek.gameObject.SetActive (true);
 
-		currentWeek.clear ();
-		nextWeek.clear ();
-
-
-		editButton.gameObject.SetActive (!editMode);
-		doneButton.gameObject.SetActive (editMode);
-
-		downloadButton.gameObject.SetActive (editMode);
-		 
+			currentWeek.clear ();
+			nextWeek.clear ();
 
 
-		foreach(var d in app.timetableManager.currentWeek.days){
-			currentWeek.addDay (d);
-		}
-
-		foreach(var d in app.timetableManager.nextWeek.days){
-			nextWeek.addDay (d);
-		}
+			editButton.gameObject.SetActive (!editMode);
+			doneButton.gameObject.SetActive (editMode);
+			downloadButton.gameObject.SetActive (editMode);
 
 
-		UpdateLayout ();
-		switchWeek (true, false);
+			Loom.QueueOnMainThread (()=>{
+				foreach(var d in app.timetableManager.currentWeek.days){
+					currentWeek.addDay (d, editMode);
+				}
+
+				foreach(var d in app.timetableManager.nextWeek.days){
+					nextWeek.addDay (d, editMode);
+				}
+
+
+				UpdateLayout (editMode);
+
+			});
+		});
+
 	}
 
 
-	void UpdateLayout(){
+	void UpdateLayout(bool editMode = false){
 		foreach (var c in GetComponentsInChildren<LayoutElement>()) {
 			c.enabled = true;
 		}
@@ -123,8 +133,8 @@ public class TTPanelScript : CenterPanelScript {
 		nextWeek.GetComponent<LayoutElement> ().preferredHeight = GetComponent<RectTransform> ().rect.height;
 
 		Loom.QueueOnMainThread (()=>{
-			currentWeek.updateLayout ();
-			nextWeek.updateLayout ();
+			currentWeek.UpdateLayout (editMode);
+			nextWeek.UpdateLayout (editMode);
 
 			Loom.QueueOnMainThread (()=>{
 				foreach (var c in GetComponentsInChildren<LayoutElement>()) {
@@ -140,6 +150,11 @@ public class TTPanelScript : CenterPanelScript {
 				}
 
 				setLoading(false);
+
+				if(!firstLoadDone){
+					switchWeek (true, false);
+				}
+
 				firstLoadDone = true;
 			}, 0.5f);
 		}, 0.5f);

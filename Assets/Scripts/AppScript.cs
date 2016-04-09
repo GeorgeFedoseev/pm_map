@@ -33,6 +33,8 @@ public class AppScript : MonoBehaviour {
 	[HideInInspector]
 	public Transform centerPanelContainer;
 
+	//private TTPanelScript timetablePanel;
+
 	void Awake(){
 		canvas = GameObject.FindObjectOfType<Canvas> ();
 		cam = GetComponent<CameraScript> ();
@@ -52,12 +54,15 @@ public class AppScript : MonoBehaviour {
 		openTimetableButton = GameObject.Find ("OpenTimetableButton").GetComponent<RectTransform> ();
 
 		Application.targetFrameRate = 30;
+
+
+		clearCenterPanelContainer ();
 	}
 
 	void Start () {
 		facilities.initFacilities ();
 
-		clearCenterPanelContainer ();
+
 		switchToFloor (1);
 
 		openTimetable ();
@@ -103,7 +108,7 @@ public class AppScript : MonoBehaviour {
 		}
 	}
 
-	private void loadCenterPanel(string name){
+	private GameObject loadCenterPanel(string name){
 		clearCenterPanelContainer ();
 
 		var go = Instantiate (Resources.Load("Prefabs/UI/CenterPanels/"+name)) as GameObject;
@@ -112,6 +117,8 @@ public class AppScript : MonoBehaviour {
 		rect.transform.localScale = Vector3.one;
 		rect.sizeDelta = Vector2.zero;
 		rect.anchoredPosition = Vector2.zero;
+
+		return go;
 	}
 
 
@@ -125,7 +132,7 @@ public class AppScript : MonoBehaviour {
 		}
 
 		if (timetableManager.hasTimetable ()) {
-			loadCenterPanel ("TimetableCenterPanel");
+			loadCenterPanel ("TimetableCenterPanel").GetComponent<TTPanelScript> ().Prepare ();
 		} else {
 			// tour for getting timetable link
 			openTimtableTour();
