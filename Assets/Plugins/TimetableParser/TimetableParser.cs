@@ -109,7 +109,7 @@ public class DayTimetable {
 }
 
 public class Pair {
-	private DateTime day;
+	public DateTime day;
 
 	public string name;
 	public string time;

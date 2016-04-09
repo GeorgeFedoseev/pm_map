@@ -108,7 +108,7 @@ public class TimetableManger {
 		}
 	}
 
-	private void saveTimetableToDatabase(WeekTimetable w1, WeekTimetable w2){
+	public void saveTimetableToDatabase(WeekTimetable w1, WeekTimetable w2){
 		clearDb ();
 
 		using (var db = new SQLiteConnection (db_path)) {		

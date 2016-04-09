@@ -13,4 +13,7 @@ public class TTPairScript : MonoBehaviour {
 
 	public GameObject divider;
 	public GameObject nowCircle;
+
+	// EDITABLE
+	public Button editButton, deleteButton;
 }

@@ -49,6 +49,12 @@ public class TTPanelScript : CenterPanelScript {
 		if (loading)
 			return;
 
+		if (editMode) {
+			Alerts.AskYesNo ("Режим редактирования", "Перейти в режим редактирования расписания?", ()=>{
+				Debug.LogWarning("Ok");
+			});
+		}
+
 		_editMode = editMode;
 
 		if (editMode) {

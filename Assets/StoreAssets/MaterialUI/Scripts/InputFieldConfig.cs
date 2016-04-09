@@ -114,6 +114,13 @@ namespace MaterialUI
 			state = 2;
 		}
 
+		public void Refresh(){
+			OnSelect (null);
+			Loom.QueueOnMainThread (()=>{
+				OnDeselect(null);
+			}, animationDuration);
+		}
+
 		public void CalculateHeight ()
 		{
 			StartCoroutine (DelayedHeight());

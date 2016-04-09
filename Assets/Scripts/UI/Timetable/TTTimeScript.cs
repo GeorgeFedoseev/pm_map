@@ -55,7 +55,15 @@ public class TTTimeScript : MonoBehaviour {
 		} else {
 			p.locationText.gameObject.SetActive (true);
 
-			if (!editMode) {
+			if (editMode) {
+				p.editButton.onClick.AddListener (()=>{
+					Alerts.editPair("Редактировать пару", pair,
+						(Pair newPair) => {
+							Debug.LogWarning("UPDATE PAIR");
+						}
+					);
+				});
+			} else {
 				p.locationButtonContainer.gameObject.SetActive (false);
 			}
 
