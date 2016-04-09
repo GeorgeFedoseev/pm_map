@@ -33,6 +33,9 @@ public class AppScript : MonoBehaviour {
 	[HideInInspector]
 	public Transform centerPanelContainer;
 
+	[HideInInspector]
+	public TTPanelScript timetablePanel;
+
 	void Awake(){
 		canvas = GameObject.FindObjectOfType<Canvas> ();
 		cam = GetComponent<CameraScript> ();
@@ -51,20 +54,33 @@ public class AppScript : MonoBehaviour {
 
 		openTimetableButton = GameObject.Find ("OpenTimetableButton").GetComponent<RectTransform> ();
 
-		Application.targetFrameRate = 60;
+		Application.targetFrameRate = 30;
+
+
+		clearCenterPanelContainer ();
 	}
 
 	void Start () {
 		facilities.initFacilities ();
 
-		clearCenterPanelContainer ();
+
 		switchToFloor (1);
+
+		openTimetable ();
 	}
 	
 
 	void Update () {
 		
 
+	}
+
+	public void disableCamera(){
+		cam.enabled = false;	
+	}
+
+	public void enableCamera(){
+		cam.enabled = true;
 	}
 
 	public void switchToFloor(int floor){
@@ -87,7 +103,13 @@ public class AppScript : MonoBehaviour {
 		}
 	}
 
-	private void loadCenterPanel(string name){
+	public void disableAllInCentralPanelContainer(){
+		foreach(Transform t in centerPanelContainer){
+			t.gameObject.SetActive (false);
+		}
+	}
+
+	private GameObject loadCenterPanel(string name){
 		clearCenterPanelContainer ();
 
 		var go = Instantiate (Resources.Load("Prefabs/UI/CenterPanels/"+name)) as GameObject;
@@ -96,21 +118,39 @@ public class AppScript : MonoBehaviour {
 		rect.transform.localScale = Vector3.one;
 		rect.sizeDelta = Vector2.zero;
 		rect.anchoredPosition = Vector2.zero;
+
+		return go;
 	}
 
 
 	// TIMETABLE
 	public void openTimetable(){
+		foreach (Transform t in centerPanelContainer) {
+			if (t.gameObject.GetComponent<TTPanelScript> () != null) {
+				t.gameObject.SetActive (true);
+				return;
+			}
+		}
+
 		if (timetableManager.hasTimetable ()) {
-			loadCenterPanel ("TimetableCenterPanel");
+			timetablePanel = loadCenterPanel ("TimetableCenterPanel").GetComponent<TTPanelScript> ();
+			timetablePanel.Prepare ();
 		} else {
 			// tour for getting timetable link
-			loadCenterPanel ("LoadTimetableCenterPanel");
-			Debug.LogWarning ("Hello!");
+			openTimtableTour();
 		}
+
+		//disableCamera ();
+	}
+
+
+
+	public void openTimtableTour(){
+		loadCenterPanel ("LoadTimetableCenterPanel");
 	}
 
 	public void closeTimetable(){
-		clearCenterPanelContainer ();
+		disableAllInCentralPanelContainer ();
+		//enableCamera ();
 	}
 }

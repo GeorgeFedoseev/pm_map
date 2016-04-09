@@ -25,7 +25,7 @@ public class WeekTimetable {
 		days = new List<DayTimetable> ();
 	}
 
-	private static int GetIso8601WeekNumber(DateTime date)
+	public static int GetIso8601WeekNumber(DateTime date)
 	{    var thursday = date.AddDays(3 - ((int)date.DayOfWeek + 6) % 7);
 		return 1 + (thursday.DayOfYear - 1) / 7;
 	}
@@ -109,7 +109,7 @@ public class DayTimetable {
 }
 
 public class Pair {
-	private DateTime day;
+	public DateTime day;
 
 	public string name;
 	public string time;
@@ -132,6 +132,14 @@ public class Pair {
 		parseTime ();
 	}
 
+	public bool now(){
+		var now = DateTime.Now;
+		if (now >= startTime && now <= endTime) {
+			return true;
+		}
+
+		return false;
+	}
 
 	private void parseRoom(){		
 		var parser = new Regex(@", ([A-Za-zА-Яа-я \/0-9]*)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);

@@ -3119,7 +3119,7 @@ namespace SQLite
             var r = Prepare2(db, query, query.Length, out stmt, IntPtr.Zero);
             if (r != Result.OK)
             {
-                throw SQLiteException.New(r, GetErrmsg(db));
+				throw SQLiteException.New(r, GetErrmsg(db)+" Query: "+query);
             }
             return stmt;
         }

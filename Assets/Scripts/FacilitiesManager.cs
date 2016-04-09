@@ -74,6 +74,15 @@ public class FacilitiesManager {
 		}
 	}
 
+	public bool hasRoom(string room){
+		var res = facilities_db.getRoom (room);
+		if (res != null) {
+			return true;
+		}
+
+		return false;
+	}
+
 	public void goToRoom(string room){
 		var res = facilities_db.getRoom (room);
 		if (res != null) {

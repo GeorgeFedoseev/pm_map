@@ -2,17 +2,23 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 public class TTDayScript : MonoBehaviour {
 
+	public DayTimetable _day;
+
 	public Text dayTitle;
+	public Text date;
+
 	public Transform timesContainer;
+	public RectTransform todayBadge;
+
+
 
 
 	void Awake(){
 		clear ();
-
-		dayTitle.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
 	}
 
 	private void clear(){
@@ -21,47 +27,45 @@ public class TTDayScript : MonoBehaviour {
 		}
 	}
 
-	public void addTime(string time, List<Pair> pairs){
-		var t = (Instantiate (Resources.Load("Prefabs/UI/schedule/time_row")) as GameObject).GetComponent<TTTimeScript>();		
+	public void addTime(string time, List<Pair> pairs, bool lastTime = false, bool editMode = false){
+		var t = (Instantiate (Resources.Load("Prefabs/UI/schedule/Time")) as GameObject).GetComponent<TTTimeScript>();		
 		t.transform.SetParent (timesContainer);
 		t.transform.localScale = Vector3.one;
 
-		t.time.text = time;
+		t.timeTitle.text = time;
+
+		var i = 0;
 		foreach(var p in pairs){
-			t.addPair (p);
+			var lastPair = i == pairs.Count - 1;
+			t.addPair (p, lastTime && lastPair, editMode);
+			i++;
 		}
 	}
 
 
-	public void updateLayout(){
-		var app = AppScript.getSharedInstance ();
-		dayTitle.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
-		timesContainer.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, -30);
-
-		var sd = timesContainer.GetComponent<RectTransform> ().sizeDelta;
-		sd.x = 0;
-		timesContainer.GetComponent<RectTransform> ().sizeDelta = sd;
-
-
+	public void UpdateLayout(){
+		
 		foreach (var t in timesContainer.GetComponentsInChildren<TTTimeScript>()) {
-			t.updateLayout ();
+			t.UpdateLayout ();
 		}
 
-		var sumHeight = 0f;
-		foreach(Transform t in timesContainer){
-			t.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, -sumHeight+50f);
-			Debug.LogWarning ("sumHeight: "+sumHeight);
-			sumHeight += t.GetComponent<RectTransform> ().rect.height;
+		if (_day.day.Date == DateTime.Today) {
+			todayBadge.gameObject.SetActive (true);
+			todayBadge.anchoredPosition = new Vector2 (dayTitle.preferredWidth + 20f, todayBadge.anchoredPosition.y);	
+		} else {
+			todayBadge.gameObject.SetActive (false);
 		}
 
-		timesContainer.GetComponent<RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, sumHeight);
 
 
-		GetComponent<LayoutElement> ().preferredHeight = sumHeight-20f;
+		var sumHeight = dayTitle.rectTransform.rect.size.y + timesContainer.GetComponent<VerticalLayoutGroup> ().padding.bottom;
 
+		foreach(Transform t in timesContainer){						
+			sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
+		}
 
-		//GetComponent<LayoutElement> ().preferredWidth = Screen.width;
+//		Debug.LogWarning ("sumHeight for Day : "+sumHeight);
 
-
+		GetComponent<LayoutElement> ().preferredHeight = sumHeight;
 	}
 }

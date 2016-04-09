@@ -4,11 +4,13 @@ using UnityEngine.UI;
 
 
 public class TTTimeScript : MonoBehaviour {
+	AppScript app;
 
-	public Text time;
+	public Text timeTitle;
 	public Transform pairsContainer;
 
 	void Awake(){
+		app = AppScript.getSharedInstance ();
 		clear ();
 	}
 
@@ -18,43 +20,84 @@ public class TTTimeScript : MonoBehaviour {
 		}
 	}
 
-	public void addPair(Pair pair){
-		var p = (Instantiate (Resources.Load("Prefabs/UI/schedule/pair_row")) as GameObject).GetComponent<TTPairScript>();		
+	public void addPair(Pair pair, bool lastPair = false, bool editMode = false){
+		var p = (Instantiate (Resources.Load("Prefabs/UI/schedule/Pair"+(editMode?"_editable":""))) as GameObject).GetComponent<TTPairScript>();		
+		p._pair = pair;
 		p.transform.SetParent (pairsContainer);
 		p.transform.localScale = Vector3.one;
 
-		p.name.text = pair.name;
-		p.location.text = "["+pair.room+"]";
-		p.room = pair.room;
-	}
+		p.pairTitle.text = pair.name;
+		p.locationText.text = pair.room;
 
-	public void updateLayout(){
-//		foreach (var t in pairsContainer.GetComponentsInChildren<TTPairScript>()) {
-//			t.updateLayout ();
-//		}
+		if (lastPair)
+			p.divider.SetActive (false);
 
-		time.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
-		pairsContainer.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, -30);
-
-		time.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
-
-		var sd = pairsContainer.GetComponent<RectTransform> ().sizeDelta;
-		sd.x = 0;
-		pairsContainer.GetComponent<RectTransform> ().sizeDelta = sd;
-
-		var sd2 = GetComponent<RectTransform> ().sizeDelta;
-		sd2.x = 0;
-		GetComponent<RectTransform> ().sizeDelta = sd2;
-
-		var sumHeight = 0f;
-		foreach(Transform t in pairsContainer){
-			t.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, -sumHeight+50);
-			sumHeight += t.GetComponent<RectTransform> ().rect.height;
+		if (!editMode) {
+			if (pair.now ()) {
+				p.nowCircle.SetActive (true);
+			} else {
+				p.nowCircle.SetActive (false);			
+			}
 		}
 
-		GetComponent<RectTransform> ().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, sumHeight);
-		//GetComponent<RectTransform> ().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Screen.width);
+
+		// actions
+		if (!editMode && app.facilities.hasRoom (pair.room) ) {
+			p.locationText.gameObject.SetActive (false);
+			p.locationButtonContainer.gameObject.SetActive (true);
+
+			// setup button
+			p.locationButtonLabel.text = pair.room;
+			p.locationButton.onClick.AddListener (() => {
+				app.closeTimetable();
+				app.facilities.goToRoom(pair.room);
+			});
+		} else {
+			p.locationText.gameObject.SetActive (true);
+
+			if (editMode) {
+				p.editButton.onClick.AddListener (()=>{
+					Alerts.editPair("Редактировать пару", pair,
+						(Pair oldPair, Pair newPair) => {
+							Debug.LogWarning("UPDATE PAIR");
+							Loom.QueueOnMainThread(()=>{
+								app.timetableManager.updatePair(oldPair, newPair);
+								Loom.QueueOnMainThread(()=>{
+									app.timetablePanel.UpdateContents(true);
+								});
+							});
 
 
+
+					});
+				});
+
+				p.deleteButton.onClick.AddListener (()=>{		
+					Alerts.AskYesNo("Удаление пары", "Вы уверены, что хотите удалить пару?", ()=>{
+						app.timetableManager.removePair(pair);
+						Loom.QueueOnMainThread(()=>{
+							app.timetablePanel.UpdateContents(true);
+						});	
+					}, null, "УДАЛИТЬ", "ОТМЕНА", true);
+				});
+
+
+			} else {
+				p.locationButtonContainer.gameObject.SetActive (false);
+			}
+
+		}
+	}
+
+	public void UpdateLayout(){
+		var sumHeight = timeTitle.rectTransform.rect.size.y;
+		foreach(Transform t in pairsContainer){			
+			sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
+		}
+
+//		Debug.LogWarning ("sumHeight for Time: "+sumHeight);
+
+		//Debug.LogWarning ("component is null: "+(GetComponent ("LayoutElement")==null));
+		GetComponent<LayoutElement> ().preferredHeight = sumHeight;
 	}
 }

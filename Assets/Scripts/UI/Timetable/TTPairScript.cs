@@ -3,13 +3,17 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class TTPairScript : MonoBehaviour {
+	public Pair _pair;
 
-	public Text name, location;
-	public string room;
+	public Text pairTitle, locationText;
 
-	public void goToRoom(){
-		var app = AppScript.getSharedInstance ();
-		app.facilities.goToRoom (room);
-		app.closeTimetable ();
-	}
+	public GameObject locationButtonContainer;
+	public Button locationButton;
+	public Text locationButtonLabel;
+
+	public GameObject divider;
+	public GameObject nowCircle;
+
+	// EDITABLE
+	public Button editButton, deleteButton;
 }
