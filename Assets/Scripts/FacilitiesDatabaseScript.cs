@@ -29,7 +29,7 @@ public class FacilitiesDatabaseScript {
 	private string db_path;
 	
 	public FacilitiesDatabaseScript(){
-		db_path = Constants.getDBPath ("data.db");			
+		db_path = Constants.getDBPath ("facilities.db");			
 		Debug.LogWarning ("db_path: "+db_path);
 	}
 
