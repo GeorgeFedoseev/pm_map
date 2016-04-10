@@ -25,6 +25,15 @@ public class WeekTimetable {
 		days = new List<DayTimetable> ();
 	}
 
+	public WeekTimetable Clone(){
+		var nw = new WeekTimetable (weekStartDay);
+		foreach (var d in days) {
+			nw.days.Add (d.Clone());
+		}
+
+		return nw;
+	}
+
 	public static int GetIso8601WeekNumber(DateTime date)
 	{    var thursday = date.AddDays(3 - ((int)date.DayOfWeek + 6) % 7);
 		return 1 + (thursday.DayOfYear - 1) / 7;
@@ -73,11 +82,18 @@ public class DayTimetable {
 	public DateTime day;
 	public List<Pair> pairs;
 
-
-
 	public DayTimetable(DateTime _day){
 		day = _day;
 		pairs = new List<Pair> ();
+	}
+
+	public DayTimetable Clone(){
+		var nd = new DayTimetable (day);
+		foreach (var p in pairs) {
+			nd.pairs.Add (p.Clone());
+		}
+
+		return nd;
 	}
 
 	public string getTranslatedDay(){
@@ -130,6 +146,11 @@ public class Pair {
 
 		parseRoom ();
 		parseTime ();
+	}
+
+	public Pair Clone(){
+		var np = new Pair (day, name, time, location, lecturer);
+		return np;
 	}
 
 	public bool now(){

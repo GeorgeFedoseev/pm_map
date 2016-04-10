@@ -6,7 +6,7 @@ public class TTPanelScript : CenterPanelScript {
 	
 	public TTWeekScript currentWeek, nextWeek;
 
-	public Button editButton, doneButton, downloadButton;
+	public Button editButton, doneButton, downloadButton, undoButton;
 
 	public Toggle switchWeekToggle;
 	public GameObject loadingOverlay;
@@ -84,7 +84,13 @@ public class TTPanelScript : CenterPanelScript {
 
 		editButton.interactable = !_loading;
 		doneButton.interactable = !_loading;
+		downloadButton.interactable = !_loading;
+		undoButton.interactable = !_loading;
+	}
 
+	public void undoClicked(){
+		app.timetableManager.undo ();
+		UpdateContents (true);
 	}
 
 	public void downloadTimnetableClicked(){
@@ -113,6 +119,7 @@ public class TTPanelScript : CenterPanelScript {
 			editButton.gameObject.SetActive (!editMode);
 			doneButton.gameObject.SetActive (editMode);
 			downloadButton.gameObject.SetActive (editMode);
+			undoButton.gameObject.SetActive(editMode && app.timetableManager.historyHasPrevState());
 
 
 			Loom.QueueOnMainThread (()=>{
