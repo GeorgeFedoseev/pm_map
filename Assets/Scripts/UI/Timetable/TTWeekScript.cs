@@ -48,7 +48,13 @@ public class TTWeekScript : MonoBehaviour {
 			d.addTime (t.Key, t.Value, lastTime, editMode);
 			i++;
 		}
+	}
 
+	public void addAddPairButton(){
+		var add_pair_button = (Instantiate (Resources.Load("Prefabs/UI/schedule/Add_pair")) as GameObject).GetComponent<TTAddPairButtonScript>();		
+		add_pair_button.transform.SetParent (daysContainer);
+		add_pair_button.transform.localScale = Vector3.one;
+		add_pair_button.week = _week;
 	}
 
 	public void UpdateLayout(bool editMode = false){

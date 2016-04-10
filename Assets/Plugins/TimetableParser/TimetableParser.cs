@@ -97,6 +97,10 @@ public class DayTimetable {
 	}
 
 	public string getTranslatedDay(){
+		return getTranslatedDay (day);
+	}
+
+	public static string getTranslatedDay(DateTime day){
 		switch (day.DayOfWeek) {
 		case DayOfWeek.Monday:
 			return "Понедельник";
@@ -137,6 +141,7 @@ public class Pair {
 	public DateTime startTime;
 	public DateTime endTime;
 
+
 	public Pair(DateTime _day, string _name, string _time, string _location, string _lecturer){
 		day = _day;
 		name = _name;
@@ -144,7 +149,8 @@ public class Pair {
 		location = _location;
 		lecturer = _lecturer;
 
-		parseRoom ();
+
+		parseRoom ();					
 		parseTime ();
 	}
 
@@ -152,6 +158,7 @@ public class Pair {
 		var np = new Pair (day, name, time, location, lecturer);
 		return np;
 	}
+
 
 	public bool now(){
 		var now = DateTime.Now;
@@ -166,6 +173,8 @@ public class Pair {
 		var parser = new Regex(@", ([A-Za-zА-Яа-я \/0-9]*)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 		//Console.WriteLine ("Location: "+location);
 		room = parser.Match (location).Groups [1].Value;
+
+	
 		//Console.WriteLine ("Room: "+room);
 	}
 

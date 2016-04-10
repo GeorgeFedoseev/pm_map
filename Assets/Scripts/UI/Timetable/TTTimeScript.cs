@@ -27,7 +27,11 @@ public class TTTimeScript : MonoBehaviour {
 		p.transform.localScale = Vector3.one;
 
 		p.pairTitle.text = pair.name;
-		p.locationText.text = pair.room;
+
+		var hasThisRoom = app.facilities.hasRoom (pair.room);
+
+
+		p.locationText.text = hasThisRoom?pair.room:pair.location;
 
 		if (lastPair)
 			p.divider.SetActive (false);
@@ -42,7 +46,7 @@ public class TTTimeScript : MonoBehaviour {
 
 
 		// actions
-		if (!editMode && app.facilities.hasRoom (pair.room) ) {
+		if (!editMode && hasThisRoom ) {
 			p.locationText.gameObject.SetActive (false);
 			p.locationButtonContainer.gameObject.SetActive (true);
 
@@ -54,6 +58,7 @@ public class TTTimeScript : MonoBehaviour {
 			});
 		} else {
 			p.locationText.gameObject.SetActive (true);
+			p.locationText.text = hasThisRoom?pair.room:pair.location;
 
 			if (editMode) {
 				p.editButton.onClick.AddListener (()=>{

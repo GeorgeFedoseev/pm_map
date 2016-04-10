@@ -56,8 +56,11 @@ public class Alerts : MonoBehaviour {
 		});
 
 
-		current.yesNoDialog.yesButton.GetComponent<Image> ().color = redYes ? new Color (255f/255f, 32f/255f, 0f/255f) : new Color (225f/255f, 225f/255f, 225f/255f);
-		current.yesNoDialog.yesTitle.color = redYes ? Color.white : new Color (32f/255f, 32f/255f, 32f/255f);
+		Loom.QueueOnMainThread (()=>{
+			current.yesNoDialog.yesButton.GetComponent<Image> ().color = redYes ? new Color (255f/255f, 32f/255f, 0f/255f) : new Color (225f/255f, 225f/255f, 225f/255f);
+			current.yesNoDialog.yesTitle.color = redYes ? Color.white : new Color (32f/255f, 32f/255f, 32f/255f);	
+		});
+
 
 
 
@@ -70,7 +73,18 @@ public class Alerts : MonoBehaviour {
 		current.overlay.gameObject.SetActive (true);
 		current.editPairDialog.gameObject.SetActive (true);
 
-		current.editPairDialog.wrongInput.text = "";
+		current.editPairDialog.wrongInput.text = "заполните все поля со *";
+
+
+		current.editPairDialog.selectedDayOfWeek = pair.day.DayOfWeek;
+
+		//current.editPairDialog.selectionBox.Setup ();
+		//current.editPairDialog.selectionBox.ContractList ();
+		Loom.QueueOnMainThread(()=>{
+			current.editPairDialog.selectionBox.Select((int)pair.day.DayOfWeek - 1);	
+		}, 0.1f);
+
+
 
 
 		Loom.QueueOnMainThread (()=>{
@@ -130,22 +144,137 @@ public class Alerts : MonoBehaviour {
 				return;
 			}
 
+			var weekStartDay = pair.day.AddDays(-(int)(pair.day.DayOfWeek-1)).Date;
+
 
 
 			var newPair = new Pair(
-				pair.day,
+				weekStartDay.AddDays ((int)current.editPairDialog.selectedDayOfWeek - 1).Date,
 				current.editPairDialog.name.text,
 				current.editPairDialog.startTime.text + "–" + current.editPairDialog.endTime.text,
 				current.editPairDialog.location.text,
 				current.editPairDialog.lecturer.text
 			);
 
+
+			// location
+			var app = AppScript.getSharedInstance();
+			if(newPair.room == "" || newPair.room == null){
+				if(app.facilities.hasRoom(newPair.location.Trim())){
+					newPair.room = newPair.location.Trim();	
+					//Debug.LogWarning("ROOM "+newPair.room+" EXISTS");
+				}
+			}
+
 			yesAction(pair, newPair);
 
 			hideAll();
+		});		
+	}
+
+	public static void addPair(string title, WeekTimetable week, Action<Pair> yesAction, string okButtonTitle = "ДОБАВИТЬ", string cancelButtonTitle = "ОТМЕНА"){
+		hideAll ();
+
+		current.overlay.gameObject.SetActive (true);
+		current.editPairDialog.gameObject.SetActive (true);
+
+		current.editPairDialog.wrongInput.text = "заполните все поля со *";
+
+
+		current.editPairDialog.selectedDayOfWeek = DayOfWeek.Sunday;
+		current.editPairDialog.selectionBox.Setup ();
+
+
+		Loom.QueueOnMainThread (()=>{
+			current.editPairDialog.title.text = title;
+
+			current.editPairDialog.startTime.text = "";
+			current.editPairDialog.startTime.GetComponent<InputFieldConfig>().Refresh();
+
+
+			current.editPairDialog.endTime.text = "";
+			current.editPairDialog.endTime.GetComponent<InputFieldConfig>().Refresh();
+
+			current.editPairDialog.name.text = "";
+			current.editPairDialog.name.GetComponent<InputFieldConfig>().Refresh();
+
+			current.editPairDialog.location.text = "";
+			current.editPairDialog.location.GetComponent<InputFieldConfig>().Refresh();
+
+			current.editPairDialog.lecturer.text = "";
+			current.editPairDialog.lecturer.GetComponent<InputFieldConfig>().Refresh();
+
+			current.editPairDialog.okButtonTitle.text = okButtonTitle;
+			current.editPairDialog.cancelButtonTitle.text = cancelButtonTitle;
 		});
 
-		
+		current.editPairDialog.okButton.onClick.RemoveAllListeners ();
+		current.editPairDialog.cancelButton.onClick.RemoveAllListeners ();
+
+		current.editPairDialog.cancelButton.onClick.AddListener (()=>{hideAll();});
+
+		current.editPairDialog.okButton.onClick.AddListener (()=>{
+			// first validate
+			current.editPairDialog.wrongInput.text = "";
+
+			if(current.editPairDialog.selectedDayOfWeek == DayOfWeek.Sunday){
+				current.editPairDialog.wrongInput.text = "выберите день недели";
+				return;
+			}
+
+
+			var provider = System.Globalization.CultureInfo.GetCultureInfo("ru-RU");
+			var dateTimeStyle = System.Globalization.DateTimeStyles.AssumeLocal;
+			DateTime tryParseDateTimeResult;
+
+			if(!DateTime.TryParseExact(current.editPairDialog.startTime.text, "HH:mm", provider, dateTimeStyle, out tryParseDateTimeResult)){
+				current.editPairDialog.wrongInput.text = "неверный формат начального времени, пример: 09:30";
+				return;
+			}
+
+			if(!DateTime.TryParseExact(current.editPairDialog.endTime.text, "HH:mm", provider, dateTimeStyle, out tryParseDateTimeResult)){
+				current.editPairDialog.wrongInput.text = "неверный формат конечного времени, пример: 09:30";
+				return;
+			}
+
+			if(current.editPairDialog.name.text.Length < 3){
+				current.editPairDialog.wrongInput.text = "плохое нзвание пары";
+				return;
+			}
+
+			if(current.editPairDialog.location.text.Length == 0){
+				current.editPairDialog.wrongInput.text = "введите место или кабинет";
+				return;
+			}
+
+			Debug.LogWarning("week̉̉ "+week+"  is nulL: "+(week == null?"YES":"NO"));
+			Debug.LogWarning("weekStartDay "+week.weekStartDay+"  is nulL: "+(week.weekStartDay == null?"YES":"NO"));
+			Debug.LogWarning("selected day "+current.editPairDialog.selectedDayOfWeek+" is nulL: "+(current.editPairDialog.selectedDayOfWeek == null?"YES":"NO"));
+			var newPair = new Pair(
+				week.weekStartDay.AddDays ((int)current.editPairDialog.selectedDayOfWeek - 1).Date, // day
+				current.editPairDialog.name.text,
+				current.editPairDialog.startTime.text + "–" + current.editPairDialog.endTime.text,
+				current.editPairDialog.location.text,
+				current.editPairDialog.lecturer.text
+			);
+
+			// location
+			var app = AppScript.getSharedInstance();
+			if(newPair.room == "" || newPair.room == null){
+				if(app.facilities.hasRoom(newPair.location.Trim())){
+					newPair.room = newPair.location.Trim();	
+				}else{
+					Debug.LogWarning("BBB");
+				}
+			}else{
+				Debug.LogWarning("AAA");
+			}
+
+			yesAction(newPair);
+
+
+			hideAll();
+		});		
 	}
 
 	// Use this for initialization

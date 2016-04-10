@@ -44,8 +44,14 @@ namespace MaterialUI
 		private int contractedNormalShadow;
 		private int contractedHoverShadow;
 
+
+
 		[Space(12f)]
+
+
 		public string[] listItems;
+
+		public string defaultText = "ВЫБРАТЬ";
 		[Header("List options")]
 		public bool autoMaxItemHeight;
 		public float percentageOfScreenHeight = 50f;
@@ -138,7 +144,7 @@ namespace MaterialUI
 
 			listLayer.GetComponent<RectTransform> ().anchoredPosition = Vector2.zero;
 
-			selectedText.text = "ВЫБРАТЬ";
+			selectedText.text = defaultText;
 //			Debug.LogWarning ("LIST HEIGHT: "+listheight);
 //			Debug.LogWarning ("LIST LAYER HEIGHT: "+listLayerHeight);
 
@@ -147,8 +153,12 @@ namespace MaterialUI
 			contractedListColor = thisImage.color;
 			normalColor = expandedListColor;
 
-			contractedNormalShadow = shadowConfig.shadowNormalSize;
-			contractedHoverShadow = shadowConfig.shadowActiveSize;
+
+			if (shadowConfig != null) {
+				contractedNormalShadow = shadowConfig.shadowNormalSize;
+				contractedHoverShadow = shadowConfig.shadowActiveSize;
+			}
+
 
 			if (textLine)
 				textLineAlpha = textLine.color.a;
@@ -270,15 +280,20 @@ namespace MaterialUI
 				hasShadows = false;
 			}
 
-			contractedShadowLevel = shadowConfig.shadowNormalSize;
+			if (shadowConfig != null) {
+				contractedShadowLevel = shadowConfig.shadowNormalSize;
+			}
+
 
 			if (!rippleConfig)
 				rippleConfig = gameObject.GetComponent<RippleConfig> ();
 			if (!thisButton)
 				thisButton = gameObject.GetComponent<Button> ();
 
-			shadowConfig.shadowNormalSize = expandedListShadowLevel;
-			shadowConfig.shadowActiveSize = expandedListShadowLevel;
+			if (shadowConfig != null) {
+				shadowConfig.shadowNormalSize = expandedListShadowLevel;
+				shadowConfig.shadowActiveSize = expandedListShadowLevel;
+			}
 			
 			rippleConfig.enabled = false;
 			thisButton.interactable = false;
@@ -363,8 +378,10 @@ namespace MaterialUI
 			rippleConfig.enabled = true;
 			thisButton.interactable = true;
 
-			shadowConfig.shadowNormalSize = contractedNormalShadow;
-			shadowConfig.shadowActiveSize = contractedHoverShadow;
+			if (shadowConfig != null) {
+				shadowConfig.shadowNormalSize = contractedNormalShadow;
+				shadowConfig.shadowActiveSize = contractedHoverShadow;
+			}
 
 			listCanvasGroup.interactable = false;
 			listCanvasGroup.blocksRaycasts = false;

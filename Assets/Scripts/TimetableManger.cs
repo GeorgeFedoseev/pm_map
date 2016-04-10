@@ -76,16 +76,16 @@ public class TimetableManger {
 
 
 
-	public void updatePair(Pair oldPair, Pair newPair){
-		saveCurrentState ();
+	public void updatePair(Pair oldPair, Pair newPair){	
 
 		removePair (oldPair, false);
 		addPair (newPair, false);
+
+		saveCurrentState ();
 	}
 
 	public void removePair(Pair pair, bool saveState = true){
-		if(saveState)
-			saveCurrentState ();
+		
 
 		foreach (var d in currentWeek.days) {
 			if (d.pairs.Contains (pair)) {
@@ -104,11 +104,13 @@ public class TimetableManger {
 		saveTimetableToDatabase (currentWeek, nextWeek);
 		restoreTimetableFromDatabase ();
 
+		if(saveState)
+			saveCurrentState ();
+
 	}
 
 	public void addPair(Pair pair, bool saveState = true){
-		if(saveState)
-			saveCurrentState ();
+		
 
 		using (var db = new SQLiteConnection (db_path)) {		
 			var pr = new TimetableRecord ();
@@ -129,6 +131,9 @@ public class TimetableManger {
 
 			//saveTimetableToDatabase (currentWeek, nextWeek);
 			restoreTimetableFromDatabase ();
+
+			if(saveState)
+				saveCurrentState ();
 		}
 	}
 
@@ -163,6 +168,10 @@ public class TimetableManger {
 					p.lecturer
 				);
 
+				if (p.room != null && p.room != "") {
+					pair.room = p.room;
+				}
+
 				if (!w.hasDayOfWeek (p.day)) {
 					w.days.Add (new DayTimetable(date));
 				}
@@ -175,16 +184,24 @@ public class TimetableManger {
 			if(saveState)
 				saveCurrentState ();
 
+			sortEverything ();
 
-			// sort pairs
-			foreach(var d in currentWeek.days){
-				d.pairs.Sort( (p1,p2)=>p1.startTime.CompareTo(p2.startTime) );
-			}
-			foreach(var d in nextWeek.days){
-				d.pairs.Sort( (p1,p2)=>p1.startTime.CompareTo(p2.startTime) );
-			}
 
 			db.Close();
+		}
+	}
+
+	private void sortEverything(){
+		// sort days
+		currentWeek.days.Sort( (d1, d2) => d1.day.DayOfWeek.CompareTo(d2.day.DayOfWeek));
+		nextWeek.days.Sort( (d1, d2) => d1.day.DayOfWeek.CompareTo(d2.day.DayOfWeek));
+
+		// sort pairs
+		foreach(var d in currentWeek.days){
+			d.pairs.Sort( (p1,p2)=>p1.startTime.CompareTo(p2.startTime) );
+		}
+		foreach(var d in nextWeek.days){
+			d.pairs.Sort( (p1,p2)=>p1.startTime.CompareTo(p2.startTime) );
 		}
 	}
 
@@ -254,6 +271,8 @@ public class TimetableManger {
 		nextWeek = history [history.Count - 2] ["nextWeek"].Clone();
 
 		history.RemoveAt (history.Count-1);
+
+		sortEverything ();
 
 		Debug.LogWarning ("UNDO, history count: "+history.Count);
 	}

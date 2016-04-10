@@ -95,11 +95,26 @@ public class TTPanelScript : CenterPanelScript {
 
 	public void downloadTimnetableClicked(){
 		//Debug.LogWarning ("DOWNLOAD TIMETABLE");
-		Alerts.AskYesNo("Загрузка расписания", "Текущее расписание сотрется и будет загружено новое с сайта.", ()=>{
+		Alerts.AskYesNo("Загрузка расписания", "Текущее расписание будет заменено на новое, выбранное Вами. Продолжить?", ()=>{
 			app.closeTimetable ();
 			app.openTimtableTour ();
 		}, null, "ОК", "ОТМЕНА");
 
+	}
+
+	public void addPairClicked(WeekTimetable week){
+		if (!_editMode)
+			return;
+		Debug.LogWarning ("ADD PAIR");
+
+		Alerts.addPair ("Добавить пару", week, (Pair newPair) => {
+			Loom.QueueOnMainThread(()=>{
+				app.timetableManager.addPair(newPair);
+				Loom.QueueOnMainThread(()=>{
+					app.timetablePanel.UpdateContents(true);
+				});
+			});
+		});
 	}
 
 	public void UpdateContents(bool editMode = false){
@@ -121,14 +136,29 @@ public class TTPanelScript : CenterPanelScript {
 			downloadButton.gameObject.SetActive (editMode);
 			undoButton.gameObject.SetActive(editMode && app.timetableManager.historyHasPrevState());
 
+			currentWeek._week = app.timetableManager.currentWeek;
+			nextWeek._week = app.timetableManager.nextWeek;
+
+
 
 			Loom.QueueOnMainThread (()=>{
+				if(editMode){
+					currentWeek.addAddPairButton();
+					nextWeek.addAddPairButton();	
+				}
+
+
 				foreach(var d in app.timetableManager.currentWeek.days){
 					currentWeek.addDay (d, editMode);
 				}
 
 				foreach(var d in app.timetableManager.nextWeek.days){
 					nextWeek.addDay (d, editMode);
+				}
+
+				if(editMode){
+					currentWeek.addAddPairButton();
+					nextWeek.addAddPairButton();	
 				}
 
 
