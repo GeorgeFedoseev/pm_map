@@ -30,7 +30,7 @@ public class TimetableManger {
 	public TimetableManger(){
 		
 		app = AppScript.getSharedInstance ();	
-		db_path = Constants.getDBPath ("timetable.db");
+		db_path = Constants.getDBPath ("timetable.db", false);
 
 		history = new List<Dictionary<string, WeekTimetable>> ();
 
