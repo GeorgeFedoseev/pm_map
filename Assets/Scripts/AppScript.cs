@@ -27,6 +27,8 @@ public class AppScript : MonoBehaviour {
 	[HideInInspector]
 	public SearchBoxScript searchBox;
 	[HideInInspector]
+	public FloorSwitchScript floorSwitcher;
+	[HideInInspector]
 	public BottomPanelScript bottomPanel;
 	[HideInInspector]
 	public RectTransform openTimetableButton;
@@ -46,6 +48,7 @@ public class AppScript : MonoBehaviour {
 		pool = GameObject.FindObjectOfType<PoolSystem> ();
 
 		searchBox = GameObject.FindObjectOfType<SearchBoxScript> ();
+		floorSwitcher = GameObject.FindObjectOfType <FloorSwitchScript> ();
 		bottomPanel = GameObject.FindObjectOfType<BottomPanelScript> ();
 
 		centerPanelContainer = GameObject.Find ("CenterPanelContainer").transform;
@@ -63,7 +66,7 @@ public class AppScript : MonoBehaviour {
 	void Start () {
 		facilities.initFacilities ();
 
-		facilities.switchToFloor (1);
+		floorSwitcher.switchToFloor (1);
 
 		openTimetable ();
 	}
