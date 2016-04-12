@@ -78,6 +78,13 @@ public class SearchBoxScript : MonoBehaviour {
 
 		var query = input.text.Trim();
 
+		Loom.removeByName ("find_suggestions");
+		Loom.QueueOnMainThread (()=>{
+			findSuggestions (query);	
+		}, 0.5f, "find_suggestions");
+	}
+
+	private void findSuggestions(string query){
 		if (query.Length >= 2) {		
 			Debug.LogWarning ("q: " + query);
 
@@ -133,7 +140,6 @@ public class SearchBoxScript : MonoBehaviour {
 			if (suggestionsOpened)
 				hideSuggestions ();
 		}	
-
 	}
 
 	private void showSuggestions(){
