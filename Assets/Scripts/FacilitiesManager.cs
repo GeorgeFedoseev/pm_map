@@ -50,21 +50,19 @@ public class FacilitiesManager {
 		return res;
 	}
 
-	public void focusFacility(FacilityScript f, bool showInfo = false){
-		var flyTime = 1.5f;
-		var h = 5f;
-		var d = 5f;
-
+	public void focusFacility(FacilityScript f, bool flyTo = true, bool showInfo = false){
 		target_facility = f;
 
-
-		var look_dst = f.getSize ()*4;
+		var look_dst = f.getSize ()*7;
 		if (look_dst < 10f)
 			look_dst = 10f;
 
-		app.cam.setTargetFacility(f, look_dst);
+		if (flyTo) {
+			app.cam.setTargetFacility(f, look_dst, look_dst);
+			switchToFloor (f.getFloor());
+		}
 
-		switchToFloor (f.getFloor());
+
 
 		dehighlightAll ();
 		f.highlight ();

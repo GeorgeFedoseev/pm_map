@@ -29,7 +29,7 @@ public class FacilityScript : MonoBehaviour {
 	void OnMouseUp(){
 		//Debug.LogWarning ("On mouse Up");
 		if (!CameraScript.IsPointerOverUIObject () && !app.cam.controlsInUse) {			
-				app.facilities.focusFacility (this, true);
+			app.facilities.focusFacility (this, false, true);
 
 		}
 			

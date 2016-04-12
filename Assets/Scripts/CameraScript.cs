@@ -31,8 +31,10 @@ public class CameraScript : MonoBehaviour {
 	// restricting camera movement
 	Vector3 oldCamPos;
 	Quaternion oldCamRot;
-	float minHeight = 0.5f;
-	float maxHeight = 150f;
+	float minHeight = -10f;
+	float maxHeight = 250f;
+	float minAngle = 20f;
+	float maxAngle = 85f;
 
 	// 2-finger modes
 	bool touchRotatePhiZoomMode = false;
@@ -84,10 +86,12 @@ public class CameraScript : MonoBehaviour {
 
 
 	public void setTargetFacility(FacilityScript facility, float _lookHeight = 10f, float _lookDistance = 6f){
-		targetPosition = facility.transform.position + facility.transform.up * lookHeight + facility.transform.forward * lookDistance;
-		targetRotation = Quaternion.LookRotation (facility.transform.position - transform.position, Vector3.up);
 		lookHeight = _lookHeight;
 		lookDistance = _lookDistance;
+
+		targetPosition = facility.transform.position + facility.transform.up * _lookHeight - Vector3.forward * _lookDistance;
+		targetRotation = Quaternion.LookRotation (facility.transform.position - targetPosition, Vector3.up);
+
 
 		flying = true;
 	}
@@ -232,7 +236,24 @@ public class CameraScript : MonoBehaviour {
 		var newPos = Camera.main.transform.position;
 		var newRot = Camera.main.transform.rotation.eulerAngles;
 
+
+
+		// borders
+		if (newPos.y < minHeight || newPos.y > maxHeight
+			|| newRot.x < minAngle || newRot.x > maxAngle) {
+
+			Camera.main.transform.position = oldCamPos;	
+			Camera.main.transform.rotation = oldCamRot;	
+		} else {
+			oldCamPos = Camera.main.transform.position;
+			oldCamRot = Camera.main.transform.rotation;
+		}
+
+
+
 		// position borders
+		/*
+
 		if (newPos.y < minHeight || newPos.y > maxHeight) {
 			Camera.main.transform.position = oldCamPos;	
 
@@ -247,7 +268,7 @@ public class CameraScript : MonoBehaviour {
 		} else {
 			oldCamRot = Camera.main.transform.rotation;
 		}
-
+		*/
 
 	}
 
