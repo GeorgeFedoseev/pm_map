@@ -9,7 +9,11 @@ public class Constants {
 		if (Application.platform == RuntimePlatform.IPhonePlayer) {
 			var openPath = Application.dataPath + "/Raw/"+db_name;
 			db_path = Application.persistentDataPath+"/"+db_name;
-			File.Copy(openPath, db_path, overwrite);
+
+			if(!File.Exists(db_path))
+				File.Copy(openPath, db_path);
+
+
 		}else if(Application.platform == RuntimePlatform.Android){
 			Debug.LogError ("CHECK ANDROID DB PATHS!!!");
 			var openPath = "jar:file://" + Application.dataPath + "!/assets/"+db_name;

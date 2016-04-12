@@ -64,13 +64,26 @@ public class FacilitiesManager {
 
 		app.cam.setTargetFacility(f, look_dst);
 
-		app.switchToFloor (f.getFloor());
+		switchToFloor (f.getFloor());
 
 		dehighlightAll ();
 		f.highlight ();
 
 		if (showInfo) {
 			app.bottomPanel.showFacilities(new List<FacilityScript>(){f}, "ОБЪЕКТ");
+		}
+	}
+
+
+	public void switchToFloor(int floor){
+		int i = 0;
+		foreach(Transform fl in app.building){
+			if (i + 1 > floor) {
+				fl.gameObject.SetActive (false);
+			} else {
+				fl.gameObject.SetActive (true);
+			}
+			i++;
 		}
 	}
 

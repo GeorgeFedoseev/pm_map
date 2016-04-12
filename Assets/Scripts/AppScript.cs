@@ -63,8 +63,7 @@ public class AppScript : MonoBehaviour {
 	void Start () {
 		facilities.initFacilities ();
 
-
-		switchToFloor (1);
+		facilities.switchToFloor (1);
 
 		openTimetable ();
 	}
@@ -84,15 +83,7 @@ public class AppScript : MonoBehaviour {
 	}
 
 	public void switchToFloor(int floor){
-		int i = 0;
-		foreach(Transform fl in building){
-			if (i + 1 > floor) {
-				fl.gameObject.SetActive (false);
-			} else {
-				fl.gameObject.SetActive (true);
-			}
-			i++;
-		}
+		facilities.switchToFloor (floor);
 	}
 
 
