@@ -32,6 +32,9 @@ public class BottomPanelScript : MonoBehaviour {
 	bool foldHide = false;
 	bool folded = true;
 
+	float halfFoldDistance = -110f;
+	float fullFoldDistance = -150f;
+
 	Vector2 oldScreenSize;
 
 	void Awake(){
@@ -55,16 +58,24 @@ public class BottomPanelScript : MonoBehaviour {
 	void Update () {
 		if (doFold) {
 			rect.anchoredPosition = Vector2.Lerp(rect.anchoredPosition, targetFoldPosition, foldSpeed * Time.deltaTime);
-			if (Mathf.Approximately (rect.anchoredPosition.y, targetFoldPosition.y)) {
+			app.openTimetableButton.anchoredPosition = new Vector2 (rect.offsetMin.x + 50f, rect.anchoredPosition.y+rect.sizeDelta.y+20f);
+
+			if (Mathf.Abs (rect.anchoredPosition.y - targetFoldPosition.y) < 0.01f) {
 				doFold = false;
+				didFold ();
 			}
 		}
 
-		app.openTimetableButton.anchoredPosition = new Vector2 (rect.offsetMin.x + 50f, rect.anchoredPosition.y+rect.sizeDelta.y+20f);
+
 	}
 
 
 	// METHODS
+
+	private void didFold(){
+		//Debug.LogWarning ("DID FOLD "+folded.ToString());
+		//title.gameObject.SetActive (folded);
+	}
 
 	public void showFacilities(List<FacilityScript> facilities, string title_text = "РЕЗУЛЬТАТЫ"){
 		// clear old
@@ -139,7 +150,7 @@ public class BottomPanelScript : MonoBehaviour {
 
 
 	public void fold(bool hide = false){
-		targetFoldPosition = new Vector2 (0, hide?-200f:-160f);
+		targetFoldPosition = new Vector2 (0, hide?fullFoldDistance:halfFoldDistance);
 		folded = true;
 		doFold = true;
 	}
@@ -170,8 +181,8 @@ public class BottomPanelScript : MonoBehaviour {
 
 		var new_pos_y = drag_start_panel_y + delta_pos.y;
 
-		if (new_pos_y < -160) {
-			new_pos_y = -160;
+		if (new_pos_y < halfFoldDistance) {
+			new_pos_y = halfFoldDistance;
 		} else if (new_pos_y > 0) {
 			new_pos_y = 0;
 		}
@@ -189,7 +200,7 @@ public class BottomPanelScript : MonoBehaviour {
 		var delta_pos = (Vector2)Input.mousePosition - drag_start_pos;
 		if (delta_pos.y < 0) {			
 			//Debug.LogWarning ("Fold down");
-			targetFoldPosition = new Vector2 (0, -160f);
+			targetFoldPosition = new Vector2 (0, halfFoldDistance);
 			folded = true;
 		} else {
 			//Debug.LogWarning ("Fold up");

@@ -17,6 +17,8 @@ public class SearchBoxScript : MonoBehaviour {
 	bool suggestionsOpened = false;
 	float suggestionsAnimTime = 0.2f;
 
+
+
 	void Awake(){
 		app = AppScript.getSharedInstance ();
 	}
@@ -36,17 +38,12 @@ public class SearchBoxScript : MonoBehaviour {
 	void keyboardDoneEdit(string str){		
 		var query = str.Trim ();
 
-		if (query.Length <= 1)
+		//Debug.LogWarning ("DONE EDIT");
+
+		if ((query.Length <= 1 || CameraScript.IsPointerOverUIObject()) && !Input.GetButtonDown("Submit"))
 			return;
-
-		if(Input.GetButtonDown("Submit")){
-			Debug.LogWarning ("Search");
-			showSearchResults (query);
-		} else {
-			Debug.LogWarning ("Canceled");
-		}	
 		
-
+		showSearchResults (query);
 	}
 
 	public void inputClick(){
@@ -74,6 +71,7 @@ public class SearchBoxScript : MonoBehaviour {
 	}
 
 	public void searchInputChanged(){		
+	//	Debug.LogWarning ("INPUT CHANGED");
 		clearButton.gameObject.SetActive (input.text.Length > 0);
 
 		var query = input.text.Trim();
@@ -81,12 +79,11 @@ public class SearchBoxScript : MonoBehaviour {
 		Loom.removeByName ("find_suggestions");
 		Loom.QueueOnMainThread (()=>{
 			findSuggestions (query);	
-		}, 0.5f, "find_suggestions");
+		}, 0.1f, "find_suggestions");
 	}
 
 	private void findSuggestions(string query){
-		if (query.Length >= 2) {		
-			Debug.LogWarning ("q: " + query);
+		if (query.Length >= 2) {
 
 			// FIND SUGGESTIONS
 			// clear old rows
@@ -113,11 +110,11 @@ public class SearchBoxScript : MonoBehaviour {
 					});
 
 
-
+					// suggestion click
 					r.button.onClick.AddListener (() => {							
 						Debug.LogWarning ("Clicked " + _f._name);	
-						app.facilities.focusFacility (_f, true);
-
+						app.facilities.focusFacility (_f, true, true);
+						hideSuggestions();
 					});
 
 					r.transform.SetParent (suggestionRowsContainer);

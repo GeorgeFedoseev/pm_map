@@ -14,6 +14,7 @@ public class CameraScript : MonoBehaviour {
 	public float touchRotatePhiThreshold = 3.06f;
 	public float touchZoomThreshold = 4.4f;
 	public float touchRotateThetaThreshold = 8.9f;
+	public float moveTouchThreshold = 0.2f;
 
 	// in use
 	[HideInInspector]
@@ -75,7 +76,8 @@ public class CameraScript : MonoBehaviour {
 
 		// over UI check
 		if(hasTouches()){
-			overUI = IsPointerOverUIObject();	
+			if(!overUI)
+				overUI = IsPointerOverUIObject();	
 		} else {
 			overUI = false;
 		}
@@ -141,8 +143,12 @@ public class CameraScript : MonoBehaviour {
 					var cameraForwardDirection = (Camera.main.transform.forward-new Vector3(0, Camera.main.transform.forward.y, 0)).normalized;
 					var cameraRightDirection = (Camera.main.transform.right-new Vector3(0, Camera.main.transform.right.y, 0)).normalized;
 
-					Camera.main.transform.position -= (cameraForwardDirection*worldDelta.y*mltpl*moveSpeed
-						+ cameraRightDirection*worldDelta.x*mltpl*moveSpeed);
+					if (touchDelta.magnitude > moveTouchThreshold) {
+						Camera.main.transform.position -= (cameraForwardDirection*worldDelta.y*mltpl*moveSpeed
+							+ cameraRightDirection*worldDelta.x*mltpl*moveSpeed);
+					}
+
+
 					touch1StartPos = touch1Pos;						
 				}
 

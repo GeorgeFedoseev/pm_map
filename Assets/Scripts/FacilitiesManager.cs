@@ -73,7 +73,7 @@ public class FacilitiesManager {
 		f.highlight ();
 
 		if (showInfo) {
-			app.bottomPanel.showFacilities(new List<FacilityScript>(){f}, "ОБЪЕКТ");
+			app.bottomPanel.showFacilities(new List<FacilityScript>(){f}, "ВЫДЕЛЕННЫЙ ОБЪЕКТ");
 		}
 	}
 
