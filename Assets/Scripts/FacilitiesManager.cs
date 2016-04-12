@@ -21,6 +21,11 @@ public class FacilitiesManager {
 
 
 	public void initFacilities(){
+		// activate all floors
+		foreach(Transform fl in app.building){
+			fl.gameObject.SetActive (true);
+		}
+
 		// map all facilities
 		facilities_map = new Dictionary<int, FacilityScript>();
 		foreach (var f in app.building.GetComponentsInChildren<FacilityScript>()){
@@ -98,7 +103,7 @@ public class FacilitiesManager {
 		var res = facilities_db.getRoom (room);
 		if (res != null) {
 			var f = facilities_map[res.gameObjectID];
-			focusFacility (f, true);
+			focusFacility (f, true, true);
 		}
 	}
 
@@ -109,8 +114,8 @@ public class FacilitiesManager {
 	}
 
 	public void dehighlightAll(){
-		foreach(var f in GameObject.FindObjectsOfType<FacilityScript>()){
-			f.dehighlight ();
+		foreach(var f in facilities_map){
+			f.Value.dehighlight ();
 		}
 	}
 
