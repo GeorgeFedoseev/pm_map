@@ -30,8 +30,8 @@ public class FloorSwitchScript : MonoBehaviour {
 	}
 
 	private void setButtonActive(int i){
-		getImage (i).color = new Color (226f / 255f, 68f / 255f, 31f / 255f,imageAlpha+50f / 255f);
-		getText(i).color = new Color (255f / 255f, 255f / 255f, 255f / 255f, textAlpha+50f / 255f);
+		getImage (i).color = new Color (219f / 255f, 56f / 255f, 18f / 255f,imageAlpha+10f / 255f);
+		getText(i).color = new Color (255f / 255f, 255f / 255f, 255f / 255f, textAlpha+10f / 255f);
 	}
 
 	private void setButtonDefault(int i){
