@@ -34,7 +34,7 @@ public class CameraScript : MonoBehaviour {
 	Quaternion oldCamRot;
 	float minHeight = -10f;
 	float maxHeight = 250f;
-	float minAngle = 20f;
+	float minAngle = 10f;
 	float maxAngle = 85f;
 
 	// 2-finger modes
