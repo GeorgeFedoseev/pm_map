@@ -58,12 +58,16 @@ public class BottomPanelScript : MonoBehaviour {
 	void Update () {
 		if (doFold) {
 			rect.anchoredPosition = Vector2.Lerp(rect.anchoredPosition, targetFoldPosition, foldSpeed * Time.deltaTime);
-			app.openTimetableButton.anchoredPosition = new Vector2 (rect.offsetMin.x + 50f, rect.anchoredPosition.y+rect.sizeDelta.y+20f);
 
 			if (Mathf.Abs (rect.anchoredPosition.y - targetFoldPosition.y) < 0.01f) {
 				doFold = false;
 				didFold ();
 			}
+		}
+
+		// timetable button move with panel
+		if(doFold || dragging){
+			app.openTimetableButton.anchoredPosition = new Vector2 (rect.offsetMin.x + 50f, rect.anchoredPosition.y+rect.sizeDelta.y+20f);
 		}
 
 

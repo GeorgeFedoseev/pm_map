@@ -44,6 +44,7 @@ public class CameraScript : MonoBehaviour {
 	// FLYING
 	bool flying = false;
 
+	Vector3 targetObjectPosition;
 	Vector3 targetPosition;
 	Quaternion targetRotation;
 
@@ -63,6 +64,8 @@ public class CameraScript : MonoBehaviour {
 			// move
 			var delta_pos = targetPosition - transform.position;
 			transform.position += 0.8f * Time.deltaTime * delta_pos;
+
+			targetRotation = Quaternion.LookRotation (targetObjectPosition - Camera.main.transform.position, Vector3.up);
 
 			// rotate
 			var delta_rot = Mathf.Abs (Quaternion.Angle (targetRotation, transform.rotation));
@@ -91,8 +94,10 @@ public class CameraScript : MonoBehaviour {
 		lookHeight = _lookHeight;
 		lookDistance = _lookDistance;
 
-		targetPosition = facility.transform.position + facility.transform.up * _lookHeight - Vector3.forward * _lookDistance;
-		targetRotation = Quaternion.LookRotation (facility.transform.position - targetPosition, Vector3.up);
+		targetObjectPosition = facility.transform.position;
+
+		targetPosition = targetObjectPosition + facility.transform.up * _lookHeight - Vector3.forward * _lookDistance;
+		//targetRotation = Quaternion.LookRotation (targetObjectPosition - targetPosition, Vector3.up);
 
 
 		flying = true;
@@ -242,18 +247,23 @@ public class CameraScript : MonoBehaviour {
 		var newPos = Camera.main.transform.position;
 		var newRot = Camera.main.transform.rotation.eulerAngles;
 
+		var thetaAngle = AngleSigned (Camera.main.transform.up, Vector3.up, -Camera.main.transform.right);
 
 
-		// borders
-		if (newPos.y < minHeight || newPos.y > maxHeight
-			|| newRot.x < minAngle || newRot.x > maxAngle) {
 
-			Camera.main.transform.position = oldCamPos;	
-			Camera.main.transform.rotation = oldCamRot;	
-		} else {
-			oldCamPos = Camera.main.transform.position;
-			oldCamRot = Camera.main.transform.rotation;
+		// borders 
+		if(!flying){
+			if (newPos.y < minHeight || newPos.y > maxHeight
+				|| thetaAngle < minAngle || thetaAngle > maxAngle) {
+
+				Camera.main.transform.position = oldCamPos;	
+				Camera.main.transform.rotation = oldCamRot;	
+			} else {
+				oldCamPos = Camera.main.transform.position;
+				oldCamRot = Camera.main.transform.rotation;
+			}
 		}
+
 
 
 
@@ -278,6 +288,11 @@ public class CameraScript : MonoBehaviour {
 
 	}
 
+	public static float AngleSigned(Vector3 v1, Vector3 v2, Vector3 n) {
+		return Mathf.Atan2(
+			Vector3.Dot(n, Vector3.Cross(v1, v2)),
+			Vector3.Dot(v1, v2)) * Mathf.Rad2Deg;
+	}
 
 	public static bool IsPointerOverUIObject() {
 		PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
