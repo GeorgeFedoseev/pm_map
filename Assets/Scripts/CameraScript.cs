@@ -52,7 +52,7 @@ public class CameraScript : MonoBehaviour {
 	float lookDistance = 6f;
 
 	// UI avoiding
-	private bool overUI = false;
+	public bool overUI = false;
 
 
 	void Awake(){

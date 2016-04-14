@@ -59,12 +59,12 @@ public class FacilitiesManager {
 		target_facility = f;
 
 		var look_dst = f.getSize ()*4;
-		if (look_dst < 10f)
-			look_dst = 10f;
+		if (look_dst < 20f)
+			look_dst = 20f;
 
 		if (flyTo) {
 			app.cam.setTargetFacility(f, look_dst, look_dst);
-			switchToFloor (f.getFloor());
+			app.floorSwitcher.switchToFloor (f.getFloor());
 		}
 
 
