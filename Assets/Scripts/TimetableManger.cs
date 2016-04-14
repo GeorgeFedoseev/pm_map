@@ -34,7 +34,8 @@ public class TimetableManger {
 
 		history = new List<Dictionary<string, WeekTimetable>> ();
 
-		//clearDb ();
+		/* DEBUG */
+		clearDb ();
 
 		if (!hasTimetable ()) {
 			Debug.LogWarning ("NO TIMETABLE");
@@ -45,9 +46,8 @@ public class TimetableManger {
 			restoreTimetableFromDatabase (true);
 			Debug.LogWarning ("Timetable recovered from database");
 		}
-
-
 	}
+
 
 	public void getTimetable(){
 		if (hasTimetableLink()) {

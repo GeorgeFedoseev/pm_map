@@ -305,7 +305,8 @@ namespace MaterialUI
 
 			if (autoMaxItemHeight)
 			{
-				float tempFloat = (Screen.height / 100f * percentageOfScreenHeight / itemHeight);
+				
+				float tempFloat = (Screen.height/Screen.dpi*82f / 100f * percentageOfScreenHeight / itemHeight);
 
 
 				if (tempFloat >= listItems.Length)

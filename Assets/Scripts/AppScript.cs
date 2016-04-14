@@ -39,6 +39,9 @@ public class AppScript : MonoBehaviour {
 	public TTPanelScript timetablePanel;
 
 	void Awake(){
+
+
+
 		canvas = GameObject.FindObjectOfType<Canvas> ();
 		cam = GetComponent<CameraScript> ();
 
@@ -58,6 +61,10 @@ public class AppScript : MonoBehaviour {
 		openTimetableButton = GameObject.Find ("OpenTimetableButton").GetComponent<RectTransform> ();
 
 		Application.targetFrameRate = 30;
+
+		/*DEBUG*/
+		PlayerPrefs.DeleteAll ();
+		facilities.facilities_db.clearDb ();
 
 
 		clearCenterPanelContainer ();

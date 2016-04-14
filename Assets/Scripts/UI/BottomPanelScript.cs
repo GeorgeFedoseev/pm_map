@@ -65,12 +65,7 @@ public class BottomPanelScript : MonoBehaviour {
 			}
 		}
 
-		// timetable button move with panel
-		if(doFold || dragging){
-			app.openTimetableButton.anchoredPosition = new Vector2 (rect.offsetMin.x + 50f, rect.anchoredPosition.y+rect.sizeDelta.y+20f);
-		}
-
-
+		app.openTimetableButton.anchoredPosition = new Vector2 (rect.offsetMin.x + 50f, rect.anchoredPosition.y+rect.sizeDelta.y+20f);
 	}
 
 
