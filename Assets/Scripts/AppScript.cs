@@ -64,7 +64,7 @@ public class AppScript : MonoBehaviour {
 
 		/*DEBUG*/
 		PlayerPrefs.DeleteAll ();
-		facilities.facilities_db.clearDb ();
+
 
 
 		clearCenterPanelContainer ();

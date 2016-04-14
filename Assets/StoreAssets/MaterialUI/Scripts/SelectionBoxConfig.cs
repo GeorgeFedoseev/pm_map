@@ -305,9 +305,16 @@ namespace MaterialUI
 
 			if (autoMaxItemHeight)
 			{
-				
-				float tempFloat = (Screen.height/Screen.dpi*82f / 100f * percentageOfScreenHeight / itemHeight);
-
+				//var scale = Screen.dpi/82f;
+				var canvasScale = AppScript.getSharedInstance ().canvas.scaleFactor;
+				/*Debug.LogWarning ("Screen height: "+Screen.height);
+				Debug.LogWarning ("DPI: "+Screen.dpi);
+				Debug.LogWarning ("DPI scale: "+scale);
+				Debug.LogWarning ("Canvas scale: "+canvasScale);
+				Debug.LogWarning ("Item height: "+itemHeight);*/
+			
+				float tempFloat = Screen.height/canvasScale / 100f * percentageOfScreenHeight / itemHeight;
+				//Debug.LogWarning ("Temp float: "+tempFloat);
 
 				if (tempFloat >= listItems.Length)
 				{
@@ -321,6 +328,8 @@ namespace MaterialUI
 					scrollbarCanvasGroup.interactable = true;
 					scrollbarCanvasGroup.blocksRaycasts = true;
 				}
+
+				//Debug.LogWarning ("List height: "+listheight);
 			}
 			else if (manualMaxItemHeight > 0)
 			{
