@@ -40,7 +40,7 @@ public class FacilityScript : MonoBehaviour {
 	}
 
 	public void dehighlight(){
-		GetComponent<MeshRenderer> ().material.color = new Color(71f/255f, 187f/255f, 255f/255f);
+		GetComponent<MeshRenderer> ().material.color = new Color(204f/255f, 204f/255f, 204f/255f);
 	}
 
 

@@ -73,6 +73,7 @@ public class AppScript : MonoBehaviour {
 	void Start () {
 		facilities.initFacilities ();
 
+
 		floorSwitcher.switchToFloor (1);
 
 		openTimetable ();

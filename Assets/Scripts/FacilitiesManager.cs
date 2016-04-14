@@ -43,6 +43,8 @@ public class FacilitiesManager {
 			var go = facilities_map [f.gameObjectID];
 			go.GetComponent<MeshRenderer> ().material.color = Color.red;
 		}*/
+
+		dehighlightAll ();
 	}
 
 	public List<FacilityScript> findFacilities(string query){
