@@ -58,7 +58,7 @@ public class FacilitiesManager {
 	public void focusFacility(FacilityScript f, bool flyTo = true, bool showInfo = false){
 		target_facility = f;
 
-		var look_dst = f.getSize ()*7;
+		var look_dst = f.getSize ()*4;
 		if (look_dst < 10f)
 			look_dst = 10f;
 

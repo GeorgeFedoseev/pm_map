@@ -263,29 +263,6 @@ public class CameraScript : MonoBehaviour {
 				oldCamRot = Camera.main.transform.rotation;
 			}
 		}
-
-
-
-
-		// position borders
-		/*
-
-		if (newPos.y < minHeight || newPos.y > maxHeight) {
-			Camera.main.transform.position = oldCamPos;	
-
-			//flying = true;
-		} else {
-			oldCamPos = Camera.main.transform.position;
-		}
-
-		// rotation borders
-		if (newRot.x < 20f || newRot.x > 85f) {
-			Camera.main.transform.rotation = oldCamRot;	
-		} else {
-			oldCamRot = Camera.main.transform.rotation;
-		}
-		*/
-
 	}
 
 	public static float AngleSigned(Vector3 v1, Vector3 v2, Vector3 n) {
