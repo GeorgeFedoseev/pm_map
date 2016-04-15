@@ -86,9 +86,9 @@ public class BottomPanelScript : MonoBehaviour {
 			// check for current pairs
 			Pair p;
 			if ((p = app.timetableManager.getCurrentPair ()) != null) {
-				showPair (p, app.facilities.getRoom (p.room));
+				showPair (p);
 			}else if((p = app.timetableManager.getSoonPair ()) != null){
-				showPair (p, app.facilities.getRoom (p.room), "СКОРО ПАРА");
+				showPair (p, "СКОРО ПАРА");
 			}
 		}
 	}
@@ -125,30 +125,39 @@ public class BottomPanelScript : MonoBehaviour {
 
 	}
 
-	public void showPair(Pair pair, RoomScript room, string title_text = "ИДЕТ ПАРА"){
+	public void showPair(Pair pair,  string title_text = "ИДЕТ ПАРА"){
 		
 		// clear old
 		foreach (var row in rowsContainer.GetComponentsInChildren<BottomPanelRowScript>()) {
 			app.pool.deactivate (row.gameObject);
 		}
 
+		var room = app.facilities.getRoom (pair.room);
+
 		var r = app.pool.spawn<BottomPanelRowScript> ("bottom_panel_row");
-		r.title.text = room._name;
+
+		if (room != null) {
+			r.title.text = room._name;
+			Loom.QueueOnMainThread (()=>{
+				var sprite = Resources.Load<Sprite>("Prefabs/UI/icons/"+room._icon);
+				if(sprite == null)
+					sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/default");
+				r.icon.sprite = sprite;	
+			});
+
+			r.GetComponent<Button>().onClick.AddListener (() => {				
+				app.facilities.focusFacility (room);
+			});
+
+		} else {
+			r.title.text = pair.location;
+			r.icon.sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/default");			 
+		}
+
 		r.desc.text = pair.name + " ("+pair.time+")";
 
-		Loom.QueueOnMainThread (()=>{
-			var sprite = Resources.Load<Sprite>("Prefabs/UI/icons/"+room._icon);
-			if(sprite == null)
-				sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/default");
-			r.icon.sprite = sprite;	
-		});
 
 
-
-		r.GetComponent<Button>().onClick.AddListener (() => {							
-			Debug.LogWarning ("Clicked " + room.name);	
-			app.facilities.focusFacility (room);
-		});
 
 		r.transform.SetParent (rowsContainer);
 		r.transform.localScale = Vector3.one;

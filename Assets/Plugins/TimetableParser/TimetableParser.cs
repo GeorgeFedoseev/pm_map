@@ -171,7 +171,7 @@ public class Pair {
 
 	public bool soon(){
 		var now = DateTime.Now;
-		if (now >= startTime.AddMinutes(-15) && now <= endTime) {
+		if (now >= startTime.AddMinutes(-15) && now <= startTime) {
 			return true;
 		}
 
