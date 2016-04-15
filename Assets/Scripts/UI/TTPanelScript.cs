@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class TTPanelScript : CenterPanelScript {
 	
@@ -242,14 +243,46 @@ public class TTPanelScript : CenterPanelScript {
 
 				switchWeek (_currentWeek, firstLoadDone);
 				
+				if(!firstLoadDone){
+					firstLoadDone = true;
 
-				firstLoadDone = true;
+					// scroll to current day
+					var fullWeekHeight = currentWeek.daysContainer.GetComponent<RectTransform>().rect.size.y;
+					float currentDayPos = 0;
+					foreach(Transform d_t in currentWeek.daysContainer){
+						var d = d_t.GetComponent<TTDayScript>();
+						if(d != null && d._day.day == DateTime.Today){
+							//Debug.LogWarning("DAY POS: "+(-d_t.GetComponent<RectTransform>().anchoredPosition.y));
+							//Debug.LogWarning("DAY HEIGHT: "+d_t.GetComponent<RectTransform>().rect.size.y);
+							currentDayPos = -d_t.GetComponent<RectTransform>().anchoredPosition.y - d_t.GetComponent<RectTransform>().rect.size.y/2;
+							currentDayPos += currentWeek.daysContainer.GetComponent<RectTransform>().rect.size.y * currentDayPos/fullWeekHeight    /  2;
+						}
+					}
+
+					//Loom.QueueOnMainThread(()=>{
+						currentWeek.scrollRect.verticalNormalizedPosition = Mathf.Clamp01(1f - currentDayPos/fullWeekHeight);
+						//Debug.LogWarning("ANCHORED POS: "+currentWeek.scrollRect.verticalNormalizedPosition);
+					//}, 0.2f);
+				}
+
 				updateCurrentPair ();
 			}, 0.5f);
 		}, 0.5f);
 
 
 	}
+
+	/*
+		float normalizePosition = scrollTransform.anchorMin.y - obj.anchoredPosition.y;
+		normalizePosition += (float)obj.transform.GetSiblingIndex() / (float)scroll.content.transform.childCount;
+		normalizePosition /= 1000f;
+		normalizePosition = Mathf.Clamp01(1 - normalizePosition);
+		scroll.verticalNormalizedPosition = normalizePosition;
+*/
+
+	/*void Update(){
+		Debug.LogWarning("SCROLL POS: "+currentWeek.scrollRect.verticalNormalizedPosition);
+	}*/
 
 
 	protected override void OnRectTransformDimensionsChange(){
