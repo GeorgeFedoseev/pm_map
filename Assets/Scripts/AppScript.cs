@@ -151,7 +151,7 @@ public class AppScript : MonoBehaviour {
 
 		if (timetableManager.hasTimetable ()) {
 			timetablePanel = loadCenterPanel ("TimetableCenterPanel").GetComponent<TTPanelScript> ();
-			timetablePanel.Prepare ();
+			//timetablePanel.Prepare ();
 		} else {
 			// tour for getting timetable link
 			openTimetableTour();

@@ -22,8 +22,9 @@ public class TTPanelScript : CenterPanelScript {
 	float lastCurrentWeekScrollPos, lastNextWeekScrollPos;
 
 	void OnEnable(){
-		if(app.ready)
+		if (app.ready) {
 			Prepare ();
+		}
 	}
 
 	public void Prepare(){
@@ -33,8 +34,9 @@ public class TTPanelScript : CenterPanelScript {
 
 		if (!firstLoadDone) {
 			UpdateContents ();
+		} else {
+			updateCurrentPair ();
 		}
-			
 	}
 
 	public override void close(){
@@ -46,6 +48,13 @@ public class TTPanelScript : CenterPanelScript {
 			_editMode = false;
 		}
 
+	}
+
+
+	public void updateCurrentPair(){
+		foreach (var p in FindObjectsOfType<TTPairScript>()) {
+			p.updateCurrentPair ();
+		}
 	}
 
 	public void switchWeek(bool current, bool syncPos = true){		
@@ -235,6 +244,7 @@ public class TTPanelScript : CenterPanelScript {
 				
 
 				firstLoadDone = true;
+				updateCurrentPair ();
 			}, 0.5f);
 		}, 0.5f);
 
