@@ -176,7 +176,7 @@ public class BottomPanelScript : MonoBehaviour {
 		}
 
 		var delta_pos = (Vector2)Input.mousePosition - drag_start_pos;
-		delta_pos /= app.canvas.scaleFactor;
+		delta_pos /= app.centerPanelCanvas.scaleFactor;
 
 		var new_pos_y = drag_start_panel_y + delta_pos.y;
 
@@ -254,7 +254,7 @@ public class BottomPanelScript : MonoBehaviour {
 		//Debug.LogWarning ("UPDATE BOTTOM PANEL LO");
 		var sizeDelta = rect.sizeDelta;
 		var size = rect.rect.size;
-		var canvasSize = app.canvas.GetComponent<RectTransform> ().rect.size;
+		var canvasSize = app.hudCanvas.GetComponent<RectTransform> ().rect.size;
 		if (canvasSize == oldScreenSize)
 			return;
 

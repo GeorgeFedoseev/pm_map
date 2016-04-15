@@ -137,7 +137,7 @@ public class CenterPanelScript : MonoBehaviour {
 	}
 
 	protected virtual void OnRectTransformDimensionsChange(){
-		if(rect!=null && app != null && app.canvas != null)
+		if(rect!=null && app != null && app.centerPanelCanvas != null)
 			UpdateLayout();		
 	}
 
@@ -170,7 +170,7 @@ public class CenterPanelScript : MonoBehaviour {
 		//Debug.LogWarning ("UPDATE BOTTOM PANEL LO");
 		var sizeDelta = rect.sizeDelta;
 		var size = rect.rect.size;
-		var canvasSize = app.canvas.GetComponent<RectTransform> ().rect.size;
+		var canvasSize = app.centerPanelCanvas.GetComponent<RectTransform> ().rect.size;
 		if (canvasSize == oldScreenSize)
 			return;
 

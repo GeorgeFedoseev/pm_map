@@ -21,7 +21,11 @@ public class AppScript : MonoBehaviour {
 	[HideInInspector]
 	public PoolSystem pool;
 	[HideInInspector]
-	public Canvas canvas;
+	public Canvas hudCanvas;
+	[HideInInspector]
+	public Canvas centerPanelCanvas;
+	[HideInInspector]
+	public Canvas alertsCanvas;
 	[HideInInspector]
 	public CameraScript cam;
 	[HideInInspector]
@@ -42,7 +46,10 @@ public class AppScript : MonoBehaviour {
 
 
 
-		canvas = GameObject.FindObjectOfType<Canvas> ();
+		hudCanvas = GameObject.Find ("HUDCanvas").GetComponent<Canvas>();
+		centerPanelCanvas = GameObject.Find ("CenterPanelCanvas").GetComponent<Canvas>();
+		alertsCanvas = GameObject.Find ("AlertsCanvas").GetComponent<Canvas>();
+
 		cam = GetComponent<CameraScript> ();
 
 		facilities = new FacilitiesManager ();
@@ -103,16 +110,22 @@ public class AppScript : MonoBehaviour {
 		foreach(Transform t in centerPanelContainer){
 			Destroy (t.gameObject);
 		}
+
+		hudCanvas.gameObject.SetActive (true);
 	}
 
 	public void disableAllInCentralPanelContainer(){
 		foreach(Transform t in centerPanelContainer){
 			t.gameObject.SetActive (false);
 		}
+
+		hudCanvas.gameObject.SetActive (true);
 	}
 
 	private GameObject loadCenterPanel(string name){
 		clearCenterPanelContainer ();
+
+
 
 		var go = Instantiate (Resources.Load("Prefabs/UI/CenterPanels/"+name)) as GameObject;
 		go.transform.SetParent (centerPanelContainer);
@@ -142,6 +155,8 @@ public class AppScript : MonoBehaviour {
 			openTimtableTour();
 		}
 
+		hudCanvas.gameObject.SetActive (false);
+
 		//disableCamera ();
 	}
 
@@ -149,6 +164,7 @@ public class AppScript : MonoBehaviour {
 
 	public void openTimtableTour(){
 		loadCenterPanel ("LoadTimetableCenterPanel");
+		hudCanvas.gameObject.SetActive (false);
 	}
 
 	public void closeTimetable(){
