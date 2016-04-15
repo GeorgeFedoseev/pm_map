@@ -169,6 +169,15 @@ public class Pair {
 		return false;
 	}
 
+	public bool soon(){
+		var now = DateTime.Now;
+		if (now >= startTime.AddMinutes(-15) && now <= endTime) {
+			return true;
+		}
+
+		return false;
+	}
+
 	private void parseRoom(){		
 		var parser = new Regex(@", ([A-Za-zА-Яа-я \/0-9]*)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 		//Console.WriteLine ("Location: "+location);

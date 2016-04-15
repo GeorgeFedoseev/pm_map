@@ -63,8 +63,7 @@ public class SearchBoxScript : MonoBehaviour {
 
 	void showSearchResults(string query){
 		var found_facilities = app.facilities.findFacilities (query);
-		if (found_facilities.Count > 0) {
-			app.bottomPanel.show ();
+		if (found_facilities.Count > 0) {			
 			app.bottomPanel.showFacilities (found_facilities, "РЕЗУЛЬТАТЫ ПОИСКА");
 		}
 		hideSuggestions();

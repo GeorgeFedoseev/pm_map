@@ -75,6 +75,29 @@ public class TimetableManger {
 	}
 
 
+	public Pair getCurrentPair(){
+		foreach (var d in currentWeek.days) {
+			foreach (var p in d.pairs) {
+				if (p.now ())
+					return p;
+			}
+		}
+
+		return null;
+	}
+
+	public Pair getSoonPair(){
+		foreach (var d in currentWeek.days) {
+			foreach (var p in d.pairs) {
+				if (p.soon ())
+					return p;
+			}
+		}
+
+		return null;
+	}
+
+
 
 	public void updatePair(Pair oldPair, Pair newPair){	
 

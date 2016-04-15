@@ -11,7 +11,7 @@ public class BottomPanelScript : MonoBehaviour {
 	public RectTransform rect;
 
 
-	// set in inspector
+	// inspector
 	public ScrollRect scrollRect;
 	public RectTransform rowsContainer;
 	public Text title;
@@ -19,7 +19,8 @@ public class BottomPanelScript : MonoBehaviour {
 
 
 
-	float maxWidth = 400f;
+	bool orangeMode;
+
 	Vector2 targetSnapPosition;
 
 	// panel dragging
@@ -29,8 +30,8 @@ public class BottomPanelScript : MonoBehaviour {
 	Vector2 targetFoldPosition;
 	public float foldSpeed;
 	bool doFold = false;
-	bool foldHide = false;
 	bool folded = true;
+	bool hidden = true;
 
 	float halfFoldDistance = -110f;
 	float fullFoldDistance = -150f;
@@ -45,7 +46,7 @@ public class BottomPanelScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		setOrangeMode(true);
 	}
 
 	void OnEnable(){
@@ -60,6 +61,12 @@ public class BottomPanelScript : MonoBehaviour {
 			rect.anchoredPosition = Vector2.Lerp(rect.anchoredPosition, targetFoldPosition, foldSpeed * Time.deltaTime);
 
 			if (Mathf.Abs (rect.anchoredPosition.y - targetFoldPosition.y) < 0.01f) {
+				if(targetFoldPosition.y == fullFoldDistance){
+					hidden = true;
+				}else{
+					hidden = false;
+				}
+
 				doFold = false;
 				didFold ();
 			}
@@ -74,6 +81,89 @@ public class BottomPanelScript : MonoBehaviour {
 	private void didFold(){
 		//Debug.LogWarning ("DID FOLD "+folded.ToString());
 		//title.gameObject.SetActive (folded);
+
+		if (hidden) {
+			// check for current pairs
+			Pair p;
+			if ((p = app.timetableManager.getCurrentPair ()) != null) {
+				showPair (p, app.facilities.getRoom (p.room));
+			}else if((p = app.timetableManager.getSoonPair ()) != null){
+				showPair (p, app.facilities.getRoom (p.room), "СКОРО ПАРА");
+			}
+		}
+	}
+
+
+	public void setOrangeMode(bool _orangeMode){
+		orangeMode = _orangeMode;
+
+		foreach (var img in GetComponentsInChildren<Image> ()) {
+			if (_orangeMode) {
+				if (img.name != "Icon") {
+					img.color = new Color (226f / 255, 68f / 255, 31f / 255);
+				} else {
+					img.color = new Color (255f / 255, 255f / 255, 255f / 255);
+				}
+
+			} else {
+				if (img.name != "Icon") {
+					img.color = new Color (255f / 255, 255f / 255, 255f / 255);
+				} else {
+					img.color = new Color (0 / 255, 0 / 255, 0 / 255, 160f / 255);
+				}
+			}
+		}
+
+		foreach (var text in GetComponentsInChildren<Text> ()) {
+			if (_orangeMode) {
+				text.color = new Color (255f / 255, 255f / 255, 255f / 255);
+			} else {
+				text.color = new Color (0f / 255,0f / 255, 0f / 255, 223f / 255);
+			}
+		}
+
+
+	}
+
+	public void showPair(Pair pair, RoomScript room, string title_text = "ИДЕТ ПАРА"){
+		
+		// clear old
+		foreach (var row in rowsContainer.GetComponentsInChildren<BottomPanelRowScript>()) {
+			app.pool.deactivate (row.gameObject);
+		}
+
+		var r = app.pool.spawn<BottomPanelRowScript> ("bottom_panel_row");
+		r.title.text = room._name;
+		r.desc.text = pair.name + " ("+pair.time+")";
+
+		Loom.QueueOnMainThread (()=>{
+			var sprite = Resources.Load<Sprite>("Prefabs/UI/icons/"+room._icon);
+			if(sprite == null)
+				sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/default");
+			r.icon.sprite = sprite;	
+		});
+
+
+
+		r.GetComponent<Button>().onClick.AddListener (() => {							
+			Debug.LogWarning ("Clicked " + room.name);	
+			app.facilities.focusFacility (room);
+		});
+
+		r.transform.SetParent (rowsContainer);
+		r.transform.localScale = Vector3.one;
+	
+
+		title.text = title_text + " " +pair.name;
+
+		pageCounter.gameObject.SetActive (false);
+
+		UpdateSnapping ();
+		setOrangeMode (true);
+		scrollRect.horizontalNormalizedPosition = 0;
+		unfold (false);
+		var snapper = scrollRect.GetComponent<ScrollRectSnap> ();
+		snapper.scrollToPage (0);
 	}
 
 	public void showFacilities(List<FacilityScript> facilities, string title_text = "РЕЗУЛЬТАТЫ"){
@@ -118,6 +208,7 @@ public class BottomPanelScript : MonoBehaviour {
 
 
 		UpdateSnapping ();
+		setOrangeMode (false);
 		scrollRect.horizontalNormalizedPosition = 0;
 		unfold ();
 		var snapper = scrollRect.GetComponent<ScrollRectSnap> ();
@@ -135,31 +226,14 @@ public class BottomPanelScript : MonoBehaviour {
 		}
 	}
 
-	public void hide(){
-		gameObject.SetActive (false);
-	}
-
-	public void show(){
-		gameObject.SetActive (true);
-	}
-
-	public bool hidden(){
-		return !gameObject.activeInHierarchy;
-	}
-
-
 	public void fold(bool hide = false){
 		targetFoldPosition = new Vector2 (0, hide?fullFoldDistance:halfFoldDistance);
 		folded = true;
 		doFold = true;
 	}
 
-	public void unfold(){
-		if (hidden()) {
-			show ();
-		}
-
-		targetFoldPosition = new Vector2 (0, 0f);
+	public void unfold(bool full = true){
+		targetFoldPosition = new Vector2 (0, full?0:halfFoldDistance);
 		folded = false;
 		doFold = true;
 	}

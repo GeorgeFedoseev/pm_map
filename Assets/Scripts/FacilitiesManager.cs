@@ -101,6 +101,16 @@ public class FacilitiesManager {
 		return false;
 	}
 
+	public RoomScript getRoom(string room){
+		var res = facilities_db.getRoom (room);
+		if (res != null) {
+			var f = facilities_map[res.gameObjectID];
+			return (RoomScript)f;
+		}
+
+		return null;
+	}
+
 	public void goToRoom(string room){
 		var res = facilities_db.getRoom (room);
 		if (res != null) {
