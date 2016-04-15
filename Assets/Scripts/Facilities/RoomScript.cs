@@ -40,7 +40,7 @@ public class RoomScript : FacilityScript {
 		// add room number
 		roomNumber = (Instantiate(Resources.Load("Prefabs/room_number")) as GameObject).GetComponent<TextMesh>();
 		roomNumber.transform.SetParent (transform);
-		roomNumber.transform.position = getCenter () + getHeight()*Vector3.up;
+		roomNumber.transform.position = getCenter () + (getHeight()/2 + 0.1f)*Vector3.up ;
 		roomNumber.transform.localScale = new Vector3 (-0.2f, 0.2f, 0.2f);
 		roomNumber.transform.rotation = Quaternion.Euler(new Vector3 (-90, 180, 0));
 
