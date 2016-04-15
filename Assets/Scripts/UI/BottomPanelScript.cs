@@ -154,7 +154,7 @@ public class BottomPanelScript : MonoBehaviour {
 		r.transform.localScale = Vector3.one;
 	
 
-		title.text = title_text + " " +pair.name;
+		title.text = title_text + ": " +pair.name;
 
 		pageCounter.gameObject.SetActive (false);
 
