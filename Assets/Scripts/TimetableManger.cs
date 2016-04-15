@@ -35,7 +35,7 @@ public class TimetableManger {
 		history = new List<Dictionary<string, WeekTimetable>> ();
 
 		/* DEBUG */
-		clearDb ();
+		//clearDb ();
 
 		if (!hasTimetable ()) {
 			Debug.LogWarning ("NO TIMETABLE");

@@ -19,13 +19,14 @@ public class CenterPanelScript : MonoBehaviour {
 	public Button backButton;
 
 
-	float maxWidth = 400f;
+
 	Vector2 targetSnapPosition;
 
-	Vector2 oldScreenSize;
 
-	void Awake(){
+	protected virtual void Awake(){		
 		app = AppScript.getSharedInstance ();
+		Debug.LogWarning ("LOAD APP: "+(app==null?"NULL":"NOT NULL"));
+
 		rect = GetComponent<RectTransform> ();
 		scrollRect.onValueChanged.AddListener (OnScroll);
 	}
@@ -47,7 +48,7 @@ public class CenterPanelScript : MonoBehaviour {
 
 	}
 
-	public void close(){
+	public virtual void close(){
 		app.disableAllInCentralPanelContainer ();
 	}
 
@@ -171,8 +172,7 @@ public class CenterPanelScript : MonoBehaviour {
 		var sizeDelta = rect.sizeDelta;
 		var size = rect.rect.size;
 		var canvasSize = app.centerPanelCanvas.GetComponent<RectTransform> ().rect.size;
-		if (canvasSize == oldScreenSize)
-			return;
+
 
 		UpdateSnapping ();
 

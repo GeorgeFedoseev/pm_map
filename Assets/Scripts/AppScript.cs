@@ -42,9 +42,9 @@ public class AppScript : MonoBehaviour {
 	[HideInInspector]
 	public TTPanelScript timetablePanel;
 
+	public bool ready = false;
+
 	void Awake(){
-
-
 
 		hudCanvas = GameObject.Find ("HUDCanvas").GetComponent<Canvas>();
 		centerPanelCanvas = GameObject.Find ("CenterPanelCanvas").GetComponent<Canvas>();
@@ -70,7 +70,7 @@ public class AppScript : MonoBehaviour {
 		Application.targetFrameRate = 30;
 
 		/*DEBUG*/
-		PlayerPrefs.DeleteAll ();
+		//PlayerPrefs.DeleteAll ();
 
 
 
@@ -79,11 +79,8 @@ public class AppScript : MonoBehaviour {
 
 	void Start () {
 		facilities.initFacilities ();
-
-
 		floorSwitcher.switchToFloor (1);
-
-		openTimetable ();
+		ready = true;
 	}
 	
 
@@ -115,11 +112,11 @@ public class AppScript : MonoBehaviour {
 	}
 
 	public void disableAllInCentralPanelContainer(){
+		hudCanvas.gameObject.SetActive (true);
+
 		foreach(Transform t in centerPanelContainer){
 			t.gameObject.SetActive (false);
 		}
-
-		hudCanvas.gameObject.SetActive (true);
 	}
 
 	private GameObject loadCenterPanel(string name){
@@ -140,6 +137,11 @@ public class AppScript : MonoBehaviour {
 
 	// TIMETABLE
 	public void openTimetable(){
+		Loom.QueueOnMainThread (()=>{
+			hudCanvas.gameObject.SetActive (false);	
+		});
+
+
 		foreach (Transform t in centerPanelContainer) {
 			if (t.gameObject.GetComponent<TTPanelScript> () != null) {
 				t.gameObject.SetActive (true);
@@ -152,17 +154,15 @@ public class AppScript : MonoBehaviour {
 			timetablePanel.Prepare ();
 		} else {
 			// tour for getting timetable link
-			openTimtableTour();
+			openTimetableTour();
 		}
-
-		hudCanvas.gameObject.SetActive (false);
 
 		//disableCamera ();
 	}
 
 
 
-	public void openTimtableTour(){
+	public void openTimetableTour(){
 		loadCenterPanel ("LoadTimetableCenterPanel");
 		hudCanvas.gameObject.SetActive (false);
 	}

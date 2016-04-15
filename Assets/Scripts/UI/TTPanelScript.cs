@@ -21,13 +21,32 @@ public class TTPanelScript : CenterPanelScript {
 
 	float lastCurrentWeekScrollPos, lastNextWeekScrollPos;
 
+	void OnEnable(){
+		if(app.ready)
+			Prepare ();
+	}
+
 	public void Prepare(){
+		app = AppScript.getSharedInstance ();
+
+		Debug.LogWarning ("Prepare timetable");
+
 		if (!firstLoadDone) {
 			UpdateContents ();
 		}
 			
 	}
 
+	public override void close(){
+		base.close ();
+
+		if (_editMode) {
+			Debug.LogWarning ("CLOSED IN EDIT MODE: PREPARE FOR THE NEXT OPEN");
+			firstLoadDone = false;
+			_editMode = false;
+		}
+
+	}
 
 	public void switchWeek(bool current, bool syncPos = true){		
 		if (loading)
@@ -97,7 +116,7 @@ public class TTPanelScript : CenterPanelScript {
 		//Debug.LogWarning ("DOWNLOAD TIMETABLE");
 		Alerts.AskYesNo("Загрузка расписания", "Текущее расписание будет заменено на новое, выбранное Вами. Продолжить?", ()=>{
 			app.closeTimetable ();
-			app.openTimtableTour ();
+			app.openTimetableTour ();
 		}, null, "ОК", "ОТМЕНА");
 
 	}
@@ -118,6 +137,7 @@ public class TTPanelScript : CenterPanelScript {
 	}
 
 	public void UpdateContents(bool editMode = false){
+		//Debug.LogWarning ("Update contents of timetable");
 		setLoading (true);
 
 		lastCurrentWeekScrollPos = currentWeek.scrollRect.verticalNormalizedPosition;
@@ -136,6 +156,8 @@ public class TTPanelScript : CenterPanelScript {
 			downloadButton.gameObject.SetActive (editMode);
 			undoButton.gameObject.SetActive(editMode && app.timetableManager.historyHasPrevState());
 
+
+			Debug.LogWarning("app is "+ (app==null?"NULL":"NOT NULL"));
 			currentWeek._week = app.timetableManager.currentWeek;
 			nextWeek._week = app.timetableManager.nextWeek;
 
