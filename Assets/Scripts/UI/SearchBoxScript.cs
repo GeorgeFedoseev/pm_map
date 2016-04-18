@@ -10,13 +10,14 @@ public class SearchBoxScript : MonoBehaviour {
 	AppScript app;
 
 	public RectTransform dialog;
-	public InputField input;
+	public SubmitInputField input;
 	public Transform suggestionRowsContainer;
 	public Button clearButton;
 
 	bool suggestionsOpened = false;
 	float suggestionsAnimTime = 0.2f;
 
+	TouchScreenKeyboard kb;
 
 
 	void Awake(){
@@ -26,8 +27,10 @@ public class SearchBoxScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {		
 		suggestionsOpened = true;
-		searchInputChanged ();
-		input.onEndEdit.AddListener (keyboardDoneEdit);
+		searchInputChanged ("");
+		input.onKeyboardDone.AddListener (keyboardDone);
+		input.onKeyboardCancel.AddListener (keyboardCancel);
+		input.onValueChanged.AddListener (searchInputChanged);
 	}
 	
 	// Update is called once per frame
@@ -35,18 +38,25 @@ public class SearchBoxScript : MonoBehaviour {
 		
 	}
 
-	void keyboardDoneEdit(string str){		
-		var query = str.Trim ();
+	void keyboardDone(){		
+		var query = input.text.Trim ();
 
 		//Debug.LogWarning ("DONE EDIT");
 
-		if ((query.Length <= 1 || CameraScript.IsPointerOverUIObject()) && !Input.GetButtonDown("Submit"))
+		if (query.Length <= 1)
 			return;
-		
+
+
 		showSearchResults (query);
+
+	}
+
+	void keyboardCancel(){
+		hideSuggestions ();
 	}
 
 	public void inputClick(){
+		
 		if (input.text != "") {
 			showSuggestions ();
 		}
@@ -54,7 +64,7 @@ public class SearchBoxScript : MonoBehaviour {
 
 	public void clearInput(){
 		input.text = "";
-		searchInputChanged ();
+		searchInputChanged ("");
 		app.bottomPanel.fold (true);
 		app.cam.stopFlying ();
 		app.facilities.dehighlightAll ();
@@ -70,7 +80,7 @@ public class SearchBoxScript : MonoBehaviour {
 		hideSuggestions();
 	}
 
-	public void searchInputChanged(){		
+	public void searchInputChanged(string str){		
 	//	Debug.LogWarning ("INPUT CHANGED");
 		updateClearButton();
 
@@ -88,6 +98,7 @@ public class SearchBoxScript : MonoBehaviour {
 	}
 
 	private void findSuggestions(string query){
+		
 		if (query.Length >= 2) {
 
 			// FIND SUGGESTIONS
@@ -116,7 +127,7 @@ public class SearchBoxScript : MonoBehaviour {
 
 
 					// suggestion click
-					r.button.onClick.AddListener (() => {							
+					r.button.onClick.AddListener (() => {
 						Debug.LogWarning ("Clicked " + _f._name);	
 						app.facilities.focusFacility (_f, true, true);
 						hideSuggestions();
@@ -137,14 +148,20 @@ public class SearchBoxScript : MonoBehaviour {
 			} else {					
 				if (suggestionsOpened)
 					hideSuggestions ();
+
+				dialog.sizeDelta = new Vector2 (dialog.sizeDelta.x, 0);
 			}
 		} else {
 			if (suggestionsOpened)
 				hideSuggestions ();
+
+			dialog.sizeDelta = new Vector2 (dialog.sizeDelta.x, 0);
 		}	
 	}
 
 	private void showSuggestions(){
+		if (suggestionsOpened)
+			return;
 		Loom.removeByName ("hide_dialog");
 		dialog.gameObject.SetActive (true);
 		iTween.ValueTo(gameObject, iTween.Hash("from", 0, "to", 1, "onupdate", "inputAnimation", "time", suggestionsAnimTime, "easetype", iTween.EaseType.easeInOutSine));
@@ -158,6 +175,8 @@ public class SearchBoxScript : MonoBehaviour {
 		Loom.QueueOnMainThread (()=>{
 			dialog.gameObject.SetActive (false);
 		}, suggestionsAnimTime, "hide_dialog");
+
+
 	}
 
 	private void inputAnimation(float progress){
