@@ -58,6 +58,7 @@ public class SearchBoxScript : MonoBehaviour {
 		app.bottomPanel.fold (true);
 		app.cam.stopFlying ();
 		app.facilities.dehighlightAll ();
+		updateClearButton ();
 	}
 
 
@@ -71,7 +72,7 @@ public class SearchBoxScript : MonoBehaviour {
 
 	public void searchInputChanged(){		
 	//	Debug.LogWarning ("INPUT CHANGED");
-		clearButton.gameObject.SetActive (input.text.Length > 0);
+		updateClearButton();
 
 		var query = input.text.Trim();
 
@@ -79,6 +80,11 @@ public class SearchBoxScript : MonoBehaviour {
 		Loom.QueueOnMainThread (()=>{
 			findSuggestions (query);	
 		}, 0.1f, "find_suggestions");
+	}
+
+	public void updateClearButton(){
+		if(app != null)
+			clearButton.gameObject.SetActive (input.text.Length > 0 || (!app.bottomPanel.hidden && !app.bottomPanel.orangeMode));
 	}
 
 	private void findSuggestions(string query){

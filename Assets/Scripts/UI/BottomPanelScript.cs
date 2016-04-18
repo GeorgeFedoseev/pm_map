@@ -19,7 +19,7 @@ public class BottomPanelScript : MonoBehaviour {
 
 
 
-	bool orangeMode;
+	public bool orangeMode;
 
 	Vector2 targetSnapPosition;
 
@@ -30,8 +30,8 @@ public class BottomPanelScript : MonoBehaviour {
 	Vector2 targetFoldPosition;
 	public float foldSpeed;
 	bool doFold = false;
-	bool folded = true;
-	bool hidden = true;
+	public bool folded = true;
+	public bool hidden = true;
 
 	float halfFoldDistance = -110f;
 	float fullFoldDistance = -150f;
@@ -60,12 +60,8 @@ public class BottomPanelScript : MonoBehaviour {
 		if (doFold) {
 			rect.anchoredPosition = Vector2.Lerp(rect.anchoredPosition, targetFoldPosition, foldSpeed * Time.deltaTime);
 
-			if (Mathf.Abs (rect.anchoredPosition.y - targetFoldPosition.y) < 0.01f) {
-				if(targetFoldPosition.y == fullFoldDistance){
-					hidden = true;
-				}else{
-					hidden = false;
-				}
+			if (Mathf.Abs (rect.anchoredPosition.y - targetFoldPosition.y) < 0.1f) {
+				
 
 				doFold = false;
 				didFold ();
@@ -91,6 +87,8 @@ public class BottomPanelScript : MonoBehaviour {
 				showPair (p, "СКОРО ПАРА");
 			}
 		}
+
+		app.searchBox.updateClearButton ();
 	}
 
 
@@ -239,12 +237,24 @@ public class BottomPanelScript : MonoBehaviour {
 		targetFoldPosition = new Vector2 (0, hide?fullFoldDistance:halfFoldDistance);
 		folded = true;
 		doFold = true;
+		updateHidden ();
 	}
 
 	public void unfold(bool full = true){
 		targetFoldPosition = new Vector2 (0, full?0:halfFoldDistance);
 		folded = false;
 		doFold = true;
+		updateHidden ();
+	}
+
+	private void updateHidden(){
+		if(targetFoldPosition.y == fullFoldDistance){
+			hidden = true;
+		}else{
+			hidden = false;
+		}
+
+		app.searchBox.updateClearButton ();
 	}
 
 	public void OnDrag(BaseEventData e){
