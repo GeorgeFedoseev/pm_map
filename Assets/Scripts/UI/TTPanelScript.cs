@@ -290,5 +290,12 @@ public class TTPanelScript : CenterPanelScript {
 			UpdateLayout ();
 	}
 
+	void OnApplicationPause(bool pause) {
+		if (!pause) {
+			// returned from bg
+			updateCurrentPair();
+		}
+	}
+
 
 }

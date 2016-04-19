@@ -78,7 +78,14 @@ public class BottomPanelScript : MonoBehaviour {
 		//Debug.LogWarning ("DID FOLD "+folded.ToString());
 		//title.gameObject.SetActive (folded);
 
-		if (hidden) {
+		updatePairAlert ();
+
+		app.searchBox.updateClearButton ();
+	}
+
+
+	private void updatePairAlert(bool forceUpdate = false){
+		if (hidden || forceUpdate) {
 			// check for current pairs
 			Pair p;
 			if ((p = app.timetableManager.getCurrentPair ()) != null) {
@@ -87,8 +94,6 @@ public class BottomPanelScript : MonoBehaviour {
 				showPair (p, "СКОРО ПАРА");
 			}
 		}
-
-		app.searchBox.updateClearButton ();
 	}
 
 
@@ -166,9 +171,15 @@ public class BottomPanelScript : MonoBehaviour {
 		pageCounter.gameObject.SetActive (false);
 
 		UpdateSnapping ();
-		setOrangeMode (true);
+
 		scrollRect.horizontalNormalizedPosition = 0;
-		unfold (false);
+
+		bool fullUnfold = false;
+		if (orangeMode && !folded)
+			fullUnfold = true;		
+		unfold (fullUnfold);
+
+		setOrangeMode (true);
 		var snapper = scrollRect.GetComponent<ScrollRectSnap> ();
 		snapper.scrollToPage (0);
 	}
@@ -242,7 +253,7 @@ public class BottomPanelScript : MonoBehaviour {
 
 	public void unfold(bool full = true){
 		targetFoldPosition = new Vector2 (0, full?0:halfFoldDistance);
-		folded = false;
+		folded = !full;
 		doFold = true;
 		updateHidden ();
 	}
@@ -367,5 +378,12 @@ public class BottomPanelScript : MonoBehaviour {
 		//Debug.LogWarning ("Size: "+size);
 
 		oldScreenSize = canvasSize;
+	}
+
+	void OnApplicationPause(bool pause) {
+		if (!pause) {
+			// returned from bg
+			updatePairAlert(orangeMode);
+		}
 	}
 }
