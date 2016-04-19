@@ -6,6 +6,10 @@ public class RoomScript : FacilityScript {
 	[TextArea()]
 	public string description;
 	[TextArea()]
+	public string info;
+	[TextArea()]
+	public string people;
+	[TextArea()]
 	public string aliases;
 
 	public bool auditory = false;
@@ -16,8 +20,11 @@ public class RoomScript : FacilityScript {
 	void Awake(){
 		_name = room;
 		_description = description;
+		_info = info;
+		_people = people;
 		_room = room;
 		_aliases = aliases;
+
 
 		if (_icon == "") {
 			if (auditory) {

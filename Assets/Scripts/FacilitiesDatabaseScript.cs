@@ -15,6 +15,8 @@ public class FacilityRecord {
 	public int id { get; set; }
 	public string name { get; set; }
 	public string description { get; set; }
+	public string info { get; set; }
+	public string people { get; set; }
 	public string aliases { get; set; }
 	public string room { get; set; }
 	public string icon { get; set; }
@@ -33,11 +35,13 @@ public class FacilitiesDatabaseScript {
 		Debug.LogWarning ("db_path: "+db_path);
 	}
 
-	public void addFacility(string name, string desc, string aliases, string room, string icon, int gameObjectID){
+	public void addFacility(string name, string desc, string info, string people, string aliases, string room, string icon, int gameObjectID){
 
 		var f = new FacilityRecord ();
 		f.name = name;
 		f.description = desc;
+		f.info = info;
+		f.people = people;
 		f.aliases = aliases;
 		f.room = room;
 		f.icon = icon;
@@ -45,6 +49,8 @@ public class FacilitiesDatabaseScript {
 
 		f.search_string = " "+(name!=null?name.ToLower():"")
 			+ " " + (desc!=null?desc.ToLower():"")
+			+ " " + (info!=null?info.ToLower():"")
+			+ " " + (people!=null?people.ToLower():"")
 			+ " " + (aliases!=null?aliases.ToLower():"")
 			+ " " + (room!=null?room.ToLower():"");
 
@@ -94,7 +100,8 @@ public class FacilitiesDatabaseScript {
 				Debug.LogWarning(string.Format(frmt,
 					f.id,
 					f.name,
-					f.description
+					f.description,
+					f.info
 				));
 			}
 

@@ -10,6 +10,10 @@ public class FacilityScript : MonoBehaviour {
 	[HideInInspector]
 	public string _description;
 	[HideInInspector]
+	public string _info;
+	[HideInInspector]
+	public string _people;
+	[HideInInspector]
 	public string _aliases;
 	[HideInInspector]
 	public string _room;
