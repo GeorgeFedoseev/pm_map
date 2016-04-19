@@ -179,7 +179,7 @@ public class Pair {
 	}
 
 	private void parseRoom(){		
-		var parser = new Regex(@", ([A-Za-zА-Яа-я \/0-9]*)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+		var parser = new Regex(@".*Университетский.*35.*, ([A-Za-zА-Яа-я \/0-9]*)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 		//Console.WriteLine ("Location: "+location);
 		room = parser.Match (location).Groups [1].Value;
 
