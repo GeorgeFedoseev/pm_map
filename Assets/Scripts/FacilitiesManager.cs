@@ -57,7 +57,7 @@ public class FacilitiesManager {
 		return res;
 	}
 
-	public void focusFacility(FacilityScript f, bool flyTo = true, bool showInfo = false){
+	public void focusFacility(FacilityScript f, bool flyTo = true, bool showInfo = false, bool switchFloor = true){
 		target_facility = f;
 
 		var look_dst = f.getSize ()*4;
@@ -66,7 +66,10 @@ public class FacilitiesManager {
 
 		if (flyTo) {
 			app.cam.setTargetFacility(f, look_dst, look_dst);
-			app.floorSwitcher.switchToFloor (f.getFloor());
+
+			if (switchFloor) {
+				app.floorSwitcher.switchToFloor (f.getFloor());
+			}				
 		}
 
 

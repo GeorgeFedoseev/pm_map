@@ -224,6 +224,7 @@ public class BottomPanelScript : MonoBehaviour {
 			pageCounter.gameObject.SetActive (true);
 		} else {
 			pageCounter.gameObject.SetActive (false);
+			app.facilities.focusFacility (facilities[0], true, false, false);							
 		}
 
 

@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class AppScript : MonoBehaviour {
 
-	public static bool DEBUG = true;
+	public static bool DEBUG = false;
 
 	private static AppScript sharedInstance;
 	public static AppScript getSharedInstance(){
