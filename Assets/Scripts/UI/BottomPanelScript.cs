@@ -186,7 +186,7 @@ public class BottomPanelScript : MonoBehaviour {
 		snapper.scrollToPage (0);
 	}
 
-	public void showFacilities(List<FacilityScript> facilities, string title_text = "РЕЗУЛЬТАТЫ"){
+	public void showFacilities(List<FacilityScript> facilities, string title_text = "РЕЗУЛЬТАТЫ", bool switchFloorIfOnlyOne = false){
 		// clear old
 		foreach (var r in rowsContainer.GetComponentsInChildren<BottomPanelRowScript>()) {
 			app.pool.deactivate (r.gameObject);
@@ -224,7 +224,7 @@ public class BottomPanelScript : MonoBehaviour {
 			pageCounter.gameObject.SetActive (true);
 		} else {
 			pageCounter.gameObject.SetActive (false);
-			app.facilities.focusFacility (facilities[0], true, false, false);							
+			app.facilities.focusFacility (facilities[0], true, false, switchFloorIfOnlyOne);							
 		}
 
 
