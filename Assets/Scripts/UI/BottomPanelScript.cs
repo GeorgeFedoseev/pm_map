@@ -148,6 +148,8 @@ public class BottomPanelScript : MonoBehaviour {
 				r.icon.sprite = sprite;	
 			});
 
+			r.GetComponent<Button> ().onClick.RemoveAllListeners ();
+
 			r.GetComponent<Button>().onClick.AddListener (() => {				
 				app.facilities.focusFacility (room);
 			});
@@ -206,7 +208,7 @@ public class BottomPanelScript : MonoBehaviour {
 			});
 
 
-
+			r.GetComponent<Button> ().onClick.RemoveAllListeners ();
 			r.GetComponent<Button>().onClick.AddListener (() => {							
 				Debug.LogWarning ("Clicked " + _f.name);	
 				app.facilities.focusFacility (_f);

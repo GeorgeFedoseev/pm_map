@@ -10,8 +10,9 @@ public class Constants {
 			var openPath = Application.dataPath + "/Raw/"+db_name;
 			db_path = Application.persistentDataPath+"/"+db_name;
 
-			if(!File.Exists(db_path))
-				File.Copy(openPath, db_path);
+
+			if(!File.Exists(db_path) || AppScript.DEBUG)
+				File.Copy(openPath, db_path, true);
 
 
 		}else if(Application.platform == RuntimePlatform.Android){

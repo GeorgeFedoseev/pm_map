@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class AppScript : MonoBehaviour {
 
+	public static bool DEBUG = true;
+
 	private static AppScript sharedInstance;
 	public static AppScript getSharedInstance(){
 		return sharedInstance == null ? sharedInstance = Camera.main.gameObject.GetComponent<AppScript>() : sharedInstance;
