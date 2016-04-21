@@ -260,13 +260,13 @@ public class TimetableParser {
 
 					}
 				} else {
-					Console.WriteLine ("Pairs Not found");
+			//		Console.WriteLine ("Pairs Not found");
 				}
 
 				timetable.days.Add (dayTimetable);
 			}
 		} else {
-			Console.WriteLine ("Days Not found");
+			//Console.WriteLine ("Days Not found");
 		}
 
 

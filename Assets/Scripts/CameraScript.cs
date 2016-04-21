@@ -110,10 +110,22 @@ public class CameraScript : MonoBehaviour {
 
 	// HANDLING TOUCH INPUT HERE
 	void LateUpdate () {
+		
+
 		if (overUI && !controlsInUse)
 			return;
+
+		var canvasScale = app.centerPanelCanvas.scaleFactor;
+
+		#if UNITY_EDITOR
+			// test on iPhone 5c
+			//canvasScale = 1.893333f;
+		#endif
+
+		//Debug.LogWarning("CANVAS SCALE: "+canvasScale);
+
+		var mltpl = Time.deltaTime * 35f/canvasScale;
 		
-		var mltpl = Time.deltaTime * 35f/Screen.dpi*82f;
 		if (hasTouches ()) {
 			stopFlying ();
 
@@ -215,6 +227,16 @@ public class CameraScript : MonoBehaviour {
 								var translation = (worldInteractPoint - Camera.main.transform.position).normalized * deltaZoom;
 
 								Camera.main.transform.Translate (translation, Space.World);	
+
+								// check if camera too close to worldInteractPoint, and revert changes if too close
+								var pos_after_translate = Camera.main.transform.position;
+								var dst_to_interact_point = (worldInteractPoint - pos_after_translate).magnitude;
+								//Debug.LogWarning ("DST to interact point: "+dst_to_interact_point);
+
+								if (dst_to_interact_point < 3f) {
+									Camera.main.transform.position = oldCamPos;	
+									Camera.main.transform.rotation = oldCamRot;	
+								} 
 							} else {
 
 							}
