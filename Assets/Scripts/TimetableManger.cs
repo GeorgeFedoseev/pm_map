@@ -35,7 +35,9 @@ public class TimetableManger {
 		history = new List<Dictionary<string, WeekTimetable>> ();
 
 		/* DEBUG */
-		//clearDb ();
+		if (AppScript.CLEAN_EVERYTHING_ON_START) {
+			clearDb ();
+		}
 
 		if (!hasTimetable ()) {
 			Debug.LogWarning ("NO TIMETABLE");

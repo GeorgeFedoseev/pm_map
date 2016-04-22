@@ -6,7 +6,9 @@ using UnityEngine.EventSystems;
 
 public class AppScript : MonoBehaviour {
 
-	public static bool DEBUG = false;
+	public static bool DEBUG = true;
+	public static bool CLEAN_EVERYTHING_ON_START = false;
+	public static bool UPDATE_FACILITIES_DB_ON_START = false;
 
 	private static AppScript sharedInstance;
 	public static AppScript getSharedInstance(){
@@ -48,6 +50,12 @@ public class AppScript : MonoBehaviour {
 
 	void Awake(){
 
+		if (DEBUG) {
+			var fps_displ = FindObjectOfType<FPSDisplay> ();
+			if (fps_displ != null)
+				fps_displ.enabled = true;
+		}
+
 		hudCanvas = GameObject.Find ("HUDCanvas").GetComponent<Canvas>();
 		centerPanelCanvas = GameObject.Find ("CenterPanelCanvas").GetComponent<Canvas>();
 		alertsCanvas = GameObject.Find ("AlertsCanvas").GetComponent<Canvas>();
@@ -72,7 +80,10 @@ public class AppScript : MonoBehaviour {
 		Application.targetFrameRate = 30;
 
 		/*DEBUG*/
-		//PlayerPrefs.DeleteAll ();
+		if (CLEAN_EVERYTHING_ON_START) {
+			PlayerPrefs.DeleteAll ();
+		}
+
 
 
 
@@ -81,7 +92,7 @@ public class AppScript : MonoBehaviour {
 
 	void Start () {
 		facilities.initFacilities ();
-		floorSwitcher.switchToFloor (1);
+		floorSwitcher.switchToFloor (2);
 		ready = true;
 	}
 	

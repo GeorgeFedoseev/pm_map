@@ -95,7 +95,7 @@ public class CameraScript : MonoBehaviour {
 		lookHeight = _lookHeight;
 		lookDistance = _lookDistance;
 
-		targetObjectPosition = facility.transform.position;
+		targetObjectPosition = facility.getCenter ();
 
 		targetPosition = targetObjectPosition + facility.transform.up * _lookHeight - Vector3.forward * _lookDistance;
 		//targetRotation = Quaternion.LookRotation (targetObjectPosition - targetPosition, Vector3.up);

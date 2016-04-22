@@ -107,50 +107,56 @@ public class SearchBoxScript : MonoBehaviour {
 				app.pool.deactivate (r.gameObject);			
 			}
 
-			var found_facilities = app.facilities.findFacilities (query);
+			Loom.RunAsync (()=>{
+				var found_facilities = app.facilities.findFacilities (query);
 
-			if (found_facilities.Count > 0) {
-				// create new rows for query results
+				Loom.QueueOnMainThread(()=>{
+					if (found_facilities.Count > 0) {
+						// create new rows for query results
 
-				foreach (var f in found_facilities) {
-					var r = app.pool.spawn<SuggestionRowScript> ("suggestion_row");
-					r.name.text = f._name;
-					r.desc.text = f._description;
+						foreach (var f in found_facilities) {
+							var r = app.pool.spawn<SuggestionRowScript> ("suggestion_row");
+							r.name.text = f._name;
+							r.desc.text = f._description;
 
-					var _f = f;
-					Loom.QueueOnMainThread (() => {
-						var sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/" + _f._icon);
-						if (sprite == null)
-							sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/default");
-						r.icon.sprite = sprite;	
-					});
+							var _f = f;
+							//Loom.QueueOnMainThread (() => {
+							var sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/" + _f._icon);
+							if (sprite == null)
+								sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/default");
+							r.icon.sprite = sprite;	
+							//});
 
 
-					// suggestion click
-					r.button.onClick.AddListener (() => {
-						Debug.LogWarning ("Clicked " + _f._name);	
-						app.facilities.focusFacility (_f, true, true);
-						hideSuggestions();
-					});
+							// suggestion click
+							r.button.onClick.AddListener (() => {
+								Debug.LogWarning ("Clicked " + _f._name);	
+								app.facilities.focusFacility (_f, true, true);
+								hideSuggestions();
+							});
 
-					r.transform.SetParent (suggestionRowsContainer);
-					r.transform.localScale = Vector3.one;
-				}
+							r.transform.SetParent (suggestionRowsContainer);
+							r.transform.localScale = Vector3.one;
+						}
 
-				// update suggestions box height
-				var h = 25f + found_facilities.Count * 48f;
-				if (h > 350f)
-					h = 350f;
-				dialog.sizeDelta = new Vector2 (dialog.sizeDelta.x, h);
+						// update suggestions box height
+						var h = 25f + found_facilities.Count * 48f;
+						if (h > 350f)
+							h = 350f;
+						dialog.sizeDelta = new Vector2 (dialog.sizeDelta.x, h);
 
-				if (!suggestionsOpened)
-					showSuggestions ();
-			} else {					
-				if (suggestionsOpened)
-					hideSuggestions ();
+						if (!suggestionsOpened)
+							showSuggestions ();
+					} else {					
+						if (suggestionsOpened)
+							hideSuggestions ();
 
-				dialog.sizeDelta = new Vector2 (dialog.sizeDelta.x, 0);
-			}
+						dialog.sizeDelta = new Vector2 (dialog.sizeDelta.x, 0);
+					}
+				});
+
+			});
+
 		} else {
 			if (suggestionsOpened)
 				hideSuggestions ();
@@ -164,11 +170,13 @@ public class SearchBoxScript : MonoBehaviour {
 			return;
 		Loom.removeByName ("hide_dialog");
 		dialog.gameObject.SetActive (true);
+		iTween.Stop(gameObject);
 		iTween.ValueTo(gameObject, iTween.Hash("from", 0, "to", 1, "onupdate", "inputAnimation", "time", suggestionsAnimTime, "easetype", iTween.EaseType.easeInOutSine));
 		suggestionsOpened = true;
 	}
 
 	private void hideSuggestions(){
+		iTween.Stop(gameObject);
 		iTween.ValueTo(gameObject, iTween.Hash("from", 1, "to", 0, "onupdate", "inputAnimation", "time", suggestionsAnimTime, "easetype", iTween.EaseType.easeInOutSine));
 		suggestionsOpened = false;
 

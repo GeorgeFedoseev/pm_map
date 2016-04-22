@@ -32,10 +32,12 @@ public class FacilitiesManager {
 			facilities_map[f.gameObject.GetInstanceID()] = f;
 		}
 
-		// rebuild facilites DB
-		facilities_db.clearDb ();
-		foreach(var f in app.building.GetComponentsInChildren<FacilityScript>()){
-			facilities_db.addFacility (f._name, f._description, f._info, f._people, f._aliases, f._room, f._icon, f.gameObject.GetInstanceID());
+		if (AppScript.UPDATE_FACILITIES_DB_ON_START) {
+			// rebuild facilites DB
+			facilities_db.clearDb ();
+			foreach(var f in app.building.GetComponentsInChildren<FacilityScript>()){
+				facilities_db.addFacility (f._name, f._description, f._info, f._people, f._aliases, f._room, f._icon, f.gameObject.GetInstanceID());
+			}	
 		}
 
 		/*foreach(var f in facilities_db.findFacilities("кофе")){
