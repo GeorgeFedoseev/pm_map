@@ -25,6 +25,9 @@ public class CameraScript : MonoBehaviour {
 	private Vector2 touch2StartPos;
 
 	bool firstTouchInMoveMode = true;
+	bool secondTouchInMoveMode = true;
+	public bool canMove = true;
+
 	bool firstTouchInRotateMode = true;
 
 	private Vector3 worldInteractPoint;
@@ -160,11 +163,16 @@ public class CameraScript : MonoBehaviour {
 					var cameraForwardDirection = (Camera.main.transform.forward-new Vector3(0, Camera.main.transform.forward.y, 0)).normalized;
 					var cameraRightDirection = (Camera.main.transform.right-new Vector3(0, Camera.main.transform.right.y, 0)).normalized;
 
-					if (touchDelta.magnitude > moveTouchThreshold) {
-						Camera.main.transform.position -= (cameraForwardDirection*worldDelta.y*mltpl*moveSpeed
-							+ cameraRightDirection*worldDelta.x*mltpl*moveSpeed);
-					}
 
+					//if (!secondTouchInMoveMode || touchDelta.magnitude / canvasScale > moveTouchThreshold) {
+					if(canMove){
+						Camera.main.transform.position -= (cameraForwardDirection * worldDelta.y * mltpl * moveSpeed
+							+ cameraRightDirection * worldDelta.x * mltpl * moveSpeed);
+					}
+						
+					//}
+
+					//secondTouchInMoveMode = false;
 
 					touch1StartPos = touch1Pos;						
 				}
@@ -259,9 +267,12 @@ public class CameraScript : MonoBehaviour {
 		}else{
 			controlsInUse = false;
 			firstTouchInMoveMode = true;
+			secondTouchInMoveMode = true;
+
 			firstTouchInRotateMode = true;
 			touchRotatePhiZoomMode = false;
 			touchRotateThetaMode = false;
+
 		}
 
 

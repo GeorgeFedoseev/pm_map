@@ -34,6 +34,10 @@ public class FacilityScript : MonoBehaviour {
 		//Debug.LogWarning ("On mouse Up");
 		if (!app.cam.overUI && !app.cam.controlsInUse) {			
 			app.facilities.focusFacility (this, false, true);
+			app.cam.canMove = false;
+			Loom.QueueOnMainThread (()=>{
+				app.cam.canMove = true;
+			}, 0.2f);
 
 		}
 			

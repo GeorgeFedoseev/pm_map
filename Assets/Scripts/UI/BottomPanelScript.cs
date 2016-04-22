@@ -390,7 +390,7 @@ public class BottomPanelScript : MonoBehaviour {
 	}
 
 	void OnApplicationPause(bool pause) {
-		if (!pause) {
+		if (!pause && app.ready) {
 			// returned from bg
 			updatePairAlert(orangeMode);
 		}
