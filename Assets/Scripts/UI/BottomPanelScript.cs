@@ -165,9 +165,10 @@ public class BottomPanelScript : MonoBehaviour {
 
 
 
-
-		r.transform.SetParent (rowsContainer);
+		r.transform.SetParent (rowsContainer, false);
 		r.transform.localScale = Vector3.one;
+		r.transform.localPosition = Vector3.one;
+		r.transform.localRotation = Quaternion.identity;
 	
 
 		title.text = title_text + ": " +pair.name;

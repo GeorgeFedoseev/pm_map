@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 
 public class AppScript : MonoBehaviour {
 
-	public static bool DEBUG = true;
-	public static bool CLEAN_EVERYTHING_ON_START = false;
+	public static bool DEBUG = false;
+	public static bool CLEAN_EVERYTHING_ON_START = true;
 	public static bool UPDATE_FACILITIES_DB_ON_START = false;
 
 	private static AppScript sharedInstance;
@@ -138,11 +138,16 @@ public class AppScript : MonoBehaviour {
 
 
 		var go = Instantiate (Resources.Load("Prefabs/UI/CenterPanels/"+name)) as GameObject;
-		go.transform.SetParent (centerPanelContainer);
+		go.transform.SetParent (centerPanelContainer, false);
+		go.transform.localScale = Vector3.one;
+		go.transform.localRotation = Quaternion.identity;
+
 		var rect = go.GetComponent<RectTransform> ();
 		rect.transform.localScale = Vector3.one;
 		rect.sizeDelta = Vector2.zero;
 		rect.anchoredPosition = Vector2.zero;
+
+
 
 		return go;
 	}

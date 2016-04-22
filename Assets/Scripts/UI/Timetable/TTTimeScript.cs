@@ -23,8 +23,11 @@ public class TTTimeScript : MonoBehaviour {
 	public void addPair(Pair pair, bool lastPair = false, bool editMode = false){
 		var p = (Instantiate (Resources.Load("Prefabs/UI/schedule/Pair"+(editMode?"_editable":""))) as GameObject).GetComponent<TTPairScript>();		
 		p._pair = pair;
-		p.transform.SetParent (pairsContainer);
+
+		p.transform.SetParent (pairsContainer, false);
 		p.transform.localScale = Vector3.one;
+		p.transform.localScale = Vector3.one;
+		p.transform.localRotation = Quaternion.identity;
 
 		p.pairTitle.text = pair.name;
 

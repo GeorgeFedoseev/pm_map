@@ -116,6 +116,7 @@ public class SearchBoxScript : MonoBehaviour {
 
 						foreach (var f in found_facilities) {
 							var r = app.pool.spawn<SuggestionRowScript> ("suggestion_row");
+
 							r.name.text = f._name;
 							r.desc.text = f._description;
 
@@ -135,8 +136,9 @@ public class SearchBoxScript : MonoBehaviour {
 								hideSuggestions();
 							});
 
-							r.transform.SetParent (suggestionRowsContainer);
+							r.transform.SetParent (suggestionRowsContainer, false);
 							r.transform.localScale = Vector3.one;
+							r.transform.localRotation = Quaternion.identity;
 						}
 
 						// update suggestions box height

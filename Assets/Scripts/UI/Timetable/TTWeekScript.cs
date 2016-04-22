@@ -23,8 +23,10 @@ public class TTWeekScript : MonoBehaviour {
 	public void addDay(DayTimetable day, bool editMode = false){
 		var d = (Instantiate (Resources.Load("Prefabs/UI/schedule/Day")) as GameObject).GetComponent<TTDayScript>();		
 		d._day = day;
-		d.transform.SetParent (daysContainer);
+		d.transform.SetParent (daysContainer, false);
 		d.transform.localScale = Vector3.one;
+		d.transform.localScale = Vector3.one;
+		d.transform.localRotation = Quaternion.identity;
 
 		d.dayTitle.text = day.getTranslatedDay();
 		d.date.text = day.day.ToString ("d MMM", System.Globalization.CultureInfo.GetCultureInfo("ru-RU"));
