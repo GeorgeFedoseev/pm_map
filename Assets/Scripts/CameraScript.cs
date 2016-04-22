@@ -14,7 +14,6 @@ public class CameraScript : MonoBehaviour {
 	public float touchRotatePhiThreshold = 3.06f;
 	public float touchZoomThreshold = 4.4f;
 	public float touchRotateThetaThreshold = 8.9f;
-	public float moveTouchThreshold = 0.2f;
 
 	// in use
 	[HideInInspector]
@@ -25,7 +24,6 @@ public class CameraScript : MonoBehaviour {
 	private Vector2 touch2StartPos;
 
 	bool firstTouchInMoveMode = true;
-	bool secondTouchInMoveMode = true;
 	public bool canMove = true;
 
 	bool firstTouchInRotateMode = true;
@@ -163,16 +161,10 @@ public class CameraScript : MonoBehaviour {
 					var cameraForwardDirection = (Camera.main.transform.forward-new Vector3(0, Camera.main.transform.forward.y, 0)).normalized;
 					var cameraRightDirection = (Camera.main.transform.right-new Vector3(0, Camera.main.transform.right.y, 0)).normalized;
 
-
-					//if (!secondTouchInMoveMode || touchDelta.magnitude / canvasScale > moveTouchThreshold) {
 					if(canMove){
 						Camera.main.transform.position -= (cameraForwardDirection * worldDelta.y * mltpl * moveSpeed
 							+ cameraRightDirection * worldDelta.x * mltpl * moveSpeed);
 					}
-						
-					//}
-
-					//secondTouchInMoveMode = false;
 
 					touch1StartPos = touch1Pos;						
 				}
@@ -267,7 +259,6 @@ public class CameraScript : MonoBehaviour {
 		}else{
 			controlsInUse = false;
 			firstTouchInMoveMode = true;
-			secondTouchInMoveMode = true;
 
 			firstTouchInRotateMode = true;
 			touchRotatePhiZoomMode = false;
