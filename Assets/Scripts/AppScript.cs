@@ -8,7 +8,7 @@ public class AppScript : MonoBehaviour {
 
 	public static bool DEBUG = false;
 	public static bool CLEAN_EVERYTHING_ON_START = false;
-	public static bool UPDATE_FACILITIES_DB_ON_START = false;
+	//public static bool UPDATE_FACILITIES_DB_ON_START = false;
 
 	private static AppScript sharedInstance;
 	public static AppScript getSharedInstance(){
