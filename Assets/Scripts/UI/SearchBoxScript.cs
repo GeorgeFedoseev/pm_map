@@ -10,12 +10,15 @@ public class SearchBoxScript : MonoBehaviour {
 	AppScript app;
 
 	public RectTransform dialog;
-	public InputField input;
+	public SubmitInputField input;
 	public Transform suggestionRowsContainer;
 	public Button clearButton;
 
-	bool dialogOpened = false;
-	float dialogAnimTime = 0.2f;
+	bool suggestionsOpened = false;
+	float suggestionsAnimTime = 0.2f;
+
+	TouchScreenKeyboard kb;
+
 
 	void Awake(){
 		app = AppScript.getSharedInstance ();
@@ -23,9 +26,11 @@ public class SearchBoxScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {		
-		dialogOpened = true;
-		searchInputChanged ();
-		input.onEndEdit.AddListener (keyboardDoneEdit);
+		suggestionsOpened = true;
+		searchInputChanged ("");
+		input.onKeyboardDone.AddListener (keyboardDone);
+		input.onKeyboardCancel.AddListener (keyboardCancel);
+		input.onValueChanged.AddListener (searchInputChanged);
 	}
 	
 	// Update is called once per frame
@@ -33,19 +38,25 @@ public class SearchBoxScript : MonoBehaviour {
 		
 	}
 
-	void keyboardDoneEdit(string str){
-		
-		if (!input.wasCanceled) {
-			Debug.LogWarning ("Search");
-			showSearchResults (str);
-		} else {
-			Debug.LogWarning ("Canceled");
-		}	
-		
+	void keyboardDone(){		
+		var query = input.text.Trim ();
 
+		//Debug.LogWarning ("DONE EDIT");
+
+		if (query.Length <= 1)
+			return;
+
+
+		showSearchResults (query);
+		hideSuggestions ();
+	}
+
+	void keyboardCancel(){
+		hideSuggestions ();
 	}
 
 	public void inputClick(){
+		
 		if (input.text != "") {
 			showSuggestions ();
 		}
@@ -53,104 +64,129 @@ public class SearchBoxScript : MonoBehaviour {
 
 	public void clearInput(){
 		input.text = "";
-		searchInputChanged ();
+		searchInputChanged ("");
 		app.bottomPanel.fold (true);
 		app.cam.stopFlying ();
 		app.facilities.dehighlightAll ();
+		updateClearButton ();
 	}
 
 
 	void showSearchResults(string query){
 		var found_facilities = app.facilities.findFacilities (query);
-		if (found_facilities.Count > 0) {
-			app.bottomPanel.show ();
-			app.bottomPanel.showFacilities (found_facilities, "РЕЗУЛЬТАТЫ ПОИСКА");
+		if (found_facilities.Count > 0) {			
+			app.bottomPanel.showFacilities (found_facilities, "РЕЗУЛЬТАТЫ ПОИСКА", true, true);
 		}
 		hideSuggestions();
 	}
 
-	public void searchInputChanged(){		
-		//Debug.LogWarning ("text: "+input.text);
-		var query = input.text;
+	public void searchInputChanged(string str){		
+	//	Debug.LogWarning ("INPUT CHANGED");
+		updateClearButton();
 
-		// HIDE/SHOW
-		if (query == "" && dialogOpened) {	
-			//Debug.LogWarning ("Hide search");
-			hideSuggestions ();
-			clearButton.gameObject.SetActive (false);
-		} else {
-			// SEARCH SUGGESTIONS
-			if (query != "") {
-				clearButton.gameObject.SetActive (true);
-				Debug.LogWarning ("q: " + query);
-				// FIND SUGGESTIONS
-				// clear old rows
-				foreach (var r in suggestionRowsContainer.GetComponentsInChildren<SuggestionRowScript>()) {
-					app.pool.deactivate (r.gameObject);			
-				}
+		var query = input.text.Trim();
 
+		Loom.removeByName ("find_suggestions");
+		Loom.QueueOnMainThread (()=>{
+			findSuggestions (query);	
+		}, 0.1f, "find_suggestions");
+	}
+
+	public void updateClearButton(){
+		if(app != null)
+			clearButton.gameObject.SetActive (input.text.Length > 0 || (!app.bottomPanel.hidden && !app.bottomPanel.orangeMode));
+	}
+
+	private void findSuggestions(string query){
+		
+		if (query.Length >= 2) {
+
+			// FIND SUGGESTIONS
+			// clear old rows
+			foreach (var r in suggestionRowsContainer.GetComponentsInChildren<SuggestionRowScript>()) {
+				app.pool.deactivate (r.gameObject);			
+			}
+
+			Loom.RunAsync (()=>{
 				var found_facilities = app.facilities.findFacilities (query);
 
-				if (found_facilities.Count > 0) {
-					// create new rows for query results
+				Loom.QueueOnMainThread(()=>{
+					if (found_facilities.Count > 0) {
+						// create new rows for query results
 
-					foreach (var f in found_facilities) {
-						var r = app.pool.spawn<SuggestionRowScript> ("suggestion_row");
-						r.name.text = f._name;
-						r.desc.text = f._description;
+						foreach (var f in found_facilities) {
+							var r = app.pool.spawn<SuggestionRowScript> ("suggestion_row");
 
-						var _f = f;
-						Loom.QueueOnMainThread (()=>{
-							var sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/"+_f._icon);
-							if(sprite == null)
+							r.name.text = f._name;
+							r.desc.text = f._description;
+
+							var _f = f;
+							//Loom.QueueOnMainThread (() => {
+							var sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/" + _f._icon);
+							if (sprite == null)
 								sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/default");
 							r.icon.sprite = sprite;	
-						});
+							//});
 
-						
 
-						r.button.onClick.AddListener (() => {							
-							Debug.LogWarning ("Clicked " + _f._name);	
-							app.facilities.focusFacility (_f, true);
+							// suggestion click
+							r.button.onClick.AddListener (() => {
+								Debug.LogWarning ("Clicked " + _f._name);	
+								app.facilities.focusFacility (_f, true, true);
+								hideSuggestions();
+							});
 
-						});
+							r.transform.SetParent (suggestionRowsContainer, false);
+							r.transform.localScale = Vector3.one;
+							r.transform.localRotation = Quaternion.identity;
+						}
 
-						r.transform.SetParent (suggestionRowsContainer);
-						r.transform.localScale = Vector3.one;
+						// update suggestions box height
+						var h = 25f + found_facilities.Count * 48f;
+						if (h > 350f)
+							h = 350f;
+						dialog.sizeDelta = new Vector2 (dialog.sizeDelta.x, h);
+
+						if (!suggestionsOpened)
+							showSuggestions ();
+					} else {					
+						if (suggestionsOpened)
+							hideSuggestions ();
+
+						dialog.sizeDelta = new Vector2 (dialog.sizeDelta.x, 0);
 					}
+				});
 
-					// update suggestions box height
-					var h = 25f + found_facilities.Count * 48f;
-					if (h > 350f)
-						h = 350f;
-					dialog.sizeDelta = new Vector2 (dialog.sizeDelta.x, h);
+			});
 
-					if (!dialogOpened)
-						showSuggestions ();
-				} else {					
-					if (dialogOpened)
-						hideSuggestions ();
-				}
-			} else {
-				clearButton.gameObject.SetActive (false);
-			}
-		}
+		} else {
+			if (suggestionsOpened)
+				hideSuggestions ();
+
+			dialog.sizeDelta = new Vector2 (dialog.sizeDelta.x, 0);
+		}	
 	}
 
 	private void showSuggestions(){
+		if (suggestionsOpened)
+			return;
 		Loom.removeByName ("hide_dialog");
 		dialog.gameObject.SetActive (true);
-		iTween.ValueTo(gameObject, iTween.Hash("from", 0, "to", 1, "onupdate", "inputAnimation", "time", dialogAnimTime, "easetype", iTween.EaseType.easeInOutSine));
-		dialogOpened = true;
+		iTween.Stop(gameObject);
+		iTween.ValueTo(gameObject, iTween.Hash("from", 0, "to", 1, "onupdate", "inputAnimation", "time", suggestionsAnimTime, "easetype", iTween.EaseType.easeInOutSine));
+		suggestionsOpened = true;
 	}
 
 	private void hideSuggestions(){
-		iTween.ValueTo(gameObject, iTween.Hash("from", 1, "to", 0, "onupdate", "inputAnimation", "time", dialogAnimTime, "easetype", iTween.EaseType.easeInOutSine));
-		dialogOpened = false;
+		iTween.Stop(gameObject);
+		iTween.ValueTo(gameObject, iTween.Hash("from", 1, "to", 0, "onupdate", "inputAnimation", "time", suggestionsAnimTime, "easetype", iTween.EaseType.easeInOutSine));
+		suggestionsOpened = false;
 
 		Loom.QueueOnMainThread (()=>{
 			dialog.gameObject.SetActive (false);
-		}, dialogAnimTime, "hide_dialog");
+		}, suggestionsAnimTime, "hide_dialog");
+
+
 	}
 
 	private void inputAnimation(float progress){

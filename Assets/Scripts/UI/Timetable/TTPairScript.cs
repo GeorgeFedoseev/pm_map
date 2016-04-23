@@ -16,4 +16,15 @@ public class TTPairScript : MonoBehaviour {
 
 	// EDITABLE
 	public Button editButton, deleteButton;
+
+
+	public void updateCurrentPair(){
+		if (nowCircle != null) {
+			var enableNowCircle = _pair.now ();
+			nowCircle.SetActive (enableNowCircle);
+			nowCircle.GetComponent<ImageBlinkScript> ().enabled = enableNowCircle;
+		}
+	}
+
+
 }

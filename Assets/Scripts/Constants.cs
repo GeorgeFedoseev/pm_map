@@ -4,12 +4,17 @@ using System.IO;
 
 public class Constants {
 
-	public static string getDBPath(string db_name){
+	public static string getDBPath(string db_name, bool overwrite = true){
 		var db_path = "";
 		if (Application.platform == RuntimePlatform.IPhonePlayer) {
 			var openPath = Application.dataPath + "/Raw/"+db_name;
 			db_path = Application.persistentDataPath+"/"+db_name;
-			File.Copy(openPath, db_path, true);
+
+
+			if(!File.Exists(db_path) || AppScript.DEBUG)
+				File.Copy(openPath, db_path, true);
+
+
 		}else if(Application.platform == RuntimePlatform.Android){
 			Debug.LogError ("CHECK ANDROID DB PATHS!!!");
 			var openPath = "jar:file://" + Application.dataPath + "!/assets/"+db_name;

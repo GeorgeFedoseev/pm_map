@@ -29,8 +29,11 @@ public class TTDayScript : MonoBehaviour {
 
 	public void addTime(string time, List<Pair> pairs, bool lastTime = false, bool editMode = false){
 		var t = (Instantiate (Resources.Load("Prefabs/UI/schedule/Time")) as GameObject).GetComponent<TTTimeScript>();		
-		t.transform.SetParent (timesContainer);
+
+		t.transform.SetParent (timesContainer, false);
 		t.transform.localScale = Vector3.one;
+		t.transform.localScale = Vector3.one;
+		t.transform.localRotation = Quaternion.identity;
 
 		t.timeTitle.text = time;
 

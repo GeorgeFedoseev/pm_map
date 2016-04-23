@@ -6,6 +6,10 @@ using UnityEngine.EventSystems;
 
 public class AppScript : MonoBehaviour {
 
+	public static bool DEBUG = false;
+	public static bool CLEAN_EVERYTHING_ON_START = false;
+	//public static bool UPDATE_FACILITIES_DB_ON_START = false;
+
 	private static AppScript sharedInstance;
 	public static AppScript getSharedInstance(){
 		return sharedInstance == null ? sharedInstance = Camera.main.gameObject.GetComponent<AppScript>() : sharedInstance;
@@ -21,11 +25,17 @@ public class AppScript : MonoBehaviour {
 	[HideInInspector]
 	public PoolSystem pool;
 	[HideInInspector]
-	public Canvas canvas;
+	public Canvas hudCanvas;
+	[HideInInspector]
+	public Canvas centerPanelCanvas;
+	[HideInInspector]
+	public Canvas alertsCanvas;
 	[HideInInspector]
 	public CameraScript cam;
 	[HideInInspector]
 	public SearchBoxScript searchBox;
+	[HideInInspector]
+	public FloorSwitchScript floorSwitcher;
 	[HideInInspector]
 	public BottomPanelScript bottomPanel;
 	[HideInInspector]
@@ -36,8 +46,20 @@ public class AppScript : MonoBehaviour {
 	[HideInInspector]
 	public TTPanelScript timetablePanel;
 
+	public bool ready = false;
+
 	void Awake(){
-		canvas = GameObject.FindObjectOfType<Canvas> ();
+
+		if (DEBUG) {
+			var fps_displ = FindObjectOfType<FPSDisplay> ();
+			if (fps_displ != null)
+				fps_displ.enabled = true;
+		}
+
+		hudCanvas = GameObject.Find ("HUDCanvas").GetComponent<Canvas>();
+		centerPanelCanvas = GameObject.Find ("CenterPanelCanvas").GetComponent<Canvas>();
+		alertsCanvas = GameObject.Find ("AlertsCanvas").GetComponent<Canvas>();
+
 		cam = GetComponent<CameraScript> ();
 
 		facilities = new FacilitiesManager ();
@@ -46,6 +68,7 @@ public class AppScript : MonoBehaviour {
 		pool = GameObject.FindObjectOfType<PoolSystem> ();
 
 		searchBox = GameObject.FindObjectOfType<SearchBoxScript> ();
+		floorSwitcher = GameObject.FindObjectOfType <FloorSwitchScript> ();
 		bottomPanel = GameObject.FindObjectOfType<BottomPanelScript> ();
 
 		centerPanelContainer = GameObject.Find ("CenterPanelContainer").transform;
@@ -56,17 +79,21 @@ public class AppScript : MonoBehaviour {
 
 		Application.targetFrameRate = 30;
 
+		/*DEBUG*/
+		if (CLEAN_EVERYTHING_ON_START) {
+			PlayerPrefs.DeleteAll ();
+		}
+
+
+
 
 		clearCenterPanelContainer ();
 	}
 
 	void Start () {
 		facilities.initFacilities ();
-
-
-		switchToFloor (1);
-
-		openTimetable ();
+		floorSwitcher.switchToFloor (2);
+		ready = true;
 	}
 	
 
@@ -84,15 +111,7 @@ public class AppScript : MonoBehaviour {
 	}
 
 	public void switchToFloor(int floor){
-		int i = 0;
-		foreach(Transform fl in building){
-			if (i + 1 > floor) {
-				fl.gameObject.SetActive (false);
-			} else {
-				fl.gameObject.SetActive (true);
-			}
-			i++;
-		}
+		facilities.switchToFloor (floor);
 	}
 
 
@@ -101,9 +120,13 @@ public class AppScript : MonoBehaviour {
 		foreach(Transform t in centerPanelContainer){
 			Destroy (t.gameObject);
 		}
+
+		hudCanvas.gameObject.SetActive (true);
 	}
 
 	public void disableAllInCentralPanelContainer(){
+		hudCanvas.gameObject.SetActive (true);
+
 		foreach(Transform t in centerPanelContainer){
 			t.gameObject.SetActive (false);
 		}
@@ -112,12 +135,19 @@ public class AppScript : MonoBehaviour {
 	private GameObject loadCenterPanel(string name){
 		clearCenterPanelContainer ();
 
+
+
 		var go = Instantiate (Resources.Load("Prefabs/UI/CenterPanels/"+name)) as GameObject;
-		go.transform.SetParent (centerPanelContainer);
+		go.transform.SetParent (centerPanelContainer, false);
+		go.transform.localScale = Vector3.one;
+		go.transform.localRotation = Quaternion.identity;
+
 		var rect = go.GetComponent<RectTransform> ();
 		rect.transform.localScale = Vector3.one;
 		rect.sizeDelta = Vector2.zero;
 		rect.anchoredPosition = Vector2.zero;
+
+
 
 		return go;
 	}
@@ -125,6 +155,11 @@ public class AppScript : MonoBehaviour {
 
 	// TIMETABLE
 	public void openTimetable(){
+		Loom.QueueOnMainThread (()=>{
+			hudCanvas.gameObject.SetActive (false);	
+		});
+
+
 		foreach (Transform t in centerPanelContainer) {
 			if (t.gameObject.GetComponent<TTPanelScript> () != null) {
 				t.gameObject.SetActive (true);
@@ -134,10 +169,10 @@ public class AppScript : MonoBehaviour {
 
 		if (timetableManager.hasTimetable ()) {
 			timetablePanel = loadCenterPanel ("TimetableCenterPanel").GetComponent<TTPanelScript> ();
-			timetablePanel.Prepare ();
+			//timetablePanel.Prepare ();
 		} else {
 			// tour for getting timetable link
-			openTimtableTour();
+			openTimetableTour();
 		}
 
 		//disableCamera ();
@@ -145,8 +180,9 @@ public class AppScript : MonoBehaviour {
 
 
 
-	public void openTimtableTour(){
+	public void openTimetableTour(){
 		loadCenterPanel ("LoadTimetableCenterPanel");
+		hudCanvas.gameObject.SetActive (false);
 	}
 
 	public void closeTimetable(){

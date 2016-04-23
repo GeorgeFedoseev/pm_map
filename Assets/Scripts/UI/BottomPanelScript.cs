@@ -11,7 +11,7 @@ public class BottomPanelScript : MonoBehaviour {
 	public RectTransform rect;
 
 
-	// set in inspector
+	// inspector
 	public ScrollRect scrollRect;
 	public RectTransform rowsContainer;
 	public Text title;
@@ -19,7 +19,8 @@ public class BottomPanelScript : MonoBehaviour {
 
 
 
-	float maxWidth = 400f;
+	public bool orangeMode;
+
 	Vector2 targetSnapPosition;
 
 	// panel dragging
@@ -29,8 +30,11 @@ public class BottomPanelScript : MonoBehaviour {
 	Vector2 targetFoldPosition;
 	public float foldSpeed;
 	bool doFold = false;
-	bool foldHide = false;
-	bool folded = true;
+	public bool folded = true;
+	public bool hidden = true;
+
+	float halfFoldDistance = -110f;
+	float fullFoldDistance = -150f;
 
 	Vector2 oldScreenSize;
 
@@ -42,7 +46,7 @@ public class BottomPanelScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		setOrangeMode(true);
 	}
 
 	void OnEnable(){
@@ -55,18 +59,137 @@ public class BottomPanelScript : MonoBehaviour {
 	void Update () {
 		if (doFold) {
 			rect.anchoredPosition = Vector2.Lerp(rect.anchoredPosition, targetFoldPosition, foldSpeed * Time.deltaTime);
-			if (Mathf.Approximately (rect.anchoredPosition.y, targetFoldPosition.y)) {
+
+			if (Mathf.Abs (rect.anchoredPosition.y - targetFoldPosition.y) < 0.1f) {
+				
+
 				doFold = false;
+				didFold ();
 			}
 		}
 
-		app.openTimetableButton.anchoredPosition = new Vector2 (rect.offsetMin.x + 50f, rect.anchoredPosition.y+rect.sizeDelta.y+20f);
+		if (app != null && app.openTimetableButton != null && rect != null) {
+			app.openTimetableButton.anchoredPosition = new Vector2 (rect.offsetMin.x + 50f, rect.anchoredPosition.y+rect.sizeDelta.y+20f);
+		}			
 	}
 
 
 	// METHODS
 
-	public void showFacilities(List<FacilityScript> facilities, string title_text = "РЕЗУЛЬТАТЫ"){
+	private void didFold(){
+		//Debug.LogWarning ("DID FOLD "+folded.ToString());
+		//title.gameObject.SetActive (folded);
+
+		updatePairAlert ();
+
+		app.searchBox.updateClearButton ();
+	}
+
+
+	private void updatePairAlert(bool forceUpdate = false){
+		if (hidden || forceUpdate) {
+			// check for current pairs
+			Pair p;
+			if ((p = app.timetableManager.getCurrentPair ()) != null) {
+				showPair (p);
+			}else if((p = app.timetableManager.getSoonPair ()) != null){
+				showPair (p, "СКОРО ПАРА");
+			}
+		}
+	}
+
+
+	public void setOrangeMode(bool _orangeMode){
+		orangeMode = _orangeMode;
+
+		foreach (var img in GetComponentsInChildren<Image> ()) {
+			if (_orangeMode) {
+				if (img.name != "Icon") {
+					img.color = new Color (226f / 255, 68f / 255, 31f / 255);
+				} else {
+					img.color = new Color (255f / 255, 255f / 255, 255f / 255);
+				}
+
+			} else {
+				if (img.name != "Icon") {
+					img.color = new Color (255f / 255, 255f / 255, 255f / 255);
+				} else {
+					img.color = new Color (0 / 255, 0 / 255, 0 / 255, 160f / 255);
+				}
+			}
+		}
+
+		foreach (var text in GetComponentsInChildren<Text> ()) {
+			if (_orangeMode) {
+				text.color = new Color (255f / 255, 255f / 255, 255f / 255);
+			} else {
+				text.color = new Color (0f / 255,0f / 255, 0f / 255, 223f / 255);
+			}
+		}
+
+
+	}
+
+	public void showPair(Pair pair,  string title_text = "ИДЕТ ПАРА"){
+		
+		// clear old
+		foreach (var row in rowsContainer.GetComponentsInChildren<BottomPanelRowScript>()) {
+			app.pool.deactivate (row.gameObject);
+		}
+
+		var room = app.facilities.getRoom (pair.room);
+
+		var r = app.pool.spawn<BottomPanelRowScript> ("bottom_panel_row");
+
+		if (room != null) {
+			r.title.text = room._name;
+			Loom.QueueOnMainThread (()=>{
+				var sprite = Resources.Load<Sprite>("Prefabs/UI/icons/"+room._icon);
+				if(sprite == null)
+					sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/default");
+				r.icon.sprite = sprite;	
+			});
+
+			r.GetComponent<Button> ().onClick.RemoveAllListeners ();
+
+			r.GetComponent<Button>().onClick.AddListener (() => {				
+				app.facilities.focusFacility (room);
+			});
+
+		} else {
+			r.title.text = pair.location;
+			r.icon.sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/default");			 
+		}
+
+		r.desc.text = pair.name + " ("+pair.time+")";
+
+
+
+		r.transform.SetParent (rowsContainer, false);
+		r.transform.localScale = Vector3.one;
+		r.transform.localPosition = Vector3.one;
+		r.transform.localRotation = Quaternion.identity;
+	
+
+		title.text = title_text + ": " +pair.name;
+
+		pageCounter.gameObject.SetActive (false);
+
+		UpdateSnapping ();
+
+		scrollRect.horizontalNormalizedPosition = 0;
+
+		bool fullUnfold = false;
+		if (orangeMode && !folded)
+			fullUnfold = true;		
+		unfold (fullUnfold);
+
+		setOrangeMode (true);
+		var snapper = scrollRect.GetComponent<ScrollRectSnap> ();
+		snapper.scrollToPage (0);
+	}
+
+	public void showFacilities(List<FacilityScript> facilities, string title_text = "РЕЗУЛЬТАТЫ", bool switchFloorIfOnlyOne = false, bool doFocusingStuff = false){
 		// clear old
 		foreach (var r in rowsContainer.GetComponentsInChildren<BottomPanelRowScript>()) {
 			app.pool.deactivate (r.gameObject);
@@ -76,7 +199,7 @@ public class BottomPanelScript : MonoBehaviour {
 		foreach(var f in facilities){
 			var r = app.pool.spawn<BottomPanelRowScript> ("bottom_panel_row");
 			r.title.text = f._name;
-			r.desc.text = f._description;
+			r.desc.text = f._description + "\n" + f._info;
 			var _f = f;
 
 	
@@ -88,7 +211,7 @@ public class BottomPanelScript : MonoBehaviour {
 			});
 
 
-
+			r.GetComponent<Button> ().onClick.RemoveAllListeners ();
 			r.GetComponent<Button>().onClick.AddListener (() => {							
 				Debug.LogWarning ("Clicked " + _f.name);	
 				app.facilities.focusFacility (_f);
@@ -104,10 +227,16 @@ public class BottomPanelScript : MonoBehaviour {
 			pageCounter.gameObject.SetActive (true);
 		} else {
 			pageCounter.gameObject.SetActive (false);
+
+			if (doFocusingStuff) {
+				app.facilities.focusFacility (facilities[0], true, false, switchFloorIfOnlyOne);							
+			}
+
 		}
 
 
 		UpdateSnapping ();
+		setOrangeMode (false);
 		scrollRect.horizontalNormalizedPosition = 0;
 		unfold ();
 		var snapper = scrollRect.GetComponent<ScrollRectSnap> ();
@@ -125,33 +254,28 @@ public class BottomPanelScript : MonoBehaviour {
 		}
 	}
 
-	public void hide(){
-		gameObject.SetActive (false);
-	}
-
-	public void show(){
-		gameObject.SetActive (true);
-	}
-
-	public bool hidden(){
-		return !gameObject.activeInHierarchy;
-	}
-
-
 	public void fold(bool hide = false){
-		targetFoldPosition = new Vector2 (0, hide?-200f:-160f);
+		targetFoldPosition = new Vector2 (0, hide?fullFoldDistance:halfFoldDistance);
 		folded = true;
 		doFold = true;
+		updateHidden ();
 	}
 
-	public void unfold(){
-		if (hidden()) {
-			show ();
+	public void unfold(bool full = true){
+		targetFoldPosition = new Vector2 (0, full?0:halfFoldDistance);
+		folded = !full;
+		doFold = true;
+		updateHidden ();
+	}
+
+	private void updateHidden(){
+		if(targetFoldPosition.y == fullFoldDistance){
+			hidden = true;
+		}else{
+			hidden = false;
 		}
 
-		targetFoldPosition = new Vector2 (0, 0f);
-		folded = false;
-		doFold = true;
+		app.searchBox.updateClearButton ();
 	}
 
 	public void OnDrag(BaseEventData e){
@@ -166,12 +290,12 @@ public class BottomPanelScript : MonoBehaviour {
 		}
 
 		var delta_pos = (Vector2)Input.mousePosition - drag_start_pos;
-		delta_pos /= app.canvas.scaleFactor;
+		delta_pos /= app.centerPanelCanvas.scaleFactor;
 
 		var new_pos_y = drag_start_panel_y + delta_pos.y;
 
-		if (new_pos_y < -160) {
-			new_pos_y = -160;
+		if (new_pos_y < halfFoldDistance) {
+			new_pos_y = halfFoldDistance;
 		} else if (new_pos_y > 0) {
 			new_pos_y = 0;
 		}
@@ -189,7 +313,7 @@ public class BottomPanelScript : MonoBehaviour {
 		var delta_pos = (Vector2)Input.mousePosition - drag_start_pos;
 		if (delta_pos.y < 0) {			
 			//Debug.LogWarning ("Fold down");
-			targetFoldPosition = new Vector2 (0, -160f);
+			targetFoldPosition = new Vector2 (0, halfFoldDistance);
 			folded = true;
 		} else {
 			//Debug.LogWarning ("Fold up");
@@ -244,7 +368,7 @@ public class BottomPanelScript : MonoBehaviour {
 		//Debug.LogWarning ("UPDATE BOTTOM PANEL LO");
 		var sizeDelta = rect.sizeDelta;
 		var size = rect.rect.size;
-		var canvasSize = app.canvas.GetComponent<RectTransform> ().rect.size;
+		var canvasSize = app.hudCanvas.GetComponent<RectTransform> ().rect.size;
 		if (canvasSize == oldScreenSize)
 			return;
 
@@ -264,5 +388,12 @@ public class BottomPanelScript : MonoBehaviour {
 		//Debug.LogWarning ("Size: "+size);
 
 		oldScreenSize = canvasSize;
+	}
+
+	void OnApplicationPause(bool pause) {
+		if (!pause && app.ready) {
+			// returned from bg
+			updatePairAlert(orangeMode);
+		}
 	}
 }

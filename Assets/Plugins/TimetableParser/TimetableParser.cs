@@ -25,6 +25,15 @@ public class WeekTimetable {
 		days = new List<DayTimetable> ();
 	}
 
+	public WeekTimetable Clone(){
+		var nw = new WeekTimetable (weekStartDay);
+		foreach (var d in days) {
+			nw.days.Add (d.Clone());
+		}
+
+		return nw;
+	}
+
 	public static int GetIso8601WeekNumber(DateTime date)
 	{    var thursday = date.AddDays(3 - ((int)date.DayOfWeek + 6) % 7);
 		return 1 + (thursday.DayOfYear - 1) / 7;
@@ -73,14 +82,25 @@ public class DayTimetable {
 	public DateTime day;
 	public List<Pair> pairs;
 
-
-
 	public DayTimetable(DateTime _day){
 		day = _day;
 		pairs = new List<Pair> ();
 	}
 
+	public DayTimetable Clone(){
+		var nd = new DayTimetable (day);
+		foreach (var p in pairs) {
+			nd.pairs.Add (p.Clone());
+		}
+
+		return nd;
+	}
+
 	public string getTranslatedDay(){
+		return getTranslatedDay (day);
+	}
+
+	public static string getTranslatedDay(DateTime day){
 		switch (day.DayOfWeek) {
 		case DayOfWeek.Monday:
 			return "Понедельник";
@@ -121,6 +141,7 @@ public class Pair {
 	public DateTime startTime;
 	public DateTime endTime;
 
+
 	public Pair(DateTime _day, string _name, string _time, string _location, string _lecturer){
 		day = _day;
 		name = _name;
@@ -128,9 +149,16 @@ public class Pair {
 		location = _location;
 		lecturer = _lecturer;
 
-		parseRoom ();
+
+		parseRoom ();					
 		parseTime ();
 	}
+
+	public Pair Clone(){
+		var np = new Pair (day, name, time, location, lecturer);
+		return np;
+	}
+
 
 	public bool now(){
 		var now = DateTime.Now;
@@ -141,10 +169,21 @@ public class Pair {
 		return false;
 	}
 
+	public bool soon(){
+		var now = DateTime.Now;
+		if (now >= startTime.AddMinutes(-15) && now <= startTime) {
+			return true;
+		}
+
+		return false;
+	}
+
 	private void parseRoom(){		
-		var parser = new Regex(@", ([A-Za-zА-Яа-я \/0-9]*)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+		var parser = new Regex(@".*Университетский.*35.*, ([A-Za-zА-Яа-я \/0-9]*)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 		//Console.WriteLine ("Location: "+location);
 		room = parser.Match (location).Groups [1].Value;
+
+	
 		//Console.WriteLine ("Room: "+room);
 	}
 
@@ -221,13 +260,13 @@ public class TimetableParser {
 
 					}
 				} else {
-					Console.WriteLine ("Pairs Not found");
+			//		Console.WriteLine ("Pairs Not found");
 				}
 
 				timetable.days.Add (dayTimetable);
 			}
 		} else {
-			Console.WriteLine ("Days Not found");
+			//Console.WriteLine ("Days Not found");
 		}
 
 

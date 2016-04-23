@@ -6,6 +6,10 @@ public class RoomScript : FacilityScript {
 	[TextArea()]
 	public string description;
 	[TextArea()]
+	public string info;
+	[TextArea()]
+	public string people;
+	[TextArea()]
 	public string aliases;
 
 	public bool auditory = false;
@@ -16,8 +20,11 @@ public class RoomScript : FacilityScript {
 	void Awake(){
 		_name = room;
 		_description = description;
+		_info = info;
+		_people = people;
 		_room = room;
 		_aliases = aliases;
+
 
 		if (_icon == "") {
 			if (auditory) {
@@ -40,16 +47,16 @@ public class RoomScript : FacilityScript {
 		// add room number
 		roomNumber = (Instantiate(Resources.Load("Prefabs/room_number")) as GameObject).GetComponent<TextMesh>();
 		roomNumber.transform.SetParent (transform);
-		roomNumber.transform.position = getCenter () + 2*Vector3.up;
+		roomNumber.transform.position = getCenter () + (getHeight()/2 + 0.1f)*Vector3.up ;
 		roomNumber.transform.localScale = new Vector3 (-0.2f, 0.2f, 0.2f);
-		roomNumber.transform.localRotation = Quaternion.Euler(new Vector3 (-90, 0, 0));
+		roomNumber.transform.rotation = Quaternion.Euler(new Vector3 (-90, 180, 0));
 
 		roomNumber.text = room;
 
 	}
 
 	void LateUpdate(){		
-		/*var vp_p = Camera.main.WorldToViewportPoint (getCenter());
+		var vp_p = Camera.main.WorldToViewportPoint (getCenter());
 		if (vp_p.x > 0 && vp_p.x < 1 && vp_p.y > 0 && vp_p.y < 1 && vp_p.z > 0) {
 			RaycastHit hit;
 			var rayDirection = roomNumber.transform.position - Camera.main.transform.position;
@@ -63,7 +70,7 @@ public class RoomScript : FacilityScript {
 		}else{
 			roomNumber.gameObject.SetActive (false);
 		}
-*/
+
 	}
 
 

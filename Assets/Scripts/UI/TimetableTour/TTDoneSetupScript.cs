@@ -22,8 +22,7 @@ public class TTDoneSetupScript : MonoBehaviour {
 		loadingText.gameObject.SetActive (false);
 		doneText.gameObject.SetActive (true);
 		doneButton.interactable = true;
-		AppScript.getSharedInstance().timetableManager.restoreTimetableFromDatabase();
-
+		AppScript.getSharedInstance().timetableManager.restoreTimetableFromDatabase(true);
 	}
 
 }

@@ -21,23 +21,32 @@ public class FacilitiesManager {
 
 
 	public void initFacilities(){
+		// activate all floors
+		foreach(Transform fl in app.building){
+			fl.gameObject.SetActive (true);
+		}
+
 		// map all facilities
 		facilities_map = new Dictionary<int, FacilityScript>();
 		foreach (var f in app.building.GetComponentsInChildren<FacilityScript>()){
 			facilities_map[f.gameObject.GetInstanceID()] = f;
 		}
 
-		// rebuild facilites DB
-		facilities_db.clearDb ();
-		foreach(var f in app.building.GetComponentsInChildren<FacilityScript>()){
-			facilities_db.addFacility (f._name, f._description, f._aliases, f._room, f._icon, f.gameObject.GetInstanceID());
-		}
+		// (AppScript.UPDATE_FACILITIES_DB_ON_START) {
+			// rebuild facilites DB
+			facilities_db.clearDb ();
+			foreach(var f in app.building.GetComponentsInChildren<FacilityScript>()){
+				facilities_db.addFacility (f._name, f._description, f._info, f._people, f._aliases, f._room, f._icon, f.gameObject.GetInstanceID());
+			}	
+		//}
 
 		/*foreach(var f in facilities_db.findFacilities("кофе")){
 			Debug.LogWarning ("Found "+f.name+" "+f.gameObjectID);
 			var go = facilities_map [f.gameObjectID];
 			go.GetComponent<MeshRenderer> ().material.color = Color.red;
 		}*/
+
+		dehighlightAll ();
 	}
 
 	public List<FacilityScript> findFacilities(string query){
@@ -50,27 +59,41 @@ public class FacilitiesManager {
 		return res;
 	}
 
-	public void focusFacility(FacilityScript f, bool showInfo = false){
-		var flyTime = 1.5f;
-		var h = 5f;
-		var d = 5f;
-
+	public void focusFacility(FacilityScript f, bool flyTo = true, bool showInfo = false, bool switchFloor = true){
 		target_facility = f;
 
-
 		var look_dst = f.getSize ()*4;
-		if (look_dst < 10f)
-			look_dst = 10f;
+		if (look_dst < 20f)
+			look_dst = 20f;
 
-		app.cam.setTargetFacility(f, look_dst);
+		if (flyTo) {
+			app.cam.setTargetFacility(f, look_dst, look_dst);
 
-		app.switchToFloor (f.getFloor());
+			if (switchFloor) {
+				app.floorSwitcher.switchToFloor (f.getFloor());
+			}				
+		}
+
+
 
 		dehighlightAll ();
 		f.highlight ();
 
 		if (showInfo) {
-			app.bottomPanel.showFacilities(new List<FacilityScript>(){f}, "ОБЪЕКТ");
+			app.bottomPanel.showFacilities(new List<FacilityScript>(){f}, "ВЫДЕЛЕННЫЙ ОБЪЕКТ");
+		}
+	}
+
+
+	public void switchToFloor(int floor){
+		int i = 0;
+		foreach(Transform fl in app.building){
+			if (i + 1 > floor) {
+				fl.gameObject.SetActive (false);
+			} else {
+				fl.gameObject.SetActive (true);
+			}
+			i++;
 		}
 	}
 
@@ -83,11 +106,21 @@ public class FacilitiesManager {
 		return false;
 	}
 
+	public RoomScript getRoom(string room){
+		var res = facilities_db.getRoom (room);
+		if (res != null) {
+			var f = facilities_map[res.gameObjectID];
+			return (RoomScript)f;
+		}
+
+		return null;
+	}
+
 	public void goToRoom(string room){
 		var res = facilities_db.getRoom (room);
 		if (res != null) {
 			var f = facilities_map[res.gameObjectID];
-			focusFacility (f, true);
+			focusFacility (f, true, true);
 		}
 	}
 
@@ -98,8 +131,8 @@ public class FacilitiesManager {
 	}
 
 	public void dehighlightAll(){
-		foreach(var f in GameObject.FindObjectsOfType<FacilityScript>()){
-			f.dehighlight ();
+		foreach(var f in facilities_map){
+			f.Value.dehighlight ();
 		}
 	}
 

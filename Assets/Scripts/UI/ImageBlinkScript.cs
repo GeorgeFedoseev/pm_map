@@ -23,6 +23,10 @@ public class ImageBlinkScript : MonoBehaviour {
 		));
 	}
 
+	void OnDisable(){
+		iTween.Stop (gameObject);
+	}
+
 	void alphaUpdate(float a){
 		color.a = a;
 		image.color = color;

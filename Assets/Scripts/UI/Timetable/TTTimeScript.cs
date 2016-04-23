@@ -23,11 +23,18 @@ public class TTTimeScript : MonoBehaviour {
 	public void addPair(Pair pair, bool lastPair = false, bool editMode = false){
 		var p = (Instantiate (Resources.Load("Prefabs/UI/schedule/Pair"+(editMode?"_editable":""))) as GameObject).GetComponent<TTPairScript>();		
 		p._pair = pair;
-		p.transform.SetParent (pairsContainer);
+
+		p.transform.SetParent (pairsContainer, false);
 		p.transform.localScale = Vector3.one;
+		p.transform.localScale = Vector3.one;
+		p.transform.localRotation = Quaternion.identity;
 
 		p.pairTitle.text = pair.name;
-		p.locationText.text = pair.room;
+
+		var hasThisRoom = app.facilities.hasRoom (pair.room);
+
+
+		p.locationText.text = hasThisRoom?pair.room:pair.location;
 
 		if (lastPair)
 			p.divider.SetActive (false);
@@ -42,7 +49,7 @@ public class TTTimeScript : MonoBehaviour {
 
 
 		// actions
-		if (!editMode && app.facilities.hasRoom (pair.room) ) {
+		if (!editMode && hasThisRoom ) {
 			p.locationText.gameObject.SetActive (false);
 			p.locationButtonContainer.gameObject.SetActive (true);
 
@@ -54,6 +61,7 @@ public class TTTimeScript : MonoBehaviour {
 			});
 		} else {
 			p.locationText.gameObject.SetActive (true);
+			p.locationText.text = hasThisRoom?pair.room:pair.location;
 
 			if (editMode) {
 				p.editButton.onClick.AddListener (()=>{

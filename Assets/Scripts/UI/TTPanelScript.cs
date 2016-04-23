@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class TTPanelScript : CenterPanelScript {
 	
 	public TTWeekScript currentWeek, nextWeek;
 
-	public Button editButton, doneButton, downloadButton;
+	public Button editButton, doneButton, downloadButton, undoButton;
 
 	public Toggle switchWeekToggle;
 	public GameObject loadingOverlay;
@@ -21,13 +22,41 @@ public class TTPanelScript : CenterPanelScript {
 
 	float lastCurrentWeekScrollPos, lastNextWeekScrollPos;
 
-	public void Prepare(){
-		if (!firstLoadDone) {
-			UpdateContents ();
+	void OnEnable(){
+		if (app.ready) {
+			Prepare ();
 		}
-			
 	}
 
+	public void Prepare(){
+		app = AppScript.getSharedInstance ();
+
+		Debug.LogWarning ("Prepare timetable");
+
+		if (!firstLoadDone) {
+			UpdateContents ();
+		} else {
+			updateCurrentPair ();
+		}
+	}
+
+	public override void close(){
+		base.close ();
+
+		if (_editMode) {
+			Debug.LogWarning ("CLOSED IN EDIT MODE: PREPARE FOR THE NEXT OPEN");
+			firstLoadDone = false;
+			_editMode = false;
+		}
+
+	}
+
+
+	public void updateCurrentPair(){
+		foreach (var p in FindObjectsOfType<TTPairScript>()) {
+			p.updateCurrentPair ();
+		}
+	}
 
 	public void switchWeek(bool current, bool syncPos = true){		
 		if (loading)
@@ -84,19 +113,41 @@ public class TTPanelScript : CenterPanelScript {
 
 		editButton.interactable = !_loading;
 		doneButton.interactable = !_loading;
+		downloadButton.interactable = !_loading;
+		undoButton.interactable = !_loading;
+	}
 
+	public void undoClicked(){
+		app.timetableManager.undo ();
+		UpdateContents (true);
 	}
 
 	public void downloadTimnetableClicked(){
 		//Debug.LogWarning ("DOWNLOAD TIMETABLE");
-		Alerts.AskYesNo("Загрузка расписания", "Текущее расписание сотрется и будет загружено новое с сайта.", ()=>{
+		Alerts.AskYesNo("Загрузка расписания", "Текущее расписание будет заменено на новое, выбранное Вами. Продолжить?", ()=>{
 			app.closeTimetable ();
-			app.openTimtableTour ();
+			app.openTimetableTour ();
 		}, null, "ОК", "ОТМЕНА");
 
 	}
 
+	public void addPairClicked(WeekTimetable week){
+		if (!_editMode)
+			return;
+		Debug.LogWarning ("ADD PAIR");
+
+		Alerts.addPair ("Добавить пару", week, (Pair newPair) => {
+			Loom.QueueOnMainThread(()=>{
+				app.timetableManager.addPair(newPair);
+				Loom.QueueOnMainThread(()=>{
+					app.timetablePanel.UpdateContents(true);
+				});
+			});
+		});
+	}
+
 	public void UpdateContents(bool editMode = false){
+		//Debug.LogWarning ("Update contents of timetable");
 		setLoading (true);
 
 		lastCurrentWeekScrollPos = currentWeek.scrollRect.verticalNormalizedPosition;
@@ -113,15 +164,33 @@ public class TTPanelScript : CenterPanelScript {
 			editButton.gameObject.SetActive (!editMode);
 			doneButton.gameObject.SetActive (editMode);
 			downloadButton.gameObject.SetActive (editMode);
+			undoButton.gameObject.SetActive(editMode && app.timetableManager.historyHasPrevState());
+
+
+			Debug.LogWarning("app is "+ (app==null?"NULL":"NOT NULL"));
+			currentWeek._week = app.timetableManager.currentWeek;
+			nextWeek._week = app.timetableManager.nextWeek;
+
 
 
 			Loom.QueueOnMainThread (()=>{
+				if(editMode){
+					currentWeek.addAddPairButton();
+					nextWeek.addAddPairButton();	
+				}
+
+
 				foreach(var d in app.timetableManager.currentWeek.days){
 					currentWeek.addDay (d, editMode);
 				}
 
 				foreach(var d in app.timetableManager.nextWeek.days){
 					nextWeek.addDay (d, editMode);
+				}
+
+				if(editMode){
+					currentWeek.addAddPairButton();
+					nextWeek.addAddPairButton();	
 				}
 
 
@@ -174,18 +243,58 @@ public class TTPanelScript : CenterPanelScript {
 
 				switchWeek (_currentWeek, firstLoadDone);
 				
+				if(!firstLoadDone){
+					firstLoadDone = true;
 
-				firstLoadDone = true;
+					// scroll to current day
+					var fullWeekHeight = currentWeek.daysContainer.GetComponent<RectTransform>().rect.size.y;
+					float currentDayPos = 0;
+					foreach(Transform d_t in currentWeek.daysContainer){
+						var d = d_t.GetComponent<TTDayScript>();
+						if(d != null && d._day.day == DateTime.Today){
+							//Debug.LogWarning("DAY POS: "+(-d_t.GetComponent<RectTransform>().anchoredPosition.y));
+							//Debug.LogWarning("DAY HEIGHT: "+d_t.GetComponent<RectTransform>().rect.size.y);
+							currentDayPos = -d_t.GetComponent<RectTransform>().anchoredPosition.y - d_t.GetComponent<RectTransform>().rect.size.y/2;
+							currentDayPos += currentWeek.daysContainer.GetComponent<RectTransform>().rect.size.y * currentDayPos/fullWeekHeight    /  2;
+						}
+					}
+
+					//Loom.QueueOnMainThread(()=>{
+						currentWeek.scrollRect.verticalNormalizedPosition = Mathf.Clamp01(1f - currentDayPos/fullWeekHeight);
+						//Debug.LogWarning("ANCHORED POS: "+currentWeek.scrollRect.verticalNormalizedPosition);
+					//}, 0.2f);
+				}
+
+				updateCurrentPair ();
 			}, 0.5f);
 		}, 0.5f);
 
 
 	}
 
+	/*
+		float normalizePosition = scrollTransform.anchorMin.y - obj.anchoredPosition.y;
+		normalizePosition += (float)obj.transform.GetSiblingIndex() / (float)scroll.content.transform.childCount;
+		normalizePosition /= 1000f;
+		normalizePosition = Mathf.Clamp01(1 - normalizePosition);
+		scroll.verticalNormalizedPosition = normalizePosition;
+*/
+
+	/*void Update(){
+		Debug.LogWarning("SCROLL POS: "+currentWeek.scrollRect.verticalNormalizedPosition);
+	}*/
+
 
 	protected override void OnRectTransformDimensionsChange(){
 		if(firstLoadDone)
 			UpdateLayout ();
+	}
+
+	void OnApplicationPause(bool pause) {
+		if (!pause) {
+			// returned from bg
+			updateCurrentPair();
+		}
 	}
 
 

@@ -25,23 +25,31 @@ public class TimetableManger {
 
 	public WeekTimetable currentWeek, nextWeek;
 
+	public List<Dictionary<string, WeekTimetable>> history;
+
 	public TimetableManger(){
 		
 		app = AppScript.getSharedInstance ();	
-		db_path = Constants.getDBPath ("data.db");
+		db_path = Constants.getDBPath ("timetable.db", false);
 
-		//clearDb ();
+		history = new List<Dictionary<string, WeekTimetable>> ();
+
+		/* DEBUG */
+		if (AppScript.CLEAN_EVERYTHING_ON_START) {
+			clearDb ();
+		}
 
 		if (!hasTimetable ()) {
 			Debug.LogWarning ("NO TIMETABLE");
 
 			getTimetable ();
-			restoreTimetableFromDatabase ();
+			restoreTimetableFromDatabase (true);
 		} else {			
-			restoreTimetableFromDatabase ();
+			restoreTimetableFromDatabase (true);
 			Debug.LogWarning ("Timetable recovered from database");
 		}
 	}
+
 
 	public void getTimetable(){
 		if (hasTimetableLink()) {
@@ -69,13 +77,41 @@ public class TimetableManger {
 	}
 
 
+	public Pair getCurrentPair(){
+		foreach (var d in currentWeek.days) {
+			foreach (var p in d.pairs) {
+				if (p.now ())
+					return p;
+			}
+		}
 
-	public void updatePair(Pair oldPair, Pair newPair){
-		removePair (oldPair);
-		addPair (newPair);
+		return null;
 	}
 
-	public void removePair(Pair pair){
+	public Pair getSoonPair(){
+		foreach (var d in currentWeek.days) {
+			foreach (var p in d.pairs) {
+				if (p.soon ())
+					return p;
+			}
+		}
+
+		return null;
+	}
+
+
+
+	public void updatePair(Pair oldPair, Pair newPair){	
+
+		removePair (oldPair, false);
+		addPair (newPair, false);
+
+		saveCurrentState ();
+	}
+
+	public void removePair(Pair pair, bool saveState = true){
+		
+
 		foreach (var d in currentWeek.days) {
 			if (d.pairs.Contains (pair)) {
 				d.pairs.Remove (pair);
@@ -93,9 +129,14 @@ public class TimetableManger {
 		saveTimetableToDatabase (currentWeek, nextWeek);
 		restoreTimetableFromDatabase ();
 
+		if(saveState)
+			saveCurrentState ();
+
 	}
 
-	public void addPair(Pair pair){
+	public void addPair(Pair pair, bool saveState = true){
+		
+
 		using (var db = new SQLiteConnection (db_path)) {		
 			var pr = new TimetableRecord ();
 			pr.weekType = WeekTimetable.GetIso8601WeekNumber(pair.day.Date)%2==0?WeekType.Even:WeekType.Odd;
@@ -115,10 +156,17 @@ public class TimetableManger {
 
 			//saveTimetableToDatabase (currentWeek, nextWeek);
 			restoreTimetableFromDatabase ();
+
+			if(saveState)
+				saveCurrentState ();
 		}
 	}
 
-	public void restoreTimetableFromDatabase(){
+
+
+	public void restoreTimetableFromDatabase(bool saveState = false){
+		
+
 		// clear all 
 		//PlayerPrefs.DeleteAll();
 		Debug.LogWarning ("RESTORING TIMETABLE FROM DB");
@@ -145,6 +193,10 @@ public class TimetableManger {
 					p.lecturer
 				);
 
+				if (p.room != null && p.room != "") {
+					pair.room = p.room;
+				}
+
 				if (!w.hasDayOfWeek (p.day)) {
 					w.days.Add (new DayTimetable(date));
 				}
@@ -154,15 +206,27 @@ public class TimetableManger {
 			currentWeek = w1;
 			nextWeek = w2;
 
-			// sort pairs
-			foreach(var d in currentWeek.days){
-				d.pairs.Sort( (p1,p2)=>p1.startTime.CompareTo(p2.startTime) );
-			}
-			foreach(var d in nextWeek.days){
-				d.pairs.Sort( (p1,p2)=>p1.startTime.CompareTo(p2.startTime) );
-			}
+			if(saveState)
+				saveCurrentState ();
+
+			sortEverything ();
+
 
 			db.Close();
+		}
+	}
+
+	private void sortEverything(){
+		// sort days
+		currentWeek.days.Sort( (d1, d2) => d1.day.DayOfWeek.CompareTo(d2.day.DayOfWeek));
+		nextWeek.days.Sort( (d1, d2) => d1.day.DayOfWeek.CompareTo(d2.day.DayOfWeek));
+
+		// sort pairs
+		foreach(var d in currentWeek.days){
+			d.pairs.Sort( (p1,p2)=>p1.startTime.CompareTo(p2.startTime) );
+		}
+		foreach(var d in nextWeek.days){
+			d.pairs.Sort( (p1,p2)=>p1.startTime.CompareTo(p2.startTime) );
 		}
 	}
 
@@ -212,6 +276,36 @@ public class TimetableManger {
 		}
 	}
 
+	private void saveCurrentState(){
+		// add to history
+		history.Add(new Dictionary<string, WeekTimetable>() {
+			{"currentWeek", currentWeek.Clone()},
+			{"nextWeek", nextWeek.Clone()}
+		});
+
+		Debug.LogWarning ("CURRENT STATE SAVED, history count: "+history.Count);
+	}
+
+	public void undo(){
+		if (!historyHasPrevState ()) {
+			Debug.LogError ("Nothing to undo; only current state in history");
+			return;
+		}
+
+		currentWeek = history [history.Count - 2] ["currentWeek"].Clone();
+		nextWeek = history [history.Count - 2] ["nextWeek"].Clone();
+
+		history.RemoveAt (history.Count-1);
+
+		sortEverything ();
+
+		Debug.LogWarning ("UNDO, history count: "+history.Count);
+	}
+
+
+	public bool historyHasPrevState(){
+		return history.Count > 1;		
+	}
 
 	public bool hasTimetable(){
 		using (var db = new SQLiteConnection(db_path)){
