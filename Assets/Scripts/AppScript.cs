@@ -50,6 +50,12 @@ public class AppScript : MonoBehaviour {
 
 	void Awake(){
 
+		//TouchScreenKeyboard.hideInput = true;
+
+		/*#if UNITY_ANDROID
+			Screen.fullScreen = false;
+		#endif*/
+
 		if (DEBUG) {
 			var fps_displ = FindObjectOfType<FPSDisplay> ();
 			if (fps_displ != null)
