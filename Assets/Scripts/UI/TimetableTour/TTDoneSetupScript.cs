@@ -17,12 +17,17 @@ public class TTDoneSetupScript : MonoBehaviour {
 		doneText.gameObject.SetActive (false);
 		doneButton.interactable = false;
 
-		AppScript.getSharedInstance().timetableManager.getTimetable();
+		if (AppScript.getSharedInstance ().timetableManager.initTimetable ()) {
+			loadingText.gameObject.SetActive (false);
+			doneText.gameObject.SetActive (true);
+			doneButton.interactable = true;	
+		}else{
+			var tour = FindObjectOfType<TTTourPanelScript> ();
+			tour.nextPage ();
+			tour.backButton.interactable = false;
+		}
 
-		loadingText.gameObject.SetActive (false);
-		doneText.gameObject.SetActive (true);
-		doneButton.interactable = true;
-		AppScript.getSharedInstance().timetableManager.restoreTimetableFromDatabase(true);
+
 	}
 
 }

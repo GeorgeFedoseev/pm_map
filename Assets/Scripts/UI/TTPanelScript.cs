@@ -291,7 +291,7 @@ public class TTPanelScript : CenterPanelScript {
 	}
 
 	void OnApplicationPause(bool pause) {
-		if (!pause) {
+		if (!pause && app.timetableManager.hasTimetable()) {
 			// returned from bg
 			updateCurrentPair();
 		}

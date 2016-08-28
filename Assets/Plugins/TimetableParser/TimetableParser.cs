@@ -230,7 +230,9 @@ public class TimetableParser {
 		var timetable = new WeekTimetable (week_start);
 
 		var formatted_date = week_start.ToString ("yyyy-MM-dd");
-		var html = getHtmlFromUrl("http://timetable.spbu.ru"+timetable_url+"/"+formatted_date);
+		UnityEngine.Debug.LogWarning ("Getting html from "+"http://timetable.spbu.ru"+timetable_url+"/"+formatted_date);
+		var html = getHtmlFromUrl("http://timetable.spbu.ru/"+timetable_url+"/"+formatted_date);
+
 
 		var dayNodes = html.DocumentNode.SelectNodes ("*//div[contains(@class, 'panel-default')]");
 		if (dayNodes != null) {
@@ -393,7 +395,8 @@ public class TimetableParser {
 		var programYearsNodes = html.DocumentNode.SelectNodes ("//div[@id='accordion']/div/div[@class='panel-heading']//a[contains(text(), '"+level+"')]/../../../ul/li/div[contains(text(), '"+program+"')]/../div/a");
 		if (programYearsNodes != null) {
 			foreach (var n in programYearsNodes) {
-				res.Add (new Link(getPlainText(n).Trim(), n.Attributes["href"].Value));
+				var link = n.Attributes ["href"].Value;
+				res.Add (new Link(getPlainText(n).Trim(), n.Attributes ["href"].Value));
 			}	
 		}
 
@@ -436,7 +439,13 @@ public class TimetableParser {
 		}
 
 		if (linkNode != null) {
-			return linkNode.Attributes ["href"].Value;
+			var link = linkNode.Attributes ["href"].Value;
+			var linkparts = new List<string>(link.Split ("/".ToCharArray(), StringSplitOptions.RemoveEmptyEntries));
+			linkparts.RemoveAt (linkparts.Count-1);
+			link = String.Join ("/", linkparts.ToArray ());
+			UnityEngine.Debug.LogWarning ("Link: "+link);
+
+			return link;
 		}
 
 		return null;

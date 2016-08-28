@@ -25,8 +25,6 @@ public class CenterPanelScript : MonoBehaviour {
 
 	protected virtual void Awake(){		
 		app = AppScript.getSharedInstance ();
-		Debug.LogWarning ("LOAD APP: "+(app==null?"NULL":"NOT NULL"));
-
 		rect = GetComponent<RectTransform> ();
 		scrollRect.onValueChanged.AddListener (OnScroll);
 	}
@@ -49,7 +47,7 @@ public class CenterPanelScript : MonoBehaviour {
 	}
 
 	public virtual void close(){
-		app.disableAllInCentralPanelContainer ();
+		app.closeTimetable ();
 	}
 
 

@@ -39,36 +39,63 @@ public class TimetableManger {
 			clearDb ();
 		}
 
-		if (!hasTimetable ()) {
-			Debug.LogWarning ("NO TIMETABLE");
-
-			getTimetable ();
-			restoreTimetableFromDatabase (true);
-		} else {			
-			restoreTimetableFromDatabase (true);
-			Debug.LogWarning ("Timetable recovered from database");
-		}
+		initTimetable ();
 	}
 
 
-	public void getTimetable(){
-		if (hasTimetableLink()) {
-			Debug.LogWarning ("Getting timetable from Internet...");
+	public bool initTimetable(bool forceUpdateFromInternet = false){
+		if (!hasTimetable () || forceUpdateFromInternet) {
+			if (!hasTimetable ()) {
+				Debug.LogWarning ("NO TIMETABLE");
+			} else {
+				Debug.LogWarning ("Force update from internet");
+			}
 
-			var timetable_url = ConfigStorage.getSting("tt_study_timetable_link");
 
-			var currentWeekStart = DateTime.Today.AddDays(-(int)(DateTime.Today.DayOfWeek-1)).Date;
-			var nw = DateTime.Now.AddDays (7).Date;
-			var nextWeekStart = nw.AddDays(-(int)(nw.DayOfWeek-1)).Date;
 
+
+			if (hasTimetableLink ()) {
+				Debug.LogWarning ("Timetable link is: "+ConfigStorage.getSting ("tt_study_timetable_link"));
+				if (getTimetableFromInternet ()) {
+					restoreTimetableFromDatabase (true);
+					return true;
+				} else {
+					Debug.LogWarning ("Cant get timetable!");
+				}
+			} else {
+				Debug.LogWarning ("NO timetable link");
+				return true;
+			}
+		} else {			
+			restoreTimetableFromDatabase (true);
+			Debug.LogWarning ("Timetable recovered from database");
+			return true;
+		}
+
+		return false;
+	}
+
+
+	public bool getTimetableFromInternet(){
+		Debug.LogWarning ("Getting timetable from Internet...");
+
+		var timetable_url = ConfigStorage.getSting("tt_study_timetable_link");
+
+		var currentWeekStart = DateTime.Today.AddDays(-(int)(DateTime.Today.DayOfWeek-1)).Date;
+		var nw = DateTime.Now.AddDays (7).Date;
+		var nextWeekStart = nw.AddDays(-(int)(nw.DayOfWeek-1)).Date;
+
+		try{
 			var current_week_tt = TimetableParser.getTimetable (timetable_url, currentWeekStart);
 			var next_week_tt = TimetableParser.getTimetable (timetable_url, nextWeekStart);
 
 			saveTimetableToDatabase (current_week_tt, next_week_tt);
 
-		} else {
-			// do nothing - user will click on button and go through tour, than get link
-			Debug.LogWarning ("No link for getting timetable, waiting for user action.");
+			return true;
+		}catch(Exception e){
+			Debug.LogError ("Cant get timetable from "+timetable_url+": "+e.Message);
+			Debug.LogError (e.StackTrace);
+			return false;
 		}
 	}
 

@@ -47,13 +47,12 @@ public class BottomPanelScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		setOrangeMode(true);
-	}
 
-	void OnEnable(){
 		UpdateLayout ();
 		OnScroll (Vector2.zero);
 		fold (true);
 	}
+
 
 	// Update is called once per frame
 	void Update () {
@@ -80,6 +79,7 @@ public class BottomPanelScript : MonoBehaviour {
 		//Debug.LogWarning ("DID FOLD "+folded.ToString());
 		//title.gameObject.SetActive (folded);
 
+
 		updatePairAlert ();
 
 		app.searchBox.updateClearButton ();
@@ -87,6 +87,10 @@ public class BottomPanelScript : MonoBehaviour {
 
 
 	private void updatePairAlert(bool forceUpdate = false){
+		if (!app.timetableManager.hasTimetable ()) {
+			return;
+		}
+
 		if (hidden || forceUpdate) {
 			// check for current pairs
 			Pair p;
@@ -391,7 +395,7 @@ public class BottomPanelScript : MonoBehaviour {
 	}
 
 	void OnApplicationPause(bool pause) {
-		if (!pause && app.ready) {
+		if (!pause && app.ready && app.timetableManager.hasTimetable()) {
 			// returned from bg
 			updatePairAlert(orangeMode);
 		}

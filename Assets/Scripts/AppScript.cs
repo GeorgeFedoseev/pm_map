@@ -62,20 +62,21 @@ public class AppScript : MonoBehaviour {
 				fps_displ.enabled = true;
 		}
 
+		Application.targetFrameRate = 60;
+
+		Debug.LogWarning ("App start");
+
 		hudCanvas = GameObject.Find ("HUDCanvas").GetComponent<Canvas>();
 		centerPanelCanvas = GameObject.Find ("CenterPanelCanvas").GetComponent<Canvas>();
 		alertsCanvas = GameObject.Find ("AlertsCanvas").GetComponent<Canvas>();
 
 		cam = GetComponent<CameraScript> ();
 
-		facilities = new FacilitiesManager ();
-		timetableManager = new TimetableManger ();
-
-		pool = GameObject.FindObjectOfType<PoolSystem> ();
-
 		searchBox = GameObject.FindObjectOfType<SearchBoxScript> ();
+		Debug.LogWarning ("serachbox is "+(searchBox==null?"null":"not null"));
 		floorSwitcher = GameObject.FindObjectOfType <FloorSwitchScript> ();
 		bottomPanel = GameObject.FindObjectOfType<BottomPanelScript> ();
+		pool = GameObject.FindObjectOfType<PoolSystem> ();
 
 		centerPanelContainer = GameObject.Find ("CenterPanelContainer").transform;
 		if (centerPanelContainer == null)
@@ -83,15 +84,15 @@ public class AppScript : MonoBehaviour {
 
 		openTimetableButton = GameObject.Find ("OpenTimetableButton").GetComponent<RectTransform> ();
 
-		Application.targetFrameRate = 30;
+
+		facilities = new FacilitiesManager ();
+		timetableManager = new TimetableManger ();
+
 
 		/*DEBUG*/
 		if (CLEAN_EVERYTHING_ON_START) {
 			PlayerPrefs.DeleteAll ();
 		}
-
-
-
 
 		clearCenterPanelContainer ();
 	}
@@ -110,10 +111,12 @@ public class AppScript : MonoBehaviour {
 
 	public void disableCamera(){
 		cam.enabled = false;	
+		cam.GetComponent<Camera>().cullingMask = (1 << LayerMask.NameToLayer("Nothing"));
 	}
 
 	public void enableCamera(){
 		cam.enabled = true;
+		cam.GetComponent<Camera>().cullingMask = -1;
 	}
 
 	public void switchToFloor(int floor){
@@ -163,6 +166,7 @@ public class AppScript : MonoBehaviour {
 	public void openTimetable(){
 		Loom.QueueOnMainThread (()=>{
 			hudCanvas.gameObject.SetActive (false);	
+			disableCamera();
 		});
 
 
@@ -191,8 +195,11 @@ public class AppScript : MonoBehaviour {
 		hudCanvas.gameObject.SetActive (false);
 	}
 
+
+
 	public void closeTimetable(){
+		Debug.LogWarning ("Close Panel");
 		disableAllInCentralPanelContainer ();
-		//enableCamera ();
+		enableCamera ();
 	}
 }
