@@ -2,10 +2,12 @@
 using System.Collections;
 using UnityEngine.UI;
 
+using TMPro;
+
 public class TTPairScript : MonoBehaviour {
 	public Pair _pair;
 
-	public Text pairTitle, locationText;
+	public TextMeshProUGUI pairTitle, locationText;
 
 	public GameObject locationButtonContainer;
 	public Button locationButton;

@@ -63,17 +63,57 @@ namespace TMPro.EditorUtilities
         }
 
 
+        /// <summary>
+        /// Function to find the asset folder location in case it was moved by the user.
+        /// </summary>
+        /// <returns></returns>
         public static string GetAssetLocation()
         {
-
             if (isTMProFolderLocated == false)
             {
                 isTMProFolderLocated = true;               
-                string projectPath = Directory.GetCurrentDirectory();               
-                folderPath = Directory.GetDirectories(projectPath + "/Assets", "TextMesh Pro", SearchOption.AllDirectories)[0];
-                folderPath = "Assets" + folderPath.Split(new string[] { "Assets" }, System.StringSplitOptions.None)[1];
+                string projectPath = Directory.GetCurrentDirectory();
+                
+                // Find all the directories that match "TextMesh Pro"
+                string[] matchingPaths = Directory.GetDirectories(projectPath + "/Assets", "TextMesh Pro", SearchOption.AllDirectories);
+
+                folderPath = ValidateLocation(matchingPaths);
+                if (folderPath != null) return folderPath;    
+
+                // Check alternative Asset folder name.
+                matchingPaths = Directory.GetDirectories(projectPath + "/Assets", "TextMeshPro", SearchOption.AllDirectories);
+                folderPath = ValidateLocation(matchingPaths);
+                if (folderPath != null) return folderPath;
+
             }
-            return folderPath;
+
+            if (folderPath != null) return folderPath;
+            else
+            {
+                Debug.LogWarning("Could not located the \"TextMesh Pro/GUISkins\" Folder to load the Editor Skins.");
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        /// Method to validate the location of the asset folder by making sure the GUISkins folder exists.
+        /// </summary>
+        /// <param name="paths"></param>
+        /// <returns></returns>
+        private static string ValidateLocation(string[] paths)
+        {
+            for (int i = 0; i < paths.Length; i++)
+            {
+                // Check if any of the matching directories contain a GUISkins directory.
+                if (Directory.Exists(paths[i] + "/GUISkins"))
+                {
+                    folderPath = "Assets" + paths[i].Split(new string[] { "/Assets" }, System.StringSplitOptions.None)[1];
+                    return folderPath;
+                }
+            }
+
+            return null;
         }
 
     }

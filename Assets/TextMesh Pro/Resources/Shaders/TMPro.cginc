@@ -2,7 +2,7 @@
 // This code can only be used under the standard Unity Asset Store End User License Agreement
 // A Copy of the EULA APPENDIX 1 is available at http://unity3d.com/company/legal/as_terms
 
-float2 UnpackUV(float uv) { return float2(floor(uv) * 4.0 / 4096.0, frac(uv) * 4.0); }
+float2 UnpackUV(float uv) { return float2(floor(uv) * 5.0 / 4096.0, frac(uv) * 5.0); }
 
 fixed4 GetColor(half d, fixed4 faceColor, fixed4 outlineColor, half outline, half softness)
 {
@@ -27,7 +27,7 @@ float3 GetSurfaceNormal(float4 h, float bias)
 
 	float bevelWidth = max(.01, _OutlineWidth+_BevelWidth);
 
-	// Track outline
+  // Track outline
 	h -= .5;
 	h /= bevelWidth;
 	h = saturate(h+.5);
@@ -46,7 +46,7 @@ float3 GetSurfaceNormal(float4 h, float bias)
 float3 GetSurfaceNormal(float2 uv, float bias, float3 delta)
 {
 	// Read "height field"
-	float4 h = {tex2D(_MainTex, uv - delta.xz).a,
+  float4 h = {tex2D(_MainTex, uv - delta.xz).a,
 				tex2D(_MainTex, uv + delta.xz).a,
 				tex2D(_MainTex, uv - delta.zy).a,
 				tex2D(_MainTex, uv + delta.zy).a};
@@ -62,12 +62,12 @@ float3 GetSpecular(float3 n, float3 l)
 
 float4 GetGlowColor(float d, float scale)
 {
-	float glow = d - (_GlowOffset*_ScaleRatioB)*.5*scale;
-	float t = lerp(_GlowInner, (_GlowOuter*_ScaleRatioB), step(0.0, glow))*.5*scale;
-	glow = saturate(abs(glow/(1.0+t)));
+	float glow = d - (_GlowOffset*_ScaleRatioB) * 0.5 * scale;
+	float t = lerp(_GlowInner, (_GlowOuter * _ScaleRatioB), step(0.0, glow)) * 0.5 * scale;
+	glow = saturate(abs(glow/(1.0 + t)));
 	glow = 1.0-pow(glow, _GlowPower);
 	glow *= sqrt(min(1.0, t)); // Fade off glow thinner than 1 screen pixel
-	return float4(_GlowColor.rgb, saturate(_GlowColor.a*glow*2));
+	return float4(_GlowColor.rgb, saturate(_GlowColor.a * glow * 2));
 }
 
 float4 BlendARGB(float4 overlying, float4 underlying)
@@ -79,9 +79,3 @@ float4 BlendARGB(float4 overlying, float4 underlying)
 	return float4(blended, alpha);
 }
 
-float2 Normalize(float2 v)
-{
-	float l = v.x*v.x + v.y*v.y;
-	if(l > 0.0) v *= rsqrt(l);
-	return v;
-}

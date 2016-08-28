@@ -58,10 +58,10 @@ SubShader {
 	}
 
 	LOD 300
-	Cull Off
+	Cull [_CullMode]
 
 	CGPROGRAM
-	#pragma surface PixShader Lambert alpha vertex:VertShader noforwardadd nolightmap nodirlightmap
+	#pragma surface PixShader Lambert alpha:blend vertex:VertShader noforwardadd nolightmap nodirlightmap
 	#pragma target 3.0
 	#pragma multi_compile GLOW_OFF GLOW_ON
 	//#pragma only_renderers d3d9 d3d11 opengl
@@ -78,6 +78,7 @@ SubShader {
 		float2	uv_MainTex;
 		float2	uv2_FaceTex;
 		float2	param;					// Weight, Scale
+		float3	viewDirEnv;		
 	};
 
 	#include "TMPro_Surface.cginc"

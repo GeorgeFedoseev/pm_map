@@ -1,21 +1,28 @@
+// Copyright (C) 2014 Stephan Schaem - All Rights Reserved
+// This code can only be used under the standard Unity Asset Store End User License Agreement
+// A Copy of the EULA APPENDIX 1 is available at http://unity3d.com/company/legal/as_terms
+
 Shader "TMPro/Bitmap" {
 
 Properties {
 	_MainTex		("Font Atlas", 2D) = "white" {}
-	_FillTex		("Font Texture", 2D) = "white" {}
-	_Color			("Text Color", Color) = (1,1,1,1)
-	_DiffusePower	("Diffuse Power", Range(1.0,4.0)) = 1.0
-	[Enum(One,1,SrcAlpha,5] _Blend2 ("Blend mode subset", Float) = 1
+	_FaceTex		("Font Texture", 2D) = "white" {}
+	_FaceColor		("Text Color", Color) = (1,1,1,1)
+
+	_VertexOffsetX	("Vertex OffsetX", float) = 0
+	_VertexOffsetY	("Vertex OffsetY", float) = 0
+	_MaskCoord		("Mask Coords", vector) = (0,0,100000,100000)
+	_MaskSoftnessX	("Mask SoftnessX", float) = 0
+	_MaskSoftnessY	("Mask SoftnessY", float) = 0
 }
 
 SubShader {
 
 	Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
-
 	Lighting Off
-	Cull Off
-	ZTest Always
-	ZWrite Off
+	Cull [_CullMode]
+	Ztest [_ZTestMode]
+	ZWrite Off 
 	Fog { Mode Off }
 	Blend SrcAlpha OneMinusSrcAlpha
 
@@ -24,72 +31,87 @@ SubShader {
 		#pragma vertex vert
 		#pragma fragment frag
 		#pragma fragmentoption ARB_precision_hint_fastest
+		#pragma multi_compile MASK_OFF MASK_HARD MASK_SOFT
 
 		#include "UnityCG.cginc"
 
 		struct appdata_t {
-			float4 vertex : POSITION;
-			fixed4 color : COLOR;
-			float2 texcoord0 : TEXCOORD0;
-			float2 texcoord1 : TEXCOORD1;
+			float4 vertex		: POSITION;
+			fixed4 color		: COLOR;
+			float2 texcoord0	: TEXCOORD0;
+			float2 texcoord1	: TEXCOORD1;
 		};
 
 		struct v2f {
-			float4 vertex : POSITION;
-			fixed4 color : COLOR;
-			float2 texcoord0 : TEXCOORD0;
-			float2 texcoord1 : TEXCOORD1;
+			float4	vertex		: POSITION;
+			fixed4	color		: COLOR;
+			float2	texcoord0	: TEXCOORD0;
+			float2	texcoord1	: TEXCOORD1;
+		#if MASK_HARD | MASK_SOFT
+			float4	mask		: TEXCOORD2;
+		#endif
 		};
 
-		sampler2D 	_MainTex;
-		sampler2D 	_FillTex;
-		float4		_FillTex_ST;
-		fixed4		_Color;
-		float		_DiffusePower;
+		uniform	sampler2D 	_MainTex;
+		uniform	sampler2D 	_FaceTex;
+		uniform	fixed4		_FaceColor;
 
-		float2 UnpackUV(float uv)
-		{
-			return float2(floor(uv) * 4.0 / 4096.0, frac(uv) * 4.0);
-		}
+		uniform float		_VertexOffsetX;
+		uniform float		_VertexOffsetY;
+		uniform float4		_MaskCoord;
+		uniform float		_MaskSoftnessX;
+		uniform float		_MaskSoftnessY;
 
-		v2f vert (appdata_t v)
+		float2 UnpackUV(float uv) { return float2(floor(uv) * 4.0 / 4096.0, frac(uv) * 4.0); }
+
+		v2f vert (appdata_t i)
 		{
+			float4 vert = i.vertex;
+			vert.x += _VertexOffsetX;
+			vert.y += _VertexOffsetY;
+			float4 vPosition = UnityPixelSnap(mul(UNITY_MATRIX_MVP, vert));
+
+			fixed4 faceColor = i.color;
+			if(faceColor.a > .5) faceColor.a -= .5;
+			faceColor.a *= 2;
+			faceColor *= _FaceColor;
+
 			v2f o;
-			//o.vertex = UnityPixelSnap(mul(UNITY_MATRIX_MVP, v.vertex));
-			o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
-			o.color = v.color;
-			if(o.color.a > .5) o.color.a -= .5;
-			o.color.a *= 2;
-			o.color *= _Color;
-			o.color.rgb *= _DiffusePower;
-			o.texcoord0 = v.texcoord0;
-			o.texcoord1 = TRANSFORM_TEX(UnpackUV(v.texcoord1),_FillTex);
+			o.vertex = vPosition;
+			o.color = faceColor;
+			o.texcoord0 = i.texcoord0;
+			o.texcoord1 = UnpackUV(i.texcoord1);
+		#if MASK_HARD | MASK_SOFT
+			float2 pixelSize = vPosition.w;
+			pixelSize /= float2(_ScreenParams.x * UNITY_MATRIX_P[0][0], _ScreenParams.y * UNITY_MATRIX_P[1][1]);
+		    //pixelSize /= float2(_ScaleX, _ScaleY) * mul((float2x2)UNITY_MATRIX_P, _ScreenParams.xy);
+			o.mask = float4(vert.xy-_MaskCoord.xy, .5/pixelSize.xy);
+		#endif
 			return o;
 		}
 
 		fixed4 frag (v2f i) : COLOR
 		{
-			fixed4 col = tex2D(_FillTex, i.texcoord1) * i.color;
-			col.a *= tex2D(_MainTex, i.texcoord0).a;
-			return col;
+			fixed4 c = tex2D(_FaceTex, i.texcoord1) * i.color;
+			c.a *= tex2D(_MainTex, i.texcoord0).a;
+
+		#if MASK_HARD
+			float2 m = 1-saturate((abs(i.mask.xy)-_MaskCoord.zw)*i.mask.zw);
+			c.a *= m.x*m.y;
+		#endif
+
+		#if MASK_SOFT
+			float2 s = half2(_MaskSoftnessX, _MaskSoftnessY)*i.mask.zw;
+			float2 m = 1-saturate(((abs(i.mask.xy)-_MaskCoord.zw)*i.mask.zw+s) / (1+s));
+			m *= m;
+			c.a *= m.x*m.y;
+		#endif
+
+			return c;
 		}
 		ENDCG
 	}
 }
 
-SubShader {
-	Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
-	Lighting Off Cull Off ZTest Always ZWrite Off Fog { Mode Off }
-	Blend SrcAlpha OneMinusSrcAlpha
-	BindChannels {
-		Bind "Color", color
-		Bind "Vertex", vertex
-		Bind "TexCoord", texcoord0
-	}
-	Pass {
-		SetTexture [_MainTex] {
-			constantColor [_Color] combine constant * primary, constant * texture
-		}
-	}
-}
+	//CustomEditor "TMPro_SDFMaterialEditor"
 }

@@ -22,13 +22,10 @@ namespace TMPro.EditorUtilities
             public static bool kerningInfoPanel = true;
         }
 
+        private int m_page = 0;
+
 
         private const string k_UndoRedo = "UndoRedoPerformed";
-
-        private GUISkin mySkin;
-        private GUIStyle SquareAreaBox85G;
-        private GUIStyle GroupLabel;
-        private GUIStyle SectionLabel;
 
         private SerializedProperty font_atlas_prop;
         private SerializedProperty font_material_prop;
@@ -37,6 +34,7 @@ namespace TMPro.EditorUtilities
         private SerializedProperty font_boldStyle_prop;
 
         private SerializedProperty font_italicStyle_prop;
+        private SerializedProperty font_tabSize_prop;
 
         private SerializedProperty m_fontInfo_prop;
         private SerializedProperty m_glyphInfoList_prop;
@@ -64,6 +62,7 @@ namespace TMPro.EditorUtilities
             font_normalStyle_prop = serializedObject.FindProperty("NormalStyle");
             font_boldStyle_prop = serializedObject.FindProperty("BoldStyle");
             font_italicStyle_prop = serializedObject.FindProperty("ItalicStyle");
+            font_tabSize_prop = serializedObject.FindProperty("TabSize");
 
             m_fontInfo_prop = serializedObject.FindProperty("m_fontInfo");
             m_glyphInfoList_prop = serializedObject.FindProperty("m_glyphInfoList");
@@ -76,34 +75,22 @@ namespace TMPro.EditorUtilities
             m_fontAsset = target as TextMeshProFont;
             m_kerningTable = m_fontAsset.kerningInfo;
 
-            // Find to location of the TextMesh Pro Asset Folder (as users may have moved it)
-            string tmproAssetFolderPath = TMPro_EditorUtility.GetAssetLocation();      
-
-            // GUI Skin 
-            if (EditorGUIUtility.isProSkin)
-                mySkin = AssetDatabase.LoadAssetAtPath(tmproAssetFolderPath + "/GUISkins/TMPro_DarkSkin.guiskin", typeof(GUISkin)) as GUISkin;
-            else
-                mySkin = AssetDatabase.LoadAssetAtPath(tmproAssetFolderPath + "/GUISkins/TMPro_LightSkin.guiskin", typeof(GUISkin)) as GUISkin;
-
-            if (mySkin != null)
-            {
-                SectionLabel = mySkin.FindStyle("Section Label");
-                GroupLabel = mySkin.FindStyle("Group Label");
-                SquareAreaBox85G = mySkin.FindStyle("Square Area Box (85 Grey)");
-            }
+            // Get the UI Skin and Styles for the various Editors
+            TMP_UIStyleManager.GetUIStyles();
         }
 
         public override void OnInspectorGUI()
         {
 
             //Debug.Log("OnInspectorGUI Called.");
+            Event evt = Event.current;
 
             serializedObject.Update();
 
-            GUILayout.Label("<b>TextMesh Pro! Font Asset</b>", SectionLabel);
+            GUILayout.Label("<b>TextMesh Pro! Font Asset</b>", TMP_UIStyleManager.Section_Label);
 
             // TextMeshPro Font Info Panel
-            GUILayout.Label("Face Info", SectionLabel);
+            GUILayout.Label("Face Info", TMP_UIStyleManager.Section_Label);
             EditorGUI.indentLevel = 1;
 
             GUI.enabled = false; // Lock UI
@@ -117,13 +104,22 @@ namespace TMPro.EditorUtilities
             GUI.enabled = true;
             EditorGUILayout.PropertyField(m_fontInfo_prop.FindPropertyRelative("LineHeight"));
 
-            GUI.enabled = false;
+            //GUI.enabled = false;
             EditorGUILayout.PropertyField(m_fontInfo_prop.FindPropertyRelative("Baseline"));
-            EditorGUILayout.PropertyField(m_fontInfo_prop.FindPropertyRelative("Ascender"));
-            EditorGUILayout.PropertyField(m_fontInfo_prop.FindPropertyRelative("Descender"));
+            
             GUI.enabled = true;
+            EditorGUILayout.PropertyField(m_fontInfo_prop.FindPropertyRelative("Ascender"));
+            EditorGUILayout.PropertyField(m_fontInfo_prop.FindPropertyRelative("Descender"));        
             EditorGUILayout.PropertyField(m_fontInfo_prop.FindPropertyRelative("Underline"));
             //EditorGUILayout.PropertyField(m_fontInfo_prop.FindPropertyRelative("UnderlineThickness"));
+            EditorGUILayout.PropertyField(m_fontInfo_prop.FindPropertyRelative("SuperscriptOffset"));
+            EditorGUILayout.PropertyField(m_fontInfo_prop.FindPropertyRelative("SubscriptOffset"));
+            
+            SerializedProperty subSize_prop = m_fontInfo_prop.FindPropertyRelative("SubSize");
+            EditorGUILayout.PropertyField(subSize_prop);
+            subSize_prop.floatValue = Mathf.Clamp(subSize_prop.floatValue, 0.25f, 1f);
+            
+
             GUI.enabled = false;
             //EditorGUILayout.PropertyField(m_fontInfo_prop.FindPropertyRelative("Padding"));
 
@@ -136,7 +132,7 @@ namespace TMPro.EditorUtilities
             GUI.enabled = true;
             EditorGUI.indentLevel = 0;
             GUILayout.Space(20);
-            GUILayout.Label("Font Sub-Assets", SectionLabel);
+            GUILayout.Label("Font Sub-Assets", TMP_UIStyleManager.Section_Label);
                   
             GUI.enabled = false;
             EditorGUI.indentLevel = 1;
@@ -147,7 +143,7 @@ namespace TMPro.EditorUtilities
 
             // Font SETTINGS
             GUILayout.Space(10);
-            GUILayout.Label("Face Style", SectionLabel);          
+            GUILayout.Label("Face Style", TMP_UIStyleManager.Section_Label);          
 
             string evt_cmd = Event.current.commandName; // Get Current Event CommandName to check for Undo Events
 
@@ -173,37 +169,69 @@ namespace TMPro.EditorUtilities
 
             EditorGUILayout.EndHorizontal();
 
+            EditorGUILayout.BeginHorizontal();
             EditorGUILayout.PropertyField(font_italicStyle_prop, new GUIContent("Italic Style: "));
             font_italicStyle_prop.intValue = Mathf.Clamp(font_italicStyle_prop.intValue, 15, 60);
 
+            EditorGUILayout.PropertyField(font_tabSize_prop, new GUIContent("Tab Multiple: "));
+
+            EditorGUILayout.EndHorizontal();
+
+
             GUILayout.Space(10);
             EditorGUI.indentLevel = 0;
-            if (GUILayout.Button("Glyph Info            \t\t\t" + (UI_PanelState.glyphInfoPanel ? uiStateLabel[1] : uiStateLabel[0]), SectionLabel))
+            if (GUILayout.Button("Glyph Info            \t\t\t" + (UI_PanelState.glyphInfoPanel ? uiStateLabel[1] : uiStateLabel[0]), TMP_UIStyleManager.Section_Label))
                 UI_PanelState.glyphInfoPanel = !UI_PanelState.glyphInfoPanel;
 
 
             if (UI_PanelState.glyphInfoPanel)
-            {            
-                if (m_glyphInfoList_prop.arraySize > 0)
+            {              
+                //Rect lastRect = GUILayoutUtility.GetLastRect();
+
+                int arraySize = m_glyphInfoList_prop.arraySize;
+                int itemsPerPage = 15;       
+
+
+                if (arraySize > 0)
                 {
                     // Display each GlyphInfo entry using the GlyphInfo property drawer.
-                    for (int i = 0; i < m_glyphInfoList_prop.arraySize; i++)
+                    for (int i = itemsPerPage * m_page; i < arraySize && i < itemsPerPage * (m_page + 1); i++)
                     {
                         SerializedProperty glyphInfo = m_glyphInfoList_prop.GetArrayElementAtIndex(i);
 
-                        EditorGUILayout.BeginVertical(GroupLabel);
+                        EditorGUILayout.BeginVertical(TMP_UIStyleManager.Group_Label);
 
                         EditorGUILayout.PropertyField(glyphInfo);
 
                         EditorGUILayout.EndVertical();
                     }
                 }
+
+                Rect pagePos = EditorGUILayout.GetControlRect(false, 20);
+                pagePos.width /= 2;
+
+                int shiftMultiplier = evt.shift ? 10 : 1;
+
+                if (m_page > 0) GUI.enabled = true;
+                else GUI.enabled = false;
+
+                if (GUI.Button(pagePos, "Previous Page"))
+                    m_page -= 1 * shiftMultiplier;
+
+                pagePos.x += pagePos.width;
+                if (itemsPerPage * (m_page + 1) < arraySize) GUI.enabled = true;
+                else GUI.enabled = false;
+
+                if (GUI.Button(pagePos, "Next Page"))
+                    m_page += 1 * shiftMultiplier;
+
+                m_page = Mathf.Clamp(m_page, 0, arraySize / itemsPerPage);           
             }
 
 
             // KERNING TABLE PANEL                     
 
-            if (GUILayout.Button("Kerning Table Info\t\t\t" + (UI_PanelState.kerningInfoPanel ? uiStateLabel[1] : uiStateLabel[0]), SectionLabel))
+            if (GUILayout.Button("Kerning Table Info\t\t\t" + (UI_PanelState.kerningInfoPanel ? uiStateLabel[1] : uiStateLabel[0]), TMP_UIStyleManager.Section_Label))
                 UI_PanelState.kerningInfoPanel = !UI_PanelState.kerningInfoPanel;
 
 
@@ -216,13 +244,13 @@ namespace TMPro.EditorUtilities
                 int pairCount = kerningPairs_prop.arraySize;
 
                 EditorGUILayout.BeginHorizontal();
-                GUILayout.Label("Left Char", mySkin.label);
-                GUILayout.Label("Right Char", mySkin.label);
-                GUILayout.Label("Offset Value", mySkin.label);
+                GUILayout.Label("Left Char", TMP_UIStyleManager.TMP_GUISkin.label);
+                GUILayout.Label("Right Char", TMP_UIStyleManager.TMP_GUISkin.label);
+                GUILayout.Label("Offset Value", TMP_UIStyleManager.TMP_GUISkin.label);
                 GUILayout.Label(GUIContent.none, GUILayout.Width(20));
                 EditorGUILayout.EndHorizontal();
 
-                GUILayout.BeginVertical(mySkin.label);
+                GUILayout.BeginVertical(TMP_UIStyleManager.TMP_GUISkin.label);
 
                 for (int i = 0; i < pairCount; i++)
                 {
@@ -251,7 +279,7 @@ namespace TMPro.EditorUtilities
 
 
                 // Add New Kerning Pair Section
-                GUILayout.BeginVertical(SquareAreaBox85G);
+                GUILayout.BeginVertical(TMP_UIStyleManager.SquareAreaBox85G);
 
                 pos = EditorGUILayout.BeginHorizontal();
 
@@ -289,7 +317,7 @@ namespace TMPro.EditorUtilities
                 {
                     GUILayout.BeginHorizontal();
                     GUILayout.FlexibleSpace();
-                    GUILayout.Label("Kerning Pair already <color=#ffff00>exists!</color>", mySkin.label);
+                    GUILayout.Label("Kerning Pair already <color=#ffff00>exists!</color>", TMP_UIStyleManager.TMP_GUISkin.label);
                     GUILayout.FlexibleSpace();
                     GUILayout.EndHorizontal();
 
@@ -307,7 +335,8 @@ namespace TMPro.EditorUtilities
                 TMPro_EventManager.ON_FONT_PROPERTY_CHANGED(true, m_fontAsset);
 
                 isAssetDirty = false;
-                TMPro_EditorUtility.RepaintAll(); // Consider SetDirty
+                EditorUtility.SetDirty(target);
+                //TMPro_EditorUtility.RepaintAll(); // Consider SetDirty
             }
 
         }

@@ -4,11 +4,15 @@
 
 // UI Editable properties
 uniform sampler2D	_FaceTex;					// Alpha : Signed Distance
+uniform float		_FaceUVSpeedX;
+uniform float		_FaceUVSpeedY;
 uniform fixed4		_FaceColor;					// RGBA : Color + Opacity
 uniform float		_FaceDilate;				// v[ 0, 1]
 uniform float		_OutlineSoftness;			// v[ 0, 1]
 
 uniform sampler2D	_OutlineTex;				// RGBA : Color + Opacity
+uniform float		_OutlineUVSpeedX;
+uniform float		_OutlineUVSpeedY;
 uniform fixed4		_OutlineColor;				// RGBA : Color + Opacity
 uniform float		_OutlineWidth;				// v[ 0, 1]
 
@@ -23,9 +27,12 @@ uniform float		_BumpOutline;				// v[ 0, 1]
 uniform float		_BumpFace;					// v[ 0, 1]
 
 uniform samplerCUBE	_Cube;						// Cube / sphere map
-uniform fixed4 		_ReflectColor;				// RGB intensity
-uniform float		_EnvTiltX;					// v[-1, 1]
-uniform float		_EnvTiltY;					// v[-1, 1]
+uniform fixed4 		_ReflectFaceColor;			// RGB intensity
+uniform fixed4		_ReflectOutlineColor;
+//uniform float		_EnvTiltX;					// v[-1, 1]
+//uniform float		_EnvTiltY;					// v[-1, 1]
+uniform float3      _EnvMatrixRotation;
+uniform float4x4	_EnvMatrix;
 
 uniform fixed4		_SpecularColor;				// RGB intensity
 uniform float		_LightAngle;				// v[ 0,Tau]
@@ -58,6 +65,7 @@ uniform float		_ScaleRatioC;
 uniform float		_VertexOffsetX;
 uniform float		_VertexOffsetY;
 
+uniform float		_MaskID;
 uniform float4		_MaskCoord;					// Center(x,y) : Size(z,w)
 uniform float		_MaskSoftnessX;
 uniform float		_MaskSoftnessY;

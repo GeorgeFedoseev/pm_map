@@ -20,18 +20,26 @@ namespace TMPro
 
         [SerializeField]
         private FaceInfo m_fontInfo;
+        public int fontHashCode;
               
         [SerializeField]
         public Texture2D atlas; // Should add a property to make this read-only.
 
         [SerializeField]
         public Material material; // Should add a property to make this read-only.
+        public int materialHashCode;
+
+        // Glyph Info
+        [SerializeField]
+        private List<GlyphInfo> m_glyphInfoList;
 
         public Dictionary<int, GlyphInfo> characterDictionary
         { get { return m_characterDictionary; } }
 
         private Dictionary<int, GlyphInfo> m_characterDictionary;
 
+
+        // Kerning 
         public Dictionary<int, KerningPair> kerningDictionary
         { get { return m_kerningDictionary; } }
 
@@ -44,10 +52,20 @@ namespace TMPro
         private KerningTable m_kerningInfo;
 
         [SerializeField]
-        private List<GlyphInfo> m_glyphInfoList;
+        private KerningPair m_kerningPair;  // Use for creating a new kerning pair in Editor Panel.
+
+
+        // Line Breaking Characters       
+        public LineBreakingTable lineBreakingInfo
+        { get { return m_lineBreakingInfo; } }
 
         [SerializeField]
-        private KerningPair m_kerningPair;  // Use for creating a new kerning pair in Editor Panel.
+        private LineBreakingTable m_lineBreakingInfo;
+
+
+        [SerializeField]
+        public FontCreationSetting fontCreationSettings;
+
 
         [SerializeField]
         public bool propertiesChanged = false;
@@ -58,6 +76,7 @@ namespace TMPro
         public float NormalStyle = 0;
         public float BoldStyle = 0.75f;
         public byte ItalicStyle = 35;
+        public byte TabSize = 10;
 
 
         void OnEnable()
@@ -110,9 +129,9 @@ namespace TMPro
                 m_glyphInfoList.Add(g);
 
                 // While iterating through list of glyphs, find the Descender & Ascender for this GlyphSet.
-                m_fontInfo.Ascender = Mathf.Max(m_fontInfo.Ascender, glyphInfo[i].yOffset);
-                m_fontInfo.Descender = Mathf.Min(m_fontInfo.Descender, glyphInfo[i].yOffset - glyphInfo[i].height);
-
+                //m_fontInfo.Ascender = Mathf.Max(m_fontInfo.Ascender, glyphInfo[i].yOffset);
+                //m_fontInfo.Descender = Mathf.Min(m_fontInfo.Descender, glyphInfo[i].yOffset - glyphInfo[i].height);
+                //Debug.Log(m_fontInfo.Ascender + "  " + m_fontInfo.Descender);
                 m_characterSet[i] = g.id; // Add Character ID to Array to make it easier to get the kerning pairs.
             }
 
@@ -149,63 +168,69 @@ namespace TMPro
 
             GlyphInfo temp_charInfo = new GlyphInfo();
 
-            // Add Character (10) LineFeed, (13) Carriage Return & Space (32) to Dictionary if they don't exists.           
-            m_characterDictionary.TryGetValue(10, out temp_charInfo);
-            if (temp_charInfo == null)
+            // Add Character (10) LineFeed, (13) Carriage Return & Space (32) to Dictionary if they don't exists.                      
+            if (m_characterDictionary.ContainsKey(32))
             {
-                // Modify Character [64] to create Char[32]
-                if (m_characterDictionary.ContainsKey(32) == false)
-                {
-                    Debug.Log("Adding Character 32 (Space) to Dictionary for Font (" + m_fontInfo.Name + ").");
+                m_characterDictionary[32].width = m_fontInfo.Ascender / 5;
+                m_characterDictionary[32].height = m_fontInfo.Ascender - m_fontInfo.Descender;
+                m_characterDictionary[32].yOffset= m_fontInfo.Ascender;
+            }
+            else          
+            {
+                //Debug.Log("Adding Character 32 (Space) to Dictionary for Font (" + m_fontInfo.Name + ").");
+                temp_charInfo = new GlyphInfo();
+                temp_charInfo.id = 32;
+                temp_charInfo.x = 0; 
+                temp_charInfo.y = 0;
+                temp_charInfo.width = m_fontInfo.Ascender / 5;
+                temp_charInfo.height = m_fontInfo.Ascender - m_fontInfo.Descender;
+                temp_charInfo.xOffset = 0; 
+                temp_charInfo.yOffset = m_fontInfo.Ascender; 
+                temp_charInfo.xAdvance = m_fontInfo.PointSize / 4;
+                m_characterDictionary.Add(32, temp_charInfo);
+            }
 
-                    temp_charInfo = new GlyphInfo();
-                    temp_charInfo.id = 32;
-                    temp_charInfo.x = 0; // m_characterDictionary[32].x;
-                    temp_charInfo.y = 0; // m_characterDictionary[32].y;
-                    temp_charInfo.width = 0; // m_characterDictionary[32].width;
-                    temp_charInfo.height = 0; // m_characterDictionary[32].height;
-                    temp_charInfo.xOffset = 0; // m_characterDictionary[32].xOffset;
-                    temp_charInfo.yOffset = 0; // m_characterDictionary[32].yOffset;
-                    temp_charInfo.xAdvance = m_fontInfo.PointSize / 4; // m_characterDictionary[32].xAdvance;
-                    m_characterDictionary.Add(32, temp_charInfo);
 
-                    //m_characterDictionary.Add(13, temp_charInfo);
-                }
+            if (m_characterDictionary.ContainsKey(10) == false)
+            {
+                //Debug.Log("Adding Character 10 (Linefeed) to Dictionary for Font (" + m_fontInfo.Name + ").");
 
                 temp_charInfo = new GlyphInfo();
                 temp_charInfo.id = 10;
-                temp_charInfo.x = m_characterDictionary[32].x;
-                temp_charInfo.y = m_characterDictionary[32].y;
-                temp_charInfo.width = m_characterDictionary[32].width;
-                temp_charInfo.height = m_characterDictionary[32].height;
-                temp_charInfo.xOffset = m_characterDictionary[32].xOffset;
-                temp_charInfo.yOffset = m_characterDictionary[32].yOffset;
-                temp_charInfo.xAdvance = m_characterDictionary[32].xAdvance;
+                temp_charInfo.x = 0; // m_characterDictionary[32].x;
+                temp_charInfo.y = 0; // m_characterDictionary[32].y;
+                temp_charInfo.width = 0; // m_characterDictionary[32].width;
+                temp_charInfo.height = 0; // m_characterDictionary[32].height;
+                temp_charInfo.xOffset = 0; // m_characterDictionary[32].xOffset;
+                temp_charInfo.yOffset = 0; // m_characterDictionary[32].yOffset;
+                temp_charInfo.xAdvance = 0;
                 m_characterDictionary.Add(10, temp_charInfo);
 
                 m_characterDictionary.Add(13, temp_charInfo);
             }
 
             // Add Tab Character to Dictionary. Tab is Tab Size * Space Character Width.
-            int tabSize = 10;
+            if (m_characterDictionary.ContainsKey(9) == false)
+            {
+                //Debug.Log("Adding Character 9 (Tab) to Dictionary for Font (" + m_fontInfo.Name + ").");
 
-            temp_charInfo = new GlyphInfo();
-            temp_charInfo.id = 9;
-            temp_charInfo.x = m_characterDictionary[32].x;
-            temp_charInfo.y = m_characterDictionary[32].y;
-            temp_charInfo.width = m_characterDictionary[32].width * tabSize;
-            temp_charInfo.height = m_characterDictionary[32].height;
-            temp_charInfo.xOffset = m_characterDictionary[32].xOffset;
-            temp_charInfo.yOffset = m_characterDictionary[32].yOffset;
-            temp_charInfo.xAdvance = m_characterDictionary[32].xAdvance * tabSize;
-            m_characterDictionary.Add(9, temp_charInfo);
-
+                temp_charInfo = new GlyphInfo();
+                temp_charInfo.id = 9;
+                temp_charInfo.x = m_characterDictionary[32].x;
+                temp_charInfo.y = m_characterDictionary[32].y;
+                temp_charInfo.width = m_characterDictionary[32].width * TabSize;
+                temp_charInfo.height = m_characterDictionary[32].height;
+                temp_charInfo.xOffset = m_characterDictionary[32].xOffset;
+                temp_charInfo.yOffset = m_characterDictionary[32].yOffset;
+                temp_charInfo.xAdvance = m_characterDictionary[32].xAdvance * TabSize;
+                m_characterDictionary.Add(9, temp_charInfo);
+            }
 
             // Centerline is located at the center of character like { or in the middle of the lowercase o.
             //m_fontInfo.CenterLine = m_characterDictionary[111].yOffset - m_characterDictionary[111].height * 0.5f;
 
-            // Tab Width is the same the xAdvance of the letter A. (Could change this to space 32).
-            m_fontInfo.TabWidth = m_characterDictionary[65].xAdvance;
+            // Tab Width is using the same xAdvance as space (32).
+            m_fontInfo.TabWidth = m_characterDictionary[32].xAdvance;
 
 
             // Populate Dictionary with Kerning Information
@@ -213,7 +238,6 @@ namespace TMPro
             List<KerningPair> pairs = m_kerningInfo.kerningPairs;
 
             //Debug.Log(m_fontInfo.Name + " has " + pairs.Count +  " Kerning Pairs.");
-
             for (int i = 0; i < pairs.Count; i++)
             {
                 KerningPair pair = pairs[i];
@@ -224,8 +248,57 @@ namespace TMPro
                 else
                     Debug.Log("Kerning Key for [" + uniqueKey.ascii_Left + "] and [" + uniqueKey.ascii_Right + "] already exists.");
             }
+
+            // Add Line Breaking Characters 
+            m_lineBreakingInfo = new LineBreakingTable();
+            
+            
+            TextAsset leadingCharFile = Resources.Load("LineBreaking Leading Characters", typeof(TextAsset)) as TextAsset;
+            if (leadingCharFile != null)
+                m_lineBreakingInfo.leadingCharacters = GetCharacters(leadingCharFile);
+
+            TextAsset followingCharFile = Resources.Load("LineBreaking Following Characters", typeof(TextAsset)) as TextAsset;
+            if (followingCharFile != null)
+                m_lineBreakingInfo.followingCharacters = GetCharacters(followingCharFile);
+            
+
+            // Compute Hashcode for the font asset name
+            string fontName = this.name;
+            fontHashCode = 0;
+            for (int i = 0; i < fontName.Length; i++)
+                fontHashCode = (fontHashCode << 5) - fontHashCode + fontName[i];
+
+
+            // Compute Hashcode for the material name
+            string materialName = material.name;
+            materialHashCode = 0;
+            for (int i = 0; i < materialName.Length; i++)
+                materialHashCode = (materialHashCode << 5) - materialHashCode + materialName[i];
+            
+
         }
 
+        // Get the characters from the line breaking files
+        private Dictionary<int, char> GetCharacters(TextAsset file)
+        {                      
+            Dictionary<int, char> dict = new Dictionary<int, char>();                   
+            string text = file.text;
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                char c = text[i];
+                // Check to make sure we don't include duplicates
+                if (dict.ContainsKey((int)c) == false)
+                {
+                    dict.Add((int)c, c);
+                    //Debug.Log("Adding [" + (int)c + "] to dictionary.");
+                }
+                //else
+                //    Debug.Log("Character [" + text[i] + "] is a duplicate.");
+            }          
+            
+            return dict;
+        }
 
     }
 }

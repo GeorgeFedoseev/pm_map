@@ -24,6 +24,9 @@ namespace TMPro
         public float Ascender;
         public float Descender;
         public float CenterLine;
+        public float SuperscriptOffset;
+        public float SubscriptOffset;
+        public float SubSize;
         public float Underline;
         public float UnderlineThickness;
         public float TabWidth;
@@ -45,7 +48,25 @@ namespace TMPro
         public float xOffset;
         public float yOffset;
         public float xAdvance;
-        //public Glyph2D glyph2D;
+    }
+
+
+    // Structure which holds the font creation settings
+    [Serializable]
+    public struct FontCreationSetting
+    {
+        public string fontSourcePath;
+        public int fontSizingMode;
+        public int fontSize;
+        public int fontPadding;
+        public int fontPackingMode;
+        public int fontAtlasWidth;
+        public int fontAtlasHeight;
+        public int fontCharacterSet;
+        public int fontStyle;
+        public float fontStlyeModifier;
+        public int fontRenderMode;
+        public bool fontKerning;
     }
 
 
@@ -165,4 +186,20 @@ namespace TMPro
         }
     }
 
+    
+    [Serializable]
+    public class LineBreakingTable
+    {
+        //public List<char> leadingCharacters;
+        //public List<char> followingCharacters;
+        public Dictionary<int, char> leadingCharacters;
+        public Dictionary<int, char> followingCharacters;
+
+        public LineBreakingTable()
+        {
+            leadingCharacters = new Dictionary<int, char>();
+            followingCharacters = new Dictionary<int, char>();
+        }
+    }
+    
 }

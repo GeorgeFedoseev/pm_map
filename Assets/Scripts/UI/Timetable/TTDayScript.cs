@@ -4,12 +4,14 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
 
+using TMPro;
+
 public class TTDayScript : MonoBehaviour {
 
 	public DayTimetable _day;
 
-	public Text dayTitle;
-	public Text date;
+	public TextMeshProUGUI dayTitle;
+	public TextMeshProUGUI date;
 
 	public Transform timesContainer;
 	public RectTransform todayBadge;

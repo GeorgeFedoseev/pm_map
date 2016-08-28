@@ -5,6 +5,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace TMPro
 {
@@ -16,7 +17,7 @@ namespace TMPro
         {
             string s = string.Empty;
 
-            for (int i = 0; chars[i] != 0; i++)
+            for (int i = 0; i < chars.Length && chars[i] != 0; i++)
             {
                 s += chars[i];
             }
@@ -24,10 +25,40 @@ namespace TMPro
             return s;
         }
 
+
+        public static int FindInstanceID <T> (this List<T> list, T target) where T : Object
+        {
+            int targetID = target.GetInstanceID();
+            
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].GetInstanceID() == targetID)
+                    return i;
+            }
+            return -1;
+        }
+
+
         public static bool Compare(this Color32 a, Color32 b)
         {
             return a.r == b.r && a.g == b.g && a.b == b.b && a.a == b.a;
         }
+
+		public static bool CompareRGB(this Color32 a, Color32 b)
+		{
+			return a.r == b.r && a.g == b.g && a.b == b.b;
+		}
+
+		public static bool Compare(this Color a, Color b)
+        {
+            return a.r == b.r && a.g == b.g && a.b == b.b && a.a == b.a;
+        }
+
+
+		public static bool CompareRGB(this Color a, Color b)
+		{
+			return a.r == b.r && a.g == b.g && a.b == b.b;
+		}
 
 
         public static bool Compare(this Vector3 v1, Vector3 v2, int accuracy)

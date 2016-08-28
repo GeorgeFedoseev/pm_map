@@ -2,11 +2,12 @@
 using System.Collections;
 using UnityEngine.UI;
 
+using TMPro;
 
 public class TTTimeScript : MonoBehaviour {
 	AppScript app;
 
-	public Text timeTitle;
+	public TextMeshProUGUI timeTitle;
 	public Transform pairsContainer;
 
 	void Awake(){
@@ -98,7 +99,7 @@ public class TTTimeScript : MonoBehaviour {
 	}
 
 	public void UpdateLayout(){
-		var sumHeight = timeTitle.rectTransform.rect.size.y;
+		var sumHeight = timeTitle.GetComponent<RectTransform>().rect.size.y;
 		foreach(Transform t in pairsContainer){			
 			sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
 		}

@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
 // Copyright (C) 2014 Stephan Schaem - All Rights Reserved
 // This code can only be used under the standard Unity Asset Store End User License Agreement
 // A Copy of the EULA APPENDIX 1 is available at http://unity3d.com/company/legal/as_terms
@@ -9,10 +11,8 @@ void VertShader(inout appdata_full v, out Input data)
 
 	UNITY_INITIALIZE_OUTPUT(Input,data);
 
-	float opacity = v.color.a;
-	float bold = step(128.0/255.0, opacity);
-	opacity = (opacity - (128.0/255.0)*bold)*(255.0/127.0);
-
+	float bold = step(v.texcoord1.y, 0);
+	
 	// Generate normal for backface
 	float3 view = ObjSpaceViewDir(v.vertex);
 	v.normal *= sign(dot(v.normal, view));
@@ -23,21 +23,21 @@ void VertShader(inout appdata_full v, out Input data)
 	float4 vert = v.vertex;
 	float4 vPosition = mul(UNITY_MATRIX_MVP, vert);
 	float2 pixelSize = vPosition.w; // * unity_Scale.w;
-	pixelSize /= float2(_ScaleX * _ScreenParams.x * UNITY_MATRIX_P[0][0], _ScaleY * _ScreenParams.y * UNITY_MATRIX_P[1][1]);
+	//pixelSize /= float2(_ScaleX * _ScreenParams.x * UNITY_MATRIX_P[0][0], _ScaleY * _ScreenParams.y * UNITY_MATRIX_P[1][1]);
+	pixelSize /= float2(_ScaleX, _ScaleY) * mul((float2x2)UNITY_MATRIX_P, _ScreenParams.xy);
 	float scale = rsqrt(dot(pixelSize, pixelSize));
-	scale *= v.texcoord1.y * _GradientScale * 1.5;
+	scale *= abs(v.texcoord1.y) * _GradientScale * 1.5;
 	//scale = lerp(scale/8.0, scale, abs(dot(v.normal.xyz, normalize(ObjSpaceViewDir(vert)))));
-	scale = lerp(scale * (1 - _PerspectiveFilter), scale, abs(dot(v.normal.xyz, normalize(ObjSpaceViewDir(vert)))));
+	scale = lerp(scale * (1 - _PerspectiveFilter), scale, abs(dot(UnityObjectToWorldNormal(v.normal.xyz), normalize(ObjSpaceViewDir(vert)))));
 	data.param.y = scale;
 #endif
 
-	v.color.a = opacity;
+	//float opacity = v.color.a;
 
 	data.param.x = (lerp(_WeightNormal, _WeightBold, bold)) / _GradientScale + _FaceDilate*_ScaleRatioA*.5;
 
 	v.texcoord1.xy = UnpackUV(v.texcoord1.x);
-
-	//data.viewDir = WorldSpaceViewDir(v.vertex);
+	data.viewDirEnv =   mul((float3x3)_EnvMatrix, WorldSpaceViewDir(v.vertex));
 }
 
 void PixShader(Input input, inout SurfaceOutput o)
@@ -78,8 +78,8 @@ void PixShader(Input input, inout SurfaceOutput o)
 	float4 outlineColor = _OutlineColor;
 	faceColor *= input.color;
 	outlineColor.a *= input.color.a;
-	faceColor *= tex2D(_FaceTex, input.uv2_FaceTex);
-	outlineColor *= tex2D(_OutlineTex, input.uv2_FaceTex);
+	faceColor *= tex2D(_FaceTex, float2(input.uv2_FaceTex.x + _FaceUVSpeedX * _Time.y, input.uv2_FaceTex.y + _FaceUVSpeedY * _Time.y));
+	outlineColor *= tex2D(_OutlineTex, float2(input.uv2_FaceTex.x + _OutlineUVSpeedX * _Time.y, input.uv2_FaceTex.y + _OutlineUVSpeedY * _Time.y));
 	faceColor = GetColor(sd, faceColor, outlineColor, outline, softness);
 	faceColor.rgb /= faceColor.a;
 
@@ -94,8 +94,8 @@ void PixShader(Input input, inout SurfaceOutput o)
 	n = normalize(n - bump);
 
 	// Cubemap reflection
-	fixed4 reflcol = texCUBE(_Cube, reflect(input.viewDir, -n));		
-	float3 emission = reflcol.rgb * _ReflectColor.rgb * faceColor.a;
+	fixed4 reflcol = texCUBE(_Cube, reflect(input.viewDirEnv, mul((float3x3)unity_ObjectToWorld,n)));		
+	float3 emission = reflcol.rgb * lerp(_ReflectFaceColor.rgb, _ReflectOutlineColor.rgb, saturate(sd + outline * 0.5)) * faceColor.a;
 #else
 	float3 n = float3(0,0,-1);
 	float3 emission = float3(0,0,0);
