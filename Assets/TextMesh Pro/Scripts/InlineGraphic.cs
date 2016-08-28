@@ -52,7 +52,7 @@ namespace TMPro
         }
 
 
-        protected override void OnValidate()
+        protected void OnValidate()
         {
             //Debug.Log("Texture ID is " + this.texture.GetInstanceID());
         }

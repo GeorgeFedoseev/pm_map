@@ -294,7 +294,7 @@ public class BottomPanelScript : MonoBehaviour {
 		}
 
 		var delta_pos = (Vector2)Input.mousePosition - drag_start_pos;
-		delta_pos /= app.centerPanelCanvas.scaleFactor;
+		delta_pos /= app.scaleFactorRefCanvas.scaleFactor;
 
 		var new_pos_y = drag_start_panel_y + delta_pos.y;
 

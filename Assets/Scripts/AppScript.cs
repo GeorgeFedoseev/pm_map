@@ -23,11 +23,13 @@ public class AppScript : MonoBehaviour {
 	public TimetableManger timetableManager;
 
 	[HideInInspector]
+	public Canvas scaleFactorRefCanvas;
+	[HideInInspector]
 	public PoolSystem pool;
 	[HideInInspector]
 	public Canvas hudCanvas;
 	[HideInInspector]
-	public Canvas centerPanelCanvas;
+	public Transform centerPanel;
 	[HideInInspector]
 	public Canvas alertsCanvas;
 	[HideInInspector]
@@ -66,8 +68,9 @@ public class AppScript : MonoBehaviour {
 
 		Debug.LogWarning ("App start");
 
+		scaleFactorRefCanvas = GameObject.Find ("ScaleFactorRefCanvas").GetComponent<Canvas>();
 		hudCanvas = GameObject.Find ("HUDCanvas").GetComponent<Canvas>();
-		centerPanelCanvas = GameObject.Find ("CenterPanelCanvas").GetComponent<Canvas>();
+		centerPanel = GameObject.Find ("CenterPanel").GetComponent<Transform>();
 		alertsCanvas = GameObject.Find ("AlertsCanvas").GetComponent<Canvas>();
 
 		cam = GetComponent<CameraScript> ();
@@ -151,10 +154,9 @@ public class AppScript : MonoBehaviour {
 		go.transform.localScale = Vector3.one;
 		go.transform.localRotation = Quaternion.identity;
 
-		var rect = go.GetComponent<RectTransform> ();
+		var rect = go.GetComponent<Transform> ();
 		rect.transform.localScale = Vector3.one;
-		rect.sizeDelta = Vector2.zero;
-		rect.anchoredPosition = Vector2.zero;
+
 
 
 

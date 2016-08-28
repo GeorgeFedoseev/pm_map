@@ -306,7 +306,7 @@ namespace MaterialUI
 			if (autoMaxItemHeight)
 			{
 				//var scale = Screen.dpi/82f;
-				var canvasScale = AppScript.getSharedInstance ().centerPanelCanvas.scaleFactor;
+				var canvasScale = AppScript.getSharedInstance ().scaleFactorRefCanvas.scaleFactor;
 				/*Debug.LogWarning ("Screen height: "+Screen.height);
 				Debug.LogWarning ("DPI: "+Screen.dpi);
 				Debug.LogWarning ("DPI scale: "+scale);

@@ -11,6 +11,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+using TMPro;
+
 namespace MaterialUI
 {
 	[ExecuteInEditMode]
@@ -35,7 +37,7 @@ namespace MaterialUI
 
 		[SerializeField] private Image switchImage;
 		[SerializeField] private Image backImage;
-		[SerializeField] private Text text;
+		[SerializeField] private TextMeshProUGUI text;
 
 		private RectTransform switchRectTransform;
 		private CheckBoxToggler checkBoxToggler;

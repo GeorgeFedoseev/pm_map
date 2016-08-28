@@ -11,17 +11,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+using TMPro;
+
 [ExecuteInEditMode]
 public class ToggleTextChanger : MonoBehaviour
 {
-	private Text thisText;
+	private TextMeshProUGUI thisText;
 
 	public string onText;
 	public string offText;
 
 	void Awake ()
 	{
-		thisText = gameObject.GetComponent<Text>();
+		thisText = gameObject.GetComponent<TextMeshProUGUI>();
 	}
 
 	public void ToggleText(bool isToggledOn)

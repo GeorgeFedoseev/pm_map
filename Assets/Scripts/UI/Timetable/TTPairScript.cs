@@ -11,7 +11,7 @@ public class TTPairScript : MonoBehaviour {
 
 	public GameObject locationButtonContainer;
 	public Button locationButton;
-	public Text locationButtonLabel;
+	public TextMeshProUGUI locationButtonLabel;
 
 	public GameObject divider;
 	public GameObject nowCircle;

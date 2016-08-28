@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
+using TMPro;
+
 public class CenterPanelScript : MonoBehaviour {
 
 	protected AppScript app;
@@ -12,7 +14,7 @@ public class CenterPanelScript : MonoBehaviour {
 
 
 	// set in inspector
-	public Text title;
+	public TextMeshProUGUI title;
 	public ScrollRect scrollRect;
 	public RectTransform pagesContainer;
 
@@ -136,7 +138,7 @@ public class CenterPanelScript : MonoBehaviour {
 	}
 
 	protected virtual void OnRectTransformDimensionsChange(){
-		if(rect!=null && app != null && app.centerPanelCanvas != null)
+		if(rect!=null && app != null && app.centerPanel != null)
 			UpdateLayout();		
 	}
 
@@ -167,26 +169,10 @@ public class CenterPanelScript : MonoBehaviour {
 
 	void UpdateLayout(){
 		//Debug.LogWarning ("UPDATE BOTTOM PANEL LO");
-		var sizeDelta = rect.sizeDelta;
-		var size = rect.rect.size;
-		var canvasSize = app.centerPanelCanvas.GetComponent<RectTransform> ().rect.size;
+		/*var sizeDelta = rect.sizeDelta;
+		var size = rect.rect.size;*/
 
 
 		UpdateSnapping ();
-
-		//Debug.LogWarning ("UPDATE BOTTOM PANEL LO: "+size);
-	//	Debug.LogWarning ("Size Delta: "+sizeDelta);
-		/*
-		if (canvasSize.x > 500f) {			
-			rect.sizeDelta = new Vector2 (500f - canvasSize.x, rect.sizeDelta.y);
-			//Debug.LogWarning ("Size Delta: "+rect.sizeDelta);
-		} else if(size.x < canvasSize.x) {
-			rect.sizeDelta = new Vector2 (20f, rect.sizeDelta.y);
-		}
-
-		rect.anchoredPosition = new Vector2(0, rect.anchoredPosition.y);
-		//Debug.LogWarning ("Size: "+size);
-
-		oldScreenSize = canvasSize;*/
 	}
 }

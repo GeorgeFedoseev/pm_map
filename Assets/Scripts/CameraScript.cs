@@ -116,7 +116,7 @@ public class CameraScript : MonoBehaviour {
 		if (overUI && !controlsInUse)
 			return;
 
-		var canvasScale = app.centerPanelCanvas.scaleFactor;
+		var canvasScale = app.scaleFactorRefCanvas.scaleFactor;
 
 		#if UNITY_EDITOR
 			// test on iPhone 5c

@@ -47,6 +47,7 @@ public class TTPanelScript : CenterPanelScript {
 			Debug.LogWarning ("CLOSED IN EDIT MODE: PREPARE FOR THE NEXT OPEN");
 			firstLoadDone = false;
 			_editMode = false;
+			title.text = "Расписание";
 		}
 
 	}
@@ -215,11 +216,11 @@ public class TTPanelScript : CenterPanelScript {
 			c.enabled = true;
 		}
 
-		currentWeek.GetComponent<LayoutElement> ().preferredWidth = GetComponent<RectTransform> ().rect.width;
-		currentWeek.GetComponent<LayoutElement> ().preferredHeight = GetComponent<RectTransform> ().rect.height;
+		//currentWeek.GetComponent<LayoutElement> ().preferredWidth = GetComponent<RectTransform> ().rect.width;
+		//currentWeek.GetComponent<LayoutElement> ().preferredHeight = GetComponent<RectTransform> ().rect.height;
 
-		nextWeek.GetComponent<LayoutElement> ().preferredWidth = GetComponent<RectTransform> ().rect.width;
-		nextWeek.GetComponent<LayoutElement> ().preferredHeight = GetComponent<RectTransform> ().rect.height;
+		//nextWeek.GetComponent<LayoutElement> ().preferredWidth = GetComponent<RectTransform> ().rect.width;
+		//nextWeek.GetComponent<LayoutElement> ().preferredHeight = GetComponent<RectTransform> ().rect.height;
 
 		Loom.QueueOnMainThread (()=>{
 			currentWeek.UpdateLayout (editMode);
