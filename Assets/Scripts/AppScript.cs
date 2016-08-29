@@ -112,14 +112,18 @@ public class AppScript : MonoBehaviour {
 
 	}
 
+	Material _savedSkybox;
 	public void disableCamera(){
 		cam.enabled = false;	
 		cam.GetComponent<Camera>().cullingMask = (1 << LayerMask.NameToLayer("Nothing"));
+		_savedSkybox = RenderSettings.skybox;
+		RenderSettings.skybox = null;
 	}
 
 	public void enableCamera(){
 		cam.enabled = true;
 		cam.GetComponent<Camera>().cullingMask = -1;
+		RenderSettings.skybox = _savedSkybox;
 	}
 
 	public void switchToFloor(int floor){

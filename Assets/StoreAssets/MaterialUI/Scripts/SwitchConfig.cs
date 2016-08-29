@@ -173,7 +173,8 @@ namespace MaterialUI
 			}
 
 			checkBoxToggler.enabled = true;
-			rippleConfig.enabled = true;
+			if(rippleConfig)
+				rippleConfig.enabled = true;
 		}
 
 		private void DisableSwitch()

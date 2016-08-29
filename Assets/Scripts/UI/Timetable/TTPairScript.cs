@@ -22,9 +22,11 @@ public class TTPairScript : MonoBehaviour {
 
 	public void updateCurrentPair(){
 		if (nowCircle != null) {
-			var enableNowCircle = _pair.now ();
-			nowCircle.SetActive (enableNowCircle);
-			nowCircle.GetComponent<ImageBlinkScript> ().enabled = enableNowCircle;
+			if (_pair != null) {
+				var enableNowCircle = _pair.now ();
+				nowCircle.SetActive (enableNowCircle);
+				nowCircle.GetComponent<ImageBlinkScript> ().enabled = enableNowCircle;
+			}
 		}
 	}
 
