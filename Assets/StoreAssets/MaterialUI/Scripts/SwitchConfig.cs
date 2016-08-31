@@ -184,7 +184,9 @@ namespace MaterialUI
 			text.color = disabledColor;
 
 			checkBoxToggler.enabled = false;
-			rippleConfig.enabled = false;
+			if (rippleConfig != null) {
+				rippleConfig.enabled = false;
+			}				
 		}
 
 		void Update()

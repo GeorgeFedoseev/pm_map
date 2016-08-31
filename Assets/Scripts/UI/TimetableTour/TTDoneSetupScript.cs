@@ -17,7 +17,7 @@ public class TTDoneSetupScript : MonoBehaviour {
 		doneText.gameObject.SetActive (false);
 		doneButton.interactable = false;
 
-		if (AppScript.getSharedInstance ().timetableManager.initTimetable ()) {
+		if (AppScript.getSharedInstance ().timetableManager.initTimetable (true)) {
 			loadingText.gameObject.SetActive (false);
 			doneText.gameObject.SetActive (true);
 			doneButton.interactable = true;	

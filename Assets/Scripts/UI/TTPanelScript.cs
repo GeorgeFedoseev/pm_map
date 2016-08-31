@@ -7,7 +7,7 @@ public class TTPanelScript : CenterPanelScript {
 	
 	public TTWeekScript currentWeek, nextWeek;
 
-	public Button editButton, doneButton, downloadButton, undoButton;
+	public Button editButton, doneButton, downloadButton, undoButton, updateTimetableButton;
 
 	public Toggle switchWeekToggle;
 	public GameObject loadingOverlay;
@@ -123,7 +123,17 @@ public class TTPanelScript : CenterPanelScript {
 		UpdateContents (true);
 	}
 
-	public void downloadTimnetableClicked(){
+
+	public void updateTimetableClicked(){
+		//Debug.LogWarning ("DOWNLOAD TIMETABLE");
+		Alerts.AskYesNo("Обновление расписания", "Расписание будет обновлено, а ваши изменения <b>перезаписаны</b>.", ()=>{			
+			app.timetableManager.initTimetable(true);
+			app.timetablePanel.UpdateContents();
+		}, null, "ОК", "ОТМЕНА");
+
+	}
+
+	public void downloadTimetableClicked(){
 		//Debug.LogWarning ("DOWNLOAD TIMETABLE");
 		Alerts.AskYesNo("Загрузка расписания", "Текущее расписание будет заменено на новое, выбранное Вами. Продолжить?", ()=>{
 			app.closeTimetable ();
@@ -162,6 +172,7 @@ public class TTPanelScript : CenterPanelScript {
 			nextWeek.clear ();
 
 
+			updateTimetableButton.gameObject.SetActive(!editMode);
 			editButton.gameObject.SetActive (!editMode);
 			doneButton.gameObject.SetActive (editMode);
 			downloadButton.gameObject.SetActive (editMode);

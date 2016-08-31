@@ -2,15 +2,16 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class CenterPanelPageScript : MonoBehaviour {
-	RectTransform rect;
+public class CenterPanelPageScript : MonoBehaviour {	
 	public CenterPanelScript centerPanel;
 
 	Vector2 oldSize;
 	LayoutElement layoutElem;
 
-	void Awake(){		
-		rect = GetComponent<RectTransform> ();
+	AppScript app;
+
+	void Awake(){
+		app = AppScript.getSharedInstance ();
 		layoutElem = GetComponent<LayoutElement> ();
 	}
 
@@ -27,24 +28,19 @@ public class CenterPanelPageScript : MonoBehaviour {
 
 	void OnRectTransformDimensionsChange(){
 		centerPanel = GameObject.FindObjectOfType<CenterPanelScript> ();
-		if(centerPanel!=null)
-			UpdateLayout();
+		UpdateLayout();
 	}
 
-	public void UpdateLayout(){
-		if (rect == null)
-			return;
-		var sizeDelta = rect.sizeDelta;
-		var size = rect.rect.size;
-
-		if (centerPanel.rect.rect.size == oldSize)
-			return;
-		
+	public void UpdateLayout(){	
 		//Debug.LogWarning ("Size: "+size);
-	//	Debug.LogWarning ("UPDATE ROW LO Size Delta: "+sizeDelta);
-		layoutElem.preferredWidth = centerPanel.rect.rect.size.x;
+	//	Debug.LogWarning ("UPDATE ROW LO Size Delta: "+sizeDelta);\
 
-		oldSize = centerPanel.rect.rect.size;
+		if (layoutElem != null) {
+			layoutElem.preferredWidth = app.scaleFactorRefCanvas.GetComponent<RectTransform>().rect.width;
+		}
+
+
+		//oldSize = centerPanel.rect.rect.size;
 		//rect.anchoredPosition = new Vector2(0, rect.anchoredPosition.y);
 
 		//Debug.LogWarning ("Size: "+size);
