@@ -7,7 +7,7 @@ using TMPro;
 public class SuggestionRowScript : MonoBehaviour {
 
 	public Image icon;
-	public TextMeshProUGUI name, desc;
+	public Text name, desc;
 	[HideInInspector]
 	public Button button;
 
