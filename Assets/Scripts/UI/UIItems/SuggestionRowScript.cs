@@ -2,10 +2,12 @@
 using System.Collections;
 using UnityEngine.UI;
 
+using TMPro;
+
 public class SuggestionRowScript : MonoBehaviour {
 
 	public Image icon;
-	public Text name, desc;
+	public TextMeshProUGUI name, desc;
 	[HideInInspector]
 	public Button button;
 
