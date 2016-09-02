@@ -35,9 +35,13 @@ namespace TMPro.EditorUtilities
         public static Texture2D alignMidline;
 
         public static Texture2D progressTexture;
+        //public static Texture2D selectionBox;
 
         public static GUIContent[] alignContent_A;
         public static GUIContent[] alignContent_B;
+
+        // Icons
+        //public static GUIContent strikethroughIcon;
 
 
 
@@ -64,6 +68,9 @@ namespace TMPro.EditorUtilities
                 alignMidline = AssetDatabase.LoadAssetAtPath(tmproAssetFolderPath + "/GUISkins/Textures/btn_AlignMidLine.psd", typeof(Texture2D)) as Texture2D;
 
                 progressTexture = AssetDatabase.LoadAssetAtPath(tmproAssetFolderPath + "/GUISkins/Textures/Progress Bar.psd", typeof(Texture2D)) as Texture2D;
+                //selectionBox = AssetDatabase.LoadAssetAtPath(tmproAssetFolderPath + "/GUISkins/Textures/SelectionBox.psd", typeof(Texture2D)) as Texture2D;
+                //strikethroughIcon = new GUIContent(AssetDatabase.LoadAssetAtPath(tmproAssetFolderPath + "/GUISkins/Textures/icon_strikethrough.psd", typeof(Texture2D)) as Texture2D);
+
             }
             else
             {
@@ -80,6 +87,7 @@ namespace TMPro.EditorUtilities
                 alignMidline = AssetDatabase.LoadAssetAtPath(tmproAssetFolderPath + "/GUISkins/Textures/btn_AlignMidLine_Light.psd", typeof(Texture2D)) as Texture2D;
 
                 progressTexture = AssetDatabase.LoadAssetAtPath(tmproAssetFolderPath + "/GUISkins/Textures/Progress Bar (Light).psd", typeof(Texture2D)) as Texture2D;
+                //selectionBox = AssetDatabase.LoadAssetAtPath(tmproAssetFolderPath + "/GUISkins/Textures/SelectionBox.psd", typeof(Texture2D)) as Texture2D;
             }
 
             if (TMP_GUISkin != null)

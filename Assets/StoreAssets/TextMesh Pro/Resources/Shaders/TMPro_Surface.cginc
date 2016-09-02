@@ -28,7 +28,7 @@ void VertShader(inout appdata_full v, out Input data)
 	float scale = rsqrt(dot(pixelSize, pixelSize));
 	scale *= abs(v.texcoord1.y) * _GradientScale * 1.5;
 	//scale = lerp(scale/8.0, scale, abs(dot(v.normal.xyz, normalize(ObjSpaceViewDir(vert)))));
-	scale = lerp(scale * (1 - _PerspectiveFilter), scale, abs(dot(UnityObjectToWorldNormal(v.normal.xyz), normalize(ObjSpaceViewDir(vert)))));
+	scale = lerp(scale * (1 - _PerspectiveFilter), scale, abs(dot(UnityObjectToWorldNormal(v.normal.xyz), normalize(WorldSpaceViewDir(vert)))));
 	data.param.y = scale;
 #endif
 

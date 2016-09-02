@@ -35,7 +35,7 @@ namespace TMPro.Examples
 
             //m_textMeshPro.anchor = AnchorPositions.Center;
             m_textMeshPro.alignment = TextAlignmentOptions.Center;
-            m_textMeshPro.anchorDampening = true;
+            //m_textMeshPro.anchorDampening = true;
             //m_textMeshPro.enableAutoSizing = true;
             //textMeshPro.lineJustification = LineJustificationTypes.Center; 
             //textMeshPro.characterSpacing = 0.2f;

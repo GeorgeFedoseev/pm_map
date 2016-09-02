@@ -21,7 +21,11 @@ namespace TMPro.EditorUtilities
         public static void ShowFontAtlasCreatorWindow()
         {
             var window = GetWindow<TMPro_FontAssetCreatorWindow>();
+#if UNITY_5_1
+            window.titleContent = new GUIContent("Asset Creator");
+#else
             window.title = "Asset Creator";
+#endif
             window.Focus();
         }
 
@@ -30,7 +34,7 @@ namespace TMPro.EditorUtilities
         private string[] FontResolutionLabels = { "16","32", "64", "128", "256", "512", "1024", "2048", "4096", "8192" };
         private int[] FontAtlasResolutions = { 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192 };
         private string[] FontCharacterSets = { "ASCII", "Extended ASCII", "ASCII Lowercase", "ASCII Uppercase", "Numbers + Symbols", "Custom Range", "Custom Characters", "Characters from File" }; //, "Unicode" };
-        private enum FontPackingModes { Fast = 0, Optimum = 4 };      
+        private enum FontPackingModes { Fast = 0, Optimum = 4 };
         private FontPackingModes m_fontPackingSelection = 0;
 
         private int font_CharacterSet_Selection = 0;
@@ -135,7 +139,7 @@ namespace TMPro.EditorUtilities
 #endif
 
             // Add Event Listener related to Distance Field Atlas Creation.
-            TMPro_EventManager.COMPUTE_DT_EVENT += ON_COMPUTE_DT_EVENT;
+            TMPro_EventManager.COMPUTE_DT_EVENT.Add(ON_COMPUTE_DT_EVENT);
 
             // Debug Link to received message from Native Code
             //TMPro_FontPlugin.LinkDebugLog(); // Link with C++ Plugin to get Debug output
@@ -146,9 +150,9 @@ namespace TMPro.EditorUtilities
         {
             //Debug.Log("TextMeshPro Editor Window has been disabled.");
 
-            TMPro_EventManager.COMPUTE_DT_EVENT -= ON_COMPUTE_DT_EVENT;
+            TMPro_EventManager.COMPUTE_DT_EVENT.Remove(ON_COMPUTE_DT_EVENT);
 
-            // Destroy Enging only if it has been initialized already
+            // Destroy Engine only if it has been initialized already
             if (TMPro_FontPlugin.Initialize_FontEngine() == 99)
             {
                 TMPro_FontPlugin.Destroy_FontEngine();

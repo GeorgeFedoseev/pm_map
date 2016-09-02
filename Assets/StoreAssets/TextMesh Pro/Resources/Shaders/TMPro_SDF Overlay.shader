@@ -1,18 +1,22 @@
 // Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
 // Copyright (C) 2014 Stephan Schaem - All Rights Reserved
-// This code can only be used under the standard Unity Asset Store End User License Agreementoutline
+// This code can only be used under the standard Unity Asset Store End User License Agreement
 // A Copy of the EULA APPENDIX 1 is available at http://unity3d.com/company/legal/as_terms
 
 Shader "TMPro/Distance Field Overlay" {
 
 Properties {
 	_FaceTex			("Face Texture", 2D) = "white" {}
+	_FaceUVSpeedX("Face UV Speed X", Range(-5, 5)) = 0.0
+	_FaceUVSpeedY("Face UV Speed Y", Range(-5, 5)) = 0.0
 	_FaceColor			("Face Color", Color) = (1,1,1,1)
 	_FaceDilate			("Face Dilate", Range(-1,1)) = 0
 
 	_OutlineColor		("Outline Color", Color) = (0,0,0,1)
 	_OutlineTex			("Outline Texture", 2D) = "white" {}
+	_OutlineUVSpeedX("Outline UV Speed X", Range(-5, 5)) = 0.0
+	_OutlineUVSpeedY("Outline UV Speed Y", Range(-5, 5)) = 0.0
 	_OutlineWidth		("Outline Thickness", Range(0, 1)) = 0
 	_OutlineSoftness	("Outline Softness", Range(0,1)) = 0
 
@@ -96,10 +100,10 @@ SubShader {
 		#pragma vertex VertShader
 		#pragma fragment PixShader
 		#pragma fragmentoption ARB_precision_hint_fastest
-		#pragma multi_compile BEVEL_OFF BEVEL_ON
-		#pragma multi_compile UNDERLAY_OFF UNDERLAY_ON UNDERLAY_INNER
-		#pragma multi_compile GLOW_OFF GLOW_ON
-		#pragma multi_compile MASK_OFF MASK_HARD MASK_SOFT
+		#pragma shader_feature __ BEVEL_ON
+		#pragma shader_feature __ UNDERLAY_ON UNDERLAY_INNER
+		#pragma shader_feature __ GLOW_ON
+		#pragma shader_feature __ MASK_HARD MASK_SOFT
 		#pragma glsl
 
 		#include "UnityCG.cginc"
@@ -143,7 +147,7 @@ SubShader {
 			pixelSize /= float2(_ScaleX, _ScaleY) * abs(mul((float2x2)UNITY_MATRIX_P, _ScreenParams.xy));
 			float scale = rsqrt(dot(pixelSize, pixelSize)) * abs(input.texcoord1.y);
 			scale *= _GradientScale * 1.5;
-			if(UNITY_MATRIX_P[3][3] == 0) scale = lerp(scale*(1 - _PerspectiveFilter), scale, abs(dot(UnityObjectToWorldNormal(input.normal.xyz), normalize(ObjSpaceViewDir(vert)))));
+			if(UNITY_MATRIX_P[3][3] == 0) scale = lerp(scale*(1 - _PerspectiveFilter), scale, abs(dot(UnityObjectToWorldNormal(input.normal.xyz), normalize(WorldSpaceViewDir(vert)))));
 
 			float weight = (lerp(_WeightNormal, _WeightBold, bold)) / _GradientScale;
 			weight += _FaceDilate*_ScaleRatioA*.5;
@@ -214,8 +218,8 @@ SubShader {
 			half4 faceColor = input.faceColor;
 			half4 outlineColor = input.outlineColor;
 
-			faceColor *= tex2D(_FaceTex, input.texcoords.zw);
-			outlineColor *= tex2D(_OutlineTex, input.texcoords.zw);
+			faceColor *= tex2D(_FaceTex, float2(input.texcoords.z + _FaceUVSpeedX * _Time.y, input.texcoords.w + _FaceUVSpeedY * _Time.y));
+			outlineColor *= tex2D(_OutlineTex, float2(input.texcoords.z + _OutlineUVSpeedX * _Time.y, input.texcoords.w + _OutlineUVSpeedY * _Time.y));
 
 			faceColor = GetColor(sd, faceColor, outlineColor, outline, softness);
 

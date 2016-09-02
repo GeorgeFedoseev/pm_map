@@ -66,8 +66,8 @@ SubShader {
 		#pragma vertex VertShader
 		#pragma fragment PixShader
 		#pragma fragmentoption ARB_precision_hint_fastest
-		#pragma multi_compile UNDERLAY_OFF UNDERLAY_ON UNDERLAY_INNER
-		#pragma multi_compile MASK_OFF MASK_HARD MASK_SOFT
+		#pragma shader_feature __ UNDERLAY_ON UNDERLAY_INNER
+		#pragma shader_feature __ MASK_HARD MASK_SOFT
 
 		#include "UnityCG.cginc"
 
@@ -108,7 +108,7 @@ SubShader {
 			pixelSize /= float2(_ScaleX, _ScaleY) * abs(mul((float2x2)UNITY_MATRIX_P, _ScreenParams.xy));
 			float scale = rsqrt(dot(pixelSize, pixelSize));
 			scale *= abs(input.texcoord1.y) * _GradientScale * 1.5;
-			if(UNITY_MATRIX_P[3][3] == 0) scale = lerp(abs(scale) * (1 - _PerspectiveFilter), scale, abs(dot(UnityObjectToWorldNormal(input.normal.xyz), normalize(ObjSpaceViewDir(vert)))));
+			if(UNITY_MATRIX_P[3][3] == 0) scale = lerp(abs(scale) * (1 - _PerspectiveFilter), scale, abs(dot(UnityObjectToWorldNormal(input.normal.xyz), normalize(WorldSpaceViewDir(vert)))));
 
 			float weight = lerp(_WeightNormal, _WeightBold, bold) / _GradientScale;
 			weight += _FaceDilate * _ScaleRatioA * 0.5;
@@ -160,6 +160,7 @@ SubShader {
 		fixed4 PixShader(pixel_t input) : COLOR
 		{
 			half d = tex2D(_MainTex, input.texcoord0).a * input.param.x;
+			half sd = saturate(d - input.param.z);
 			fixed4 c = lerp(input.outlineColor, input.faceColor, saturate(d - input.param.z));
 			c *= saturate(d - input.param.y);
 
@@ -170,7 +171,7 @@ SubShader {
 
 		#if UNDERLAY_INNER
 			d = tex2D(_MainTex, input.texcoord1).a * input.underlayParam.x;
-			c += input.underlayColor * (1-saturate(d - input.underlayParam.y))* saturate(d - input.param.w) * (1-c.a);
+			c += input.underlayColor * (1 - saturate(d - input.underlayParam.y)) * sd * (1 - c.a);
 		#endif
 
 		#if MASK_HARD

@@ -7,7 +7,11 @@ using UnityEngine.EventSystems;
 public class AppScript : MonoBehaviour {
 
 	public static bool DEBUG = false;
+	#if UNITY_EDITOR
 	public static bool CLEAN_EVERYTHING_ON_START = false;
+	#else
+	public static bool CLEAN_EVERYTHING_ON_START = false;
+	#endif
 	//public static bool UPDATE_FACILITIES_DB_ON_START = false;
 
 	private static AppScript sharedInstance;

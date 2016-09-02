@@ -5,7 +5,6 @@
 
 using UnityEngine;
 using UnityEditor;
-using System;
 using System.Collections;
 
 
@@ -56,10 +55,11 @@ namespace TMPro.EditorUtilities
         private SerializedProperty autoSizing_prop;
         private SerializedProperty fontSizeMin_prop;
         private SerializedProperty fontSizeMax_prop;
-        private SerializedProperty charSpacingMax_prop;
+        //private SerializedProperty charSpacingMax_prop;
         private SerializedProperty lineSpacingMax_prop;
+        private SerializedProperty charWidthMaxAdj_prop;
 
-        private SerializedProperty characterSpacing_prop;     
+        private SerializedProperty characterSpacing_prop;
         private SerializedProperty lineSpacing_prop;
         private SerializedProperty paragraphSpacing_prop;
 
@@ -144,8 +144,9 @@ namespace TMPro.EditorUtilities
             autoSizing_prop = serializedObject.FindProperty("m_enableAutoSizing");
             fontSizeMin_prop = serializedObject.FindProperty("m_fontSizeMin");
             fontSizeMax_prop = serializedObject.FindProperty("m_fontSizeMax");
-            charSpacingMax_prop = serializedObject.FindProperty("m_charSpacingMax");
+            //charSpacingMax_prop = serializedObject.FindProperty("m_charSpacingMax");
             lineSpacingMax_prop = serializedObject.FindProperty("m_lineSpacingMax");
+            charWidthMaxAdj_prop = serializedObject.FindProperty("m_charWidthMaxAdj");
             
             // Colors & Gradient
             fontColor_prop = serializedObject.FindProperty("m_fontColor");
@@ -213,8 +214,8 @@ namespace TMPro.EditorUtilities
         {
             //Debug.Log("OnDisable() for Inspector ID " + this.GetInstanceID() + " has been called.");
             
-            Undo.undoRedoPerformed -= OnUndoRedo;          
-            //Undo.postprocessModifications -= OnUndoRedoEvent;  
+            Undo.undoRedoPerformed -= OnUndoRedo;
+            //Undo.postprocessModifications -= OnUndoRedoEvent;
         }
 
 
@@ -258,7 +259,7 @@ namespace TMPro.EditorUtilities
                 {                   
                     Undo.RecordObject(m_renderer, "Asset & Material Change");
                     havePropertiesChanged = true;
-                    hasFontAssetChanged_prop.boolValue = true;                 
+                    hasFontAssetChanged_prop.boolValue = true;
                     //isAffectingWordWrapping_prop.boolValue = true;
                 }
 
@@ -273,14 +274,15 @@ namespace TMPro.EditorUtilities
                 int v1 = GUILayout.Toggle((styleValue & 1) == 1, "B", GUI.skin.button) ? 1 : 0; // Bold
                 int v2 = GUILayout.Toggle((styleValue & 2) == 2, "I", GUI.skin.button) ? 2 : 0; // Italics
                 int v3 = GUILayout.Toggle((styleValue & 4) == 4, "U", GUI.skin.button) ? 4 : 0; // Underline
+                int v7 = GUILayout.Toggle((styleValue & 64) == 64, "S", GUI.skin.button) ? 64 : 0; // Strikethrough
                 int v4 = GUILayout.Toggle((styleValue & 8) == 8, "ab", GUI.skin.button) ? 8 : 0; // Lowercase
                 int v5 = GUILayout.Toggle((styleValue & 16) == 16, "AB", GUI.skin.button) ? 16 : 0; // Uppercase
-                int v6 = GUILayout.Toggle((styleValue & 32) == 32, "S", GUI.skin.button) ? 32 : 0; // Smallcaps
+                int v6 = GUILayout.Toggle((styleValue & 32) == 32, "SC", GUI.skin.button) ? 32 : 0; // Smallcaps
                 EditorGUILayout.EndHorizontal();
 
                 if (EditorGUI.EndChangeCheck())
                 {
-                    fontStyle_prop.intValue = v1 + v2 + v3 + v4 + v5 + v6;
+                    fontStyle_prop.intValue = v1 + v2 + v3 + v4 + v5 + v6 + v7;
                     havePropertiesChanged = true;
                 }
 
@@ -346,7 +348,7 @@ namespace TMPro.EditorUtilities
                 {
                     EditorGUILayout.BeginHorizontal();
                     EditorGUILayout.PrefixLabel("Auto Size Options");
-                    EditorGUIUtility.labelWidth = 30;
+                    EditorGUIUtility.labelWidth = 35;
 
                     EditorGUI.BeginChangeCheck();
                     EditorGUILayout.PropertyField(fontSizeMin_prop, new GUIContent("Min"), GUILayout.MinWidth(50));
@@ -365,7 +367,10 @@ namespace TMPro.EditorUtilities
                     }
 
                     EditorGUI.BeginChangeCheck();
+                    EditorGUIUtility.labelWidth = 55;
                     //EditorGUILayout.PropertyField(charSpacingMax_prop, new GUIContent("Char"), GUILayout.MinWidth(50));
+                    EditorGUILayout.PropertyField(charWidthMaxAdj_prop, new GUIContent("Width %"), GUILayout.MinWidth(50));
+                    EditorGUIUtility.labelWidth = 35;
                     EditorGUILayout.PropertyField(lineSpacingMax_prop, new GUIContent("Line"), GUILayout.MinWidth(50));
 
                     EditorGUIUtility.labelWidth = labelWidth;
@@ -373,7 +378,8 @@ namespace TMPro.EditorUtilities
 
                     if (EditorGUI.EndChangeCheck())
                     {
-                        charSpacingMax_prop.floatValue = Mathf.Min(0, charSpacingMax_prop.floatValue);
+                        charWidthMaxAdj_prop.floatValue = Mathf.Clamp(charWidthMaxAdj_prop.floatValue, 0, 50); 
+                        //charSpacingMax_prop.floatValue = Mathf.Min(0, charSpacingMax_prop.floatValue);
                         lineSpacingMax_prop.floatValue = Mathf.Min(0, lineSpacingMax_prop.floatValue);
                         havePropertiesChanged = true;
                     }
@@ -544,9 +550,9 @@ namespace TMPro.EditorUtilities
                 string oldName = SortingLayerHelper.GetSortingLayerNameFromID(m_textMeshProScript.sortingLayerID);
 
                 // Use the name to look up our array index into the names list
-                int oldLayerIndex = Array.IndexOf(sortingLayerNames, oldName);
+                int oldLayerIndex = System.Array.IndexOf(sortingLayerNames, oldName);
               
-                // Show the popup for the names              
+                // Show the pop-up for the names
                 EditorGUIUtility.fieldWidth = 0f;
                 int newLayerIndex = EditorGUILayout.Popup(string.Empty, oldLayerIndex, sortingLayerNames, GUILayout.MinWidth(80f));
 
@@ -558,14 +564,14 @@ namespace TMPro.EditorUtilities
                     //EditorUtility.SetDirty(renderer);
                 }
 
-                // Expose the manual sorting order              
+                // Expose the manual sorting order
                 EditorGUIUtility.labelWidth = 40f;
                 EditorGUIUtility.fieldWidth = 80f;
                 int newSortingLayerOrder = EditorGUILayout.IntField("Order", m_textMeshProScript.sortingOrder);
                 if (newSortingLayerOrder != m_textMeshProScript.sortingOrder)
                 {
                     //Undo.RecordObject(renderer, "Edit Sorting Order");
-                    m_textMeshProScript.sortingOrder = newSortingLayerOrder;                 
+                    m_textMeshProScript.sortingOrder = newSortingLayerOrder;
                 }                            
                 EditorGUILayout.EndHorizontal();
                 EditorGUIUtility.labelWidth = old_LabelWidth;
@@ -577,7 +583,7 @@ namespace TMPro.EditorUtilities
                 EditorGUILayout.PropertyField(isRichText_prop, new GUIContent("Enable Rich Text?"));
                 //EditorGUILayout.PropertyField(textRectangle_prop, true);
 
-                if (EditorGUI.EndChangeCheck())                                 
+                if (EditorGUI.EndChangeCheck())
                     havePropertiesChanged = true;
 
 
@@ -843,7 +849,6 @@ namespace TMPro.EditorUtilities
             EditorGUIUtility.labelWidth = old_LabelWidth;
             EditorGUIUtility.fieldWidth = old_FieldWidth;
         }
-
 
 
         // Special Handling of Undo / Redo Events.

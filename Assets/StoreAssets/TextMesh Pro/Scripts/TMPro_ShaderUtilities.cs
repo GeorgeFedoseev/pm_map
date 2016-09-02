@@ -75,7 +75,7 @@ namespace TMPro
         public static string Keyword_Glow = "GLOW_ON";
         public static string Keyword_Underlay = "UNDERLAY_ON";
         public static string Keyword_Ratios = "RATIOS_OFF";
-        public static string Keyword_MASK_OFF = "MASK_OFF";
+        //public static string Keyword_MASK_OFF = "MASK_OFF";
         public static string Keyword_MASK_SOFT = "MASK_SOFT";
         public static string Keyword_MASK_HARD = "MASK_HARD";
 

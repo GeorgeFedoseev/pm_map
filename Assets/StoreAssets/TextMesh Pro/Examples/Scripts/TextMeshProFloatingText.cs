@@ -62,7 +62,7 @@ namespace TMPro.Examples
 
                 StartCoroutine(DisplayTextMeshProFloatingText());
             }
-            else
+            else if (SpawnType == 1)
             {
                 //Debug.Log("Spawning TextMesh Objects.");
 
@@ -74,6 +74,10 @@ namespace TMPro.Examples
                 m_textMesh.fontSize = 24;
 
                 StartCoroutine(DisplayTextMeshFloatingText());
+            }
+            else if (SpawnType == 2)
+            {
+
             }
 
         }

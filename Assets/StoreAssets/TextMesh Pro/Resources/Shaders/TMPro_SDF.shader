@@ -1,7 +1,7 @@
 // Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
-// Copyright (C) 2014 Stephan Schaem - All Rights Reserved
-// This code can only be used under the standard Unity Asset Store End User License Agreementoutline
+// Copyright (C) 2014 Stephan Schaem & Stephan Bouchard - All Rights Reserved
+// This code can only be used under the standard Unity Asset Store End User License Agreement
 // A Copy of the EULA APPENDIX 1 is available at http://unity3d.com/company/legal/as_terms
 
 Shader "TMPro/Distance Field" {
@@ -119,10 +119,10 @@ SubShader {
 		#pragma vertex VertShader
 		#pragma fragment PixShader
 		#pragma fragmentoption ARB_precision_hint_fastest
-		#pragma multi_compile BEVEL_OFF BEVEL_ON
-		#pragma multi_compile UNDERLAY_OFF UNDERLAY_ON UNDERLAY_INNER
-		#pragma multi_compile GLOW_OFF GLOW_ON
-		#pragma multi_compile MASK_OFF MASK_HARD MASK_SOFT
+		#pragma shader_feature __ BEVEL_ON
+		#pragma shader_feature __ UNDERLAY_ON UNDERLAY_INNER
+		#pragma shader_feature __ GLOW_ON
+		#pragma shader_feature __ MASK_HARD MASK_SOFT
 		#pragma glsl
 
 		#include "UnityCG.cginc"
@@ -139,16 +139,17 @@ SubShader {
 
 		struct pixel_t {
 			float4	vertex			: SV_POSITION;
-			fixed4	color			: COLOR;
-			fixed4	faceColor		: COLOR1;
-			fixed4	outlineColor	: COLOR2;
-			float4	texcoords		: TEXCOORD0;		// Atlas & Texture
-			float4	param			: TEXCOORD1;		// alphaClip, scale, bias, weight
-			float4	mask			: TEXCOORD2;		// Position in object space(xy), pixel Size(zw)
-			float3	viewDir			: TEXCOORD3;
+			//fixed4	color			: COLOR;
+			fixed4	faceColor		: COLOR;
+			fixed4	outlineColor	: COLOR1;
+			fixed   vertexAlpha		: TEXCOORD0;
+			float4	texcoords		: TEXCOORD1;		// Atlas & Texture
+			float4	param			: TEXCOORD2;		// alphaClip, scale, bias, weight
+			float4	mask			: TEXCOORD3;		// Position in object space(xy), pixel Size(zw)
+			float3	viewDir			: TEXCOORD4;
 		#if (UNDERLAY_ON || UNDERLAY_INNER)
-			float4	texcoord2		: TEXCOORD4;		// u,v, scale, bias
-			fixed4	underlayColor	: TEXCOORD5;
+			float4	texcoord2		: TEXCOORD5;		// u,v, scale, bias
+			fixed4	underlayColor	: TEXCOORD6;
 		#endif
 		};
 
@@ -165,7 +166,7 @@ SubShader {
 			pixelSize /= float2(_ScaleX, _ScaleY) * abs(mul((float2x2)UNITY_MATRIX_P, _ScreenParams.xy));
 			float scale = rsqrt(dot(pixelSize, pixelSize));
 			scale *= abs(input.texcoord1.y) * _GradientScale * 1.5;
-			if(UNITY_MATRIX_P[3][3] == 0) scale = lerp(scale*(1 - _PerspectiveFilter), scale, abs(dot(UnityObjectToWorldNormal(input.normal.xyz), normalize(ObjSpaceViewDir(vert)))));
+			if(UNITY_MATRIX_P[3][3] == 0) scale = lerp(scale*(1 - _PerspectiveFilter), scale, abs(dot(UnityObjectToWorldNormal(input.normal.xyz), normalize(WorldSpaceViewDir(vert)))));
 
 			float weight = (lerp(_WeightNormal, _WeightBold, bold)) / _GradientScale;
 			weight += _FaceDilate * _ScaleRatioA * 0.5;
@@ -203,7 +204,7 @@ SubShader {
 
 			pixel_t output = {
 				vPosition,
-				input.color, faceColor, outlineColor,
+				faceColor, outlineColor, input.color.a,
 				float4(input.texcoord0, UnpackUV(input.texcoord1.x)),
 				float4(alphaClip, scale, bias, weight),
 				float4(vert.xy-_MaskCoord.xy, .5/pixelSize.xy),
@@ -268,12 +269,12 @@ SubShader {
 
 		#if UNDERLAY_INNER
 			float d = tex2D(_MainTex, input.texcoord2.xy).a * input.texcoord2.z;
-			faceColor += input.underlayColor * (1-saturate(d - input.texcoord2.w)) * saturate(1-sd) * (1-faceColor.a);
+			faceColor += input.underlayColor * (1 - saturate(d - input.texcoord2.w)) * saturate(1-sd) * (1-faceColor.a);
 		#endif
 
 		#if GLOW_ON
 			float4 glowColor = GetGlowColor(sd, scale);
-			faceColor.rgb += glowColor.rgb * glowColor.a * input.color.a;
+			faceColor.rgb += glowColor.rgb * glowColor.a * input.vertexAlpha;
 			//faceColor.a *= glowColor.a; // Required for Alpha when using Render Textures
 		#endif
 

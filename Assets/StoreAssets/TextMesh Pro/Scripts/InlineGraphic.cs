@@ -15,7 +15,7 @@ using System.Collections.Generic;
 
 namespace TMPro
 {
-    
+
     public class InlineGraphic : MaskableGraphic
     {
 
@@ -51,13 +51,14 @@ namespace TMPro
                 texture = m_manager.spriteAsset.spriteSheet;      
         }
 
-
-        protected void OnValidate()
+#if UNITY_EDITOR
+        protected override void OnValidate()
         {
             //Debug.Log("Texture ID is " + this.texture.GetInstanceID());
         }
+#endif
 
-        
+
         public new void UpdateMaterial()
         {
             base.UpdateMaterial();
@@ -70,13 +71,8 @@ namespace TMPro
             //base.UpdateGeometry();
         }
 
-        
-		protected void OnPopulateMesh(VertexHelper vh){
-			
-			
-		}
 
-       /* protected override void OnPopulateMesh(List<UIVertex> vbo)
+        /*protected override void OnFillVBO(List<UIVertex> vbo)
         {
             base.OnFillVBO(vbo);
             //Debug.Log("OnFillVBO called.");
@@ -85,7 +81,12 @@ namespace TMPro
 
 
         }*/
-        
+
+        protected override void OnPopulateMesh(VertexHelper vh)
+        {
+            base.OnPopulateMesh(vh);
+        }
+
     }
 }
 

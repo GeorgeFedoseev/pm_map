@@ -31,7 +31,7 @@ SubShader {
 		#pragma vertex vert
 		#pragma fragment frag
 		#pragma fragmentoption ARB_precision_hint_fastest
-		#pragma multi_compile MASK_OFF MASK_HARD MASK_SOFT
+		#pragma shader_feature __ MASK_HARD MASK_SOFT
 
 		#include "UnityCG.cginc"
 

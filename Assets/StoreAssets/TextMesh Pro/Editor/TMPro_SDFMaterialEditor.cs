@@ -16,6 +16,8 @@ public class TMPro_SDFMaterialEditor : MaterialEditor
 {
     private struct m_foldout
     { // Track Inspector foldout panel states, globally.
+        public static bool editorPanel = true;
+
         public static bool face = true;
         public static bool outline = true;
         public static bool underlay = false;
@@ -125,7 +127,7 @@ public class TMPro_SDFMaterialEditor : MaterialEditor
      
    
 
-    private MaterialProperty m_shaderFlags; // _ShaderFlag useed to determine bevel type.
+    private MaterialProperty m_shaderFlags; // _ShaderFlag used to determine bevel type.
     private MaterialProperty m_scaleRatio_A;
     private MaterialProperty m_scaleRatio_B;
     private MaterialProperty m_scaleRatio_C;
@@ -166,27 +168,12 @@ public class TMPro_SDFMaterialEditor : MaterialEditor
     public override void OnEnable()
     {
         base.OnEnable();
-
         //Debug.Log("New Instance of SDF Material Editor with ID " + this.GetInstanceID());
 
         // Get the UI Skin and Styles for the various Editors
         TMP_UIStyleManager.GetUIStyles();
 
-        // Get a reference to the TextMeshPro or TextMeshProUGUI object if possible
-        //if (Selection.activeGameObject != null)
-        //{
-        //    if (Selection.activeGameObject.GetComponent<TextMeshPro>() != null)
-        //    {
-        //        m_textMeshPro = Selection.activeGameObject.GetComponent<TextMeshPro>();
-        //    }
-        //    else
-        //    {
-        //        m_textMeshProUGUI = Selection.activeGameObject.GetComponent<TextMeshProUGUI>();
-        //    }
-        //}
-        
-      
-        // Initialize the Event Listener for Undo Events.     
+        // Initialize the Event Listener for Undo Events.
         Undo.undoRedoPerformed += OnUndoRedo;
         //Undo.postprocessModifications += OnUndoRedoEvent;
     }
@@ -205,13 +192,13 @@ public class TMPro_SDFMaterialEditor : MaterialEditor
 
 
     public override void OnInspectorGUI()
-    {        
+    {
         // if we are not visible... return
-        //if (!isVisible)
-        //    return;
+        if (!isVisible)
+            return;
 
         ReadMaterialProperties();
-			
+
         Material targetMaterial = target as Material;
 
         // If multiple materials have been selected and are not using the same shader, we simply return.
@@ -506,7 +493,7 @@ public class TMPro_SDFMaterialEditor : MaterialEditor
 
                 if (EditorGUI.EndChangeCheck()) havePropertiesChanged = true;
 
-                // Mask                              
+                // Mask
                 if (targetMaterial.HasProperty("_MaskCoord"))
                 {
                     GUILayout.Space(15);
@@ -514,7 +501,7 @@ public class TMPro_SDFMaterialEditor : MaterialEditor
                     if (GUI.changed)
                     {
                         havePropertiesChanged = true;
-                        SetMaskKeywords(m_mask);                     
+                        SetMaskKeywords(m_mask); 
                     }
 
                     
@@ -630,21 +617,21 @@ public class TMPro_SDFMaterialEditor : MaterialEditor
                         if (go.GetComponent<TextMeshPro>() != null)
                         {
                             Undo.RecordObject(go.GetComponent<TextMeshPro>(), "Material Assignment");
-                            go.GetComponent<TextMeshPro>().fontSharedMaterial = newMaterial;                        
+                            go.GetComponent<TextMeshPro>().fontSharedMaterial = newMaterial;
                         }
 
 #if UNITY_4_6 || UNITY_5
                         if (go.GetComponent<TextMeshProUGUI>() != null)
                         {
-                            Undo.RecordObject(go.GetComponent<TextMeshProUGUI>(), "Material Assignment");                          
-                            go.GetComponent<TextMeshProUGUI>().fontSharedMaterial = newMaterial;                          
+                            Undo.RecordObject(go.GetComponent<TextMeshProUGUI>(), "Material Assignment");
+                            go.GetComponent<TextMeshProUGUI>().fontSharedMaterial = newMaterial;
                         }
 #endif
                     }
-                                                      
+
                     TMPro_EventManager.ON_DRAG_AND_DROP_MATERIAL_CHANGED(go, currentMaterial, newMaterial);
-                    //SceneView.RepaintAll();   
-                    EditorUtility.SetDirty(go);                                    
+                    //SceneView.RepaintAll();
+                    EditorUtility.SetDirty(go);
                 }
 
                 evt.Use();
@@ -1014,7 +1001,7 @@ public class TMPro_SDFMaterialEditor : MaterialEditor
                 case Mask_Type.MaskHard:
                     mat.EnableKeyword("MASK_HARD");
                     mat.DisableKeyword("MASK_SOFT");
-                    mat.DisableKeyword("MASK_OFF");
+                    //mat.DisableKeyword("MASK_OFF");
                     
                     //if (m_textMeshPro != null)
                     //    m_textMeshPro.maskType = MaskingTypes.MaskHard;
@@ -1025,7 +1012,7 @@ public class TMPro_SDFMaterialEditor : MaterialEditor
                 case Mask_Type.MaskSoft:
                     mat.EnableKeyword("MASK_SOFT");
                     mat.DisableKeyword("MASK_HARD");
-                    mat.DisableKeyword("MASK_OFF");
+                    //mat.DisableKeyword("MASK_OFF");
 
                     //if (m_textMeshPro != null)
                     //    m_textMeshPro.maskType = MaskingTypes.MaskSoft;
@@ -1034,7 +1021,7 @@ public class TMPro_SDFMaterialEditor : MaterialEditor
 
                     break;
                 case Mask_Type.MaskOff:
-                    mat.EnableKeyword("MASK_OFF");
+                    //mat.EnableKeyword("MASK_OFF");
                     mat.DisableKeyword("MASK_HARD");
                     mat.DisableKeyword("MASK_SOFT");
 

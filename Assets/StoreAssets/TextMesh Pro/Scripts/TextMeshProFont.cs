@@ -78,6 +78,8 @@ namespace TMPro
         public byte ItalicStyle = 35;
         public byte TabSize = 10;
 
+        private byte m_oldTabSize;
+
 
         void OnEnable()
         {
@@ -98,6 +100,16 @@ namespace TMPro
         void OnDisable()
         {
             //Debug.Log("TextMeshPro Font Asset [" + this.name + "] has been disabled!");      
+        }
+
+
+        void OnValidate()
+        {
+            if (m_oldTabSize != TabSize)
+            {
+                m_oldTabSize = TabSize;
+                ReadFontDefinition();
+            }
         }
 
 
@@ -171,7 +183,7 @@ namespace TMPro
             // Add Character (10) LineFeed, (13) Carriage Return & Space (32) to Dictionary if they don't exists.                      
             if (m_characterDictionary.ContainsKey(32))
             {
-                m_characterDictionary[32].width = m_fontInfo.Ascender / 5;
+                m_characterDictionary[32].width = m_characterDictionary[32].xAdvance; // m_fontInfo.Ascender / 5;
                 m_characterDictionary[32].height = m_fontInfo.Ascender - m_fontInfo.Descender;
                 m_characterDictionary[32].yOffset= m_fontInfo.Ascender;
             }
@@ -218,7 +230,7 @@ namespace TMPro
                 temp_charInfo.id = 9;
                 temp_charInfo.x = m_characterDictionary[32].x;
                 temp_charInfo.y = m_characterDictionary[32].y;
-                temp_charInfo.width = m_characterDictionary[32].width * TabSize;
+                temp_charInfo.width = m_characterDictionary[32].width * TabSize + (m_characterDictionary[32].xAdvance - m_characterDictionary[32].width) * (TabSize - 1);
                 temp_charInfo.height = m_characterDictionary[32].height;
                 temp_charInfo.xOffset = m_characterDictionary[32].xOffset;
                 temp_charInfo.yOffset = m_characterDictionary[32].yOffset;
@@ -230,7 +242,7 @@ namespace TMPro
             //m_fontInfo.CenterLine = m_characterDictionary[111].yOffset - m_characterDictionary[111].height * 0.5f;
 
             // Tab Width is using the same xAdvance as space (32).
-            m_fontInfo.TabWidth = m_characterDictionary[32].xAdvance;
+            m_fontInfo.TabWidth = m_characterDictionary[9].xAdvance;
 
 
             // Populate Dictionary with Kerning Information
@@ -281,7 +293,7 @@ namespace TMPro
         // Get the characters from the line breaking files
         private Dictionary<int, char> GetCharacters(TextAsset file)
         {                      
-            Dictionary<int, char> dict = new Dictionary<int, char>();                   
+            Dictionary<int, char> dict = new Dictionary<int, char>();
             string text = file.text;
 
             for (int i = 0; i < text.Length; i++)

@@ -22,7 +22,7 @@ namespace TMPro
         public Vector4[] tangents;
 #if UNITY_4_6 || UNITY_5
         public UIVertex[] uiVertices;
-        public UIVertex[][] meshArrays;      
+        public UIVertex[][] meshArrays;
 #endif
     }
 
@@ -30,7 +30,7 @@ namespace TMPro
     public enum TMP_CharacterType { Character, Sprite };
 
 
-    // Structure containing information about each Character & releated Mesh info for the text object.   
+    // Structure containing information about each Character & related Mesh info for the text object.   
     public struct TMP_CharacterInfo
     {   
         public TMP_CharacterType type;
@@ -41,10 +41,9 @@ namespace TMPro
         public short pageNumber;
         
         public short index; // Index of character in the input text.
-               
-        public int meshIndex;       
+
+        public UIVertex[] uiVertices;
         public short vertexIndex;
-        //public TMP_VertexInfo vertexInfo;
         public TMP_Vertex vertex_TL;
         public TMP_Vertex vertex_BL;
         public TMP_Vertex vertex_TR;
@@ -53,17 +52,17 @@ namespace TMPro
         public Vector3 topLeft;
         public Vector3 bottomLeft;
         public Vector3 topRight;
-        public Vector3 bottomRight;      
-        public float topLine;      
+        public Vector3 bottomRight;
+        public float topLine;
         public float baseLine;
         public float bottomLine;
         
-        public float xAdvance;     
+        public float xAdvance;
         public float aspectRatio;
         public float padding;
         public float scale;
         public Color32 color;
-        public FontStyles style;       
+        public FontStyles style;
         public bool isVisible;
     }
 
@@ -78,8 +77,6 @@ namespace TMPro
         public Vector3 normal;
         public Vector4 tangent;
     }
-    
-    
 
 
     //public struct TMP_VertexInfo
@@ -124,6 +121,7 @@ namespace TMPro
         public int spriteCount;
         public int spaceCount;
         public int wordCount;
+        public int linkCount;
         public int lineCount;
         public int pageCount;
 
@@ -134,6 +132,7 @@ namespace TMPro
 
         public TMP_CharacterInfo[] characterInfo;
         public List<TMP_WordInfo> wordInfo;
+        public List<TMP_LinkInfo> linkInfo;
         public TMP_LineInfo[] lineInfo;
         public TMP_PageInfo[] pageInfo;
         public TMP_MeshInfo meshInfo;
@@ -144,6 +143,7 @@ namespace TMPro
         {
             characterInfo = new TMP_CharacterInfo[0];
             wordInfo = new List<TMP_WordInfo>(32);
+            linkInfo = new List<TMP_LinkInfo>(4);
             lineInfo = new TMP_LineInfo[16];
             pageInfo = new TMP_PageInfo[16];
 
@@ -165,20 +165,16 @@ namespace TMPro
             characterCount = 0;
             spaceCount = 0;
             wordCount = 0;
+            linkCount = 0;
             lineCount = 0;
             pageCount = 0;
             spriteCount = 0;
                  
             Array.Clear(characterInfo, 0, characterInfo.Length);
             wordInfo.Clear();
+            linkInfo.Clear();
             Array.Clear(lineInfo, 0, lineInfo.Length);
             Array.Clear(pageInfo, 0, pageInfo.Length);
-            
-
-            //characterInfoList.Clear();
-            //wordInfoList.Clear();
-            //lineInfoList.Clear();
-            //pageInfoList.Clear();
         }
     }
 
@@ -190,6 +186,15 @@ namespace TMPro
         public float ascender;
         public float baseLine;
         public float descender;
+    }
+
+
+    public struct TMP_LinkInfo
+    {
+        public int hashCode;
+        public int firstCharacterIndex;
+        public int lastCharacterIndex;
+        public int characterCount;
     }
 
 
@@ -230,6 +235,7 @@ namespace TMPro
         public int spaceCount;
         public int wordCount;
         public int firstCharacterIndex;
+        public int firstVisibleCharacterIndex;
         public int lastCharacterIndex;
         public int lastVisibleCharacterIndex;
         public float lineLength;
@@ -237,6 +243,9 @@ namespace TMPro
         public float ascender;
         public float descender;
         public float maxAdvance;
+        public float width;
+        public float marginLeft;
+        public float marginRight;
 
         public TextAlignmentOptions alignment;
         public Extents lineExtents;
@@ -298,7 +307,9 @@ namespace TMPro
         public int total_CharacterCount;
         public int visible_CharacterCount;
         public int visible_SpriteCount;
+        public int firstCharacterIndex;
         public int firstVisibleCharacterIndex;
+        public int lastCharacterIndex;
         public int lastVisibleCharIndex;
         public int lineNumber;
         public float maxAscender;

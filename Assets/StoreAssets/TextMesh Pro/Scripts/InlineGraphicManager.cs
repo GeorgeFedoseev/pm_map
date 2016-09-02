@@ -67,7 +67,7 @@ namespace TMPro
         void Awake()
         {
             // Make sure this component is attached to an object which contains a TextMeshPro or TextMeshPro UI Component.
-            if (gameObject.GetComponent<TextMeshPro>() == null && gameObject.GetComponent<TextMeshProUGUI>() == null)           
+            if (gameObject.GetComponent<TextMeshPro>() == null && gameObject.GetComponent<TextMeshProUGUI>() == null)
                 Debug.LogWarning("The InlineGraphics Component must be attached to a TextMesh Pro Object");
 
             // Add a Child GameObject to the TextMeshPro Object if one is not already present.
@@ -84,7 +84,7 @@ namespace TMPro
             m_uiVertex = new UIVertex[4];
             
 #if UNITY_EDITOR
-            TMPro_EventManager.SPRITE_ASSET_PROPERTY_EVENT += ON_SPRITE_ASSET_PROPERTY_CHANGED;
+            TMPro_EventManager.SPRITE_ASSET_PROPERTY_EVENT.Add(ON_SPRITE_ASSET_PROPERTY_CHANGED);
 #endif
 
             LoadSpriteAsset(m_spriteAsset);
@@ -99,7 +99,7 @@ namespace TMPro
             // Should clear the mesh of the child object
 
 #if UNITY_EDITOR
-            TMPro_EventManager.SPRITE_ASSET_PROPERTY_EVENT -= ON_SPRITE_ASSET_PROPERTY_CHANGED;
+            TMPro_EventManager.SPRITE_ASSET_PROPERTY_EVENT.Remove(ON_SPRITE_ASSET_PROPERTY_CHANGED);
 #endif
 
         }
@@ -237,14 +237,14 @@ namespace TMPro
         public void DrawSprite(UIVertex[] uiVertices, int spriteCount)
         {
             if (m_inlineGraphicCanvasRenderer == null) m_inlineGraphicCanvasRenderer = m_inlineGraphic.GetComponent<CanvasRenderer>();
-            {
-                m_inlineGraphicCanvasRenderer.SetVertices(uiVertices, spriteCount * 4);
-                m_inlineGraphic.UpdateMaterial();
-            }
+                       
+            m_inlineGraphicCanvasRenderer.SetVertices(uiVertices, spriteCount * 4);
+            m_inlineGraphic.UpdateMaterial();
+            
         }
 
 
-        // Return the Sprite from the sprite list if it exsists.
+        // Return the Sprite from the sprite list if it exists.
         public SpriteInfo GetSprite(int index)
         {
             if (m_spriteAsset == null)

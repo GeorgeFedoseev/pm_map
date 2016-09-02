@@ -33,10 +33,10 @@ namespace TMPro.EditorUtilities
         void OnEnable()
         {
          
-            // Serialized Properties         
+            // Serialized Properties
             anchorPosition_prop = serializedObject.FindProperty("m_anchorPosition");
-            pivot_prop = serializedObject.FindProperty("m_pivot");              
-            rectangle_prop = serializedObject.FindProperty("m_rect");          
+            pivot_prop = serializedObject.FindProperty("m_pivot");
+            rectangle_prop = serializedObject.FindProperty("m_rect"); 
             margins_prop = serializedObject.FindProperty("m_margins");
 
             m_textContainer = (TextContainer)target;
@@ -102,7 +102,7 @@ namespace TMPro.EditorUtilities
 
         void OnSceneGUI()
         {
-                       
+
             Event evt = Event.current;
                                          
             Vector3 rectPos = m_transform.position;
@@ -117,7 +117,7 @@ namespace TMPro.EditorUtilities
             m_Rect_handlePoints[2] = m_transform.TransformPoint(pivotOffset + new Vector3(+rectangle.width / 2 * lossyScale.x, +rectangle.height / 2 * lossyScale.y, 0)); // TR
             m_Rect_handlePoints[3] = m_transform.TransformPoint(pivotOffset + new Vector3(+rectangle.width / 2 * lossyScale.x, -rectangle.height / 2 * lossyScale.y, 0)); // BR
            
-            Handles.DrawSolidRectangleWithOutline(m_Rect_handlePoints, new Color32(255, 255, 255, 0), new Color32(200, 200, 200, 255));                       
+            Handles.DrawSolidRectangleWithOutline(m_Rect_handlePoints, new Color32(255, 255, 255, 0), new Color32(200, 200, 200, 255));
 
             if (evt.mousePosition.x > HandleUtility.WorldToGUIPoint(m_Rect_handlePoints[0]).x &&
                 evt.mousePosition.x < HandleUtility.WorldToGUIPoint(m_Rect_handlePoints[2]).x &&

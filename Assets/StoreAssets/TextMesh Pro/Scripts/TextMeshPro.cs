@@ -1,7 +1,7 @@
 // Copyright (C) 2014 Stephan Bouchard - All Rights Reserved
 // This code can only be used under the standard Unity Asset Store End User License Agreement
 // A Copy of the EULA APPENDIX 1 is available at http://unity3d.com/company/legal/as_terms
-// Beta Release 0.1.5 Beta 1.5
+// Beta Release 0.1.5 Beta 1.7
 
 
 using UnityEngine;
@@ -19,14 +19,6 @@ namespace TMPro
                                         BaselineLeft = 12, Baseline = 13, BaselineRight = 14, BaselineJustified = 15,
                                         MidlineLeft = 16, Midline = 17, MidlineRight = 18, MidlineJustified = 19 };
 
-    //public enum TextAlignmentOptions { Left = 0, Center = 1, Right = 2, Top = 4, Bottom = 8, Justified = 16, Baseline = 32, 
-    //                                   TopLeft = Left + Top, BottomLeft = Left + Bottom, BaselineLeft = Left + Baseline,
-    //                                   TopRight = Right + Top, BottomRight = Right + Bottom, BaselineRight = Right + Baseline,
-    //                                   TopJustified = Justified + Top, BottomJustified = Justified + Bottom, BaselineJustified = Justified + Baseline };                         
-    
-          
-    //public enum AlignmentTypes { Left, Center, Right, Justified };
-
     public enum TextRenderFlags { Render, DontRender, GetPreferredSizes };
     
     public enum MaskingTypes { MaskOff = 0, MaskHard = 1, MaskSoft = 2 };
@@ -34,13 +26,15 @@ namespace TMPro
     public enum MaskingOffsetMode {  Percentage = 0, Pixel = 1 };  
     public enum TextureMappingOptions { Character = 0, Line = 1, Paragraph = 2, MatchAspect = 3 };
 
-    public enum FontStyles { Normal = 0, Bold = 1, Italic = 2, Underline = 4, LowerCase = 8, UpperCase = 16, SmallCaps = 32,
-                            BoldItalic = Bold + Italic, BoldUnderline = Bold + Underline, BoldItalicUnderline = BoldUnderline + Italic, 
-                            ItalicUnderline = Italic + Underline, 
-                            LowerCaseBold = LowerCase + Bold, LowerCaseItalic = LowerCase + Italic, LowerCaseUnderline = LowerCase + Underline, LowerCaseBoldItalic = LowerCase + BoldItalic, LowerCaseBoldUnderline = LowerCase + BoldUnderline, LowerCaseBoldItalicUnderline = LowerCase + BoldItalicUnderline,
-                            UpperCaseBold = UpperCase + Bold, UpperCaseItalic = UpperCase + Italic, UpperCaseUnderline = UpperCase + Underline, UpperCaseBoldItalic = UpperCase + BoldItalic, UpperCaseBoldUnderline = UpperCase + BoldUnderline, UpperCaseBoltItalicUnderline = UpperCase + BoldItalicUnderline,
-                            SmallCapsBold = SmallCaps + Bold, SmallCapsItalic = SmallCaps + Italic, SmallCapsUnderline = SmallCaps + Underline, SmallCapsBoldItalic = SmallCaps + BoldItalic, SmallCapsBoldUnderline = SmallCaps + BoldUnderline, SmallCapsBoldItalicUnderline = SmallCaps + BoldItalicUnderline
+    public enum FontStyles { Normal = 0, Bold = 1, Italic = 2, Underline = 4, LowerCase = 8, UpperCase = 16, SmallCaps = 32, Strikethrough = 64,
+                            BoldItalic = Bold + Italic, BoldUnderline = Bold + Underline, BoldItalicUnderline = BoldUnderline + Italic, BoldStrikethrough = Bold + Strikethrough, BoldItalicStrikethrough = BoldItalic + Strikethrough, BoldUnderlineStrikethrough = BoldUnderline + Strikethrough, BoldItalicUnderlineStrikethrough = BoldItalicUnderline + Strikethrough,
+                            ItalicUnderline = Italic + Underline, ItalicStrikethrough = Italic + Strikethrough, ItalicUnderlineStrikethrough = ItalicUnderline + Strikethrough, 
+                            LowerCaseBold = LowerCase + Bold, LowerCaseItalic = LowerCase + Italic, LowerCaseUnderline = LowerCase + Underline, LowerCaseStrikethrough = LowerCase + Strikethrough, LowerCaseBoldItalic = LowerCase + BoldItalic, LowerCaseBoldUnderline = LowerCase + BoldUnderline, LowerCaseBoldStrikethrough = LowerCase + BoldStrikethrough, LowerCaseItalicStrikethrough = LowerCase + ItalicStrikethrough, LowerCaseBoldItalicStrikethrough = LowerCase + BoldItalicStrikethrough, LowerCaseBoldUnderlineStrikethrough = LowerCase + BoldUnderlineStrikethrough, LowerCaseBoldItalicUnderline = LowerCase + BoldItalicUnderline, LowerCaseBoldItalicUnderlineStrikethrough = LowerCase + BoldItalicUnderlineStrikethrough,
+                            UpperCaseBold = UpperCase + Bold, UpperCaseItalic = UpperCase + Italic, UpperCaseUnderline = UpperCase + Underline, UpperCaseStrikethrough = UpperCase + Strikethrough, UpperCaseBoldItalic = UpperCase + BoldItalic, UpperCaseBoldUnderline = UpperCase + BoldUnderline, UpperCaseBoldStrikethrough = UpperCase + BoldStrikethrough, UpperCaseItalicStrikethrough = UpperCase + ItalicStrikethrough, UpperCaseBoldItalicStrikethrough = UpperCase + BoldItalicStrikethrough, UpperCaseBoldUnderlineStrikethrough = UpperCase + BoldUnderlineStrikethrough, UpperCaseBoltItalicUnderline = UpperCase + BoldItalicUnderline, UpperCaseBoldItalicUnderlineStrikethrough = UpperCase + BoldItalicUnderlineStrikethrough,
+                            SmallCapsBold = SmallCaps + Bold, SmallCapsItalic = SmallCaps + Italic, SmallCapsUnderline = SmallCaps + Underline, SmallCapsStrikethrough = SmallCaps + Strikethrough, SmallCapsBoldItalic = SmallCaps + BoldItalic, SmallCapsBoldUnderline = SmallCaps + BoldUnderline, SmallCapsBoldStrikethrough = SmallCaps + BoldStrikethrough, SmallCapsItalicStrikethrough = SmallCaps + ItalicStrikethrough, SmallCapsBoldItalicStrikethrough = SmallCaps + BoldItalicStrikethrough, SmallCapsBoldUnderlineStrikethrough = SmallCaps + BoldUnderlineStrikethrough, SmallCapsBoldItalicUnderline = SmallCaps + BoldItalicUnderline, SmallCapsBoldItalicUnderlineStrikethrough = SmallCaps + BoldItalicUnderlineStrikethrough,
                             };
+
+    public enum TagUnits { Pixels = 0, FontUnits = 1, Percentage = 2};
 
    
     [ExecuteInEditMode]
@@ -50,7 +44,7 @@ namespace TMPro
     [AddComponentMenu("Mesh/TextMesh Pro")]
     public partial class TextMeshPro : MonoBehaviour
     {
-        // Public Properties & Serializable Properties  
+        // Public Properties and Serializable Properties  
         
         /// <summary>
         /// A string containing the text to be displayed.
@@ -305,11 +299,11 @@ namespace TMPro
         /// <summary>
         /// Anchor dampening prevents the anchor position from being adjusted unless the positional change exceeds about 40% of the width of the underline character. This essentially stabilizes the anchor position.
         /// </summary>
-        public bool anchorDampening
-        {
-            get { return m_anchorDampening; }
-            set { if (m_anchorDampening != value) { havePropertiesChanged = true; m_anchorDampening = value; /* ScheduleUpdate(); */ } }
-        }
+        //public bool anchorDampening
+        //{
+        //    get { return m_anchorDampening; }
+        //    set { if (m_anchorDampening != value) { havePropertiesChanged = true; m_anchorDampening = value; /* ScheduleUpdate(); */ } }
+        //}
 
 
         /// <summary>
@@ -382,7 +376,7 @@ namespace TMPro
 
 
         /// <summary>
-        /// Sets the culling on the shaders. Note changing this value will result in an instance of the material.
+        /// Sets the culling on the shader. Note changing this value will result in an instance of the material.
         /// </summary>
         public bool enableCulling
         {
@@ -462,10 +456,16 @@ namespace TMPro
         /// <summary>
         /// Returns a reference to the Transform
         /// </summary>
-        //public Transform transform
-        //{
-        //    get { return m_transform; }
-        //}
+        public new Transform transform
+        {
+            get
+            {
+                if (m_transform == null)
+                    m_transform = GetComponent<Transform>();
+                
+                return m_transform;
+            }
+        }
 
 
         /// <summary>
@@ -522,10 +522,10 @@ namespace TMPro
         //}
 
 
-        public Vector2[] spacePositions
-        {
-            get { return m_spacePositions; }
-        }
+        //public Vector2[] spacePositions
+        //{
+        //    get { return m_spacePositions; }
+        //}
 
 
         public bool enableAutoSizing
@@ -665,7 +665,7 @@ namespace TMPro
         {
             //Debug.Log("ForceMeshUpdate() called.");
             havePropertiesChanged = true;
-            OnWillRenderObject();            
+            OnWillRenderObject();
         }
 
 
@@ -690,9 +690,9 @@ namespace TMPro
             
             GenerateTextMesh();
 
-            m_renderMode = TextRenderFlags.Render;            
+            m_renderMode = TextRenderFlags.Render;
 
-            return this.textInfo;          
+            return this.textInfo;
         }
 
         //public Vector2[] SetTextWithSpaces(string text, int numPositions)
@@ -772,7 +772,7 @@ namespace TMPro
 
                     switch (text[i + 1] - 48)
                     {
-                        case 0: // 1st Arg                        
+                        case 0: // 1st Arg
                             old_arg0 = arg0;
                             AddFloatToCharArray(arg0, ref index, decimalPrecision);
                             break;                        

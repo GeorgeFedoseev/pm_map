@@ -1,7 +1,7 @@
 // Copyright (C) 2014 Stephan Bouchard - All Rights Reserved
 // This code can only be used under the standard Unity Asset Store End User License Agreement
 // A Copy of the EULA APPENDIX 1 is available at http://unity3d.com/company/legal/as_terms
-// Beta Release 0.1.5 Beta 1.5
+// Beta Release 0.1.5 Beta 1.7
 
 
 #if UNITY_4_6 || UNITY_5
@@ -24,6 +24,7 @@ namespace TMPro
     [RequireComponent(typeof(RectTransform))]
     [RequireComponent(typeof(CanvasRenderer))]	
     [AddComponentMenu("UI/TextMeshPro Text", 12)]
+    //[SelectionBase]
     public partial class TextMeshProUGUI : Graphic, ILayoutElement, IMaskable
     {
         // Public Properties & Serializable Properties
@@ -71,32 +72,6 @@ namespace TMPro
 
 
         /// <summary>
-        /// 
-        /// </summary>
-        //public override Material material
-        //{
-        //    get { return m_sharedMaterial; }
-        //    //{
-        //    //    m_IncludeForMasking = true;
-        //    //    Debug.Log("GetMaterialProperty() Material is " + m_sharedMaterial );
-        //    //    return m_sharedMaterial; // base.material;
-        //    //}
-        //    //set
-        //    //{
-        //    //    Debug.Log("SetMaterialProperty");
-        //    //    m_sharedMaterial = value;
-        //    //}
-        //}
-
-
-        //public new void UpdateMaterial()
-        //{
-        //    Debug.Log("UpdateMaterial()");
-        //    base.UpdateMaterial();
-        //}
-
-
-        /// <summary>
         /// The material to be assigned to this text object.
         /// </summary>
         public Material fontSharedMaterial
@@ -114,7 +89,6 @@ namespace TMPro
             get { return m_baseMaterial; }
             set { if (m_baseMaterial != value) { SetFontBaseMaterial(value); havePropertiesChanged = true; /* ScheduleUpdate(); */ } }
         }
-
 
 
         /// <summary>
@@ -255,10 +229,6 @@ namespace TMPro
             get { return m_overflowMode; }
             set { m_overflowMode = value; havePropertiesChanged = true; m_isRecalculateScaleRequired = true; }
         }
-
-		public void RecalculateMasking(){
-			
-		}
 
 
         /// <summary>
@@ -409,21 +379,21 @@ namespace TMPro
         /// <summary>
         /// Sets the Renderer's sorting Layer ID
         /// </summary>
-        public int sortingLayerID
-        {
-            get { return m_sortingLayerID; }
-            set { m_sortingLayerID = value; /*m_renderer.sortingLayerID = value;*/ }
-        }
+        //public int sortingLayerID
+        //{
+        //    get { return m_sortingLayerID; }
+        //    set { m_sortingLayerID = value; /*m_renderer.sortingLayerID = value;*/ }
+        //}
 
 
         /// <summary>
         /// Sets the Renderer's sorting order within the assigned layer.
         /// </summary>
-        public int sortingOrder
-        {
-            get { return m_sortingOrder; }
-            set { m_sortingOrder = value; /*m_renderer.sortingOrder = value;*/ }
-        }
+        //public int sortingOrder
+        //{
+        //    get { return m_sortingOrder; }
+        //    set { m_sortingOrder = value; /*m_renderer.sortingOrder = value;*/ }
+        //}
 
 
         /// <summary>
@@ -442,39 +412,35 @@ namespace TMPro
             set { havePropertiesChanged = value; }
         }
 
-        //public bool isAdvancedLayoutComponentPresent
-        //{
-        //    //get { return m_isAdvanceLayoutComponentPresent; }
-        //    set
-        //    {
-        //        if (m_isAdvanceLayoutComponentPresent != value)
-        //        {
-        //            m_advancedLayoutComponent = value == true ? GetComponent<TMPro_AdvancedLayout>() : null;
-        //            havePropertiesChanged = true;
-        //            m_isAdvanceLayoutComponentPresent = value;
-        //        }
-        //    }
-        //}
-
+        
         /// <summary>
         /// <para>Sets the margin for the text inside the Rect Transform.</para>
         /// <para>Vector4 (left, top, right, bottom);</para>
-        /// </summary>      
+        /// </summary>
         public Vector4 margin
         {
             get { return m_margin; }
-            set { if (m_margin != value) { m_margin = value; /* Debug.Log("Margin is " + margin); ComputeMarginSize();*/ havePropertiesChanged = true; m_marginsHaveChanged = true; } }
+            set { /* if (m_margin != value) */ { m_margin = value; /* Debug.Log("Margin is " + margin); ComputeMarginSize();*/ havePropertiesChanged = true; m_marginsHaveChanged = true; } }
         }      
 
 
 
         /// <summary>
-        /// Allows to control how many characters are visible from the input. Non-visible character are set to fully transparent.
+        /// Allows to control how many characters are visible from the input.
         /// </summary>
         public int maxVisibleCharacters
         {
             get { return m_maxVisibleCharacters; }
             set { if (m_maxVisibleCharacters != value) { havePropertiesChanged = true; m_maxVisibleCharacters = value; } }
+        }
+
+        /// <summary>
+        /// Allows to control how many words are visible from the input.
+        /// </summary>
+        public int maxVisibleWords
+        {
+            get { return m_maxVisibleWords; }
+            set { if (m_maxVisibleWords != value) { havePropertiesChanged = true; m_maxVisibleWords = value; } }
         }
 
         /// <summary>
@@ -528,10 +494,10 @@ namespace TMPro
         //}
 
 
-        public Vector2[] spacePositions
-        {
-            get { return m_spacePositions; }
-        }
+        //public Vector2[] spacePositions
+        //{
+        //    get { return m_spacePositions; }
+        //}
 
 
         public bool enableAutoSizing
@@ -553,7 +519,7 @@ namespace TMPro
         }
 
 
-        // ILayoutElement Implementation       
+        // ILayoutElement Implementation
         public float flexibleHeight { get { return m_flexibleHeight; } }
         private float m_flexibleHeight;
 
@@ -634,7 +600,8 @@ namespace TMPro
             if (!this.gameObject.activeInHierarchy)
                 return;
 
-            // Get a Reference to the Driving Layout Controller                     
+            IsRectTransformDriven = true;
+            // Get a Reference to the Driving Layout Controller
             //if ((m_layoutController as UIBehaviour) == null) 
             //{
             //    m_layoutController = GetComponent(typeof(ILayoutController)) as ILayoutController ?? (transform.parent != null ? transform.parent.GetComponent(typeof(ILayoutController)) as ILayoutController : null);               
@@ -694,6 +661,7 @@ namespace TMPro
             if (!this.gameObject.activeInHierarchy) // || IsRectTransformDriven == false)
                 return;
 
+            IsRectTransformDriven = true;
             //Debug.Log("CalculateLayoutInputVertical() at Frame: " + Time.frameCount); // called on Object ID " + GetInstanceID());
 
             //if (m_isCalculateSizeRequired || m_rectTransform.hasChanged)
@@ -748,7 +716,13 @@ namespace TMPro
         //    return true;
         //}
 
-       
+
+        public override bool Raycast(Vector2 sp, Camera eventCamera)
+        {
+            //Debug.Log("Raycast Event. ScreenPoint: " + sp );
+            return base.Raycast(sp, eventCamera);
+        }
+
         
         // MASKING RELATED PROPERTIES
         /// <summary>
@@ -816,12 +790,12 @@ namespace TMPro
                     m_maskingMaterial = MaterialManager.GetStencilMaterial(m_baseMaterial, m_stencilID);
                     m_sharedMaterial = m_maskingMaterial;
                 }
-                                               
-                  
+
+
                 if (m_isMaskingEnabled)
                     EnableMasking();
 
-                //Debug.Log("Masking Enabled. Assigning " + m_maskingMaterial.name + " with ID " + m_maskingMaterial.GetInstanceID());                           
+                //Debug.Log("Masking Enabled. Assigning " + m_maskingMaterial.name + " with ID " + m_maskingMaterial.GetInstanceID());
             }
 
             m_uiRenderer.SetMaterial(m_sharedMaterial, null);
@@ -831,6 +805,30 @@ namespace TMPro
         }
 
 
+        public override void SetVerticesDirty()
+        {
+            //Debug.Log("Set Vertices Dirty called.");
+
+            if (m_fontColor != base.color) this.color = base.color;
+            base.SetVerticesDirty();
+        }
+
+        protected override void UpdateGeometry()
+        {
+            //Debug.Log("UpdateGeometry");
+            //base.UpdateGeometry();
+        }
+
+        /*protected override void OnFillVBO(List<UIVertex> vbo)
+        {
+            //Debug.Log("OnFillVBO");
+            base.OnFillVBO(vbo);
+        }*/
+
+        protected override void OnPopulateMesh(VertexHelper vh)
+        {
+            base.OnPopulateMesh(vh);
+        }
 
         /*
         /// <summary>
@@ -852,7 +850,7 @@ namespace TMPro
         }
         */
 
-       
+
 
         /*
         /// <summary>
@@ -898,6 +896,12 @@ namespace TMPro
         }
 
 
+        public InlineGraphicManager inlineGraphicManager
+        {
+            get { return m_inlineGraphics; }
+        }
+
+
         //public TMP_CharacterInfo[] characterInfo
         //{
         //    get { return m_textInfo.characterInfo; }
@@ -924,7 +928,7 @@ namespace TMPro
         {
             //Debug.Log("ForceMeshUpdate() called.");
             //havePropertiesChanged = true;
-            OnPreRenderCanvas();            
+            OnPreRenderCanvas();
         }
 
 
@@ -1122,6 +1126,9 @@ namespace TMPro
             isInputParsingRequired = true;
         }
 
+        void IMaskable.RecalculateMasking()
+        {
+        }
     }
 }
 
