@@ -126,7 +126,7 @@ public class TTPanelScript : CenterPanelScript {
 
 	public void updateTimetableClicked(){
 		//Debug.LogWarning ("DOWNLOAD TIMETABLE");
-		Alerts.AskYesNo("Обновление расписания", "Расписание будет обновлено, а ваши изменения <b>перезаписаны</b>.", ()=>{			
+		Alerts.AskYesNo("Обновление расписания", "Расписание будет загружено из Интернета, а ваши изменения <b>перезаписаны</b>.", ()=>{			
 			app.timetableManager.initTimetable(true);
 			app.timetablePanel.UpdateContents();
 		}, null, "ОК", "ОТМЕНА");
