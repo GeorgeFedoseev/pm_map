@@ -9,7 +9,7 @@ public class AppScript : MonoBehaviour {
 
 	public static bool DEBUG = false;
 	#if UNITY_EDITOR
-	public static bool CLEAN_EVERYTHING_ON_START = false;
+	public static bool CLEAN_EVERYTHING_ON_START = true;
 	#else
 	public static bool CLEAN_EVERYTHING_ON_START = false;
 	#endif
@@ -68,6 +68,13 @@ public class AppScript : MonoBehaviour {
 
 	void Awake(){
 
+		/*DEBUG*/
+		if (CLEAN_EVERYTHING_ON_START) {
+			PlayerPrefs.DeleteAll ();
+		}
+
+		_savedSkybox = RenderSettings.skybox;
+
 		//TouchScreenKeyboard.hideInput = true;
 
 		/*#if UNITY_ANDROID
@@ -108,10 +115,7 @@ public class AppScript : MonoBehaviour {
 		timetableManager = new TimetableManger ();
 
 
-		/*DEBUG*/
-		if (CLEAN_EVERYTHING_ON_START) {
-			PlayerPrefs.DeleteAll ();
-		}
+
 
 		clearCenterPanelContainer ();
 	}
@@ -147,6 +151,7 @@ public class AppScript : MonoBehaviour {
 	}
 
 	public void enableCamera(){
+		Debug.LogWarning ("Enabled camera");
 		cam.enabled = true;
 		cam.GetComponent<Camera>().cullingMask = -1;
 		RenderSettings.skybox = _savedSkybox;
@@ -171,10 +176,12 @@ public class AppScript : MonoBehaviour {
 		}
 
 		hudCanvas.gameObject.SetActive (true);
+		enableCamera ();
 	}
 
 	public void disableAllInCentralPanelContainer(){
 		hudCanvas.gameObject.SetActive (true);
+		enableCamera ();
 
 		foreach(Transform t in centerPanelContainer){
 			t.gameObject.SetActive (false);
@@ -239,7 +246,6 @@ public class AppScript : MonoBehaviour {
 	public void closeTimetable(){
 		Debug.LogWarning ("Close Panel");
 		disableAllInCentralPanelContainer ();
-		enableCamera ();
 	}
 
 	void UpdateTimeBasedElements(){

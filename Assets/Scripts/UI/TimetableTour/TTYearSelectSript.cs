@@ -36,8 +36,10 @@ public class TTYearSelectSript : TTChoosePageScript {
 	}
 
 	protected override void OnSelect (int id){		
-		ConfigStorage.set ("tt_study_year", selectionBox.listItems[id]);
-		ConfigStorage.set ("tt_study_year_link", yearLinks[id].url);
-		base.OnSelect (id);
+		Loom.QueueOnMainThread (() => {
+			ConfigStorage.set ("tt_study_year", selectionBox.listItems [id]);
+			ConfigStorage.set ("tt_study_year_link", yearLinks [id].url);
+			base.OnSelect (id);
+		}, 0.6f);
 	}
 }

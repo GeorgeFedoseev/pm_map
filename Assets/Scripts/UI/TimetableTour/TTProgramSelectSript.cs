@@ -26,7 +26,9 @@ public class TTProgramSelectSript : TTChoosePageScript {
 	}
 
 	protected override void OnSelect (int id){
-		ConfigStorage.set ("tt_study_program", selectionBox.listItems[id]);
-		base.OnSelect (id);
+		Loom.QueueOnMainThread (() => {
+			ConfigStorage.set ("tt_study_program", selectionBox.listItems [id]);
+			base.OnSelect (id);
+		}, 0.6f);
 	}
 }

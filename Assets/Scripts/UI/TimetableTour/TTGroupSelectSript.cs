@@ -33,16 +33,18 @@ public class TTGroupSelectSript : TTChoosePageScript {
 	}
 
 	protected override void OnSelect (int id){		
-		ConfigStorage.set ("tt_study_group", selectionBox.listItems[id]);
-		ConfigStorage.set ("tt_study_group_link", groupLinks[id].url);
-		try{
-			var timetable_link = TimetableParser.getPrimaryTimetableLink (groupLinks [id].url);
-			ConfigStorage.set ("tt_study_timetable_link", timetable_link);
-			canGoNext ();	
-		}catch(Exception e){			
-			selectionBox.ItemPicked = null;
-		}
+		Loom.QueueOnMainThread (() => {
+			ConfigStorage.set ("tt_study_group", selectionBox.listItems [id]);
+			ConfigStorage.set ("tt_study_group_link", groupLinks [id].url);
+			try {
+				var timetable_link = TimetableParser.getPrimaryTimetableLink (groupLinks [id].url);
+				ConfigStorage.set ("tt_study_timetable_link", timetable_link);
+				canGoNext ();	
+			} catch (Exception e) {			
+				selectionBox.ItemPicked = null;
+			}
 
-		base.OnSelect (id);
+			base.OnSelect (id);
+		}, 0.6f);
 	}
 }

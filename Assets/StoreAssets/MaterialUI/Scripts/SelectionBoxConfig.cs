@@ -294,8 +294,9 @@ namespace MaterialUI
 				shadowConfig.shadowNormalSize = expandedListShadowLevel;
 				shadowConfig.shadowActiveSize = expandedListShadowLevel;
 			}
-			
-			rippleConfig.enabled = false;
+
+			if (rippleConfig)
+				rippleConfig.enabled = false;
 			thisButton.interactable = false;
 
 			icon.enabled = false;
@@ -385,7 +386,8 @@ namespace MaterialUI
 			if (!thisButton)
 				thisButton = gameObject.GetComponent<Button> ();
 
-			rippleConfig.enabled = true;
+			if (rippleConfig)
+				rippleConfig.enabled = true;
 			thisButton.interactable = true;
 
 			if (shadowConfig != null) {
@@ -414,7 +416,7 @@ namespace MaterialUI
 
 			if (state == 1)
 			{
-				if (animDeltaTime <= animationDuration)
+				if (animDeltaTime <= animationDuration+0.5f)
 				{
 					// Fade text out
 					Color tempColor = selectedText.color;
@@ -473,7 +475,7 @@ namespace MaterialUI
 			}
 			else if (state == 2)
 			{
-				if (animDeltaTime <= animationDuration)
+				if (animDeltaTime <= animationDuration+0.5f)
 				{
 					// Fade text in
 					Color tempColor = selectedText.color;
