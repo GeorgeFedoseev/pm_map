@@ -42,7 +42,66 @@ public class TimetableManger {
 			clearDb ();
 		}
 
-		initTimetable ();
+
+
+		if (!MigrateTo_v1_2_IfNeeded ()) {
+			// default behaviour
+			initTimetable ();
+		}
+	}
+
+	bool MigrateTo_v1_2_IfNeeded(){
+		// in v1.2: new merging algorithm requires new columns: edited(0-1), deleted(0-1), initial_hash(string md5)
+		// add them if they are not present in current db and load new db from Internet
+		// (cause could be modified pairs and we dont know initial hashes fot them)
+
+		using (var db = new SQLiteConnection (db_path)) {
+			var columns = db.GetTableInfo ("timetable");
+
+			var controlSum = 0;
+			foreach (var c in columns) {
+				if (c.Name == "edited" || c.Name == "deleted" || c.Name == "initial_hash") {
+					controlSum++;
+				}
+			}
+
+			if (controlSum == 3) {
+				// no need to migrage
+				return false;
+			} else if(controlSum == 0) {
+				// migration needed
+				// add 3 columns to db:
+
+				Debug.LogWarning ("MIGRATE DB to v1.2");
+
+				db.Trace = true;
+
+				try{
+					db.Execute("ALTER TABLE timetable ADD COLUMN edited INTEGER NOT NULL DEFAULT 0;");
+					db.Execute("ALTER TABLE timetable ADD COLUMN deleted INTEGER NOT NULL DEFAULT 0;");
+					db.Execute("ALTER TABLE timetable ADD COLUMN initial_hash TEXT;");
+				}catch(SQLiteException ex){
+					Debug.LogError ("Migration error: "+ex.Message+" "+ex.StackTrace);
+					db.Close ();
+					return true;
+				}
+
+				// clear db
+				db.DeleteAll<TimetableRecord>();
+
+				// load new data from Internet
+				// TODO: what if no Internet?
+				initTimetable(forceUpdateFromInternet:true);
+
+
+			}else {
+				Debug.LogError ("Unexpected error when migrating DB to v1.2");
+			}
+
+			db.Close ();
+		}
+
+		return true;
 	}
 
 
