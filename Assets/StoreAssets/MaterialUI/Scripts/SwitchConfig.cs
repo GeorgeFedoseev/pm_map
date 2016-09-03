@@ -178,7 +178,8 @@ namespace MaterialUI
 				text.color = textNormalColor;
 			}
 
-			checkBoxToggler.enabled = true;
+			if(checkBoxToggler)
+				checkBoxToggler.enabled = true;
 			if(rippleConfig)
 				rippleConfig.enabled = true;
 		}
@@ -189,7 +190,8 @@ namespace MaterialUI
 			backImage.color = backDisabledColor;
 			text.color = disabledColor;
 
-			checkBoxToggler.enabled = false;
+			if(checkBoxToggler)
+				checkBoxToggler.enabled = false;
 			if (rippleConfig != null) {
 				rippleConfig.enabled = false;
 			}				

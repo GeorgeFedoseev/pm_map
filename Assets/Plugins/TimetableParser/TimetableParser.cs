@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
+using System.Text;
 
 
 public enum WeekType {
@@ -141,13 +143,22 @@ public class Pair {
 	public DateTime startTime;
 	public DateTime endTime;
 
+	public bool edited;
+	public bool deleted;
+	public string initial_hash;
 
-	public Pair(DateTime _day, string _name, string _time, string _location, string _lecturer){
+
+
+	public Pair(DateTime _day, string _name, string _time, string _location, string _lecturer, bool _edited, bool _deleted, string _initial_hash){
 		day = _day;
 		name = _name;
 		time = _time;
 		location = _location;
 		lecturer = _lecturer;
+
+		edited = _edited;
+		deleted = _deleted;
+		initial_hash = _initial_hash;
 
 
 		parseRoom ();					
@@ -155,7 +166,7 @@ public class Pair {
 	}
 
 	public Pair Clone(){
-		var np = new Pair (day, name, time, location, lecturer);
+		var np = new Pair (day, name, time, location, lecturer, edited, deleted, initial_hash);
 		return np;
 	}
 
@@ -257,7 +268,9 @@ public class TimetableParser {
 						//Console.WriteLine (name);
 						//Console.WriteLine (location);
 						//Console.WriteLine (lecturer);
-						var pair = new Pair (dayTimetable.day, name, time, location, lecturer);
+						var initial_hash = CalculateMD5Hash((timetable.weekType == WeekType.Odd?"1":"0")+time+name+location+lecturer); 
+
+						var pair = new Pair (dayTimetable.day, name, time, location, lecturer, false, false, initial_hash);
 						dayTimetable.pairs.Add (pair);
 
 					}
@@ -277,6 +290,27 @@ public class TimetableParser {
 	}
 
 
+	public static string CalculateMD5Hash(string input){
+
+		// step 1, calculate MD5 hash from input
+
+		MD5 md5 = System.Security.Cryptography.MD5.Create();
+
+		byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(input);
+
+		byte[] hash = md5.ComputeHash(inputBytes);
+
+		// step 2, convert byte array to hex string
+
+		StringBuilder sb = new StringBuilder();
+
+		for (int i = 0; i < hash.Length; i++){
+			sb.Append(hash[i].ToString("X2"));
+		}
+
+		return sb.ToString();
+
+	}
 
 
 

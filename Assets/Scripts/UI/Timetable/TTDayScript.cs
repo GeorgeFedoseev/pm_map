@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 using TMPro;
 
@@ -38,6 +39,9 @@ public class TTDayScript : MonoBehaviour {
 		t.transform.localRotation = Quaternion.identity;
 
 		t.timeTitle.text = time;
+
+
+
 
 		var i = 0;
 		foreach(var p in pairs){

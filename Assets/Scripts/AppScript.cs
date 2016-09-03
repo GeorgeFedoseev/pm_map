@@ -9,7 +9,7 @@ public class AppScript : MonoBehaviour {
 
 	public static bool DEBUG = false;
 	#if UNITY_EDITOR
-	public static bool CLEAN_EVERYTHING_ON_START = true;
+	public static bool CLEAN_EVERYTHING_ON_START = false;
 	#else
 	public static bool CLEAN_EVERYTHING_ON_START = false;
 	#endif

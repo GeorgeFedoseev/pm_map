@@ -83,7 +83,7 @@ public class TTTimeScript : MonoBehaviour {
 
 				p.deleteButton.onClick.AddListener (()=>{		
 					Alerts.AskYesNo("Удаление пары", "Вы уверены, что хотите удалить пару?", ()=>{
-						app.timetableManager.removePair(pair);
+						app.timetableManager.setPairDeleted(pair);
 						Loom.QueueOnMainThread(()=>{
 							app.timetablePanel.UpdateContents(true);
 						});	

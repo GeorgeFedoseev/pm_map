@@ -77,7 +77,7 @@ public class TTPanelScript : CenterPanelScript {
 
 
 		
-		if (syncPos && current != _currentWeek) {
+		if (syncPos/* && current != _currentWeek*/) {
 			if (current) {
 				currentWeek.scrollRect.verticalNormalizedPosition = nextWeek.scrollRect.verticalNormalizedPosition;
 			} else {
@@ -138,10 +138,10 @@ public class TTPanelScript : CenterPanelScript {
 
 	public void updateTimetableClicked(){
 		//Debug.LogWarning ("DOWNLOAD TIMETABLE");
-		Alerts.AskYesNo("Обновление расписания", "Расписание будет загружено из Интернета, а ваши изменения <b>перезаписаны</b>.", ()=> {
+		Alerts.AskYesNo("Обновление расписания", "Расписание будет загружено из Интернета, Ваши изменения будут сохранены", ()=> {
 			setLoading (true);
 			Loom.QueueOnMainThread(() => {
-				app.timetableManager.initTimetable(true);	
+				app.timetableManager.initTimetable(true, preserveEdits:true);	
 				app.timetablePanel.UpdateContents();	
 			}, 0.1f);
 		}, null, "ОК", "ОТМЕНА");
@@ -273,6 +273,7 @@ public class TTPanelScript : CenterPanelScript {
 				if(!firstLoadDone){
 					firstLoadDone = true;
 
+					Debug.LogWarning("Scroll to current week day");
 					// scroll to current day
 					var fullWeekHeight = currentWeek.daysContainer.GetComponent<RectTransform>().rect.size.y;
 					float currentDayPos = 0;

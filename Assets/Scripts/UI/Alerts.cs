@@ -153,7 +153,10 @@ public class Alerts : MonoBehaviour {
 				current.editPairDialog.name.text,
 				current.editPairDialog.startTime.text + "–" + current.editPairDialog.endTime.text,
 				current.editPairDialog.location.text,
-				current.editPairDialog.lecturer.text
+				current.editPairDialog.lecturer.text,
+				_edited:true,
+				_deleted:false,
+				_initial_hash:pair.initial_hash
 			);
 
 
@@ -250,12 +253,21 @@ public class Alerts : MonoBehaviour {
 			Debug.LogWarning("week̉̉ "+week+"  is nulL: "+(week == null?"YES":"NO"));
 			Debug.LogWarning("weekStartDay "+week.weekStartDay+"  is nulL: "+(week.weekStartDay == null?"YES":"NO"));
 			Debug.LogWarning("selected day "+current.editPairDialog.selectedDayOfWeek+" is nulL: "+(current.editPairDialog.selectedDayOfWeek == null?"YES":"NO"));
+
+
+			var name_t = current.editPairDialog.name.text.Trim();
+			var time_t = current.editPairDialog.startTime.text + "–" + current.editPairDialog.endTime.text.Trim();
+			var location_t = current.editPairDialog.location.text.Trim();
+			var lecturer_t = current.editPairDialog.lecturer.text.Trim();
 			var newPair = new Pair(
 				week.weekStartDay.AddDays ((int)current.editPairDialog.selectedDayOfWeek - 1).Date, // day
-				current.editPairDialog.name.text,
-				current.editPairDialog.startTime.text + "–" + current.editPairDialog.endTime.text,
-				current.editPairDialog.location.text,
-				current.editPairDialog.lecturer.text
+				name_t,
+				time_t,
+				location_t,
+				lecturer_t,
+				true,
+				false,
+				TimetableParser.CalculateMD5Hash((week.weekType == WeekType.Odd?"1":"0")+name_t+time_t+location_t+lecturer_t)
 			);
 
 			// location

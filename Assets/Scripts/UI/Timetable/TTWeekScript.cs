@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
+using System.Linq;
+
 public class TTWeekScript : MonoBehaviour {
 
 	public WeekTimetable _week;
@@ -37,7 +39,8 @@ public class TTWeekScript : MonoBehaviour {
 
 
 		var timePairDict = new Dictionary<string, List<Pair>> ();
-		foreach (var p in day.pairs) {
+		var _not_deleted_pairs = day.pairs.Where(x => !x.deleted).ToList();
+		foreach (var p in _not_deleted_pairs) {
 			if (!timePairDict.ContainsKey (p.time)) {
 				timePairDict [p.time] = new List<Pair> ();
 			}
@@ -47,6 +50,7 @@ public class TTWeekScript : MonoBehaviour {
 		var i = 0;
 		foreach (var t in timePairDict) {
 			var lastTime = i==timePairDict.Count-1;
+
 			d.addTime (t.Key, t.Value, lastTime, editMode);
 			i++;
 		}
