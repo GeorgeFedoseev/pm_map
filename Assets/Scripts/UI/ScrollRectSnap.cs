@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class ScrollRectSnap : MonoBehaviour {
+
+	public Action OnSnap = () => {};
 
 	float[] points;
 	[Tooltip("how many screens or pages are there within the content (steps)")]
@@ -60,12 +63,19 @@ public class ScrollRectSnap : MonoBehaviour {
 		if (LerpH)
 		{
 			scroll.horizontalNormalizedPosition = Mathf.Lerp(scroll.horizontalNormalizedPosition, targetH, snapSpeed * Time.deltaTime);
-			if (Mathf.Approximately(scroll.horizontalNormalizedPosition, targetH)) LerpH = false;
+			if (Mathf.Approximately (scroll.horizontalNormalizedPosition, targetH)) {
+				LerpH = false;
+				OnSnap ();
+			}
 		}
 		if (LerpV)
 		{
 			scroll.verticalNormalizedPosition = Mathf.Lerp(scroll.verticalNormalizedPosition, targetV, snapSpeed * Time.deltaTime);
-			if (Mathf.Approximately(scroll.verticalNormalizedPosition, targetV)) LerpV = false;
+			if (Mathf.Approximately (scroll.verticalNormalizedPosition, targetV)) {
+				LerpV = false;
+				OnSnap ();
+			}
+				
 		}
 	}
 

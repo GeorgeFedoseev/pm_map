@@ -55,6 +55,9 @@ public class FacilityScript : MonoBehaviour {
 
 
 	public Vector3 getCenter(){
+		if (_name == "Столовая") { // dirty fix, for 3d arrow ;)
+			return transform.GetComponent<Renderer>().bounds.center + Vector3.right*6f;
+		}
 		return transform.GetComponent<Renderer>().bounds.center;
 	}
 

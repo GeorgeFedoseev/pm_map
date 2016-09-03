@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using TMPro;
+
 public class RoomScript : FacilityScript {
 	public string room;
 	[TextArea()]
@@ -15,7 +17,7 @@ public class RoomScript : FacilityScript {
 	public bool auditory = false;
 
 
-	private TextMesh roomNumber;
+	private TextMeshPro roomNumber;
 
 	void Awake(){
 		_name = room;
@@ -45,13 +47,14 @@ public class RoomScript : FacilityScript {
 			
 
 		// add room number
-		roomNumber = (Instantiate(Resources.Load("Prefabs/room_number")) as GameObject).GetComponent<TextMesh>();
+		roomNumber = (Instantiate(Resources.Load("Prefabs/room_number")) as GameObject).GetComponent<TextMeshPro>();
 		roomNumber.transform.SetParent (transform);
 		roomNumber.transform.position = getCenter () + (getHeight()/2 + 0.1f)*Vector3.up ;
 		roomNumber.transform.localScale = new Vector3 (-0.2f, 0.2f, 0.2f);
 		roomNumber.transform.rotation = Quaternion.Euler(new Vector3 (-90, 180, 0));
 
 		roomNumber.text = room;
+
 
 	}
 

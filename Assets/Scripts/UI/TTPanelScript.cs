@@ -22,10 +22,22 @@ public class TTPanelScript : CenterPanelScript {
 
 	float lastCurrentWeekScrollPos, lastNextWeekScrollPos;
 
+
+	bool _subscribed_to_time_updates = false;
 	void OnEnable(){
 		if (app.ready) {
 			Prepare ();
 		}
+
+		if (!_subscribed_to_time_updates) {
+			app.OnUpdateTimeBasedElements += () => {			
+				if (enabled && app.timetableManager.hasTimetable()) {				
+					updateCurrentPair();
+				}			
+			};
+			_subscribed_to_time_updates = true;
+		}
+
 	}
 
 	public void Prepare(){
@@ -126,9 +138,12 @@ public class TTPanelScript : CenterPanelScript {
 
 	public void updateTimetableClicked(){
 		//Debug.LogWarning ("DOWNLOAD TIMETABLE");
-		Alerts.AskYesNo("Обновление расписания", "Расписание будет загружено из Интернета, а ваши изменения <b>перезаписаны</b>.", ()=>{			
-			app.timetableManager.initTimetable(true);
-			app.timetablePanel.UpdateContents();
+		Alerts.AskYesNo("Обновление расписания", "Расписание будет загружено из Интернета, а ваши изменения <b>перезаписаны</b>.", ()=> {
+			setLoading (true);
+			Loom.QueueOnMainThread(() => {
+				app.timetableManager.initTimetable(true);	
+				app.timetablePanel.UpdateContents();	
+			}, 0.1f);
 		}, null, "ОК", "ОТМЕНА");
 
 	}
@@ -278,8 +293,8 @@ public class TTPanelScript : CenterPanelScript {
 				}
 
 				updateCurrentPair ();
-			}, 0.5f);
-		}, 0.5f);
+			}, 0.1f);
+		}, 0.1f);
 
 
 	}
@@ -302,12 +317,7 @@ public class TTPanelScript : CenterPanelScript {
 			UpdateLayout ();
 	}
 
-	void OnApplicationPause(bool pause) {
-		if (!pause && app.timetableManager.hasTimetable()) {
-			// returned from bg
-			updateCurrentPair();
-		}
-	}
+	
 
 
 }

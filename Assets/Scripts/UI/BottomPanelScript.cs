@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using System;
 
 public class BottomPanelScript : MonoBehaviour {
 
@@ -18,6 +19,11 @@ public class BottomPanelScript : MonoBehaviour {
 	public Text pageCounter;
 
 
+
+	// events
+	public Action<FacilityScript> OnSnapToFacility = (_) => {};
+
+	List<FacilityScript> facilities = new List<FacilityScript>();
 
 	public bool orangeMode;
 
@@ -48,9 +54,16 @@ public class BottomPanelScript : MonoBehaviour {
 	void Start () {
 		setOrangeMode(true);
 
+		app.OnUpdateTimeBasedElements += () => {			
+			if (app.timetableManager.hasTimetable()) {				
+				updatePairAlert(orangeMode);
+			}
+		};
+
 		UpdateLayout ();
 		OnScroll (Vector2.zero);
 		fold (true);
+
 	}
 
 
@@ -193,7 +206,9 @@ public class BottomPanelScript : MonoBehaviour {
 		snapper.scrollToPage (0);
 	}
 
-	public void showFacilities(List<FacilityScript> facilities, string title_text = "РЕЗУЛЬТАТЫ", bool switchFloorIfOnlyOne = false, bool doFocusingStuff = false){
+	public void showFacilities(List<FacilityScript> _facilities, string title_text = "РЕЗУЛЬТАТЫ", bool switchFloorIfOnlyOne = false, bool doFocusingStuff = false){
+		facilities = _facilities;
+
 		// clear old
 		foreach (var r in rowsContainer.GetComponentsInChildren<BottomPanelRowScript>()) {
 			app.pool.deactivate (r.gameObject);
@@ -219,6 +234,7 @@ public class BottomPanelScript : MonoBehaviour {
 			r.GetComponent<Button>().onClick.AddListener (() => {							
 				Debug.LogWarning ("Clicked " + _f.name);	
 				app.facilities.focusFacility (_f);
+				app.OnSearchResultSelect(_f);
 			});
 
 			r.transform.SetParent (rowsContainer);
@@ -345,13 +361,18 @@ public class BottomPanelScript : MonoBehaviour {
 
 	void OnScrollStop(){
 		// update page counter
-		int closest_row = (int)Mathf.Floor((float)rowsContainer.childCount * scrollRect.horizontalNormalizedPosition);
-		if (closest_row >= rowsContainer.childCount)
-			closest_row = rowsContainer.childCount - 1;
-		else if (closest_row < 0)
-			closest_row = 0;
+		int closest_col = (int)Mathf.Floor((float)rowsContainer.childCount * scrollRect.horizontalNormalizedPosition);
+		if (closest_col >= rowsContainer.childCount)
+			closest_col = rowsContainer.childCount - 1;
+		else if (closest_col < 0)
+			closest_col = 0;
 
-		pageCounter.text = (closest_row + 1) + " из " + rowsContainer.childCount;	
+		pageCounter.text = (closest_col + 1) + " из " + rowsContainer.childCount;	
+
+		if (closest_col < facilities.Count) {
+			OnSnapToFacility (facilities [closest_col]);
+		}
+
 	}
 
 
@@ -394,10 +415,5 @@ public class BottomPanelScript : MonoBehaviour {
 		oldScreenSize = canvasSize;
 	}
 
-	void OnApplicationPause(bool pause) {
-		if (!pause && app.ready && app.timetableManager.hasTimetable()) {
-			// returned from bg
-			updatePairAlert(orangeMode);
-		}
-	}
+
 }

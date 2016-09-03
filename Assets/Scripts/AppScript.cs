@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 public class AppScript : MonoBehaviour {
 
@@ -25,6 +26,17 @@ public class AppScript : MonoBehaviour {
 
 	public FacilitiesManager facilities;
 	public TimetableManger timetableManager;
+
+	public int currentFloor = -1;
+
+
+	// Events
+	public Action OnUpdateTimeBasedElements = () => {
+		//Debug.LogWarning("Update time-based");
+	};
+	public Action<int> OnFloorSwitch = (_) => {};
+	public Action<FacilityScript> OnFacilityFocus = (_) => {};
+	public Action<FacilityScript> OnSearchResultSelect = (_) => {};
 
 	[HideInInspector]
 	public Canvas scaleFactorRefCanvas;
@@ -108,6 +120,15 @@ public class AppScript : MonoBehaviour {
 		facilities.initFacilities ();
 		floorSwitcher.switchToFloor (2);
 		ready = true;
+
+
+		if (timetableManager.hasTimetable ()) {
+			openTimetable ();
+		}
+
+
+		// update time based elements every 3 sec
+		InvokeRepeating("UpdateTimeBasedElements", 0, 3f);
 	}
 	
 
@@ -133,14 +154,20 @@ public class AppScript : MonoBehaviour {
 	}
 
 	public void switchToFloor(int floor){
+		if (currentFloor == floor)
+			return;
+		
 		facilities.switchToFloor (floor);
+		OnFloorSwitch (floor);
+
+		currentFloor = floor;
 	}
 
 
 	// CENTER PANEL
 	private void clearCenterPanelContainer(){		
 		foreach(Transform t in centerPanelContainer){
-			Destroy (t.gameObject);
+			DestroyImmediate (t.gameObject);
 		}
 
 		hudCanvas.gameObject.SetActive (true);
@@ -213,5 +240,15 @@ public class AppScript : MonoBehaviour {
 		Debug.LogWarning ("Close Panel");
 		disableAllInCentralPanelContainer ();
 		enableCamera ();
+	}
+
+	void UpdateTimeBasedElements(){
+		OnUpdateTimeBasedElements ();
+	}
+
+	void OnApplicationPause(bool pause) {
+		if (!pause && ready) {
+			OnUpdateTimeBasedElements ();
+		}
 	}
 }

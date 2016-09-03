@@ -60,6 +60,7 @@ public class FacilitiesManager {
 	}
 
 	public void focusFacility(FacilityScript f, bool flyTo = true, bool showInfo = false, bool switchFloor = true){
+		app.OnFacilityFocus (f);
 		target_facility = f;
 
 		var look_dst = f.getSize ()*4;

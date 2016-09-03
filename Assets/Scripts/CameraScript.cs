@@ -88,7 +88,40 @@ public class CameraScript : MonoBehaviour {
 
 	}
 
+	public void FitFacilities(List<FacilityScript> _facilities){
+		// find center nad size of object group
+		float maxX = -Mathf.Infinity, maxY = -Mathf.Infinity, maxZ = -Mathf.Infinity;
+		float minX = Mathf.Infinity, minY = Mathf.Infinity, minZ = Mathf.Infinity;
+		foreach(var f in _facilities){
+			if (!f.gameObject.activeInHierarchy)
+				continue;
+			
+			var pos = f.transform.position;
 
+			if (pos.x > maxX) maxX = pos.x;
+			if (pos.x < minX) minX = pos.x;
+
+			if (pos.y > maxY) maxY = pos.y;
+			if (pos.y < minY) minY = pos.y;
+
+			if (pos.z > maxZ) maxZ = pos.z;
+			if (pos.z < minZ) minZ = pos.z;
+		}
+
+		var center = new Vector3 (minX + (maxX-minX)/2, minY + (maxY-minY)/2, minZ + (maxZ-minZ)/2);
+		var size = new Vector3 ((maxX-minX), (maxY-minY), (maxZ-minZ));
+		var bounds = new Bounds (center, size);
+
+		var lookHeight = 80f;
+		var lookDistance = size.magnitude*2;
+
+		oldCamPos = targetPosition;
+
+		targetObjectPosition = center;
+		targetPosition = targetObjectPosition + Vector3.up * lookHeight - Vector3.forward * lookDistance;
+		flying = true;
+
+	}
 
 
 	public void setTargetFacility(FacilityScript facility, float _lookHeight = 10f, float _lookDistance = 6f){

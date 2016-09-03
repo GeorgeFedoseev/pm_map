@@ -19,9 +19,13 @@ public class SearchBoxScript : MonoBehaviour {
 
 	TouchScreenKeyboard kb;
 
+	SearchResults3d searchResults3d;
+
 
 	void Awake(){
 		app = AppScript.getSharedInstance ();
+
+		searchResults3d = gameObject.AddComponent<SearchResults3d> ();
 	}
 
 	// Use this for initialization
@@ -69,14 +73,60 @@ public class SearchBoxScript : MonoBehaviour {
 		app.cam.stopFlying ();
 		app.facilities.dehighlightAll ();
 		updateClearButton ();
+		searchResults3d.Clear ();
 	}
 
 
 	void showSearchResults(string query){
 		var found_facilities = app.facilities.findFacilities (query);
-		if (found_facilities.Count > 0) {			
-			app.bottomPanel.showFacilities (found_facilities, "РЕЗУЛЬТАТЫ ПОИСКА", true, true);
+		if (found_facilities.Count > 0) {
+			if (found_facilities.Count > 1) {
+				app.bottomPanel.showFacilities (found_facilities, "РЕЗУЛЬТАТЫ ПОИСКА", true, true);
+				// search arrows on 3d map
+				searchResults3d.SetSearchResults(found_facilities);
+				searchResults3d.DeselectAll ();
+				// camera fit all facilities
+				// if no search results caught on camera
+				bool anyVisible = false;
+				foreach (var f in found_facilities) {
+					var vp_p = Camera.main.WorldToViewportPoint (f.getCenter());
+					if (f.gameObject.activeInHierarchy && vp_p.x > 0 && vp_p.x < 1 && vp_p.y > 0 && vp_p.y < 1 && vp_p.z > 0) {
+						anyVisible = true;
+						break;
+					}
+				}
+
+				if (!anyVisible) {
+					// switch to most common floor
+					int[] floorScores = new int[4] {0, 0, 0, 0};
+
+					int maxScore = -1;
+					int mostCommonFloor = -1;
+					foreach (var f in found_facilities) {
+						var floor = f.getFloor ();
+						floorScores [floor]++;
+						if (floorScores [floor] > maxScore) {
+							maxScore = floorScores [floor];
+							mostCommonFloor = floor;
+						}
+					}
+
+					app.switchToFloor (mostCommonFloor);
+
+					app.cam.FitFacilities(found_facilities);
+
+				}
+
+				Loom.QueueOnMainThread (() => {
+					searchResults3d.SelectFacilityArrow (found_facilities[0]);	
+				}, 1f);
+			} else {
+				// only one facility - focus it
+				app.facilities.focusFacility(found_facilities[0]);
+			}
+
 		}
+
 		hideSuggestions();
 	}
 
