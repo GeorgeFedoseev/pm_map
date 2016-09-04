@@ -9,6 +9,8 @@ public class TTPanelScript : CenterPanelScript {
 	
 	public TTWeekScript currentWeek, nextWeek;
 
+	public GameObject no_pairs_label_currentWeek, no_pairs_label_nextWeek;
+
 	public Button editButton, doneButton, downloadButton, undoButton, updateTimetableButton;
 
 	public Toggle switchWeekToggle;
@@ -216,12 +218,31 @@ public class TTPanelScript : CenterPanelScript {
 				}
 
 
-				foreach(var d in app.timetableManager.currentWeek.days){
-					currentWeek.addDay (d, editMode);
+
+				// DEBUG
+			//	app.timetableManager.currentWeek.days = new System.Collections.Generic.List<DayTimetable>();
+			//	app.timetableManager.nextWeek.days = new System.Collections.Generic.List<DayTimetable>();
+
+
+
+				if(app.timetableManager.currentWeek.days.Count > 0){
+					no_pairs_label_currentWeek.SetActive(false);
+					foreach(var d in app.timetableManager.currentWeek.days){
+						currentWeek.addDay (d, editMode);
+					}	
+				}else{
+					// show "no pairs" label
+					no_pairs_label_currentWeek.SetActive(true);
 				}
 
-				foreach(var d in app.timetableManager.nextWeek.days){
-					nextWeek.addDay (d, editMode);
+				if(app.timetableManager.nextWeek.days.Count > 0){
+					no_pairs_label_nextWeek.SetActive(false);
+					foreach(var d in app.timetableManager.nextWeek.days){
+						nextWeek.addDay (d, editMode);
+					}
+				}else{
+					// show "no pairs" label
+					no_pairs_label_nextWeek.SetActive(true);
 				}
 
 				if(editMode){
@@ -286,6 +307,8 @@ public class TTPanelScript : CenterPanelScript {
 					// scroll to current day
 					var fullWeekHeight = currentWeek.daysContainer.GetComponent<RectTransform>().rect.size.y;
 					float currentDayPos = 0;
+
+
 					foreach(Transform d_t in currentWeek.daysContainer){
 						var d = d_t.GetComponent<TTDayScript>();
 						if(d != null && d._day.day == DateTime.Today){
