@@ -37,6 +37,8 @@ public class AppScript : MonoBehaviour {
 	public Action<int> OnFloorSwitch = (_) => {};
 	public Action<FacilityScript> OnFacilityFocus = (_) => {};
 	public Action<FacilityScript> OnSearchResultSelect = (_) => {};
+	public Action</*query*/string> OnShowSearchResults = (_) => {};
+	public Action OnOpenTimetable = () => {};
 
 	[HideInInspector]
 	public Canvas scaleFactorRefCanvas;
@@ -210,6 +212,7 @@ public class AppScript : MonoBehaviour {
 
 	// TIMETABLE
 	public void openTimetable(){
+		OnOpenTimetable ();
 		Loom.QueueOnMainThread (()=>{
 			hudCanvas.gameObject.SetActive (false);	
 			disableCamera();
@@ -237,6 +240,7 @@ public class AppScript : MonoBehaviour {
 
 
 	public void openTimetableTour(){
+		Debug.LogWarning ("Open timetable tour");
 		loadCenterPanel ("LoadTimetableCenterPanel");
 		hudCanvas.gameObject.SetActive (false);
 	}

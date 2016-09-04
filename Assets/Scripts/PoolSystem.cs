@@ -9,6 +9,8 @@ public class PoolSystem : MonoBehaviour {
 		pool = new Dictionary<string, Dictionary<bool, List<GameObject>>> (); 
 	}
 
+	object lockObj = new object();
+
 
 	public T spawn<T>(string name){
 		return spawn(name).GetComponent<T>();
@@ -27,21 +29,27 @@ public class PoolSystem : MonoBehaviour {
 
 
 	public void deactivate(GameObject go){
-		var name = go.name;
-		name = name.Replace ("(Clone)", "").Trim();
 
-		//Debug.LogWarning ("NAME: "+name+" HAS: "+(pool.ContainsKey(name)?"TRUE":"FALSE"));
-		if (!pool.ContainsKey (name)) {
-			addKey (name);
-		}
+		lock (lockObj) {
+			var name = go.name;
+			name = name.Replace ("(Clone)", "").Trim ();
+
+			//Debug.LogWarning ("NAME: "+name+" HAS: "+(pool.ContainsKey(name)?"TRUE":"FALSE"));
+			if (!pool.ContainsKey (name)) {
+				addKey (name);
+			}
  
 
-		putGameObjectToContainer (go);
-		go.SetActive (false);
+			putGameObjectToContainer (go);
+			go.SetActive (false);
 
 
-		pool [name] [false].Remove(go);
-		pool [name] [true].Add (go);
+			pool [name] [false].Remove (go);
+			if (!pool [name] [true].Contains (go)) {
+				pool [name] [true].Add (go);
+			}
+
+		}
 	}
 
 
@@ -54,22 +62,28 @@ public class PoolSystem : MonoBehaviour {
 
 
 	GameObject activateAny (string name){
-		if (!hasFreeObjects (name)) {
-			// instantiate 
-			var new_go = InstantiatePrefab(name);
-			pool [name] [false].Add (new_go);
-			return new_go;
-		} 
+		lock (lockObj) {
+			if (!hasFreeObjects (name)) {
+				// instantiate 
+				var new_go = InstantiatePrefab(name);
+				pool [name] [false].Add (new_go);
+				return new_go;
+			}
 
-		var go = pool [name] [true] [0];
-		pool [name] [true].RemoveAt (0);
-		pool [name] [false].Add (go);
-		go.SetActive (true);
-		return go;
+			var go = pool [name] [true] [0];
+			pool [name] [true].Remove (go);
+			pool [name] [false].Add (go);
+			go.SetActive (true);	
+
+			Debug.Log ("Spawned "+name+" left: "+pool [name] [true].Count);
+			return go;
+		}
 	}
 
 	bool hasFreeObjects(string name){
-		return pool [name] [true].Count > 0;
+		lock (lockObj) {
+			return pool [name] [true].Count > 0;
+		}
 	}
 
 

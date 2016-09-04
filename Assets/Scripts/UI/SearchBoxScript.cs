@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using MaterialUI;
 using System.Collections.Generic;
 
+using TMPro;
+using System.Linq;
+
 public class SearchBoxScript : MonoBehaviour {
 
 	AppScript app;
@@ -13,6 +16,8 @@ public class SearchBoxScript : MonoBehaviour {
 	public SubmitInputField input;
 	public Transform suggestionRowsContainer;
 	public Button clearButton;
+
+	public TextMeshProUGUI placeholder;
 
 	bool suggestionsOpened = false;
 	float suggestionsAnimTime = 0.2f;
@@ -28,6 +33,8 @@ public class SearchBoxScript : MonoBehaviour {
 		searchResults3d = gameObject.AddComponent<SearchResults3d> ();
 	}
 
+	float _placeholder_update_time = 8f;
+
 	// Use this for initialization
 	void Start () {		
 		suggestionsOpened = true;
@@ -35,6 +42,10 @@ public class SearchBoxScript : MonoBehaviour {
 		input.onKeyboardDone.AddListener (keyboardDone);
 		input.onKeyboardCancel.AddListener (keyboardCancel);
 		input.onValueChanged.AddListener (searchInputChanged);
+
+		// placeholder
+		placeholder.text = "";
+		InvokeRepeating ("UpdatePlaceholder", 3, _placeholder_update_time);
 	}
 	
 	// Update is called once per frame
@@ -78,6 +89,9 @@ public class SearchBoxScript : MonoBehaviour {
 
 
 	void showSearchResults(string query){
+
+		app.OnShowSearchResults (query);
+
 		var found_facilities = app.facilities.findFacilities (query);
 		if (found_facilities.Count > 0) {
 			if (found_facilities.Count > 1) {
@@ -117,12 +131,18 @@ public class SearchBoxScript : MonoBehaviour {
 
 				}
 
-				Loom.QueueOnMainThread (() => {
+				//Loom.QueueOnMainThread (() => {
 					searchResults3d.SelectFacilityArrow (found_facilities[0]);	
-				}, 1f);
+				//}, 1f);
 			} else {
 				// only one facility - focus it
-				app.facilities.focusFacility(found_facilities[0]);
+				Debug.LogWarning("Only one facility");
+				app.facilities.focusFacility(found_facilities[0], true);
+				searchResults3d.SetSearchResults(found_facilities);
+
+				//Loom.QueueOnMainThread (() => {
+					searchResults3d.SelectFacilityArrow (found_facilities[0]);	
+				//}, 1.5f);
 			}
 
 		}
@@ -133,6 +153,12 @@ public class SearchBoxScript : MonoBehaviour {
 	public void searchInputChanged(string str){		
 	//	Debug.LogWarning ("INPUT CHANGED");
 		updateClearButton();
+
+		if (str != "") {
+			placeholder.gameObject.SetActive (false);
+		} else {
+			placeholder.gameObject.SetActive (true);
+		}
 
 		var query = input.text.Trim();
 
@@ -257,6 +283,58 @@ public class SearchBoxScript : MonoBehaviour {
 		dialog.anchoredPosition = pos;
 
 	}
+
+
+	List<string> placeholderValues = new List<string>() {
+		"210Д", "столовая", "кофе", "228", "вода", "туалет", "учебный отдел", "бухгалтерия",
+		"сникерс", "йогурт", "кексы", "128Д", "библиотека", "101Е", "читальный зал", "wi-fi",
+		"выход", "банка", "банкомат", "гардероб", "Екимов", "Петросян", "Добрынин", "Еремин",
+		"Едаменко", "вахта", "мел"
+	};
+
+
+	void UpdatePlaceholder(){		
+		if (placeholder.gameObject.activeInHierarchy) {
+
+			iTween.StopByName (gameObject, "placeholder_update");
+			Loom.removeByName ("placeholder_update");
+
+			// update placeholder text
+			Loom.QueueOnMainThread (() => {
+				var index = Random.Range (0, placeholderValues.Count-1);
+				placeholder.text = placeholderValues [index];	
+			}, 0f, "placeholder_update");
+
+			iTween.ValueTo (gameObject, iTween.Hash(
+				"from", 0,
+				"to", 1,
+				"time", _placeholder_update_time*0.2f,
+				"onUpdate", "changePlaceholderAlpha",
+				"name", "placeholder_update"
+			));
+
+
+
+			iTween.ValueTo (gameObject, iTween.Hash(
+				"from", 1,
+				"to", 0,
+				"delay", _placeholder_update_time*0.9f,
+				"time", _placeholder_update_time*0.1f,
+				"onUpdate", "changePlaceholderAlpha",
+				"name", "placeholder_update"
+			));
+
+
+
+		}
+	}
+
+	void changePlaceholderAlpha(float val){
+		var c = placeholder.color;
+		c.a = val;
+		placeholder.color = c;
+	}
+
 
 
 }

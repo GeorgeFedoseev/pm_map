@@ -66,15 +66,19 @@ public class FacilityScript : MonoBehaviour {
 	}
 
 	public int getFloor(){
-		int floor;
-		if (int.TryParse (LayerMask.LayerToName (gameObject.layer).Substring (0, 1), out floor)) {
-			return floor;
-		} else {
-			return 1;
-		}
+		return GetGameObjectFloor (gameObject);
 	}
 
 	public float getSize(){
 		return transform.GetComponent<Renderer> ().bounds.size.magnitude;
+	}
+
+	public static int GetGameObjectFloor(GameObject go){
+		int floor;
+		if (int.TryParse (LayerMask.LayerToName (go.layer).Substring (0, 1), out floor)) {
+			return floor;
+		} else {
+			return 1;
+		}
 	}
 }
