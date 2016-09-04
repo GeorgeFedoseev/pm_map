@@ -84,11 +84,12 @@ public class TTTimeScript : MonoBehaviour {
 				});
 
 				p.deleteButton.onClick.AddListener (()=>{		
-					Alerts.AskYesNo("Удаление пары", "Вы уверены, что хотите удалить пару?", ()=>{
-						app.timetableManager.setPairDeleted(pair);
-						Loom.QueueOnMainThread(()=>{
+					Alerts.AskYesNo("Удаление пары", "Вы уверены, что хотите удалить пару?", ()=>{		
+						app.timetablePanel.setLoading(true);
+						Loom.QueueOnMainThread(() => {							
+							app.timetableManager.setPairDeleted(pair);
 							app.timetablePanel.UpdateContents(true);
-						});	
+						}, 0.1f);
 					}, null, "УДАЛИТЬ", "ОТМЕНА", true);
 				});
 

@@ -128,15 +128,19 @@ public class SearchResults3d : MonoBehaviour {
 						arrow.bounceAmount = 0;
 						var targetPosition = f.getCenter()+Vector3.up*f.getHeight()/2 + Vector3.up * 0.2f;
 						arrowPointers.Add (arrow);
+
+
+					arrow.transform.position = targetPosition + Vector3.up * 2000f;
+					Loom.QueueOnMainThread (() => {
 						arrow.transform.position = targetPosition + Vector3.up * 20f;
 						iTween.MoveTo (arrow.gameObject, iTween.Hash (
 							"position", targetPosition,
 							"islocal", false,
-							"delay", 0.5f,
 							"time", 0.5f,
 							"easeType", iTween.EaseType.easeOutBounce
 						));
-
+					}, 0.5f);
+						
 
 						Loom.QueueOnMainThread (() => {
 							arrow.bounceAmount = 1f;

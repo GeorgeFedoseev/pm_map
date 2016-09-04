@@ -15,11 +15,11 @@ public class TutorialScript : MonoBehaviour {
 		// - tried everything
 		// - already done tutorial
 
-		if (app.timetableManager.hasTimetable ()) {
+	/*	if (app.timetableManager.hasTimetable ()) {
 			CompletedTutorial ();
-		}
+		}*/
 
-		if (ConfigStorage.getBool ("completed_tutorial") || app.timetableManager.hasTimetable ()) {
+		if (ConfigStorage.getBool ("completed_tutorial") /*|| app.timetableManager.hasTimetable ()*/) {
 			HideTutorial ();
 		} else {
 			ShowTutorial ();

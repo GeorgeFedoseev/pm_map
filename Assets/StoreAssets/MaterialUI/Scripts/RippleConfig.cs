@@ -131,7 +131,8 @@ namespace MaterialUI
 
 		private void RefreshContinued()
 		{
-			normalColor = thisImage.color;
+			if(thisImage)
+				normalColor = thisImage.color;
 
 			if (highlightWhen != HighlightActive.Never)
 			{

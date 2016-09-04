@@ -128,7 +128,7 @@ public class TTPanelScript : CenterPanelScript {
 	}
 
 
-	void setLoading(bool _loading){
+	public void setLoading(bool _loading){
 		loading = _loading;
 
 		loadingOverlay.SetActive (_loading);

@@ -2,12 +2,15 @@
 using System.Collections;
 using UnityEngine.UI;
 
+
+using TMPro;
+
 public class LoadSceneScript : MonoBehaviour {
 
 	public Image image;
 
-	public Text percents;
-	
+	public TextMeshProUGUI percents, version;
+
 	private AsyncOperation async = null; // When assigned, load is in progress.
 
 
@@ -15,9 +18,11 @@ public class LoadSceneScript : MonoBehaviour {
 		Debug.Log ("start level loading");
 		Loom.QueueOnMainThread (() => {
 			SyncLoadLevel ("mainScene");
-		}, 5f);
+		}, 0f);
 
 		image.fillAmount = 0;
+
+		version.text = "v"+Application.version;
 
 	}
 	

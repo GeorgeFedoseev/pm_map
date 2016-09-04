@@ -33,7 +33,7 @@ public class SearchBoxScript : MonoBehaviour {
 		searchResults3d = gameObject.AddComponent<SearchResults3d> ();
 	}
 
-	float _placeholder_update_time = 8f;
+	float _placeholder_update_time = 5f;
 
 	// Use this for initialization
 	void Start () {		
@@ -44,8 +44,8 @@ public class SearchBoxScript : MonoBehaviour {
 		input.onValueChanged.AddListener (searchInputChanged);
 
 		// placeholder
-		placeholder.text = "";
-		InvokeRepeating ("UpdatePlaceholder", 3, _placeholder_update_time);
+		placeholder.text = "поиск";
+		InvokeRepeating ("UpdatePlaceholder", 0.2f, _placeholder_update_time);
 	}
 	
 	// Update is called once per frame
@@ -112,7 +112,7 @@ public class SearchBoxScript : MonoBehaviour {
 
 				if (!anyVisible) {
 					// switch to most common floor
-					int[] floorScores = new int[4] {0, 0, 0, 0};
+					int[] floorScores = new int[5] {0, 0, 0, 0, 0};
 
 					int maxScore = -1;
 					int mostCommonFloor = -1;
@@ -137,7 +137,7 @@ public class SearchBoxScript : MonoBehaviour {
 			} else {
 				// only one facility - focus it
 				Debug.LogWarning("Only one facility");
-				app.facilities.focusFacility(found_facilities[0], true);
+				app.facilities.focusFacility(found_facilities[0], true, true);
 				searchResults3d.SetSearchResults(found_facilities);
 
 				//Loom.QueueOnMainThread (() => {
@@ -287,10 +287,13 @@ public class SearchBoxScript : MonoBehaviour {
 
 	List<string> placeholderValues = new List<string>() {
 		"210Д", "столовая", "кофе", "228", "вода", "туалет", "учебный отдел", "бухгалтерия",
-		"сникерс", "йогурт", "кексы", "128Д", "библиотека", "101Е", "читальный зал", "wi-fi",
+		"йогурт", "кексы", "128Д", "библиотека", "101Е", "читальный зал", /*"wi-fi",*/
 		"выход", "банка", "банкомат", "гардероб", "Екимов", "Петросян", "Добрынин", "Еремин",
 		"Едаменко", "вахта", "мел"
 	};
+
+
+	int lastRandomIndex = -1;
 
 
 	void UpdatePlaceholder(){		
@@ -301,14 +304,19 @@ public class SearchBoxScript : MonoBehaviour {
 
 			// update placeholder text
 			Loom.QueueOnMainThread (() => {
-				var index = Random.Range (0, placeholderValues.Count-1);
+				int index = -1;
+				do{
+					index = Random.Range (0, placeholderValues.Count-1);
+				}while(index==lastRandomIndex);
+
 				placeholder.text = placeholderValues [index];	
+				lastRandomIndex = index;
 			}, 0f, "placeholder_update");
 
 			iTween.ValueTo (gameObject, iTween.Hash(
 				"from", 0,
 				"to", 1,
-				"time", _placeholder_update_time*0.2f,
+				"time", 0.2f,
 				"onUpdate", "changePlaceholderAlpha",
 				"name", "placeholder_update"
 			));
@@ -318,8 +326,8 @@ public class SearchBoxScript : MonoBehaviour {
 			iTween.ValueTo (gameObject, iTween.Hash(
 				"from", 1,
 				"to", 0,
-				"delay", _placeholder_update_time*0.9f,
-				"time", _placeholder_update_time*0.1f,
+				"delay", _placeholder_update_time-0.2f,
+				"time", 0.2f,
 				"onUpdate", "changePlaceholderAlpha",
 				"name", "placeholder_update"
 			));
