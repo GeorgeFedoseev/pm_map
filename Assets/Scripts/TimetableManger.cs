@@ -4,6 +4,8 @@ using System;
 using SQLite;
 using System.Collections.Generic;
 
+using SPBUTimetable;
+
 [Table("timetable")]
 public class TimetableRecord {	
 	[PrimaryKey, AutoIncrement]

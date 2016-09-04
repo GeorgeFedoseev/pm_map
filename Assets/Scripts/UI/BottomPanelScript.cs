@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using System;
 
+using SPBUTimetable;
+
 public class BottomPanelScript : MonoBehaviour {
 
 	AppScript app;

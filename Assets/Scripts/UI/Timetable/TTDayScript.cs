@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 
 using TMPro;
+using SPBUTimetable;
 
 public class TTDayScript : MonoBehaviour {
 

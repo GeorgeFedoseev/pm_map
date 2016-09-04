@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 
+using SPBUTimetable;
+
 public class TTPanelScript : CenterPanelScript {
 	
 	public TTWeekScript currentWeek, nextWeek;
@@ -30,14 +32,21 @@ public class TTPanelScript : CenterPanelScript {
 		}
 
 		if (!_subscribed_to_time_updates) {
-			app.OnUpdateTimeBasedElements += () => {			
-				if (enabled && app.timetableManager.hasTimetable()) {				
-					updateCurrentPair();
-				}			
-			};
+			app.OnUpdateTimeBasedElements += _time_based_update;
 			_subscribed_to_time_updates = true;
 		}
 
+	}
+
+
+	void _time_based_update(){
+		if (app.timetableManager.hasTimetable()) {				
+			updateCurrentPair();
+		}	
+	}
+
+	void OnDestroy(){
+		app.OnUpdateTimeBasedElements -= _time_based_update;
 	}
 
 	public void Prepare(){

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 using System.Linq;
+using SPBUTimetable;
 
 public class TTWeekScript : MonoBehaviour {
 

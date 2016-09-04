@@ -3,11 +3,12 @@ using System.Collections;
 using UnityEngine.UI;
 
 using TMPro;
+using SPBUTimetable;
 
 public class TTPairScript : MonoBehaviour {
 	public Pair _pair;
 
-	public TextMeshProUGUI pairTitle, locationText;
+	public TextMeshProUGUI pairTitle, lecturerName, locationText;
 
 	public GameObject locationButtonContainer;
 	public Button locationButton;

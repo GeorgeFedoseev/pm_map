@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using MaterialUI;
 using System;
 
+using SPBUTimetable;
+
 public class TTProgramSelectSript : TTChoosePageScript {
 
 	string level;

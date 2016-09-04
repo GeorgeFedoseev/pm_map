@@ -6,6 +6,8 @@ using System;
 using MaterialUI;
 using UnityEngine.UI;
 
+using SPBUTimetable;
+
 public class Alerts : MonoBehaviour {
 
 	private static Alerts current;

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using MaterialUI;
 using System;
 
+using SPBUTimetable;
+
 public class TTLevelSelectSript : TTChoosePageScript {
 
 	protected override void load(){		

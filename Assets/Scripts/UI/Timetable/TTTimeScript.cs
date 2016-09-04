@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 using TMPro;
+using SPBUTimetable;
 
 public class TTTimeScript : MonoBehaviour {
 	AppScript app;
@@ -31,6 +32,7 @@ public class TTTimeScript : MonoBehaviour {
 		p.transform.localRotation = Quaternion.identity;
 
 		p.pairTitle.text = pair.name;
+		p.lecturerName.text = pair.lecturer;
 
 		var hasThisRoom = app.facilities.hasRoom (pair.room);
 

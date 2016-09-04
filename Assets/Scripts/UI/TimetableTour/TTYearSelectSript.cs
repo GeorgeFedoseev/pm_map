@@ -6,6 +6,9 @@ using MaterialUI;
 using System.Collections.Generic;
 using System;
 
+
+using SPBUTimetable;
+
 public class TTYearSelectSript : TTChoosePageScript {
 	
 

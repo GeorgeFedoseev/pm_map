@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using SPBUTimetable;
 
 public class TTAddPairButtonScript : MonoBehaviour {
 
