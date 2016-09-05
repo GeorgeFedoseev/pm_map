@@ -73,7 +73,7 @@ public class SearchResults3d : MonoBehaviour {
 			if (dict.ContainsKey (f)) {
 				dict [f].SetActive ();
 			} else {
-				Debug.LogError ("Not found facility in dict");
+				Debug.LogWarning ("Not found facility in dict");
 			}
 		//}
 	}
@@ -130,6 +130,7 @@ public class SearchResults3d : MonoBehaviour {
 						arrowPointers.Add (arrow);
 
 
+					iTween.Stop (arrow.gameObject);
 					arrow.transform.position = targetPosition + Vector3.up * 2000f;
 					Loom.QueueOnMainThread (() => {
 						arrow.transform.position = targetPosition + Vector3.up * 20f;

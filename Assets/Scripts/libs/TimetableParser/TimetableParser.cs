@@ -174,7 +174,7 @@ namespace SPBUTimetable {
 
 		public bool now(){
 			var now = DateTime.Now;
-			if (now >= startTime && now <= endTime) {
+			if (!deleted && now >= startTime && now <= endTime) {
 				return true;
 			}
 
@@ -183,7 +183,7 @@ namespace SPBUTimetable {
 
 		public bool soon(){
 			var now = DateTime.Now;
-			if (now >= startTime.AddMinutes(-15) && now <= startTime) {
+			if (!deleted && now >= startTime.AddMinutes(-15) && now <= startTime) {
 				return true;
 			}
 

@@ -70,7 +70,7 @@ public class FacilitiesDatabaseScript {
 
 	public List<FacilityRecord> findFacilities(string search_query){
 		using (var db = new SQLiteConnection(db_path)){			
-			var q = "SELECT * FROM facilities WHERE search_string LIKE ? LIMIT 15";
+			var q = "SELECT * FROM facilities WHERE search_string LIKE ? LIMIT 20";
 			var fs = db.Query<FacilityRecord> (q, "% "+search_query.ToLower()+"%");
 
 			return fs;

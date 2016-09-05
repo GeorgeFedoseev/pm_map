@@ -111,8 +111,12 @@ public class BottomPanelScript : MonoBehaviour {
 			Pair p;
 			if ((p = app.timetableManager.getCurrentPair ()) != null) {
 				showPair (p);
-			}else if((p = app.timetableManager.getSoonPair ()) != null){
+			} else if ((p = app.timetableManager.getSoonPair ()) != null) {
 				showPair (p, "СКОРО ПАРА");
+			} else {
+				if (orangeMode) {
+					fold (true);
+				}
 			}
 		}
 	}

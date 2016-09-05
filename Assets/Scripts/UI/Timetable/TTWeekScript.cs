@@ -24,6 +24,9 @@ public class TTWeekScript : MonoBehaviour {
 	}
 
 	public void addDay(DayTimetable day, bool editMode = false){
+		var _not_deleted_pairs = day.pairs.Where(x => !x.deleted).ToList();
+		if (_not_deleted_pairs.Count == 0)
+			return;
 		var d = (Instantiate (Resources.Load("Prefabs/UI/schedule/Day")) as GameObject).GetComponent<TTDayScript>();		
 		d._day = day;
 		d.transform.SetParent (daysContainer, false);
@@ -40,7 +43,6 @@ public class TTWeekScript : MonoBehaviour {
 
 
 		var timePairDict = new Dictionary<string, List<Pair>> ();
-		var _not_deleted_pairs = day.pairs.Where(x => !x.deleted).ToList();
 		foreach (var p in _not_deleted_pairs) {
 			if (!timePairDict.ContainsKey (p.time)) {
 				timePairDict [p.time] = new List<Pair> ();
