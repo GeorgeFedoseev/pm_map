@@ -68,12 +68,35 @@ public class AppScript : MonoBehaviour {
 
 	public bool ready = false;
 
+	#if UNITY_ANDROID
+	static int getSDKInt() {
+		using (var version = new AndroidJavaClass("android.os.Build$VERSION")) {
+			return version.GetStatic<int>("SDK_INT");
+		}
+	}
+	#endif
+
 	void Awake(){
 
 		/*DEBUG*/
 		if (CLEAN_EVERYTHING_ON_START) {
 			PlayerPrefs.DeleteAll ();
 		}
+
+		#if UNITY_ANDROID
+		// enable Status Bar on Android
+		if(getSDKInt() >= 20){
+			ApplicationChrome.statusBarState = ApplicationChrome.States.VisibleOverContent;
+			//ApplicationChrome.navigationBarState = ApplicationChrome.States.Hidden;
+			ApplicationChrome.statusBarColor = 0xD73C17FF;
+			//Screen.fullScreen = false;	
+		}else{
+			ApplicationChrome.statusBarState = ApplicationChrome.States.Visible;
+			//ApplicationChrome.navigationBarState = ApplicationChrome.States.Hidden;
+			ApplicationChrome.statusBarColor = 0xD73C17FF;
+		}
+
+		#endif
 
 		_savedSkybox = RenderSettings.skybox;
 
