@@ -9,7 +9,7 @@ public class AppScript : MonoBehaviour {
 
 	public static bool DEBUG = false;
 	#if UNITY_EDITOR
-	public static bool CLEAN_EVERYTHING_ON_START = true;
+	public static bool CLEAN_EVERYTHING_ON_START = false;
 	#else
 	public static bool CLEAN_EVERYTHING_ON_START = false;
 	#endif
@@ -83,7 +83,7 @@ public class AppScript : MonoBehaviour {
 			PlayerPrefs.DeleteAll ();
 		}
 
-		#if UNITY_ANDROID
+		#if UNITY_ANDROID && !UNITY_EDITOR
 		// enable Status Bar on Android
 		if(getSDKInt() >= 20){
 			ApplicationChrome.statusBarState = ApplicationChrome.States.VisibleOverContent;
@@ -176,7 +176,7 @@ public class AppScript : MonoBehaviour {
 	}
 
 	public void enableCamera(){
-		Debug.LogWarning ("Enabled camera");
+		//Debug.LogWarning ("Enabled camera");
 		cam.enabled = true;
 		cam.GetComponent<Camera>().cullingMask = -1;
 		RenderSettings.skybox = _savedSkybox;

@@ -4,6 +4,8 @@ using System;
 using SQLite;
 using System.Collections.Generic;
 
+using System.Linq;
+
 using SPBUTimetable;
 
 [Table("timetable")]
@@ -21,6 +23,7 @@ public class TimetableRecord {
 	public int edited { get; set; }
 	public int deleted { get; set; }
 	public string initial_hash { get; set; }
+	public string hash { get; set; }
 }
 
 public class TimetableManger {
@@ -46,10 +49,40 @@ public class TimetableManger {
 
 
 
-		if (!MigrateTo_v1_2_IfNeeded ()) {
-			// default behaviour
-			initTimetable ();
+
+		initTimetable ();
+
+
+
+	}
+
+	bool MigrateTo_v1_3_IdNeeded(){
+		using (var db = new SQLiteConnection (db_path)) {
+			var columns = db.GetTableInfo ("timetable");
+
+			if (columns.Where (x => x.Name == "hash").ToList ().Count > 0) {
+				// nop need to migrate
+				return false;
+			} else {
+				// migration needed
+				// add column "hash"
+				Debug.LogWarning ("MIGRATE DB to v1.3");
+
+				db.Trace = true;
+
+				try{					
+					db.Execute("ALTER TABLE timetable ADD COLUMN hash TEXT;");
+				}catch(SQLiteException ex){
+					Debug.LogError ("Migration error: "+ex.Message+" "+ex.StackTrace);
+					db.Close ();
+					return true;
+				}
+			}
+
+			db.Close ();
 		}
+
+		return true;
 	}
 
 	bool MigrateTo_v1_2_IfNeeded(){
@@ -130,8 +163,16 @@ public class TimetableManger {
 				Debug.LogWarning ("NO timetable link");
 				return true;
 			}
-		} else {			
-			restoreTimetableFromDatabase (true);
+		} else {	
+			
+			if (!MigrateTo_v1_2_IfNeeded ()) {
+				// if migration to 1.2 needed than it will init automatically
+
+				MigrateTo_v1_3_IdNeeded ();
+
+				restoreTimetableFromDatabase (true);
+			}
+
 			Debug.LogWarning ("Timetable recovered from database");
 			return true;
 		}
@@ -251,6 +292,7 @@ public class TimetableManger {
 			pr.edited = pair.edited?1:0;
 			pr.deleted = pair.deleted?1:0;
 			pr.initial_hash = pair.initial_hash;
+			pr.hash = pair.hash;
 
 			Debug.LogWarning ("ADDING PAIR: "+pair.name+ " DELETED: "+pr.deleted);
 
@@ -299,8 +341,12 @@ public class TimetableManger {
 					p.lecturer,
 					p.edited==1,
 					p.deleted==1,
-					p.initial_hash
+					p.hash
 				);
+				// for capability
+				pair.initial_hash = p.initial_hash;
+
+
 
 				if (p.room != null && p.room != "") {
 					pair.room = p.room;
@@ -365,6 +411,7 @@ public class TimetableManger {
 							pair.edited = p.edited ? 1 : 0;
 							pair.deleted = p.deleted ? 1 : 0;
 							pair.initial_hash = p.initial_hash;
+							pair.hash = p.hash;
 
 							db.Insert (pair);
 						}
@@ -377,14 +424,17 @@ public class TimetableManger {
 				Debug.LogWarning ("Timetable saved to database");
 			}
 		} else {
-			// foreach exisiting pair check for similar (with initial_hash) in new pairs
+			// foreach exisiting pair check for similar (with hash) in new pairs
 			// if found - dont add new pair
 			// if not found remove (real remove) existing pair
 			// Then add other new pairs
 
+			var old_weeks = new List<WeekTimetable>(){currentWeek, nextWeek};
+			var new_weeks = new List<WeekTimetable>(){w1, w2};
+
 			// create one list with all existing pairs
 			var exisitingPairs = new List<Pair>();
-			foreach (var ex_w in new List<WeekTimetable>(){currentWeek, nextWeek}) {
+			foreach (var ex_w in old_weeks) {
 				foreach (var d in ex_w.days) {
 					foreach (var p in d.pairs) {
 						exisitingPairs.Add (p);
@@ -394,7 +444,7 @@ public class TimetableManger {
 
 			// create another list with all new pairs
 			var newPairs = new List<Pair>();
-			foreach (var new_w in new List<WeekTimetable>(){w1, w2}) {
+			foreach (var new_w in new_weeks) {
 				foreach (var d in new_w.days) {
 					foreach (var new_p in d.pairs) {
 						newPairs.Add (new_p);
@@ -403,17 +453,87 @@ public class TimetableManger {
 			}
 
 
+			// v1.3 hash migration
+			if(exisitingPairs.Where(x => x.hash == null).Count() > 0){
+				// needs migration
+				Debug.LogError ("Needs v1.3 pair migration");
+
+				for(int i = 0; i < 2; i++){
+					var old_w = old_weeks [i]; var new_w = new_weeks [i];
+
+					var old_w_pairs = new List<Pair>();
+					foreach (var d in old_w.days) {
+						foreach (var p in d.pairs) {
+							old_w_pairs.Add (p);
+						}
+					}
+
+					var new_w_pairs = new List<Pair>();
+					foreach (var d in new_w.days) {
+						foreach (var new_p in d.pairs) {
+							new_w_pairs.Add (new_p);
+						}
+					}
+
+
+					foreach (var ex_p in old_w_pairs) {
+						if (ex_p.hash == null) {
+							Debug.LogError ("Found null hash");
+							// pair needs migration
+							if (ex_p.edited) {
+								// than needs more work:
+								// if its the only pair on this week with such hash
+								if (old_w_pairs.Where (x => x.initial_hash == ex_p.initial_hash).Count () == 1) {
+									// try to find in new pairs pair with same initial_hash	
+									var new_pairs_with_same_initial_hash = new_w_pairs.Where (
+										                                       x => ex_p.initial_hash == x.initial_hash
+									                                       ).ToList ();
+									if (new_pairs_with_same_initial_hash.Count > 0) {
+										Debug.LogWarning ("Found similar pair in new data for migration");
+										// than take this new pair and calculate old pair's hash using it
+										var new_pair = new_pairs_with_same_initial_hash [0];
+										ex_p.hash = new_pair.hash;
+									} else {
+										Debug.LogError ("Cant find similar (initila_hash) pair in new data");
+										// in this case cant restore
+										// than replace it with new pairs on update
+									}
+								} else {
+									Debug.LogError ("Pair is not single on this week");
+									// cant restore - replace on update
+								}
+
+							} else {
+								// just calculate new hash
+								if (ex_p.deleted) {
+									Debug.LogWarning ("Set new hash for deleted pair");
+								}
+								ex_p.hash = TimetableParser.GetPairMD5 (ex_p.day.DayOfWeek, ex_p.time, ex_p.name, ex_p.location, ex_p.lecturer, old_w.weekType);
+							}
+						} else {
+							Debug.LogError ("HASH IS NOT NULL!");
+						}
+					}
+				}
+			}
+
+
+
+
 
 
 			// foreach existing pair check if it stays or not
 			foreach(var ex_p in exisitingPairs){
-				if (newPairs.FindAll (x => x.initial_hash == ex_p.initial_hash).Count == 0) {
+				if(ex_p.hash == null){
+					Debug.LogError ("Exisiting pair hash is null!");
+				}
+				if (newPairs.FindAll (x => x.hash == ex_p.hash).Count == 0) {
 					// no such pair in new data - delete it from our local data
 					removePair (ex_p, immediateSaveToDB:false);
 				} else {
 					// found such pair in new data
 					// remove it from list of new data
-					newPairs.RemoveAll(x => x.initial_hash == ex_p.initial_hash);
+					newPairs.RemoveAll(x => x.hash == ex_p.hash);
 				}
 			}
 

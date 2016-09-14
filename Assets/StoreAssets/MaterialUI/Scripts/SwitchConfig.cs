@@ -61,7 +61,7 @@ namespace MaterialUI
 		{
 			//	Set references
 			toggle = gameObject.GetComponent<Toggle>();
-			Debug.LogWarning ("Setting TOGGLE ref: "+(toggle==null?"NULL":"NOT NULL"));
+		//	Debug.LogWarning ("Setting TOGGLE ref: "+(toggle==null?"NULL":"NOT NULL"));
 			switchRectTransform = switchImage.GetComponent<RectTransform>();
 			checkBoxToggler = text.GetComponent<CheckBoxToggler>();
 			rippleConfig = gameObject.GetComponent<RippleConfig>();
@@ -87,13 +87,13 @@ namespace MaterialUI
 			if (changeRippleColor)
 				rippleConfig.rippleColor = backImage.color;
 
-			Debug.LogWarning ("Start: Setting TOGGLE ref: "+(toggle==null?"NULL":"NOT NULL"));
+			//Debug.LogWarning ("Start: Setting TOGGLE ref: "+(toggle==null?"NULL":"NOT NULL"));
 		}
 
 		public void ToggleSwitch ()
 		{
 			toggle = gameObject.GetComponent<Toggle>();
-			Debug.LogWarning ("TOGGLE ref: "+(toggle==null?"NULL":"NOT NULL"));
+			//Debug.LogWarning ("TOGGLE ref: "+(toggle==null?"NULL":"NOT NULL"));
 			if (toggle.isOn)
 				TurnOn ();
 			else

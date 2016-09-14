@@ -146,11 +146,12 @@ namespace SPBUTimetable {
 
 		public bool edited;
 		public bool deleted;
-		public string initial_hash;
+		public string initial_hash; // old wrong hash without day_of_week
+		public string hash;
 
 
 
-		public Pair(DateTime _day, string _name, string _time, string _location, string _lecturer, bool _edited, bool _deleted, string _initial_hash){
+		public Pair(DateTime _day, string _name, string _time, string _location, string _lecturer, bool _edited, bool _deleted, string _hash){
 			day = _day;
 			name = _name;
 			time = _time;
@@ -159,7 +160,7 @@ namespace SPBUTimetable {
 
 			edited = _edited;
 			deleted = _deleted;
-			initial_hash = _initial_hash;
+			hash = _hash;
 
 
 			parseRoom ();					
@@ -167,7 +168,8 @@ namespace SPBUTimetable {
 		}
 
 		public Pair Clone(){
-			var np = new Pair (day, name, time, location, lecturer, edited, deleted, initial_hash);
+			var np = new Pair (day, name, time, location, lecturer, edited, deleted, hash);
+			np.initial_hash = initial_hash;
 			return np;
 		}
 
@@ -213,7 +215,9 @@ namespace SPBUTimetable {
 			var t2_parts = time2.Split (':');
 			var t2_h = int.Parse(t2_parts [0]);
 			var t2_m = int.Parse(t2_parts [1]);
-			endTime = day.AddHours (t2_h).AddMinutes (t2_m);		
+			endTime = day.AddHours (t2_h).AddMinutes (t2_m);	
+
+			time = t1_h + ":" + t1_m + "–" + t2_h + ":" + t2_m;
 
 			//Console.WriteLine (startTime.ToString("yyyy-MM-dd HH:mm"));
 			//Console.WriteLine (endTime.ToString("yyyy-MM-dd HH:mm"));
@@ -236,6 +240,13 @@ namespace SPBUTimetable {
 
 	public class TimetableParser {
 
+		public static string GetPairMD5(DayOfWeek day, string time, string name, string location, string lecturer, WeekType week_type){			
+			return CalculateMD5Hash((week_type == WeekType.Odd?"1":"0")+day.ToString()+time+name+location+lecturer);
+		}
+
+		public static string GetOLDPairMD5(string time, string name, string location, string lecturer, WeekType week_type){			
+			return CalculateMD5Hash((week_type == WeekType.Odd?"1":"0")+time+name+location+lecturer);
+		}
 
 
 		public static WeekTimetable getTimetable(string timetable_url, DateTime week_start){
@@ -261,17 +272,23 @@ namespace SPBUTimetable {
 					var pairNodes = d.SelectNodes ("ul/li");
 					if (pairNodes != null) {
 						foreach (var pairNode in pairNodes) {
-							var time = pairNode.SelectSingleNode ("div[contains(@class, 'studyevent-datetime')]").InnerText.Trim();
-							var name = pairNode.SelectSingleNode ("div[contains(@class, 'studyevent-subject')]").InnerText.Trim();
-							var location = getAllText(pairNode.SelectSingleNode ("div[contains(@class, 'locations')]")).Trim();
-							var lecturer = getAllText(pairNode.SelectSingleNode ("div[contains(@class, 'educators')]")).Trim();
+							var time = pairNode.SelectSingleNode ("div[contains(@class, 'studyevent-datetime')]").InnerText.Trim ();
+							var name = pairNode.SelectSingleNode ("div[contains(@class, 'studyevent-subject')]").InnerText.Trim ();
+							var location = getAllText (pairNode.SelectSingleNode ("div[contains(@class, 'locations')]")).Trim ();
+							var lecturer = getAllText (pairNode.SelectSingleNode ("div[contains(@class, 'educators')]")).Trim ();
 							//Console.WriteLine (time);
 							//Console.WriteLine (name);
 							//Console.WriteLine (location);
 							//Console.WriteLine (lecturer);
-							var initial_hash = CalculateMD5Hash((timetable.weekType == WeekType.Odd?"1":"0")+time+name+location+lecturer); 
+							//var old_hash = GetOLDPairMD5 (dayTimetable.day, name, time, location, lecturer, day_of_week); 
+							var hash = GetPairMD5 (dayTimetable.day.DayOfWeek, time, name, location, lecturer, timetable.weekType);
 
-							var pair = new Pair (dayTimetable.day, name, time, location, lecturer, false, false, initial_hash);
+							var pair = new Pair (dayTimetable.day, name, time, location, lecturer, false, false, "");
+							pair.hash = TimetableParser.GetPairMD5(pair.day.DayOfWeek, pair.time, pair.name, pair.location, pair.lecturer, timetable.weekType);
+							pair.initial_hash = TimetableParser.GetOLDPairMD5(pair.time, pair.name, pair.location, pair.lecturer, timetable.weekType);
+
+							UnityEngine.Debug.LogWarning ("NEW TIME: "+time);
+
 							dayTimetable.pairs.Add (pair);
 
 						}

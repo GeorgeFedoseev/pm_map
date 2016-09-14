@@ -205,7 +205,7 @@ public class TTPanelScript : CenterPanelScript {
 			undoButton.gameObject.SetActive(editMode && app.timetableManager.historyHasPrevState());
 
 
-			Debug.LogWarning("app is "+ (app==null?"NULL":"NOT NULL"));
+			//Debug.LogWarning("app is "+ (app==null?"NULL":"NOT NULL"));
 			currentWeek._week = app.timetableManager.currentWeek;
 			nextWeek._week = app.timetableManager.nextWeek;
 
@@ -298,9 +298,11 @@ public class TTPanelScript : CenterPanelScript {
 				setLoading(false);
 
 
-				switchWeek (_currentWeek, firstLoadDone);
-				
-				if(!firstLoadDone){
+				switchWeek (_currentWeek, firstLoadDone && !editMode);
+
+
+				// SCROLL TO CURRENT DAY
+				if(!firstLoadDone && !editMode){
 					firstLoadDone = true;
 
 					Debug.LogWarning("Scroll to current week day");
@@ -314,13 +316,16 @@ public class TTPanelScript : CenterPanelScript {
 						if(d != null && d._day.day == DateTime.Today){
 							//Debug.LogWarning("DAY POS: "+(-d_t.GetComponent<RectTransform>().anchoredPosition.y));
 							//Debug.LogWarning("DAY HEIGHT: "+d_t.GetComponent<RectTransform>().rect.size.y);
-							currentDayPos = -d_t.GetComponent<RectTransform>().anchoredPosition.y - d_t.GetComponent<RectTransform>().rect.size.y/2;
-							currentDayPos += currentWeek.daysContainer.GetComponent<RectTransform>().rect.size.y * currentDayPos/fullWeekHeight    /  2;
+							currentDayPos = -d_t.GetComponent<RectTransform>().anchoredPosition.y - d_t.GetComponent<RectTransform>().rect.size.y/2 - 8f;
+							//currentDayPos += currentWeek.daysContainer.GetComponent<RectTransform>().rect.size.y * currentDayPos/fullWeekHeight    /  2;
 						}
 					}
 
 					//Loom.QueueOnMainThread(()=>{
-						currentWeek.scrollRect.verticalNormalizedPosition = Mathf.Clamp01(1f - currentDayPos/fullWeekHeight);
+					var rect = currentWeek.daysContainer.GetComponent<RectTransform>();
+					var a_pos = rect.anchoredPosition;
+					a_pos.y = currentDayPos;
+					rect.anchoredPosition = a_pos;
 						//Debug.LogWarning("ANCHORED POS: "+currentWeek.scrollRect.verticalNormalizedPosition);
 					//}, 0.2f);
 				}
