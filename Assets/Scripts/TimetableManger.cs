@@ -378,10 +378,12 @@ public class TimetableManger {
 
 		// sort pairs
 		foreach(var d in currentWeek.days){
+			d.pairs.Sort ((p1, p2) => p1.name.CompareTo (p2.name));
 			d.pairs.Sort( (p1,p2)=>p1.startTime.CompareTo(p2.startTime) );
 		}
 		foreach(var d in nextWeek.days){
-			d.pairs.Sort( (p1,p2)=>p1.startTime.CompareTo(p2.startTime) );
+			d.pairs.Sort ((p1, p2) => p1.name.CompareTo (p2.name));
+			d.pairs.Sort( (p1,p2)=> p1.startTime.CompareTo(p2.startTime) );
 		}
 	}
 
@@ -456,7 +458,7 @@ public class TimetableManger {
 			// v1.3 hash migration
 			if(exisitingPairs.Where(x => x.hash == null).Count() > 0){
 				// needs migration
-				Debug.LogError ("Needs v1.3 pair migration");
+				//Debug.LogError ("Needs v1.3 pair migration");
 
 				for(int i = 0; i < 2; i++){
 					var old_w = old_weeks [i]; var new_w = new_weeks [i];
@@ -478,7 +480,7 @@ public class TimetableManger {
 
 					foreach (var ex_p in old_w_pairs) {
 						if (ex_p.hash == null) {
-							Debug.LogError ("Found null hash");
+							//Debug.LogError ("Found null hash");
 							// pair needs migration
 							if (ex_p.edited) {
 								// than needs more work:
@@ -489,29 +491,29 @@ public class TimetableManger {
 										                                       x => ex_p.initial_hash == x.initial_hash
 									                                       ).ToList ();
 									if (new_pairs_with_same_initial_hash.Count > 0) {
-										Debug.LogWarning ("Found similar pair in new data for migration");
+										//Debug.LogWarning ("Found similar pair in new data for migration");
 										// than take this new pair and calculate old pair's hash using it
 										var new_pair = new_pairs_with_same_initial_hash [0];
 										ex_p.hash = new_pair.hash;
 									} else {
-										Debug.LogError ("Cant find similar (initila_hash) pair in new data");
+										//Debug.LogError ("Cant find similar (initila_hash) pair in new data");
 										// in this case cant restore
 										// than replace it with new pairs on update
 									}
 								} else {
-									Debug.LogError ("Pair is not single on this week");
+									//Debug.LogError ("Pair is not single on this week");
 									// cant restore - replace on update
 								}
 
 							} else {
 								// just calculate new hash
 								if (ex_p.deleted) {
-									Debug.LogWarning ("Set new hash for deleted pair");
+									//Debug.LogWarning ("Set new hash for deleted pair");
 								}
 								ex_p.hash = TimetableParser.GetPairMD5 (ex_p.day.DayOfWeek, ex_p.time, ex_p.name, ex_p.location, ex_p.lecturer, old_w.weekType);
 							}
 						} else {
-							Debug.LogError ("HASH IS NOT NULL!");
+							//Debug.LogError ("HASH IS NOT NULL!");
 						}
 					}
 				}
