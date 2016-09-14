@@ -183,6 +183,10 @@ public class TTPanelScript : CenterPanelScript {
 		});
 	}
 
+	public void TopBarClicked(){
+		currentWeek.scrollRect.verticalNormalizedPosition = nextWeek.scrollRect.verticalNormalizedPosition = 1;
+	}
+
 	public void UpdateContents(bool editMode = false){
 		//Debug.LogWarning ("Update contents of timetable");
 		setLoading (true);
