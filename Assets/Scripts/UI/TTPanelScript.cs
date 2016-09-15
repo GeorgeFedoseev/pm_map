@@ -187,6 +187,22 @@ public class TTPanelScript : CenterPanelScript {
 		currentWeek.scrollRect.verticalNormalizedPosition = nextWeek.scrollRect.verticalNormalizedPosition = 1;
 	}
 
+
+	public void EnableLayout(bool enable){
+		foreach (var c in GetComponentsInChildren<LayoutElement>()) {
+			c.enabled = enable;
+		}
+
+		foreach (var c in GetComponentsInChildren<VerticalLayoutGroup>()) {
+			c.enabled = enable;
+		}
+
+		foreach (var c in GetComponentsInChildren<ContentSizeFitter>()) {
+			c.enabled = enable;
+		}
+	}
+
+
 	public void UpdateContents(bool editMode = false, bool only_controls = false){
 		if (only_controls) {
 			// controls set
@@ -276,18 +292,7 @@ public class TTPanelScript : CenterPanelScript {
 
 
 	void UpdateLayout(bool editMode = false){
-		/*foreach (var c in GetComponentsInChildren<LayoutElement>()) {
-			c.enabled = true;
-		}
-
-		foreach (var c in GetComponentsInChildren<VerticalLayoutGroup>()) {
-			c.enabled = true;
-		}
-
-		foreach (var c in GetComponentsInChildren<ContentSizeFitter>()) {
-			c.enabled = true;
-		}
-*/
+		EnableLayout (true);
 		//currentWeek.GetComponent<LayoutElement> ().preferredWidth = GetComponent<RectTransform> ().rect.width;
 		//currentWeek.GetComponent<LayoutElement> ().preferredHeight = GetComponent<RectTransform> ().rect.height;
 
@@ -299,17 +304,7 @@ public class TTPanelScript : CenterPanelScript {
 			nextWeek.UpdateLayout (editMode);
 
 			Loom.QueueOnMainThread (()=>{
-				/*foreach (var c in GetComponentsInChildren<LayoutElement>()) {
-					c.enabled = false;
-				}
-
-				foreach (var c in GetComponentsInChildren<VerticalLayoutGroup>()) {
-					c.enabled = false;
-				}
-
-				foreach (var c in GetComponentsInChildren<ContentSizeFitter>()) {
-					c.enabled = false;
-				}*/
+				EnableLayout(false);
 
 				setLoading(false);
 
