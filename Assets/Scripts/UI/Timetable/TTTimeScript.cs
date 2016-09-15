@@ -115,13 +115,25 @@ public class TTTimeScript : MonoBehaviour {
 	void DeletePairFromTime(TTPairScript p){
 		// delete pair element
 		var container = p.transform.parent;
+		var time_el = container.GetComponentInParent<TTTimeScript> ();
+		var times_container = time_el.transform.parent;
 
 		// if no pairs left for this time, than delete time element
 		if (container.childCount == 1) {
 			container.GetComponentInParent<TTTimeScript> ().gameObject.SetActive(false);
+
 			Loom.QueueOnMainThread (() => {
-				Destroy (container.GetComponentInParent<TTTimeScript> ().gameObject);	
+				Destroy (time_el.gameObject);	
 			});
+
+			// check if times left for this day
+
+			if (times_container.childCount == 1) {
+				// delete day
+				var day_el = times_container.GetComponentInParent<TTDayScript>();
+				Destroy (day_el.gameObject);
+			}
+
 		} else {
 			p.gameObject.SetActive(false);
 			Loom.QueueOnMainThread (() => {
