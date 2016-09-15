@@ -233,18 +233,22 @@ public class TimetableManger {
 
 
 	public void updatePair(Pair oldPair, Pair newPair){	
-
-		removePair (oldPair);
-		addPair (newPair, false);
+		newPair.CopyTo (oldPair);
+		//removePair (oldPair, true);
+		//addPair (newPair, false);
+		saveTimetableToDatabase(currentWeek, nextWeek);
 
 		saveCurrentState ();
 	}
 
-	// REMOVE
+	// DELETE
 	public void setPairDeleted(Pair pair){
-		var deletedPair = pair.Clone ();
-		deletedPair.deleted = true;
-		updatePair (pair, deletedPair);
+		//var deletedPair = pair.Clone ();
+		//deletedPair.deleted = true;
+		//updatePair (pair, deletedPair);
+		pair.deleted = true;
+		saveTimetableToDatabase (currentWeek, nextWeek);
+		saveCurrentState ();
 	}
 
 
@@ -275,7 +279,11 @@ public class TimetableManger {
 	}
 
 	public void addPair(Pair pair, bool saveState = true){
-		
+		/*WeekTimetable week;
+		var p_weekType = WeekTimetable.GetIso8601WeekNumber (pair.day.Date) % 2 == 0 ? WeekType.Even : WeekType.Odd;
+		week = currentWeek.weekType == p_weekType ? currentWeek : nextWeek;
+
+*/
 
 		using (var db = new SQLiteConnection (db_path)) {		
 			var pr = new TimetableRecord ();
@@ -302,7 +310,6 @@ public class TimetableManger {
 
 			// NEW PAIR IN DB NOW
 
-			//saveTimetableToDatabase (currentWeek, nextWeek);
 			restoreTimetableFromDatabase ();
 
 			if(saveState)
@@ -388,7 +395,7 @@ public class TimetableManger {
 	}
 
 	private void saveTimetableToDatabase(WeekTimetable w1, WeekTimetable w2, bool preserveEdits = false){
-
+		var start_t = Time.realtimeSinceStartup;
 		if (!preserveEdits) {
 			// simply remove all pairs from db and add provided
 			clearDb ();
@@ -423,7 +430,7 @@ public class TimetableManger {
 
 				db.Close ();
 
-				Debug.LogWarning ("Timetable saved to database");
+				Debug.LogWarning ("Timetable saved to database ("+(Time.renderedFrameCount-start_t)+"s)");
 			}
 		} else {
 			// foreach exisiting pair check for similar (with hash) in new pairs

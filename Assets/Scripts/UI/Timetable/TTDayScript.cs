@@ -56,7 +56,9 @@ public class TTDayScript : MonoBehaviour {
 	public void UpdateLayout(){
 		
 		foreach (var t in timesContainer.GetComponentsInChildren<TTTimeScript>()) {
-			t.UpdateLayout ();
+			if (t.gameObject.activeInHierarchy) {
+				t.UpdateLayout ();
+			}
 		}
 
 		if (_day.day.Date == DateTime.Today) {
@@ -70,8 +72,10 @@ public class TTDayScript : MonoBehaviour {
 
 		var sumHeight = dayTitle.rectTransform.rect.size.y + timesContainer.GetComponent<VerticalLayoutGroup> ().padding.bottom;
 
-		foreach(Transform t in timesContainer){						
-			sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
+		foreach(Transform t in timesContainer){			
+			if (t.gameObject.activeInHierarchy) {
+				sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
+			}
 		}
 
 //		Debug.LogWarning ("sumHeight for Day : "+sumHeight);

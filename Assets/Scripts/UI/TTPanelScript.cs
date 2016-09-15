@@ -187,7 +187,18 @@ public class TTPanelScript : CenterPanelScript {
 		currentWeek.scrollRect.verticalNormalizedPosition = nextWeek.scrollRect.verticalNormalizedPosition = 1;
 	}
 
-	public void UpdateContents(bool editMode = false){
+	public void UpdateContents(bool editMode = false, bool only_controls = false){
+		if (only_controls) {
+			// controls set
+			updateTimetableButton.gameObject.SetActive(!editMode);
+			editButton.gameObject.SetActive (!editMode);
+			doneButton.gameObject.SetActive (editMode);
+			downloadButton.gameObject.SetActive (editMode);
+			undoButton.gameObject.SetActive(editMode && app.timetableManager.historyHasPrevState());
+			return;
+		}
+
+
 		//Debug.LogWarning ("Update contents of timetable");
 		setLoading (true);
 
@@ -202,6 +213,7 @@ public class TTPanelScript : CenterPanelScript {
 			nextWeek.clear ();
 
 
+			// controls set
 			updateTimetableButton.gameObject.SetActive(!editMode);
 			editButton.gameObject.SetActive (!editMode);
 			doneButton.gameObject.SetActive (editMode);
@@ -264,7 +276,7 @@ public class TTPanelScript : CenterPanelScript {
 
 
 	void UpdateLayout(bool editMode = false){
-		foreach (var c in GetComponentsInChildren<LayoutElement>()) {
+		/*foreach (var c in GetComponentsInChildren<LayoutElement>()) {
 			c.enabled = true;
 		}
 
@@ -275,7 +287,7 @@ public class TTPanelScript : CenterPanelScript {
 		foreach (var c in GetComponentsInChildren<ContentSizeFitter>()) {
 			c.enabled = true;
 		}
-
+*/
 		//currentWeek.GetComponent<LayoutElement> ().preferredWidth = GetComponent<RectTransform> ().rect.width;
 		//currentWeek.GetComponent<LayoutElement> ().preferredHeight = GetComponent<RectTransform> ().rect.height;
 
@@ -287,7 +299,7 @@ public class TTPanelScript : CenterPanelScript {
 			nextWeek.UpdateLayout (editMode);
 
 			Loom.QueueOnMainThread (()=>{
-				foreach (var c in GetComponentsInChildren<LayoutElement>()) {
+				/*foreach (var c in GetComponentsInChildren<LayoutElement>()) {
 					c.enabled = false;
 				}
 
@@ -297,7 +309,7 @@ public class TTPanelScript : CenterPanelScript {
 
 				foreach (var c in GetComponentsInChildren<ContentSizeFitter>()) {
 					c.enabled = false;
-				}
+				}*/
 
 				setLoading(false);
 

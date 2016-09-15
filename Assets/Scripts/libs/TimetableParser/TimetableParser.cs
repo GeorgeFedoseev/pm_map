@@ -173,6 +173,22 @@ namespace SPBUTimetable {
 			return np;
 		}
 
+		public void CopyTo(Pair to){
+			to.day = day;
+			to.name = name;
+			to.time = time;
+			to.location = location;
+			to.lecturer = lecturer;
+			to.edited = edited;
+			to.deleted = deleted;
+			to.hash = hash;
+			to.initial_hash = initial_hash;
+
+			to.startTime = startTime;
+			to.endTime = endTime;
+			to.room = room;
+		}
+
 
 		public bool now(){
 			var now = DateTime.Now;

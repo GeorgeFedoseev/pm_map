@@ -23,7 +23,14 @@ public class TTWeekScript : MonoBehaviour {
 		}
 	}
 
-	public void addDay(DayTimetable day, bool editMode = false){
+	public void ReloadDay(TTDayScript day_el, bool edit_mode = false){
+		var day = day_el._day;
+		var sibling_index = day_el.transform.GetSiblingIndex ();
+		DestroyImmediate (day_el.gameObject);
+		addDay (day, edit_mode, sibling_index);
+	}
+
+	public void addDay(DayTimetable day, bool editMode = false, int sibling_index = -1){
 		var _not_deleted_pairs = day.pairs.Where(x => !x.deleted).ToList();
 		if (_not_deleted_pairs.Count == 0)
 			return;
@@ -33,6 +40,11 @@ public class TTWeekScript : MonoBehaviour {
 		d.transform.localScale = Vector3.one;
 		d.transform.localScale = Vector3.one;
 		d.transform.localRotation = Quaternion.identity;
+
+		if (sibling_index != -1) {
+			// set sibling index
+			d.transform.SetSiblingIndex(sibling_index);
+		}
 
 		d.dayTitle.text = day.getTranslatedDay();
 		d.date.text = day.day.ToString ("d MMM", System.Globalization.CultureInfo.GetCultureInfo("ru-RU"));

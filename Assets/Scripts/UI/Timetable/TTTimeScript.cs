@@ -83,13 +83,24 @@ public class TTTimeScript : MonoBehaviour {
 					});
 				});
 
+
+				var _pair_el = p;
 				p.deleteButton.onClick.AddListener (()=>{		
 					Alerts.AskYesNo("Удаление пары", "Вы уверены, что хотите удалить пару?", ()=>{		
-						app.timetablePanel.setLoading(true);
-						Loom.QueueOnMainThread(() => {							
+						//app.timetablePanel.setLoading(true);
+						//Loom.QueueOnMainThread(() => {
+							var start1 = Time.realtimeSinceStartup;
 							app.timetableManager.setPairDeleted(pair);
-							app.timetablePanel.UpdateContents(true);
-						}, 0.1f);
+							Debug.Log("db actions time: "+(Time.realtimeSinceStartup-start1));
+
+							//var start2 = Time.realtimeSinceStartup;
+							app.timetablePanel.UpdateContents(true, true);
+							//Debug.Log("ui actions time: "+(Time.realtimeSinceStartup-start1));
+
+							DeletePairFromTime(_pair_el);
+							//var week = _pair_el.GetComponentInParent<TTWeekScript>();
+							//week.ReloadDay(_pair_el.GetComponentInParent<TTDayScript>(), true);
+						//}, 0.1f);
 					}, null, "УДАЛИТЬ", "ОТМЕНА", true);
 				});
 
@@ -101,10 +112,37 @@ public class TTTimeScript : MonoBehaviour {
 		}
 	}
 
+	void DeletePairFromTime(TTPairScript p){
+		// delete pair element
+		var container = p.transform.parent;
+
+		// if no pairs left for this time, than delete time element
+		if (container.childCount == 1) {
+			container.GetComponentInParent<TTTimeScript> ().gameObject.SetActive(false);
+			Loom.QueueOnMainThread (() => {
+				Destroy (container.GetComponentInParent<TTTimeScript> ().gameObject);	
+			});
+		} else {
+			p.gameObject.SetActive(false);
+			Loom.QueueOnMainThread (() => {
+				Destroy (p.gameObject);	
+			});
+
+		}
+
+		container.GetComponentInParent<TTDayScript> ().UpdateLayout();
+
+
+
+	}
+
 	public void UpdateLayout(){
 		var sumHeight = timeTitle.GetComponent<RectTransform>().rect.size.y;
-		foreach(Transform t in pairsContainer){			
-			sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
+		foreach(Transform t in pairsContainer){	
+			if (t.gameObject.activeInHierarchy) {
+				sumHeight += t.GetComponent<LayoutElement> ().preferredHeight;
+			}
+
 		}
 
 //		Debug.LogWarning ("sumHeight for Time: "+sumHeight);
