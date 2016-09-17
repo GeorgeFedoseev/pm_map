@@ -98,7 +98,8 @@ public class TTTimeScript : MonoBehaviour {
 				p.deleteButton.onClick.AddListener (()=>{		
 					Alerts.AskYesNo("Удаление пары", "Вы уверены, что хотите удалить пару?", ()=>{		
 						//app.timetablePanel.setLoading(true);
-						//Loom.QueueOnMainThread(() => {
+
+						Loom.QueueOnMainThread(() => {
 							var start1 = Time.realtimeSinceStartup;
 							app.timetableManager.setPairDeleted(pair);
 							Debug.Log("db actions time: "+(Time.realtimeSinceStartup-start1));
@@ -110,7 +111,7 @@ public class TTTimeScript : MonoBehaviour {
 							DeletePairFromTime(_pair_el);
 							//var week = _pair_el.GetComponentInParent<TTWeekScript>();
 							//week.ReloadDay(_pair_el.GetComponentInParent<TTDayScript>(), true);
-						//}, 0.1f);
+						}, 0.2f);
 					}, null, "УДАЛИТЬ", "ОТМЕНА", true);
 				});
 
@@ -135,7 +136,8 @@ public class TTTimeScript : MonoBehaviour {
 				container.GetComponentInParent<TTTimeScript> ().gameObject.SetActive(false);
 
 				Loom.QueueOnMainThread (() => {
-					Destroy (time_el.gameObject);	
+					if(time_el != null)
+						Destroy (time_el.gameObject);	
 				});
 
 				// check if times left for this day

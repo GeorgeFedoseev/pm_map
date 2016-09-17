@@ -28,15 +28,19 @@ public class FacilitiesManager {
 
 		// map all facilities
 		facilities_map = new Dictionary<int, FacilityScript>();
+		var id = 0;
 		foreach (var f in app.building.GetComponentsInChildren<FacilityScript>()){
-			facilities_map[f.gameObject.GetInstanceID()] = f;
+			// set its id 
+			f._id = id;
+			facilities_map[id] = f;
+			id++;
 		}
 
 		if(AppScript.UPDATE_FACILITIES_DB_ON_START) {
 			// rebuild facilites DB
 			facilities_db.clearDb ();
 			foreach(var f in app.building.GetComponentsInChildren<FacilityScript>()){
-				facilities_db.addFacility (f._name, f._description, f._info, f._people, f._aliases, f._room, f._icon, f.gameObject.GetInstanceID());
+				facilities_db.addFacility (f._name, f._description, f._info, f._people, f._aliases, f._room, f._icon, f._id);
 			}	
 		}
 

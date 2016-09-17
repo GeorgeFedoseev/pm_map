@@ -31,7 +31,7 @@ public class FacilitiesDatabaseScript {
 	private string db_path;
 	
 	public FacilitiesDatabaseScript(){
-		db_path = Constants.getDBPath ("facilities.db");			
+		db_path = Constants.getDBPath ("facilities_v"+Application.version.Replace(".", "_")+".db");			
 		Debug.LogWarning ("db_path: "+db_path);
 	}
 

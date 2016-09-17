@@ -61,6 +61,9 @@ public class TTDayScript : MonoBehaviour {
 	}
 
 	void UpdateTodayBadge(){
+		if (this == null)
+			return;
+		
 		if (_day.day.Date == DateTime.Today) {
 			todayBadge.gameObject.SetActive (true);
 			todayBadge.anchoredPosition = new Vector2 (dayTitle.preferredWidth + 20f, todayBadge.anchoredPosition.y);	

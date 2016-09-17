@@ -18,7 +18,7 @@ public class TTPanelScript : CenterPanelScript {
 
 	bool loading = false;
 
-	bool firstLoadDone = false;
+	public bool firstLoadDone = false;
 
 	bool _editMode = false;
 

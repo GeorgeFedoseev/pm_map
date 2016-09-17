@@ -6,6 +6,9 @@ public class FacilityScript : MonoBehaviour {
 	AppScript app;
 
 	[HideInInspector]
+	public int _id;
+
+	[HideInInspector]
 	public string _name;
 	[HideInInspector]
 	public string _description;

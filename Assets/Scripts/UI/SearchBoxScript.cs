@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using TMPro;
 using System.Linq;
 
+using Fabric.Answers;
+
 public class SearchBoxScript : MonoBehaviour {
 
 	AppScript app;
@@ -89,6 +91,8 @@ public class SearchBoxScript : MonoBehaviour {
 
 
 	void showSearchResults(string query){
+
+		Answers.LogSearch (query);
 
 		app.OnShowSearchResults (query);
 

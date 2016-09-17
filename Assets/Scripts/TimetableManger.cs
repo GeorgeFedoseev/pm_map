@@ -171,9 +171,34 @@ public class TimetableManger {
 				MigrateTo_v1_3_IdNeeded ();
 
 				restoreTimetableFromDatabase (true);
+
+				Debug.LogWarning ("Timetable recovered from database");
+
+				var _timetable_link = ConfigStorage.getSting ("tt_study_timetable_link");
+
+				if (Utils.CheckForInternetConnection ()) {
+					// check for updates
+					Loom.RunAsync (() => {
+						if (getTimetableFromInternet (preserveEdits: true, _timetable_link: _timetable_link)) {
+							Debug.LogWarning ("SOME NEW UPDATES to timetable");
+							// update timetable
+							app.timetablePanel.firstLoadDone = false;
+							Loom.QueueOnMainThread (() => {
+								Loom.QueueOnMainThread (() => {
+									app.timetablePanel.UpdateContents ();	
+								}, 1f);
+							});
+
+						} else {
+							Debug.LogWarning ("NO UPDATES to timetable");
+						}
+					});
+				} else {
+					Debug.LogWarning ("No internet connection");
+				}
+
 			}
 
-			Debug.LogWarning ("Timetable recovered from database");
 			return true;
 		}
 
@@ -181,10 +206,10 @@ public class TimetableManger {
 	}
 
 
-	public bool getTimetableFromInternet(bool preserveEdits){
+	public bool getTimetableFromInternet(bool preserveEdits, string _timetable_link = null){
 		Debug.LogWarning ("Getting timetable from Internet...");
 
-		var timetable_url = ConfigStorage.getSting("tt_study_timetable_link");
+		var timetable_url = _timetable_link==null?ConfigStorage.getSting("tt_study_timetable_link"):_timetable_link;
 
 		var currentWeekStart = DateTime.Today.AddDays(-(int)(DateTime.Today.DayOfWeek-1)).Date;
 		var nw = DateTime.Now.AddDays (7).Date;
@@ -194,9 +219,8 @@ public class TimetableManger {
 			var current_week_tt = TimetableParser.getTimetable (timetable_url, currentWeekStart);
 			var next_week_tt = TimetableParser.getTimetable (timetable_url, nextWeekStart);
 
-			saveTimetableToDatabase (current_week_tt, next_week_tt, preserveEdits);
+			return saveTimetableToDatabase (current_week_tt, next_week_tt, preserveEdits); // returns true if anuthing changed
 
-			return true;
 		}catch(Exception e){
 			Debug.LogError ("Cant get timetable from "+timetable_url+": "+e.Message);
 			Debug.LogError (e.StackTrace);
@@ -394,9 +418,12 @@ public class TimetableManger {
 		}
 	}
 
-	private void saveTimetableToDatabase(WeekTimetable w1, WeekTimetable w2, bool preserveEdits = false){
-		var start_t = Time.realtimeSinceStartup;
+	private bool saveTimetableToDatabase(WeekTimetable w1, WeekTimetable w2, bool preserveEdits = false){
+		bool anyChanges = false;
+
+//		var start_t = Time.realtimeSinceStartup;
 		if (!preserveEdits) {
+			anyChanges = true;
 			// simply remove all pairs from db and add provided
 			clearDb ();
 
@@ -430,7 +457,7 @@ public class TimetableManger {
 
 				db.Close ();
 
-				Debug.LogWarning ("Timetable saved to database ("+(Time.renderedFrameCount-start_t)+"s)");
+				//Debug.LogWarning ("Timetable saved to database ("+(Time.renderedFrameCount-start_t)+"s)");
 			}
 		} else {
 			// foreach exisiting pair check for similar (with hash) in new pairs
@@ -539,6 +566,7 @@ public class TimetableManger {
 				if (newPairs.FindAll (x => x.hash == ex_p.hash).Count == 0) {
 					// no such pair in new data - delete it from our local data
 					removePair (ex_p, immediateSaveToDB:false);
+					anyChanges = true;
 				} else {
 					// found such pair in new data
 					// remove it from list of new data
@@ -552,10 +580,13 @@ public class TimetableManger {
 			// add rest of new data
 			foreach(var new_p in newPairs){
 				addPair (new_p, saveState:false); // adds directly to db
+				anyChanges = true;
 			}
 
 			// done saving new data
 		}
+
+		return anyChanges;
 	}
 
 	private void saveCurrentState(){
