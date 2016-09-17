@@ -51,6 +51,8 @@ public class TTTimeScript : MonoBehaviour {
 		}
 
 
+
+		//static bool _first_room_jump = true;
 		// actions
 		if (!editMode && hasThisRoom ) {
 			p.locationText.gameObject.SetActive (false);
@@ -60,7 +62,15 @@ public class TTTimeScript : MonoBehaviour {
 			p.locationButtonLabel.text = pair.room;
 			p.locationButton.onClick.AddListener (() => {
 				app.closeTimetable();
-				app.facilities.goToRoom(pair.room);
+				/*if(_first_room_jump){*/
+					Loom.QueueOnMainThread(() => {
+						app.facilities.goToRoom(pair.room);
+					});	
+				/*}else{
+					
+				}*/
+
+
 			});
 		} else {
 			p.locationText.gameObject.SetActive (true);

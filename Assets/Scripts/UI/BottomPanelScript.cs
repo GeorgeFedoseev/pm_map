@@ -164,6 +164,8 @@ public class BottomPanelScript : MonoBehaviour {
 
 		var r = app.pool.spawn<BottomPanelRowScript> ("bottom_panel_row");
 
+		r.GetComponent<Button> ().onClick.RemoveAllListeners ();
+
 		if (room != null) {
 			r.title.text = room._name;
 			Loom.QueueOnMainThread (()=>{
@@ -172,8 +174,6 @@ public class BottomPanelScript : MonoBehaviour {
 					sprite = Resources.Load<Sprite> ("Prefabs/UI/icons/default");
 				r.icon.sprite = sprite;	
 			});
-
-			r.GetComponent<Button> ().onClick.RemoveAllListeners ();
 
 			r.GetComponent<Button>().onClick.AddListener (() => {				
 				app.facilities.focusFacility (room);

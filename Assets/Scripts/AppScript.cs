@@ -9,11 +9,13 @@ public class AppScript : MonoBehaviour {
 
 	public static bool DEBUG = false;
 	#if UNITY_EDITOR
-	public static bool CLEAN_EVERYTHING_ON_START = false;
+	public static bool CLEAN_EVERYTHING_ON_START = true;
+	public static bool UPDATE_FACILITIES_DB_ON_START = true;
 	#else
 	public static bool CLEAN_EVERYTHING_ON_START = false;
+	public static bool UPDATE_FACILITIES_DB_ON_START = false;
 	#endif
-	//public static bool UPDATE_FACILITIES_DB_ON_START = false;
+
 
 	private static AppScript sharedInstance;
 	public static AppScript getSharedInstance(){
@@ -234,11 +236,12 @@ public class AppScript : MonoBehaviour {
 
 
 	// TIMETABLE
+
 	public void openTimetable(){
 		OnOpenTimetable ();
 		Loom.QueueOnMainThread (()=>{
 			hudCanvas.gameObject.SetActive (false);	
-			disableCamera();
+			disableCamera();				
 		});
 
 

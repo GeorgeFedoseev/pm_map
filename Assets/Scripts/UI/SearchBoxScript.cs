@@ -286,9 +286,10 @@ public class SearchBoxScript : MonoBehaviour {
 
 
 	List<string> placeholderValues = new List<string>() {
-		"210Д", "столовая", "кофе", "вода", "туалет", "учебный отдел", "бухгалтерия",
+		"210Д", "столовая", "кофе", "еда", "вода", "туалет", "учебный отдел", "бухгалтерия",
 		"йогурт", "кексы", "библиотека", "101Е", "читальный зал", 
-		"выход", "банка", "банкомат", "гардероб", "Петросян", "вахта", "мел", "объявления"
+		"выход", "банкомат", "гардероб", "Петросян", "вахта", "мел", "объявления",
+		"ЗУС", "профбюро", "диспетчер", "студсовет", "печать документов"
 	};
 
 
@@ -305,7 +306,7 @@ public class SearchBoxScript : MonoBehaviour {
 			Loom.QueueOnMainThread (() => {
 				int index = -1;
 				do{
-					index = Random.Range (0, placeholderValues.Count-1);
+					index = Random.Range (0, placeholderValues.Count/*excluding last random*/);
 				}while(index==lastRandomIndex);
 
 				placeholder.text = placeholderValues [index];	

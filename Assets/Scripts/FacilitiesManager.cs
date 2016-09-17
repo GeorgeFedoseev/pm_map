@@ -32,13 +32,13 @@ public class FacilitiesManager {
 			facilities_map[f.gameObject.GetInstanceID()] = f;
 		}
 
-		// (AppScript.UPDATE_FACILITIES_DB_ON_START) {
+		if(AppScript.UPDATE_FACILITIES_DB_ON_START) {
 			// rebuild facilites DB
 			facilities_db.clearDb ();
 			foreach(var f in app.building.GetComponentsInChildren<FacilityScript>()){
 				facilities_db.addFacility (f._name, f._description, f._info, f._people, f._aliases, f._room, f._icon, f.gameObject.GetInstanceID());
 			}	
-		//}
+		}
 
 		/*foreach(var f in facilities_db.findFacilities("кофе")){
 			Debug.LogWarning ("Found "+f.name+" "+f.gameObjectID);
@@ -121,7 +121,10 @@ public class FacilitiesManager {
 		var res = facilities_db.getRoom (room);
 		if (res != null) {
 			var f = facilities_map[res.gameObjectID];
-			focusFacility (f, true, true);
+			Loom.QueueOnMainThread (() => {
+				focusFacility (f, true, true);	
+			});
+
 		}
 	}
 

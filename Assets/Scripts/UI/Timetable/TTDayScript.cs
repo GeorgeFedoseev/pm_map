@@ -19,10 +19,18 @@ public class TTDayScript : MonoBehaviour {
 	public RectTransform todayBadge;
 
 
+	AppScript app;
+
+	bool _subscribed_to_time_based_updates = false;
 
 
 	void Awake(){
 		clear ();
+	}
+
+	void Start(){
+		app = AppScript.getSharedInstance ();
+		app.OnUpdateTimeBasedElements += UpdateTodayBadge;
 	}
 
 	private void clear(){
@@ -52,6 +60,15 @@ public class TTDayScript : MonoBehaviour {
 		}
 	}
 
+	void UpdateTodayBadge(){
+		if (_day.day.Date == DateTime.Today) {
+			todayBadge.gameObject.SetActive (true);
+			todayBadge.anchoredPosition = new Vector2 (dayTitle.preferredWidth + 20f, todayBadge.anchoredPosition.y);	
+		} else {
+			todayBadge.gameObject.SetActive (false);
+		}
+	}
+
 
 	public void UpdateLayout(){
 		
@@ -61,12 +78,8 @@ public class TTDayScript : MonoBehaviour {
 			}
 		}
 
-		if (_day.day.Date == DateTime.Today) {
-			todayBadge.gameObject.SetActive (true);
-			todayBadge.anchoredPosition = new Vector2 (dayTitle.preferredWidth + 20f, todayBadge.anchoredPosition.y);	
-		} else {
-			todayBadge.gameObject.SetActive (false);
-		}
+
+		UpdateTodayBadge ();
 
 
 
