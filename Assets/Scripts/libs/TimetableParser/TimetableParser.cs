@@ -233,7 +233,7 @@ namespace SPBUTimetable {
 			var t2_m = int.Parse(t2_parts [1]);
 			endTime = day.AddHours (t2_h).AddMinutes (t2_m);	
 
-			time = t1_h + ":" + t1_m + "–" + t2_h + ":" + t2_m;
+			time = string.Format ("{0}:{1:00}–{2}:{3:00}", t1_h, t1_m, t2_h, t2_m);
 
 			//Console.WriteLine (startTime.ToString("yyyy-MM-dd HH:mm"));
 			//Console.WriteLine (endTime.ToString("yyyy-MM-dd HH:mm"));
