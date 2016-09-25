@@ -9539,12 +9539,40 @@ extern "C"  void Constants__ctor_m1850165532 (Constants_t1581691183 * __this, co
 		return;
 	}
 }
+// System.String Constants::_GetSharedFolderPathCharArray(System.String)
+extern "C"  String_t* Constants__GetSharedFolderPathCharArray_m2053771537 (Il2CppObject * __this /* static, unused */, String_t* ___groupIdentifier0, const MethodInfo* method)
+{
+	extern char* DEFAULT_CALL _GetSharedFolderPathCharArray(char*);
+
+	// Marshaling of parameter '___groupIdentifier0' to native representation
+	char* ____groupIdentifier0_marshaled = NULL;
+	____groupIdentifier0_marshaled = il2cpp_codegen_marshal_string(___groupIdentifier0);
+
+	// Native function invocation
+	char* returnValue = _GetSharedFolderPathCharArray(____groupIdentifier0_marshaled);
+
+	// Marshaling of return value back from native representation
+	String_t* _returnValue_unmarshaled = NULL;
+	_returnValue_unmarshaled = il2cpp_codegen_marshal_string_result(returnValue);
+
+	// Marshaling cleanup of return value native representation
+	il2cpp_codegen_marshal_free(returnValue);
+	returnValue = NULL;
+
+	// Marshaling cleanup of parameter '___groupIdentifier0' native representation
+	il2cpp_codegen_marshal_free(____groupIdentifier0_marshaled);
+	____groupIdentifier0_marshaled = NULL;
+
+	return _returnValue_unmarshaled;
+}
 // System.String Constants::getDBPath(System.String,System.Boolean)
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* AppScript_t3488119340_il2cpp_TypeInfo_var;
 extern Il2CppClass* WWW_t3134621005_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral45945302;
+extern Il2CppCodeGenString* _stringLiteral3386472310;
+extern Il2CppCodeGenString* _stringLiteral2529420843;
 extern Il2CppCodeGenString* _stringLiteral47;
+extern Il2CppCodeGenString* _stringLiteral2385759850;
 extern Il2CppCodeGenString* _stringLiteral428156492;
 extern Il2CppCodeGenString* _stringLiteral2467078719;
 extern Il2CppCodeGenString* _stringLiteral86477086;
@@ -9561,7 +9589,9 @@ extern "C"  String_t* Constants_getDBPath_m1968900433 (Il2CppObject * __this /* 
 	String_t* V_0 = NULL;
 	String_t* V_1 = NULL;
 	String_t* V_2 = NULL;
-	WWW_t3134621005 * V_3 = NULL;
+	String_t* V_3 = NULL;
+	String_t* V_4 = NULL;
+	WWW_t3134621005 * V_5 = NULL;
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
 		String_t* L_0 = ((String_t_StaticFields*)String_t_il2cpp_TypeInfo_var->static_fields)->get_Empty_2();
@@ -9569,7 +9599,7 @@ extern "C"  String_t* Constants_getDBPath_m1968900433 (Il2CppObject * __this /* 
 		int32_t L_1 = Application_get_platform_m2918632856(NULL /*static, unused*/, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_1) == ((uint32_t)8))))
 		{
-			goto IL_0055;
+			goto IL_0095;
 		}
 	}
 	{
@@ -9578,97 +9608,113 @@ extern "C"  String_t* Constants_getDBPath_m1968900433 (Il2CppObject * __this /* 
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
 		String_t* L_4 = String_Concat_m1825781833(NULL /*static, unused*/, L_2, _stringLiteral45945302, L_3, /*hidden argument*/NULL);
 		V_1 = L_4;
-		String_t* L_5 = Application_get_persistentDataPath_m2554537447(NULL /*static, unused*/, /*hidden argument*/NULL);
-		String_t* L_6 = ___db_name0;
-		String_t* L_7 = String_Concat_m1825781833(NULL /*static, unused*/, L_5, _stringLiteral47, L_6, /*hidden argument*/NULL);
-		V_0 = L_7;
-		String_t* L_8 = V_0;
-		bool L_9 = File_Exists_m1326262381(NULL /*static, unused*/, L_8, /*hidden argument*/NULL);
-		if (!L_9)
+		String_t* L_5 = Constants__GetSharedFolderPathCharArray_m2053771537(NULL /*static, unused*/, _stringLiteral3386472310, /*hidden argument*/NULL);
+		V_2 = L_5;
+		String_t* L_6 = Constants__GetSharedFolderPathCharArray_m2053771537(NULL /*static, unused*/, _stringLiteral2529420843, /*hidden argument*/NULL);
+		String_t* L_7 = ___db_name0;
+		String_t* L_8 = String_Concat_m1825781833(NULL /*static, unused*/, L_6, _stringLiteral47, L_7, /*hidden argument*/NULL);
+		V_0 = L_8;
+		String_t* L_9 = V_0;
+		String_t* L_10 = String_Concat_m138640077(NULL /*static, unused*/, _stringLiteral2385759850, L_9, /*hidden argument*/NULL);
+		Debug_Log_m1552180680(NULL /*static, unused*/, L_10, (Object_t3071478659 *)NULL, /*hidden argument*/NULL);
+		String_t* L_11 = V_0;
+		bool L_12 = File_Exists_m1326262381(NULL /*static, unused*/, L_11, /*hidden argument*/NULL);
+		if (L_12)
 		{
-			goto IL_0048;
+			goto IL_0090;
 		}
 	}
 	{
-		IL2CPP_RUNTIME_CLASS_INIT(AppScript_t3488119340_il2cpp_TypeInfo_var);
-		bool L_10 = ((AppScript_t3488119340_StaticFields*)AppScript_t3488119340_il2cpp_TypeInfo_var->static_fields)->get_DEBUG_2();
-		if (!L_10)
+		String_t* L_13 = Application_get_persistentDataPath_m2554537447(NULL /*static, unused*/, /*hidden argument*/NULL);
+		String_t* L_14 = ___db_name0;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		String_t* L_15 = String_Concat_m1825781833(NULL /*static, unused*/, L_13, _stringLiteral47, L_14, /*hidden argument*/NULL);
+		V_3 = L_15;
+		String_t* L_16 = V_3;
+		bool L_17 = File_Exists_m1326262381(NULL /*static, unused*/, L_16, /*hidden argument*/NULL);
+		if (!L_17)
 		{
-			goto IL_0050;
+			goto IL_0088;
 		}
 	}
-
-IL_0048:
 	{
-		String_t* L_11 = V_1;
-		String_t* L_12 = V_0;
-		File_Copy_m4125374219(NULL /*static, unused*/, L_11, L_12, (bool)1, /*hidden argument*/NULL);
+		String_t* L_18 = V_3;
+		String_t* L_19 = V_0;
+		File_Copy_m4125374219(NULL /*static, unused*/, L_18, L_19, (bool)1, /*hidden argument*/NULL);
+		goto IL_0090;
 	}
 
-IL_0050:
+IL_0088:
 	{
-		goto IL_00cc;
+		String_t* L_20 = V_1;
+		String_t* L_21 = V_0;
+		File_Copy_m4125374219(NULL /*static, unused*/, L_20, L_21, (bool)1, /*hidden argument*/NULL);
 	}
 
-IL_0055:
+IL_0090:
 	{
-		int32_t L_13 = Application_get_platform_m2918632856(NULL /*static, unused*/, /*hidden argument*/NULL);
-		if ((!(((uint32_t)L_13) == ((uint32_t)((int32_t)11)))))
+		goto IL_0111;
+	}
+
+IL_0095:
+	{
+		int32_t L_22 = Application_get_platform_m2918632856(NULL /*static, unused*/, /*hidden argument*/NULL);
+		if ((!(((uint32_t)L_22) == ((uint32_t)((int32_t)11)))))
 		{
-			goto IL_00bb;
+			goto IL_0100;
 		}
 	}
 	{
 		Debug_LogError_m694690014(NULL /*static, unused*/, _stringLiteral428156492, (Object_t3071478659 *)NULL, /*hidden argument*/NULL);
-		String_t* L_14 = Application_get_dataPath_m2519694320(NULL /*static, unused*/, /*hidden argument*/NULL);
-		String_t* L_15 = ___db_name0;
+		String_t* L_23 = Application_get_dataPath_m2519694320(NULL /*static, unused*/, /*hidden argument*/NULL);
+		String_t* L_24 = ___db_name0;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		String_t* L_16 = String_Concat_m2933632197(NULL /*static, unused*/, _stringLiteral2467078719, L_14, _stringLiteral86477086, L_15, /*hidden argument*/NULL);
-		V_2 = L_16;
-		String_t* L_17 = V_2;
-		WWW_t3134621005 * L_18 = (WWW_t3134621005 *)il2cpp_codegen_object_new(WWW_t3134621005_il2cpp_TypeInfo_var);
-		WWW__ctor_m1985874080(L_18, L_17, /*hidden argument*/NULL);
-		V_3 = L_18;
-		goto IL_008e;
+		String_t* L_25 = String_Concat_m2933632197(NULL /*static, unused*/, _stringLiteral2467078719, L_23, _stringLiteral86477086, L_24, /*hidden argument*/NULL);
+		V_4 = L_25;
+		String_t* L_26 = V_4;
+		WWW_t3134621005 * L_27 = (WWW_t3134621005 *)il2cpp_codegen_object_new(WWW_t3134621005_il2cpp_TypeInfo_var);
+		WWW__ctor_m1985874080(L_27, L_26, /*hidden argument*/NULL);
+		V_5 = L_27;
+		goto IL_00d1;
 	}
 
-IL_008e:
+IL_00d1:
 	{
-		WWW_t3134621005 * L_19 = V_3;
-		NullCheck(L_19);
-		bool L_20 = WWW_get_isDone_m634060017(L_19, /*hidden argument*/NULL);
-		if (!L_20)
+		WWW_t3134621005 * L_28 = V_5;
+		NullCheck(L_28);
+		bool L_29 = WWW_get_isDone_m634060017(L_28, /*hidden argument*/NULL);
+		if (!L_29)
 		{
-			goto IL_008e;
+			goto IL_00d1;
 		}
 	}
 	{
-		String_t* L_21 = Application_get_persistentDataPath_m2554537447(NULL /*static, unused*/, /*hidden argument*/NULL);
-		String_t* L_22 = ___db_name0;
+		String_t* L_30 = Application_get_persistentDataPath_m2554537447(NULL /*static, unused*/, /*hidden argument*/NULL);
+		String_t* L_31 = ___db_name0;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		String_t* L_23 = String_Concat_m1825781833(NULL /*static, unused*/, L_21, _stringLiteral47, L_22, /*hidden argument*/NULL);
-		V_0 = L_23;
-		String_t* L_24 = V_0;
-		WWW_t3134621005 * L_25 = V_3;
-		NullCheck(L_25);
-		ByteU5BU5D_t4260760469* L_26 = WWW_get_bytes_m2080623436(L_25, /*hidden argument*/NULL);
-		File_WriteAllBytes_m2419938065(NULL /*static, unused*/, L_24, L_26, /*hidden argument*/NULL);
-		goto IL_00cc;
+		String_t* L_32 = String_Concat_m1825781833(NULL /*static, unused*/, L_30, _stringLiteral47, L_31, /*hidden argument*/NULL);
+		V_0 = L_32;
+		String_t* L_33 = V_0;
+		WWW_t3134621005 * L_34 = V_5;
+		NullCheck(L_34);
+		ByteU5BU5D_t4260760469* L_35 = WWW_get_bytes_m2080623436(L_34, /*hidden argument*/NULL);
+		File_WriteAllBytes_m2419938065(NULL /*static, unused*/, L_33, L_35, /*hidden argument*/NULL);
+		goto IL_0111;
 	}
 
-IL_00bb:
+IL_0100:
 	{
-		String_t* L_27 = Application_get_dataPath_m2519694320(NULL /*static, unused*/, /*hidden argument*/NULL);
-		String_t* L_28 = ___db_name0;
+		String_t* L_36 = Application_get_dataPath_m2519694320(NULL /*static, unused*/, /*hidden argument*/NULL);
+		String_t* L_37 = ___db_name0;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		String_t* L_29 = String_Concat_m1825781833(NULL /*static, unused*/, L_27, _stringLiteral2472718489, L_28, /*hidden argument*/NULL);
-		V_0 = L_29;
+		String_t* L_38 = String_Concat_m1825781833(NULL /*static, unused*/, L_36, _stringLiteral2472718489, L_37, /*hidden argument*/NULL);
+		V_0 = L_38;
 	}
 
-IL_00cc:
+IL_0111:
 	{
-		String_t* L_30 = V_0;
-		return L_30;
+		String_t* L_39 = V_0;
+		return L_39;
 	}
 }
 // System.Void CUDLR.CommandAttribute::.ctor(System.String,System.String,System.Boolean)

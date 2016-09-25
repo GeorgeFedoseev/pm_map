@@ -217,10 +217,10 @@
 #include "UnityEngine_UnityEngine_TextAreaAttribute641061976MethodDeclarations.h"
 #include "AssemblyU2DCSharp_SQLite_TableAttribute3844348468.h"
 #include "AssemblyU2DCSharp_SQLite_TableAttribute3844348468MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SQLite_PrimaryKeyAttribute2138673889.h"
-#include "AssemblyU2DCSharp_SQLite_PrimaryKeyAttribute2138673889MethodDeclarations.h"
 #include "AssemblyU2DCSharp_SQLite_AutoIncrementAttribute3950295490.h"
 #include "AssemblyU2DCSharp_SQLite_AutoIncrementAttribute3950295490MethodDeclarations.h"
+#include "AssemblyU2DCSharp_SQLite_PrimaryKeyAttribute2138673889.h"
+#include "AssemblyU2DCSharp_SQLite_PrimaryKeyAttribute2138673889MethodDeclarations.h"
 #include "AssemblyU2DCSharp_SQLite_ColumnAttribute2686047144.h"
 #include "AssemblyU2DCSharp_SQLite_ColumnAttribute2686047144MethodDeclarations.h"
 #include "AssemblyU2DCSharp_CUDLR_CommandAttribute2471075151.h"
@@ -31058,12 +31058,12 @@ static void FacilityRecord_t2975714548_CustomAttributesCacheGenerator_FacilityRe
 static void FacilityRecord_t2975714548_CustomAttributesCacheGenerator_FacilityRecord_t2975714548____id_PropertyInfo(CustomAttributesCache* cache)
 {
 	{
-		PrimaryKeyAttribute_t2138673889 * tmp = (PrimaryKeyAttribute_t2138673889 *)cache->attributes[0];
-		PrimaryKeyAttribute__ctor_m782718974(tmp, NULL);
+		AutoIncrementAttribute_t3950295490 * tmp = (AutoIncrementAttribute_t3950295490 *)cache->attributes[0];
+		AutoIncrementAttribute__ctor_m2529593101(tmp, NULL);
 	}
 	{
-		AutoIncrementAttribute_t3950295490 * tmp = (AutoIncrementAttribute_t3950295490 *)cache->attributes[1];
-		AutoIncrementAttribute__ctor_m2529593101(tmp, NULL);
+		PrimaryKeyAttribute_t2138673889 * tmp = (PrimaryKeyAttribute_t2138673889 *)cache->attributes[1];
+		PrimaryKeyAttribute__ctor_m782718974(tmp, NULL);
 	}
 }
 static void U3CgoToRoomU3Ec__AnonStorey1C_t3886080178_CustomAttributesCacheGenerator(CustomAttributesCache* cache)
@@ -31496,12 +31496,12 @@ static void TimetableRecord_t3288175794_CustomAttributesCacheGenerator_Timetable
 static void TimetableRecord_t3288175794_CustomAttributesCacheGenerator_TimetableRecord_t3288175794____id_PropertyInfo(CustomAttributesCache* cache)
 {
 	{
-		AutoIncrementAttribute_t3950295490 * tmp = (AutoIncrementAttribute_t3950295490 *)cache->attributes[0];
-		AutoIncrementAttribute__ctor_m2529593101(tmp, NULL);
+		PrimaryKeyAttribute_t2138673889 * tmp = (PrimaryKeyAttribute_t2138673889 *)cache->attributes[0];
+		PrimaryKeyAttribute__ctor_m782718974(tmp, NULL);
 	}
 	{
-		PrimaryKeyAttribute_t2138673889 * tmp = (PrimaryKeyAttribute_t2138673889 *)cache->attributes[1];
-		PrimaryKeyAttribute__ctor_m782718974(tmp, NULL);
+		AutoIncrementAttribute_t3950295490 * tmp = (AutoIncrementAttribute_t3950295490 *)cache->attributes[1];
+		AutoIncrementAttribute__ctor_m2529593101(tmp, NULL);
 	}
 }
 static void TimetableManger_t3141655579_CustomAttributesCacheGenerator_U3CU3Ef__amU24cache5(CustomAttributesCache* cache)
@@ -31766,12 +31766,12 @@ static void CenterPanelScript_t1133230138_CustomAttributesCacheGenerator_rect(Cu
 static void ScrollRectSnap_t3827508699_CustomAttributesCacheGenerator_screens(CustomAttributesCache* cache)
 {
 	{
-		HideInInspector_t2952493798 * tmp = (HideInInspector_t2952493798 *)cache->attributes[0];
-		HideInInspector__ctor_m1076518313(tmp, NULL);
+		TooltipAttribute_t1877437789 * tmp = (TooltipAttribute_t1877437789 *)cache->attributes[0];
+		TooltipAttribute__ctor_m3341446606(tmp, il2cpp_codegen_string_new_wrapper("how many screens or pages are there within the content (steps)"), NULL);
 	}
 	{
-		TooltipAttribute_t1877437789 * tmp = (TooltipAttribute_t1877437789 *)cache->attributes[1];
-		TooltipAttribute__ctor_m3341446606(tmp, il2cpp_codegen_string_new_wrapper("how many screens or pages are there within the content (steps)"), NULL);
+		HideInInspector_t2952493798 * tmp = (HideInInspector_t2952493798 *)cache->attributes[1];
+		HideInInspector__ctor_m1076518313(tmp, NULL);
 	}
 }
 static void ScrollRectSnap_t3827508699_CustomAttributesCacheGenerator_snapSpeed(CustomAttributesCache* cache)
@@ -34309,23 +34309,23 @@ static void CheckboxConfig_t1096200273_CustomAttributesCacheGenerator_changeRipp
 static void CheckboxConfig_t1096200273_CustomAttributesCacheGenerator_checkImage(CustomAttributesCache* cache)
 {
 	{
-		HideInInspector_t2952493798 * tmp = (HideInInspector_t2952493798 *)cache->attributes[0];
-		HideInInspector__ctor_m1076518313(tmp, NULL);
-	}
-	{
-		SerializeField_t3754825534 * tmp = (SerializeField_t3754825534 *)cache->attributes[1];
-		SerializeField__ctor_m4068807987(tmp, NULL);
-	}
-}
-static void CheckboxConfig_t1096200273_CustomAttributesCacheGenerator_frameImage(CustomAttributesCache* cache)
-{
-	{
 		SerializeField_t3754825534 * tmp = (SerializeField_t3754825534 *)cache->attributes[0];
 		SerializeField__ctor_m4068807987(tmp, NULL);
 	}
 	{
 		HideInInspector_t2952493798 * tmp = (HideInInspector_t2952493798 *)cache->attributes[1];
 		HideInInspector__ctor_m1076518313(tmp, NULL);
+	}
+}
+static void CheckboxConfig_t1096200273_CustomAttributesCacheGenerator_frameImage(CustomAttributesCache* cache)
+{
+	{
+		HideInInspector_t2952493798 * tmp = (HideInInspector_t2952493798 *)cache->attributes[0];
+		HideInInspector__ctor_m1076518313(tmp, NULL);
+	}
+	{
+		SerializeField_t3754825534 * tmp = (SerializeField_t3754825534 *)cache->attributes[1];
+		SerializeField__ctor_m4068807987(tmp, NULL);
 	}
 }
 static void CheckboxConfig_t1096200273_CustomAttributesCacheGenerator_text(CustomAttributesCache* cache)
@@ -34834,23 +34834,23 @@ static void U3CGetRectU3Ec__IteratorB_t2735098599_CustomAttributesCacheGenerator
 static void ScreenConfig_t3241700090_CustomAttributesCacheGenerator_transitionInType(CustomAttributesCache* cache)
 {
 	{
-		HideInInspector_t2952493798 * tmp = (HideInInspector_t2952493798 *)cache->attributes[0];
-		HideInInspector__ctor_m1076518313(tmp, NULL);
-	}
-	{
-		SerializeField_t3754825534 * tmp = (SerializeField_t3754825534 *)cache->attributes[1];
-		SerializeField__ctor_m4068807987(tmp, NULL);
-	}
-}
-static void ScreenConfig_t3241700090_CustomAttributesCacheGenerator_transitionOutType(CustomAttributesCache* cache)
-{
-	{
 		SerializeField_t3754825534 * tmp = (SerializeField_t3754825534 *)cache->attributes[0];
 		SerializeField__ctor_m4068807987(tmp, NULL);
 	}
 	{
 		HideInInspector_t2952493798 * tmp = (HideInInspector_t2952493798 *)cache->attributes[1];
 		HideInInspector__ctor_m1076518313(tmp, NULL);
+	}
+}
+static void ScreenConfig_t3241700090_CustomAttributesCacheGenerator_transitionOutType(CustomAttributesCache* cache)
+{
+	{
+		HideInInspector_t2952493798 * tmp = (HideInInspector_t2952493798 *)cache->attributes[0];
+		HideInInspector__ctor_m1076518313(tmp, NULL);
+	}
+	{
+		SerializeField_t3754825534 * tmp = (SerializeField_t3754825534 *)cache->attributes[1];
+		SerializeField__ctor_m4068807987(tmp, NULL);
 	}
 }
 static void ScreenConfig_t3241700090_CustomAttributesCacheGenerator_slideIn(CustomAttributesCache* cache)
@@ -35689,12 +35689,12 @@ static void U3CDisplayTextMeshFloatingTextU3Ec__Iterator17_t2228310752_CustomAtt
 static void InlineGraphicManager_t3583857972_CustomAttributesCacheGenerator(CustomAttributesCache* cache)
 {
 	{
-		ExecuteInEditMode_t3132250205 * tmp = (ExecuteInEditMode_t3132250205 *)cache->attributes[0];
-		ExecuteInEditMode__ctor_m1394231890(tmp, NULL);
+		AddComponentMenu_t813859935 * tmp = (AddComponentMenu_t813859935 *)cache->attributes[0];
+		AddComponentMenu__ctor_m3281913735(tmp, il2cpp_codegen_string_new_wrapper("UI/Inline Graphics Manager"), 13LL, NULL);
 	}
 	{
-		AddComponentMenu_t813859935 * tmp = (AddComponentMenu_t813859935 *)cache->attributes[1];
-		AddComponentMenu__ctor_m3281913735(tmp, il2cpp_codegen_string_new_wrapper("UI/Inline Graphics Manager"), 13LL, NULL);
+		ExecuteInEditMode_t3132250205 * tmp = (ExecuteInEditMode_t3132250205 *)cache->attributes[1];
+		ExecuteInEditMode__ctor_m1394231890(tmp, NULL);
 	}
 }
 static void InlineGraphicManager_t3583857972_CustomAttributesCacheGenerator_m_spriteAsset(CustomAttributesCache* cache)
@@ -35718,12 +35718,12 @@ static void InlineGraphicManager_t3583857972_CustomAttributesCacheGenerator_m_in
 static void InlineGraphicManager_t3583857972_CustomAttributesCacheGenerator_m_inlineGraphicCanvasRenderer(CustomAttributesCache* cache)
 {
 	{
-		HideInInspector_t2952493798 * tmp = (HideInInspector_t2952493798 *)cache->attributes[0];
-		HideInInspector__ctor_m1076518313(tmp, NULL);
+		SerializeField_t3754825534 * tmp = (SerializeField_t3754825534 *)cache->attributes[0];
+		SerializeField__ctor_m4068807987(tmp, NULL);
 	}
 	{
-		SerializeField_t3754825534 * tmp = (SerializeField_t3754825534 *)cache->attributes[1];
-		SerializeField__ctor_m4068807987(tmp, NULL);
+		HideInInspector_t2952493798 * tmp = (HideInInspector_t2952493798 *)cache->attributes[1];
+		HideInInspector__ctor_m1076518313(tmp, NULL);
 	}
 }
 static void U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865_CustomAttributesCacheGenerator(CustomAttributesCache* cache)
@@ -35904,20 +35904,20 @@ static void TextMeshPro_t3198095413_CustomAttributesCacheGenerator(CustomAttribu
 		RequireComponent__ctor_m2023271172(tmp, il2cpp_codegen_type_get_object(MeshRenderer_t2804666580_0_0_0_var), NULL);
 	}
 	{
-		ExecuteInEditMode_t3132250205 * tmp = (ExecuteInEditMode_t3132250205 *)cache->attributes[1];
-		ExecuteInEditMode__ctor_m1394231890(tmp, NULL);
-	}
-	{
-		AddComponentMenu_t813859935 * tmp = (AddComponentMenu_t813859935 *)cache->attributes[2];
-		AddComponentMenu__ctor_m1521317712(tmp, il2cpp_codegen_string_new_wrapper("Mesh/TextMesh Pro"), NULL);
-	}
-	{
-		RequireComponent_t1687166108 * tmp = (RequireComponent_t1687166108 *)cache->attributes[3];
+		RequireComponent_t1687166108 * tmp = (RequireComponent_t1687166108 *)cache->attributes[1];
 		RequireComponent__ctor_m2023271172(tmp, il2cpp_codegen_type_get_object(MeshFilter_t3839065225_0_0_0_var), NULL);
 	}
 	{
-		RequireComponent_t1687166108 * tmp = (RequireComponent_t1687166108 *)cache->attributes[4];
+		ExecuteInEditMode_t3132250205 * tmp = (ExecuteInEditMode_t3132250205 *)cache->attributes[2];
+		ExecuteInEditMode__ctor_m1394231890(tmp, NULL);
+	}
+	{
+		RequireComponent_t1687166108 * tmp = (RequireComponent_t1687166108 *)cache->attributes[3];
 		RequireComponent__ctor_m2023271172(tmp, il2cpp_codegen_type_get_object(TextContainer_t2231787766_0_0_0_var), NULL);
+	}
+	{
+		AddComponentMenu_t813859935 * tmp = (AddComponentMenu_t813859935 *)cache->attributes[4];
+		AddComponentMenu__ctor_m1521317712(tmp, il2cpp_codegen_string_new_wrapper("Mesh/TextMesh Pro"), NULL);
 	}
 }
 static void TextMeshPro_t3198095413_CustomAttributesCacheGenerator_m_text(CustomAttributesCache* cache)
@@ -36081,12 +36081,12 @@ static void TextMeshPro_t3198095413_CustomAttributesCacheGenerator_m_anchor(Cust
 static void TextMeshPro_t3198095413_CustomAttributesCacheGenerator_m_textAlignment(CustomAttributesCache* cache)
 {
 	{
-		SerializeField_t3754825534 * tmp = (SerializeField_t3754825534 *)cache->attributes[0];
-		SerializeField__ctor_m4068807987(tmp, NULL);
+		FormerlySerializedAsAttribute_t2216353654 * tmp = (FormerlySerializedAsAttribute_t2216353654 *)cache->attributes[0];
+		FormerlySerializedAsAttribute__ctor_m2703462003(tmp, il2cpp_codegen_string_new_wrapper("m_lineJustification"), NULL);
 	}
 	{
-		FormerlySerializedAsAttribute_t2216353654 * tmp = (FormerlySerializedAsAttribute_t2216353654 *)cache->attributes[1];
-		FormerlySerializedAsAttribute__ctor_m2703462003(tmp, il2cpp_codegen_string_new_wrapper("m_lineJustification"), NULL);
+		SerializeField_t3754825534 * tmp = (SerializeField_t3754825534 *)cache->attributes[1];
+		SerializeField__ctor_m4068807987(tmp, NULL);
 	}
 }
 static void TextMeshPro_t3198095413_CustomAttributesCacheGenerator_m_enableKerning(CustomAttributesCache* cache)
@@ -36287,20 +36287,20 @@ static void TextMeshProUGUI_t3603375195_CustomAttributesCacheGenerator(CustomAtt
 		ExecuteInEditMode__ctor_m1394231890(tmp, NULL);
 	}
 	{
-		AddComponentMenu_t813859935 * tmp = (AddComponentMenu_t813859935 *)cache->attributes[1];
+		DisallowMultipleComponent_t62111112 * tmp = (DisallowMultipleComponent_t62111112 *)cache->attributes[1];
+		DisallowMultipleComponent__ctor_m3170514567(tmp, NULL);
+	}
+	{
+		AddComponentMenu_t813859935 * tmp = (AddComponentMenu_t813859935 *)cache->attributes[2];
 		AddComponentMenu__ctor_m3281913735(tmp, il2cpp_codegen_string_new_wrapper("UI/TextMeshPro Text"), 12LL, NULL);
 	}
 	{
-		RequireComponent_t1687166108 * tmp = (RequireComponent_t1687166108 *)cache->attributes[2];
+		RequireComponent_t1687166108 * tmp = (RequireComponent_t1687166108 *)cache->attributes[3];
 		RequireComponent__ctor_m2023271172(tmp, il2cpp_codegen_type_get_object(CanvasRenderer_t3950887807_0_0_0_var), NULL);
 	}
 	{
-		RequireComponent_t1687166108 * tmp = (RequireComponent_t1687166108 *)cache->attributes[3];
+		RequireComponent_t1687166108 * tmp = (RequireComponent_t1687166108 *)cache->attributes[4];
 		RequireComponent__ctor_m2023271172(tmp, il2cpp_codegen_type_get_object(RectTransform_t972643934_0_0_0_var), NULL);
-	}
-	{
-		DisallowMultipleComponent_t62111112 * tmp = (DisallowMultipleComponent_t62111112 *)cache->attributes[4];
-		DisallowMultipleComponent__ctor_m3170514567(tmp, NULL);
 	}
 }
 static void TextMeshProUGUI_t3603375195_CustomAttributesCacheGenerator_m_text(CustomAttributesCache* cache)

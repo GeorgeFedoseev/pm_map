@@ -19174,6 +19174,7 @@ extern "C" void ConfigStorage_getFloat_m3811701014 ();
 extern "C" void ConfigStorage_getSting_m3892214536 ();
 extern "C" void ConfigStorage_hasKey_m3585238815 ();
 extern "C" void Constants__ctor_m1850165532 ();
+extern "C" void Constants__GetSharedFolderPathCharArray_m2053771537 ();
 extern "C" void Constants_getDBPath_m1968900433 ();
 extern "C" void CommandAttribute__ctor_m1039093683 ();
 extern "C" void Callback__ctor_m2002527492 ();
@@ -21488,7 +21489,7 @@ extern "C" void VertPivot_Sphere_Start_m1706900725 ();
 extern "C" void VertPivot_Sphere_Update_m1380167096 ();
 extern "C" void VertPivot_Sphere_ClampAngle_m2361377154 ();
 extern "C" void VertPivot_Sphere_Main_m3745296936 ();
-extern const Il2CppMethodPointer g_MethodPointers[21477] = 
+extern const Il2CppMethodPointer g_MethodPointers[21478] = 
 {
 	Locale_GetText_m2389348044,
 	Locale_GetText_m2218462520,
@@ -40653,6 +40654,7 @@ extern const Il2CppMethodPointer g_MethodPointers[21477] =
 	ConfigStorage_getSting_m3892214536,
 	ConfigStorage_hasKey_m3585238815,
 	Constants__ctor_m1850165532,
+	Constants__GetSharedFolderPathCharArray_m2053771537,
 	Constants_getDBPath_m1968900433,
 	CommandAttribute__ctor_m1039093683,
 	Callback__ctor_m2002527492,

@@ -22,5 +22,7 @@ struct String_t;
 
 // System.Void Constants::.ctor()
 extern "C"  void Constants__ctor_m1850165532 (Constants_t1581691183 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String Constants::_GetSharedFolderPathCharArray(System.String)
+extern "C"  String_t* Constants__GetSharedFolderPathCharArray_m2053771537 (Il2CppObject * __this /* static, unused */, String_t* ___groupIdentifier0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Constants::getDBPath(System.String,System.Boolean)
 extern "C"  String_t* Constants_getDBPath_m1968900433 (Il2CppObject * __this /* static, unused */, String_t* ___db_name0, bool ___overwrite1, const MethodInfo* method) IL2CPP_METHOD_ATTR;

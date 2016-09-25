@@ -1,19 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
+using System.Runtime.InteropServices;
 
 public class Constants {
+
+	#if UNITY_IOS
+
+	[DllImport ("__Internal")]
+	private static extern string _GetSharedFolderPathCharArray( string groupIdentifier );
+
+	#endif
 
 	public static string getDBPath(string db_name, bool overwrite = true){
 		var db_path = "";
 		if (Application.platform == RuntimePlatform.IPhonePlayer) {
 			var openPath = Application.dataPath + "/Raw/"+db_name;
-			db_path = Application.persistentDataPath+"/"+db_name;
 
+			var group_container_path = _GetSharedFolderPathCharArray ("groups.pm_map_container");
+			//Directory.CreateDirectory(group_container_path+"/databases")
 
-			if(!File.Exists(db_path) || AppScript.DEBUG)
-				File.Copy(openPath, db_path, true);
+			db_path = _GetSharedFolderPathCharArray ("group.pm_map_container")+"/"+db_name;
 
+			Debug.Log ("db_path is: "+db_path);
+
+			if (!File.Exists (db_path)) {
+				var db_path_old = Application.persistentDataPath+"/"+db_name;
+				if (File.Exists (db_path_old)) {
+					File.Copy (db_path_old, db_path, true);
+				} else {
+					File.Copy(openPath, db_path, true);
+				}
+			}
 
 		}else if(Application.platform == RuntimePlatform.Android){
 			Debug.LogError ("CHECK ANDROID DB PATHS!!!");
@@ -28,5 +46,8 @@ public class Constants {
 
 		return db_path;
 	}
+
+
+    
 
 }
