@@ -1,0 +1,44 @@
+﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+#include <stdint.h>
+#include <assert.h>
+#include <exception>
+
+// System.Collections.Generic.List`1<TMPro.TMP_WordInfo>
+struct List_1_t2670266502;
+// System.Object
+struct Il2CppObject;
+
+#include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Collections_Generic_List_1_Enumera2689939272.h"
+#include "AssemblyU2DCSharp_TMPro_TMP_WordInfo1302080950.h"
+
+// System.Void System.Collections.Generic.List`1/Enumerator<TMPro.TMP_WordInfo>::.ctor(System.Collections.Generic.List`1<T>)
+extern "C"  void Enumerator__ctor_m3205976333_gshared (Enumerator_t2689939272 * __this, List_1_t2670266502 * ___l0, const MethodInfo* method);
+#define Enumerator__ctor_m3205976333(__this, ___l0, method) ((  void (*) (Enumerator_t2689939272 *, List_1_t2670266502 *, const MethodInfo*))Enumerator__ctor_m3205976333_gshared)(__this, ___l0, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<TMPro.TMP_WordInfo>::System.Collections.IEnumerator.Reset()
+extern "C"  void Enumerator_System_Collections_IEnumerator_Reset_m503484197_gshared (Enumerator_t2689939272 * __this, const MethodInfo* method);
+#define Enumerator_System_Collections_IEnumerator_Reset_m503484197(__this, method) ((  void (*) (Enumerator_t2689939272 *, const MethodInfo*))Enumerator_System_Collections_IEnumerator_Reset_m503484197_gshared)(__this, method)
+// System.Object System.Collections.Generic.List`1/Enumerator<TMPro.TMP_WordInfo>::System.Collections.IEnumerator.get_Current()
+extern "C"  Il2CppObject * Enumerator_System_Collections_IEnumerator_get_Current_m3012165915_gshared (Enumerator_t2689939272 * __this, const MethodInfo* method);
+#define Enumerator_System_Collections_IEnumerator_get_Current_m3012165915(__this, method) ((  Il2CppObject * (*) (Enumerator_t2689939272 *, const MethodInfo*))Enumerator_System_Collections_IEnumerator_get_Current_m3012165915_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<TMPro.TMP_WordInfo>::Dispose()
+extern "C"  void Enumerator_Dispose_m1900753458_gshared (Enumerator_t2689939272 * __this, const MethodInfo* method);
+#define Enumerator_Dispose_m1900753458(__this, method) ((  void (*) (Enumerator_t2689939272 *, const MethodInfo*))Enumerator_Dispose_m1900753458_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<TMPro.TMP_WordInfo>::VerifyState()
+extern "C"  void Enumerator_VerifyState_m5671019_gshared (Enumerator_t2689939272 * __this, const MethodInfo* method);
+#define Enumerator_VerifyState_m5671019(__this, method) ((  void (*) (Enumerator_t2689939272 *, const MethodInfo*))Enumerator_VerifyState_m5671019_gshared)(__this, method)
+// System.Boolean System.Collections.Generic.List`1/Enumerator<TMPro.TMP_WordInfo>::MoveNext()
+extern "C"  bool Enumerator_MoveNext_m1739655637_gshared (Enumerator_t2689939272 * __this, const MethodInfo* method);
+#define Enumerator_MoveNext_m1739655637(__this, method) ((  bool (*) (Enumerator_t2689939272 *, const MethodInfo*))Enumerator_MoveNext_m1739655637_gshared)(__this, method)
+// T System.Collections.Generic.List`1/Enumerator<TMPro.TMP_WordInfo>::get_Current()
+extern "C"  TMP_WordInfo_t1302080950  Enumerator_get_Current_m594139076_gshared (Enumerator_t2689939272 * __this, const MethodInfo* method);
+#define Enumerator_get_Current_m594139076(__this, method) ((  TMP_WordInfo_t1302080950  (*) (Enumerator_t2689939272 *, const MethodInfo*))Enumerator_get_Current_m594139076_gshared)(__this, method)
