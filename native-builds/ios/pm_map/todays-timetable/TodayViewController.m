@@ -37,6 +37,8 @@
     // If an error is encountered, use NCUpdateResultFailed
     // If there's no update required, use NCUpdateResultNoData
     // If there's an update, use NCUpdateResultNewData
+    
+    [self loadFile];
 
     completionHandler(NCUpdateResultNewData);
 }
@@ -44,8 +46,10 @@
 - (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)margins
 {
     margins.bottom = 10.0;
+    
     return margins;
 }
+
 
 - (void) loadFile {
     NSString *str = @"";
@@ -98,7 +102,7 @@
             int resultsCount = 0;
             while([results next]){
                 NSString *name = [results stringForColumn:@"name"];
-                str = [str stringByAppendingString: name];
+              //  str = [str stringByAppendingString: name];
                 resultsCount++;
             }
             
