@@ -10,20 +10,57 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import <sqlite3.h>
 #import "fmdb/FMDatabase.h"
+#import "PairCellController.h"
+
+@interface Pair : NSObject
+    @property NSString *name;
+    @property NSString *lecturer;
+    @property NSString *startTime;
+    @property NSString *endTime;
+    @property NSString *room;
+    @property NSString *location;
+@end
+
+@implementation Pair
+
+@end
 
 @interface TodayViewController () <NCWidgetProviding>
 
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UITableView *table;
+
+@property NSArray *todayPairs;
 
 @end
 
 @implementation TodayViewController
 
+static NSString *CellIdentifier = @"PairCell";
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_messageLabel setText:@"Loaded"];
-    [self loadFile];
+    
+    
+    
     // Do any additional setup after loading the view from its nib.
+    
+    
+    
+     [self.table registerNib:[UINib nibWithNibName:@"PairCell" bundle:nil] forCellReuseIdentifier:CellIdentifier];
+    
+    self.table.allowsSelection = NO;
+    
+    _todayPairs = [NSArray array];
+    Pair *p = [[Pair alloc] init];
+    p.name = @"Пара1";
+    _todayPairs = [_todayPairs arrayByAddingObject:p];
+
+    self.preferredContentSize = CGSizeMake(0, 200);
+    
+    
+    [self loadFile];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,12 +83,47 @@
 - (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)margins
 {
     margins.bottom = 10.0;
+    margins.left = 0;
     
     return margins;
 }
 
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _todayPairs.count;
+    
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    PairCellController *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[PairCellController alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.view.backgroundColor = [UIColor clearColor];
+    
+    cell.name.text = ((Pair*)_todayPairs[indexPath.row]).name;
+    cell.lecturer.text = ((Pair*)_todayPairs[indexPath.row]).lecturer;
+    cell.room.text = ((Pair*)_todayPairs[indexPath.row]).room;
+    
+    cell.startTime.text = ((Pair*)_todayPairs[indexPath.row]).startTime;
+    cell.endTime.text = ((Pair*)_todayPairs[indexPath.row]).endTime;
+    
+    return cell;
+    
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+ 
+
+}
+
 - (void) loadFile {
+    _todayPairs = [NSArray array];
+    
     NSString *str = @"";
     /*NSString *db_path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"timetable.db"];*/
     
@@ -68,10 +140,10 @@
     NSArray * directoryContents =  [[NSFileManager defaultManager]
                                     contentsOfDirectoryAtPath:groupContainerURL.path error:&error];
     
-    str = [str stringByAppendingString:[NSString stringWithFormat:@"documents path: %@",documents_path]];
+   // str = [str stringByAppendingString:[NSString stringWithFormat:@"documents path: %@",documents_path]];
     
     
-    str = [str stringByAppendingString:[NSString stringWithFormat:@"directoryContents ====== %@",directoryContents]];
+    //str = [str stringByAppendingString:[NSString stringWithFormat:@"directoryContents ====== %@",directoryContents]];
     
     
     
@@ -90,23 +162,68 @@
     
     if([fm fileExistsAtPath:db_path]){
         if([database open]){
-            str = [str stringByAppendingString:[NSString stringWithFormat:@"Opened db"]];
+          //  str = [str stringByAppendingString:[NSString stringWithFormat:@"Opened db"]];
             
-            FMResultSet *results  = [database executeQuery:@"select * from timetable"];
+            FMResultSet *results  = [database executeQuery:@"select * from timetable WHERE deleted = 0 ORDER BY startTime"];
             
             if(database.hadError){
                 [str stringByAppendingString:[NSString stringWithFormat:@"\nDB error: %@", database.lastError]];
                 
             }
             
+            bool evenWeek = [self isWeekEven];
+            
             int resultsCount = 0;
+            
+            NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];
             while([results next]){
+                
+                [dateFormatter setDateFormat:@"yyyy-MM-DD HH:mm:ss"];
+
+                
                 NSString *name = [results stringForColumn:@"name"];
+                NSDate *startTime = [dateFormatter dateFromString:[results stringForColumn:@"startTime"]];
+                NSDate *endTime = [dateFormatter dateFromString:[results stringForColumn:@"endTime"]];
+                
+                
+                
+                bool _evenWeek = [results intForColumn:@"weekType"] == 1;
+                int weekDay = [results intForColumn:@"day"];
+                
+                
+                NSCalendar *calendar = [NSCalendar currentCalendar];
+                //[calendar setFirstWeekday:1];
+                NSDateComponents *weekDayComponent = [calendar components:(NSCalendarUnitWeekday) fromDate:[NSDate date]];
+                
+                /*str = [str stringByAppendingString:[NSString stringWithFormat:@"current weekday: %i", weekDayComponent.weekday]];*/
+                
+                if(_evenWeek == evenWeek){
+                    if(weekDayComponent.weekday-1 == weekDay){
+                        Pair *p = [[Pair alloc] init];
+                        p.name = name;
+                        p.lecturer = [results stringForColumn:@"lecturer"];
+                        p.location = [results stringForColumn:@"location"];
+                        p.room = [results stringForColumn:@"room"];
+                        _todayPairs = [_todayPairs arrayByAddingObject:p];
+                        
+                        [dateFormatter setDateFormat:@"HH:mm"];
+                        
+                        p.startTime = [dateFormatter stringFromDate:startTime];
+                        p.endTime = [dateFormatter stringFromDate:endTime];
+                        
+                        resultsCount++;
+                    }
+                }
+                
               //  str = [str stringByAppendingString: name];
-                resultsCount++;
+                
             }
             
-            str = [str stringByAppendingString:[NSString stringWithFormat:@"\nDB rows: %i", resultsCount]];
+            str = [str stringByAppendingString:[NSString stringWithFormat:@"results: %i", resultsCount]];
+            
+            // expand height
+            self.preferredContentSize = CGSizeMake(0, 50 + 40*resultsCount);
+            
             
         }else{
             str = [str stringByAppendingString:[NSString stringWithFormat:@"\nfailed to open database at path: %@", db_path]];
@@ -124,6 +241,14 @@
     
     
     
+}
+
+- (bool) isWeekEven {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *dateComponent = [calendar components:(NSCalendarUnitWeekOfYear) fromDate:[NSDate date]];
+    NSLog(@"%lu",(long unsigned)dateComponent.weekOfYear);
+    
+    return (dateComponent.weekOfYear % 2) == 0;
 }
 
 @end
