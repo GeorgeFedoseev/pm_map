@@ -56,5 +56,5 @@ extern "C"  void Server_ListenerCallback_m345032552 (Server_t1489864833 * __this
 extern "C"  void Server_HandleRequest_m640105809 (Server_t1489864833 * __this, RequestContext_t2839801694 * ___context0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.IEnumerator CUDLR.Server::HandleRequests()
 extern "C"  Il2CppObject * Server_HandleRequests_m1944526678 (Server_t1489864833 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.String CUDLR.Server::<RegisterFileHandlers>m__6F(System.Collections.Generic.KeyValuePair`2<System.String,System.String>)
-extern "C"  String_t* Server_U3CRegisterFileHandlersU3Em__6F_m1235578663 (Il2CppObject * __this /* static, unused */, KeyValuePair_2_t726430633  ___x0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String CUDLR.Server::<RegisterFileHandlers>m__72(System.Collections.Generic.KeyValuePair`2<System.String,System.String>)
+extern "C"  String_t* Server_U3CRegisterFileHandlersU3Em__72_m3609746482 (Il2CppObject * __this /* static, unused */, KeyValuePair_2_t726430633  ___x0, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -37,5 +37,5 @@ extern "C"  void ScrollRectSnap_scrollToPage_m1075993836 (ScrollRectSnap_t382750
 extern "C"  int32_t ScrollRectSnap_FindNearest_m133466169 (ScrollRectSnap_t3827508699 * __this, float ___f0, SingleU5BU5D_t2316563989* ___array1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 ScrollRectSnap::getCurrentPage()
 extern "C"  int32_t ScrollRectSnap_getCurrentPage_m1612772420 (ScrollRectSnap_t3827508699 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void ScrollRectSnap::<OnSnap>m__2E()
-extern "C"  void ScrollRectSnap_U3COnSnapU3Em__2E_m4020102181 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void ScrollRectSnap::<OnSnap>m__31()
+extern "C"  void ScrollRectSnap_U3COnSnapU3Em__31_m4020112752 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;

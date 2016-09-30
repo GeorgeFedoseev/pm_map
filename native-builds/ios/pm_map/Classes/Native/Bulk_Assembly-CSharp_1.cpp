@@ -13,6 +13,8 @@
 #include <limits>
 #include <assert.h>
 
+// MaterialUI.Anim/Cube
+struct Cube_t2689258848;
 // MaterialUI.Anim/Quint
 struct Quint_t1775582080;
 // MaterialUI.Anim/Sept
@@ -209,18 +211,18 @@ struct SearchResults3d_t3903482911;
 struct SuggestionRowScriptU5BU5D_t2174021468;
 // UnityEngine.CanvasRenderer[]
 struct CanvasRendererU5BU5D_t3629292454;
-// SearchBoxScript/<findSuggestions>c__AnonStorey27
-struct U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537;
-// SearchBoxScript/<findSuggestions>c__AnonStorey27/<findSuggestions>c__AnonStorey28
-struct U3CfindSuggestionsU3Ec__AnonStorey28_t859833583;
+// SearchBoxScript/<findSuggestions>c__AnonStorey28
+struct U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538;
+// SearchBoxScript/<findSuggestions>c__AnonStorey28/<findSuggestions>c__AnonStorey29
+struct U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583;
 // SuggestionRowScript
 struct SuggestionRowScript_t435637633;
 // UnityEngine.Sprite
 struct Sprite_t3199167241;
-// SearchBoxScript/<findSuggestions>c__AnonStorey27/<findSuggestions>c__AnonStorey28/<findSuggestions>c__AnonStorey29
-struct U3CfindSuggestionsU3Ec__AnonStorey29_t851249898;
-// SearchBoxScript/<searchInputChanged>c__AnonStorey26
-struct U3CsearchInputChangedU3Ec__AnonStorey26_t66699418;
+// SearchBoxScript/<findSuggestions>c__AnonStorey28/<findSuggestions>c__AnonStorey29/<findSuggestions>c__AnonStorey2A
+struct U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042;
+// SearchBoxScript/<searchInputChanged>c__AnonStorey27
+struct U3CsearchInputChangedU3Ec__AnonStorey27_t66699419;
 // System.Collections.Generic.List`1<FacilityScript>
 struct List_1_t76155966;
 // FacilityScript
@@ -287,8 +289,8 @@ struct PrimaryKeyAttribute_t2138673889;
 #include "class-internals.h"
 #include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Array1146569071.h"
-#include "AssemblyU2DCSharp_MaterialUI_Anim_Quint1775582080.h"
-#include "AssemblyU2DCSharp_MaterialUI_Anim_Quint1775582080MethodDeclarations.h"
+#include "AssemblyU2DCSharp_MaterialUI_Anim_Cube2689258848.h"
+#include "AssemblyU2DCSharp_MaterialUI_Anim_Cube2689258848MethodDeclarations.h"
 #include "mscorlib_System_Void2863195528.h"
 #include "mscorlib_System_Object4170816371MethodDeclarations.h"
 #include "mscorlib_System_Single4291918972.h"
@@ -296,6 +298,8 @@ struct PrimaryKeyAttribute_t2138673889;
 #include "UnityEngine_UnityEngine_Vector24282066565.h"
 #include "UnityEngine_UnityEngine_Vector34282066566.h"
 #include "UnityEngine_UnityEngine_Color4194546905.h"
+#include "AssemblyU2DCSharp_MaterialUI_Anim_Quint1775582080.h"
+#include "AssemblyU2DCSharp_MaterialUI_Anim_Quint1775582080MethodDeclarations.h"
 #include "AssemblyU2DCSharp_MaterialUI_Anim_Sept2689720577.h"
 #include "AssemblyU2DCSharp_MaterialUI_Anim_Sept2689720577MethodDeclarations.h"
 #include "AssemblyU2DCSharp_MaterialUI_AnimType2264732311.h"
@@ -331,7 +335,6 @@ struct PrimaryKeyAttribute_t2138673889;
 #include "mscorlib_System_Int321153838500.h"
 #include "UnityEngine_UnityEngine_Vector34282066566MethodDeclarations.h"
 #include "AssemblyU2DCSharp_MaterialUI_Anim354337085MethodDeclarations.h"
-#include "AssemblyU2DCSharp_MaterialUI_Anim_Cube2689258848MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Application2856536070MethodDeclarations.h"
 #include "AssemblyU2DCSharp_MaterialUI_CheckBoxToggler4178758561MethodDeclarations.h"
 #include "UnityEngine_UI_UnityEngine_EventSystems_PointerEve1848751023.h"
@@ -655,20 +658,20 @@ struct PrimaryKeyAttribute_t2138673889;
 #include "mscorlib_System_Collections_Generic_List_1_Enumerato95828736.h"
 #include "mscorlib_System_Collections_Generic_Dictionary_2_ge696267445.h"
 #include "mscorlib_System_Action_1_gen403047693.h"
-#include "AssemblyU2DCSharp_SearchBoxScript_U3CsearchInputChan66699418MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SearchBoxScript_U3CsearchInputChan66699418.h"
-#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestio3485866537MethodDeclarations.h"
+#include "AssemblyU2DCSharp_SearchBoxScript_U3CsearchInputChan66699419MethodDeclarations.h"
+#include "AssemblyU2DCSharp_SearchBoxScript_U3CsearchInputChan66699419.h"
+#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestio3485866538MethodDeclarations.h"
 #include "AssemblyU2DCSharp_SuggestionRowScript435637633.h"
-#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestio3485866537.h"
+#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestio3485866538.h"
 #include "mscorlib_System_Threading_Thread1973216770.h"
 #include "AssemblyU2DCSharp_iTween_EaseType2734598229.h"
 #include "UnityEngine_UnityEngine_CanvasRenderer3950887807MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_CanvasRenderer3950887807.h"
-#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestion859833583MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestion859833583.h"
-#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestion851249898MethodDeclarations.h"
+#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestio1885325583MethodDeclarations.h"
+#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestio1885325583.h"
+#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestio1268665042MethodDeclarations.h"
 #include "UnityEngine_UI_UnityEngine_UI_Button3896396478MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestion851249898.h"
+#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestio1268665042.h"
 #include "UnityEngine_UnityEngine_Resources2918352667.h"
 #include "UnityEngine_UI_UnityEngine_UI_Button_ButtonClicked2796375743.h"
 #include "mscorlib_System_Collections_Generic_List_1_gen3261825743MethodDeclarations.h"
@@ -790,7 +793,6 @@ struct PrimaryKeyAttribute_t2138673889;
 #include "AssemblyU2DCSharp_SQLite_SQLite3_ColType3329240688.h"
 #include "AssemblyU2DCSharp_SQLite_SQLite3_ColType3329240688MethodDeclarations.h"
 #include "AssemblyU2DCSharp_SQLite_SQLite3_ConfigOption3651740289MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SQLite_SQLite3_Result4130067399MethodDeclarations.h"
 
 // !!0 UnityEngine.GameObject::GetComponent<System.Object>()
 extern "C"  Il2CppObject * GameObject_GetComponent_TisIl2CppObject_m2869055028_gshared (GameObject_t3674682005 * __this, const MethodInfo* method);
@@ -930,6 +932,650 @@ extern "C"  Il2CppObject* Enumerable_Cast_TisIl2CppObject_m3904275306_gshared (I
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void MaterialUI.Anim/Cube::.ctor()
+extern "C"  void Cube__ctor_m3771175227 (Cube_t2689258848 * __this, const MethodInfo* method)
+{
+	{
+		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Single MaterialUI.Anim/Cube::In(System.Single,System.Single,System.Single,System.Single)
+extern Il2CppClass* Mathf_t4203372500_il2cpp_TypeInfo_var;
+extern const uint32_t Cube_In_m1771262144_MetadataUsageId;
+extern "C"  float Cube_In_m1771262144 (Il2CppObject * __this /* static, unused */, float ___startValue0, float ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (Cube_In_m1771262144_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	float V_0 = 0.0f;
+	{
+		float L_0 = ___endValue1;
+		float L_1 = ___startValue0;
+		V_0 = ((float)((float)L_0-(float)L_1));
+		float L_2 = ___time2;
+		float L_3 = ___duration3;
+		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4203372500_il2cpp_TypeInfo_var);
+		float L_4 = Mathf_Clamp_m3872743893(NULL /*static, unused*/, L_2, (0.0f), L_3, /*hidden argument*/NULL);
+		___time2 = L_4;
+		float L_5 = ___time2;
+		float L_6 = ___duration3;
+		___time2 = ((float)((float)L_5/(float)L_6));
+		float L_7 = ___time2;
+		if ((!(((float)L_7) == ((float)(0.0f)))))
+		{
+			goto IL_0024;
+		}
+	}
+	{
+		float L_8 = ___startValue0;
+		return L_8;
+	}
+
+IL_0024:
+	{
+		float L_9 = ___time2;
+		if ((!(((float)L_9) == ((float)(1.0f)))))
+		{
+			goto IL_0031;
+		}
+	}
+	{
+		float L_10 = ___endValue1;
+		return L_10;
+	}
+
+IL_0031:
+	{
+		float L_11 = V_0;
+		float L_12 = ___time2;
+		float L_13 = ___time2;
+		float L_14 = ___time2;
+		float L_15 = ___startValue0;
+		return ((float)((float)((float)((float)((float)((float)((float)((float)L_11*(float)L_12))*(float)L_13))*(float)L_14))+(float)L_15));
+	}
+}
+// UnityEngine.Vector2 MaterialUI.Anim/Cube::In(UnityEngine.Vector2,UnityEngine.Vector2,System.Single,System.Single)
+extern "C"  Vector2_t4282066565  Cube_In_m1055570799 (Il2CppObject * __this /* static, unused */, Vector2_t4282066565  ___startValue0, Vector2_t4282066565  ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	Vector2_t4282066565  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		Vector2_t4282066565  L_0 = ___startValue0;
+		V_0 = L_0;
+		float L_1 = (&___startValue0)->get_x_1();
+		float L_2 = (&___endValue1)->get_x_1();
+		float L_3 = ___time2;
+		float L_4 = ___duration3;
+		float L_5 = Cube_In_m1771262144(NULL /*static, unused*/, L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		(&V_0)->set_x_1(L_5);
+		float L_6 = (&___startValue0)->get_y_2();
+		float L_7 = (&___endValue1)->get_y_2();
+		float L_8 = ___time2;
+		float L_9 = ___duration3;
+		float L_10 = Cube_In_m1771262144(NULL /*static, unused*/, L_6, L_7, L_8, L_9, /*hidden argument*/NULL);
+		(&V_0)->set_y_2(L_10);
+		Vector2_t4282066565  L_11 = V_0;
+		return L_11;
+	}
+}
+// UnityEngine.Vector3 MaterialUI.Anim/Cube::In(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Single)
+extern "C"  Vector3_t4282066566  Cube_In_m1502039406 (Il2CppObject * __this /* static, unused */, Vector3_t4282066566  ___startValue0, Vector3_t4282066566  ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	Vector3_t4282066566  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		Vector3_t4282066566  L_0 = ___startValue0;
+		V_0 = L_0;
+		float L_1 = (&___startValue0)->get_x_1();
+		float L_2 = (&___endValue1)->get_x_1();
+		float L_3 = ___time2;
+		float L_4 = ___duration3;
+		float L_5 = Cube_In_m1771262144(NULL /*static, unused*/, L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		(&V_0)->set_x_1(L_5);
+		float L_6 = (&___startValue0)->get_y_2();
+		float L_7 = (&___endValue1)->get_y_2();
+		float L_8 = ___time2;
+		float L_9 = ___duration3;
+		float L_10 = Cube_In_m1771262144(NULL /*static, unused*/, L_6, L_7, L_8, L_9, /*hidden argument*/NULL);
+		(&V_0)->set_y_2(L_10);
+		float L_11 = (&___startValue0)->get_z_3();
+		float L_12 = (&___endValue1)->get_z_3();
+		float L_13 = ___time2;
+		float L_14 = ___duration3;
+		float L_15 = Cube_In_m1771262144(NULL /*static, unused*/, L_11, L_12, L_13, L_14, /*hidden argument*/NULL);
+		(&V_0)->set_z_3(L_15);
+		Vector3_t4282066566  L_16 = V_0;
+		return L_16;
+	}
+}
+// UnityEngine.Color MaterialUI.Anim/Cube::In(UnityEngine.Color,UnityEngine.Color,System.Single,System.Single)
+extern "C"  Color_t4194546905  Cube_In_m3628999771 (Il2CppObject * __this /* static, unused */, Color_t4194546905  ___startValue0, Color_t4194546905  ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	Color_t4194546905  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		Color_t4194546905  L_0 = ___startValue0;
+		V_0 = L_0;
+		float L_1 = (&___startValue0)->get_r_0();
+		float L_2 = (&___endValue1)->get_r_0();
+		float L_3 = ___time2;
+		float L_4 = ___duration3;
+		float L_5 = Cube_In_m1771262144(NULL /*static, unused*/, L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		(&V_0)->set_r_0(L_5);
+		float L_6 = (&___startValue0)->get_g_1();
+		float L_7 = (&___endValue1)->get_g_1();
+		float L_8 = ___time2;
+		float L_9 = ___duration3;
+		float L_10 = Cube_In_m1771262144(NULL /*static, unused*/, L_6, L_7, L_8, L_9, /*hidden argument*/NULL);
+		(&V_0)->set_g_1(L_10);
+		float L_11 = (&___startValue0)->get_b_2();
+		float L_12 = (&___endValue1)->get_b_2();
+		float L_13 = ___time2;
+		float L_14 = ___duration3;
+		float L_15 = Cube_In_m1771262144(NULL /*static, unused*/, L_11, L_12, L_13, L_14, /*hidden argument*/NULL);
+		(&V_0)->set_b_2(L_15);
+		float L_16 = (&___startValue0)->get_a_3();
+		float L_17 = (&___endValue1)->get_a_3();
+		float L_18 = ___time2;
+		float L_19 = ___duration3;
+		float L_20 = Cube_In_m1771262144(NULL /*static, unused*/, L_16, L_17, L_18, L_19, /*hidden argument*/NULL);
+		(&V_0)->set_a_3(L_20);
+		Color_t4194546905  L_21 = V_0;
+		return L_21;
+	}
+}
+// System.Single MaterialUI.Anim/Cube::Out(System.Single,System.Single,System.Single,System.Single)
+extern Il2CppClass* Mathf_t4203372500_il2cpp_TypeInfo_var;
+extern const uint32_t Cube_Out_m1531777055_MetadataUsageId;
+extern "C"  float Cube_Out_m1531777055 (Il2CppObject * __this /* static, unused */, float ___startValue0, float ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (Cube_Out_m1531777055_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	float V_0 = 0.0f;
+	{
+		float L_0 = ___endValue1;
+		float L_1 = ___startValue0;
+		V_0 = ((float)((float)L_0-(float)L_1));
+		float L_2 = ___time2;
+		float L_3 = ___duration3;
+		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4203372500_il2cpp_TypeInfo_var);
+		float L_4 = Mathf_Clamp_m3872743893(NULL /*static, unused*/, L_2, (0.0f), L_3, /*hidden argument*/NULL);
+		___time2 = L_4;
+		float L_5 = ___time2;
+		float L_6 = ___duration3;
+		___time2 = ((float)((float)L_5/(float)L_6));
+		float L_7 = ___time2;
+		if ((!(((float)L_7) == ((float)(0.0f)))))
+		{
+			goto IL_0024;
+		}
+	}
+	{
+		float L_8 = ___startValue0;
+		return L_8;
+	}
+
+IL_0024:
+	{
+		float L_9 = ___time2;
+		if ((!(((float)L_9) == ((float)(1.0f)))))
+		{
+			goto IL_0031;
+		}
+	}
+	{
+		float L_10 = ___endValue1;
+		return L_10;
+	}
+
+IL_0031:
+	{
+		float L_11 = ___time2;
+		___time2 = ((float)((float)L_11-(float)(1.0f)));
+		float L_12 = V_0;
+		float L_13 = ___time2;
+		float L_14 = ___time2;
+		float L_15 = ___time2;
+		float L_16 = ___startValue0;
+		return ((float)((float)((float)((float)L_12*(float)((float)((float)((float)((float)((float)((float)L_13*(float)L_14))*(float)L_15))+(float)(1.0f)))))+(float)L_16));
+	}
+}
+// UnityEngine.Vector2 MaterialUI.Anim/Cube::Out(UnityEngine.Vector2,UnityEngine.Vector2,System.Single,System.Single)
+extern "C"  Vector2_t4282066565  Cube_Out_m2520982220 (Il2CppObject * __this /* static, unused */, Vector2_t4282066565  ___startValue0, Vector2_t4282066565  ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	Vector2_t4282066565  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		Vector2_t4282066565  L_0 = ___startValue0;
+		V_0 = L_0;
+		float L_1 = (&___startValue0)->get_x_1();
+		float L_2 = (&___endValue1)->get_x_1();
+		float L_3 = ___time2;
+		float L_4 = ___duration3;
+		float L_5 = Cube_Out_m1531777055(NULL /*static, unused*/, L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		(&V_0)->set_x_1(L_5);
+		float L_6 = (&___startValue0)->get_y_2();
+		float L_7 = (&___endValue1)->get_y_2();
+		float L_8 = ___time2;
+		float L_9 = ___duration3;
+		float L_10 = Cube_Out_m1531777055(NULL /*static, unused*/, L_6, L_7, L_8, L_9, /*hidden argument*/NULL);
+		(&V_0)->set_y_2(L_10);
+		Vector2_t4282066565  L_11 = V_0;
+		return L_11;
+	}
+}
+// UnityEngine.Vector3 MaterialUI.Anim/Cube::Out(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Single)
+extern "C"  Vector3_t4282066566  Cube_Out_m1763392617 (Il2CppObject * __this /* static, unused */, Vector3_t4282066566  ___startValue0, Vector3_t4282066566  ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	Vector3_t4282066566  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		Vector3_t4282066566  L_0 = ___startValue0;
+		V_0 = L_0;
+		float L_1 = (&___startValue0)->get_x_1();
+		float L_2 = (&___endValue1)->get_x_1();
+		float L_3 = ___time2;
+		float L_4 = ___duration3;
+		float L_5 = Cube_Out_m1531777055(NULL /*static, unused*/, L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		(&V_0)->set_x_1(L_5);
+		float L_6 = (&___startValue0)->get_y_2();
+		float L_7 = (&___endValue1)->get_y_2();
+		float L_8 = ___time2;
+		float L_9 = ___duration3;
+		float L_10 = Cube_Out_m1531777055(NULL /*static, unused*/, L_6, L_7, L_8, L_9, /*hidden argument*/NULL);
+		(&V_0)->set_y_2(L_10);
+		float L_11 = (&___startValue0)->get_z_3();
+		float L_12 = (&___endValue1)->get_z_3();
+		float L_13 = ___time2;
+		float L_14 = ___duration3;
+		float L_15 = Cube_Out_m1531777055(NULL /*static, unused*/, L_11, L_12, L_13, L_14, /*hidden argument*/NULL);
+		(&V_0)->set_z_3(L_15);
+		Vector3_t4282066566  L_16 = V_0;
+		return L_16;
+	}
+}
+// UnityEngine.Color MaterialUI.Anim/Cube::Out(UnityEngine.Color,UnityEngine.Color,System.Single,System.Single)
+extern "C"  Color_t4194546905  Cube_Out_m724909968 (Il2CppObject * __this /* static, unused */, Color_t4194546905  ___startValue0, Color_t4194546905  ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	Color_t4194546905  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		Color_t4194546905  L_0 = ___startValue0;
+		V_0 = L_0;
+		float L_1 = (&___startValue0)->get_r_0();
+		float L_2 = (&___endValue1)->get_r_0();
+		float L_3 = ___time2;
+		float L_4 = ___duration3;
+		float L_5 = Cube_Out_m1531777055(NULL /*static, unused*/, L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		(&V_0)->set_r_0(L_5);
+		float L_6 = (&___startValue0)->get_g_1();
+		float L_7 = (&___endValue1)->get_g_1();
+		float L_8 = ___time2;
+		float L_9 = ___duration3;
+		float L_10 = Cube_Out_m1531777055(NULL /*static, unused*/, L_6, L_7, L_8, L_9, /*hidden argument*/NULL);
+		(&V_0)->set_g_1(L_10);
+		float L_11 = (&___startValue0)->get_b_2();
+		float L_12 = (&___endValue1)->get_b_2();
+		float L_13 = ___time2;
+		float L_14 = ___duration3;
+		float L_15 = Cube_Out_m1531777055(NULL /*static, unused*/, L_11, L_12, L_13, L_14, /*hidden argument*/NULL);
+		(&V_0)->set_b_2(L_15);
+		float L_16 = (&___startValue0)->get_a_3();
+		float L_17 = (&___endValue1)->get_a_3();
+		float L_18 = ___time2;
+		float L_19 = ___duration3;
+		float L_20 = Cube_Out_m1531777055(NULL /*static, unused*/, L_16, L_17, L_18, L_19, /*hidden argument*/NULL);
+		(&V_0)->set_a_3(L_20);
+		Color_t4194546905  L_21 = V_0;
+		return L_21;
+	}
+}
+// System.Single MaterialUI.Anim/Cube::InOut(System.Single,System.Single,System.Single,System.Single)
+extern Il2CppClass* Mathf_t4203372500_il2cpp_TypeInfo_var;
+extern const uint32_t Cube_InOut_m2292340452_MetadataUsageId;
+extern "C"  float Cube_InOut_m2292340452 (Il2CppObject * __this /* static, unused */, float ___startValue0, float ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (Cube_InOut_m2292340452_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	float V_0 = 0.0f;
+	{
+		float L_0 = ___endValue1;
+		float L_1 = ___startValue0;
+		V_0 = ((float)((float)L_0-(float)L_1));
+		float L_2 = ___time2;
+		float L_3 = ___duration3;
+		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4203372500_il2cpp_TypeInfo_var);
+		float L_4 = Mathf_Clamp_m3872743893(NULL /*static, unused*/, L_2, (0.0f), L_3, /*hidden argument*/NULL);
+		___time2 = L_4;
+		float L_5 = ___time2;
+		float L_6 = ___duration3;
+		___time2 = ((float)((float)L_5/(float)((float)((float)L_6/(float)(2.0f)))));
+		float L_7 = ___time2;
+		if ((!(((float)L_7) == ((float)(0.0f)))))
+		{
+			goto IL_002a;
+		}
+	}
+	{
+		float L_8 = ___startValue0;
+		return L_8;
+	}
+
+IL_002a:
+	{
+		float L_9 = ___time2;
+		if ((!(((float)L_9) == ((float)(1.0f)))))
+		{
+			goto IL_0037;
+		}
+	}
+	{
+		float L_10 = ___endValue1;
+		return L_10;
+	}
+
+IL_0037:
+	{
+		float L_11 = ___time2;
+		if ((!(((float)L_11) < ((float)(1.0f)))))
+		{
+			goto IL_0052;
+		}
+	}
+	{
+		float L_12 = V_0;
+		float L_13 = ___time2;
+		float L_14 = ___time2;
+		float L_15 = ___time2;
+		float L_16 = ___startValue0;
+		return ((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)L_12/(float)(2.0f)))*(float)L_13))*(float)L_14))*(float)L_15))+(float)L_16));
+	}
+
+IL_0052:
+	{
+		float L_17 = ___time2;
+		___time2 = ((float)((float)L_17-(float)(2.0f)));
+		float L_18 = V_0;
+		float L_19 = ___time2;
+		float L_20 = ___time2;
+		float L_21 = ___time2;
+		float L_22 = ___startValue0;
+		return ((float)((float)((float)((float)((float)((float)L_18/(float)(2.0f)))*(float)((float)((float)((float)((float)((float)((float)L_19*(float)L_20))*(float)L_21))+(float)(2.0f)))))+(float)L_22));
+	}
+}
+// UnityEngine.Vector2 MaterialUI.Anim/Cube::InOut(UnityEngine.Vector2,UnityEngine.Vector2,System.Single,System.Single)
+extern "C"  Vector2_t4282066565  Cube_InOut_m2364904017 (Il2CppObject * __this /* static, unused */, Vector2_t4282066565  ___startValue0, Vector2_t4282066565  ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	Vector2_t4282066565  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		Vector2_t4282066565  L_0 = ___startValue0;
+		V_0 = L_0;
+		float L_1 = (&___startValue0)->get_x_1();
+		float L_2 = (&___endValue1)->get_x_1();
+		float L_3 = ___time2;
+		float L_4 = ___duration3;
+		float L_5 = Cube_InOut_m2292340452(NULL /*static, unused*/, L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		(&V_0)->set_x_1(L_5);
+		float L_6 = (&___startValue0)->get_y_2();
+		float L_7 = (&___endValue1)->get_y_2();
+		float L_8 = ___time2;
+		float L_9 = ___duration3;
+		float L_10 = Cube_InOut_m2292340452(NULL /*static, unused*/, L_6, L_7, L_8, L_9, /*hidden argument*/NULL);
+		(&V_0)->set_y_2(L_10);
+		Vector2_t4282066565  L_11 = V_0;
+		return L_11;
+	}
+}
+// UnityEngine.Vector3 MaterialUI.Anim/Cube::InOut(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Single)
+extern "C"  Vector3_t4282066566  Cube_InOut_m1182478382 (Il2CppObject * __this /* static, unused */, Vector3_t4282066566  ___startValue0, Vector3_t4282066566  ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	Vector3_t4282066566  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		Vector3_t4282066566  L_0 = ___startValue0;
+		V_0 = L_0;
+		float L_1 = (&___startValue0)->get_x_1();
+		float L_2 = (&___endValue1)->get_x_1();
+		float L_3 = ___time2;
+		float L_4 = ___duration3;
+		float L_5 = Cube_InOut_m2292340452(NULL /*static, unused*/, L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		(&V_0)->set_x_1(L_5);
+		float L_6 = (&___startValue0)->get_y_2();
+		float L_7 = (&___endValue1)->get_y_2();
+		float L_8 = ___time2;
+		float L_9 = ___duration3;
+		float L_10 = Cube_InOut_m2292340452(NULL /*static, unused*/, L_6, L_7, L_8, L_9, /*hidden argument*/NULL);
+		(&V_0)->set_y_2(L_10);
+		float L_11 = (&___startValue0)->get_z_3();
+		float L_12 = (&___endValue1)->get_z_3();
+		float L_13 = ___time2;
+		float L_14 = ___duration3;
+		float L_15 = Cube_InOut_m2292340452(NULL /*static, unused*/, L_11, L_12, L_13, L_14, /*hidden argument*/NULL);
+		(&V_0)->set_z_3(L_15);
+		Vector3_t4282066566  L_16 = V_0;
+		return L_16;
+	}
+}
+// UnityEngine.Color MaterialUI.Anim/Cube::InOut(UnityEngine.Color,UnityEngine.Color,System.Single,System.Single)
+extern "C"  Color_t4194546905  Cube_InOut_m542371477 (Il2CppObject * __this /* static, unused */, Color_t4194546905  ___startValue0, Color_t4194546905  ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	Color_t4194546905  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		Color_t4194546905  L_0 = ___startValue0;
+		V_0 = L_0;
+		float L_1 = (&___startValue0)->get_r_0();
+		float L_2 = (&___endValue1)->get_r_0();
+		float L_3 = ___time2;
+		float L_4 = ___duration3;
+		float L_5 = Cube_InOut_m2292340452(NULL /*static, unused*/, L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		(&V_0)->set_r_0(L_5);
+		float L_6 = (&___startValue0)->get_g_1();
+		float L_7 = (&___endValue1)->get_g_1();
+		float L_8 = ___time2;
+		float L_9 = ___duration3;
+		float L_10 = Cube_InOut_m2292340452(NULL /*static, unused*/, L_6, L_7, L_8, L_9, /*hidden argument*/NULL);
+		(&V_0)->set_g_1(L_10);
+		float L_11 = (&___startValue0)->get_b_2();
+		float L_12 = (&___endValue1)->get_b_2();
+		float L_13 = ___time2;
+		float L_14 = ___duration3;
+		float L_15 = Cube_InOut_m2292340452(NULL /*static, unused*/, L_11, L_12, L_13, L_14, /*hidden argument*/NULL);
+		(&V_0)->set_b_2(L_15);
+		float L_16 = (&___startValue0)->get_a_3();
+		float L_17 = (&___endValue1)->get_a_3();
+		float L_18 = ___time2;
+		float L_19 = ___duration3;
+		float L_20 = Cube_InOut_m2292340452(NULL /*static, unused*/, L_16, L_17, L_18, L_19, /*hidden argument*/NULL);
+		(&V_0)->set_a_3(L_20);
+		Color_t4194546905  L_21 = V_0;
+		return L_21;
+	}
+}
+// System.Single MaterialUI.Anim/Cube::SoftOut(System.Single,System.Single,System.Single,System.Single)
+extern Il2CppClass* Mathf_t4203372500_il2cpp_TypeInfo_var;
+extern const uint32_t Cube_SoftOut_m3270447977_MetadataUsageId;
+extern "C"  float Cube_SoftOut_m3270447977 (Il2CppObject * __this /* static, unused */, float ___startValue0, float ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (Cube_SoftOut_m3270447977_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	float V_0 = 0.0f;
+	{
+		float L_0 = ___endValue1;
+		float L_1 = ___startValue0;
+		V_0 = ((float)((float)L_0-(float)L_1));
+		float L_2 = ___time2;
+		float L_3 = ___duration3;
+		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4203372500_il2cpp_TypeInfo_var);
+		float L_4 = Mathf_Clamp_m3872743893(NULL /*static, unused*/, L_2, (0.0f), L_3, /*hidden argument*/NULL);
+		___time2 = L_4;
+		float L_5 = ___time2;
+		float L_6 = ___duration3;
+		___time2 = ((float)((float)L_5/(float)((float)((float)L_6/(float)(2.0f)))));
+		float L_7 = ___time2;
+		if ((!(((float)L_7) == ((float)(0.0f)))))
+		{
+			goto IL_002a;
+		}
+	}
+	{
+		float L_8 = ___startValue0;
+		return L_8;
+	}
+
+IL_002a:
+	{
+		float L_9 = ___time2;
+		if ((!(((float)L_9) == ((float)(0.5f)))))
+		{
+			goto IL_0037;
+		}
+	}
+	{
+		float L_10 = ___endValue1;
+		return L_10;
+	}
+
+IL_0037:
+	{
+		float L_11 = ___time2;
+		if ((!(((float)L_11) < ((float)(0.559f)))))
+		{
+			goto IL_0060;
+		}
+	}
+	{
+		float L_12 = V_0;
+		float L_13 = ___time2;
+		float L_14 = ___time2;
+		float L_15 = ___time2;
+		float L_16 = ___time2;
+		float L_17 = ___time2;
+		float L_18 = ___time2;
+		float L_19 = ___time2;
+		float L_20 = ___startValue0;
+		return ((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)((float)L_12/(float)(2.0f)))*(float)L_13))*(float)L_14))*(float)L_15))*(float)L_16))*(float)L_17))*(float)L_18))*(float)L_19))*(float)(16.0f)))+(float)L_20));
+	}
+
+IL_0060:
+	{
+		float L_21 = ___time2;
+		___time2 = ((float)((float)L_21-(float)(2.0f)));
+		float L_22 = V_0;
+		float L_23 = ___time2;
+		float L_24 = ___time2;
+		float L_25 = ___time2;
+		float L_26 = ___startValue0;
+		return ((float)((float)((float)((float)((float)((float)L_22/(float)(2.0f)))*(float)((float)((float)((float)((float)((float)((float)((float)((float)L_23*(float)L_24))*(float)L_25))*(float)(0.5772f)))+(float)(2.0f)))))+(float)L_26));
+	}
+}
+// UnityEngine.Vector2 MaterialUI.Anim/Cube::SoftOut(UnityEngine.Vector2,UnityEngine.Vector2,System.Single,System.Single)
+extern "C"  Vector2_t4282066565  Cube_SoftOut_m309577622 (Il2CppObject * __this /* static, unused */, Vector2_t4282066565  ___startValue0, Vector2_t4282066565  ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	Vector2_t4282066565  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		Vector2_t4282066565  L_0 = ___startValue0;
+		V_0 = L_0;
+		float L_1 = (&___startValue0)->get_x_1();
+		float L_2 = (&___endValue1)->get_x_1();
+		float L_3 = ___time2;
+		float L_4 = ___duration3;
+		float L_5 = Cube_SoftOut_m3270447977(NULL /*static, unused*/, L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		(&V_0)->set_x_1(L_5);
+		float L_6 = (&___startValue0)->get_y_2();
+		float L_7 = (&___endValue1)->get_y_2();
+		float L_8 = ___time2;
+		float L_9 = ___duration3;
+		float L_10 = Cube_SoftOut_m3270447977(NULL /*static, unused*/, L_6, L_7, L_8, L_9, /*hidden argument*/NULL);
+		(&V_0)->set_y_2(L_10);
+		Vector2_t4282066565  L_11 = V_0;
+		return L_11;
+	}
+}
+// UnityEngine.Vector3 MaterialUI.Anim/Cube::SoftOut(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Single)
+extern "C"  Vector3_t4282066566  Cube_SoftOut_m3176585651 (Il2CppObject * __this /* static, unused */, Vector3_t4282066566  ___startValue0, Vector3_t4282066566  ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	Vector3_t4282066566  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		Vector3_t4282066566  L_0 = ___startValue0;
+		V_0 = L_0;
+		float L_1 = (&___startValue0)->get_x_1();
+		float L_2 = (&___endValue1)->get_x_1();
+		float L_3 = ___time2;
+		float L_4 = ___duration3;
+		float L_5 = Cube_SoftOut_m3270447977(NULL /*static, unused*/, L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		(&V_0)->set_x_1(L_5);
+		float L_6 = (&___startValue0)->get_y_2();
+		float L_7 = (&___endValue1)->get_y_2();
+		float L_8 = ___time2;
+		float L_9 = ___duration3;
+		float L_10 = Cube_SoftOut_m3270447977(NULL /*static, unused*/, L_6, L_7, L_8, L_9, /*hidden argument*/NULL);
+		(&V_0)->set_y_2(L_10);
+		float L_11 = (&___startValue0)->get_z_3();
+		float L_12 = (&___endValue1)->get_z_3();
+		float L_13 = ___time2;
+		float L_14 = ___duration3;
+		float L_15 = Cube_SoftOut_m3270447977(NULL /*static, unused*/, L_11, L_12, L_13, L_14, /*hidden argument*/NULL);
+		(&V_0)->set_z_3(L_15);
+		Vector3_t4282066566  L_16 = V_0;
+		return L_16;
+	}
+}
+// UnityEngine.Color MaterialUI.Anim/Cube::SoftOut(UnityEngine.Color,UnityEngine.Color,System.Single,System.Single)
+extern "C"  Color_t4194546905  Cube_SoftOut_m1542325082 (Il2CppObject * __this /* static, unused */, Color_t4194546905  ___startValue0, Color_t4194546905  ___endValue1, float ___time2, float ___duration3, const MethodInfo* method)
+{
+	Color_t4194546905  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		Color_t4194546905  L_0 = ___startValue0;
+		V_0 = L_0;
+		float L_1 = (&___startValue0)->get_r_0();
+		float L_2 = (&___endValue1)->get_r_0();
+		float L_3 = ___time2;
+		float L_4 = ___duration3;
+		float L_5 = Cube_SoftOut_m3270447977(NULL /*static, unused*/, L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		(&V_0)->set_r_0(L_5);
+		float L_6 = (&___startValue0)->get_g_1();
+		float L_7 = (&___endValue1)->get_g_1();
+		float L_8 = ___time2;
+		float L_9 = ___duration3;
+		float L_10 = Cube_SoftOut_m3270447977(NULL /*static, unused*/, L_6, L_7, L_8, L_9, /*hidden argument*/NULL);
+		(&V_0)->set_g_1(L_10);
+		float L_11 = (&___startValue0)->get_b_2();
+		float L_12 = (&___endValue1)->get_b_2();
+		float L_13 = ___time2;
+		float L_14 = ___duration3;
+		float L_15 = Cube_SoftOut_m3270447977(NULL /*static, unused*/, L_11, L_12, L_13, L_14, /*hidden argument*/NULL);
+		(&V_0)->set_b_2(L_15);
+		float L_16 = (&___startValue0)->get_a_3();
+		float L_17 = (&___endValue1)->get_a_3();
+		float L_18 = ___time2;
+		float L_19 = ___duration3;
+		float L_20 = Cube_SoftOut_m3270447977(NULL /*static, unused*/, L_16, L_17, L_18, L_19, /*hidden argument*/NULL);
+		(&V_0)->set_a_3(L_20);
+		Color_t4194546905  L_21 = V_0;
+		return L_21;
+	}
+}
 // System.Void MaterialUI.Anim/Quint::.ctor()
 extern "C"  void Quint__ctor_m721202667 (Quint_t1775582080 * __this, const MethodInfo* method)
 {
@@ -8013,7 +8659,7 @@ extern "C"  void InputFieldConfig_OnDeselect_m4110540692 (InputFieldConfig_t9005
 extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppClass* Loom_t2374337_il2cpp_TypeInfo_var;
-extern const MethodInfo* InputFieldConfig_U3CRefreshU3Em__73_m1283701192_MethodInfo_var;
+extern const MethodInfo* InputFieldConfig_U3CRefreshU3Em__76_m1283704075_MethodInfo_var;
 extern const uint32_t InputFieldConfig_Refresh_m2291919679_MetadataUsageId;
 extern "C"  void InputFieldConfig_Refresh_m2291919679 (InputFieldConfig_t900584798 * __this, const MethodInfo* method)
 {
@@ -8026,7 +8672,7 @@ extern "C"  void InputFieldConfig_Refresh_m2291919679 (InputFieldConfig_t9005847
 	{
 		InputFieldConfig_OnSelect_m3629624275(__this, (BaseEventData_t2054899105 *)NULL, /*hidden argument*/NULL);
 		IntPtr_t L_0;
-		L_0.set_m_value_0((void*)(void*)InputFieldConfig_U3CRefreshU3Em__73_m1283701192_MethodInfo_var);
+		L_0.set_m_value_0((void*)(void*)InputFieldConfig_U3CRefreshU3Em__76_m1283704075_MethodInfo_var);
 		Action_t3771233898 * L_1 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 		Action__ctor_m2957240604(L_1, __this, L_0, /*hidden argument*/NULL);
 		float L_2 = __this->get_animationDuration_5();
@@ -8380,8 +9026,8 @@ extern "C"  Il2CppObject * InputFieldConfig_DelayedHeight_m144287253 (InputField
 		return L_2;
 	}
 }
-// System.Void MaterialUI.InputFieldConfig::<Refresh>m__73()
-extern "C"  void InputFieldConfig_U3CRefreshU3Em__73_m1283701192 (InputFieldConfig_t900584798 * __this, const MethodInfo* method)
+// System.Void MaterialUI.InputFieldConfig::<Refresh>m__76()
+extern "C"  void InputFieldConfig_U3CRefreshU3Em__76_m1283704075 (InputFieldConfig_t900584798 * __this, const MethodInfo* method)
 {
 	{
 		InputFieldConfig_OnDeselect_m4110540692(__this, (BaseEventData_t2054899105 *)NULL, /*hidden argument*/NULL);
@@ -24844,7 +25490,7 @@ IL_004a:
 // System.Void ScrollRectSnap::.ctor()
 extern Il2CppClass* ScrollRectSnap_t3827508699_il2cpp_TypeInfo_var;
 extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
-extern const MethodInfo* ScrollRectSnap_U3COnSnapU3Em__2E_m4020102181_MethodInfo_var;
+extern const MethodInfo* ScrollRectSnap_U3COnSnapU3Em__31_m4020112752_MethodInfo_var;
 extern const uint32_t ScrollRectSnap__ctor_m293604640_MetadataUsageId;
 extern "C"  void ScrollRectSnap__ctor_m293604640 (ScrollRectSnap_t3827508699 * __this, const MethodInfo* method)
 {
@@ -24867,7 +25513,7 @@ extern "C"  void ScrollRectSnap__ctor_m293604640 (ScrollRectSnap_t3827508699 * _
 	}
 	{
 		IntPtr_t L_1;
-		L_1.set_m_value_0((void*)(void*)ScrollRectSnap_U3COnSnapU3Em__2E_m4020102181_MethodInfo_var);
+		L_1.set_m_value_0((void*)(void*)ScrollRectSnap_U3COnSnapU3Em__31_m4020112752_MethodInfo_var);
 		Action_t3771233898 * L_2 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 		Action__ctor_m2957240604(L_2, NULL, L_1, /*hidden argument*/NULL);
 		((ScrollRectSnap_t3827508699_StaticFields*)ScrollRectSnap_t3827508699_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cacheF_17(L_2);
@@ -25369,8 +26015,8 @@ extern "C"  int32_t ScrollRectSnap_getCurrentPage_m1612772420 (ScrollRectSnap_t3
 		return L_2;
 	}
 }
-// System.Void ScrollRectSnap::<OnSnap>m__2E()
-extern "C"  void ScrollRectSnap_U3COnSnapU3Em__2E_m4020102181 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
+// System.Void ScrollRectSnap::<OnSnap>m__31()
+extern "C"  void ScrollRectSnap_U3COnSnapU3Em__31_m4020112752 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	{
 		return;
@@ -26070,11 +26716,11 @@ IL_0210:
 	}
 }
 // System.Void SearchBoxScript::searchInputChanged(System.String)
-extern Il2CppClass* U3CsearchInputChangedU3Ec__AnonStorey26_t66699418_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CsearchInputChangedU3Ec__AnonStorey27_t66699419_il2cpp_TypeInfo_var;
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppClass* Loom_t2374337_il2cpp_TypeInfo_var;
 extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CsearchInputChangedU3Ec__AnonStorey26_U3CU3Em__2F_m1837607918_MethodInfo_var;
+extern const MethodInfo* U3CsearchInputChangedU3Ec__AnonStorey27_U3CU3Em__32_m1966701208_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral1939471721;
 extern const uint32_t SearchBoxScript_searchInputChanged_m959641961_MetadataUsageId;
 extern "C"  void SearchBoxScript_searchInputChanged_m959641961 (SearchBoxScript_t2166998414 * __this, String_t* ___str0, const MethodInfo* method)
@@ -26085,12 +26731,12 @@ extern "C"  void SearchBoxScript_searchInputChanged_m959641961 (SearchBoxScript_
 		il2cpp_codegen_initialize_method (SearchBoxScript_searchInputChanged_m959641961_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
-	U3CsearchInputChangedU3Ec__AnonStorey26_t66699418 * V_0 = NULL;
+	U3CsearchInputChangedU3Ec__AnonStorey27_t66699419 * V_0 = NULL;
 	{
-		U3CsearchInputChangedU3Ec__AnonStorey26_t66699418 * L_0 = (U3CsearchInputChangedU3Ec__AnonStorey26_t66699418 *)il2cpp_codegen_object_new(U3CsearchInputChangedU3Ec__AnonStorey26_t66699418_il2cpp_TypeInfo_var);
-		U3CsearchInputChangedU3Ec__AnonStorey26__ctor_m3659841553(L_0, /*hidden argument*/NULL);
+		U3CsearchInputChangedU3Ec__AnonStorey27_t66699419 * L_0 = (U3CsearchInputChangedU3Ec__AnonStorey27_t66699419 *)il2cpp_codegen_object_new(U3CsearchInputChangedU3Ec__AnonStorey27_t66699419_il2cpp_TypeInfo_var);
+		U3CsearchInputChangedU3Ec__AnonStorey27__ctor_m3463328048(L_0, /*hidden argument*/NULL);
 		V_0 = L_0;
-		U3CsearchInputChangedU3Ec__AnonStorey26_t66699418 * L_1 = V_0;
+		U3CsearchInputChangedU3Ec__AnonStorey27_t66699419 * L_1 = V_0;
 		NullCheck(L_1);
 		L_1->set_U3CU3Ef__this_1(__this);
 		SearchBoxScript_updateClearButton_m2633178545(__this, /*hidden argument*/NULL);
@@ -26123,7 +26769,7 @@ IL_0039:
 
 IL_004a:
 	{
-		U3CsearchInputChangedU3Ec__AnonStorey26_t66699418 * L_9 = V_0;
+		U3CsearchInputChangedU3Ec__AnonStorey27_t66699419 * L_9 = V_0;
 		SubmitInputField_t2681522600 * L_10 = __this->get_input_4();
 		NullCheck(L_10);
 		String_t* L_11 = InputField_get_text_m3972300732(L_10, /*hidden argument*/NULL);
@@ -26133,9 +26779,9 @@ IL_004a:
 		L_9->set_query_0(L_12);
 		IL2CPP_RUNTIME_CLASS_INIT(Loom_t2374337_il2cpp_TypeInfo_var);
 		Loom_removeByName_m916048242(NULL /*static, unused*/, _stringLiteral1939471721, /*hidden argument*/NULL);
-		U3CsearchInputChangedU3Ec__AnonStorey26_t66699418 * L_13 = V_0;
+		U3CsearchInputChangedU3Ec__AnonStorey27_t66699419 * L_13 = V_0;
 		IntPtr_t L_14;
-		L_14.set_m_value_0((void*)(void*)U3CsearchInputChangedU3Ec__AnonStorey26_U3CU3Em__2F_m1837607918_MethodInfo_var);
+		L_14.set_m_value_0((void*)(void*)U3CsearchInputChangedU3Ec__AnonStorey27_U3CU3Em__32_m1966701208_MethodInfo_var);
 		Action_t3771233898 * L_15 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 		Action__ctor_m2957240604(L_15, L_13, L_14, /*hidden argument*/NULL);
 		Loom_QueueOnMainThread_m3879973843(NULL /*static, unused*/, L_15, (0.1f), _stringLiteral1939471721, /*hidden argument*/NULL);
@@ -26241,11 +26887,11 @@ IL_0065:
 	}
 }
 // System.Void SearchBoxScript::findSuggestions(System.String)
-extern Il2CppClass* U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538_il2cpp_TypeInfo_var;
 extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
 extern Il2CppClass* Loom_t2374337_il2cpp_TypeInfo_var;
 extern const MethodInfo* Component_GetComponentsInChildren_TisSuggestionRowScript_t435637633_m2200755335_MethodInfo_var;
-extern const MethodInfo* U3CfindSuggestionsU3Ec__AnonStorey27_U3CU3Em__30_m4031478776_MethodInfo_var;
+extern const MethodInfo* U3CfindSuggestionsU3Ec__AnonStorey28_U3CU3Em__33_m4160564378_MethodInfo_var;
 extern const uint32_t SearchBoxScript_findSuggestions_m1789017681_MetadataUsageId;
 extern "C"  void SearchBoxScript_findSuggestions_m1789017681 (SearchBoxScript_t2166998414 * __this, String_t* ___query0, const MethodInfo* method)
 {
@@ -26258,21 +26904,21 @@ extern "C"  void SearchBoxScript_findSuggestions_m1789017681 (SearchBoxScript_t2
 	SuggestionRowScript_t435637633 * V_0 = NULL;
 	SuggestionRowScriptU5BU5D_t2174021468* V_1 = NULL;
 	int32_t V_2 = 0;
-	U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * V_3 = NULL;
+	U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * V_3 = NULL;
 	Vector2_t4282066565  V_4;
 	memset(&V_4, 0, sizeof(V_4));
 	{
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_0 = (U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 *)il2cpp_codegen_object_new(U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537_il2cpp_TypeInfo_var);
-		U3CfindSuggestionsU3Ec__AnonStorey27__ctor_m3604023954(L_0, /*hidden argument*/NULL);
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_0 = (U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 *)il2cpp_codegen_object_new(U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538_il2cpp_TypeInfo_var);
+		U3CfindSuggestionsU3Ec__AnonStorey28__ctor_m3407510449(L_0, /*hidden argument*/NULL);
 		V_3 = L_0;
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_1 = V_3;
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_1 = V_3;
 		String_t* L_2 = ___query0;
 		NullCheck(L_1);
 		L_1->set_query_0(L_2);
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_3 = V_3;
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_3 = V_3;
 		NullCheck(L_3);
 		L_3->set_U3CU3Ef__this_1(__this);
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_4 = V_3;
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_4 = V_3;
 		NullCheck(L_4);
 		String_t* L_5 = L_4->get_query_0();
 		NullCheck(L_5);
@@ -26323,9 +26969,9 @@ IL_0056:
 		}
 	}
 	{
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_20 = V_3;
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_20 = V_3;
 		IntPtr_t L_21;
-		L_21.set_m_value_0((void*)(void*)U3CfindSuggestionsU3Ec__AnonStorey27_U3CU3Em__30_m4031478776_MethodInfo_var);
+		L_21.set_m_value_0((void*)(void*)U3CfindSuggestionsU3Ec__AnonStorey28_U3CU3Em__33_m4160564378_MethodInfo_var);
 		Action_t3771233898 * L_22 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 		Action__ctor_m2957240604(L_22, L_20, L_21, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Loom_t2374337_il2cpp_TypeInfo_var);
@@ -26485,7 +27131,7 @@ extern Il2CppClass* Single_t4291918972_il2cpp_TypeInfo_var;
 extern Il2CppClass* EaseType_t2734598229_il2cpp_TypeInfo_var;
 extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
 extern Il2CppClass* Loom_t2374337_il2cpp_TypeInfo_var;
-extern const MethodInfo* SearchBoxScript_U3ChideSuggestionsU3Em__31_m1822116197_MethodInfo_var;
+extern const MethodInfo* SearchBoxScript_U3ChideSuggestionsU3Em__34_m1822119080_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3151786;
 extern Il2CppCodeGenString* _stringLiteral3707;
 extern Il2CppCodeGenString* _stringLiteral2475697000;
@@ -26570,7 +27216,7 @@ extern "C"  void SearchBoxScript_hideSuggestions_m2346912616 (SearchBoxScript_t2
 		iTween_ValueTo_m3858241315(NULL /*static, unused*/, L_1, L_21, /*hidden argument*/NULL);
 		__this->set_suggestionsOpened_8((bool)0);
 		IntPtr_t L_22;
-		L_22.set_m_value_0((void*)(void*)SearchBoxScript_U3ChideSuggestionsU3Em__31_m1822116197_MethodInfo_var);
+		L_22.set_m_value_0((void*)(void*)SearchBoxScript_U3ChideSuggestionsU3Em__34_m1822119080_MethodInfo_var);
 		Action_t3771233898 * L_23 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 		Action__ctor_m2957240604(L_23, __this, L_22, /*hidden argument*/NULL);
 		float L_24 = __this->get_suggestionsAnimTime_9();
@@ -26702,7 +27348,7 @@ extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
 extern Il2CppClass* ObjectU5BU5D_t1108656482_il2cpp_TypeInfo_var;
 extern Il2CppClass* Int32_t1153838500_il2cpp_TypeInfo_var;
 extern Il2CppClass* Single_t4291918972_il2cpp_TypeInfo_var;
-extern const MethodInfo* SearchBoxScript_U3CUpdatePlaceholderU3Em__32_m3487761955_MethodInfo_var;
+extern const MethodInfo* SearchBoxScript_U3CUpdatePlaceholderU3Em__35_m3487764838_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral88029461;
 extern Il2CppCodeGenString* _stringLiteral3151786;
 extern Il2CppCodeGenString* _stringLiteral3707;
@@ -26738,7 +27384,7 @@ extern "C"  void SearchBoxScript_UpdatePlaceholder_m827275813 (SearchBoxScript_t
 		IL2CPP_RUNTIME_CLASS_INIT(Loom_t2374337_il2cpp_TypeInfo_var);
 		Loom_removeByName_m916048242(NULL /*static, unused*/, _stringLiteral88029461, /*hidden argument*/NULL);
 		IntPtr_t L_4;
-		L_4.set_m_value_0((void*)(void*)SearchBoxScript_U3CUpdatePlaceholderU3Em__32_m3487761955_MethodInfo_var);
+		L_4.set_m_value_0((void*)(void*)SearchBoxScript_U3CUpdatePlaceholderU3Em__35_m3487764838_MethodInfo_var);
 		Action_t3771233898 * L_5 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 		Action__ctor_m2957240604(L_5, __this, L_4, /*hidden argument*/NULL);
 		Loom_QueueOnMainThread_m3879973843(NULL /*static, unused*/, L_5, (0.0f), _stringLiteral88029461, /*hidden argument*/NULL);
@@ -26899,8 +27545,8 @@ extern "C"  void SearchBoxScript_changePlaceholderAlpha_m207056329 (SearchBoxScr
 		return;
 	}
 }
-// System.Void SearchBoxScript::<hideSuggestions>m__31()
-extern "C"  void SearchBoxScript_U3ChideSuggestionsU3Em__31_m1822116197 (SearchBoxScript_t2166998414 * __this, const MethodInfo* method)
+// System.Void SearchBoxScript::<hideSuggestions>m__34()
+extern "C"  void SearchBoxScript_U3ChideSuggestionsU3Em__34_m1822119080 (SearchBoxScript_t2166998414 * __this, const MethodInfo* method)
 {
 	{
 		RectTransform_t972643934 * L_0 = __this->get_dialog_3();
@@ -26911,16 +27557,16 @@ extern "C"  void SearchBoxScript_U3ChideSuggestionsU3Em__31_m1822116197 (SearchB
 		return;
 	}
 }
-// System.Void SearchBoxScript::<UpdatePlaceholder>m__32()
+// System.Void SearchBoxScript::<UpdatePlaceholder>m__35()
 extern const MethodInfo* List_1_get_Count_m935595982_MethodInfo_var;
 extern const MethodInfo* List_1_get_Item_m1424439513_MethodInfo_var;
-extern const uint32_t SearchBoxScript_U3CUpdatePlaceholderU3Em__32_m3487761955_MetadataUsageId;
-extern "C"  void SearchBoxScript_U3CUpdatePlaceholderU3Em__32_m3487761955 (SearchBoxScript_t2166998414 * __this, const MethodInfo* method)
+extern const uint32_t SearchBoxScript_U3CUpdatePlaceholderU3Em__35_m3487764838_MetadataUsageId;
+extern "C"  void SearchBoxScript_U3CUpdatePlaceholderU3Em__35_m3487764838 (SearchBoxScript_t2166998414 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (SearchBoxScript_U3CUpdatePlaceholderU3Em__32_m3487761955_MetadataUsageId);
+		il2cpp_codegen_initialize_method (SearchBoxScript_U3CUpdatePlaceholderU3Em__35_m3487764838_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	int32_t V_0 = 0;
@@ -26955,37 +27601,37 @@ IL_0002:
 		return;
 	}
 }
-// System.Void SearchBoxScript/<findSuggestions>c__AnonStorey27::.ctor()
-extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey27__ctor_m3604023954 (U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * __this, const MethodInfo* method)
+// System.Void SearchBoxScript/<findSuggestions>c__AnonStorey28::.ctor()
+extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey28__ctor_m3407510449 (U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Void SearchBoxScript/<findSuggestions>c__AnonStorey27::<>m__30()
-extern Il2CppClass* U3CfindSuggestionsU3Ec__AnonStorey28_t859833583_il2cpp_TypeInfo_var;
+// System.Void SearchBoxScript/<findSuggestions>c__AnonStorey28::<>m__33()
+extern Il2CppClass* U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583_il2cpp_TypeInfo_var;
 extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
 extern Il2CppClass* Loom_t2374337_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CfindSuggestionsU3Ec__AnonStorey28_U3CU3Em__33_m1234466693_MethodInfo_var;
-extern const uint32_t U3CfindSuggestionsU3Ec__AnonStorey27_U3CU3Em__30_m4031478776_MetadataUsageId;
-extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey27_U3CU3Em__30_m4031478776 (U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * __this, const MethodInfo* method)
+extern const MethodInfo* U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__36_m3957779112_MethodInfo_var;
+extern const uint32_t U3CfindSuggestionsU3Ec__AnonStorey28_U3CU3Em__33_m4160564378_MetadataUsageId;
+extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey28_U3CU3Em__33_m4160564378 (U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CfindSuggestionsU3Ec__AnonStorey27_U3CU3Em__30_m4031478776_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CfindSuggestionsU3Ec__AnonStorey28_U3CU3Em__33_m4160564378_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
-	U3CfindSuggestionsU3Ec__AnonStorey28_t859833583 * V_0 = NULL;
+	U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583 * V_0 = NULL;
 	{
-		U3CfindSuggestionsU3Ec__AnonStorey28_t859833583 * L_0 = (U3CfindSuggestionsU3Ec__AnonStorey28_t859833583 *)il2cpp_codegen_object_new(U3CfindSuggestionsU3Ec__AnonStorey28_t859833583_il2cpp_TypeInfo_var);
-		U3CfindSuggestionsU3Ec__AnonStorey28__ctor_m3712845148(L_0, /*hidden argument*/NULL);
+		U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583 * L_0 = (U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583 *)il2cpp_codegen_object_new(U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583_il2cpp_TypeInfo_var);
+		U3CfindSuggestionsU3Ec__AnonStorey29__ctor_m3067635004(L_0, /*hidden argument*/NULL);
 		V_0 = L_0;
-		U3CfindSuggestionsU3Ec__AnonStorey28_t859833583 * L_1 = V_0;
+		U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583 * L_1 = V_0;
 		NullCheck(L_1);
-		L_1->set_U3CU3Ef__refU2439_1(__this);
-		U3CfindSuggestionsU3Ec__AnonStorey28_t859833583 * L_2 = V_0;
+		L_1->set_U3CU3Ef__refU2440_1(__this);
+		U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583 * L_2 = V_0;
 		SearchBoxScript_t2166998414 * L_3 = __this->get_U3CU3Ef__this_1();
 		NullCheck(L_3);
 		AppScript_t3488119340 * L_4 = L_3->get_app_2();
@@ -26996,9 +27642,9 @@ extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey27_U3CU3Em__30_m4031478776 (U
 		List_1_t76155966 * L_7 = FacilitiesManager_findFacilities_m970380452(L_5, L_6, /*hidden argument*/NULL);
 		NullCheck(L_2);
 		L_2->set_found_facilities_0(L_7);
-		U3CfindSuggestionsU3Ec__AnonStorey28_t859833583 * L_8 = V_0;
+		U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583 * L_8 = V_0;
 		IntPtr_t L_9;
-		L_9.set_m_value_0((void*)(void*)U3CfindSuggestionsU3Ec__AnonStorey28_U3CU3Em__33_m1234466693_MethodInfo_var);
+		L_9.set_m_value_0((void*)(void*)U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__36_m3957779112_MethodInfo_var);
 		Action_t3771233898 * L_10 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 		Action__ctor_m2957240604(L_10, L_8, L_9, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Loom_t2374337_il2cpp_TypeInfo_var);
@@ -27006,16 +27652,16 @@ extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey27_U3CU3Em__30_m4031478776 (U
 		return;
 	}
 }
-// System.Void SearchBoxScript/<findSuggestions>c__AnonStorey27/<findSuggestions>c__AnonStorey28::.ctor()
-extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey28__ctor_m3712845148 (U3CfindSuggestionsU3Ec__AnonStorey28_t859833583 * __this, const MethodInfo* method)
+// System.Void SearchBoxScript/<findSuggestions>c__AnonStorey28/<findSuggestions>c__AnonStorey29::.ctor()
+extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey29__ctor_m3067635004 (U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Void SearchBoxScript/<findSuggestions>c__AnonStorey27/<findSuggestions>c__AnonStorey28::<>m__33()
-extern Il2CppClass* U3CfindSuggestionsU3Ec__AnonStorey29_t851249898_il2cpp_TypeInfo_var;
+// System.Void SearchBoxScript/<findSuggestions>c__AnonStorey28/<findSuggestions>c__AnonStorey29::<>m__36()
+extern Il2CppClass* U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042_il2cpp_TypeInfo_var;
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
 extern Il2CppClass* UnityAction_t594794173_il2cpp_TypeInfo_var;
@@ -27026,18 +27672,18 @@ extern const MethodInfo* List_1_GetEnumerator_m3666797670_MethodInfo_var;
 extern const MethodInfo* Enumerator_get_Current_m1350879634_MethodInfo_var;
 extern const MethodInfo* PoolSystem_spawn_TisSuggestionRowScript_t435637633_m1045392173_MethodInfo_var;
 extern const MethodInfo* Resources_Load_TisSprite_t3199167241_m3887230130_MethodInfo_var;
-extern const MethodInfo* U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__34_m3020546459_MethodInfo_var;
+extern const MethodInfo* U3CfindSuggestionsU3Ec__AnonStorey2A_U3CU3Em__37_m2771987446_MethodInfo_var;
 extern const MethodInfo* Enumerator_MoveNext_m4267005322_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral4241756447;
 extern Il2CppCodeGenString* _stringLiteral1893719408;
 extern Il2CppCodeGenString* _stringLiteral3633642193;
-extern const uint32_t U3CfindSuggestionsU3Ec__AnonStorey28_U3CU3Em__33_m1234466693_MetadataUsageId;
-extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey28_U3CU3Em__33_m1234466693 (U3CfindSuggestionsU3Ec__AnonStorey28_t859833583 * __this, const MethodInfo* method)
+extern const uint32_t U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__36_m3957779112_MetadataUsageId;
+extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__36_m3957779112 (U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CfindSuggestionsU3Ec__AnonStorey28_U3CU3Em__33_m1234466693_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__36_m3957779112_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	FacilityScript_t3002937710 * V_0 = NULL;
@@ -27046,7 +27692,7 @@ extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey28_U3CU3Em__33_m1234466693 (U
 	SuggestionRowScript_t435637633 * V_2 = NULL;
 	Sprite_t3199167241 * V_3 = NULL;
 	float V_4 = 0.0f;
-	U3CfindSuggestionsU3Ec__AnonStorey29_t851249898 * V_5 = NULL;
+	U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042 * V_5 = NULL;
 	Vector2_t4282066565  V_6;
 	memset(&V_6, 0, sizeof(V_6));
 	Vector2_t4282066565  V_7;
@@ -27084,14 +27730,14 @@ IL_0022:
 		{
 			FacilityScript_t3002937710 * L_4 = Enumerator_get_Current_m1350879634((&V_1), /*hidden argument*/Enumerator_get_Current_m1350879634_MethodInfo_var);
 			V_0 = L_4;
-			U3CfindSuggestionsU3Ec__AnonStorey29_t851249898 * L_5 = (U3CfindSuggestionsU3Ec__AnonStorey29_t851249898 *)il2cpp_codegen_object_new(U3CfindSuggestionsU3Ec__AnonStorey29_t851249898_il2cpp_TypeInfo_var);
-			U3CfindSuggestionsU3Ec__AnonStorey29__ctor_m3911351537(L_5, /*hidden argument*/NULL);
+			U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042 * L_5 = (U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042 *)il2cpp_codegen_object_new(U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042_il2cpp_TypeInfo_var);
+			U3CfindSuggestionsU3Ec__AnonStorey2A__ctor_m2999362057(L_5, /*hidden argument*/NULL);
 			V_5 = L_5;
-			U3CfindSuggestionsU3Ec__AnonStorey29_t851249898 * L_6 = V_5;
-			U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_7 = __this->get_U3CU3Ef__refU2439_1();
+			U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042 * L_6 = V_5;
+			U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_7 = __this->get_U3CU3Ef__refU2440_1();
 			NullCheck(L_6);
-			L_6->set_U3CU3Ef__refU2439_1(L_7);
-			U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_8 = __this->get_U3CU3Ef__refU2439_1();
+			L_6->set_U3CU3Ef__refU2440_1(L_7);
+			U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_8 = __this->get_U3CU3Ef__refU2440_1();
 			NullCheck(L_8);
 			SearchBoxScript_t2166998414 * L_9 = L_8->get_U3CU3Ef__this_1();
 			NullCheck(L_9);
@@ -27117,11 +27763,11 @@ IL_0022:
 			String_t* L_20 = L_19->get__description_5();
 			NullCheck(L_18);
 			VirtActionInvoker1< String_t* >::Invoke(74 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_18, L_20);
-			U3CfindSuggestionsU3Ec__AnonStorey29_t851249898 * L_21 = V_5;
+			U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042 * L_21 = V_5;
 			FacilityScript_t3002937710 * L_22 = V_0;
 			NullCheck(L_21);
 			L_21->set__f_0(L_22);
-			U3CfindSuggestionsU3Ec__AnonStorey29_t851249898 * L_23 = V_5;
+			U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042 * L_23 = V_5;
 			NullCheck(L_23);
 			FacilityScript_t3002937710 * L_24 = L_23->get__f_0();
 			NullCheck(L_24);
@@ -27158,9 +27804,9 @@ IL_00bb:
 			Button_t3896396478 * L_35 = L_34->get_button_5();
 			NullCheck(L_35);
 			ButtonClickedEvent_t2796375743 * L_36 = Button_get_onClick_m1145127631(L_35, /*hidden argument*/NULL);
-			U3CfindSuggestionsU3Ec__AnonStorey29_t851249898 * L_37 = V_5;
+			U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042 * L_37 = V_5;
 			IntPtr_t L_38;
-			L_38.set_m_value_0((void*)(void*)U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__34_m3020546459_MethodInfo_var);
+			L_38.set_m_value_0((void*)(void*)U3CfindSuggestionsU3Ec__AnonStorey2A_U3CU3Em__37_m2771987446_MethodInfo_var);
 			UnityAction_t594794173 * L_39 = (UnityAction_t594794173 *)il2cpp_codegen_object_new(UnityAction_t594794173_il2cpp_TypeInfo_var);
 			UnityAction__ctor_m4130179243(L_39, L_37, L_38, /*hidden argument*/NULL);
 			NullCheck(L_36);
@@ -27168,7 +27814,7 @@ IL_00bb:
 			SuggestionRowScript_t435637633 * L_40 = V_2;
 			NullCheck(L_40);
 			Transform_t1659122786 * L_41 = Component_get_transform_m4257140443(L_40, /*hidden argument*/NULL);
-			U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_42 = __this->get_U3CU3Ef__refU2439_1();
+			U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_42 = __this->get_U3CU3Ef__refU2440_1();
 			NullCheck(L_42);
 			SearchBoxScript_t2166998414 * L_43 = L_42->get_U3CU3Ef__this_1();
 			NullCheck(L_43);
@@ -27242,12 +27888,12 @@ IL_013d:
 
 IL_016a:
 	{
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_58 = __this->get_U3CU3Ef__refU2439_1();
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_58 = __this->get_U3CU3Ef__refU2440_1();
 		NullCheck(L_58);
 		SearchBoxScript_t2166998414 * L_59 = L_58->get_U3CU3Ef__this_1();
 		NullCheck(L_59);
 		RectTransform_t972643934 * L_60 = L_59->get_dialog_3();
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_61 = __this->get_U3CU3Ef__refU2439_1();
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_61 = __this->get_U3CU3Ef__refU2440_1();
 		NullCheck(L_61);
 		SearchBoxScript_t2166998414 * L_62 = L_61->get_U3CU3Ef__this_1();
 		NullCheck(L_62);
@@ -27262,7 +27908,7 @@ IL_016a:
 		Vector2__ctor_m1517109030(&L_67, L_65, L_66, /*hidden argument*/NULL);
 		NullCheck(L_60);
 		RectTransform_set_sizeDelta_m1223846609(L_60, L_67, /*hidden argument*/NULL);
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_68 = __this->get_U3CU3Ef__refU2439_1();
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_68 = __this->get_U3CU3Ef__refU2440_1();
 		NullCheck(L_68);
 		SearchBoxScript_t2166998414 * L_69 = L_68->get_U3CU3Ef__this_1();
 		NullCheck(L_69);
@@ -27273,7 +27919,7 @@ IL_016a:
 		}
 	}
 	{
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_71 = __this->get_U3CU3Ef__refU2439_1();
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_71 = __this->get_U3CU3Ef__refU2440_1();
 		NullCheck(L_71);
 		SearchBoxScript_t2166998414 * L_72 = L_71->get_U3CU3Ef__this_1();
 		NullCheck(L_72);
@@ -27287,7 +27933,7 @@ IL_01c9:
 
 IL_01ce:
 	{
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_73 = __this->get_U3CU3Ef__refU2439_1();
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_73 = __this->get_U3CU3Ef__refU2440_1();
 		NullCheck(L_73);
 		SearchBoxScript_t2166998414 * L_74 = L_73->get_U3CU3Ef__this_1();
 		NullCheck(L_74);
@@ -27298,7 +27944,7 @@ IL_01ce:
 		}
 	}
 	{
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_76 = __this->get_U3CU3Ef__refU2439_1();
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_76 = __this->get_U3CU3Ef__refU2440_1();
 		NullCheck(L_76);
 		SearchBoxScript_t2166998414 * L_77 = L_76->get_U3CU3Ef__this_1();
 		NullCheck(L_77);
@@ -27307,12 +27953,12 @@ IL_01ce:
 
 IL_01f3:
 	{
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_78 = __this->get_U3CU3Ef__refU2439_1();
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_78 = __this->get_U3CU3Ef__refU2440_1();
 		NullCheck(L_78);
 		SearchBoxScript_t2166998414 * L_79 = L_78->get_U3CU3Ef__this_1();
 		NullCheck(L_79);
 		RectTransform_t972643934 * L_80 = L_79->get_dialog_3();
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_81 = __this->get_U3CU3Ef__refU2439_1();
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_81 = __this->get_U3CU3Ef__refU2440_1();
 		NullCheck(L_81);
 		SearchBoxScript_t2166998414 * L_82 = L_81->get_U3CU3Ef__this_1();
 		NullCheck(L_82);
@@ -27333,24 +27979,24 @@ IL_0230:
 		return;
 	}
 }
-// System.Void SearchBoxScript/<findSuggestions>c__AnonStorey27/<findSuggestions>c__AnonStorey28/<findSuggestions>c__AnonStorey29::.ctor()
-extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey29__ctor_m3911351537 (U3CfindSuggestionsU3Ec__AnonStorey29_t851249898 * __this, const MethodInfo* method)
+// System.Void SearchBoxScript/<findSuggestions>c__AnonStorey28/<findSuggestions>c__AnonStorey29/<findSuggestions>c__AnonStorey2A::.ctor()
+extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey2A__ctor_m2999362057 (U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Void SearchBoxScript/<findSuggestions>c__AnonStorey27/<findSuggestions>c__AnonStorey28/<findSuggestions>c__AnonStorey29::<>m__34()
+// System.Void SearchBoxScript/<findSuggestions>c__AnonStorey28/<findSuggestions>c__AnonStorey29/<findSuggestions>c__AnonStorey2A::<>m__37()
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral971102457;
-extern const uint32_t U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__34_m3020546459_MetadataUsageId;
-extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__34_m3020546459 (U3CfindSuggestionsU3Ec__AnonStorey29_t851249898 * __this, const MethodInfo* method)
+extern const uint32_t U3CfindSuggestionsU3Ec__AnonStorey2A_U3CU3Em__37_m2771987446_MetadataUsageId;
+extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey2A_U3CU3Em__37_m2771987446 (U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__34_m3020546459_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CfindSuggestionsU3Ec__AnonStorey2A_U3CU3Em__37_m2771987446_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -27360,7 +28006,7 @@ extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__34_m3020546459 (U
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
 		String_t* L_2 = String_Concat_m138640077(NULL /*static, unused*/, _stringLiteral971102457, L_1, /*hidden argument*/NULL);
 		Debug_LogWarning_m4187349938(NULL /*static, unused*/, L_2, (Object_t3071478659 *)NULL, /*hidden argument*/NULL);
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_3 = __this->get_U3CU3Ef__refU2439_1();
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_3 = __this->get_U3CU3Ef__refU2440_1();
 		NullCheck(L_3);
 		SearchBoxScript_t2166998414 * L_4 = L_3->get_U3CU3Ef__this_1();
 		NullCheck(L_4);
@@ -27370,7 +28016,7 @@ extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__34_m3020546459 (U
 		FacilityScript_t3002937710 * L_7 = __this->get__f_0();
 		NullCheck(L_6);
 		FacilitiesManager_focusFacility_m2618758163(L_6, L_7, (bool)1, (bool)1, (bool)1, /*hidden argument*/NULL);
-		U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537 * L_8 = __this->get_U3CU3Ef__refU2439_1();
+		U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538 * L_8 = __this->get_U3CU3Ef__refU2440_1();
 		NullCheck(L_8);
 		SearchBoxScript_t2166998414 * L_9 = L_8->get_U3CU3Ef__this_1();
 		NullCheck(L_9);
@@ -27378,16 +28024,16 @@ extern "C"  void U3CfindSuggestionsU3Ec__AnonStorey29_U3CU3Em__34_m3020546459 (U
 		return;
 	}
 }
-// System.Void SearchBoxScript/<searchInputChanged>c__AnonStorey26::.ctor()
-extern "C"  void U3CsearchInputChangedU3Ec__AnonStorey26__ctor_m3659841553 (U3CsearchInputChangedU3Ec__AnonStorey26_t66699418 * __this, const MethodInfo* method)
+// System.Void SearchBoxScript/<searchInputChanged>c__AnonStorey27::.ctor()
+extern "C"  void U3CsearchInputChangedU3Ec__AnonStorey27__ctor_m3463328048 (U3CsearchInputChangedU3Ec__AnonStorey27_t66699419 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Void SearchBoxScript/<searchInputChanged>c__AnonStorey26::<>m__2F()
-extern "C"  void U3CsearchInputChangedU3Ec__AnonStorey26_U3CU3Em__2F_m1837607918 (U3CsearchInputChangedU3Ec__AnonStorey26_t66699418 * __this, const MethodInfo* method)
+// System.Void SearchBoxScript/<searchInputChanged>c__AnonStorey27::<>m__32()
+extern "C"  void U3CsearchInputChangedU3Ec__AnonStorey27_U3CU3Em__32_m1966701208 (U3CsearchInputChangedU3Ec__AnonStorey27_t66699419 * __this, const MethodInfo* method)
 {
 	{
 		SearchBoxScript_t2166998414 * L_0 = __this->get_U3CU3Ef__this_1();
@@ -27431,11 +28077,11 @@ extern "C"  void SearchResults3d__ctor_m2572914220 (SearchResults3d_t3903482911 
 extern Il2CppClass* AppScript_t3488119340_il2cpp_TypeInfo_var;
 extern Il2CppClass* Action_1_t1549654636_il2cpp_TypeInfo_var;
 extern Il2CppClass* Action_1_t3398753846_il2cpp_TypeInfo_var;
-extern const MethodInfo* SearchResults3d_U3CStartU3Em__A_m1905054279_MethodInfo_var;
+extern const MethodInfo* SearchResults3d_U3CStartU3Em__B_m3412606088_MethodInfo_var;
 extern const MethodInfo* Action_1__ctor_m375071632_MethodInfo_var;
-extern const MethodInfo* SearchResults3d_U3CStartU3Em__B_m819629449_MethodInfo_var;
-extern const MethodInfo* Action_1__ctor_m1355393809_MethodInfo_var;
 extern const MethodInfo* SearchResults3d_U3CStartU3Em__C_m2172939146_MethodInfo_var;
+extern const MethodInfo* Action_1__ctor_m1355393809_MethodInfo_var;
+extern const MethodInfo* SearchResults3d_U3CStartU3Em__D_m3526248843_MethodInfo_var;
 extern const uint32_t SearchResults3d_Start_m1520052012_MetadataUsageId;
 extern "C"  void SearchResults3d_Start_m1520052012 (SearchResults3d_t3903482911 * __this, const MethodInfo* method)
 {
@@ -27454,7 +28100,7 @@ extern "C"  void SearchResults3d_Start_m1520052012 (SearchResults3d_t3903482911 
 		NullCheck(L_2);
 		Action_1_t1549654636 * L_3 = L_2->get_OnFloorSwitch_11();
 		IntPtr_t L_4;
-		L_4.set_m_value_0((void*)(void*)SearchResults3d_U3CStartU3Em__A_m1905054279_MethodInfo_var);
+		L_4.set_m_value_0((void*)(void*)SearchResults3d_U3CStartU3Em__B_m3412606088_MethodInfo_var);
 		Action_1_t1549654636 * L_5 = (Action_1_t1549654636 *)il2cpp_codegen_object_new(Action_1_t1549654636_il2cpp_TypeInfo_var);
 		Action_1__ctor_m375071632(L_5, __this, L_4, /*hidden argument*/Action_1__ctor_m375071632_MethodInfo_var);
 		Delegate_t3310234105 * L_6 = Delegate_Combine_m1842362874(NULL /*static, unused*/, L_3, L_5, /*hidden argument*/NULL);
@@ -27465,7 +28111,7 @@ extern "C"  void SearchResults3d_Start_m1520052012 (SearchResults3d_t3903482911 
 		NullCheck(L_8);
 		Action_1_t3398753846 * L_9 = L_8->get_OnSearchResultSelect_13();
 		IntPtr_t L_10;
-		L_10.set_m_value_0((void*)(void*)SearchResults3d_U3CStartU3Em__B_m819629449_MethodInfo_var);
+		L_10.set_m_value_0((void*)(void*)SearchResults3d_U3CStartU3Em__C_m2172939146_MethodInfo_var);
 		Action_1_t3398753846 * L_11 = (Action_1_t3398753846 *)il2cpp_codegen_object_new(Action_1_t3398753846_il2cpp_TypeInfo_var);
 		Action_1__ctor_m1355393809(L_11, __this, L_10, /*hidden argument*/Action_1__ctor_m1355393809_MethodInfo_var);
 		Delegate_t3310234105 * L_12 = Delegate_Combine_m1842362874(NULL /*static, unused*/, L_9, L_11, /*hidden argument*/NULL);
@@ -27478,7 +28124,7 @@ extern "C"  void SearchResults3d_Start_m1520052012 (SearchResults3d_t3903482911 
 		NullCheck(L_15);
 		Action_1_t3398753846 * L_16 = L_15->get_OnSnapToFacility_8();
 		IntPtr_t L_17;
-		L_17.set_m_value_0((void*)(void*)SearchResults3d_U3CStartU3Em__C_m2172939146_MethodInfo_var);
+		L_17.set_m_value_0((void*)(void*)SearchResults3d_U3CStartU3Em__D_m3526248843_MethodInfo_var);
 		Action_1_t3398753846 * L_18 = (Action_1_t3398753846 *)il2cpp_codegen_object_new(Action_1_t3398753846_il2cpp_TypeInfo_var);
 		Action_1__ctor_m1355393809(L_18, __this, L_17, /*hidden argument*/Action_1__ctor_m1355393809_MethodInfo_var);
 		Delegate_t3310234105 * L_19 = Delegate_Combine_m1842362874(NULL /*static, unused*/, L_16, L_18, /*hidden argument*/NULL);
@@ -27758,8 +28404,8 @@ extern const MethodInfo* Enumerator_get_Current_m1350879634_MethodInfo_var;
 extern const MethodInfo* Dictionary_2_ContainsKey_m745767536_MethodInfo_var;
 extern const MethodInfo* PoolSystem_spawn_TisArrowPointerScript_t1893640191_m1285383289_MethodInfo_var;
 extern const MethodInfo* List_1_Add_m2439243354_MethodInfo_var;
-extern const MethodInfo* U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__D_m718301133_MethodInfo_var;
 extern const MethodInfo* U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__E_m718302094_MethodInfo_var;
+extern const MethodInfo* U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__F_m718303055_MethodInfo_var;
 extern const MethodInfo* Dictionary_2_Add_m2767182065_MethodInfo_var;
 extern const MethodInfo* Enumerator_MoveNext_m4267005322_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3914779156;
@@ -27970,7 +28616,7 @@ IL_00f4:
 			Transform_set_position_m3111394108(L_59, L_64, /*hidden argument*/NULL);
 			U3CUpdateArrowsU3Ec__AnonStorey1D_t514513947 * L_65 = V_7;
 			IntPtr_t L_66;
-			L_66.set_m_value_0((void*)(void*)U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__D_m718301133_MethodInfo_var);
+			L_66.set_m_value_0((void*)(void*)U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__E_m718302094_MethodInfo_var);
 			Action_t3771233898 * L_67 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 			Action__ctor_m2957240604(L_67, L_65, L_66, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
@@ -27979,7 +28625,7 @@ IL_00f4:
 			Loom_QueueOnMainThread_m3879973843(NULL /*static, unused*/, L_67, (0.5f), L_68, /*hidden argument*/NULL);
 			U3CUpdateArrowsU3Ec__AnonStorey1D_t514513947 * L_69 = V_7;
 			IntPtr_t L_70;
-			L_70.set_m_value_0((void*)(void*)U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__E_m718302094_MethodInfo_var);
+			L_70.set_m_value_0((void*)(void*)U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__F_m718303055_MethodInfo_var);
 			Action_t3771233898 * L_71 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 			Action__ctor_m2957240604(L_71, L_69, L_70, /*hidden argument*/NULL);
 			float L_72 = Random_Range_m3362417303(NULL /*static, unused*/, (0.1f), (0.7f), /*hidden argument*/NULL);
@@ -28041,16 +28687,16 @@ extern "C"  void SearchResults3d_Update_m4177791585 (SearchResults3d_t3903482911
 		return;
 	}
 }
-// System.Void SearchResults3d::<Start>m__A(System.Int32)
+// System.Void SearchResults3d::<Start>m__B(System.Int32)
 extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
 extern const MethodInfo* List_1_get_Count_m1865208875_MethodInfo_var;
-extern const uint32_t SearchResults3d_U3CStartU3Em__A_m1905054279_MetadataUsageId;
-extern "C"  void SearchResults3d_U3CStartU3Em__A_m1905054279 (SearchResults3d_t3903482911 * __this, int32_t ___floor0, const MethodInfo* method)
+extern const uint32_t SearchResults3d_U3CStartU3Em__B_m3412606088_MetadataUsageId;
+extern "C"  void SearchResults3d_U3CStartU3Em__B_m3412606088 (SearchResults3d_t3903482911 * __this, int32_t ___floor0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (SearchResults3d_U3CStartU3Em__A_m1905054279_MetadataUsageId);
+		il2cpp_codegen_initialize_method (SearchResults3d_U3CStartU3Em__B_m3412606088_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -28082,8 +28728,8 @@ IL_0033:
 		return;
 	}
 }
-// System.Void SearchResults3d::<Start>m__B(FacilityScript)
-extern "C"  void SearchResults3d_U3CStartU3Em__B_m819629449 (SearchResults3d_t3903482911 * __this, FacilityScript_t3002937710 * ___f0, const MethodInfo* method)
+// System.Void SearchResults3d::<Start>m__C(FacilityScript)
+extern "C"  void SearchResults3d_U3CStartU3Em__C_m2172939146 (SearchResults3d_t3903482911 * __this, FacilityScript_t3002937710 * ___f0, const MethodInfo* method)
 {
 	{
 		FacilityScript_t3002937710 * L_0 = ___f0;
@@ -28091,8 +28737,8 @@ extern "C"  void SearchResults3d_U3CStartU3Em__B_m819629449 (SearchResults3d_t39
 		return;
 	}
 }
-// System.Void SearchResults3d::<Start>m__C(FacilityScript)
-extern "C"  void SearchResults3d_U3CStartU3Em__C_m2172939146 (SearchResults3d_t3903482911 * __this, FacilityScript_t3002937710 * ___f0, const MethodInfo* method)
+// System.Void SearchResults3d::<Start>m__D(FacilityScript)
+extern "C"  void SearchResults3d_U3CStartU3Em__D_m3526248843 (SearchResults3d_t3903482911 * __this, FacilityScript_t3002937710 * ___f0, const MethodInfo* method)
 {
 	{
 		FacilityScript_t3002937710 * L_0 = ___f0;
@@ -28108,7 +28754,7 @@ extern "C"  void U3CUpdateArrowsU3Ec__AnonStorey1D__ctor_m2657637296 (U3CUpdateA
 		return;
 	}
 }
-// System.Void SearchResults3d/<UpdateArrows>c__AnonStorey1D::<>m__D()
+// System.Void SearchResults3d/<UpdateArrows>c__AnonStorey1D::<>m__E()
 extern Il2CppClass* ObjectU5BU5D_t1108656482_il2cpp_TypeInfo_var;
 extern Il2CppClass* Vector3_t4282066566_il2cpp_TypeInfo_var;
 extern Il2CppClass* Boolean_t476798718_il2cpp_TypeInfo_var;
@@ -28119,13 +28765,13 @@ extern Il2CppCodeGenString* _stringLiteral747804969;
 extern Il2CppCodeGenString* _stringLiteral2094103681;
 extern Il2CppCodeGenString* _stringLiteral3560141;
 extern Il2CppCodeGenString* _stringLiteral3506946120;
-extern const uint32_t U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__D_m718301133_MetadataUsageId;
-extern "C"  void U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__D_m718301133 (U3CUpdateArrowsU3Ec__AnonStorey1D_t514513947 * __this, const MethodInfo* method)
+extern const uint32_t U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__E_m718302094_MetadataUsageId;
+extern "C"  void U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__E_m718302094 (U3CUpdateArrowsU3Ec__AnonStorey1D_t514513947 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__D_m718301133_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__E_m718302094_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -28196,8 +28842,8 @@ extern "C"  void U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__D_m718301133 (U3CUpd
 		return;
 	}
 }
-// System.Void SearchResults3d/<UpdateArrows>c__AnonStorey1D::<>m__E()
-extern "C"  void U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__E_m718302094 (U3CUpdateArrowsU3Ec__AnonStorey1D_t514513947 * __this, const MethodInfo* method)
+// System.Void SearchResults3d/<UpdateArrows>c__AnonStorey1D::<>m__F()
+extern "C"  void U3CUpdateArrowsU3Ec__AnonStorey1D_U3CU3Em__F_m718303055 (U3CUpdateArrowsU3Ec__AnonStorey1D_t514513947 * __this, const MethodInfo* method)
 {
 	{
 		ArrowPointerScript_t1893640191 * L_0 = __this->get_arrow_1();
@@ -29582,7 +30228,7 @@ extern "C"  int32_t TimetableParser_parseDayOfWeek_m3008395175 (Il2CppObject * _
 		}
 	}
 	{
-		Dictionary_2_t1974256870 * L_9 = ((TimetableParser_t319660846_StaticFields*)TimetableParser_t319660846_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24map1_0();
+		Dictionary_2_t1974256870 * L_9 = ((TimetableParser_t319660846_StaticFields*)TimetableParser_t319660846_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24map2_0();
 		if (L_9)
 		{
 			goto IL_0098;
@@ -29614,12 +30260,12 @@ extern "C"  int32_t TimetableParser_parseDayOfWeek_m3008395175 (Il2CppObject * _
 		NullCheck(L_17);
 		Dictionary_2_Add_m4235384975(L_17, _stringLiteral4195537912, 6, /*hidden argument*/Dictionary_2_Add_m4235384975_MethodInfo_var);
 		Dictionary_2_t1974256870 * L_18 = V_3;
-		((TimetableParser_t319660846_StaticFields*)TimetableParser_t319660846_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__switchU24map1_0(L_18);
+		((TimetableParser_t319660846_StaticFields*)TimetableParser_t319660846_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__switchU24map2_0(L_18);
 	}
 
 IL_0098:
 	{
-		Dictionary_2_t1974256870 * L_19 = ((TimetableParser_t319660846_StaticFields*)TimetableParser_t319660846_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24map1_0();
+		Dictionary_2_t1974256870 * L_19 = ((TimetableParser_t319660846_StaticFields*)TimetableParser_t319660846_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24map2_0();
 		String_t* L_20 = V_2;
 		NullCheck(L_19);
 		bool L_21 = Dictionary_2_TryGetValue_m337170132(L_19, L_20, (&V_4), /*hidden argument*/Dictionary_2_TryGetValue_m337170132_MethodInfo_var);

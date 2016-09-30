@@ -63,11 +63,11 @@ extern "C"  void TTPanelScript_UpdateContents_m2588513979 (TTPanelScript_t198379
 extern "C"  void TTPanelScript_UpdateLayout_m498422930 (TTPanelScript_t1983791439 * __this, bool ___editMode0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void TTPanelScript::OnRectTransformDimensionsChange()
 extern "C"  void TTPanelScript_OnRectTransformDimensionsChange_m2173596064 (TTPanelScript_t1983791439 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void TTPanelScript::<updateTimetableClicked>m__35()
-extern "C"  void TTPanelScript_U3CupdateTimetableClickedU3Em__35_m152834198 (TTPanelScript_t1983791439 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void TTPanelScript::<downloadTimetableClicked>m__36()
-extern "C"  void TTPanelScript_U3CdownloadTimetableClickedU3Em__36_m4153904598 (TTPanelScript_t1983791439 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void TTPanelScript::<addPairClicked>m__37(SPBUTimetable.Pair)
-extern "C"  void TTPanelScript_U3CaddPairClickedU3Em__37_m2084649630 (TTPanelScript_t1983791439 * __this, Pair_t3945686594 * ___newPair0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void TTPanelScript::<updateTimetableClicked>m__3A()
-extern "C"  void TTPanelScript_U3CupdateTimetableClickedU3Em__3A_m152845730 (TTPanelScript_t1983791439 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void TTPanelScript::<updateTimetableClicked>m__38()
+extern "C"  void TTPanelScript_U3CupdateTimetableClickedU3Em__38_m152837081 (TTPanelScript_t1983791439 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void TTPanelScript::<downloadTimetableClicked>m__39()
+extern "C"  void TTPanelScript_U3CdownloadTimetableClickedU3Em__39_m4153907481 (TTPanelScript_t1983791439 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void TTPanelScript::<addPairClicked>m__3A(SPBUTimetable.Pair)
+extern "C"  void TTPanelScript_U3CaddPairClickedU3Em__3A_m4198158760 (TTPanelScript_t1983791439 * __this, Pair_t3945686594 * ___newPair0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void TTPanelScript::<updateTimetableClicked>m__3D()
+extern "C"  void TTPanelScript_U3CupdateTimetableClickedU3Em__3D_m152848613 (TTPanelScript_t1983791439 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

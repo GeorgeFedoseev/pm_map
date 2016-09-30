@@ -14,10 +14,10 @@
 
 // AppScript
 struct AppScript_t3488119340;
-// UnityEngine.GameObject
-struct GameObject_t3674682005;
 // System.String
 struct String_t;
+// UnityEngine.GameObject
+struct GameObject_t3674682005;
 // FacilityScript
 struct FacilityScript_t3002937710;
 
@@ -31,6 +31,8 @@ extern "C"  void AppScript__ctor_m247155903 (AppScript_t3488119340 * __this, con
 extern "C"  void AppScript__cctor_m2884769486 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // AppScript AppScript::getSharedInstance()
 extern "C"  AppScript_t3488119340 * AppScript_getSharedInstance_m3091938420 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String AppScript::_GetDeepLink()
+extern "C"  String_t* AppScript__GetDeepLink_m2694011679 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::Awake()
 extern "C"  void AppScript_Awake_m484761122 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::Start()
@@ -59,6 +61,14 @@ extern "C"  void AppScript_closeTimetable_m2528544590 (AppScript_t3488119340 * _
 extern "C"  void AppScript_UpdateTimeBasedElements_m1799663633 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::OnApplicationPause(System.Boolean)
 extern "C"  void AppScript_OnApplicationPause_m1231330017 (AppScript_t3488119340 * __this, bool ___pause0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void AppScript::OnOpenURLComplete(System.String)
+extern "C"  void AppScript_OnOpenURLComplete_m468396326 (AppScript_t3488119340 * __this, String_t* ___link0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void AppScript::DeepLinkFocusRoom(System.String)
+extern "C"  void AppScript_DeepLinkFocusRoom_m4059669816 (AppScript_t3488119340 * __this, String_t* ___room0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean AppScript::HasNewDeepLink()
+extern "C"  bool AppScript_HasNewDeepLink_m3345536829 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void AppScript::ProcessDeepLinking()
+extern "C"  void AppScript_ProcessDeepLinking_m3381373842 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::<OnUpdateTimeBasedElements>m__0()
 extern "C"  void AppScript_U3COnUpdateTimeBasedElementsU3Em__0_m892619301 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::<OnFloorSwitch>m__1(System.Int32)
@@ -71,5 +81,7 @@ extern "C"  void AppScript_U3COnSearchResultSelectU3Em__3_m3538054271 (Il2CppObj
 extern "C"  void AppScript_U3COnShowSearchResultsU3Em__4_m3290503606 (Il2CppObject * __this /* static, unused */, String_t* ____0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::<OnOpenTimetable>m__5()
 extern "C"  void AppScript_U3COnOpenTimetableU3Em__5_m3257448583 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void AppScript::<openTimetable>m__6()
-extern "C"  void AppScript_U3CopenTimetableU3Em__6_m3269075369 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void AppScript::<Start>m__6()
+extern "C"  void AppScript_U3CStartU3Em__6_m3372710142 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void AppScript::<openTimetable>m__7()
+extern "C"  void AppScript_U3CopenTimetableU3Em__7_m3269076330 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

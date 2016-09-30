@@ -67,5 +67,5 @@ extern "C"  void TextMeshProFont_AddKerningInfo_m3880208222 (TextMeshProFont_t36
 extern "C"  void TextMeshProFont_ReadFontDefinition_m1674952857 (TextMeshProFont_t3602967588 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.Generic.Dictionary`2<System.Int32,System.Char> TMPro.TextMeshProFont::GetCharacters(UnityEngine.TextAsset)
 extern "C"  Dictionary_2_t2859885777 * TextMeshProFont_GetCharacters_m2221357651 (TextMeshProFont_t3602967588 * __this, TextAsset_t3836129977 * ___file0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 TMPro.TextMeshProFont::<AddGlyphInfo>m__7E(TMPro.GlyphInfo)
-extern "C"  int32_t TextMeshProFont_U3CAddGlyphInfoU3Em__7E_m1777324273 (Il2CppObject * __this /* static, unused */, GlyphInfo_t462937628 * ___s0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 TMPro.TextMeshProFont::<AddGlyphInfo>m__81(TMPro.GlyphInfo)
+extern "C"  int32_t TextMeshProFont_U3CAddGlyphInfoU3Em__81_m3694430278 (Il2CppObject * __this /* static, unused */, GlyphInfo_t462937628 * ___s0, const MethodInfo* method) IL2CPP_METHOD_ATTR;

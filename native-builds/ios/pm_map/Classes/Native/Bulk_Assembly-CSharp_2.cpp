@@ -71,16 +71,16 @@ struct Func_2_t785513668;
 struct Func_2_t735907977;
 // SQLite.TableMapping/Column
 struct Column_t1611479651;
-// SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3C
-struct U3CInsertAllU3Ec__AnonStorey3C_t2009518024;
 // SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3D
 struct U3CInsertAllU3Ec__AnonStorey3D_t2009518025;
 // SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E
 struct U3CInsertAllU3Ec__AnonStorey3E_t2009518026;
-// SQLite.SQLiteConnection/<Update>c__AnonStorey3F
-struct U3CUpdateU3Ec__AnonStorey3F_t430507262;
-// SQLite.SQLiteConnection/<UpdateAll>c__AnonStorey40
-struct U3CUpdateAllU3Ec__AnonStorey40_t3049586628;
+// SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3F
+struct U3CInsertAllU3Ec__AnonStorey3F_t2009518027;
+// SQLite.SQLiteConnection/<Update>c__AnonStorey40
+struct U3CUpdateU3Ec__AnonStorey40_t430507271;
+// SQLite.SQLiteConnection/<UpdateAll>c__AnonStorey41
+struct U3CUpdateAllU3Ec__AnonStorey41_t3049586629;
 // SQLite.SQLiteConnection/ColumnInfo
 struct ColumnInfo_t4283098503;
 // SQLite.SQLiteConnectionString
@@ -93,10 +93,10 @@ struct TableAttribute_t3844348468;
 struct ColumnU5BU5D_t1660000434;
 // SQLite.PreparedSqlLiteInsertCommand
 struct PreparedSqlLiteInsertCommand_t1604881465;
-// SQLite.TableMapping/<FindColumn>c__AnonStorey42
-struct U3CFindColumnU3Ec__AnonStorey42_t566048581;
-// SQLite.TableMapping/<FindColumnWithPropertyName>c__AnonStorey41
-struct U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_t612555082;
+// SQLite.TableMapping/<FindColumn>c__AnonStorey43
+struct U3CFindColumnU3Ec__AnonStorey43_t566048582;
+// SQLite.TableMapping/<FindColumnWithPropertyName>c__AnonStorey42
+struct U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_t612555083;
 // System.Reflection.PropertyInfo
 struct PropertyInfo_t;
 // System.Collections.Generic.IEnumerable`1<SQLite.IndexedAttribute>
@@ -273,10 +273,10 @@ struct IOrderedEnumerable_1_t450719201;
 struct Func_2_t1462553450;
 // System.Collections.Generic.List`1<TMPro.KerningPair>
 struct List_1_t3273019256;
-// TMPro.KerningTable/<AddKerningPair>c__AnonStorey4C
-struct U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934;
-// TMPro.KerningTable/<RemoveKerningPair>c__AnonStorey4D
-struct U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986;
+// TMPro.KerningTable/<AddKerningPair>c__AnonStorey4D
+struct U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935;
+// TMPro.KerningTable/<RemoveKerningPair>c__AnonStorey4E
+struct U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987;
 // TMPro.LineBreakingTable
 struct LineBreakingTable_t1570184089;
 // UnityEngine.Material
@@ -287,28 +287,28 @@ struct IEnumerable_1_t1646047159;
 struct GameObject_t3674682005;
 // UnityEngine.UI.Mask[]
 struct MaskU5BU5D_t3939063017;
-// TMPro.MaterialManager/<AddMaskingMaterial>c__AnonStorey48
-struct U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914;
+// TMPro.MaterialManager/<AddMaskingMaterial>c__AnonStorey49
+struct U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915;
 // TMPro.MaterialManager/MaskingMaterial
 struct MaskingMaterial_t2640101498;
-// TMPro.MaterialManager/<GetBaseMaterial>c__AnonStorey47
-struct U3CGetBaseMaterialU3Ec__AnonStorey47_t1629669825;
-// TMPro.MaterialManager/<GetStencilMaterial>c__AnonStorey46
-struct U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865;
-// TMPro.MaterialManager/<ReleaseBaseMaterial>c__AnonStorey4A
-struct U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252;
-// TMPro.MaterialManager/<ReleaseStencilMaterial>c__AnonStorey4B
-struct U3CReleaseStencilMaterialU3Ec__AnonStorey4B_t584774284;
-// TMPro.MaterialManager/<RemoveStencilMaterial>c__AnonStorey49
-struct U3CRemoveStencilMaterialU3Ec__AnonStorey49_t2712846036;
+// TMPro.MaterialManager/<GetBaseMaterial>c__AnonStorey48
+struct U3CGetBaseMaterialU3Ec__AnonStorey48_t1629669826;
+// TMPro.MaterialManager/<GetStencilMaterial>c__AnonStorey47
+struct U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866;
+// TMPro.MaterialManager/<ReleaseBaseMaterial>c__AnonStorey4B
+struct U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253;
+// TMPro.MaterialManager/<ReleaseStencilMaterial>c__AnonStorey4C
+struct U3CReleaseStencilMaterialU3Ec__AnonStorey4C_t584774285;
+// TMPro.MaterialManager/<RemoveStencilMaterial>c__AnonStorey4A
+struct U3CRemoveStencilMaterialU3Ec__AnonStorey4A_t2712846044;
 // UnityEngine.Material[]
 struct MaterialU5BU5D_t170856778;
-// UnityEngine.Vector3[]
-struct Vector3U5BU5D_t215400611;
 
 #include "class-internals.h"
 #include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Array1146569071.h"
+#include "AssemblyU2DCSharp_SQLite_SQLite3_Result4130067399.h"
+#include "AssemblyU2DCSharp_SQLite_SQLite3_Result4130067399MethodDeclarations.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteCommand3677067489.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteCommand3677067489MethodDeclarations.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteConnection2649932624.h"
@@ -325,7 +325,6 @@ struct Vector3U5BU5D_t215400611;
 #include "AssemblyU2DCSharp_Debug65906227MethodDeclarations.h"
 #include "AssemblyU2DCSharp_SQLite_SQLite32864846697MethodDeclarations.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteException1817335141MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SQLite_SQLite3_Result4130067399.h"
 #include "mscorlib_System_Boolean476798718.h"
 #include "mscorlib_System_Object4170816371.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteException1817335141.h"
@@ -421,25 +420,25 @@ struct Vector3U5BU5D_t215400611;
 #include "mscorlib_System_Char2862622538.h"
 #include "System_Core_System_Action3771233898.h"
 #include "System_Core_System_Action3771233898MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CInser2009518024MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CInser2009518024.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CInser2009518025MethodDeclarations.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CInser2009518025.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CInser2009518026MethodDeclarations.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CInser2009518026.h"
+#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CInser2009518027MethodDeclarations.h"
+#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CInser2009518027.h"
 #include "AssemblyU2DCSharp_SQLite_PreparedSqlLiteInsertComm1604881465MethodDeclarations.h"
 #include "mscorlib_System_Reflection_PropertyInfo924268725.h"
 #include "AssemblyU2DCSharp_SQLite_PreparedSqlLiteInsertComm1604881465.h"
 #include "mscorlib_System_Reflection_PropertyInfo924268725MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CUpdate430507262MethodDeclarations.h"
+#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CUpdate430507271MethodDeclarations.h"
 #include "System_Core_System_Func_2_gen1336857620MethodDeclarations.h"
 #include "System_Core_System_Func_2_gen735907977MethodDeclarations.h"
 #include "mscorlib_System_Collections_Generic_List_1_gen1244034627MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CUpdate430507262.h"
+#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CUpdate430507271.h"
 #include "System_Core_System_Func_2_gen1336857620.h"
 #include "System_Core_System_Func_2_gen735907977.h"
-#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CUpdat3049586628MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CUpdat3049586628.h"
+#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CUpdat3049586629MethodDeclarations.h"
+#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CUpdat3049586629.h"
 #include "mscorlib_System_GC1614687344MethodDeclarations.h"
 #include "mscorlib_System_Collections_Generic_Dictionary_2_V2338053561MethodDeclarations.h"
 #include "mscorlib_System_Collections_Generic_Dictionary_2_V1569281256MethodDeclarations.h"
@@ -455,10 +454,10 @@ struct Vector3U5BU5D_t215400611;
 #include "mscorlib_System_Reflection_MemberInfo3995515898MethodDeclarations.h"
 #include "mscorlib_System_Reflection_MemberInfo3995515898.h"
 #include "mscorlib_System_Reflection_BindingFlags1523912596.h"
-#include "AssemblyU2DCSharp_SQLite_TableMapping_U3CFindColumn612555082MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SQLite_TableMapping_U3CFindColumn612555082.h"
-#include "AssemblyU2DCSharp_SQLite_TableMapping_U3CFindColumn566048581MethodDeclarations.h"
-#include "AssemblyU2DCSharp_SQLite_TableMapping_U3CFindColumn566048581.h"
+#include "AssemblyU2DCSharp_SQLite_TableMapping_U3CFindColumn612555083MethodDeclarations.h"
+#include "AssemblyU2DCSharp_SQLite_TableMapping_U3CFindColumn612555083.h"
+#include "AssemblyU2DCSharp_SQLite_TableMapping_U3CFindColumn566048582MethodDeclarations.h"
+#include "AssemblyU2DCSharp_SQLite_TableMapping_U3CFindColumn566048582.h"
 #include "AssemblyU2DCSharp_SQLite_ColumnAttribute2686047144MethodDeclarations.h"
 #include "mscorlib_System_Nullable584944597MethodDeclarations.h"
 #include "AssemblyU2DCSharp_SQLite_ColumnAttribute2686047144.h"
@@ -762,12 +761,12 @@ struct Vector3U5BU5D_t215400611;
 #include "AssemblyU2DCSharp_TMPro_KerningTable618956984MethodDeclarations.h"
 #include "mscorlib_System_Collections_Generic_List_1_gen3273019256MethodDeclarations.h"
 #include "mscorlib_System_Collections_Generic_List_1_gen3273019256.h"
-#include "AssemblyU2DCSharp_TMPro_KerningTable_U3CAddKerning1553396934MethodDeclarations.h"
+#include "AssemblyU2DCSharp_TMPro_KerningTable_U3CAddKerning1553396935MethodDeclarations.h"
 #include "mscorlib_System_Predicate_1_gen1515890587MethodDeclarations.h"
-#include "AssemblyU2DCSharp_TMPro_KerningTable_U3CAddKerning1553396934.h"
+#include "AssemblyU2DCSharp_TMPro_KerningTable_U3CAddKerning1553396935.h"
 #include "mscorlib_System_Predicate_1_gen1515890587.h"
-#include "AssemblyU2DCSharp_TMPro_KerningTable_U3CRemoveKerni841739986MethodDeclarations.h"
-#include "AssemblyU2DCSharp_TMPro_KerningTable_U3CRemoveKerni841739986.h"
+#include "AssemblyU2DCSharp_TMPro_KerningTable_U3CRemoveKerni841739987MethodDeclarations.h"
+#include "AssemblyU2DCSharp_TMPro_KerningTable_U3CRemoveKerni841739987.h"
 #include "System_Core_System_Func_2_gen2106664385MethodDeclarations.h"
 #include "System_Core_System_Func_2_gen2106664385.h"
 #include "AssemblyU2DCSharp_TMPro_LineBreakingTable1570184089.h"
@@ -784,23 +783,23 @@ struct Vector3U5BU5D_t215400611;
 #include "mscorlib_System_Collections_Generic_List_1_gen4008287050.h"
 #include "UnityEngine.UI_ArrayTypes.h"
 #include "UnityEngine_UI_UnityEngine_UI_Mask8826680.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CGetSten1936614865MethodDeclarations.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CGetSten1936614866MethodDeclarations.h"
 #include "mscorlib_System_Predicate_1_gen2251158381MethodDeclarations.h"
 #include "AssemblyU2DCSharp_TMPro_MaterialManager_MaskingMat2640101498MethodDeclarations.h"
 #include "AssemblyU2DCSharp_TMPro_MaterialManager_MaskingMat2640101498.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CGetSten1936614865.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CGetSten1936614866.h"
 #include "mscorlib_System_Predicate_1_gen2251158381.h"
 #include "UnityEngine_UnityEngine_HideFlags1436803931.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CGetBase1629669825MethodDeclarations.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CGetBase1629669825.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CAddMask3048050914MethodDeclarations.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CAddMask3048050914.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CRemoveS2712846036MethodDeclarations.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CRemoveS2712846036.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CRelease1649808252MethodDeclarations.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CRelease1649808252.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CReleaseS584774284MethodDeclarations.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CReleaseS584774284.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CGetBase1629669826MethodDeclarations.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CGetBase1629669826.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CAddMask3048050915MethodDeclarations.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CAddMask3048050915.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CRemoveS2712846044MethodDeclarations.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CRemoveS2712846044.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CRelease1649808253MethodDeclarations.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CRelease1649808253.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CReleaseS584774285MethodDeclarations.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CReleaseS584774285.h"
 #include "AssemblyU2DCSharp_TMPro_Mesh_Extents1175633581.h"
 #include "AssemblyU2DCSharp_TMPro_Mesh_Extents1175633581MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Shader3191267369MethodDeclarations.h"
@@ -811,7 +810,6 @@ struct Vector3U5BU5D_t215400611;
 #include "AssemblyU2DCSharp_TMPro_TagUnits2200245643.h"
 #include "AssemblyU2DCSharp_TMPro_TagUnits2200245643MethodDeclarations.h"
 #include "AssemblyU2DCSharp_TMPro_TextAlignmentOptions3798547742MethodDeclarations.h"
-#include "AssemblyU2DCSharp_TMPro_TMP_Compatibility_AnchorPo2956782356.h"
 
 // System.Collections.Generic.IEnumerable`1<!!0> System.Linq.Enumerable::Empty<System.Object>()
 extern "C"  Il2CppObject* Enumerable_Empty_TisIl2CppObject_m301282091_gshared (Il2CppObject * __this /* static, unused */, const MethodInfo* method);
@@ -2788,7 +2786,7 @@ extern Il2CppClass* Enumerator_t2634719509_il2cpp_TypeInfo_var;
 extern const MethodInfo* Dictionary_2__ctor_m1717839774_MethodInfo_var;
 extern const MethodInfo* Dictionary_2_TryGetValue_m4030081477_MethodInfo_var;
 extern const MethodInfo* Dictionary_2_Add_m1663235016_MethodInfo_var;
-extern const MethodInfo* SQLiteConnection_U3CCreateTableU3Em__5D_m3052362067_MethodInfo_var;
+extern const MethodInfo* SQLiteConnection_U3CCreateTableU3Em__60_m2086546142_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m2340058375_MethodInfo_var;
 extern const MethodInfo* Enumerable_Select_TisColumn_t1611479651_TisString_t_m882201871_MethodInfo_var;
 extern const MethodInfo* Enumerable_ToArray_TisString_t_m2199204590_MethodInfo_var;
@@ -2801,10 +2799,10 @@ extern const MethodInfo* Dictionary_2_get_Keys_m3637771293_MethodInfo_var;
 extern const MethodInfo* KeyCollection_GetEnumerator_m422082635_MethodInfo_var;
 extern const MethodInfo* Enumerator_get_Current_m109116924_MethodInfo_var;
 extern const MethodInfo* Dictionary_2_get_Item_m1987005829_MethodInfo_var;
-extern const MethodInfo* SQLiteConnection_U3CCreateTableU3Em__5E_m4207736578_MethodInfo_var;
+extern const MethodInfo* SQLiteConnection_U3CCreateTableU3Em__61_m3105247383_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m2675613847_MethodInfo_var;
 extern const MethodInfo* Enumerable_OrderBy_TisIndexedColumn_t1407024228_TisInt32_t1153838500_m2497896728_MethodInfo_var;
-extern const MethodInfo* SQLiteConnection_U3CCreateTableU3Em__5F_m3383778486_MethodInfo_var;
+extern const MethodInfo* SQLiteConnection_U3CCreateTableU3Em__62_m2281289291_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m1427585828_MethodInfo_var;
 extern const MethodInfo* Enumerable_Select_TisIndexedColumn_t1407024228_TisString_t_m3696669366_MethodInfo_var;
 extern const MethodInfo* Enumerator_MoveNext_m121392148_MethodInfo_var;
@@ -2916,7 +2914,7 @@ IL_0049:
 		NullCheck(L_16);
 		ColumnU5BU5D_t1660000434* L_17 = TableMapping_get_Columns_m1865020243(L_16, /*hidden argument*/NULL);
 		IntPtr_t L_18;
-		L_18.set_m_value_0((void*)(void*)SQLiteConnection_U3CCreateTableU3Em__5D_m3052362067_MethodInfo_var);
+		L_18.set_m_value_0((void*)(void*)SQLiteConnection_U3CCreateTableU3Em__60_m2086546142_MethodInfo_var);
 		Func_2_t867290459 * L_19 = (Func_2_t867290459 *)il2cpp_codegen_object_new(Func_2_t867290459_il2cpp_TypeInfo_var);
 		Func_2__ctor_m2340058375(L_19, __this, L_18, /*hidden argument*/Func_2__ctor_m2340058375_MethodInfo_var);
 		Il2CppObject* L_20 = Enumerable_Select_TisColumn_t1611479651_TisString_t_m882201871(NULL /*static, unused*/, (Il2CppObject*)(Il2CppObject*)L_17, L_19, /*hidden argument*/Enumerable_Select_TisColumn_t1611479651_TisString_t_m882201871_MethodInfo_var);
@@ -3198,7 +3196,7 @@ IL_0207:
 IL_022e:
 		{
 			IntPtr_t L_93;
-			L_93.set_m_value_0((void*)(void*)SQLiteConnection_U3CCreateTableU3Em__5E_m4207736578_MethodInfo_var);
+			L_93.set_m_value_0((void*)(void*)SQLiteConnection_U3CCreateTableU3Em__61_m3105247383_MethodInfo_var);
 			Func_2_t1710275477 * L_94 = (Func_2_t1710275477 *)il2cpp_codegen_object_new(Func_2_t1710275477_il2cpp_TypeInfo_var);
 			Func_2__ctor_m2675613847(L_94, NULL, L_93, /*hidden argument*/Func_2__ctor_m2675613847_MethodInfo_var);
 			IL2CPP_RUNTIME_CLASS_INIT(SQLiteConnection_t2649932624_il2cpp_TypeInfo_var);
@@ -3226,7 +3224,7 @@ IL_023f:
 IL_0250:
 		{
 			IntPtr_t L_98;
-			L_98.set_m_value_0((void*)(void*)SQLiteConnection_U3CCreateTableU3Em__5F_m3383778486_MethodInfo_var);
+			L_98.set_m_value_0((void*)(void*)SQLiteConnection_U3CCreateTableU3Em__62_m2281289291_MethodInfo_var);
 			Func_2_t563668534 * L_99 = (Func_2_t563668534 *)il2cpp_codegen_object_new(Func_2_t563668534_il2cpp_TypeInfo_var);
 			Func_2__ctor_m1427585828(L_99, NULL, L_98, /*hidden argument*/Func_2__ctor_m1427585828_MethodInfo_var);
 			IL2CPP_RUNTIME_CLASS_INIT(SQLiteConnection_t2649932624_il2cpp_TypeInfo_var);
@@ -4598,9 +4596,9 @@ IL_0027:
 	}
 }
 // System.Int32 SQLite.SQLiteConnection::InsertAll(System.Collections.IEnumerable)
-extern Il2CppClass* U3CInsertAllU3Ec__AnonStorey3C_t2009518024_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CInsertAllU3Ec__AnonStorey3D_t2009518025_il2cpp_TypeInfo_var;
 extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CInsertAllU3Ec__AnonStorey3C_U3CU3Em__60_m950604822_MethodInfo_var;
+extern const MethodInfo* U3CInsertAllU3Ec__AnonStorey3D_U3CU3Em__63_m1079690424_MethodInfo_var;
 extern const uint32_t SQLiteConnection_InsertAll_m3221145050_MetadataUsageId;
 extern "C"  int32_t SQLiteConnection_InsertAll_m3221145050 (SQLiteConnection_t2649932624 * __this, Il2CppObject * ___objects0, const MethodInfo* method)
 {
@@ -4608,46 +4606,6 @@ extern "C"  int32_t SQLiteConnection_InsertAll_m3221145050 (SQLiteConnection_t26
 	if (!s_Il2CppMethodIntialized)
 	{
 		il2cpp_codegen_initialize_method (SQLiteConnection_InsertAll_m3221145050_MetadataUsageId);
-		s_Il2CppMethodIntialized = true;
-	}
-	U3CInsertAllU3Ec__AnonStorey3C_t2009518024 * V_0 = NULL;
-	{
-		U3CInsertAllU3Ec__AnonStorey3C_t2009518024 * L_0 = (U3CInsertAllU3Ec__AnonStorey3C_t2009518024 *)il2cpp_codegen_object_new(U3CInsertAllU3Ec__AnonStorey3C_t2009518024_il2cpp_TypeInfo_var);
-		U3CInsertAllU3Ec__AnonStorey3C__ctor_m995234259(L_0, /*hidden argument*/NULL);
-		V_0 = L_0;
-		U3CInsertAllU3Ec__AnonStorey3C_t2009518024 * L_1 = V_0;
-		Il2CppObject * L_2 = ___objects0;
-		NullCheck(L_1);
-		L_1->set_objects_0(L_2);
-		U3CInsertAllU3Ec__AnonStorey3C_t2009518024 * L_3 = V_0;
-		NullCheck(L_3);
-		L_3->set_U3CU3Ef__this_2(__this);
-		U3CInsertAllU3Ec__AnonStorey3C_t2009518024 * L_4 = V_0;
-		NullCheck(L_4);
-		L_4->set_c_1(0);
-		U3CInsertAllU3Ec__AnonStorey3C_t2009518024 * L_5 = V_0;
-		IntPtr_t L_6;
-		L_6.set_m_value_0((void*)(void*)U3CInsertAllU3Ec__AnonStorey3C_U3CU3Em__60_m950604822_MethodInfo_var);
-		Action_t3771233898 * L_7 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
-		Action__ctor_m2957240604(L_7, L_5, L_6, /*hidden argument*/NULL);
-		SQLiteConnection_RunInTransaction_m259419146(__this, L_7, /*hidden argument*/NULL);
-		U3CInsertAllU3Ec__AnonStorey3C_t2009518024 * L_8 = V_0;
-		NullCheck(L_8);
-		int32_t L_9 = L_8->get_c_1();
-		return L_9;
-	}
-}
-// System.Int32 SQLite.SQLiteConnection::InsertAll(System.Collections.IEnumerable,System.String)
-extern Il2CppClass* U3CInsertAllU3Ec__AnonStorey3D_t2009518025_il2cpp_TypeInfo_var;
-extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CInsertAllU3Ec__AnonStorey3D_U3CU3Em__61_m1079688502_MethodInfo_var;
-extern const uint32_t SQLiteConnection_InsertAll_m1502849174_MetadataUsageId;
-extern "C"  int32_t SQLiteConnection_InsertAll_m1502849174 (SQLiteConnection_t2649932624 * __this, Il2CppObject * ___objects0, String_t* ___extra1, const MethodInfo* method)
-{
-	static bool s_Il2CppMethodIntialized;
-	if (!s_Il2CppMethodIntialized)
-	{
-		il2cpp_codegen_initialize_method (SQLiteConnection_InsertAll_m1502849174_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	U3CInsertAllU3Ec__AnonStorey3D_t2009518025 * V_0 = NULL;
@@ -4660,38 +4618,34 @@ extern "C"  int32_t SQLiteConnection_InsertAll_m1502849174 (SQLiteConnection_t26
 		NullCheck(L_1);
 		L_1->set_objects_0(L_2);
 		U3CInsertAllU3Ec__AnonStorey3D_t2009518025 * L_3 = V_0;
-		String_t* L_4 = ___extra1;
 		NullCheck(L_3);
-		L_3->set_extra_1(L_4);
+		L_3->set_U3CU3Ef__this_2(__this);
+		U3CInsertAllU3Ec__AnonStorey3D_t2009518025 * L_4 = V_0;
+		NullCheck(L_4);
+		L_4->set_c_1(0);
 		U3CInsertAllU3Ec__AnonStorey3D_t2009518025 * L_5 = V_0;
-		NullCheck(L_5);
-		L_5->set_U3CU3Ef__this_3(__this);
-		U3CInsertAllU3Ec__AnonStorey3D_t2009518025 * L_6 = V_0;
-		NullCheck(L_6);
-		L_6->set_c_2(0);
-		U3CInsertAllU3Ec__AnonStorey3D_t2009518025 * L_7 = V_0;
-		IntPtr_t L_8;
-		L_8.set_m_value_0((void*)(void*)U3CInsertAllU3Ec__AnonStorey3D_U3CU3Em__61_m1079688502_MethodInfo_var);
-		Action_t3771233898 * L_9 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
-		Action__ctor_m2957240604(L_9, L_7, L_8, /*hidden argument*/NULL);
-		SQLiteConnection_RunInTransaction_m259419146(__this, L_9, /*hidden argument*/NULL);
-		U3CInsertAllU3Ec__AnonStorey3D_t2009518025 * L_10 = V_0;
-		NullCheck(L_10);
-		int32_t L_11 = L_10->get_c_2();
-		return L_11;
+		IntPtr_t L_6;
+		L_6.set_m_value_0((void*)(void*)U3CInsertAllU3Ec__AnonStorey3D_U3CU3Em__63_m1079690424_MethodInfo_var);
+		Action_t3771233898 * L_7 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
+		Action__ctor_m2957240604(L_7, L_5, L_6, /*hidden argument*/NULL);
+		SQLiteConnection_RunInTransaction_m259419146(__this, L_7, /*hidden argument*/NULL);
+		U3CInsertAllU3Ec__AnonStorey3D_t2009518025 * L_8 = V_0;
+		NullCheck(L_8);
+		int32_t L_9 = L_8->get_c_1();
+		return L_9;
 	}
 }
-// System.Int32 SQLite.SQLiteConnection::InsertAll(System.Collections.IEnumerable,System.Type)
+// System.Int32 SQLite.SQLiteConnection::InsertAll(System.Collections.IEnumerable,System.String)
 extern Il2CppClass* U3CInsertAllU3Ec__AnonStorey3E_t2009518026_il2cpp_TypeInfo_var;
 extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CInsertAllU3Ec__AnonStorey3E_U3CU3Em__62_m1208772182_MethodInfo_var;
-extern const uint32_t SQLiteConnection_InsertAll_m235036173_MetadataUsageId;
-extern "C"  int32_t SQLiteConnection_InsertAll_m235036173 (SQLiteConnection_t2649932624 * __this, Il2CppObject * ___objects0, Type_t * ___objType1, const MethodInfo* method)
+extern const MethodInfo* U3CInsertAllU3Ec__AnonStorey3E_U3CU3Em__64_m1208774104_MethodInfo_var;
+extern const uint32_t SQLiteConnection_InsertAll_m1502849174_MetadataUsageId;
+extern "C"  int32_t SQLiteConnection_InsertAll_m1502849174 (SQLiteConnection_t2649932624 * __this, Il2CppObject * ___objects0, String_t* ___extra1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (SQLiteConnection_InsertAll_m235036173_MetadataUsageId);
+		il2cpp_codegen_initialize_method (SQLiteConnection_InsertAll_m1502849174_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	U3CInsertAllU3Ec__AnonStorey3E_t2009518026 * V_0 = NULL;
@@ -4704,9 +4658,9 @@ extern "C"  int32_t SQLiteConnection_InsertAll_m235036173 (SQLiteConnection_t264
 		NullCheck(L_1);
 		L_1->set_objects_0(L_2);
 		U3CInsertAllU3Ec__AnonStorey3E_t2009518026 * L_3 = V_0;
-		Type_t * L_4 = ___objType1;
+		String_t* L_4 = ___extra1;
 		NullCheck(L_3);
-		L_3->set_objType_1(L_4);
+		L_3->set_extra_1(L_4);
 		U3CInsertAllU3Ec__AnonStorey3E_t2009518026 * L_5 = V_0;
 		NullCheck(L_5);
 		L_5->set_U3CU3Ef__this_3(__this);
@@ -4715,11 +4669,55 @@ extern "C"  int32_t SQLiteConnection_InsertAll_m235036173 (SQLiteConnection_t264
 		L_6->set_c_2(0);
 		U3CInsertAllU3Ec__AnonStorey3E_t2009518026 * L_7 = V_0;
 		IntPtr_t L_8;
-		L_8.set_m_value_0((void*)(void*)U3CInsertAllU3Ec__AnonStorey3E_U3CU3Em__62_m1208772182_MethodInfo_var);
+		L_8.set_m_value_0((void*)(void*)U3CInsertAllU3Ec__AnonStorey3E_U3CU3Em__64_m1208774104_MethodInfo_var);
 		Action_t3771233898 * L_9 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 		Action__ctor_m2957240604(L_9, L_7, L_8, /*hidden argument*/NULL);
 		SQLiteConnection_RunInTransaction_m259419146(__this, L_9, /*hidden argument*/NULL);
 		U3CInsertAllU3Ec__AnonStorey3E_t2009518026 * L_10 = V_0;
+		NullCheck(L_10);
+		int32_t L_11 = L_10->get_c_2();
+		return L_11;
+	}
+}
+// System.Int32 SQLite.SQLiteConnection::InsertAll(System.Collections.IEnumerable,System.Type)
+extern Il2CppClass* U3CInsertAllU3Ec__AnonStorey3F_t2009518027_il2cpp_TypeInfo_var;
+extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
+extern const MethodInfo* U3CInsertAllU3Ec__AnonStorey3F_U3CU3Em__65_m1337857784_MethodInfo_var;
+extern const uint32_t SQLiteConnection_InsertAll_m235036173_MetadataUsageId;
+extern "C"  int32_t SQLiteConnection_InsertAll_m235036173 (SQLiteConnection_t2649932624 * __this, Il2CppObject * ___objects0, Type_t * ___objType1, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SQLiteConnection_InsertAll_m235036173_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	U3CInsertAllU3Ec__AnonStorey3F_t2009518027 * V_0 = NULL;
+	{
+		U3CInsertAllU3Ec__AnonStorey3F_t2009518027 * L_0 = (U3CInsertAllU3Ec__AnonStorey3F_t2009518027 *)il2cpp_codegen_object_new(U3CInsertAllU3Ec__AnonStorey3F_t2009518027_il2cpp_TypeInfo_var);
+		U3CInsertAllU3Ec__AnonStorey3F__ctor_m405693744(L_0, /*hidden argument*/NULL);
+		V_0 = L_0;
+		U3CInsertAllU3Ec__AnonStorey3F_t2009518027 * L_1 = V_0;
+		Il2CppObject * L_2 = ___objects0;
+		NullCheck(L_1);
+		L_1->set_objects_0(L_2);
+		U3CInsertAllU3Ec__AnonStorey3F_t2009518027 * L_3 = V_0;
+		Type_t * L_4 = ___objType1;
+		NullCheck(L_3);
+		L_3->set_objType_1(L_4);
+		U3CInsertAllU3Ec__AnonStorey3F_t2009518027 * L_5 = V_0;
+		NullCheck(L_5);
+		L_5->set_U3CU3Ef__this_3(__this);
+		U3CInsertAllU3Ec__AnonStorey3F_t2009518027 * L_6 = V_0;
+		NullCheck(L_6);
+		L_6->set_c_2(0);
+		U3CInsertAllU3Ec__AnonStorey3F_t2009518027 * L_7 = V_0;
+		IntPtr_t L_8;
+		L_8.set_m_value_0((void*)(void*)U3CInsertAllU3Ec__AnonStorey3F_U3CU3Em__65_m1337857784_MethodInfo_var);
+		Action_t3771233898 * L_9 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
+		Action__ctor_m2957240604(L_9, L_7, L_8, /*hidden argument*/NULL);
+		SQLiteConnection_RunInTransaction_m259419146(__this, L_9, /*hidden argument*/NULL);
+		U3CInsertAllU3Ec__AnonStorey3F_t2009518027 * L_10 = V_0;
 		NullCheck(L_10);
 		int32_t L_11 = L_10->get_c_2();
 		return L_11;
@@ -5095,7 +5093,7 @@ IL_0008:
 	}
 }
 // System.Int32 SQLite.SQLiteConnection::Update(System.Object,System.Type)
-extern Il2CppClass* U3CUpdateU3Ec__AnonStorey3F_t430507262_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CUpdateU3Ec__AnonStorey40_t430507271_il2cpp_TypeInfo_var;
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppClass* NotSupportedException_t1732551818_il2cpp_TypeInfo_var;
 extern Il2CppClass* Func_2_t1336857620_il2cpp_TypeInfo_var;
@@ -5103,15 +5101,15 @@ extern Il2CppClass* Func_2_t735907977_il2cpp_TypeInfo_var;
 extern Il2CppClass* List_1_t1244034627_il2cpp_TypeInfo_var;
 extern Il2CppClass* SQLiteConnection_t2649932624_il2cpp_TypeInfo_var;
 extern Il2CppClass* Func_2_t867290459_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CUpdateU3Ec__AnonStorey3F_U3CU3Em__63_m1407755620_MethodInfo_var;
+extern const MethodInfo* U3CUpdateU3Ec__AnonStorey40_U3CU3Em__66_m1002427518_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m1807725498_MethodInfo_var;
 extern const MethodInfo* Enumerable_Where_TisColumn_t1611479651_m3155817865_MethodInfo_var;
-extern const MethodInfo* U3CUpdateU3Ec__AnonStorey3F_U3CU3Em__64_m1179837798_MethodInfo_var;
+extern const MethodInfo* U3CUpdateU3Ec__AnonStorey40_U3CU3Em__67_m774509696_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m4261754521_MethodInfo_var;
 extern const MethodInfo* Enumerable_Select_TisColumn_t1611479651_TisIl2CppObject_m2496475681_MethodInfo_var;
 extern const MethodInfo* List_1__ctor_m1384868247_MethodInfo_var;
 extern const MethodInfo* List_1_Add_m268533613_MethodInfo_var;
-extern const MethodInfo* SQLiteConnection_U3CUpdateU3Em__65_m534594512_MethodInfo_var;
+extern const MethodInfo* SQLiteConnection_U3CUpdateU3Em__68_m2613899603_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m2340058375_MethodInfo_var;
 extern const MethodInfo* Enumerable_Select_TisColumn_t1611479651_TisString_t_m882201871_MethodInfo_var;
 extern const MethodInfo* Enumerable_ToArray_TisString_t_m2199204590_MethodInfo_var;
@@ -5134,7 +5132,7 @@ extern "C"  int32_t SQLiteConnection_Update_m1450096487 (SQLiteConnection_t26499
 	Il2CppObject* V_2 = NULL;
 	List_1_t1244034627 * V_3 = NULL;
 	String_t* V_4 = NULL;
-	U3CUpdateU3Ec__AnonStorey3F_t430507262 * V_5 = NULL;
+	U3CUpdateU3Ec__AnonStorey40_t430507271 * V_5 = NULL;
 	Il2CppObject* G_B7_0 = NULL;
 	String_t* G_B7_1 = NULL;
 	String_t* G_B7_2 = NULL;
@@ -5144,14 +5142,14 @@ extern "C"  int32_t SQLiteConnection_Update_m1450096487 (SQLiteConnection_t26499
 	String_t* G_B6_2 = NULL;
 	String_t* G_B6_3 = NULL;
 	{
-		U3CUpdateU3Ec__AnonStorey3F_t430507262 * L_0 = (U3CUpdateU3Ec__AnonStorey3F_t430507262 *)il2cpp_codegen_object_new(U3CUpdateU3Ec__AnonStorey3F_t430507262_il2cpp_TypeInfo_var);
-		U3CUpdateU3Ec__AnonStorey3F__ctor_m608952365(L_0, /*hidden argument*/NULL);
+		U3CUpdateU3Ec__AnonStorey40_t430507271 * L_0 = (U3CUpdateU3Ec__AnonStorey40_t430507271 *)il2cpp_codegen_object_new(U3CUpdateU3Ec__AnonStorey40_t430507271_il2cpp_TypeInfo_var);
+		U3CUpdateU3Ec__AnonStorey40__ctor_m3135298116(L_0, /*hidden argument*/NULL);
 		V_5 = L_0;
-		U3CUpdateU3Ec__AnonStorey3F_t430507262 * L_1 = V_5;
+		U3CUpdateU3Ec__AnonStorey40_t430507271 * L_1 = V_5;
 		Il2CppObject * L_2 = ___obj0;
 		NullCheck(L_1);
 		L_1->set_obj_1(L_2);
-		U3CUpdateU3Ec__AnonStorey3F_t430507262 * L_3 = V_5;
+		U3CUpdateU3Ec__AnonStorey40_t430507271 * L_3 = V_5;
 		NullCheck(L_3);
 		Il2CppObject * L_4 = L_3->get_obj_1();
 		if (!L_4)
@@ -5177,13 +5175,13 @@ IL_0023:
 		Type_t * L_6 = ___objType1;
 		TableMapping_t2817029478 * L_7 = SQLiteConnection_GetMapping_m1465756304(__this, L_6, 0, /*hidden argument*/NULL);
 		V_0 = L_7;
-		U3CUpdateU3Ec__AnonStorey3F_t430507262 * L_8 = V_5;
+		U3CUpdateU3Ec__AnonStorey40_t430507271 * L_8 = V_5;
 		TableMapping_t2817029478 * L_9 = V_0;
 		NullCheck(L_9);
 		Column_t1611479651 * L_10 = TableMapping_get_PK_m440796389(L_9, /*hidden argument*/NULL);
 		NullCheck(L_8);
 		L_8->set_pk_0(L_10);
-		U3CUpdateU3Ec__AnonStorey3F_t430507262 * L_11 = V_5;
+		U3CUpdateU3Ec__AnonStorey40_t430507271 * L_11 = V_5;
 		NullCheck(L_11);
 		Column_t1611479651 * L_12 = L_11->get_pk_0();
 		if (L_12)
@@ -5207,17 +5205,17 @@ IL_0060:
 		TableMapping_t2817029478 * L_17 = V_0;
 		NullCheck(L_17);
 		ColumnU5BU5D_t1660000434* L_18 = TableMapping_get_Columns_m1865020243(L_17, /*hidden argument*/NULL);
-		U3CUpdateU3Ec__AnonStorey3F_t430507262 * L_19 = V_5;
+		U3CUpdateU3Ec__AnonStorey40_t430507271 * L_19 = V_5;
 		IntPtr_t L_20;
-		L_20.set_m_value_0((void*)(void*)U3CUpdateU3Ec__AnonStorey3F_U3CU3Em__63_m1407755620_MethodInfo_var);
+		L_20.set_m_value_0((void*)(void*)U3CUpdateU3Ec__AnonStorey40_U3CU3Em__66_m1002427518_MethodInfo_var);
 		Func_2_t1336857620 * L_21 = (Func_2_t1336857620 *)il2cpp_codegen_object_new(Func_2_t1336857620_il2cpp_TypeInfo_var);
 		Func_2__ctor_m1807725498(L_21, L_19, L_20, /*hidden argument*/Func_2__ctor_m1807725498_MethodInfo_var);
 		Il2CppObject* L_22 = Enumerable_Where_TisColumn_t1611479651_m3155817865(NULL /*static, unused*/, (Il2CppObject*)(Il2CppObject*)L_18, L_21, /*hidden argument*/Enumerable_Where_TisColumn_t1611479651_m3155817865_MethodInfo_var);
 		V_1 = L_22;
 		Il2CppObject* L_23 = V_1;
-		U3CUpdateU3Ec__AnonStorey3F_t430507262 * L_24 = V_5;
+		U3CUpdateU3Ec__AnonStorey40_t430507271 * L_24 = V_5;
 		IntPtr_t L_25;
-		L_25.set_m_value_0((void*)(void*)U3CUpdateU3Ec__AnonStorey3F_U3CU3Em__64_m1179837798_MethodInfo_var);
+		L_25.set_m_value_0((void*)(void*)U3CUpdateU3Ec__AnonStorey40_U3CU3Em__67_m774509696_MethodInfo_var);
 		Func_2_t735907977 * L_26 = (Func_2_t735907977 *)il2cpp_codegen_object_new(Func_2_t735907977_il2cpp_TypeInfo_var);
 		Func_2__ctor_m4261754521(L_26, L_24, L_25, /*hidden argument*/Func_2__ctor_m4261754521_MethodInfo_var);
 		Il2CppObject* L_27 = Enumerable_Select_TisColumn_t1611479651_TisIl2CppObject_m2496475681(NULL /*static, unused*/, L_23, L_26, /*hidden argument*/Enumerable_Select_TisColumn_t1611479651_TisIl2CppObject_m2496475681_MethodInfo_var);
@@ -5227,10 +5225,10 @@ IL_0060:
 		List_1__ctor_m1384868247(L_29, L_28, /*hidden argument*/List_1__ctor_m1384868247_MethodInfo_var);
 		V_3 = L_29;
 		List_1_t1244034627 * L_30 = V_3;
-		U3CUpdateU3Ec__AnonStorey3F_t430507262 * L_31 = V_5;
+		U3CUpdateU3Ec__AnonStorey40_t430507271 * L_31 = V_5;
 		NullCheck(L_31);
 		Column_t1611479651 * L_32 = L_31->get_pk_0();
-		U3CUpdateU3Ec__AnonStorey3F_t430507262 * L_33 = V_5;
+		U3CUpdateU3Ec__AnonStorey40_t430507271 * L_33 = V_5;
 		NullCheck(L_33);
 		Il2CppObject * L_34 = L_33->get_obj_1();
 		NullCheck(L_32);
@@ -5258,7 +5256,7 @@ IL_0060:
 	}
 	{
 		IntPtr_t L_40;
-		L_40.set_m_value_0((void*)(void*)SQLiteConnection_U3CUpdateU3Em__65_m534594512_MethodInfo_var);
+		L_40.set_m_value_0((void*)(void*)SQLiteConnection_U3CUpdateU3Em__68_m2613899603_MethodInfo_var);
 		Func_2_t867290459 * L_41 = (Func_2_t867290459 *)il2cpp_codegen_object_new(Func_2_t867290459_il2cpp_TypeInfo_var);
 		Func_2__ctor_m2340058375(L_41, NULL, L_40, /*hidden argument*/Func_2__ctor_m2340058375_MethodInfo_var);
 		IL2CPP_RUNTIME_CLASS_INIT(SQLiteConnection_t2649932624_il2cpp_TypeInfo_var);
@@ -5277,7 +5275,7 @@ IL_00d6:
 		StringU5BU5D_t4054002952* L_44 = Enumerable_ToArray_TisString_t_m2199204590(NULL /*static, unused*/, L_43, /*hidden argument*/Enumerable_ToArray_TisString_t_m2199204590_MethodInfo_var);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
 		String_t* L_45 = String_Join_m2789530325(NULL /*static, unused*/, G_B7_1, L_44, /*hidden argument*/NULL);
-		U3CUpdateU3Ec__AnonStorey3F_t430507262 * L_46 = V_5;
+		U3CUpdateU3Ec__AnonStorey40_t430507271 * L_46 = V_5;
 		NullCheck(L_46);
 		Column_t1611479651 * L_47 = L_46->get_pk_0();
 		NullCheck(L_47);
@@ -5293,9 +5291,9 @@ IL_00d6:
 	}
 }
 // System.Int32 SQLite.SQLiteConnection::UpdateAll(System.Collections.IEnumerable)
-extern Il2CppClass* U3CUpdateAllU3Ec__AnonStorey40_t3049586628_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CUpdateAllU3Ec__AnonStorey41_t3049586629_il2cpp_TypeInfo_var;
 extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CUpdateAllU3Ec__AnonStorey40_U3CU3Em__66_m539387168_MethodInfo_var;
+extern const MethodInfo* U3CUpdateAllU3Ec__AnonStorey41_U3CU3Em__69_m668472770_MethodInfo_var;
 extern const uint32_t SQLiteConnection_UpdateAll_m285152714_MetadataUsageId;
 extern "C"  int32_t SQLiteConnection_UpdateAll_m285152714 (SQLiteConnection_t2649932624 * __this, Il2CppObject * ___objects0, const MethodInfo* method)
 {
@@ -5305,28 +5303,28 @@ extern "C"  int32_t SQLiteConnection_UpdateAll_m285152714 (SQLiteConnection_t264
 		il2cpp_codegen_initialize_method (SQLiteConnection_UpdateAll_m285152714_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
-	U3CUpdateAllU3Ec__AnonStorey40_t3049586628 * V_0 = NULL;
+	U3CUpdateAllU3Ec__AnonStorey41_t3049586629 * V_0 = NULL;
 	{
-		U3CUpdateAllU3Ec__AnonStorey40_t3049586628 * L_0 = (U3CUpdateAllU3Ec__AnonStorey40_t3049586628 *)il2cpp_codegen_object_new(U3CUpdateAllU3Ec__AnonStorey40_t3049586628_il2cpp_TypeInfo_var);
-		U3CUpdateAllU3Ec__AnonStorey40__ctor_m3475250519(L_0, /*hidden argument*/NULL);
+		U3CUpdateAllU3Ec__AnonStorey41_t3049586629 * L_0 = (U3CUpdateAllU3Ec__AnonStorey41_t3049586629 *)il2cpp_codegen_object_new(U3CUpdateAllU3Ec__AnonStorey41_t3049586629_il2cpp_TypeInfo_var);
+		U3CUpdateAllU3Ec__AnonStorey41__ctor_m3278737014(L_0, /*hidden argument*/NULL);
 		V_0 = L_0;
-		U3CUpdateAllU3Ec__AnonStorey40_t3049586628 * L_1 = V_0;
+		U3CUpdateAllU3Ec__AnonStorey41_t3049586629 * L_1 = V_0;
 		Il2CppObject * L_2 = ___objects0;
 		NullCheck(L_1);
 		L_1->set_objects_0(L_2);
-		U3CUpdateAllU3Ec__AnonStorey40_t3049586628 * L_3 = V_0;
+		U3CUpdateAllU3Ec__AnonStorey41_t3049586629 * L_3 = V_0;
 		NullCheck(L_3);
 		L_3->set_U3CU3Ef__this_2(__this);
-		U3CUpdateAllU3Ec__AnonStorey40_t3049586628 * L_4 = V_0;
+		U3CUpdateAllU3Ec__AnonStorey41_t3049586629 * L_4 = V_0;
 		NullCheck(L_4);
 		L_4->set_c_1(0);
-		U3CUpdateAllU3Ec__AnonStorey40_t3049586628 * L_5 = V_0;
+		U3CUpdateAllU3Ec__AnonStorey41_t3049586629 * L_5 = V_0;
 		IntPtr_t L_6;
-		L_6.set_m_value_0((void*)(void*)U3CUpdateAllU3Ec__AnonStorey40_U3CU3Em__66_m539387168_MethodInfo_var);
+		L_6.set_m_value_0((void*)(void*)U3CUpdateAllU3Ec__AnonStorey41_U3CU3Em__69_m668472770_MethodInfo_var);
 		Action_t3771233898 * L_7 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 		Action__ctor_m2957240604(L_7, L_5, L_6, /*hidden argument*/NULL);
 		SQLiteConnection_RunInTransaction_m259419146(__this, L_7, /*hidden argument*/NULL);
-		U3CUpdateAllU3Ec__AnonStorey40_t3049586628 * L_8 = V_0;
+		U3CUpdateAllU3Ec__AnonStorey41_t3049586629 * L_8 = V_0;
 		NullCheck(L_8);
 		int32_t L_9 = L_8->get_c_1();
 		return L_9;
@@ -5653,8 +5651,8 @@ IL_00aa:
 		return;
 	}
 }
-// System.String SQLite.SQLiteConnection::<CreateTable>m__5D(SQLite.TableMapping/Column)
-extern "C"  String_t* SQLiteConnection_U3CCreateTableU3Em__5D_m3052362067 (SQLiteConnection_t2649932624 * __this, Column_t1611479651 * ___p0, const MethodInfo* method)
+// System.String SQLite.SQLiteConnection::<CreateTable>m__60(SQLite.TableMapping/Column)
+extern "C"  String_t* SQLiteConnection_U3CCreateTableU3Em__60_m2086546142 (SQLiteConnection_t2649932624 * __this, Column_t1611479651 * ___p0, const MethodInfo* method)
 {
 	{
 		Column_t1611479651 * L_0 = ___p0;
@@ -5663,33 +5661,33 @@ extern "C"  String_t* SQLiteConnection_U3CCreateTableU3Em__5D_m3052362067 (SQLit
 		return L_2;
 	}
 }
-// System.Int32 SQLite.SQLiteConnection::<CreateTable>m__5E(SQLite.SQLiteConnection/IndexedColumn)
-extern "C"  int32_t SQLiteConnection_U3CCreateTableU3Em__5E_m4207736578 (Il2CppObject * __this /* static, unused */, IndexedColumn_t1407024228  ___i0, const MethodInfo* method)
+// System.Int32 SQLite.SQLiteConnection::<CreateTable>m__61(SQLite.SQLiteConnection/IndexedColumn)
+extern "C"  int32_t SQLiteConnection_U3CCreateTableU3Em__61_m3105247383 (Il2CppObject * __this /* static, unused */, IndexedColumn_t1407024228  ___i0, const MethodInfo* method)
 {
 	{
 		int32_t L_0 = (&___i0)->get_Order_0();
 		return L_0;
 	}
 }
-// System.String SQLite.SQLiteConnection::<CreateTable>m__5F(SQLite.SQLiteConnection/IndexedColumn)
-extern "C"  String_t* SQLiteConnection_U3CCreateTableU3Em__5F_m3383778486 (Il2CppObject * __this /* static, unused */, IndexedColumn_t1407024228  ___i0, const MethodInfo* method)
+// System.String SQLite.SQLiteConnection::<CreateTable>m__62(SQLite.SQLiteConnection/IndexedColumn)
+extern "C"  String_t* SQLiteConnection_U3CCreateTableU3Em__62_m2281289291 (Il2CppObject * __this /* static, unused */, IndexedColumn_t1407024228  ___i0, const MethodInfo* method)
 {
 	{
 		String_t* L_0 = (&___i0)->get_ColumnName_1();
 		return L_0;
 	}
 }
-// System.String SQLite.SQLiteConnection::<Update>m__65(SQLite.TableMapping/Column)
+// System.String SQLite.SQLiteConnection::<Update>m__68(SQLite.TableMapping/Column)
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral34;
 extern Il2CppCodeGenString* _stringLiteral1004793794;
-extern const uint32_t SQLiteConnection_U3CUpdateU3Em__65_m534594512_MetadataUsageId;
-extern "C"  String_t* SQLiteConnection_U3CUpdateU3Em__65_m534594512 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method)
+extern const uint32_t SQLiteConnection_U3CUpdateU3Em__68_m2613899603_MetadataUsageId;
+extern "C"  String_t* SQLiteConnection_U3CUpdateU3Em__68_m2613899603 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (SQLiteConnection_U3CUpdateU3Em__65_m534594512_MetadataUsageId);
+		il2cpp_codegen_initialize_method (SQLiteConnection_U3CUpdateU3Em__68_m2613899603_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -5701,25 +5699,25 @@ extern "C"  String_t* SQLiteConnection_U3CUpdateU3Em__65_m534594512 (Il2CppObjec
 		return L_2;
 	}
 }
-// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3C::.ctor()
-extern "C"  void U3CInsertAllU3Ec__AnonStorey3C__ctor_m995234259 (U3CInsertAllU3Ec__AnonStorey3C_t2009518024 * __this, const MethodInfo* method)
+// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3D::.ctor()
+extern "C"  void U3CInsertAllU3Ec__AnonStorey3D__ctor_m798720754 (U3CInsertAllU3Ec__AnonStorey3D_t2009518025 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3C::<>m__60()
+// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3D::<>m__63()
 extern Il2CppClass* IEnumerable_t3464557803_il2cpp_TypeInfo_var;
 extern Il2CppClass* IEnumerator_t3464575207_il2cpp_TypeInfo_var;
 extern Il2CppClass* IDisposable_t1423340799_il2cpp_TypeInfo_var;
-extern const uint32_t U3CInsertAllU3Ec__AnonStorey3C_U3CU3Em__60_m950604822_MetadataUsageId;
-extern "C"  void U3CInsertAllU3Ec__AnonStorey3C_U3CU3Em__60_m950604822 (U3CInsertAllU3Ec__AnonStorey3C_t2009518024 * __this, const MethodInfo* method)
+extern const uint32_t U3CInsertAllU3Ec__AnonStorey3D_U3CU3Em__63_m1079690424_MetadataUsageId;
+extern "C"  void U3CInsertAllU3Ec__AnonStorey3D_U3CU3Em__63_m1079690424 (U3CInsertAllU3Ec__AnonStorey3D_t2009518025 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CInsertAllU3Ec__AnonStorey3C_U3CU3Em__60_m950604822_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CInsertAllU3Ec__AnonStorey3D_U3CU3Em__63_m1079690424_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	Il2CppObject * V_0 = NULL;
@@ -5817,25 +5815,25 @@ IL_0053:
 		return;
 	}
 }
-// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3D::.ctor()
-extern "C"  void U3CInsertAllU3Ec__AnonStorey3D__ctor_m798720754 (U3CInsertAllU3Ec__AnonStorey3D_t2009518025 * __this, const MethodInfo* method)
+// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E::.ctor()
+extern "C"  void U3CInsertAllU3Ec__AnonStorey3E__ctor_m602207249 (U3CInsertAllU3Ec__AnonStorey3E_t2009518026 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3D::<>m__61()
+// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E::<>m__64()
 extern Il2CppClass* IEnumerable_t3464557803_il2cpp_TypeInfo_var;
 extern Il2CppClass* IEnumerator_t3464575207_il2cpp_TypeInfo_var;
 extern Il2CppClass* IDisposable_t1423340799_il2cpp_TypeInfo_var;
-extern const uint32_t U3CInsertAllU3Ec__AnonStorey3D_U3CU3Em__61_m1079688502_MetadataUsageId;
-extern "C"  void U3CInsertAllU3Ec__AnonStorey3D_U3CU3Em__61_m1079688502 (U3CInsertAllU3Ec__AnonStorey3D_t2009518025 * __this, const MethodInfo* method)
+extern const uint32_t U3CInsertAllU3Ec__AnonStorey3E_U3CU3Em__64_m1208774104_MetadataUsageId;
+extern "C"  void U3CInsertAllU3Ec__AnonStorey3E_U3CU3Em__64_m1208774104 (U3CInsertAllU3Ec__AnonStorey3E_t2009518026 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CInsertAllU3Ec__AnonStorey3D_U3CU3Em__61_m1079688502_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CInsertAllU3Ec__AnonStorey3E_U3CU3Em__64_m1208774104_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	Il2CppObject * V_0 = NULL;
@@ -5934,25 +5932,25 @@ IL_0059:
 		return;
 	}
 }
-// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E::.ctor()
-extern "C"  void U3CInsertAllU3Ec__AnonStorey3E__ctor_m602207249 (U3CInsertAllU3Ec__AnonStorey3E_t2009518026 * __this, const MethodInfo* method)
+// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3F::.ctor()
+extern "C"  void U3CInsertAllU3Ec__AnonStorey3F__ctor_m405693744 (U3CInsertAllU3Ec__AnonStorey3F_t2009518027 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E::<>m__62()
+// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3F::<>m__65()
 extern Il2CppClass* IEnumerable_t3464557803_il2cpp_TypeInfo_var;
 extern Il2CppClass* IEnumerator_t3464575207_il2cpp_TypeInfo_var;
 extern Il2CppClass* IDisposable_t1423340799_il2cpp_TypeInfo_var;
-extern const uint32_t U3CInsertAllU3Ec__AnonStorey3E_U3CU3Em__62_m1208772182_MetadataUsageId;
-extern "C"  void U3CInsertAllU3Ec__AnonStorey3E_U3CU3Em__62_m1208772182 (U3CInsertAllU3Ec__AnonStorey3E_t2009518026 * __this, const MethodInfo* method)
+extern const uint32_t U3CInsertAllU3Ec__AnonStorey3F_U3CU3Em__65_m1337857784_MetadataUsageId;
+extern "C"  void U3CInsertAllU3Ec__AnonStorey3F_U3CU3Em__65_m1337857784 (U3CInsertAllU3Ec__AnonStorey3F_t2009518027 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CInsertAllU3Ec__AnonStorey3E_U3CU3Em__62_m1208772182_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CInsertAllU3Ec__AnonStorey3F_U3CU3Em__65_m1337857784_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	Il2CppObject * V_0 = NULL;
@@ -6051,16 +6049,16 @@ IL_0059:
 		return;
 	}
 }
-// System.Void SQLite.SQLiteConnection/<Update>c__AnonStorey3F::.ctor()
-extern "C"  void U3CUpdateU3Ec__AnonStorey3F__ctor_m608952365 (U3CUpdateU3Ec__AnonStorey3F_t430507262 * __this, const MethodInfo* method)
+// System.Void SQLite.SQLiteConnection/<Update>c__AnonStorey40::.ctor()
+extern "C"  void U3CUpdateU3Ec__AnonStorey40__ctor_m3135298116 (U3CUpdateU3Ec__AnonStorey40_t430507271 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Boolean SQLite.SQLiteConnection/<Update>c__AnonStorey3F::<>m__63(SQLite.TableMapping/Column)
-extern "C"  bool U3CUpdateU3Ec__AnonStorey3F_U3CU3Em__63_m1407755620 (U3CUpdateU3Ec__AnonStorey3F_t430507262 * __this, Column_t1611479651 * ___p0, const MethodInfo* method)
+// System.Boolean SQLite.SQLiteConnection/<Update>c__AnonStorey40::<>m__66(SQLite.TableMapping/Column)
+extern "C"  bool U3CUpdateU3Ec__AnonStorey40_U3CU3Em__66_m1002427518 (U3CUpdateU3Ec__AnonStorey40_t430507271 * __this, Column_t1611479651 * ___p0, const MethodInfo* method)
 {
 	{
 		Column_t1611479651 * L_0 = ___p0;
@@ -6068,8 +6066,8 @@ extern "C"  bool U3CUpdateU3Ec__AnonStorey3F_U3CU3Em__63_m1407755620 (U3CUpdateU
 		return (bool)((((int32_t)((((Il2CppObject*)(Column_t1611479651 *)L_0) == ((Il2CppObject*)(Column_t1611479651 *)L_1))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 	}
 }
-// System.Object SQLite.SQLiteConnection/<Update>c__AnonStorey3F::<>m__64(SQLite.TableMapping/Column)
-extern "C"  Il2CppObject * U3CUpdateU3Ec__AnonStorey3F_U3CU3Em__64_m1179837798 (U3CUpdateU3Ec__AnonStorey3F_t430507262 * __this, Column_t1611479651 * ___c0, const MethodInfo* method)
+// System.Object SQLite.SQLiteConnection/<Update>c__AnonStorey40::<>m__67(SQLite.TableMapping/Column)
+extern "C"  Il2CppObject * U3CUpdateU3Ec__AnonStorey40_U3CU3Em__67_m774509696 (U3CUpdateU3Ec__AnonStorey40_t430507271 * __this, Column_t1611479651 * ___c0, const MethodInfo* method)
 {
 	{
 		Column_t1611479651 * L_0 = ___c0;
@@ -6079,25 +6077,25 @@ extern "C"  Il2CppObject * U3CUpdateU3Ec__AnonStorey3F_U3CU3Em__64_m1179837798 (
 		return L_2;
 	}
 }
-// System.Void SQLite.SQLiteConnection/<UpdateAll>c__AnonStorey40::.ctor()
-extern "C"  void U3CUpdateAllU3Ec__AnonStorey40__ctor_m3475250519 (U3CUpdateAllU3Ec__AnonStorey40_t3049586628 * __this, const MethodInfo* method)
+// System.Void SQLite.SQLiteConnection/<UpdateAll>c__AnonStorey41::.ctor()
+extern "C"  void U3CUpdateAllU3Ec__AnonStorey41__ctor_m3278737014 (U3CUpdateAllU3Ec__AnonStorey41_t3049586629 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Void SQLite.SQLiteConnection/<UpdateAll>c__AnonStorey40::<>m__66()
+// System.Void SQLite.SQLiteConnection/<UpdateAll>c__AnonStorey41::<>m__69()
 extern Il2CppClass* IEnumerable_t3464557803_il2cpp_TypeInfo_var;
 extern Il2CppClass* IEnumerator_t3464575207_il2cpp_TypeInfo_var;
 extern Il2CppClass* IDisposable_t1423340799_il2cpp_TypeInfo_var;
-extern const uint32_t U3CUpdateAllU3Ec__AnonStorey40_U3CU3Em__66_m539387168_MetadataUsageId;
-extern "C"  void U3CUpdateAllU3Ec__AnonStorey40_U3CU3Em__66_m539387168 (U3CUpdateAllU3Ec__AnonStorey40_t3049586628 * __this, const MethodInfo* method)
+extern const uint32_t U3CUpdateAllU3Ec__AnonStorey41_U3CU3Em__69_m668472770_MetadataUsageId;
+extern "C"  void U3CUpdateAllU3Ec__AnonStorey41_U3CU3Em__69_m668472770 (U3CUpdateAllU3Ec__AnonStorey41_t3049586629 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CUpdateAllU3Ec__AnonStorey40_U3CU3Em__66_m539387168_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CUpdateAllU3Ec__AnonStorey41_U3CU3Em__69_m668472770_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	Il2CppObject * V_0 = NULL;
@@ -6833,7 +6831,7 @@ IL_002e:
 // SQLite.TableMapping/Column[] SQLite.TableMapping::get_InsertColumns()
 extern Il2CppClass* TableMapping_t2817029478_il2cpp_TypeInfo_var;
 extern Il2CppClass* Func_2_t1336857620_il2cpp_TypeInfo_var;
-extern const MethodInfo* TableMapping_U3Cget_InsertColumnsU3Em__67_m2460585107_MethodInfo_var;
+extern const MethodInfo* TableMapping_U3Cget_InsertColumnsU3Em__6A_m801667485_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m1807725498_MethodInfo_var;
 extern const MethodInfo* Enumerable_Where_TisColumn_t1611479651_m3155817865_MethodInfo_var;
 extern const MethodInfo* Enumerable_ToArray_TisColumn_t1611479651_m2154538269_MethodInfo_var;
@@ -6871,7 +6869,7 @@ extern "C"  ColumnU5BU5D_t1660000434* TableMapping_get_InsertColumns_m3958994138
 	}
 	{
 		IntPtr_t L_3;
-		L_3.set_m_value_0((void*)(void*)TableMapping_U3Cget_InsertColumnsU3Em__67_m2460585107_MethodInfo_var);
+		L_3.set_m_value_0((void*)(void*)TableMapping_U3Cget_InsertColumnsU3Em__6A_m801667485_MethodInfo_var);
 		Func_2_t1336857620 * L_4 = (Func_2_t1336857620 *)il2cpp_codegen_object_new(Func_2_t1336857620_il2cpp_TypeInfo_var);
 		Func_2__ctor_m1807725498(L_4, NULL, L_3, /*hidden argument*/Func_2__ctor_m1807725498_MethodInfo_var);
 		((TableMapping_t2817029478_StaticFields*)TableMapping_t2817029478_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cacheB_11(L_4);
@@ -6925,9 +6923,9 @@ IL_001c:
 	}
 }
 // SQLite.TableMapping/Column SQLite.TableMapping::FindColumnWithPropertyName(System.String)
-extern Il2CppClass* U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_t612555082_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_t612555083_il2cpp_TypeInfo_var;
 extern Il2CppClass* Func_2_t1336857620_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_U3CU3Em__68_m266243869_MethodInfo_var;
+extern const MethodInfo* U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_U3CU3Em__6B_m240130246_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m1807725498_MethodInfo_var;
 extern const MethodInfo* Enumerable_FirstOrDefault_TisColumn_t1611479651_m4086476965_MethodInfo_var;
 extern const uint32_t TableMapping_FindColumnWithPropertyName_m1833536268_MetadataUsageId;
@@ -6940,19 +6938,19 @@ extern "C"  Column_t1611479651 * TableMapping_FindColumnWithPropertyName_m183353
 		s_Il2CppMethodIntialized = true;
 	}
 	Column_t1611479651 * V_0 = NULL;
-	U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_t612555082 * V_1 = NULL;
+	U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_t612555083 * V_1 = NULL;
 	{
-		U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_t612555082 * L_0 = (U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_t612555082 *)il2cpp_codegen_object_new(U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_t612555082_il2cpp_TypeInfo_var);
-		U3CFindColumnWithPropertyNameU3Ec__AnonStorey41__ctor_m402870625(L_0, /*hidden argument*/NULL);
+		U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_t612555083 * L_0 = (U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_t612555083 *)il2cpp_codegen_object_new(U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_t612555083_il2cpp_TypeInfo_var);
+		U3CFindColumnWithPropertyNameU3Ec__AnonStorey42__ctor_m206357120(L_0, /*hidden argument*/NULL);
 		V_1 = L_0;
-		U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_t612555082 * L_1 = V_1;
+		U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_t612555083 * L_1 = V_1;
 		String_t* L_2 = ___propertyName0;
 		NullCheck(L_1);
 		L_1->set_propertyName_0(L_2);
 		ColumnU5BU5D_t1660000434* L_3 = TableMapping_get_Columns_m1865020243(__this, /*hidden argument*/NULL);
-		U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_t612555082 * L_4 = V_1;
+		U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_t612555083 * L_4 = V_1;
 		IntPtr_t L_5;
-		L_5.set_m_value_0((void*)(void*)U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_U3CU3Em__68_m266243869_MethodInfo_var);
+		L_5.set_m_value_0((void*)(void*)U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_U3CU3Em__6B_m240130246_MethodInfo_var);
 		Func_2_t1336857620 * L_6 = (Func_2_t1336857620 *)il2cpp_codegen_object_new(Func_2_t1336857620_il2cpp_TypeInfo_var);
 		Func_2__ctor_m1807725498(L_6, L_4, L_5, /*hidden argument*/Func_2__ctor_m1807725498_MethodInfo_var);
 		Column_t1611479651 * L_7 = Enumerable_FirstOrDefault_TisColumn_t1611479651_m4086476965(NULL /*static, unused*/, (Il2CppObject*)(Il2CppObject*)L_3, L_6, /*hidden argument*/Enumerable_FirstOrDefault_TisColumn_t1611479651_m4086476965_MethodInfo_var);
@@ -6962,9 +6960,9 @@ extern "C"  Column_t1611479651 * TableMapping_FindColumnWithPropertyName_m183353
 	}
 }
 // SQLite.TableMapping/Column SQLite.TableMapping::FindColumn(System.String)
-extern Il2CppClass* U3CFindColumnU3Ec__AnonStorey42_t566048581_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CFindColumnU3Ec__AnonStorey43_t566048582_il2cpp_TypeInfo_var;
 extern Il2CppClass* Func_2_t1336857620_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CFindColumnU3Ec__AnonStorey42_U3CU3Em__69_m2696183427_MethodInfo_var;
+extern const MethodInfo* U3CFindColumnU3Ec__AnonStorey43_U3CU3Em__6C_m2670069804_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m1807725498_MethodInfo_var;
 extern const MethodInfo* Enumerable_FirstOrDefault_TisColumn_t1611479651_m4086476965_MethodInfo_var;
 extern const uint32_t TableMapping_FindColumn_m528499666_MetadataUsageId;
@@ -6977,19 +6975,19 @@ extern "C"  Column_t1611479651 * TableMapping_FindColumn_m528499666 (TableMappin
 		s_Il2CppMethodIntialized = true;
 	}
 	Column_t1611479651 * V_0 = NULL;
-	U3CFindColumnU3Ec__AnonStorey42_t566048581 * V_1 = NULL;
+	U3CFindColumnU3Ec__AnonStorey43_t566048582 * V_1 = NULL;
 	{
-		U3CFindColumnU3Ec__AnonStorey42_t566048581 * L_0 = (U3CFindColumnU3Ec__AnonStorey42_t566048581 *)il2cpp_codegen_object_new(U3CFindColumnU3Ec__AnonStorey42_t566048581_il2cpp_TypeInfo_var);
-		U3CFindColumnU3Ec__AnonStorey42__ctor_m187583942(L_0, /*hidden argument*/NULL);
+		U3CFindColumnU3Ec__AnonStorey43_t566048582 * L_0 = (U3CFindColumnU3Ec__AnonStorey43_t566048582 *)il2cpp_codegen_object_new(U3CFindColumnU3Ec__AnonStorey43_t566048582_il2cpp_TypeInfo_var);
+		U3CFindColumnU3Ec__AnonStorey43__ctor_m4286037733(L_0, /*hidden argument*/NULL);
 		V_1 = L_0;
-		U3CFindColumnU3Ec__AnonStorey42_t566048581 * L_1 = V_1;
+		U3CFindColumnU3Ec__AnonStorey43_t566048582 * L_1 = V_1;
 		String_t* L_2 = ___columnName0;
 		NullCheck(L_1);
 		L_1->set_columnName_0(L_2);
 		ColumnU5BU5D_t1660000434* L_3 = TableMapping_get_Columns_m1865020243(__this, /*hidden argument*/NULL);
-		U3CFindColumnU3Ec__AnonStorey42_t566048581 * L_4 = V_1;
+		U3CFindColumnU3Ec__AnonStorey43_t566048582 * L_4 = V_1;
 		IntPtr_t L_5;
-		L_5.set_m_value_0((void*)(void*)U3CFindColumnU3Ec__AnonStorey42_U3CU3Em__69_m2696183427_MethodInfo_var);
+		L_5.set_m_value_0((void*)(void*)U3CFindColumnU3Ec__AnonStorey43_U3CU3Em__6C_m2670069804_MethodInfo_var);
 		Func_2_t1336857620 * L_6 = (Func_2_t1336857620 *)il2cpp_codegen_object_new(Func_2_t1336857620_il2cpp_TypeInfo_var);
 		Func_2__ctor_m1807725498(L_6, L_4, L_5, /*hidden argument*/Func_2__ctor_m1807725498_MethodInfo_var);
 		Column_t1611479651 * L_7 = Enumerable_FirstOrDefault_TisColumn_t1611479651_m4086476965(NULL /*static, unused*/, (Il2CppObject*)(Il2CppObject*)L_3, L_6, /*hidden argument*/Enumerable_FirstOrDefault_TisColumn_t1611479651_m4086476965_MethodInfo_var);
@@ -7063,11 +7061,11 @@ extern Il2CppClass* Func_2_t867290459_il2cpp_TypeInfo_var;
 extern Il2CppClass* PreparedSqlLiteInsertCommand_t1604881465_il2cpp_TypeInfo_var;
 extern const MethodInfo* Enumerable_Any_TisColumn_t1611479651_m3123942626_MethodInfo_var;
 extern const MethodInfo* Enumerable_Count_TisColumn_t1611479651_m602974841_MethodInfo_var;
-extern const MethodInfo* TableMapping_U3CCreateInsertCommandU3Em__6A_m1854000777_MethodInfo_var;
+extern const MethodInfo* TableMapping_U3CCreateInsertCommandU3Em__6D_m3933305868_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m2340058375_MethodInfo_var;
 extern const MethodInfo* Enumerable_Select_TisColumn_t1611479651_TisString_t_m882201871_MethodInfo_var;
 extern const MethodInfo* Enumerable_ToArray_TisString_t_m2199204590_MethodInfo_var;
-extern const MethodInfo* TableMapping_U3CCreateInsertCommandU3Em__6B_m2547102474_MethodInfo_var;
+extern const MethodInfo* TableMapping_U3CCreateInsertCommandU3Em__6E_m331440269_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3784312869;
 extern Il2CppCodeGenString* _stringLiteral1220759895;
 extern Il2CppCodeGenString* _stringLiteral3687130497;
@@ -7196,7 +7194,7 @@ IL_0069:
 	}
 	{
 		IntPtr_t L_21;
-		L_21.set_m_value_0((void*)(void*)TableMapping_U3CCreateInsertCommandU3Em__6A_m1854000777_MethodInfo_var);
+		L_21.set_m_value_0((void*)(void*)TableMapping_U3CCreateInsertCommandU3Em__6D_m3933305868_MethodInfo_var);
 		Func_2_t867290459 * L_22 = (Func_2_t867290459 *)il2cpp_codegen_object_new(Func_2_t867290459_il2cpp_TypeInfo_var);
 		Func_2__ctor_m2340058375(L_22, NULL, L_21, /*hidden argument*/Func_2__ctor_m2340058375_MethodInfo_var);
 		((TableMapping_t2817029478_StaticFields*)TableMapping_t2817029478_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cacheC_12(L_22);
@@ -7241,7 +7239,7 @@ IL_009d:
 	}
 	{
 		IntPtr_t L_30;
-		L_30.set_m_value_0((void*)(void*)TableMapping_U3CCreateInsertCommandU3Em__6B_m2547102474_MethodInfo_var);
+		L_30.set_m_value_0((void*)(void*)TableMapping_U3CCreateInsertCommandU3Em__6E_m331440269_MethodInfo_var);
 		Func_2_t867290459 * L_31 = (Func_2_t867290459 *)il2cpp_codegen_object_new(Func_2_t867290459_il2cpp_TypeInfo_var);
 		Func_2__ctor_m2340058375(L_31, NULL, L_30, /*hidden argument*/Func_2__ctor_m2340058375_MethodInfo_var);
 		((TableMapping_t2817029478_StaticFields*)TableMapping_t2817029478_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cacheD_13(L_31);
@@ -7310,8 +7308,8 @@ IL_001d:
 		return;
 	}
 }
-// System.Boolean SQLite.TableMapping::<get_InsertColumns>m__67(SQLite.TableMapping/Column)
-extern "C"  bool TableMapping_U3Cget_InsertColumnsU3Em__67_m2460585107 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method)
+// System.Boolean SQLite.TableMapping::<get_InsertColumns>m__6A(SQLite.TableMapping/Column)
+extern "C"  bool TableMapping_U3Cget_InsertColumnsU3Em__6A_m801667485 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method)
 {
 	{
 		Column_t1611479651 * L_0 = ___c0;
@@ -7320,16 +7318,16 @@ extern "C"  bool TableMapping_U3Cget_InsertColumnsU3Em__67_m2460585107 (Il2CppOb
 		return (bool)((((int32_t)L_1) == ((int32_t)0))? 1 : 0);
 	}
 }
-// System.String SQLite.TableMapping::<CreateInsertCommand>m__6A(SQLite.TableMapping/Column)
+// System.String SQLite.TableMapping::<CreateInsertCommand>m__6D(SQLite.TableMapping/Column)
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral34;
-extern const uint32_t TableMapping_U3CCreateInsertCommandU3Em__6A_m1854000777_MetadataUsageId;
-extern "C"  String_t* TableMapping_U3CCreateInsertCommandU3Em__6A_m1854000777 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method)
+extern const uint32_t TableMapping_U3CCreateInsertCommandU3Em__6D_m3933305868_MetadataUsageId;
+extern "C"  String_t* TableMapping_U3CCreateInsertCommandU3Em__6D_m3933305868 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (TableMapping_U3CCreateInsertCommandU3Em__6A_m1854000777_MetadataUsageId);
+		il2cpp_codegen_initialize_method (TableMapping_U3CCreateInsertCommandU3Em__6D_m3933305868_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -7341,38 +7339,38 @@ extern "C"  String_t* TableMapping_U3CCreateInsertCommandU3Em__6A_m1854000777 (I
 		return L_2;
 	}
 }
-// System.String SQLite.TableMapping::<CreateInsertCommand>m__6B(SQLite.TableMapping/Column)
+// System.String SQLite.TableMapping::<CreateInsertCommand>m__6E(SQLite.TableMapping/Column)
 extern Il2CppCodeGenString* _stringLiteral63;
-extern const uint32_t TableMapping_U3CCreateInsertCommandU3Em__6B_m2547102474_MetadataUsageId;
-extern "C"  String_t* TableMapping_U3CCreateInsertCommandU3Em__6B_m2547102474 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method)
+extern const uint32_t TableMapping_U3CCreateInsertCommandU3Em__6E_m331440269_MetadataUsageId;
+extern "C"  String_t* TableMapping_U3CCreateInsertCommandU3Em__6E_m331440269 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (TableMapping_U3CCreateInsertCommandU3Em__6B_m2547102474_MetadataUsageId);
+		il2cpp_codegen_initialize_method (TableMapping_U3CCreateInsertCommandU3Em__6E_m331440269_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
 		return _stringLiteral63;
 	}
 }
-// System.Void SQLite.TableMapping/<FindColumn>c__AnonStorey42::.ctor()
-extern "C"  void U3CFindColumnU3Ec__AnonStorey42__ctor_m187583942 (U3CFindColumnU3Ec__AnonStorey42_t566048581 * __this, const MethodInfo* method)
+// System.Void SQLite.TableMapping/<FindColumn>c__AnonStorey43::.ctor()
+extern "C"  void U3CFindColumnU3Ec__AnonStorey43__ctor_m4286037733 (U3CFindColumnU3Ec__AnonStorey43_t566048582 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Boolean SQLite.TableMapping/<FindColumn>c__AnonStorey42::<>m__69(SQLite.TableMapping/Column)
+// System.Boolean SQLite.TableMapping/<FindColumn>c__AnonStorey43::<>m__6C(SQLite.TableMapping/Column)
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t U3CFindColumnU3Ec__AnonStorey42_U3CU3Em__69_m2696183427_MetadataUsageId;
-extern "C"  bool U3CFindColumnU3Ec__AnonStorey42_U3CU3Em__69_m2696183427 (U3CFindColumnU3Ec__AnonStorey42_t566048581 * __this, Column_t1611479651 * ___c0, const MethodInfo* method)
+extern const uint32_t U3CFindColumnU3Ec__AnonStorey43_U3CU3Em__6C_m2670069804_MetadataUsageId;
+extern "C"  bool U3CFindColumnU3Ec__AnonStorey43_U3CU3Em__6C_m2670069804 (U3CFindColumnU3Ec__AnonStorey43_t566048582 * __this, Column_t1611479651 * ___c0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CFindColumnU3Ec__AnonStorey42_U3CU3Em__69_m2696183427_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CFindColumnU3Ec__AnonStorey43_U3CU3Em__6C_m2670069804_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -7385,23 +7383,23 @@ extern "C"  bool U3CFindColumnU3Ec__AnonStorey42_U3CU3Em__69_m2696183427 (U3CFin
 		return L_3;
 	}
 }
-// System.Void SQLite.TableMapping/<FindColumnWithPropertyName>c__AnonStorey41::.ctor()
-extern "C"  void U3CFindColumnWithPropertyNameU3Ec__AnonStorey41__ctor_m402870625 (U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_t612555082 * __this, const MethodInfo* method)
+// System.Void SQLite.TableMapping/<FindColumnWithPropertyName>c__AnonStorey42::.ctor()
+extern "C"  void U3CFindColumnWithPropertyNameU3Ec__AnonStorey42__ctor_m206357120 (U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_t612555083 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Boolean SQLite.TableMapping/<FindColumnWithPropertyName>c__AnonStorey41::<>m__68(SQLite.TableMapping/Column)
+// System.Boolean SQLite.TableMapping/<FindColumnWithPropertyName>c__AnonStorey42::<>m__6B(SQLite.TableMapping/Column)
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_U3CU3Em__68_m266243869_MetadataUsageId;
-extern "C"  bool U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_U3CU3Em__68_m266243869 (U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_t612555082 * __this, Column_t1611479651 * ___c0, const MethodInfo* method)
+extern const uint32_t U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_U3CU3Em__6B_m240130246_MetadataUsageId;
+extern "C"  bool U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_U3CU3Em__6B_m240130246 (U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_t612555083 * __this, Column_t1611479651 * ___c0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_U3CU3Em__68_m266243869_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_U3CU3Em__6B_m240130246_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -8394,7 +8392,7 @@ extern Il2CppClass* ObjectU5BU5D_t1108656482_il2cpp_TypeInfo_var;
 extern Il2CppClass* SQLiteException_t1817335141_il2cpp_TypeInfo_var;
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppClass* IDisposable_t1423340799_il2cpp_TypeInfo_var;
-extern const MethodInfo* TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__F_m1299505639_MethodInfo_var;
+extern const MethodInfo* TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__10_m3194622866_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m4037940702_MethodInfo_var;
 extern const MethodInfo* Enumerable_Where_TisColumnInfo_t4283098503_m587255725_MethodInfo_var;
 extern const MethodInfo* Enumerable_ToList_TisColumnInfo_t4283098503_m933673430_MethodInfo_var;
@@ -8453,7 +8451,7 @@ IL_000d:
 IL_0021:
 		{
 			IntPtr_t L_6;
-			L_6.set_m_value_0((void*)(void*)TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__F_m1299505639_MethodInfo_var);
+			L_6.set_m_value_0((void*)(void*)TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__10_m3194622866_MethodInfo_var);
 			Func_2_t2699363296 * L_7 = (Func_2_t2699363296 *)il2cpp_codegen_object_new(Func_2_t2699363296_il2cpp_TypeInfo_var);
 			Func_2__ctor_m4037940702(L_7, NULL, L_6, /*hidden argument*/Func_2__ctor_m4037940702_MethodInfo_var);
 			((TimetableManger_t3141655579_StaticFields*)TimetableManger_t3141655579_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cache5_5(L_7);
@@ -8892,7 +8890,7 @@ extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppClass* U3CinitTimetableU3Ec__AnonStorey1E_t3201663910_il2cpp_TypeInfo_var;
 extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
 extern Il2CppClass* Loom_t2374337_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__10_m2323935133_MethodInfo_var;
+extern const MethodInfo* U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__11_m2323936094_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2101895522;
 extern Il2CppCodeGenString* _stringLiteral715766293;
 extern Il2CppCodeGenString* _stringLiteral793310679;
@@ -9017,7 +9015,7 @@ IL_0094:
 	{
 		U3CinitTimetableU3Ec__AnonStorey1E_t3201663910 * L_14 = V_0;
 		IntPtr_t L_15;
-		L_15.set_m_value_0((void*)(void*)U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__10_m2323935133_MethodInfo_var);
+		L_15.set_m_value_0((void*)(void*)U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__11_m2323936094_MethodInfo_var);
 		Action_t3771233898 * L_16 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 		Action__ctor_m2957240604(L_16, L_14, L_15, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Loom_t2374337_il2cpp_TypeInfo_var);
@@ -10473,19 +10471,19 @@ extern Il2CppClass* Comparison_1_t4064746800_il2cpp_TypeInfo_var;
 extern Il2CppClass* Comparison_1_t2662047781_il2cpp_TypeInfo_var;
 extern Il2CppClass* Enumerator_t2441276639_il2cpp_TypeInfo_var;
 extern Il2CppClass* IDisposable_t1423340799_il2cpp_TypeInfo_var;
-extern const MethodInfo* TimetableManger_U3CsortEverythingU3Em__11_m3914911854_MethodInfo_var;
+extern const MethodInfo* TimetableManger_U3CsortEverythingU3Em__12_m3935249229_MethodInfo_var;
 extern const MethodInfo* Comparison_1__ctor_m1754703696_MethodInfo_var;
 extern const MethodInfo* List_1_Sort_m4211473361_MethodInfo_var;
-extern const MethodInfo* TimetableManger_U3CsortEverythingU3Em__12_m3935249229_MethodInfo_var;
+extern const MethodInfo* TimetableManger_U3CsortEverythingU3Em__13_m3955586604_MethodInfo_var;
 extern const MethodInfo* List_1_GetEnumerator_m2546615738_MethodInfo_var;
 extern const MethodInfo* Enumerator_get_Current_m1472331494_MethodInfo_var;
-extern const MethodInfo* TimetableManger_U3CsortEverythingU3Em__13_m1084390476_MethodInfo_var;
+extern const MethodInfo* TimetableManger_U3CsortEverythingU3Em__14_m2545970475_MethodInfo_var;
 extern const MethodInfo* Comparison_1__ctor_m324693627_MethodInfo_var;
 extern const MethodInfo* List_1_Sort_m1836740806_MethodInfo_var;
-extern const MethodInfo* TimetableManger_U3CsortEverythingU3Em__14_m2545970475_MethodInfo_var;
-extern const MethodInfo* Enumerator_MoveNext_m995272630_MethodInfo_var;
 extern const MethodInfo* TimetableManger_U3CsortEverythingU3Em__15_m4007550474_MethodInfo_var;
+extern const MethodInfo* Enumerator_MoveNext_m995272630_MethodInfo_var;
 extern const MethodInfo* TimetableManger_U3CsortEverythingU3Em__16_m1174163177_MethodInfo_var;
+extern const MethodInfo* TimetableManger_U3CsortEverythingU3Em__17_m2635743176_MethodInfo_var;
 extern const uint32_t TimetableManger_sortEverything_m3239801957_MetadataUsageId;
 extern "C"  void TimetableManger_sortEverything_m3239801957 (TimetableManger_t3141655579 * __this, const MethodInfo* method)
 {
@@ -10533,7 +10531,7 @@ extern "C"  void TimetableManger_sortEverything_m3239801957 (TimetableManger_t31
 	}
 	{
 		IntPtr_t L_3;
-		L_3.set_m_value_0((void*)(void*)TimetableManger_U3CsortEverythingU3Em__11_m3914911854_MethodInfo_var);
+		L_3.set_m_value_0((void*)(void*)TimetableManger_U3CsortEverythingU3Em__12_m3935249229_MethodInfo_var);
 		Comparison_1_t4064746800 * L_4 = (Comparison_1_t4064746800 *)il2cpp_codegen_object_new(Comparison_1_t4064746800_il2cpp_TypeInfo_var);
 		Comparison_1__ctor_m1754703696(L_4, NULL, L_3, /*hidden argument*/Comparison_1__ctor_m1754703696_MethodInfo_var);
 		((TimetableManger_t3141655579_StaticFields*)TimetableManger_t3141655579_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cache6_6(L_4);
@@ -10558,7 +10556,7 @@ IL_0023:
 	}
 	{
 		IntPtr_t L_9;
-		L_9.set_m_value_0((void*)(void*)TimetableManger_U3CsortEverythingU3Em__12_m3935249229_MethodInfo_var);
+		L_9.set_m_value_0((void*)(void*)TimetableManger_U3CsortEverythingU3Em__13_m3955586604_MethodInfo_var);
 		Comparison_1_t4064746800 * L_10 = (Comparison_1_t4064746800 *)il2cpp_codegen_object_new(Comparison_1_t4064746800_il2cpp_TypeInfo_var);
 		Comparison_1__ctor_m1754703696(L_10, NULL, L_9, /*hidden argument*/Comparison_1__ctor_m1754703696_MethodInfo_var);
 		((TimetableManger_t3141655579_StaticFields*)TimetableManger_t3141655579_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cache7_7(L_10);
@@ -10604,7 +10602,7 @@ IL_0070:
 IL_0085:
 		{
 			IntPtr_t L_19;
-			L_19.set_m_value_0((void*)(void*)TimetableManger_U3CsortEverythingU3Em__13_m1084390476_MethodInfo_var);
+			L_19.set_m_value_0((void*)(void*)TimetableManger_U3CsortEverythingU3Em__14_m2545970475_MethodInfo_var);
 			Comparison_1_t2662047781 * L_20 = (Comparison_1_t2662047781 *)il2cpp_codegen_object_new(Comparison_1_t2662047781_il2cpp_TypeInfo_var);
 			Comparison_1__ctor_m324693627(L_20, NULL, L_19, /*hidden argument*/Comparison_1__ctor_m324693627_MethodInfo_var);
 			((TimetableManger_t3141655579_StaticFields*)TimetableManger_t3141655579_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cache8_8(L_20);
@@ -10631,7 +10629,7 @@ IL_0096:
 IL_00ad:
 		{
 			IntPtr_t L_25;
-			L_25.set_m_value_0((void*)(void*)TimetableManger_U3CsortEverythingU3Em__14_m2545970475_MethodInfo_var);
+			L_25.set_m_value_0((void*)(void*)TimetableManger_U3CsortEverythingU3Em__15_m4007550474_MethodInfo_var);
 			Comparison_1_t2662047781 * L_26 = (Comparison_1_t2662047781 *)il2cpp_codegen_object_new(Comparison_1_t2662047781_il2cpp_TypeInfo_var);
 			Comparison_1__ctor_m324693627(L_26, NULL, L_25, /*hidden argument*/Comparison_1__ctor_m324693627_MethodInfo_var);
 			((TimetableManger_t3141655579_StaticFields*)TimetableManger_t3141655579_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cache9_9(L_26);
@@ -10716,7 +10714,7 @@ IL_00fb:
 IL_0110:
 		{
 			IntPtr_t L_39;
-			L_39.set_m_value_0((void*)(void*)TimetableManger_U3CsortEverythingU3Em__15_m4007550474_MethodInfo_var);
+			L_39.set_m_value_0((void*)(void*)TimetableManger_U3CsortEverythingU3Em__16_m1174163177_MethodInfo_var);
 			Comparison_1_t2662047781 * L_40 = (Comparison_1_t2662047781 *)il2cpp_codegen_object_new(Comparison_1_t2662047781_il2cpp_TypeInfo_var);
 			Comparison_1__ctor_m324693627(L_40, NULL, L_39, /*hidden argument*/Comparison_1__ctor_m324693627_MethodInfo_var);
 			((TimetableManger_t3141655579_StaticFields*)TimetableManger_t3141655579_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cacheA_10(L_40);
@@ -10743,7 +10741,7 @@ IL_0121:
 IL_0138:
 		{
 			IntPtr_t L_45;
-			L_45.set_m_value_0((void*)(void*)TimetableManger_U3CsortEverythingU3Em__16_m1174163177_MethodInfo_var);
+			L_45.set_m_value_0((void*)(void*)TimetableManger_U3CsortEverythingU3Em__17_m2635743176_MethodInfo_var);
 			Comparison_1_t2662047781 * L_46 = (Comparison_1_t2662047781 *)il2cpp_codegen_object_new(Comparison_1_t2662047781_il2cpp_TypeInfo_var);
 			Comparison_1__ctor_m324693627(L_46, NULL, L_45, /*hidden argument*/Comparison_1__ctor_m324693627_MethodInfo_var);
 			((TimetableManger_t3141655579_StaticFields*)TimetableManger_t3141655579_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cacheB_11(L_46);
@@ -10826,20 +10824,20 @@ extern const MethodInfo* Enumerator_MoveNext_m995272630_MethodInfo_var;
 extern const MethodInfo* Enumerator_MoveNext_m1375717918_MethodInfo_var;
 extern const MethodInfo* List_1__ctor_m573323938_MethodInfo_var;
 extern const MethodInfo* List_1_Add_m267684754_MethodInfo_var;
-extern const MethodInfo* TimetableManger_U3CsaveTimetableToDatabaseU3Em__17_m4041986172_MethodInfo_var;
+extern const MethodInfo* TimetableManger_U3CsaveTimetableToDatabaseU3Em__18_m4253337085_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m930818446_MethodInfo_var;
 extern const MethodInfo* Enumerable_Where_TisPair_t3945686594_m2106437981_MethodInfo_var;
 extern const MethodInfo* Enumerable_Count_TisPair_t3945686594_m2244068685_MethodInfo_var;
 extern const MethodInfo* List_1_get_Item_m553841104_MethodInfo_var;
-extern const MethodInfo* U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__18_m1239279600_MethodInfo_var;
 extern const MethodInfo* U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__19_m1450630513_MethodInfo_var;
+extern const MethodInfo* U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__1A_m3141437817_MethodInfo_var;
 extern const MethodInfo* Enumerable_ToList_TisPair_t3945686594_m1836510598_MethodInfo_var;
 extern const MethodInfo* List_1_get_Count_m1231243316_MethodInfo_var;
 extern const MethodInfo* List_1_get_Item_m691301921_MethodInfo_var;
-extern const MethodInfo* U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1A_m3243282960_MethodInfo_var;
+extern const MethodInfo* U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1B_m3454633873_MethodInfo_var;
 extern const MethodInfo* Predicate_1__ctor_m2230713051_MethodInfo_var;
 extern const MethodInfo* List_1_FindAll_m1887977646_MethodInfo_var;
-extern const MethodInfo* U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1B_m3454633873_MethodInfo_var;
+extern const MethodInfo* U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1C_m3665984786_MethodInfo_var;
 extern const MethodInfo* List_1_RemoveAll_m581173711_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2897054915;
 extern Il2CppCodeGenString* _stringLiteral3423278902;
@@ -11687,7 +11685,7 @@ IL_0397:
 	}
 	{
 		IntPtr_t L_145;
-		L_145.set_m_value_0((void*)(void*)TimetableManger_U3CsaveTimetableToDatabaseU3Em__17_m4041986172_MethodInfo_var);
+		L_145.set_m_value_0((void*)(void*)TimetableManger_U3CsaveTimetableToDatabaseU3Em__18_m4253337085_MethodInfo_var);
 		Func_2_t2392357337 * L_146 = (Func_2_t2392357337 *)il2cpp_codegen_object_new(Func_2_t2392357337_il2cpp_TypeInfo_var);
 		Func_2__ctor_m930818446(L_146, NULL, L_145, /*hidden argument*/Func_2__ctor_m930818446_MethodInfo_var);
 		((TimetableManger_t3141655579_StaticFields*)TimetableManger_t3141655579_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cacheC_12(L_146);
@@ -12010,7 +12008,7 @@ IL_0531:
 			List_1_t1018904850 * L_205 = V_28;
 			U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_t912060944 * L_206 = V_45;
 			IntPtr_t L_207;
-			L_207.set_m_value_0((void*)(void*)U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__18_m1239279600_MethodInfo_var);
+			L_207.set_m_value_0((void*)(void*)U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__19_m1450630513_MethodInfo_var);
 			Func_2_t2392357337 * L_208 = (Func_2_t2392357337 *)il2cpp_codegen_object_new(Func_2_t2392357337_il2cpp_TypeInfo_var);
 			Func_2__ctor_m930818446(L_208, L_206, L_207, /*hidden argument*/Func_2__ctor_m930818446_MethodInfo_var);
 			Il2CppObject* L_209 = Enumerable_Where_TisPair_t3945686594_m2106437981(NULL /*static, unused*/, L_205, L_208, /*hidden argument*/Enumerable_Where_TisPair_t3945686594_m2106437981_MethodInfo_var);
@@ -12026,7 +12024,7 @@ IL_0550:
 			List_1_t1018904850 * L_211 = V_33;
 			U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_t912060944 * L_212 = V_45;
 			IntPtr_t L_213;
-			L_213.set_m_value_0((void*)(void*)U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__19_m1450630513_MethodInfo_var);
+			L_213.set_m_value_0((void*)(void*)U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__1A_m3141437817_MethodInfo_var);
 			Func_2_t2392357337 * L_214 = (Func_2_t2392357337 *)il2cpp_codegen_object_new(Func_2_t2392357337_il2cpp_TypeInfo_var);
 			Func_2__ctor_m930818446(L_214, L_212, L_213, /*hidden argument*/Func_2__ctor_m930818446_MethodInfo_var);
 			Il2CppObject* L_215 = Enumerable_Where_TisPair_t3945686594_m2106437981(NULL /*static, unused*/, L_211, L_214, /*hidden argument*/Enumerable_Where_TisPair_t3945686594_m2106437981_MethodInfo_var);
@@ -12220,7 +12218,7 @@ IL_067e:
 			List_1_t1018904850 * L_263 = V_18;
 			U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_t912060953 * L_264 = V_46;
 			IntPtr_t L_265;
-			L_265.set_m_value_0((void*)(void*)U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1A_m3243282960_MethodInfo_var);
+			L_265.set_m_value_0((void*)(void*)U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1B_m3454633873_MethodInfo_var);
 			Predicate_1_t3556743477 * L_266 = (Predicate_1_t3556743477 *)il2cpp_codegen_object_new(Predicate_1_t3556743477_il2cpp_TypeInfo_var);
 			Predicate_1__ctor_m2230713051(L_266, L_264, L_265, /*hidden argument*/Predicate_1__ctor_m2230713051_MethodInfo_var);
 			NullCheck(L_263);
@@ -12248,7 +12246,7 @@ IL_06b1:
 			List_1_t1018904850 * L_271 = V_18;
 			U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_t912060953 * L_272 = V_46;
 			IntPtr_t L_273;
-			L_273.set_m_value_0((void*)(void*)U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1B_m3454633873_MethodInfo_var);
+			L_273.set_m_value_0((void*)(void*)U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1C_m3665984786_MethodInfo_var);
 			Predicate_1_t3556743477 * L_274 = (Predicate_1_t3556743477 *)il2cpp_codegen_object_new(Predicate_1_t3556743477_il2cpp_TypeInfo_var);
 			Predicate_1__ctor_m2230713051(L_274, L_272, L_273, /*hidden argument*/Predicate_1__ctor_m2230713051_MethodInfo_var);
 			NullCheck(L_271);
@@ -12684,16 +12682,16 @@ IL_002c:
 		return;
 	}
 }
-// System.Boolean TimetableManger::<MigrateTo_v1_3_IdNeeded>m__F(SQLite.SQLiteConnection/ColumnInfo)
+// System.Boolean TimetableManger::<MigrateTo_v1_3_IdNeeded>m__10(SQLite.SQLiteConnection/ColumnInfo)
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3195150;
-extern const uint32_t TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__F_m1299505639_MetadataUsageId;
-extern "C"  bool TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__F_m1299505639 (Il2CppObject * __this /* static, unused */, ColumnInfo_t4283098503 * ___x0, const MethodInfo* method)
+extern const uint32_t TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__10_m3194622866_MetadataUsageId;
+extern "C"  bool TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__10_m3194622866 (Il2CppObject * __this /* static, unused */, ColumnInfo_t4283098503 * ___x0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__F_m1299505639_MetadataUsageId);
+		il2cpp_codegen_initialize_method (TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__10_m3194622866_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -12703,35 +12701,6 @@ extern "C"  bool TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__F_m1299505639 (
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
 		bool L_2 = String_op_Equality_m1260523650(NULL /*static, unused*/, L_1, _stringLiteral3195150, /*hidden argument*/NULL);
 		return L_2;
-	}
-}
-// System.Int32 TimetableManger::<sortEverything>m__11(SPBUTimetable.DayTimetable,SPBUTimetable.DayTimetable)
-extern Il2CppClass* DayOfWeek_t1779421117_il2cpp_TypeInfo_var;
-extern const uint32_t TimetableManger_U3CsortEverythingU3Em__11_m3914911854_MetadataUsageId;
-extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__11_m3914911854 (Il2CppObject * __this /* static, unused */, DayTimetable_t1053418317 * ___d10, DayTimetable_t1053418317 * ___d21, const MethodInfo* method)
-{
-	static bool s_Il2CppMethodIntialized;
-	if (!s_Il2CppMethodIntialized)
-	{
-		il2cpp_codegen_initialize_method (TimetableManger_U3CsortEverythingU3Em__11_m3914911854_MetadataUsageId);
-		s_Il2CppMethodIntialized = true;
-	}
-	{
-		DayTimetable_t1053418317 * L_0 = ___d10;
-		NullCheck(L_0);
-		DateTime_t4283661327 * L_1 = L_0->get_address_of_day_0();
-		int32_t L_2 = DateTime_get_DayOfWeek_m1793620473(L_1, /*hidden argument*/NULL);
-		int32_t L_3 = L_2;
-		Il2CppObject * L_4 = Box(DayOfWeek_t1779421117_il2cpp_TypeInfo_var, &L_3);
-		DayTimetable_t1053418317 * L_5 = ___d21;
-		NullCheck(L_5);
-		DateTime_t4283661327 * L_6 = L_5->get_address_of_day_0();
-		int32_t L_7 = DateTime_get_DayOfWeek_m1793620473(L_6, /*hidden argument*/NULL);
-		int32_t L_8 = L_7;
-		Il2CppObject * L_9 = Box(DayOfWeek_t1779421117_il2cpp_TypeInfo_var, &L_8);
-		NullCheck((Enum_t2862688501 *)L_4);
-		int32_t L_10 = Enum_CompareTo_m1622811206((Enum_t2862688501 *)L_4, L_9, /*hidden argument*/NULL);
-		return L_10;
 	}
 }
 // System.Int32 TimetableManger::<sortEverything>m__12(SPBUTimetable.DayTimetable,SPBUTimetable.DayTimetable)
@@ -12763,8 +12732,37 @@ extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__12_m3935249229 (Il2Cp
 		return L_10;
 	}
 }
-// System.Int32 TimetableManger::<sortEverything>m__13(SPBUTimetable.Pair,SPBUTimetable.Pair)
-extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__13_m1084390476 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___p10, Pair_t3945686594 * ___p21, const MethodInfo* method)
+// System.Int32 TimetableManger::<sortEverything>m__13(SPBUTimetable.DayTimetable,SPBUTimetable.DayTimetable)
+extern Il2CppClass* DayOfWeek_t1779421117_il2cpp_TypeInfo_var;
+extern const uint32_t TimetableManger_U3CsortEverythingU3Em__13_m3955586604_MetadataUsageId;
+extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__13_m3955586604 (Il2CppObject * __this /* static, unused */, DayTimetable_t1053418317 * ___d10, DayTimetable_t1053418317 * ___d21, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (TimetableManger_U3CsortEverythingU3Em__13_m3955586604_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		DayTimetable_t1053418317 * L_0 = ___d10;
+		NullCheck(L_0);
+		DateTime_t4283661327 * L_1 = L_0->get_address_of_day_0();
+		int32_t L_2 = DateTime_get_DayOfWeek_m1793620473(L_1, /*hidden argument*/NULL);
+		int32_t L_3 = L_2;
+		Il2CppObject * L_4 = Box(DayOfWeek_t1779421117_il2cpp_TypeInfo_var, &L_3);
+		DayTimetable_t1053418317 * L_5 = ___d21;
+		NullCheck(L_5);
+		DateTime_t4283661327 * L_6 = L_5->get_address_of_day_0();
+		int32_t L_7 = DateTime_get_DayOfWeek_m1793620473(L_6, /*hidden argument*/NULL);
+		int32_t L_8 = L_7;
+		Il2CppObject * L_9 = Box(DayOfWeek_t1779421117_il2cpp_TypeInfo_var, &L_8);
+		NullCheck((Enum_t2862688501 *)L_4);
+		int32_t L_10 = Enum_CompareTo_m1622811206((Enum_t2862688501 *)L_4, L_9, /*hidden argument*/NULL);
+		return L_10;
+	}
+}
+// System.Int32 TimetableManger::<sortEverything>m__14(SPBUTimetable.Pair,SPBUTimetable.Pair)
+extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__14_m2545970475 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___p10, Pair_t3945686594 * ___p21, const MethodInfo* method)
 {
 	{
 		Pair_t3945686594 * L_0 = ___p10;
@@ -12775,20 +12773,6 @@ extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__13_m1084390476 (Il2Cp
 		String_t* L_3 = L_2->get_name_1();
 		NullCheck(L_1);
 		int32_t L_4 = String_CompareTo_m1951109700(L_1, L_3, /*hidden argument*/NULL);
-		return L_4;
-	}
-}
-// System.Int32 TimetableManger::<sortEverything>m__14(SPBUTimetable.Pair,SPBUTimetable.Pair)
-extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__14_m2545970475 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___p10, Pair_t3945686594 * ___p21, const MethodInfo* method)
-{
-	{
-		Pair_t3945686594 * L_0 = ___p10;
-		NullCheck(L_0);
-		DateTime_t4283661327 * L_1 = L_0->get_address_of_startTime_6();
-		Pair_t3945686594 * L_2 = ___p21;
-		NullCheck(L_2);
-		DateTime_t4283661327  L_3 = L_2->get_startTime_6();
-		int32_t L_4 = DateTime_CompareTo_m1522800900(L_1, L_3, /*hidden argument*/NULL);
 		return L_4;
 	}
 }
@@ -12798,6 +12782,20 @@ extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__15_m4007550474 (Il2Cp
 	{
 		Pair_t3945686594 * L_0 = ___p10;
 		NullCheck(L_0);
+		DateTime_t4283661327 * L_1 = L_0->get_address_of_startTime_6();
+		Pair_t3945686594 * L_2 = ___p21;
+		NullCheck(L_2);
+		DateTime_t4283661327  L_3 = L_2->get_startTime_6();
+		int32_t L_4 = DateTime_CompareTo_m1522800900(L_1, L_3, /*hidden argument*/NULL);
+		return L_4;
+	}
+}
+// System.Int32 TimetableManger::<sortEverything>m__16(SPBUTimetable.Pair,SPBUTimetable.Pair)
+extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__16_m1174163177 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___p10, Pair_t3945686594 * ___p21, const MethodInfo* method)
+{
+	{
+		Pair_t3945686594 * L_0 = ___p10;
+		NullCheck(L_0);
 		String_t* L_1 = L_0->get_name_1();
 		Pair_t3945686594 * L_2 = ___p21;
 		NullCheck(L_2);
@@ -12807,8 +12805,8 @@ extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__15_m4007550474 (Il2Cp
 		return L_4;
 	}
 }
-// System.Int32 TimetableManger::<sortEverything>m__16(SPBUTimetable.Pair,SPBUTimetable.Pair)
-extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__16_m1174163177 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___p10, Pair_t3945686594 * ___p21, const MethodInfo* method)
+// System.Int32 TimetableManger::<sortEverything>m__17(SPBUTimetable.Pair,SPBUTimetable.Pair)
+extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__17_m2635743176 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___p10, Pair_t3945686594 * ___p21, const MethodInfo* method)
 {
 	{
 		Pair_t3945686594 * L_0 = ___p10;
@@ -12821,8 +12819,8 @@ extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__16_m1174163177 (Il2Cp
 		return L_4;
 	}
 }
-// System.Boolean TimetableManger::<saveTimetableToDatabase>m__17(SPBUTimetable.Pair)
-extern "C"  bool TimetableManger_U3CsaveTimetableToDatabaseU3Em__17_m4041986172 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___x0, const MethodInfo* method)
+// System.Boolean TimetableManger::<saveTimetableToDatabase>m__18(SPBUTimetable.Pair)
+extern "C"  bool TimetableManger_U3CsaveTimetableToDatabaseU3Em__18_m4253337085 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___x0, const MethodInfo* method)
 {
 	{
 		Pair_t3945686594 * L_0 = ___x0;
@@ -12839,19 +12837,19 @@ extern "C"  void U3CinitTimetableU3Ec__AnonStorey1E__ctor_m831300533 (U3CinitTim
 		return;
 	}
 }
-// System.Void TimetableManger/<initTimetable>c__AnonStorey1E::<>m__10()
+// System.Void TimetableManger/<initTimetable>c__AnonStorey1E::<>m__11()
 extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
 extern Il2CppClass* Loom_t2374337_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1C_m2323953392_MethodInfo_var;
+extern const MethodInfo* U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1D_m2323954353_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3390791102;
 extern Il2CppCodeGenString* _stringLiteral1892349553;
-extern const uint32_t U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__10_m2323935133_MetadataUsageId;
-extern "C"  void U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__10_m2323935133 (U3CinitTimetableU3Ec__AnonStorey1E_t3201663910 * __this, const MethodInfo* method)
+extern const uint32_t U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__11_m2323936094_MetadataUsageId;
+extern "C"  void U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__11_m2323936094 (U3CinitTimetableU3Ec__AnonStorey1E_t3201663910 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__10_m2323935133_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__11_m2323936094_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -12874,7 +12872,7 @@ extern "C"  void U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__10_m2323935133 (U3C
 		NullCheck(L_5);
 		L_5->set_firstLoadDone_21((bool)0);
 		IntPtr_t L_6;
-		L_6.set_m_value_0((void*)(void*)U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1C_m2323953392_MethodInfo_var);
+		L_6.set_m_value_0((void*)(void*)U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1D_m2323954353_MethodInfo_var);
 		Action_t3771233898 * L_7 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 		Action__ctor_m2957240604(L_7, __this, L_6, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Loom_t2374337_il2cpp_TypeInfo_var);
@@ -12892,23 +12890,23 @@ IL_0059:
 		return;
 	}
 }
-// System.Void TimetableManger/<initTimetable>c__AnonStorey1E::<>m__1C()
+// System.Void TimetableManger/<initTimetable>c__AnonStorey1E::<>m__1D()
 extern Il2CppClass* Action_t3771233898_il2cpp_TypeInfo_var;
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppClass* Loom_t2374337_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1D_m2323954353_MethodInfo_var;
-extern const uint32_t U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1C_m2323953392_MetadataUsageId;
-extern "C"  void U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1C_m2323953392 (U3CinitTimetableU3Ec__AnonStorey1E_t3201663910 * __this, const MethodInfo* method)
+extern const MethodInfo* U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1E_m2323955314_MethodInfo_var;
+extern const uint32_t U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1D_m2323954353_MetadataUsageId;
+extern "C"  void U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1D_m2323954353 (U3CinitTimetableU3Ec__AnonStorey1E_t3201663910 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1C_m2323953392_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1D_m2323954353_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
 		IntPtr_t L_0;
-		L_0.set_m_value_0((void*)(void*)U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1D_m2323954353_MethodInfo_var);
+		L_0.set_m_value_0((void*)(void*)U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1E_m2323955314_MethodInfo_var);
 		Action_t3771233898 * L_1 = (Action_t3771233898 *)il2cpp_codegen_object_new(Action_t3771233898_il2cpp_TypeInfo_var);
 		Action__ctor_m2957240604(L_1, __this, L_0, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
@@ -12918,8 +12916,8 @@ extern "C"  void U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1C_m2323953392 (U3C
 		return;
 	}
 }
-// System.Void TimetableManger/<initTimetable>c__AnonStorey1E::<>m__1D()
-extern "C"  void U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1D_m2323954353 (U3CinitTimetableU3Ec__AnonStorey1E_t3201663910 * __this, const MethodInfo* method)
+// System.Void TimetableManger/<initTimetable>c__AnonStorey1E::<>m__1E()
+extern "C"  void U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1E_m2323955314 (U3CinitTimetableU3Ec__AnonStorey1E_t3201663910 * __this, const MethodInfo* method)
 {
 	{
 		TimetableManger_t3141655579 * L_0 = __this->get_U3CU3Ef__this_1();
@@ -12940,15 +12938,15 @@ extern "C"  void U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F__ctor_m579702411 (
 		return;
 	}
 }
-// System.Boolean TimetableManger/<saveTimetableToDatabase>c__AnonStorey1F::<>m__18(SPBUTimetable.Pair)
+// System.Boolean TimetableManger/<saveTimetableToDatabase>c__AnonStorey1F::<>m__19(SPBUTimetable.Pair)
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__18_m1239279600_MetadataUsageId;
-extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__18_m1239279600 (U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_t912060944 * __this, Pair_t3945686594 * ___x0, const MethodInfo* method)
+extern const uint32_t U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__19_m1450630513_MetadataUsageId;
+extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__19_m1450630513 (U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_t912060944 * __this, Pair_t3945686594 * ___x0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__18_m1239279600_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__19_m1450630513_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -12963,15 +12961,15 @@ extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__18_m12392
 		return L_4;
 	}
 }
-// System.Boolean TimetableManger/<saveTimetableToDatabase>c__AnonStorey1F::<>m__19(SPBUTimetable.Pair)
+// System.Boolean TimetableManger/<saveTimetableToDatabase>c__AnonStorey1F::<>m__1A(SPBUTimetable.Pair)
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__19_m1450630513_MetadataUsageId;
-extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__19_m1450630513 (U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_t912060944 * __this, Pair_t3945686594 * ___x0, const MethodInfo* method)
+extern const uint32_t U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__1A_m3141437817_MetadataUsageId;
+extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__1A_m3141437817 (U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_t912060944 * __this, Pair_t3945686594 * ___x0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__19_m1450630513_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__1A_m3141437817_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -12994,15 +12992,15 @@ extern "C"  void U3CsaveTimetableToDatabaseU3Ec__AnonStorey20__ctor_m3106048162 
 		return;
 	}
 }
-// System.Boolean TimetableManger/<saveTimetableToDatabase>c__AnonStorey20::<>m__1A(SPBUTimetable.Pair)
+// System.Boolean TimetableManger/<saveTimetableToDatabase>c__AnonStorey20::<>m__1B(SPBUTimetable.Pair)
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1A_m3243282960_MetadataUsageId;
-extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1A_m3243282960 (U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_t912060953 * __this, Pair_t3945686594 * ___x0, const MethodInfo* method)
+extern const uint32_t U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1B_m3454633873_MetadataUsageId;
+extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1B_m3454633873 (U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_t912060953 * __this, Pair_t3945686594 * ___x0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1A_m3243282960_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1B_m3454633873_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -13017,15 +13015,15 @@ extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1A_m32432
 		return L_4;
 	}
 }
-// System.Boolean TimetableManger/<saveTimetableToDatabase>c__AnonStorey20::<>m__1B(SPBUTimetable.Pair)
+// System.Boolean TimetableManger/<saveTimetableToDatabase>c__AnonStorey20::<>m__1C(SPBUTimetable.Pair)
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1B_m3454633873_MetadataUsageId;
-extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1B_m3454633873 (U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_t912060953 * __this, Pair_t3945686594 * ___x0, const MethodInfo* method)
+extern const uint32_t U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1C_m3665984786_MetadataUsageId;
+extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1C_m3665984786 (U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_t912060953 * __this, Pair_t3945686594 * ___x0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1B_m3454633873_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CsaveTimetableToDatabaseU3Ec__AnonStorey20_U3CU3Em__1C_m3665984786_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -24635,10 +24633,10 @@ IL_0072:
 	}
 }
 // System.Int32 TMPro.KerningTable::AddKerningPair(System.Int32,System.Int32,System.Single)
-extern Il2CppClass* U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935_il2cpp_TypeInfo_var;
 extern Il2CppClass* Predicate_1_t1515890587_il2cpp_TypeInfo_var;
 extern Il2CppClass* KerningPair_t1904833704_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CAddKerningPairU3Ec__AnonStorey4C_U3CU3Em__7A_m1843299442_MethodInfo_var;
+extern const MethodInfo* U3CAddKerningPairU3Ec__AnonStorey4D_U3CU3Em__7D_m1309928464_MethodInfo_var;
 extern const MethodInfo* Predicate_1__ctor_m4190709948_MethodInfo_var;
 extern const MethodInfo* List_1_FindIndex_m1323717304_MethodInfo_var;
 extern const MethodInfo* List_1_Add_m1257707387_MethodInfo_var;
@@ -24652,23 +24650,23 @@ extern "C"  int32_t KerningTable_AddKerningPair_m3276704595 (KerningTable_t61895
 		s_Il2CppMethodIntialized = true;
 	}
 	int32_t V_0 = 0;
-	U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934 * V_1 = NULL;
+	U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935 * V_1 = NULL;
 	{
-		U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934 * L_0 = (U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934 *)il2cpp_codegen_object_new(U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934_il2cpp_TypeInfo_var);
-		U3CAddKerningPairU3Ec__AnonStorey4C__ctor_m1967696533(L_0, /*hidden argument*/NULL);
+		U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935 * L_0 = (U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935 *)il2cpp_codegen_object_new(U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935_il2cpp_TypeInfo_var);
+		U3CAddKerningPairU3Ec__AnonStorey4D__ctor_m1771183028(L_0, /*hidden argument*/NULL);
 		V_1 = L_0;
-		U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934 * L_1 = V_1;
+		U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935 * L_1 = V_1;
 		int32_t L_2 = ___left0;
 		NullCheck(L_1);
 		L_1->set_left_0(L_2);
-		U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934 * L_3 = V_1;
+		U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935 * L_3 = V_1;
 		int32_t L_4 = ___right1;
 		NullCheck(L_3);
 		L_3->set_right_1(L_4);
 		List_1_t3273019256 * L_5 = __this->get_kerningPairs_0();
-		U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934 * L_6 = V_1;
+		U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935 * L_6 = V_1;
 		IntPtr_t L_7;
-		L_7.set_m_value_0((void*)(void*)U3CAddKerningPairU3Ec__AnonStorey4C_U3CU3Em__7A_m1843299442_MethodInfo_var);
+		L_7.set_m_value_0((void*)(void*)U3CAddKerningPairU3Ec__AnonStorey4D_U3CU3Em__7D_m1309928464_MethodInfo_var);
 		Predicate_1_t1515890587 * L_8 = (Predicate_1_t1515890587 *)il2cpp_codegen_object_new(Predicate_1_t1515890587_il2cpp_TypeInfo_var);
 		Predicate_1__ctor_m4190709948(L_8, L_6, L_7, /*hidden argument*/Predicate_1__ctor_m4190709948_MethodInfo_var);
 		NullCheck(L_5);
@@ -24682,10 +24680,10 @@ extern "C"  int32_t KerningTable_AddKerningPair_m3276704595 (KerningTable_t61895
 	}
 	{
 		List_1_t3273019256 * L_11 = __this->get_kerningPairs_0();
-		U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934 * L_12 = V_1;
+		U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935 * L_12 = V_1;
 		NullCheck(L_12);
 		int32_t L_13 = L_12->get_left_0();
-		U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934 * L_14 = V_1;
+		U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935 * L_14 = V_1;
 		NullCheck(L_14);
 		int32_t L_15 = L_14->get_right_1();
 		float L_16 = ___offset2;
@@ -24702,9 +24700,9 @@ IL_0052:
 	}
 }
 // System.Void TMPro.KerningTable::RemoveKerningPair(System.Int32,System.Int32)
-extern Il2CppClass* U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987_il2cpp_TypeInfo_var;
 extern Il2CppClass* Predicate_1_t1515890587_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CRemoveKerningPairU3Ec__AnonStorey4D_U3CU3Em__7B_m1360030757_MethodInfo_var;
+extern const MethodInfo* U3CRemoveKerningPairU3Ec__AnonStorey4E_U3CU3Em__7E_m826659779_MethodInfo_var;
 extern const MethodInfo* Predicate_1__ctor_m4190709948_MethodInfo_var;
 extern const MethodInfo* List_1_FindIndex_m1323717304_MethodInfo_var;
 extern const MethodInfo* List_1_RemoveAt_m2541674689_MethodInfo_var;
@@ -24718,23 +24716,23 @@ extern "C"  void KerningTable_RemoveKerningPair_m2319900391 (KerningTable_t61895
 		s_Il2CppMethodIntialized = true;
 	}
 	int32_t V_0 = 0;
-	U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986 * V_1 = NULL;
+	U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987 * V_1 = NULL;
 	{
-		U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986 * L_0 = (U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986 *)il2cpp_codegen_object_new(U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986_il2cpp_TypeInfo_var);
-		U3CRemoveKerningPairU3Ec__AnonStorey4D__ctor_m2059925209(L_0, /*hidden argument*/NULL);
+		U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987 * L_0 = (U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987 *)il2cpp_codegen_object_new(U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987_il2cpp_TypeInfo_var);
+		U3CRemoveKerningPairU3Ec__AnonStorey4E__ctor_m1863411704(L_0, /*hidden argument*/NULL);
 		V_1 = L_0;
-		U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986 * L_1 = V_1;
+		U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987 * L_1 = V_1;
 		int32_t L_2 = ___left0;
 		NullCheck(L_1);
 		L_1->set_left_0(L_2);
-		U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986 * L_3 = V_1;
+		U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987 * L_3 = V_1;
 		int32_t L_4 = ___right1;
 		NullCheck(L_3);
 		L_3->set_right_1(L_4);
 		List_1_t3273019256 * L_5 = __this->get_kerningPairs_0();
-		U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986 * L_6 = V_1;
+		U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987 * L_6 = V_1;
 		IntPtr_t L_7;
-		L_7.set_m_value_0((void*)(void*)U3CRemoveKerningPairU3Ec__AnonStorey4D_U3CU3Em__7B_m1360030757_MethodInfo_var);
+		L_7.set_m_value_0((void*)(void*)U3CRemoveKerningPairU3Ec__AnonStorey4E_U3CU3Em__7E_m826659779_MethodInfo_var);
 		Predicate_1_t1515890587 * L_8 = (Predicate_1_t1515890587 *)il2cpp_codegen_object_new(Predicate_1_t1515890587_il2cpp_TypeInfo_var);
 		Predicate_1__ctor_m4190709948(L_8, L_6, L_7, /*hidden argument*/Predicate_1__ctor_m4190709948_MethodInfo_var);
 		NullCheck(L_5);
@@ -24781,10 +24779,10 @@ extern "C"  void KerningTable_RemoveKerningPair_m1637491696 (KerningTable_t61895
 extern Il2CppClass* KerningTable_t618956984_il2cpp_TypeInfo_var;
 extern Il2CppClass* Func_2_t2106664385_il2cpp_TypeInfo_var;
 extern const MethodInfo* List_1_get_Count_m3015631041_MethodInfo_var;
-extern const MethodInfo* KerningTable_U3CSortKerningPairsU3Em__7C_m2136500245_MethodInfo_var;
+extern const MethodInfo* KerningTable_U3CSortKerningPairsU3Em__7F_m910027570_MethodInfo_var;
 extern const MethodInfo* Func_2__ctor_m1181598495_MethodInfo_var;
 extern const MethodInfo* Enumerable_OrderBy_TisKerningPair_t1904833704_TisInt32_t1153838500_m1587747744_MethodInfo_var;
-extern const MethodInfo* KerningTable_U3CSortKerningPairsU3Em__7D_m1727676020_MethodInfo_var;
+extern const MethodInfo* KerningTable_U3CSortKerningPairsU3Em__80_m1525576841_MethodInfo_var;
 extern const MethodInfo* Enumerable_ThenBy_TisKerningPair_t1904833704_TisInt32_t1153838500_m2969773406_MethodInfo_var;
 extern const MethodInfo* Enumerable_ToList_TisKerningPair_t1904833704_m7195509_MethodInfo_var;
 extern const uint32_t KerningTable_SortKerningPairs_m1972879600_MetadataUsageId;
@@ -24827,7 +24825,7 @@ extern "C"  void KerningTable_SortKerningPairs_m1972879600 (KerningTable_t618956
 	}
 	{
 		IntPtr_t L_4;
-		L_4.set_m_value_0((void*)(void*)KerningTable_U3CSortKerningPairsU3Em__7C_m2136500245_MethodInfo_var);
+		L_4.set_m_value_0((void*)(void*)KerningTable_U3CSortKerningPairsU3Em__7F_m910027570_MethodInfo_var);
 		Func_2_t2106664385 * L_5 = (Func_2_t2106664385 *)il2cpp_codegen_object_new(Func_2_t2106664385_il2cpp_TypeInfo_var);
 		Func_2__ctor_m1181598495(L_5, NULL, L_4, /*hidden argument*/Func_2__ctor_m1181598495_MethodInfo_var);
 		((KerningTable_t618956984_StaticFields*)KerningTable_t618956984_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cache1_1(L_5);
@@ -24851,7 +24849,7 @@ IL_0030:
 	}
 	{
 		IntPtr_t L_9;
-		L_9.set_m_value_0((void*)(void*)KerningTable_U3CSortKerningPairsU3Em__7D_m1727676020_MethodInfo_var);
+		L_9.set_m_value_0((void*)(void*)KerningTable_U3CSortKerningPairsU3Em__80_m1525576841_MethodInfo_var);
 		Func_2_t2106664385 * L_10 = (Func_2_t2106664385 *)il2cpp_codegen_object_new(Func_2_t2106664385_il2cpp_TypeInfo_var);
 		Func_2__ctor_m1181598495(L_10, NULL, L_9, /*hidden argument*/Func_2__ctor_m1181598495_MethodInfo_var);
 		((KerningTable_t618956984_StaticFields*)KerningTable_t618956984_il2cpp_TypeInfo_var->static_fields)->set_U3CU3Ef__amU24cache2_2(L_10);
@@ -24873,8 +24871,8 @@ IL_0066:
 		return;
 	}
 }
-// System.Int32 TMPro.KerningTable::<SortKerningPairs>m__7C(TMPro.KerningPair)
-extern "C"  int32_t KerningTable_U3CSortKerningPairsU3Em__7C_m2136500245 (Il2CppObject * __this /* static, unused */, KerningPair_t1904833704 * ___s0, const MethodInfo* method)
+// System.Int32 TMPro.KerningTable::<SortKerningPairs>m__7F(TMPro.KerningPair)
+extern "C"  int32_t KerningTable_U3CSortKerningPairsU3Em__7F_m910027570 (Il2CppObject * __this /* static, unused */, KerningPair_t1904833704 * ___s0, const MethodInfo* method)
 {
 	{
 		KerningPair_t1904833704 * L_0 = ___s0;
@@ -24883,8 +24881,8 @@ extern "C"  int32_t KerningTable_U3CSortKerningPairsU3Em__7C_m2136500245 (Il2Cpp
 		return L_1;
 	}
 }
-// System.Int32 TMPro.KerningTable::<SortKerningPairs>m__7D(TMPro.KerningPair)
-extern "C"  int32_t KerningTable_U3CSortKerningPairsU3Em__7D_m1727676020 (Il2CppObject * __this /* static, unused */, KerningPair_t1904833704 * ___s0, const MethodInfo* method)
+// System.Int32 TMPro.KerningTable::<SortKerningPairs>m__80(TMPro.KerningPair)
+extern "C"  int32_t KerningTable_U3CSortKerningPairsU3Em__80_m1525576841 (Il2CppObject * __this /* static, unused */, KerningPair_t1904833704 * ___s0, const MethodInfo* method)
 {
 	{
 		KerningPair_t1904833704 * L_0 = ___s0;
@@ -24893,16 +24891,16 @@ extern "C"  int32_t KerningTable_U3CSortKerningPairsU3Em__7D_m1727676020 (Il2Cpp
 		return L_1;
 	}
 }
-// System.Void TMPro.KerningTable/<AddKerningPair>c__AnonStorey4C::.ctor()
-extern "C"  void U3CAddKerningPairU3Ec__AnonStorey4C__ctor_m1967696533 (U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934 * __this, const MethodInfo* method)
+// System.Void TMPro.KerningTable/<AddKerningPair>c__AnonStorey4D::.ctor()
+extern "C"  void U3CAddKerningPairU3Ec__AnonStorey4D__ctor_m1771183028 (U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Boolean TMPro.KerningTable/<AddKerningPair>c__AnonStorey4C::<>m__7A(TMPro.KerningPair)
-extern "C"  bool U3CAddKerningPairU3Ec__AnonStorey4C_U3CU3Em__7A_m1843299442 (U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934 * __this, KerningPair_t1904833704 * ___item0, const MethodInfo* method)
+// System.Boolean TMPro.KerningTable/<AddKerningPair>c__AnonStorey4D::<>m__7D(TMPro.KerningPair)
+extern "C"  bool U3CAddKerningPairU3Ec__AnonStorey4D_U3CU3Em__7D_m1309928464 (U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935 * __this, KerningPair_t1904833704 * ___item0, const MethodInfo* method)
 {
 	int32_t G_B3_0 = 0;
 	{
@@ -24934,16 +24932,16 @@ IL_0022:
 		return (bool)G_B3_0;
 	}
 }
-// System.Void TMPro.KerningTable/<RemoveKerningPair>c__AnonStorey4D::.ctor()
-extern "C"  void U3CRemoveKerningPairU3Ec__AnonStorey4D__ctor_m2059925209 (U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986 * __this, const MethodInfo* method)
+// System.Void TMPro.KerningTable/<RemoveKerningPair>c__AnonStorey4E::.ctor()
+extern "C"  void U3CRemoveKerningPairU3Ec__AnonStorey4E__ctor_m1863411704 (U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Boolean TMPro.KerningTable/<RemoveKerningPair>c__AnonStorey4D::<>m__7B(TMPro.KerningPair)
-extern "C"  bool U3CRemoveKerningPairU3Ec__AnonStorey4D_U3CU3Em__7B_m1360030757 (U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986 * __this, KerningPair_t1904833704 * ___item0, const MethodInfo* method)
+// System.Boolean TMPro.KerningTable/<RemoveKerningPair>c__AnonStorey4E::<>m__7E(TMPro.KerningPair)
+extern "C"  bool U3CRemoveKerningPairU3Ec__AnonStorey4E_U3CU3Em__7E_m826659779 (U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987 * __this, KerningPair_t1904833704 * ___item0, const MethodInfo* method)
 {
 	int32_t G_B3_0 = 0;
 	{
@@ -25021,7 +25019,7 @@ extern "C"  void MaterialManager__cctor_m361996430 (Il2CppObject * __this /* sta
 	}
 }
 // UnityEngine.Material TMPro.MaterialManager::GetStencilMaterial(UnityEngine.Material,System.Int32)
-extern Il2CppClass* U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866_il2cpp_TypeInfo_var;
 extern Il2CppClass* ShaderUtilities_t894600775_il2cpp_TypeInfo_var;
 extern Il2CppClass* MaterialManager_t2047249960_il2cpp_TypeInfo_var;
 extern Il2CppClass* Predicate_1_t2251158381_il2cpp_TypeInfo_var;
@@ -25029,7 +25027,7 @@ extern Il2CppClass* Material_t3870600107_il2cpp_TypeInfo_var;
 extern Il2CppClass* Int32_t1153838500_il2cpp_TypeInfo_var;
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppClass* MaskingMaterial_t2640101498_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CGetStencilMaterialU3Ec__AnonStorey46_U3CU3Em__74_m428213924_MethodInfo_var;
+extern const MethodInfo* U3CGetStencilMaterialU3Ec__AnonStorey47_U3CU3Em__77_m510227266_MethodInfo_var;
 extern const MethodInfo* Predicate_1__ctor_m1609872366_MethodInfo_var;
 extern const MethodInfo* List_1_FindIndex_m2970601414_MethodInfo_var;
 extern const MethodInfo* List_1_Add_m3631943433_MethodInfo_var;
@@ -25048,20 +25046,20 @@ extern "C"  Material_t3870600107 * MaterialManager_GetStencilMaterial_m283629917
 	Material_t3870600107 * V_0 = NULL;
 	int32_t V_1 = 0;
 	MaskingMaterial_t2640101498 * V_2 = NULL;
-	U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * V_3 = NULL;
+	U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * V_3 = NULL;
 	{
-		U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * L_0 = (U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 *)il2cpp_codegen_object_new(U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865_il2cpp_TypeInfo_var);
-		U3CGetStencilMaterialU3Ec__AnonStorey46__ctor_m602880698(L_0, /*hidden argument*/NULL);
+		U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * L_0 = (U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 *)il2cpp_codegen_object_new(U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866_il2cpp_TypeInfo_var);
+		U3CGetStencilMaterialU3Ec__AnonStorey47__ctor_m406367193(L_0, /*hidden argument*/NULL);
 		V_3 = L_0;
-		U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * L_1 = V_3;
+		U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * L_1 = V_3;
 		Material_t3870600107 * L_2 = ___baseMaterial0;
 		NullCheck(L_1);
 		L_1->set_baseMaterial_0(L_2);
-		U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * L_3 = V_3;
+		U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * L_3 = V_3;
 		int32_t L_4 = ___stencilID1;
 		NullCheck(L_3);
 		L_3->set_stencilID_1(L_4);
-		U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * L_5 = V_3;
+		U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * L_5 = V_3;
 		NullCheck(L_5);
 		Material_t3870600107 * L_6 = L_5->get_baseMaterial_0();
 		IL2CPP_RUNTIME_CLASS_INIT(ShaderUtilities_t894600775_il2cpp_TypeInfo_var);
@@ -25075,7 +25073,7 @@ extern "C"  Material_t3870600107 * MaterialManager_GetStencilMaterial_m283629917
 	}
 	{
 		Debug_LogWarning_m4187349938(NULL /*static, unused*/, _stringLiteral1777623704, (Object_t3071478659 *)NULL, /*hidden argument*/NULL);
-		U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * L_9 = V_3;
+		U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * L_9 = V_3;
 		NullCheck(L_9);
 		Material_t3870600107 * L_10 = L_9->get_baseMaterial_0();
 		return L_10;
@@ -25086,9 +25084,9 @@ IL_003b:
 		V_0 = (Material_t3870600107 *)NULL;
 		IL2CPP_RUNTIME_CLASS_INIT(MaterialManager_t2047249960_il2cpp_TypeInfo_var);
 		List_1_t4008287050 * L_11 = ((MaterialManager_t2047249960_StaticFields*)MaterialManager_t2047249960_il2cpp_TypeInfo_var->static_fields)->get_m_materialList_0();
-		U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * L_12 = V_3;
+		U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * L_12 = V_3;
 		IntPtr_t L_13;
-		L_13.set_m_value_0((void*)(void*)U3CGetStencilMaterialU3Ec__AnonStorey46_U3CU3Em__74_m428213924_MethodInfo_var);
+		L_13.set_m_value_0((void*)(void*)U3CGetStencilMaterialU3Ec__AnonStorey47_U3CU3Em__77_m510227266_MethodInfo_var);
 		Predicate_1_t2251158381 * L_14 = (Predicate_1_t2251158381 *)il2cpp_codegen_object_new(Predicate_1_t2251158381_il2cpp_TypeInfo_var);
 		Predicate_1__ctor_m1609872366(L_14, L_12, L_13, /*hidden argument*/Predicate_1__ctor_m1609872366_MethodInfo_var);
 		NullCheck(L_11);
@@ -25101,7 +25099,7 @@ IL_003b:
 		}
 	}
 	{
-		U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * L_17 = V_3;
+		U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * L_17 = V_3;
 		NullCheck(L_17);
 		Material_t3870600107 * L_18 = L_17->get_baseMaterial_0();
 		Material_t3870600107 * L_19 = (Material_t3870600107 *)il2cpp_codegen_object_new(Material_t3870600107_il2cpp_TypeInfo_var);
@@ -25114,7 +25112,7 @@ IL_003b:
 		Material_t3870600107 * L_22 = L_21;
 		NullCheck(L_22);
 		String_t* L_23 = Object_get_name_m3709440845(L_22, /*hidden argument*/NULL);
-		U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * L_24 = V_3;
+		U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * L_24 = V_3;
 		NullCheck(L_24);
 		int32_t L_25 = L_24->get_stencilID_1();
 		int32_t L_26 = L_25;
@@ -25124,7 +25122,7 @@ IL_003b:
 		NullCheck(L_22);
 		Object_set_name_m1123518500(L_22, L_28, /*hidden argument*/NULL);
 		Material_t3870600107 * L_29 = V_0;
-		U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * L_30 = V_3;
+		U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * L_30 = V_3;
 		NullCheck(L_30);
 		Material_t3870600107 * L_31 = L_30->get_baseMaterial_0();
 		NullCheck(L_31);
@@ -25135,7 +25133,7 @@ IL_003b:
 		ShaderUtilities_GetShaderPropertyIDs_m1021601388(NULL /*static, unused*/, /*hidden argument*/NULL);
 		Material_t3870600107 * L_33 = V_0;
 		int32_t L_34 = ((ShaderUtilities_t894600775_StaticFields*)ShaderUtilities_t894600775_il2cpp_TypeInfo_var->static_fields)->get_ID_StencilID_37();
-		U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * L_35 = V_3;
+		U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * L_35 = V_3;
 		NullCheck(L_35);
 		int32_t L_36 = L_35->get_stencilID_1();
 		NullCheck(L_33);
@@ -25148,7 +25146,7 @@ IL_003b:
 		MaskingMaterial__ctor_m1618170417(L_39, /*hidden argument*/NULL);
 		V_2 = L_39;
 		MaskingMaterial_t2640101498 * L_40 = V_2;
-		U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * L_41 = V_3;
+		U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * L_41 = V_3;
 		NullCheck(L_41);
 		Material_t3870600107 * L_42 = L_41->get_baseMaterial_0();
 		NullCheck(L_40);
@@ -25158,7 +25156,7 @@ IL_003b:
 		NullCheck(L_43);
 		L_43->set_stencilMaterial_1(L_44);
 		MaskingMaterial_t2640101498 * L_45 = V_2;
-		U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * L_46 = V_3;
+		U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * L_46 = V_3;
 		NullCheck(L_46);
 		int32_t L_47 = L_46->get_stencilID_1();
 		NullCheck(L_45);
@@ -25204,10 +25202,10 @@ IL_012d:
 	}
 }
 // UnityEngine.Material TMPro.MaterialManager::GetBaseMaterial(UnityEngine.Material)
-extern Il2CppClass* U3CGetBaseMaterialU3Ec__AnonStorey47_t1629669825_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CGetBaseMaterialU3Ec__AnonStorey48_t1629669826_il2cpp_TypeInfo_var;
 extern Il2CppClass* MaterialManager_t2047249960_il2cpp_TypeInfo_var;
 extern Il2CppClass* Predicate_1_t2251158381_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CGetBaseMaterialU3Ec__AnonStorey47_U3CU3Em__75_m1896657451_MethodInfo_var;
+extern const MethodInfo* U3CGetBaseMaterialU3Ec__AnonStorey48_U3CU3Em__78_m1978670793_MethodInfo_var;
 extern const MethodInfo* Predicate_1__ctor_m1609872366_MethodInfo_var;
 extern const MethodInfo* List_1_FindIndex_m2970601414_MethodInfo_var;
 extern const MethodInfo* List_1_get_Item_m1345029990_MethodInfo_var;
@@ -25221,20 +25219,20 @@ extern "C"  Material_t3870600107 * MaterialManager_GetBaseMaterial_m2737243052 (
 		s_Il2CppMethodIntialized = true;
 	}
 	int32_t V_0 = 0;
-	U3CGetBaseMaterialU3Ec__AnonStorey47_t1629669825 * V_1 = NULL;
+	U3CGetBaseMaterialU3Ec__AnonStorey48_t1629669826 * V_1 = NULL;
 	{
-		U3CGetBaseMaterialU3Ec__AnonStorey47_t1629669825 * L_0 = (U3CGetBaseMaterialU3Ec__AnonStorey47_t1629669825 *)il2cpp_codegen_object_new(U3CGetBaseMaterialU3Ec__AnonStorey47_t1629669825_il2cpp_TypeInfo_var);
-		U3CGetBaseMaterialU3Ec__AnonStorey47__ctor_m1943237626(L_0, /*hidden argument*/NULL);
+		U3CGetBaseMaterialU3Ec__AnonStorey48_t1629669826 * L_0 = (U3CGetBaseMaterialU3Ec__AnonStorey48_t1629669826 *)il2cpp_codegen_object_new(U3CGetBaseMaterialU3Ec__AnonStorey48_t1629669826_il2cpp_TypeInfo_var);
+		U3CGetBaseMaterialU3Ec__AnonStorey48__ctor_m1746724121(L_0, /*hidden argument*/NULL);
 		V_1 = L_0;
-		U3CGetBaseMaterialU3Ec__AnonStorey47_t1629669825 * L_1 = V_1;
+		U3CGetBaseMaterialU3Ec__AnonStorey48_t1629669826 * L_1 = V_1;
 		Material_t3870600107 * L_2 = ___stencilMaterial0;
 		NullCheck(L_1);
 		L_1->set_stencilMaterial_0(L_2);
 		IL2CPP_RUNTIME_CLASS_INIT(MaterialManager_t2047249960_il2cpp_TypeInfo_var);
 		List_1_t4008287050 * L_3 = ((MaterialManager_t2047249960_StaticFields*)MaterialManager_t2047249960_il2cpp_TypeInfo_var->static_fields)->get_m_materialList_0();
-		U3CGetBaseMaterialU3Ec__AnonStorey47_t1629669825 * L_4 = V_1;
+		U3CGetBaseMaterialU3Ec__AnonStorey48_t1629669826 * L_4 = V_1;
 		IntPtr_t L_5;
-		L_5.set_m_value_0((void*)(void*)U3CGetBaseMaterialU3Ec__AnonStorey47_U3CU3Em__75_m1896657451_MethodInfo_var);
+		L_5.set_m_value_0((void*)(void*)U3CGetBaseMaterialU3Ec__AnonStorey48_U3CU3Em__78_m1978670793_MethodInfo_var);
 		Predicate_1_t2251158381 * L_6 = (Predicate_1_t2251158381 *)il2cpp_codegen_object_new(Predicate_1_t2251158381_il2cpp_TypeInfo_var);
 		Predicate_1__ctor_m1609872366(L_6, L_4, L_5, /*hidden argument*/Predicate_1__ctor_m1609872366_MethodInfo_var);
 		NullCheck(L_3);
@@ -25311,11 +25309,11 @@ IL_0038:
 	}
 }
 // System.Void TMPro.MaterialManager::AddMaskingMaterial(UnityEngine.Material,UnityEngine.Material,System.Int32)
-extern Il2CppClass* U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915_il2cpp_TypeInfo_var;
 extern Il2CppClass* MaterialManager_t2047249960_il2cpp_TypeInfo_var;
 extern Il2CppClass* Predicate_1_t2251158381_il2cpp_TypeInfo_var;
 extern Il2CppClass* MaskingMaterial_t2640101498_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CAddMaskingMaterialU3Ec__AnonStorey48_U3CU3Em__76_m84036979_MethodInfo_var;
+extern const MethodInfo* U3CAddMaskingMaterialU3Ec__AnonStorey49_U3CU3Em__79_m166050321_MethodInfo_var;
 extern const MethodInfo* Predicate_1__ctor_m1609872366_MethodInfo_var;
 extern const MethodInfo* List_1_FindIndex_m2970601414_MethodInfo_var;
 extern const MethodInfo* List_1_Add_m3631943433_MethodInfo_var;
@@ -25331,20 +25329,20 @@ extern "C"  void MaterialManager_AddMaskingMaterial_m2309932882 (Il2CppObject * 
 	}
 	int32_t V_0 = 0;
 	MaskingMaterial_t2640101498 * V_1 = NULL;
-	U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914 * V_2 = NULL;
+	U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915 * V_2 = NULL;
 	{
-		U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914 * L_0 = (U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914 *)il2cpp_codegen_object_new(U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914_il2cpp_TypeInfo_var);
-		U3CAddMaskingMaterialU3Ec__AnonStorey48__ctor_m2272326345(L_0, /*hidden argument*/NULL);
+		U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915 * L_0 = (U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915 *)il2cpp_codegen_object_new(U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915_il2cpp_TypeInfo_var);
+		U3CAddMaskingMaterialU3Ec__AnonStorey49__ctor_m2075812840(L_0, /*hidden argument*/NULL);
 		V_2 = L_0;
-		U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914 * L_1 = V_2;
+		U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915 * L_1 = V_2;
 		Material_t3870600107 * L_2 = ___stencilMaterial1;
 		NullCheck(L_1);
 		L_1->set_stencilMaterial_0(L_2);
 		IL2CPP_RUNTIME_CLASS_INIT(MaterialManager_t2047249960_il2cpp_TypeInfo_var);
 		List_1_t4008287050 * L_3 = ((MaterialManager_t2047249960_StaticFields*)MaterialManager_t2047249960_il2cpp_TypeInfo_var->static_fields)->get_m_materialList_0();
-		U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914 * L_4 = V_2;
+		U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915 * L_4 = V_2;
 		IntPtr_t L_5;
-		L_5.set_m_value_0((void*)(void*)U3CAddMaskingMaterialU3Ec__AnonStorey48_U3CU3Em__76_m84036979_MethodInfo_var);
+		L_5.set_m_value_0((void*)(void*)U3CAddMaskingMaterialU3Ec__AnonStorey49_U3CU3Em__79_m166050321_MethodInfo_var);
 		Predicate_1_t2251158381 * L_6 = (Predicate_1_t2251158381 *)il2cpp_codegen_object_new(Predicate_1_t2251158381_il2cpp_TypeInfo_var);
 		Predicate_1__ctor_m1609872366(L_6, L_4, L_5, /*hidden argument*/Predicate_1__ctor_m1609872366_MethodInfo_var);
 		NullCheck(L_3);
@@ -25365,7 +25363,7 @@ extern "C"  void MaterialManager_AddMaskingMaterial_m2309932882 (Il2CppObject * 
 		NullCheck(L_10);
 		L_10->set_baseMaterial_0(L_11);
 		MaskingMaterial_t2640101498 * L_12 = V_1;
-		U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914 * L_13 = V_2;
+		U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915 * L_13 = V_2;
 		NullCheck(L_13);
 		Material_t3870600107 * L_14 = L_13->get_stencilMaterial_0();
 		NullCheck(L_12);
@@ -25387,7 +25385,7 @@ extern "C"  void MaterialManager_AddMaskingMaterial_m2309932882 (Il2CppObject * 
 
 IL_0062:
 	{
-		U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914 * L_20 = V_2;
+		U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915 * L_20 = V_2;
 		IL2CPP_RUNTIME_CLASS_INIT(MaterialManager_t2047249960_il2cpp_TypeInfo_var);
 		List_1_t4008287050 * L_21 = ((MaterialManager_t2047249960_StaticFields*)MaterialManager_t2047249960_il2cpp_TypeInfo_var->static_fields)->get_m_materialList_0();
 		int32_t L_22 = V_0;
@@ -25414,10 +25412,10 @@ IL_0090:
 	}
 }
 // System.Void TMPro.MaterialManager::RemoveStencilMaterial(UnityEngine.Material)
-extern Il2CppClass* U3CRemoveStencilMaterialU3Ec__AnonStorey49_t2712846036_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CRemoveStencilMaterialU3Ec__AnonStorey4A_t2712846044_il2cpp_TypeInfo_var;
 extern Il2CppClass* MaterialManager_t2047249960_il2cpp_TypeInfo_var;
 extern Il2CppClass* Predicate_1_t2251158381_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CRemoveStencilMaterialU3Ec__AnonStorey49_U3CU3Em__77_m2875789820_MethodInfo_var;
+extern const MethodInfo* U3CRemoveStencilMaterialU3Ec__AnonStorey4A_U3CU3Em__7A_m249645754_MethodInfo_var;
 extern const MethodInfo* Predicate_1__ctor_m1609872366_MethodInfo_var;
 extern const MethodInfo* List_1_FindIndex_m2970601414_MethodInfo_var;
 extern const MethodInfo* List_1_RemoveAt_m3482786675_MethodInfo_var;
@@ -25431,20 +25429,20 @@ extern "C"  void MaterialManager_RemoveStencilMaterial_m3112573726 (Il2CppObject
 		s_Il2CppMethodIntialized = true;
 	}
 	int32_t V_0 = 0;
-	U3CRemoveStencilMaterialU3Ec__AnonStorey49_t2712846036 * V_1 = NULL;
+	U3CRemoveStencilMaterialU3Ec__AnonStorey4A_t2712846044 * V_1 = NULL;
 	{
-		U3CRemoveStencilMaterialU3Ec__AnonStorey49_t2712846036 * L_0 = (U3CRemoveStencilMaterialU3Ec__AnonStorey49_t2712846036 *)il2cpp_codegen_object_new(U3CRemoveStencilMaterialU3Ec__AnonStorey49_t2712846036_il2cpp_TypeInfo_var);
-		U3CRemoveStencilMaterialU3Ec__AnonStorey49__ctor_m1573327431(L_0, /*hidden argument*/NULL);
+		U3CRemoveStencilMaterialU3Ec__AnonStorey4A_t2712846044 * L_0 = (U3CRemoveStencilMaterialU3Ec__AnonStorey4A_t2712846044 *)il2cpp_codegen_object_new(U3CRemoveStencilMaterialU3Ec__AnonStorey4A_t2712846044_il2cpp_TypeInfo_var);
+		U3CRemoveStencilMaterialU3Ec__AnonStorey4A__ctor_m1219391(L_0, /*hidden argument*/NULL);
 		V_1 = L_0;
-		U3CRemoveStencilMaterialU3Ec__AnonStorey49_t2712846036 * L_1 = V_1;
+		U3CRemoveStencilMaterialU3Ec__AnonStorey4A_t2712846044 * L_1 = V_1;
 		Material_t3870600107 * L_2 = ___stencilMaterial0;
 		NullCheck(L_1);
 		L_1->set_stencilMaterial_0(L_2);
 		IL2CPP_RUNTIME_CLASS_INIT(MaterialManager_t2047249960_il2cpp_TypeInfo_var);
 		List_1_t4008287050 * L_3 = ((MaterialManager_t2047249960_StaticFields*)MaterialManager_t2047249960_il2cpp_TypeInfo_var->static_fields)->get_m_materialList_0();
-		U3CRemoveStencilMaterialU3Ec__AnonStorey49_t2712846036 * L_4 = V_1;
+		U3CRemoveStencilMaterialU3Ec__AnonStorey4A_t2712846044 * L_4 = V_1;
 		IntPtr_t L_5;
-		L_5.set_m_value_0((void*)(void*)U3CRemoveStencilMaterialU3Ec__AnonStorey49_U3CU3Em__77_m2875789820_MethodInfo_var);
+		L_5.set_m_value_0((void*)(void*)U3CRemoveStencilMaterialU3Ec__AnonStorey4A_U3CU3Em__7A_m249645754_MethodInfo_var);
 		Predicate_1_t2251158381 * L_6 = (Predicate_1_t2251158381 *)il2cpp_codegen_object_new(Predicate_1_t2251158381_il2cpp_TypeInfo_var);
 		Predicate_1__ctor_m1609872366(L_6, L_4, L_5, /*hidden argument*/Predicate_1__ctor_m1609872366_MethodInfo_var);
 		NullCheck(L_3);
@@ -25472,14 +25470,14 @@ IL_0036:
 	}
 }
 // System.Void TMPro.MaterialManager::ReleaseBaseMaterial(UnityEngine.Material)
-extern Il2CppClass* U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253_il2cpp_TypeInfo_var;
 extern Il2CppClass* MaterialManager_t2047249960_il2cpp_TypeInfo_var;
 extern Il2CppClass* Predicate_1_t2251158381_il2cpp_TypeInfo_var;
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppClass* ObjectU5BU5D_t1108656482_il2cpp_TypeInfo_var;
 extern Il2CppClass* Int32_t1153838500_il2cpp_TypeInfo_var;
 extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CReleaseBaseMaterialU3Ec__AnonStorey4A_U3CU3Em__78_m2842009219_MethodInfo_var;
+extern const MethodInfo* U3CReleaseBaseMaterialU3Ec__AnonStorey4B_U3CU3Em__7B_m270180666_MethodInfo_var;
 extern const MethodInfo* Predicate_1__ctor_m1609872366_MethodInfo_var;
 extern const MethodInfo* List_1_FindIndex_m2970601414_MethodInfo_var;
 extern const MethodInfo* List_1_get_Item_m1345029990_MethodInfo_var;
@@ -25500,20 +25498,20 @@ extern "C"  void MaterialManager_ReleaseBaseMaterial_m367485182 (Il2CppObject * 
 		s_Il2CppMethodIntialized = true;
 	}
 	int32_t V_0 = 0;
-	U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252 * V_1 = NULL;
+	U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253 * V_1 = NULL;
 	{
-		U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252 * L_0 = (U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252 *)il2cpp_codegen_object_new(U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252_il2cpp_TypeInfo_var);
-		U3CReleaseBaseMaterialU3Ec__AnonStorey4A__ctor_m699670687(L_0, /*hidden argument*/NULL);
+		U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253 * L_0 = (U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253 *)il2cpp_codegen_object_new(U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253_il2cpp_TypeInfo_var);
+		U3CReleaseBaseMaterialU3Ec__AnonStorey4B__ctor_m503157182(L_0, /*hidden argument*/NULL);
 		V_1 = L_0;
-		U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252 * L_1 = V_1;
+		U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253 * L_1 = V_1;
 		Material_t3870600107 * L_2 = ___baseMaterial0;
 		NullCheck(L_1);
 		L_1->set_baseMaterial_0(L_2);
 		IL2CPP_RUNTIME_CLASS_INIT(MaterialManager_t2047249960_il2cpp_TypeInfo_var);
 		List_1_t4008287050 * L_3 = ((MaterialManager_t2047249960_StaticFields*)MaterialManager_t2047249960_il2cpp_TypeInfo_var->static_fields)->get_m_materialList_0();
-		U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252 * L_4 = V_1;
+		U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253 * L_4 = V_1;
 		IntPtr_t L_5;
-		L_5.set_m_value_0((void*)(void*)U3CReleaseBaseMaterialU3Ec__AnonStorey4A_U3CU3Em__78_m2842009219_MethodInfo_var);
+		L_5.set_m_value_0((void*)(void*)U3CReleaseBaseMaterialU3Ec__AnonStorey4B_U3CU3Em__7B_m270180666_MethodInfo_var);
 		Predicate_1_t2251158381 * L_6 = (Predicate_1_t2251158381 *)il2cpp_codegen_object_new(Predicate_1_t2251158381_il2cpp_TypeInfo_var);
 		Predicate_1__ctor_m1609872366(L_6, L_4, L_5, /*hidden argument*/Predicate_1__ctor_m1609872366_MethodInfo_var);
 		NullCheck(L_3);
@@ -25526,7 +25524,7 @@ extern "C"  void MaterialManager_ReleaseBaseMaterial_m367485182 (Il2CppObject * 
 		}
 	}
 	{
-		U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252 * L_9 = V_1;
+		U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253 * L_9 = V_1;
 		NullCheck(L_9);
 		Material_t3870600107 * L_10 = L_9->get_baseMaterial_0();
 		NullCheck(L_10);
@@ -25675,11 +25673,11 @@ IL_014d:
 	}
 }
 // System.Void TMPro.MaterialManager::ReleaseStencilMaterial(UnityEngine.Material)
-extern Il2CppClass* U3CReleaseStencilMaterialU3Ec__AnonStorey4B_t584774284_il2cpp_TypeInfo_var;
+extern Il2CppClass* U3CReleaseStencilMaterialU3Ec__AnonStorey4C_t584774285_il2cpp_TypeInfo_var;
 extern Il2CppClass* MaterialManager_t2047249960_il2cpp_TypeInfo_var;
 extern Il2CppClass* Predicate_1_t2251158381_il2cpp_TypeInfo_var;
 extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
-extern const MethodInfo* U3CReleaseStencilMaterialU3Ec__AnonStorey4B_U3CU3Em__79_m2171351994_MethodInfo_var;
+extern const MethodInfo* U3CReleaseStencilMaterialU3Ec__AnonStorey4C_U3CU3Em__7C_m3894490737_MethodInfo_var;
 extern const MethodInfo* Predicate_1__ctor_m1609872366_MethodInfo_var;
 extern const MethodInfo* List_1_FindIndex_m2970601414_MethodInfo_var;
 extern const MethodInfo* List_1_get_Item_m1345029990_MethodInfo_var;
@@ -25694,20 +25692,20 @@ extern "C"  void MaterialManager_ReleaseStencilMaterial_m3120298691 (Il2CppObjec
 		s_Il2CppMethodIntialized = true;
 	}
 	int32_t V_0 = 0;
-	U3CReleaseStencilMaterialU3Ec__AnonStorey4B_t584774284 * V_1 = NULL;
+	U3CReleaseStencilMaterialU3Ec__AnonStorey4C_t584774285 * V_1 = NULL;
 	{
-		U3CReleaseStencilMaterialU3Ec__AnonStorey4B_t584774284 * L_0 = (U3CReleaseStencilMaterialU3Ec__AnonStorey4B_t584774284 *)il2cpp_codegen_object_new(U3CReleaseStencilMaterialU3Ec__AnonStorey4B_t584774284_il2cpp_TypeInfo_var);
-		U3CReleaseStencilMaterialU3Ec__AnonStorey4B__ctor_m2463964255(L_0, /*hidden argument*/NULL);
+		U3CReleaseStencilMaterialU3Ec__AnonStorey4C_t584774285 * L_0 = (U3CReleaseStencilMaterialU3Ec__AnonStorey4C_t584774285 *)il2cpp_codegen_object_new(U3CReleaseStencilMaterialU3Ec__AnonStorey4C_t584774285_il2cpp_TypeInfo_var);
+		U3CReleaseStencilMaterialU3Ec__AnonStorey4C__ctor_m2267450750(L_0, /*hidden argument*/NULL);
 		V_1 = L_0;
-		U3CReleaseStencilMaterialU3Ec__AnonStorey4B_t584774284 * L_1 = V_1;
+		U3CReleaseStencilMaterialU3Ec__AnonStorey4C_t584774285 * L_1 = V_1;
 		Material_t3870600107 * L_2 = ___stencilMaterial0;
 		NullCheck(L_1);
 		L_1->set_stencilMaterial_0(L_2);
 		IL2CPP_RUNTIME_CLASS_INIT(MaterialManager_t2047249960_il2cpp_TypeInfo_var);
 		List_1_t4008287050 * L_3 = ((MaterialManager_t2047249960_StaticFields*)MaterialManager_t2047249960_il2cpp_TypeInfo_var->static_fields)->get_m_materialList_0();
-		U3CReleaseStencilMaterialU3Ec__AnonStorey4B_t584774284 * L_4 = V_1;
+		U3CReleaseStencilMaterialU3Ec__AnonStorey4C_t584774285 * L_4 = V_1;
 		IntPtr_t L_5;
-		L_5.set_m_value_0((void*)(void*)U3CReleaseStencilMaterialU3Ec__AnonStorey4B_U3CU3Em__79_m2171351994_MethodInfo_var);
+		L_5.set_m_value_0((void*)(void*)U3CReleaseStencilMaterialU3Ec__AnonStorey4C_U3CU3Em__7C_m3894490737_MethodInfo_var);
 		Predicate_1_t2251158381 * L_6 = (Predicate_1_t2251158381 *)il2cpp_codegen_object_new(Predicate_1_t2251158381_il2cpp_TypeInfo_var);
 		Predicate_1__ctor_m1609872366(L_6, L_4, L_5, /*hidden argument*/Predicate_1__ctor_m1609872366_MethodInfo_var);
 		NullCheck(L_3);
@@ -25970,23 +25968,23 @@ IL_0060:
 		return 0;
 	}
 }
-// System.Void TMPro.MaterialManager/<AddMaskingMaterial>c__AnonStorey48::.ctor()
-extern "C"  void U3CAddMaskingMaterialU3Ec__AnonStorey48__ctor_m2272326345 (U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914 * __this, const MethodInfo* method)
+// System.Void TMPro.MaterialManager/<AddMaskingMaterial>c__AnonStorey49::.ctor()
+extern "C"  void U3CAddMaskingMaterialU3Ec__AnonStorey49__ctor_m2075812840 (U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Boolean TMPro.MaterialManager/<AddMaskingMaterial>c__AnonStorey48::<>m__76(TMPro.MaterialManager/MaskingMaterial)
+// System.Boolean TMPro.MaterialManager/<AddMaskingMaterial>c__AnonStorey49::<>m__79(TMPro.MaterialManager/MaskingMaterial)
 extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
-extern const uint32_t U3CAddMaskingMaterialU3Ec__AnonStorey48_U3CU3Em__76_m84036979_MetadataUsageId;
-extern "C"  bool U3CAddMaskingMaterialU3Ec__AnonStorey48_U3CU3Em__76_m84036979 (U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914 * __this, MaskingMaterial_t2640101498 * ___item0, const MethodInfo* method)
+extern const uint32_t U3CAddMaskingMaterialU3Ec__AnonStorey49_U3CU3Em__79_m166050321_MetadataUsageId;
+extern "C"  bool U3CAddMaskingMaterialU3Ec__AnonStorey49_U3CU3Em__79_m166050321 (U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915 * __this, MaskingMaterial_t2640101498 * ___item0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CAddMaskingMaterialU3Ec__AnonStorey48_U3CU3Em__76_m84036979_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CAddMaskingMaterialU3Ec__AnonStorey49_U3CU3Em__79_m166050321_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -25999,23 +25997,23 @@ extern "C"  bool U3CAddMaskingMaterialU3Ec__AnonStorey48_U3CU3Em__76_m84036979 (
 		return L_3;
 	}
 }
-// System.Void TMPro.MaterialManager/<GetBaseMaterial>c__AnonStorey47::.ctor()
-extern "C"  void U3CGetBaseMaterialU3Ec__AnonStorey47__ctor_m1943237626 (U3CGetBaseMaterialU3Ec__AnonStorey47_t1629669825 * __this, const MethodInfo* method)
+// System.Void TMPro.MaterialManager/<GetBaseMaterial>c__AnonStorey48::.ctor()
+extern "C"  void U3CGetBaseMaterialU3Ec__AnonStorey48__ctor_m1746724121 (U3CGetBaseMaterialU3Ec__AnonStorey48_t1629669826 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Boolean TMPro.MaterialManager/<GetBaseMaterial>c__AnonStorey47::<>m__75(TMPro.MaterialManager/MaskingMaterial)
+// System.Boolean TMPro.MaterialManager/<GetBaseMaterial>c__AnonStorey48::<>m__78(TMPro.MaterialManager/MaskingMaterial)
 extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
-extern const uint32_t U3CGetBaseMaterialU3Ec__AnonStorey47_U3CU3Em__75_m1896657451_MetadataUsageId;
-extern "C"  bool U3CGetBaseMaterialU3Ec__AnonStorey47_U3CU3Em__75_m1896657451 (U3CGetBaseMaterialU3Ec__AnonStorey47_t1629669825 * __this, MaskingMaterial_t2640101498 * ___item0, const MethodInfo* method)
+extern const uint32_t U3CGetBaseMaterialU3Ec__AnonStorey48_U3CU3Em__78_m1978670793_MetadataUsageId;
+extern "C"  bool U3CGetBaseMaterialU3Ec__AnonStorey48_U3CU3Em__78_m1978670793 (U3CGetBaseMaterialU3Ec__AnonStorey48_t1629669826 * __this, MaskingMaterial_t2640101498 * ___item0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CGetBaseMaterialU3Ec__AnonStorey47_U3CU3Em__75_m1896657451_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CGetBaseMaterialU3Ec__AnonStorey48_U3CU3Em__78_m1978670793_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -26028,23 +26026,23 @@ extern "C"  bool U3CGetBaseMaterialU3Ec__AnonStorey47_U3CU3Em__75_m1896657451 (U
 		return L_3;
 	}
 }
-// System.Void TMPro.MaterialManager/<GetStencilMaterial>c__AnonStorey46::.ctor()
-extern "C"  void U3CGetStencilMaterialU3Ec__AnonStorey46__ctor_m602880698 (U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * __this, const MethodInfo* method)
+// System.Void TMPro.MaterialManager/<GetStencilMaterial>c__AnonStorey47::.ctor()
+extern "C"  void U3CGetStencilMaterialU3Ec__AnonStorey47__ctor_m406367193 (U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Boolean TMPro.MaterialManager/<GetStencilMaterial>c__AnonStorey46::<>m__74(TMPro.MaterialManager/MaskingMaterial)
+// System.Boolean TMPro.MaterialManager/<GetStencilMaterial>c__AnonStorey47::<>m__77(TMPro.MaterialManager/MaskingMaterial)
 extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
-extern const uint32_t U3CGetStencilMaterialU3Ec__AnonStorey46_U3CU3Em__74_m428213924_MetadataUsageId;
-extern "C"  bool U3CGetStencilMaterialU3Ec__AnonStorey46_U3CU3Em__74_m428213924 (U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865 * __this, MaskingMaterial_t2640101498 * ___item0, const MethodInfo* method)
+extern const uint32_t U3CGetStencilMaterialU3Ec__AnonStorey47_U3CU3Em__77_m510227266_MetadataUsageId;
+extern "C"  bool U3CGetStencilMaterialU3Ec__AnonStorey47_U3CU3Em__77_m510227266 (U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866 * __this, MaskingMaterial_t2640101498 * ___item0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CGetStencilMaterialU3Ec__AnonStorey46_U3CU3Em__74_m428213924_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CGetStencilMaterialU3Ec__AnonStorey47_U3CU3Em__77_m510227266_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	int32_t G_B3_0 = 0;
@@ -26079,23 +26077,23 @@ IL_0027:
 		return (bool)G_B3_0;
 	}
 }
-// System.Void TMPro.MaterialManager/<ReleaseBaseMaterial>c__AnonStorey4A::.ctor()
-extern "C"  void U3CReleaseBaseMaterialU3Ec__AnonStorey4A__ctor_m699670687 (U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252 * __this, const MethodInfo* method)
+// System.Void TMPro.MaterialManager/<ReleaseBaseMaterial>c__AnonStorey4B::.ctor()
+extern "C"  void U3CReleaseBaseMaterialU3Ec__AnonStorey4B__ctor_m503157182 (U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Boolean TMPro.MaterialManager/<ReleaseBaseMaterial>c__AnonStorey4A::<>m__78(TMPro.MaterialManager/MaskingMaterial)
+// System.Boolean TMPro.MaterialManager/<ReleaseBaseMaterial>c__AnonStorey4B::<>m__7B(TMPro.MaterialManager/MaskingMaterial)
 extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
-extern const uint32_t U3CReleaseBaseMaterialU3Ec__AnonStorey4A_U3CU3Em__78_m2842009219_MetadataUsageId;
-extern "C"  bool U3CReleaseBaseMaterialU3Ec__AnonStorey4A_U3CU3Em__78_m2842009219 (U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252 * __this, MaskingMaterial_t2640101498 * ___item0, const MethodInfo* method)
+extern const uint32_t U3CReleaseBaseMaterialU3Ec__AnonStorey4B_U3CU3Em__7B_m270180666_MetadataUsageId;
+extern "C"  bool U3CReleaseBaseMaterialU3Ec__AnonStorey4B_U3CU3Em__7B_m270180666 (U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253 * __this, MaskingMaterial_t2640101498 * ___item0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CReleaseBaseMaterialU3Ec__AnonStorey4A_U3CU3Em__78_m2842009219_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CReleaseBaseMaterialU3Ec__AnonStorey4B_U3CU3Em__7B_m270180666_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -26108,23 +26106,23 @@ extern "C"  bool U3CReleaseBaseMaterialU3Ec__AnonStorey4A_U3CU3Em__78_m284200921
 		return L_3;
 	}
 }
-// System.Void TMPro.MaterialManager/<ReleaseStencilMaterial>c__AnonStorey4B::.ctor()
-extern "C"  void U3CReleaseStencilMaterialU3Ec__AnonStorey4B__ctor_m2463964255 (U3CReleaseStencilMaterialU3Ec__AnonStorey4B_t584774284 * __this, const MethodInfo* method)
+// System.Void TMPro.MaterialManager/<ReleaseStencilMaterial>c__AnonStorey4C::.ctor()
+extern "C"  void U3CReleaseStencilMaterialU3Ec__AnonStorey4C__ctor_m2267450750 (U3CReleaseStencilMaterialU3Ec__AnonStorey4C_t584774285 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Boolean TMPro.MaterialManager/<ReleaseStencilMaterial>c__AnonStorey4B::<>m__79(TMPro.MaterialManager/MaskingMaterial)
+// System.Boolean TMPro.MaterialManager/<ReleaseStencilMaterial>c__AnonStorey4C::<>m__7C(TMPro.MaterialManager/MaskingMaterial)
 extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
-extern const uint32_t U3CReleaseStencilMaterialU3Ec__AnonStorey4B_U3CU3Em__79_m2171351994_MetadataUsageId;
-extern "C"  bool U3CReleaseStencilMaterialU3Ec__AnonStorey4B_U3CU3Em__79_m2171351994 (U3CReleaseStencilMaterialU3Ec__AnonStorey4B_t584774284 * __this, MaskingMaterial_t2640101498 * ___item0, const MethodInfo* method)
+extern const uint32_t U3CReleaseStencilMaterialU3Ec__AnonStorey4C_U3CU3Em__7C_m3894490737_MetadataUsageId;
+extern "C"  bool U3CReleaseStencilMaterialU3Ec__AnonStorey4C_U3CU3Em__7C_m3894490737 (U3CReleaseStencilMaterialU3Ec__AnonStorey4C_t584774285 * __this, MaskingMaterial_t2640101498 * ___item0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CReleaseStencilMaterialU3Ec__AnonStorey4B_U3CU3Em__79_m2171351994_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CReleaseStencilMaterialU3Ec__AnonStorey4C_U3CU3Em__7C_m3894490737_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -26137,23 +26135,23 @@ extern "C"  bool U3CReleaseStencilMaterialU3Ec__AnonStorey4B_U3CU3Em__79_m217135
 		return L_3;
 	}
 }
-// System.Void TMPro.MaterialManager/<RemoveStencilMaterial>c__AnonStorey49::.ctor()
-extern "C"  void U3CRemoveStencilMaterialU3Ec__AnonStorey49__ctor_m1573327431 (U3CRemoveStencilMaterialU3Ec__AnonStorey49_t2712846036 * __this, const MethodInfo* method)
+// System.Void TMPro.MaterialManager/<RemoveStencilMaterial>c__AnonStorey4A::.ctor()
+extern "C"  void U3CRemoveStencilMaterialU3Ec__AnonStorey4A__ctor_m1219391 (U3CRemoveStencilMaterialU3Ec__AnonStorey4A_t2712846044 * __this, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Boolean TMPro.MaterialManager/<RemoveStencilMaterial>c__AnonStorey49::<>m__77(TMPro.MaterialManager/MaskingMaterial)
+// System.Boolean TMPro.MaterialManager/<RemoveStencilMaterial>c__AnonStorey4A::<>m__7A(TMPro.MaterialManager/MaskingMaterial)
 extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
-extern const uint32_t U3CRemoveStencilMaterialU3Ec__AnonStorey49_U3CU3Em__77_m2875789820_MetadataUsageId;
-extern "C"  bool U3CRemoveStencilMaterialU3Ec__AnonStorey49_U3CU3Em__77_m2875789820 (U3CRemoveStencilMaterialU3Ec__AnonStorey49_t2712846036 * __this, MaskingMaterial_t2640101498 * ___item0, const MethodInfo* method)
+extern const uint32_t U3CRemoveStencilMaterialU3Ec__AnonStorey4A_U3CU3Em__7A_m249645754_MetadataUsageId;
+extern "C"  bool U3CRemoveStencilMaterialU3Ec__AnonStorey4A_U3CU3Em__7A_m249645754 (U3CRemoveStencilMaterialU3Ec__AnonStorey4A_t2712846044 * __this, MaskingMaterial_t2640101498 * ___item0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (U3CRemoveStencilMaterialU3Ec__AnonStorey49_U3CU3Em__77_m2875789820_MetadataUsageId);
+		il2cpp_codegen_initialize_method (U3CRemoveStencilMaterialU3Ec__AnonStorey4A_U3CU3Em__7A_m249645754_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -28283,980 +28281,6 @@ extern "C"  void SpriteInfo__ctor_m3292116814 (SpriteInfo_t1299071017 * __this, 
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
 		return;
-	}
-}
-// System.Void TMPro.TextContainer::.ctor()
-extern Il2CppClass* Vector3U5BU5D_t215400611_il2cpp_TypeInfo_var;
-extern const uint32_t TextContainer__ctor_m509483505_MetadataUsageId;
-extern "C"  void TextContainer__ctor_m509483505 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	static bool s_Il2CppMethodIntialized;
-	if (!s_Il2CppMethodIntialized)
-	{
-		il2cpp_codegen_initialize_method (TextContainer__ctor_m509483505_MetadataUsageId);
-		s_Il2CppMethodIntialized = true;
-	}
-	{
-		__this->set_m_anchorPosition_4(4);
-		__this->set_m_isAutoFitting_8((bool)1);
-		__this->set_m_corners_9(((Vector3U5BU5D_t215400611*)SZArrayNew(Vector3U5BU5D_t215400611_il2cpp_TypeInfo_var, (uint32_t)4)));
-		__this->set_m_worldCorners_10(((Vector3U5BU5D_t215400611*)SZArrayNew(Vector3U5BU5D_t215400611_il2cpp_TypeInfo_var, (uint32_t)4)));
-		MonoBehaviour__ctor_m2022291967(__this, /*hidden argument*/NULL);
-		return;
-	}
-}
-// System.Boolean TMPro.TextContainer::get_hasChanged()
-extern "C"  bool TextContainer_get_hasChanged_m1972960994 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		bool L_0 = __this->get_m_hasChanged_2();
-		return L_0;
-	}
-}
-// System.Void TMPro.TextContainer::set_hasChanged(System.Boolean)
-extern "C"  void TextContainer_set_hasChanged_m4038537089 (TextContainer_t2231787766 * __this, bool ___value0, const MethodInfo* method)
-{
-	{
-		bool L_0 = ___value0;
-		__this->set_m_hasChanged_2(L_0);
-		return;
-	}
-}
-// UnityEngine.Vector2 TMPro.TextContainer::get_pivot()
-extern "C"  Vector2_t4282066565  TextContainer_get_pivot_m1938500963 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		Vector2_t4282066565  L_0 = __this->get_m_pivot_3();
-		return L_0;
-	}
-}
-// System.Void TMPro.TextContainer::set_pivot(UnityEngine.Vector2)
-extern "C"  void TextContainer_set_pivot_m1135741478 (TextContainer_t2231787766 * __this, Vector2_t4282066565  ___value0, const MethodInfo* method)
-{
-	{
-		Vector2_t4282066565  L_0 = __this->get_m_pivot_3();
-		Vector2_t4282066565  L_1 = ___value0;
-		bool L_2 = Vector2_op_Inequality_m1638984867(NULL /*static, unused*/, L_0, L_1, /*hidden argument*/NULL);
-		if (!L_2)
-		{
-			goto IL_0037;
-		}
-	}
-	{
-		Vector2_t4282066565  L_3 = ___value0;
-		__this->set_m_pivot_3(L_3);
-		Vector2_t4282066565  L_4 = __this->get_m_pivot_3();
-		int32_t L_5 = TextContainer_GetAnchorPosition_m1390220414(__this, L_4, /*hidden argument*/NULL);
-		__this->set_m_anchorPosition_4(L_5);
-		__this->set_m_hasChanged_2((bool)1);
-		TextContainer_OnContainerChanged_m229727269(__this, /*hidden argument*/NULL);
-	}
-
-IL_0037:
-	{
-		return;
-	}
-}
-// TMPro.TextContainerAnchors TMPro.TextContainer::get_anchorPosition()
-extern "C"  int32_t TextContainer_get_anchorPosition_m613948737 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		int32_t L_0 = __this->get_m_anchorPosition_4();
-		return L_0;
-	}
-}
-// System.Void TMPro.TextContainer::set_anchorPosition(TMPro.TextContainerAnchors)
-extern "C"  void TextContainer_set_anchorPosition_m1920196426 (TextContainer_t2231787766 * __this, int32_t ___value0, const MethodInfo* method)
-{
-	{
-		int32_t L_0 = __this->get_m_anchorPosition_4();
-		int32_t L_1 = ___value0;
-		if ((((int32_t)L_0) == ((int32_t)L_1)))
-		{
-			goto IL_0032;
-		}
-	}
-	{
-		int32_t L_2 = ___value0;
-		__this->set_m_anchorPosition_4(L_2);
-		int32_t L_3 = __this->get_m_anchorPosition_4();
-		Vector2_t4282066565  L_4 = TextContainer_GetPivot_m1102776192(__this, L_3, /*hidden argument*/NULL);
-		__this->set_m_pivot_3(L_4);
-		__this->set_m_hasChanged_2((bool)1);
-		TextContainer_OnContainerChanged_m229727269(__this, /*hidden argument*/NULL);
-	}
-
-IL_0032:
-	{
-		return;
-	}
-}
-// UnityEngine.Rect TMPro.TextContainer::get_rect()
-extern "C"  Rect_t4241904616  TextContainer_get_rect_m2736820798 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		Rect_t4241904616  L_0 = __this->get_m_rect_5();
-		return L_0;
-	}
-}
-// System.Void TMPro.TextContainer::set_rect(UnityEngine.Rect)
-extern "C"  void TextContainer_set_rect_m2653960505 (TextContainer_t2231787766 * __this, Rect_t4241904616  ___value0, const MethodInfo* method)
-{
-	{
-		Rect_t4241904616  L_0 = __this->get_m_rect_5();
-		Rect_t4241904616  L_1 = ___value0;
-		bool L_2 = Rect_op_Inequality_m2236552616(NULL /*static, unused*/, L_0, L_1, /*hidden argument*/NULL);
-		if (!L_2)
-		{
-			goto IL_0025;
-		}
-	}
-	{
-		Rect_t4241904616  L_3 = ___value0;
-		__this->set_m_rect_5(L_3);
-		__this->set_m_hasChanged_2((bool)1);
-		TextContainer_OnContainerChanged_m229727269(__this, /*hidden argument*/NULL);
-	}
-
-IL_0025:
-	{
-		return;
-	}
-}
-// UnityEngine.Vector2 TMPro.TextContainer::get_size()
-extern "C"  Vector2_t4282066565  TextContainer_get_size_m2503831586 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		Rect_t4241904616 * L_0 = __this->get_address_of_m_rect_5();
-		float L_1 = Rect_get_width_m2824209432(L_0, /*hidden argument*/NULL);
-		Rect_t4241904616 * L_2 = __this->get_address_of_m_rect_5();
-		float L_3 = Rect_get_height_m2154960823(L_2, /*hidden argument*/NULL);
-		Vector2_t4282066565  L_4;
-		memset(&L_4, 0, sizeof(L_4));
-		Vector2__ctor_m1517109030(&L_4, L_1, L_3, /*hidden argument*/NULL);
-		return L_4;
-	}
-}
-// System.Void TMPro.TextContainer::set_size(UnityEngine.Vector2)
-extern "C"  void TextContainer_set_size_m1783539145 (TextContainer_t2231787766 * __this, Vector2_t4282066565  ___value0, const MethodInfo* method)
-{
-	{
-		Rect_t4241904616 * L_0 = __this->get_address_of_m_rect_5();
-		float L_1 = Rect_get_width_m2824209432(L_0, /*hidden argument*/NULL);
-		Rect_t4241904616 * L_2 = __this->get_address_of_m_rect_5();
-		float L_3 = Rect_get_height_m2154960823(L_2, /*hidden argument*/NULL);
-		Vector2_t4282066565  L_4;
-		memset(&L_4, 0, sizeof(L_4));
-		Vector2__ctor_m1517109030(&L_4, L_1, L_3, /*hidden argument*/NULL);
-		Vector2_t4282066565  L_5 = ___value0;
-		bool L_6 = Vector2_op_Inequality_m1638984867(NULL /*static, unused*/, L_4, L_5, /*hidden argument*/NULL);
-		if (!L_6)
-		{
-			goto IL_0048;
-		}
-	}
-	{
-		Vector2_t4282066565  L_7 = ___value0;
-		TextContainer_SetRect_m3146796581(__this, L_7, /*hidden argument*/NULL);
-		__this->set_m_hasChanged_2((bool)1);
-		__this->set_m_isDefaultWidth_6((bool)0);
-		__this->set_m_isDefaultHeight_7((bool)0);
-		TextContainer_OnContainerChanged_m229727269(__this, /*hidden argument*/NULL);
-	}
-
-IL_0048:
-	{
-		return;
-	}
-}
-// System.Single TMPro.TextContainer::get_width()
-extern "C"  float TextContainer_get_width_m478830936 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		Rect_t4241904616 * L_0 = __this->get_address_of_m_rect_5();
-		float L_1 = Rect_get_width_m2824209432(L_0, /*hidden argument*/NULL);
-		return L_1;
-	}
-}
-// System.Void TMPro.TextContainer::set_width(System.Single)
-extern "C"  void TextContainer_set_width_m3817014035 (TextContainer_t2231787766 * __this, float ___value0, const MethodInfo* method)
-{
-	{
-		float L_0 = ___value0;
-		Rect_t4241904616 * L_1 = __this->get_address_of_m_rect_5();
-		float L_2 = Rect_get_height_m2154960823(L_1, /*hidden argument*/NULL);
-		Vector2_t4282066565  L_3;
-		memset(&L_3, 0, sizeof(L_3));
-		Vector2__ctor_m1517109030(&L_3, L_0, L_2, /*hidden argument*/NULL);
-		TextContainer_SetRect_m3146796581(__this, L_3, /*hidden argument*/NULL);
-		__this->set_m_hasChanged_2((bool)1);
-		__this->set_m_isDefaultWidth_6((bool)0);
-		TextContainer_OnContainerChanged_m229727269(__this, /*hidden argument*/NULL);
-		return;
-	}
-}
-// System.Single TMPro.TextContainer::get_height()
-extern "C"  float TextContainer_get_height_m2462671479 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		Rect_t4241904616 * L_0 = __this->get_address_of_m_rect_5();
-		float L_1 = Rect_get_height_m2154960823(L_0, /*hidden argument*/NULL);
-		return L_1;
-	}
-}
-// System.Void TMPro.TextContainer::set_height(System.Single)
-extern "C"  void TextContainer_set_height_m514366676 (TextContainer_t2231787766 * __this, float ___value0, const MethodInfo* method)
-{
-	{
-		Rect_t4241904616 * L_0 = __this->get_address_of_m_rect_5();
-		float L_1 = Rect_get_width_m2824209432(L_0, /*hidden argument*/NULL);
-		float L_2 = ___value0;
-		Vector2_t4282066565  L_3;
-		memset(&L_3, 0, sizeof(L_3));
-		Vector2__ctor_m1517109030(&L_3, L_1, L_2, /*hidden argument*/NULL);
-		TextContainer_SetRect_m3146796581(__this, L_3, /*hidden argument*/NULL);
-		__this->set_m_hasChanged_2((bool)1);
-		__this->set_m_isDefaultHeight_7((bool)0);
-		TextContainer_OnContainerChanged_m229727269(__this, /*hidden argument*/NULL);
-		return;
-	}
-}
-// System.Boolean TMPro.TextContainer::get_isDefaultWidth()
-extern "C"  bool TextContainer_get_isDefaultWidth_m3068081591 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		bool L_0 = __this->get_m_isDefaultWidth_6();
-		return L_0;
-	}
-}
-// System.Boolean TMPro.TextContainer::get_isDefaultHeight()
-extern "C"  bool TextContainer_get_isDefaultHeight_m1125063160 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		bool L_0 = __this->get_m_isDefaultHeight_7();
-		return L_0;
-	}
-}
-// System.Boolean TMPro.TextContainer::get_isAutoFitting()
-extern "C"  bool TextContainer_get_isAutoFitting_m1377898176 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		bool L_0 = __this->get_m_isAutoFitting_8();
-		return L_0;
-	}
-}
-// System.Void TMPro.TextContainer::set_isAutoFitting(System.Boolean)
-extern "C"  void TextContainer_set_isAutoFitting_m499410063 (TextContainer_t2231787766 * __this, bool ___value0, const MethodInfo* method)
-{
-	{
-		bool L_0 = ___value0;
-		__this->set_m_isAutoFitting_8(L_0);
-		return;
-	}
-}
-// UnityEngine.Vector3[] TMPro.TextContainer::get_corners()
-extern "C"  Vector3U5BU5D_t215400611* TextContainer_get_corners_m4045102108 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		Vector3U5BU5D_t215400611* L_0 = __this->get_m_corners_9();
-		return L_0;
-	}
-}
-// UnityEngine.Vector3[] TMPro.TextContainer::get_worldCorners()
-extern "C"  Vector3U5BU5D_t215400611* TextContainer_get_worldCorners_m715258640 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		Vector3U5BU5D_t215400611* L_0 = __this->get_m_worldCorners_10();
-		return L_0;
-	}
-}
-// UnityEngine.Vector3 TMPro.TextContainer::get_normal()
-extern "C"  Vector3_t4282066566  TextContainer_get_normal_m3412005705 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		Vector3_t4282066566  L_0 = __this->get_m_normal_11();
-		return L_0;
-	}
-}
-// UnityEngine.Vector4 TMPro.TextContainer::get_margins()
-extern "C"  Vector4_t4282066567  TextContainer_get_margins_m3361953188 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		Vector4_t4282066567  L_0 = __this->get_m_margins_12();
-		return L_0;
-	}
-}
-// System.Void TMPro.TextContainer::set_margins(UnityEngine.Vector4)
-extern "C"  void TextContainer_set_margins_m3145348673 (TextContainer_t2231787766 * __this, Vector4_t4282066567  ___value0, const MethodInfo* method)
-{
-	{
-		Vector4_t4282066567  L_0 = __this->get_m_margins_12();
-		Vector4_t4282066567  L_1 = ___value0;
-		bool L_2 = Vector4_op_Inequality_m3118756897(NULL /*static, unused*/, L_0, L_1, /*hidden argument*/NULL);
-		if (!L_2)
-		{
-			goto IL_0025;
-		}
-	}
-	{
-		Vector4_t4282066567  L_3 = ___value0;
-		__this->set_m_margins_12(L_3);
-		__this->set_m_hasChanged_2((bool)1);
-		TextContainer_OnContainerChanged_m229727269(__this, /*hidden argument*/NULL);
-	}
-
-IL_0025:
-	{
-		return;
-	}
-}
-// System.Void TMPro.TextContainer::Awake()
-extern const Il2CppType* Transform_t1659122786_0_0_0_var;
-extern const Il2CppType* TextMeshPro_t3198095413_0_0_0_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* Transform_t1659122786_il2cpp_TypeInfo_var;
-extern Il2CppClass* TextMeshPro_t3198095413_il2cpp_TypeInfo_var;
-extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2427623765;
-extern const uint32_t TextContainer_Awake_m747088724_MetadataUsageId;
-extern "C"  void TextContainer_Awake_m747088724 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	static bool s_Il2CppMethodIntialized;
-	if (!s_Il2CppMethodIntialized)
-	{
-		il2cpp_codegen_initialize_method (TextContainer_Awake_m747088724_MetadataUsageId);
-		s_Il2CppMethodIntialized = true;
-	}
-	int32_t V_0 = 0;
-	{
-		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
-		Type_t * L_0 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Transform_t1659122786_0_0_0_var), /*hidden argument*/NULL);
-		Component_t3501516275 * L_1 = Component_GetComponent_m936021879(__this, L_0, /*hidden argument*/NULL);
-		__this->set_m_transform_13(((Transform_t1659122786 *)IsInstClass(L_1, Transform_t1659122786_il2cpp_TypeInfo_var)));
-		Type_t * L_2 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(TextMeshPro_t3198095413_0_0_0_var), /*hidden argument*/NULL);
-		Component_t3501516275 * L_3 = Component_GetComponent_m936021879(__this, L_2, /*hidden argument*/NULL);
-		__this->set_m_textMeshPro_14(((TextMeshPro_t3198095413 *)IsInstClass(L_3, TextMeshPro_t3198095413_il2cpp_TypeInfo_var)));
-		Rect_t4241904616 * L_4 = __this->get_address_of_m_rect_5();
-		float L_5 = Rect_get_width_m2824209432(L_4, /*hidden argument*/NULL);
-		if ((((float)L_5) == ((float)(0.0f))))
-		{
-			goto IL_0060;
-		}
-	}
-	{
-		Rect_t4241904616 * L_6 = __this->get_address_of_m_rect_5();
-		float L_7 = Rect_get_height_m2154960823(L_6, /*hidden argument*/NULL);
-		if ((!(((float)L_7) == ((float)(0.0f)))))
-		{
-			goto IL_013d;
-		}
-	}
-
-IL_0060:
-	{
-		TextMeshPro_t3198095413 * L_8 = __this->get_m_textMeshPro_14();
-		IL2CPP_RUNTIME_CLASS_INIT(Object_t3071478659_il2cpp_TypeInfo_var);
-		bool L_9 = Object_op_Inequality_m1296218211(NULL /*static, unused*/, L_8, (Object_t3071478659 *)NULL, /*hidden argument*/NULL);
-		if (!L_9)
-		{
-			goto IL_00d8;
-		}
-	}
-	{
-		TextMeshPro_t3198095413 * L_10 = __this->get_m_textMeshPro_14();
-		NullCheck(L_10);
-		float L_11 = TextMeshPro_get_lineLength_m3073350025(L_10, /*hidden argument*/NULL);
-		if ((((float)L_11) == ((float)(72.0f))))
-		{
-			goto IL_00d8;
-		}
-	}
-	{
-		Debug_LogWarning_m4187349938(NULL /*static, unused*/, _stringLiteral2427623765, (Object_t3071478659 *)NULL, /*hidden argument*/NULL);
-		__this->set_m_isDefaultHeight_7((bool)1);
-		TextMeshPro_t3198095413 * L_12 = __this->get_m_textMeshPro_14();
-		NullCheck(L_12);
-		int32_t L_13 = TextMeshPro_get_anchor_m3294984817(L_12, /*hidden argument*/NULL);
-		V_0 = L_13;
-		int32_t L_14 = V_0;
-		__this->set_m_anchorPosition_4(L_14);
-		int32_t L_15 = __this->get_m_anchorPosition_4();
-		Vector2_t4282066565  L_16 = TextContainer_GetPivot_m1102776192(__this, L_15, /*hidden argument*/NULL);
-		__this->set_m_pivot_3(L_16);
-		Rect_t4241904616 * L_17 = __this->get_address_of_m_rect_5();
-		TextMeshPro_t3198095413 * L_18 = __this->get_m_textMeshPro_14();
-		NullCheck(L_18);
-		float L_19 = TextMeshPro_get_lineLength_m3073350025(L_18, /*hidden argument*/NULL);
-		Rect_set_width_m3771513595(L_17, L_19, /*hidden argument*/NULL);
-		goto IL_0118;
-	}
-
-IL_00d8:
-	{
-		__this->set_m_isDefaultWidth_6((bool)1);
-		__this->set_m_isDefaultHeight_7((bool)1);
-		int32_t L_20 = __this->get_m_anchorPosition_4();
-		Vector2_t4282066565  L_21 = TextContainer_GetPivot_m1102776192(__this, L_20, /*hidden argument*/NULL);
-		__this->set_m_pivot_3(L_21);
-		Rect_t4241904616 * L_22 = __this->get_address_of_m_rect_5();
-		Rect_set_width_m3771513595(L_22, (0.0f), /*hidden argument*/NULL);
-		Rect_t4241904616 * L_23 = __this->get_address_of_m_rect_5();
-		Rect_set_height_m3398820332(L_23, (0.0f), /*hidden argument*/NULL);
-	}
-
-IL_0118:
-	{
-		Vector4_t4282066567  L_24;
-		memset(&L_24, 0, sizeof(L_24));
-		Vector4__ctor_m2441427762(&L_24, (0.0f), (0.0f), (0.0f), (0.0f), /*hidden argument*/NULL);
-		__this->set_m_margins_12(L_24);
-		TextContainer_UpdateCorners_m3242847108(__this, /*hidden argument*/NULL);
-	}
-
-IL_013d:
-	{
-		return;
-	}
-}
-// System.Void TMPro.TextContainer::OnEnable()
-extern const Il2CppType* Transform_t1659122786_0_0_0_var;
-extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* Transform_t1659122786_il2cpp_TypeInfo_var;
-extern const uint32_t TextContainer_OnEnable_m1680251893_MetadataUsageId;
-extern "C"  void TextContainer_OnEnable_m1680251893 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	static bool s_Il2CppMethodIntialized;
-	if (!s_Il2CppMethodIntialized)
-	{
-		il2cpp_codegen_initialize_method (TextContainer_OnEnable_m1680251893_MetadataUsageId);
-		s_Il2CppMethodIntialized = true;
-	}
-	{
-		Transform_t1659122786 * L_0 = __this->get_m_transform_13();
-		IL2CPP_RUNTIME_CLASS_INIT(Object_t3071478659_il2cpp_TypeInfo_var);
-		bool L_1 = Object_op_Equality_m3964590952(NULL /*static, unused*/, L_0, (Object_t3071478659 *)NULL, /*hidden argument*/NULL);
-		if (!L_1)
-		{
-			goto IL_002c;
-		}
-	}
-	{
-		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
-		Type_t * L_2 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Transform_t1659122786_0_0_0_var), /*hidden argument*/NULL);
-		Component_t3501516275 * L_3 = Component_GetComponent_m936021879(__this, L_2, /*hidden argument*/NULL);
-		__this->set_m_transform_13(((Transform_t1659122786 *)IsInstClass(L_3, Transform_t1659122786_il2cpp_TypeInfo_var)));
-	}
-
-IL_002c:
-	{
-		TextContainer_OnContainerChanged_m229727269(__this, /*hidden argument*/NULL);
-		return;
-	}
-}
-// System.Void TMPro.TextContainer::OnDisable()
-extern "C"  void TextContainer_OnDisable_m989138392 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		return;
-	}
-}
-// System.Void TMPro.TextContainer::OnContainerChanged()
-extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
-extern const uint32_t TextContainer_OnContainerChanged_m229727269_MetadataUsageId;
-extern "C"  void TextContainer_OnContainerChanged_m229727269 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	static bool s_Il2CppMethodIntialized;
-	if (!s_Il2CppMethodIntialized)
-	{
-		il2cpp_codegen_initialize_method (TextContainer_OnContainerChanged_m229727269_MetadataUsageId);
-		s_Il2CppMethodIntialized = true;
-	}
-	{
-		TextContainer_UpdateCorners_m3242847108(__this, /*hidden argument*/NULL);
-		TextContainer_UpdateWorldCorners_m4255960232(__this, /*hidden argument*/NULL);
-		Transform_t1659122786 * L_0 = __this->get_m_transform_13();
-		IL2CPP_RUNTIME_CLASS_INIT(Object_t3071478659_il2cpp_TypeInfo_var);
-		bool L_1 = Object_op_Inequality_m1296218211(NULL /*static, unused*/, L_0, (Object_t3071478659 *)NULL, /*hidden argument*/NULL);
-		if (!L_1)
-		{
-			goto IL_0029;
-		}
-	}
-	{
-		Transform_t1659122786 * L_2 = __this->get_m_transform_13();
-		NullCheck(L_2);
-		Transform_set_hasChanged_m1599503109(L_2, (bool)1, /*hidden argument*/NULL);
-	}
-
-IL_0029:
-	{
-		return;
-	}
-}
-// System.Void TMPro.TextContainer::OnValidate()
-extern "C"  void TextContainer_OnValidate_m2173906568 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		__this->set_m_hasChanged_2((bool)1);
-		TextContainer_OnContainerChanged_m229727269(__this, /*hidden argument*/NULL);
-		return;
-	}
-}
-// System.Void TMPro.TextContainer::SetRect(UnityEngine.Vector2)
-extern "C"  void TextContainer_SetRect_m3146796581 (TextContainer_t2231787766 * __this, Vector2_t4282066565  ___size0, const MethodInfo* method)
-{
-	{
-		Rect_t4241904616 * L_0 = __this->get_address_of_m_rect_5();
-		float L_1 = Rect_get_x_m982385354(L_0, /*hidden argument*/NULL);
-		Rect_t4241904616 * L_2 = __this->get_address_of_m_rect_5();
-		float L_3 = Rect_get_y_m982386315(L_2, /*hidden argument*/NULL);
-		float L_4 = (&___size0)->get_x_1();
-		float L_5 = (&___size0)->get_y_2();
-		Rect_t4241904616  L_6;
-		memset(&L_6, 0, sizeof(L_6));
-		Rect__ctor_m3291325233(&L_6, L_1, L_3, L_4, L_5, /*hidden argument*/NULL);
-		__this->set_m_rect_5(L_6);
-		return;
-	}
-}
-// System.Void TMPro.TextContainer::UpdateCorners()
-extern "C"  void TextContainer_UpdateCorners_m3242847108 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		Vector3U5BU5D_t215400611* L_0 = __this->get_m_corners_9();
-		NullCheck(L_0);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_0, 0);
-		Vector2_t4282066565 * L_1 = __this->get_address_of_m_pivot_3();
-		float L_2 = L_1->get_x_1();
-		Rect_t4241904616 * L_3 = __this->get_address_of_m_rect_5();
-		float L_4 = Rect_get_width_m2824209432(L_3, /*hidden argument*/NULL);
-		Vector2_t4282066565 * L_5 = __this->get_address_of_m_pivot_3();
-		float L_6 = L_5->get_y_2();
-		Rect_t4241904616 * L_7 = __this->get_address_of_m_rect_5();
-		float L_8 = Rect_get_height_m2154960823(L_7, /*hidden argument*/NULL);
-		Vector3_t4282066566  L_9;
-		memset(&L_9, 0, sizeof(L_9));
-		Vector3__ctor_m1846874791(&L_9, ((float)((float)((-L_2))*(float)L_4)), ((float)((float)((-L_6))*(float)L_8)), /*hidden argument*/NULL);
-		(*(Vector3_t4282066566 *)((L_0)->GetAddressAt(static_cast<il2cpp_array_size_t>(0)))) = L_9;
-		Vector3U5BU5D_t215400611* L_10 = __this->get_m_corners_9();
-		NullCheck(L_10);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_10, 1);
-		Vector2_t4282066565 * L_11 = __this->get_address_of_m_pivot_3();
-		float L_12 = L_11->get_x_1();
-		Rect_t4241904616 * L_13 = __this->get_address_of_m_rect_5();
-		float L_14 = Rect_get_width_m2824209432(L_13, /*hidden argument*/NULL);
-		Vector2_t4282066565 * L_15 = __this->get_address_of_m_pivot_3();
-		float L_16 = L_15->get_y_2();
-		Rect_t4241904616 * L_17 = __this->get_address_of_m_rect_5();
-		float L_18 = Rect_get_height_m2154960823(L_17, /*hidden argument*/NULL);
-		Vector3_t4282066566  L_19;
-		memset(&L_19, 0, sizeof(L_19));
-		Vector3__ctor_m1846874791(&L_19, ((float)((float)((-L_12))*(float)L_14)), ((float)((float)((float)((float)(1.0f)-(float)L_16))*(float)L_18)), /*hidden argument*/NULL);
-		(*(Vector3_t4282066566 *)((L_10)->GetAddressAt(static_cast<il2cpp_array_size_t>(1)))) = L_19;
-		Vector3U5BU5D_t215400611* L_20 = __this->get_m_corners_9();
-		NullCheck(L_20);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_20, 2);
-		Vector2_t4282066565 * L_21 = __this->get_address_of_m_pivot_3();
-		float L_22 = L_21->get_x_1();
-		Rect_t4241904616 * L_23 = __this->get_address_of_m_rect_5();
-		float L_24 = Rect_get_width_m2824209432(L_23, /*hidden argument*/NULL);
-		Vector2_t4282066565 * L_25 = __this->get_address_of_m_pivot_3();
-		float L_26 = L_25->get_y_2();
-		Rect_t4241904616 * L_27 = __this->get_address_of_m_rect_5();
-		float L_28 = Rect_get_height_m2154960823(L_27, /*hidden argument*/NULL);
-		Vector3_t4282066566  L_29;
-		memset(&L_29, 0, sizeof(L_29));
-		Vector3__ctor_m1846874791(&L_29, ((float)((float)((float)((float)(1.0f)-(float)L_22))*(float)L_24)), ((float)((float)((float)((float)(1.0f)-(float)L_26))*(float)L_28)), /*hidden argument*/NULL);
-		(*(Vector3_t4282066566 *)((L_20)->GetAddressAt(static_cast<il2cpp_array_size_t>(2)))) = L_29;
-		Vector3U5BU5D_t215400611* L_30 = __this->get_m_corners_9();
-		NullCheck(L_30);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_30, 3);
-		Vector2_t4282066565 * L_31 = __this->get_address_of_m_pivot_3();
-		float L_32 = L_31->get_x_1();
-		Rect_t4241904616 * L_33 = __this->get_address_of_m_rect_5();
-		float L_34 = Rect_get_width_m2824209432(L_33, /*hidden argument*/NULL);
-		Vector2_t4282066565 * L_35 = __this->get_address_of_m_pivot_3();
-		float L_36 = L_35->get_y_2();
-		Rect_t4241904616 * L_37 = __this->get_address_of_m_rect_5();
-		float L_38 = Rect_get_height_m2154960823(L_37, /*hidden argument*/NULL);
-		Vector3_t4282066566  L_39;
-		memset(&L_39, 0, sizeof(L_39));
-		Vector3__ctor_m1846874791(&L_39, ((float)((float)((float)((float)(1.0f)-(float)L_32))*(float)L_34)), ((float)((float)((-L_36))*(float)L_38)), /*hidden argument*/NULL);
-		(*(Vector3_t4282066566 *)((L_30)->GetAddressAt(static_cast<il2cpp_array_size_t>(3)))) = L_39;
-		return;
-	}
-}
-// System.Void TMPro.TextContainer::UpdateWorldCorners()
-extern Il2CppClass* Object_t3071478659_il2cpp_TypeInfo_var;
-extern const uint32_t TextContainer_UpdateWorldCorners_m4255960232_MetadataUsageId;
-extern "C"  void TextContainer_UpdateWorldCorners_m4255960232 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	static bool s_Il2CppMethodIntialized;
-	if (!s_Il2CppMethodIntialized)
-	{
-		il2cpp_codegen_initialize_method (TextContainer_UpdateWorldCorners_m4255960232_MetadataUsageId);
-		s_Il2CppMethodIntialized = true;
-	}
-	Vector3_t4282066566  V_0;
-	memset(&V_0, 0, sizeof(V_0));
-	{
-		Transform_t1659122786 * L_0 = __this->get_m_transform_13();
-		IL2CPP_RUNTIME_CLASS_INIT(Object_t3071478659_il2cpp_TypeInfo_var);
-		bool L_1 = Object_op_Equality_m3964590952(NULL /*static, unused*/, L_0, (Object_t3071478659 *)NULL, /*hidden argument*/NULL);
-		if (!L_1)
-		{
-			goto IL_0012;
-		}
-	}
-	{
-		return;
-	}
-
-IL_0012:
-	{
-		Transform_t1659122786 * L_2 = __this->get_m_transform_13();
-		NullCheck(L_2);
-		Vector3_t4282066566  L_3 = Transform_get_position_m2211398607(L_2, /*hidden argument*/NULL);
-		V_0 = L_3;
-		Vector3U5BU5D_t215400611* L_4 = __this->get_m_worldCorners_10();
-		NullCheck(L_4);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_4, 0);
-		Vector3_t4282066566  L_5 = V_0;
-		Transform_t1659122786 * L_6 = __this->get_m_transform_13();
-		Vector3U5BU5D_t215400611* L_7 = __this->get_m_corners_9();
-		NullCheck(L_7);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_7, 0);
-		NullCheck(L_6);
-		Vector3_t4282066566  L_8 = Transform_TransformDirection_m83001769(L_6, (*(Vector3_t4282066566 *)((L_7)->GetAddressAt(static_cast<il2cpp_array_size_t>(0)))), /*hidden argument*/NULL);
-		Vector3_t4282066566  L_9 = Vector3_op_Addition_m695438225(NULL /*static, unused*/, L_5, L_8, /*hidden argument*/NULL);
-		(*(Vector3_t4282066566 *)((L_4)->GetAddressAt(static_cast<il2cpp_array_size_t>(0)))) = L_9;
-		Vector3U5BU5D_t215400611* L_10 = __this->get_m_worldCorners_10();
-		NullCheck(L_10);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_10, 1);
-		Vector3_t4282066566  L_11 = V_0;
-		Transform_t1659122786 * L_12 = __this->get_m_transform_13();
-		Vector3U5BU5D_t215400611* L_13 = __this->get_m_corners_9();
-		NullCheck(L_13);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_13, 1);
-		NullCheck(L_12);
-		Vector3_t4282066566  L_14 = Transform_TransformDirection_m83001769(L_12, (*(Vector3_t4282066566 *)((L_13)->GetAddressAt(static_cast<il2cpp_array_size_t>(1)))), /*hidden argument*/NULL);
-		Vector3_t4282066566  L_15 = Vector3_op_Addition_m695438225(NULL /*static, unused*/, L_11, L_14, /*hidden argument*/NULL);
-		(*(Vector3_t4282066566 *)((L_10)->GetAddressAt(static_cast<il2cpp_array_size_t>(1)))) = L_15;
-		Vector3U5BU5D_t215400611* L_16 = __this->get_m_worldCorners_10();
-		NullCheck(L_16);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_16, 2);
-		Vector3_t4282066566  L_17 = V_0;
-		Transform_t1659122786 * L_18 = __this->get_m_transform_13();
-		Vector3U5BU5D_t215400611* L_19 = __this->get_m_corners_9();
-		NullCheck(L_19);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_19, 2);
-		NullCheck(L_18);
-		Vector3_t4282066566  L_20 = Transform_TransformDirection_m83001769(L_18, (*(Vector3_t4282066566 *)((L_19)->GetAddressAt(static_cast<il2cpp_array_size_t>(2)))), /*hidden argument*/NULL);
-		Vector3_t4282066566  L_21 = Vector3_op_Addition_m695438225(NULL /*static, unused*/, L_17, L_20, /*hidden argument*/NULL);
-		(*(Vector3_t4282066566 *)((L_16)->GetAddressAt(static_cast<il2cpp_array_size_t>(2)))) = L_21;
-		Vector3U5BU5D_t215400611* L_22 = __this->get_m_worldCorners_10();
-		NullCheck(L_22);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_22, 3);
-		Vector3_t4282066566  L_23 = V_0;
-		Transform_t1659122786 * L_24 = __this->get_m_transform_13();
-		Vector3U5BU5D_t215400611* L_25 = __this->get_m_corners_9();
-		NullCheck(L_25);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_25, 3);
-		NullCheck(L_24);
-		Vector3_t4282066566  L_26 = Transform_TransformDirection_m83001769(L_24, (*(Vector3_t4282066566 *)((L_25)->GetAddressAt(static_cast<il2cpp_array_size_t>(3)))), /*hidden argument*/NULL);
-		Vector3_t4282066566  L_27 = Vector3_op_Addition_m695438225(NULL /*static, unused*/, L_23, L_26, /*hidden argument*/NULL);
-		(*(Vector3_t4282066566 *)((L_22)->GetAddressAt(static_cast<il2cpp_array_size_t>(3)))) = L_27;
-		Vector3U5BU5D_t215400611* L_28 = TextContainer_get_worldCorners_m715258640(__this, /*hidden argument*/NULL);
-		NullCheck(L_28);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_28, 1);
-		Vector3U5BU5D_t215400611* L_29 = TextContainer_get_worldCorners_m715258640(__this, /*hidden argument*/NULL);
-		NullCheck(L_29);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_29, 0);
-		Vector3_t4282066566  L_30 = Vector3_op_Subtraction_m2842958165(NULL /*static, unused*/, (*(Vector3_t4282066566 *)((L_28)->GetAddressAt(static_cast<il2cpp_array_size_t>(1)))), (*(Vector3_t4282066566 *)((L_29)->GetAddressAt(static_cast<il2cpp_array_size_t>(0)))), /*hidden argument*/NULL);
-		Vector3U5BU5D_t215400611* L_31 = TextContainer_get_worldCorners_m715258640(__this, /*hidden argument*/NULL);
-		NullCheck(L_31);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_31, 3);
-		Vector3U5BU5D_t215400611* L_32 = TextContainer_get_worldCorners_m715258640(__this, /*hidden argument*/NULL);
-		NullCheck(L_32);
-		IL2CPP_ARRAY_BOUNDS_CHECK(L_32, 0);
-		Vector3_t4282066566  L_33 = Vector3_op_Subtraction_m2842958165(NULL /*static, unused*/, (*(Vector3_t4282066566 *)((L_31)->GetAddressAt(static_cast<il2cpp_array_size_t>(3)))), (*(Vector3_t4282066566 *)((L_32)->GetAddressAt(static_cast<il2cpp_array_size_t>(0)))), /*hidden argument*/NULL);
-		Vector3_t4282066566  L_34 = Vector3_Cross_m2894122475(NULL /*static, unused*/, L_30, L_33, /*hidden argument*/NULL);
-		__this->set_m_normal_11(L_34);
-		return;
-	}
-}
-// UnityEngine.Vector3[] TMPro.TextContainer::GetWorldCorners()
-extern "C"  Vector3U5BU5D_t215400611* TextContainer_GetWorldCorners_m1942112297 (TextContainer_t2231787766 * __this, const MethodInfo* method)
-{
-	{
-		TextContainer_UpdateWorldCorners_m4255960232(__this, /*hidden argument*/NULL);
-		Vector3U5BU5D_t215400611* L_0 = __this->get_m_worldCorners_10();
-		return L_0;
-	}
-}
-// UnityEngine.Vector2 TMPro.TextContainer::GetPivot(TMPro.TextContainerAnchors)
-extern "C"  Vector2_t4282066565  TextContainer_GetPivot_m1102776192 (TextContainer_t2231787766 * __this, int32_t ___anchor0, const MethodInfo* method)
-{
-	Vector2_t4282066565  V_0;
-	memset(&V_0, 0, sizeof(V_0));
-	int32_t V_1 = 0;
-	{
-		Vector2_t4282066565  L_0 = Vector2_get_zero_m199872368(NULL /*static, unused*/, /*hidden argument*/NULL);
-		V_0 = L_0;
-		int32_t L_1 = ___anchor0;
-		V_1 = L_1;
-		int32_t L_2 = V_1;
-		if (L_2 == 0)
-		{
-			goto IL_0037;
-		}
-		if (L_2 == 1)
-		{
-			goto IL_004d;
-		}
-		if (L_2 == 2)
-		{
-			goto IL_0063;
-		}
-		if (L_2 == 3)
-		{
-			goto IL_0079;
-		}
-		if (L_2 == 4)
-		{
-			goto IL_008f;
-		}
-		if (L_2 == 5)
-		{
-			goto IL_00a5;
-		}
-		if (L_2 == 6)
-		{
-			goto IL_00bb;
-		}
-		if (L_2 == 7)
-		{
-			goto IL_00d1;
-		}
-		if (L_2 == 8)
-		{
-			goto IL_00e7;
-		}
-	}
-	{
-		goto IL_00fd;
-	}
-
-IL_0037:
-	{
-		Vector2__ctor_m1517109030((&V_0), (0.0f), (1.0f), /*hidden argument*/NULL);
-		goto IL_00fd;
-	}
-
-IL_004d:
-	{
-		Vector2__ctor_m1517109030((&V_0), (0.5f), (1.0f), /*hidden argument*/NULL);
-		goto IL_00fd;
-	}
-
-IL_0063:
-	{
-		Vector2__ctor_m1517109030((&V_0), (1.0f), (1.0f), /*hidden argument*/NULL);
-		goto IL_00fd;
-	}
-
-IL_0079:
-	{
-		Vector2__ctor_m1517109030((&V_0), (0.0f), (0.5f), /*hidden argument*/NULL);
-		goto IL_00fd;
-	}
-
-IL_008f:
-	{
-		Vector2__ctor_m1517109030((&V_0), (0.5f), (0.5f), /*hidden argument*/NULL);
-		goto IL_00fd;
-	}
-
-IL_00a5:
-	{
-		Vector2__ctor_m1517109030((&V_0), (1.0f), (0.5f), /*hidden argument*/NULL);
-		goto IL_00fd;
-	}
-
-IL_00bb:
-	{
-		Vector2__ctor_m1517109030((&V_0), (0.0f), (0.0f), /*hidden argument*/NULL);
-		goto IL_00fd;
-	}
-
-IL_00d1:
-	{
-		Vector2__ctor_m1517109030((&V_0), (0.5f), (0.0f), /*hidden argument*/NULL);
-		goto IL_00fd;
-	}
-
-IL_00e7:
-	{
-		Vector2__ctor_m1517109030((&V_0), (1.0f), (0.0f), /*hidden argument*/NULL);
-		goto IL_00fd;
-	}
-
-IL_00fd:
-	{
-		Vector2_t4282066565  L_3 = V_0;
-		return L_3;
-	}
-}
-// TMPro.TextContainerAnchors TMPro.TextContainer::GetAnchorPosition(UnityEngine.Vector2)
-extern "C"  int32_t TextContainer_GetAnchorPosition_m1390220414 (TextContainer_t2231787766 * __this, Vector2_t4282066565  ___pivot0, const MethodInfo* method)
-{
-	{
-		Vector2_t4282066565  L_0 = ___pivot0;
-		Vector2_t4282066565  L_1;
-		memset(&L_1, 0, sizeof(L_1));
-		Vector2__ctor_m1517109030(&L_1, (0.0f), (1.0f), /*hidden argument*/NULL);
-		bool L_2 = Vector2_op_Equality_m1927481448(NULL /*static, unused*/, L_0, L_1, /*hidden argument*/NULL);
-		if (!L_2)
-		{
-			goto IL_001c;
-		}
-	}
-	{
-		return (int32_t)(0);
-	}
-
-IL_001c:
-	{
-		Vector2_t4282066565  L_3 = ___pivot0;
-		Vector2_t4282066565  L_4;
-		memset(&L_4, 0, sizeof(L_4));
-		Vector2__ctor_m1517109030(&L_4, (0.5f), (1.0f), /*hidden argument*/NULL);
-		bool L_5 = Vector2_op_Equality_m1927481448(NULL /*static, unused*/, L_3, L_4, /*hidden argument*/NULL);
-		if (!L_5)
-		{
-			goto IL_0038;
-		}
-	}
-	{
-		return (int32_t)(1);
-	}
-
-IL_0038:
-	{
-		Vector2_t4282066565  L_6 = ___pivot0;
-		Vector2_t4282066565  L_7;
-		memset(&L_7, 0, sizeof(L_7));
-		Vector2__ctor_m1517109030(&L_7, (1.0f), (1.0f), /*hidden argument*/NULL);
-		bool L_8 = Vector2_op_Equality_m1927481448(NULL /*static, unused*/, L_6, L_7, /*hidden argument*/NULL);
-		if (!L_8)
-		{
-			goto IL_0054;
-		}
-	}
-	{
-		return (int32_t)(2);
-	}
-
-IL_0054:
-	{
-		Vector2_t4282066565  L_9 = ___pivot0;
-		Vector2_t4282066565  L_10;
-		memset(&L_10, 0, sizeof(L_10));
-		Vector2__ctor_m1517109030(&L_10, (0.0f), (0.5f), /*hidden argument*/NULL);
-		bool L_11 = Vector2_op_Equality_m1927481448(NULL /*static, unused*/, L_9, L_10, /*hidden argument*/NULL);
-		if (!L_11)
-		{
-			goto IL_0070;
-		}
-	}
-	{
-		return (int32_t)(3);
-	}
-
-IL_0070:
-	{
-		Vector2_t4282066565  L_12 = ___pivot0;
-		Vector2_t4282066565  L_13;
-		memset(&L_13, 0, sizeof(L_13));
-		Vector2__ctor_m1517109030(&L_13, (0.5f), (0.5f), /*hidden argument*/NULL);
-		bool L_14 = Vector2_op_Equality_m1927481448(NULL /*static, unused*/, L_12, L_13, /*hidden argument*/NULL);
-		if (!L_14)
-		{
-			goto IL_008c;
-		}
-	}
-	{
-		return (int32_t)(4);
-	}
-
-IL_008c:
-	{
-		Vector2_t4282066565  L_15 = ___pivot0;
-		Vector2_t4282066565  L_16;
-		memset(&L_16, 0, sizeof(L_16));
-		Vector2__ctor_m1517109030(&L_16, (1.0f), (0.5f), /*hidden argument*/NULL);
-		bool L_17 = Vector2_op_Equality_m1927481448(NULL /*static, unused*/, L_15, L_16, /*hidden argument*/NULL);
-		if (!L_17)
-		{
-			goto IL_00a8;
-		}
-	}
-	{
-		return (int32_t)(5);
-	}
-
-IL_00a8:
-	{
-		Vector2_t4282066565  L_18 = ___pivot0;
-		Vector2_t4282066565  L_19;
-		memset(&L_19, 0, sizeof(L_19));
-		Vector2__ctor_m1517109030(&L_19, (0.0f), (0.0f), /*hidden argument*/NULL);
-		bool L_20 = Vector2_op_Equality_m1927481448(NULL /*static, unused*/, L_18, L_19, /*hidden argument*/NULL);
-		if (!L_20)
-		{
-			goto IL_00c4;
-		}
-	}
-	{
-		return (int32_t)(6);
-	}
-
-IL_00c4:
-	{
-		Vector2_t4282066565  L_21 = ___pivot0;
-		Vector2_t4282066565  L_22;
-		memset(&L_22, 0, sizeof(L_22));
-		Vector2__ctor_m1517109030(&L_22, (0.5f), (0.0f), /*hidden argument*/NULL);
-		bool L_23 = Vector2_op_Equality_m1927481448(NULL /*static, unused*/, L_21, L_22, /*hidden argument*/NULL);
-		if (!L_23)
-		{
-			goto IL_00e0;
-		}
-	}
-	{
-		return (int32_t)(7);
-	}
-
-IL_00e0:
-	{
-		Vector2_t4282066565  L_24 = ___pivot0;
-		Vector2_t4282066565  L_25;
-		memset(&L_25, 0, sizeof(L_25));
-		Vector2__ctor_m1517109030(&L_25, (1.0f), (0.0f), /*hidden argument*/NULL);
-		bool L_26 = Vector2_op_Equality_m1927481448(NULL /*static, unused*/, L_24, L_25, /*hidden argument*/NULL);
-		if (!L_26)
-		{
-			goto IL_00fc;
-		}
-	}
-	{
-		return (int32_t)(8);
-	}
-
-IL_00fc:
-	{
-		return (int32_t)(((int32_t)9));
 	}
 }
 #ifdef __clang__

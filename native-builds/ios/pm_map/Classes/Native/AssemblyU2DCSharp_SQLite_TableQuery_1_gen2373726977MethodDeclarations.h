@@ -122,9 +122,9 @@ extern "C"  Il2CppObject * TableQuery_1_First_m2260424251_gshared (TableQuery_1_
 // T SQLite.TableQuery`1<System.Object>::FirstOrDefault()
 extern "C"  Il2CppObject * TableQuery_1_FirstOrDefault_m1245997125_gshared (TableQuery_1_t2373726977 * __this, const MethodInfo* method);
 #define TableQuery_1_FirstOrDefault_m1245997125(__this, method) ((  Il2CppObject * (*) (TableQuery_1_t2373726977 *, const MethodInfo*))TableQuery_1_FirstOrDefault_m1245997125_gshared)(__this, method)
-// System.String SQLite.TableQuery`1<System.Object>::<GenerateCommand>m__6C(SQLite.BaseTableQuery/Ordering)
-extern "C"  String_t* TableQuery_1_U3CGenerateCommandU3Em__6C_m2225188603_gshared (Il2CppObject * __this /* static, unused */, Ordering_t4150661206 * ___o0, const MethodInfo* method);
-#define TableQuery_1_U3CGenerateCommandU3Em__6C_m2225188603(__this /* static, unused */, ___o0, method) ((  String_t* (*) (Il2CppObject * /* static, unused */, Ordering_t4150661206 *, const MethodInfo*))TableQuery_1_U3CGenerateCommandU3Em__6C_m2225188603_gshared)(__this /* static, unused */, ___o0, method)
-// System.String SQLite.TableQuery`1<System.Object>::<CompileExpr>m__6D(SQLite.TableQuery`1/CompileResult<T>)
-extern "C"  String_t* TableQuery_1_U3CCompileExprU3Em__6D_m7075244_gshared (Il2CppObject * __this /* static, unused */, CompileResult_t3328293334 * ___a0, const MethodInfo* method);
-#define TableQuery_1_U3CCompileExprU3Em__6D_m7075244(__this /* static, unused */, ___a0, method) ((  String_t* (*) (Il2CppObject * /* static, unused */, CompileResult_t3328293334 *, const MethodInfo*))TableQuery_1_U3CCompileExprU3Em__6D_m7075244_gshared)(__this /* static, unused */, ___a0, method)
+// System.String SQLite.TableQuery`1<System.Object>::<GenerateCommand>m__6F(SQLite.BaseTableQuery/Ordering)
+extern "C"  String_t* TableQuery_1_U3CGenerateCommandU3Em__6F_m4264092414_gshared (Il2CppObject * __this /* static, unused */, Ordering_t4150661206 * ___o0, const MethodInfo* method);
+#define TableQuery_1_U3CGenerateCommandU3Em__6F_m4264092414(__this /* static, unused */, ___o0, method) ((  String_t* (*) (Il2CppObject * /* static, unused */, Ordering_t4150661206 *, const MethodInfo*))TableQuery_1_U3CGenerateCommandU3Em__6F_m4264092414_gshared)(__this /* static, unused */, ___o0, method)
+// System.String SQLite.TableQuery`1<System.Object>::<CompileExpr>m__70(SQLite.TableQuery`1/CompileResult<T>)
+extern "C"  String_t* TableQuery_1_U3CCompileExprU3Em__70_m2742457719_gshared (Il2CppObject * __this /* static, unused */, CompileResult_t3328293334 * ___a0, const MethodInfo* method);
+#define TableQuery_1_U3CCompileExprU3Em__70_m2742457719(__this /* static, unused */, ___a0, method) ((  String_t* (*) (Il2CppObject * /* static, unused */, CompileResult_t3328293334 *, const MethodInfo*))TableQuery_1_U3CCompileExprU3Em__70_m2742457719_gshared)(__this /* static, unused */, ___a0, method)

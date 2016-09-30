@@ -847,8 +847,8 @@ extern "C" void TableQuery_1_Count_m1260761486_gshared ();
 extern "C" void TableQuery_1_GetEnumerator_m2679329800_gshared ();
 extern "C" void TableQuery_1_First_m2260424251_gshared ();
 extern "C" void TableQuery_1_FirstOrDefault_m1245997125_gshared ();
-extern "C" void TableQuery_1_U3CGenerateCommandU3Em__6C_m2225188603_gshared ();
-extern "C" void TableQuery_1_U3CCompileExprU3Em__6D_m7075244_gshared ();
+extern "C" void TableQuery_1_U3CGenerateCommandU3Em__6F_m4264092414_gshared ();
+extern "C" void TableQuery_1_U3CCompileExprU3Em__70_m2742457719_gshared ();
 extern "C" void CompileResult_get_CommandText_m1446891351_gshared ();
 extern "C" void CompileResult_set_CommandText_m3537585244_gshared ();
 extern "C" void CompileResult_get_Value_m3937484958_gshared ();
@@ -8179,8 +8179,8 @@ extern const Il2CppMethodPointer g_Il2CppGenericMethodPointers[7330] =
 	(Il2CppMethodPointer)&TableQuery_1_GetEnumerator_m2679329800_gshared/* 827*/,
 	(Il2CppMethodPointer)&TableQuery_1_First_m2260424251_gshared/* 828*/,
 	(Il2CppMethodPointer)&TableQuery_1_FirstOrDefault_m1245997125_gshared/* 829*/,
-	(Il2CppMethodPointer)&TableQuery_1_U3CGenerateCommandU3Em__6C_m2225188603_gshared/* 830*/,
-	(Il2CppMethodPointer)&TableQuery_1_U3CCompileExprU3Em__6D_m7075244_gshared/* 831*/,
+	(Il2CppMethodPointer)&TableQuery_1_U3CGenerateCommandU3Em__6F_m4264092414_gshared/* 830*/,
+	(Il2CppMethodPointer)&TableQuery_1_U3CCompileExprU3Em__70_m2742457719_gshared/* 831*/,
 	(Il2CppMethodPointer)&CompileResult_get_CommandText_m1446891351_gshared/* 832*/,
 	(Il2CppMethodPointer)&CompileResult_set_CommandText_m3537585244_gshared/* 833*/,
 	(Il2CppMethodPointer)&CompileResult_get_Value_m3937484958_gshared/* 834*/,

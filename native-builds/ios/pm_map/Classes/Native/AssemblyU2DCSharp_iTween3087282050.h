@@ -443,32 +443,32 @@ public:
 	List_1_t2775249962 * ___tweens_2;
 	// UnityEngine.GameObject iTween::cameraFade
 	GameObject_t3674682005 * ___cameraFade_3;
-	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$map2
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map2_40;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$map3
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map3_41;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map3_40;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$map4
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map4_42;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map4_41;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$map5
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map5_43;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map5_42;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$map6
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map6_44;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map6_43;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$map7
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map7_45;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map7_44;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$map8
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map8_46;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map8_45;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$map9
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map9_47;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map9_46;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$mapA
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24mapA_48;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24mapA_47;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$mapB
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24mapB_49;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24mapB_48;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$mapC
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24mapC_50;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24mapC_49;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$mapD
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24mapD_51;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24mapD_50;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$mapE
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24mapE_52;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24mapE_51;
+	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> iTween::<>f__switch$mapF
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24mapF_52;
 
 public:
 	inline static int32_t get_offset_of_tweens_2() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___tweens_2)); }
@@ -489,121 +489,121 @@ public:
 		Il2CppCodeGenWriteBarrier(&___cameraFade_3, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map2_40() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map2_40)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map2_40() const { return ___U3CU3Ef__switchU24map2_40; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map2_40() { return &___U3CU3Ef__switchU24map2_40; }
-	inline void set_U3CU3Ef__switchU24map2_40(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map3_40() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map3_40)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map3_40() const { return ___U3CU3Ef__switchU24map3_40; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map3_40() { return &___U3CU3Ef__switchU24map3_40; }
+	inline void set_U3CU3Ef__switchU24map3_40(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24map2_40 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map2_40, value);
+		___U3CU3Ef__switchU24map3_40 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map3_40, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map3_41() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map3_41)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map3_41() const { return ___U3CU3Ef__switchU24map3_41; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map3_41() { return &___U3CU3Ef__switchU24map3_41; }
-	inline void set_U3CU3Ef__switchU24map3_41(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map4_41() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map4_41)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map4_41() const { return ___U3CU3Ef__switchU24map4_41; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map4_41() { return &___U3CU3Ef__switchU24map4_41; }
+	inline void set_U3CU3Ef__switchU24map4_41(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24map3_41 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map3_41, value);
+		___U3CU3Ef__switchU24map4_41 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map4_41, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map4_42() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map4_42)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map4_42() const { return ___U3CU3Ef__switchU24map4_42; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map4_42() { return &___U3CU3Ef__switchU24map4_42; }
-	inline void set_U3CU3Ef__switchU24map4_42(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map5_42() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map5_42)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map5_42() const { return ___U3CU3Ef__switchU24map5_42; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map5_42() { return &___U3CU3Ef__switchU24map5_42; }
+	inline void set_U3CU3Ef__switchU24map5_42(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24map4_42 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map4_42, value);
+		___U3CU3Ef__switchU24map5_42 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map5_42, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map5_43() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map5_43)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map5_43() const { return ___U3CU3Ef__switchU24map5_43; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map5_43() { return &___U3CU3Ef__switchU24map5_43; }
-	inline void set_U3CU3Ef__switchU24map5_43(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map6_43() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map6_43)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map6_43() const { return ___U3CU3Ef__switchU24map6_43; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map6_43() { return &___U3CU3Ef__switchU24map6_43; }
+	inline void set_U3CU3Ef__switchU24map6_43(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24map5_43 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map5_43, value);
+		___U3CU3Ef__switchU24map6_43 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map6_43, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map6_44() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map6_44)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map6_44() const { return ___U3CU3Ef__switchU24map6_44; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map6_44() { return &___U3CU3Ef__switchU24map6_44; }
-	inline void set_U3CU3Ef__switchU24map6_44(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map7_44() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map7_44)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map7_44() const { return ___U3CU3Ef__switchU24map7_44; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map7_44() { return &___U3CU3Ef__switchU24map7_44; }
+	inline void set_U3CU3Ef__switchU24map7_44(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24map6_44 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map6_44, value);
+		___U3CU3Ef__switchU24map7_44 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map7_44, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map7_45() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map7_45)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map7_45() const { return ___U3CU3Ef__switchU24map7_45; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map7_45() { return &___U3CU3Ef__switchU24map7_45; }
-	inline void set_U3CU3Ef__switchU24map7_45(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map8_45() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map8_45)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map8_45() const { return ___U3CU3Ef__switchU24map8_45; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map8_45() { return &___U3CU3Ef__switchU24map8_45; }
+	inline void set_U3CU3Ef__switchU24map8_45(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24map7_45 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map7_45, value);
+		___U3CU3Ef__switchU24map8_45 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map8_45, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map8_46() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map8_46)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map8_46() const { return ___U3CU3Ef__switchU24map8_46; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map8_46() { return &___U3CU3Ef__switchU24map8_46; }
-	inline void set_U3CU3Ef__switchU24map8_46(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map9_46() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map9_46)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map9_46() const { return ___U3CU3Ef__switchU24map9_46; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map9_46() { return &___U3CU3Ef__switchU24map9_46; }
+	inline void set_U3CU3Ef__switchU24map9_46(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24map8_46 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map8_46, value);
+		___U3CU3Ef__switchU24map9_46 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map9_46, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map9_47() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24map9_47)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map9_47() const { return ___U3CU3Ef__switchU24map9_47; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map9_47() { return &___U3CU3Ef__switchU24map9_47; }
-	inline void set_U3CU3Ef__switchU24map9_47(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24mapA_47() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24mapA_47)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24mapA_47() const { return ___U3CU3Ef__switchU24mapA_47; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24mapA_47() { return &___U3CU3Ef__switchU24mapA_47; }
+	inline void set_U3CU3Ef__switchU24mapA_47(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24map9_47 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map9_47, value);
+		___U3CU3Ef__switchU24mapA_47 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24mapA_47, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24mapA_48() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24mapA_48)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24mapA_48() const { return ___U3CU3Ef__switchU24mapA_48; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24mapA_48() { return &___U3CU3Ef__switchU24mapA_48; }
-	inline void set_U3CU3Ef__switchU24mapA_48(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24mapB_48() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24mapB_48)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24mapB_48() const { return ___U3CU3Ef__switchU24mapB_48; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24mapB_48() { return &___U3CU3Ef__switchU24mapB_48; }
+	inline void set_U3CU3Ef__switchU24mapB_48(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24mapA_48 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24mapA_48, value);
+		___U3CU3Ef__switchU24mapB_48 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24mapB_48, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24mapB_49() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24mapB_49)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24mapB_49() const { return ___U3CU3Ef__switchU24mapB_49; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24mapB_49() { return &___U3CU3Ef__switchU24mapB_49; }
-	inline void set_U3CU3Ef__switchU24mapB_49(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24mapC_49() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24mapC_49)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24mapC_49() const { return ___U3CU3Ef__switchU24mapC_49; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24mapC_49() { return &___U3CU3Ef__switchU24mapC_49; }
+	inline void set_U3CU3Ef__switchU24mapC_49(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24mapB_49 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24mapB_49, value);
+		___U3CU3Ef__switchU24mapC_49 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24mapC_49, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24mapC_50() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24mapC_50)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24mapC_50() const { return ___U3CU3Ef__switchU24mapC_50; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24mapC_50() { return &___U3CU3Ef__switchU24mapC_50; }
-	inline void set_U3CU3Ef__switchU24mapC_50(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24mapD_50() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24mapD_50)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24mapD_50() const { return ___U3CU3Ef__switchU24mapD_50; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24mapD_50() { return &___U3CU3Ef__switchU24mapD_50; }
+	inline void set_U3CU3Ef__switchU24mapD_50(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24mapC_50 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24mapC_50, value);
+		___U3CU3Ef__switchU24mapD_50 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24mapD_50, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24mapD_51() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24mapD_51)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24mapD_51() const { return ___U3CU3Ef__switchU24mapD_51; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24mapD_51() { return &___U3CU3Ef__switchU24mapD_51; }
-	inline void set_U3CU3Ef__switchU24mapD_51(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24mapE_51() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24mapE_51)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24mapE_51() const { return ___U3CU3Ef__switchU24mapE_51; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24mapE_51() { return &___U3CU3Ef__switchU24mapE_51; }
+	inline void set_U3CU3Ef__switchU24mapE_51(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24mapD_51 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24mapD_51, value);
+		___U3CU3Ef__switchU24mapE_51 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24mapE_51, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24mapE_52() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24mapE_52)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24mapE_52() const { return ___U3CU3Ef__switchU24mapE_52; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24mapE_52() { return &___U3CU3Ef__switchU24mapE_52; }
-	inline void set_U3CU3Ef__switchU24mapE_52(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24mapF_52() { return static_cast<int32_t>(offsetof(iTween_t3087282050_StaticFields, ___U3CU3Ef__switchU24mapF_52)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24mapF_52() const { return ___U3CU3Ef__switchU24mapF_52; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24mapF_52() { return &___U3CU3Ef__switchU24mapF_52; }
+	inline void set_U3CU3Ef__switchU24mapF_52(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24mapE_52 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24mapE_52, value);
+		___U3CU3Ef__switchU24mapF_52 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24mapF_52, value);
 	}
 };
 

@@ -19,5 +19,5 @@ struct U3CInsertAllU3Ec__AnonStorey3E_t2009518026;
 
 // System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E::.ctor()
 extern "C"  void U3CInsertAllU3Ec__AnonStorey3E__ctor_m602207249 (U3CInsertAllU3Ec__AnonStorey3E_t2009518026 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E::<>m__62()
-extern "C"  void U3CInsertAllU3Ec__AnonStorey3E_U3CU3Em__62_m1208772182 (U3CInsertAllU3Ec__AnonStorey3E_t2009518026 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E::<>m__64()
+extern "C"  void U3CInsertAllU3Ec__AnonStorey3E_U3CU3Em__64_m1208774104 (U3CInsertAllU3Ec__AnonStorey3E_t2009518026 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

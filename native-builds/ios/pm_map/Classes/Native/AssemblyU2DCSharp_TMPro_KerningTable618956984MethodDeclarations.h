@@ -32,7 +32,7 @@ extern "C"  void KerningTable_RemoveKerningPair_m2319900391 (KerningTable_t61895
 extern "C"  void KerningTable_RemoveKerningPair_m1637491696 (KerningTable_t618956984 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void TMPro.KerningTable::SortKerningPairs()
 extern "C"  void KerningTable_SortKerningPairs_m1972879600 (KerningTable_t618956984 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 TMPro.KerningTable::<SortKerningPairs>m__7C(TMPro.KerningPair)
-extern "C"  int32_t KerningTable_U3CSortKerningPairsU3Em__7C_m2136500245 (Il2CppObject * __this /* static, unused */, KerningPair_t1904833704 * ___s0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 TMPro.KerningTable::<SortKerningPairs>m__7D(TMPro.KerningPair)
-extern "C"  int32_t KerningTable_U3CSortKerningPairsU3Em__7D_m1727676020 (Il2CppObject * __this /* static, unused */, KerningPair_t1904833704 * ___s0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 TMPro.KerningTable::<SortKerningPairs>m__7F(TMPro.KerningPair)
+extern "C"  int32_t KerningTable_U3CSortKerningPairsU3Em__7F_m910027570 (Il2CppObject * __this /* static, unused */, KerningPair_t1904833704 * ___s0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 TMPro.KerningTable::<SortKerningPairs>m__80(TMPro.KerningPair)
+extern "C"  int32_t KerningTable_U3CSortKerningPairsU3Em__80_m1525576841 (Il2CppObject * __this /* static, unused */, KerningPair_t1904833704 * ___s0, const MethodInfo* method) IL2CPP_METHOD_ATTR;

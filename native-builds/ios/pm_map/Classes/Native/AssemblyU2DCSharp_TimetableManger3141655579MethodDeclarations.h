@@ -72,19 +72,19 @@ extern "C"  bool TimetableManger_historyHasPrevState_m3599828282 (TimetableMange
 extern "C"  bool TimetableManger_hasTimetable_m2582034215 (TimetableManger_t3141655579 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void TimetableManger::clearDb()
 extern "C"  void TimetableManger_clearDb_m3943596185 (TimetableManger_t3141655579 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean TimetableManger::<MigrateTo_v1_3_IdNeeded>m__F(SQLite.SQLiteConnection/ColumnInfo)
-extern "C"  bool TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__F_m1299505639 (Il2CppObject * __this /* static, unused */, ColumnInfo_t4283098503 * ___x0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 TimetableManger::<sortEverything>m__11(SPBUTimetable.DayTimetable,SPBUTimetable.DayTimetable)
-extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__11_m3914911854 (Il2CppObject * __this /* static, unused */, DayTimetable_t1053418317 * ___d10, DayTimetable_t1053418317 * ___d21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean TimetableManger::<MigrateTo_v1_3_IdNeeded>m__10(SQLite.SQLiteConnection/ColumnInfo)
+extern "C"  bool TimetableManger_U3CMigrateTo_v1_3_IdNeededU3Em__10_m3194622866 (Il2CppObject * __this /* static, unused */, ColumnInfo_t4283098503 * ___x0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 TimetableManger::<sortEverything>m__12(SPBUTimetable.DayTimetable,SPBUTimetable.DayTimetable)
 extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__12_m3935249229 (Il2CppObject * __this /* static, unused */, DayTimetable_t1053418317 * ___d10, DayTimetable_t1053418317 * ___d21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 TimetableManger::<sortEverything>m__13(SPBUTimetable.Pair,SPBUTimetable.Pair)
-extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__13_m1084390476 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___p10, Pair_t3945686594 * ___p21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 TimetableManger::<sortEverything>m__13(SPBUTimetable.DayTimetable,SPBUTimetable.DayTimetable)
+extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__13_m3955586604 (Il2CppObject * __this /* static, unused */, DayTimetable_t1053418317 * ___d10, DayTimetable_t1053418317 * ___d21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 TimetableManger::<sortEverything>m__14(SPBUTimetable.Pair,SPBUTimetable.Pair)
 extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__14_m2545970475 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___p10, Pair_t3945686594 * ___p21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 TimetableManger::<sortEverything>m__15(SPBUTimetable.Pair,SPBUTimetable.Pair)
 extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__15_m4007550474 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___p10, Pair_t3945686594 * ___p21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 TimetableManger::<sortEverything>m__16(SPBUTimetable.Pair,SPBUTimetable.Pair)
 extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__16_m1174163177 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___p10, Pair_t3945686594 * ___p21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean TimetableManger::<saveTimetableToDatabase>m__17(SPBUTimetable.Pair)
-extern "C"  bool TimetableManger_U3CsaveTimetableToDatabaseU3Em__17_m4041986172 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___x0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 TimetableManger::<sortEverything>m__17(SPBUTimetable.Pair,SPBUTimetable.Pair)
+extern "C"  int32_t TimetableManger_U3CsortEverythingU3Em__17_m2635743176 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___p10, Pair_t3945686594 * ___p21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean TimetableManger::<saveTimetableToDatabase>m__18(SPBUTimetable.Pair)
+extern "C"  bool TimetableManger_U3CsaveTimetableToDatabaseU3Em__18_m4253337085 (Il2CppObject * __this /* static, unused */, Pair_t3945686594 * ___x0, const MethodInfo* method) IL2CPP_METHOD_ATTR;

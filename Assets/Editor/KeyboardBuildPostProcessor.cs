@@ -8,7 +8,7 @@ public class KeyboardBuildPostProcessor
 	[PostProcessBuild]
 	public static void OnPostProcessBuild(BuildTarget target, string pathToBuiltProject)
 	{
-		Debug.Log ("OnPostProcessBuild");
+		
 		if(target == BuildTarget.iOS)
 		{
 			//string seed = "textField.clearButtonMode = UITextFieldViewModeWhileEditing;";

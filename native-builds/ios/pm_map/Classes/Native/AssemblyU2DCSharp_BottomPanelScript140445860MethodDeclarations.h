@@ -74,7 +74,7 @@ extern "C"  void BottomPanelScript_setTitle_m3305615183 (BottomPanelScript_t1404
 extern "C"  void BottomPanelScript_UpdateSnapping_m39265026 (BottomPanelScript_t140445860 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void BottomPanelScript::UpdateLayout()
 extern "C"  void BottomPanelScript_UpdateLayout_m3085437872 (BottomPanelScript_t140445860 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void BottomPanelScript::<OnSnapToFacility>m__28(FacilityScript)
-extern "C"  void BottomPanelScript_U3COnSnapToFacilityU3Em__28_m1278345967 (Il2CppObject * __this /* static, unused */, FacilityScript_t3002937710 * ____0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void BottomPanelScript::<Start>m__29()
-extern "C"  void BottomPanelScript_U3CStartU3Em__29_m2249005977 (BottomPanelScript_t140445860 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void BottomPanelScript::<OnSnapToFacility>m__2B(FacilityScript)
+extern "C"  void BottomPanelScript_U3COnSnapToFacilityU3Em__2B_m1926541049 (Il2CppObject * __this /* static, unused */, FacilityScript_t3002937710 * ____0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void BottomPanelScript::<Start>m__2C()
+extern "C"  void BottomPanelScript_U3CStartU3Em__2C_m2249015587 (BottomPanelScript_t140445860 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

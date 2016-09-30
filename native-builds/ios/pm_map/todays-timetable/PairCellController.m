@@ -19,7 +19,10 @@
 }
 
 - (IBAction)buttonClick:(id)sender {
-    NSURL *url = [NSURL URLWithString:[[NSString stringWithFormat:@"pmmap://room/%@", self.room.titleLabel.text] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSURL *url = [NSURL URLWithString:[[NSString stringWithFormat:@"pmmap://room/%@/%@",
+                                        self.room.titleLabel.text,
+                                        [self randomStringWithLength:5]
+                                    ] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
     [self.todayViewController.extensionContext openURL:url completionHandler:^(BOOL success) {
         
@@ -35,6 +38,18 @@
             //[self.room setTitle:@"fail" forState:UIControlStateNormal];
         }
     }];
+}
+
+-(NSString *) randomStringWithLength: (int) len {
+    NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+    
+    for (int i=0; i<len; i++) {
+        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length])]];
+    }
+    
+    return randomString;
 }
 
 @end

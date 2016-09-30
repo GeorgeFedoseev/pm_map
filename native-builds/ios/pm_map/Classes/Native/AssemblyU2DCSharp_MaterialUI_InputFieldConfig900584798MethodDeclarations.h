@@ -40,5 +40,5 @@ extern "C"  void InputFieldConfig_CalculateHeight_m1616991505 (InputFieldConfig_
 extern "C"  void InputFieldConfig_Update_m444907783 (InputFieldConfig_t900584798 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.IEnumerator MaterialUI.InputFieldConfig::DelayedHeight()
 extern "C"  Il2CppObject * InputFieldConfig_DelayedHeight_m144287253 (InputFieldConfig_t900584798 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void MaterialUI.InputFieldConfig::<Refresh>m__73()
-extern "C"  void InputFieldConfig_U3CRefreshU3Em__73_m1283701192 (InputFieldConfig_t900584798 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void MaterialUI.InputFieldConfig::<Refresh>m__76()
+extern "C"  void InputFieldConfig_U3CRefreshU3Em__76_m1283704075 (InputFieldConfig_t900584798 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -54,7 +54,7 @@ extern "C"  void SearchBoxScript_inputAnimation_m694090378 (SearchBoxScript_t216
 extern "C"  void SearchBoxScript_UpdatePlaceholder_m827275813 (SearchBoxScript_t2166998414 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SearchBoxScript::changePlaceholderAlpha(System.Single)
 extern "C"  void SearchBoxScript_changePlaceholderAlpha_m207056329 (SearchBoxScript_t2166998414 * __this, float ___val0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void SearchBoxScript::<hideSuggestions>m__31()
-extern "C"  void SearchBoxScript_U3ChideSuggestionsU3Em__31_m1822116197 (SearchBoxScript_t2166998414 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void SearchBoxScript::<UpdatePlaceholder>m__32()
-extern "C"  void SearchBoxScript_U3CUpdatePlaceholderU3Em__32_m3487761955 (SearchBoxScript_t2166998414 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SearchBoxScript::<hideSuggestions>m__34()
+extern "C"  void SearchBoxScript_U3ChideSuggestionsU3Em__34_m1822119080 (SearchBoxScript_t2166998414 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SearchBoxScript::<UpdatePlaceholder>m__35()
+extern "C"  void SearchBoxScript_U3CUpdatePlaceholderU3Em__35_m3487764838 (SearchBoxScript_t2166998414 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

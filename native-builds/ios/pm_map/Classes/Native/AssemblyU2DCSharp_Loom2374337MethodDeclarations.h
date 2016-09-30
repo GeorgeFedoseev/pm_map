@@ -57,5 +57,5 @@ extern "C"  void Loom_OnDisable_m3078168673 (Loom_t2374337 * __this, const Metho
 extern "C"  void Loom_Start_m1981379066 (Loom_t2374337 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Loom::Update()
 extern "C"  void Loom_Update_m1299061075 (Loom_t2374337 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean Loom::<Update>m__5C(Loom/DelayedQueueItem)
-extern "C"  bool Loom_U3CUpdateU3Em__5C_m134107228 (Il2CppObject * __this /* static, unused */, DelayedQueueItem_t3219765808  ___d0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean Loom::<Update>m__5F(Loom/DelayedQueueItem)
+extern "C"  bool Loom_U3CUpdateU3Em__5F_m4228054265 (Il2CppObject * __this /* static, unused */, DelayedQueueItem_t3219765808  ___d0, const MethodInfo* method) IL2CPP_METHOD_ATTR;

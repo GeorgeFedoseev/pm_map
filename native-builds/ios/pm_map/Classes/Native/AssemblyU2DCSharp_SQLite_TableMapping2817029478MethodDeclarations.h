@@ -79,9 +79,9 @@ extern "C"  PreparedSqlLiteInsertCommand_t1604881465 * TableMapping_GetInsertCom
 extern "C"  PreparedSqlLiteInsertCommand_t1604881465 * TableMapping_CreateInsertCommand_m2918017543 (TableMapping_t2817029478 * __this, SQLiteConnection_t2649932624 * ___conn0, String_t* ___extra1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SQLite.TableMapping::Dispose()
 extern "C"  void TableMapping_Dispose_m100809702 (TableMapping_t2817029478 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean SQLite.TableMapping::<get_InsertColumns>m__67(SQLite.TableMapping/Column)
-extern "C"  bool TableMapping_U3Cget_InsertColumnsU3Em__67_m2460585107 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.String SQLite.TableMapping::<CreateInsertCommand>m__6A(SQLite.TableMapping/Column)
-extern "C"  String_t* TableMapping_U3CCreateInsertCommandU3Em__6A_m1854000777 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.String SQLite.TableMapping::<CreateInsertCommand>m__6B(SQLite.TableMapping/Column)
-extern "C"  String_t* TableMapping_U3CCreateInsertCommandU3Em__6B_m2547102474 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean SQLite.TableMapping::<get_InsertColumns>m__6A(SQLite.TableMapping/Column)
+extern "C"  bool TableMapping_U3Cget_InsertColumnsU3Em__6A_m801667485 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String SQLite.TableMapping::<CreateInsertCommand>m__6D(SQLite.TableMapping/Column)
+extern "C"  String_t* TableMapping_U3CCreateInsertCommandU3Em__6D_m3933305868 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String SQLite.TableMapping::<CreateInsertCommand>m__6E(SQLite.TableMapping/Column)
+extern "C"  String_t* TableMapping_U3CCreateInsertCommandU3Em__6E_m331440269 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method) IL2CPP_METHOD_ATTR;

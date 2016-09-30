@@ -3484,17 +3484,17 @@ extern "C"  Il2CppObject * TableQuery_1_FirstOrDefault_m1245997125_gshared (Tabl
 		return L_3;
 	}
 }
-// System.String SQLite.TableQuery`1<System.Object>::<GenerateCommand>m__6C(SQLite.BaseTableQuery/Ordering)
+// System.String SQLite.TableQuery`1<System.Object>::<GenerateCommand>m__6F(SQLite.BaseTableQuery/Ordering)
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral34;
 extern Il2CppCodeGenString* _stringLiteral32632497;
-extern const uint32_t TableQuery_1_U3CGenerateCommandU3Em__6C_m2225188603_MetadataUsageId;
-extern "C"  String_t* TableQuery_1_U3CGenerateCommandU3Em__6C_m2225188603_gshared (Il2CppObject * __this /* static, unused */, Ordering_t4150661206 * ___o0, const MethodInfo* method)
+extern const uint32_t TableQuery_1_U3CGenerateCommandU3Em__6F_m4264092414_MetadataUsageId;
+extern "C"  String_t* TableQuery_1_U3CGenerateCommandU3Em__6F_m4264092414_gshared (Il2CppObject * __this /* static, unused */, Ordering_t4150661206 * ___o0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (TableQuery_1_U3CGenerateCommandU3Em__6C_m2225188603_MetadataUsageId);
+		il2cpp_codegen_initialize_method (TableQuery_1_U3CGenerateCommandU3Em__6F_m4264092414_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	String_t* G_B2_0 = NULL;
@@ -3550,8 +3550,8 @@ IL_002a:
 		return L_5;
 	}
 }
-// System.String SQLite.TableQuery`1<System.Object>::<CompileExpr>m__6D(SQLite.TableQuery`1/CompileResult<T>)
-extern "C"  String_t* TableQuery_1_U3CCompileExprU3Em__6D_m7075244_gshared (Il2CppObject * __this /* static, unused */, CompileResult_t3328293334 * ___a0, const MethodInfo* method)
+// System.String SQLite.TableQuery`1<System.Object>::<CompileExpr>m__70(SQLite.TableQuery`1/CompileResult<T>)
+extern "C"  String_t* TableQuery_1_U3CCompileExprU3Em__70_m2742457719_gshared (Il2CppObject * __this /* static, unused */, CompileResult_t3328293334 * ___a0, const MethodInfo* method)
 {
 	{
 		CompileResult_t3328293334 * L_0 = ___a0;

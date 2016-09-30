@@ -33,8 +33,7 @@ static NSString *CellIdentifier = @"PairCell";
 
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
+    [super viewDidLoad];    
     
     
     // Do any additional setup after loading the view from its nib.
@@ -43,6 +42,8 @@ static NSString *CellIdentifier = @"PairCell";
     
      [self.table registerNib:[UINib nibWithNibName:@"PairCell" bundle:nil] forCellReuseIdentifier:CellIdentifier];
     
+    // remove last row separator
+    self.table.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.table.frame.size.width, 1)];
     //self.table.allowsSelection = NO;
     
     _todayPairs = [NSArray array];
@@ -75,6 +76,7 @@ static NSString *CellIdentifier = @"PairCell";
 
 - (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)margins
 {
+    margins.top = 10.0;
     margins.bottom = 10.0;
     margins.left = 0;
     
@@ -104,7 +106,14 @@ static NSString *CellIdentifier = @"PairCell";
     cell.name.text = ((Pair*)_todayPairs[indexPath.row]).name;
     cell.lecturer.text = ((Pair*)_todayPairs[indexPath.row]).lecturer;
     NSString *roomNumber = ((Pair*)_todayPairs[indexPath.row]).room;
-    [cell.room setTitle:roomNumber forState:UIControlStateNormal];
+    
+    if(roomNumber.length != 0){
+        [cell.room setHidden:NO];
+        [cell.room setTitle:roomNumber forState:UIControlStateNormal];
+    }else{
+        [cell.room setHidden:YES];
+    }
+    
     
     cell.startTime.text = ((Pair*)_todayPairs[indexPath.row]).startTime;
     cell.endTime.text = ((Pair*)_todayPairs[indexPath.row]).endTime;
@@ -222,7 +231,7 @@ static NSString *CellIdentifier = @"PairCell";
             str = [str stringByAppendingString:[NSString stringWithFormat:@"results: %i", resultsCount]];
             
             // expand height
-            self.preferredContentSize = CGSizeMake(0, 50 + 40*resultsCount);
+            self.preferredContentSize = CGSizeMake(0, 46*resultsCount);
             
             
         }else{

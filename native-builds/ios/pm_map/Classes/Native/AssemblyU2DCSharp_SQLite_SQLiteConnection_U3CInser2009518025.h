@@ -12,8 +12,6 @@
 
 // System.Collections.IEnumerable
 struct IEnumerable_t3464557803;
-// System.String
-struct String_t;
 // SQLite.SQLiteConnection
 struct SQLiteConnection_t2649932624;
 
@@ -31,12 +29,10 @@ struct  U3CInsertAllU3Ec__AnonStorey3D_t2009518025  : public Il2CppObject
 public:
 	// System.Collections.IEnumerable SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3D::objects
 	Il2CppObject * ___objects_0;
-	// System.String SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3D::extra
-	String_t* ___extra_1;
 	// System.Int32 SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3D::c
-	int32_t ___c_2;
+	int32_t ___c_1;
 	// SQLite.SQLiteConnection SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3D::<>f__this
-	SQLiteConnection_t2649932624 * ___U3CU3Ef__this_3;
+	SQLiteConnection_t2649932624 * ___U3CU3Ef__this_2;
 
 public:
 	inline static int32_t get_offset_of_objects_0() { return static_cast<int32_t>(offsetof(U3CInsertAllU3Ec__AnonStorey3D_t2009518025, ___objects_0)); }
@@ -48,30 +44,21 @@ public:
 		Il2CppCodeGenWriteBarrier(&___objects_0, value);
 	}
 
-	inline static int32_t get_offset_of_extra_1() { return static_cast<int32_t>(offsetof(U3CInsertAllU3Ec__AnonStorey3D_t2009518025, ___extra_1)); }
-	inline String_t* get_extra_1() const { return ___extra_1; }
-	inline String_t** get_address_of_extra_1() { return &___extra_1; }
-	inline void set_extra_1(String_t* value)
+	inline static int32_t get_offset_of_c_1() { return static_cast<int32_t>(offsetof(U3CInsertAllU3Ec__AnonStorey3D_t2009518025, ___c_1)); }
+	inline int32_t get_c_1() const { return ___c_1; }
+	inline int32_t* get_address_of_c_1() { return &___c_1; }
+	inline void set_c_1(int32_t value)
 	{
-		___extra_1 = value;
-		Il2CppCodeGenWriteBarrier(&___extra_1, value);
+		___c_1 = value;
 	}
 
-	inline static int32_t get_offset_of_c_2() { return static_cast<int32_t>(offsetof(U3CInsertAllU3Ec__AnonStorey3D_t2009518025, ___c_2)); }
-	inline int32_t get_c_2() const { return ___c_2; }
-	inline int32_t* get_address_of_c_2() { return &___c_2; }
-	inline void set_c_2(int32_t value)
+	inline static int32_t get_offset_of_U3CU3Ef__this_2() { return static_cast<int32_t>(offsetof(U3CInsertAllU3Ec__AnonStorey3D_t2009518025, ___U3CU3Ef__this_2)); }
+	inline SQLiteConnection_t2649932624 * get_U3CU3Ef__this_2() const { return ___U3CU3Ef__this_2; }
+	inline SQLiteConnection_t2649932624 ** get_address_of_U3CU3Ef__this_2() { return &___U3CU3Ef__this_2; }
+	inline void set_U3CU3Ef__this_2(SQLiteConnection_t2649932624 * value)
 	{
-		___c_2 = value;
-	}
-
-	inline static int32_t get_offset_of_U3CU3Ef__this_3() { return static_cast<int32_t>(offsetof(U3CInsertAllU3Ec__AnonStorey3D_t2009518025, ___U3CU3Ef__this_3)); }
-	inline SQLiteConnection_t2649932624 * get_U3CU3Ef__this_3() const { return ___U3CU3Ef__this_3; }
-	inline SQLiteConnection_t2649932624 ** get_address_of_U3CU3Ef__this_3() { return &___U3CU3Ef__this_3; }
-	inline void set_U3CU3Ef__this_3(SQLiteConnection_t2649932624 * value)
-	{
-		___U3CU3Ef__this_3 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__this_3, value);
+		___U3CU3Ef__this_2 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__this_2, value);
 	}
 };
 

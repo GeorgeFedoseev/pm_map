@@ -32,17 +32,17 @@ public:
 struct TimetableParser_t319660846_StaticFields
 {
 public:
-	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> SPBUTimetable.TimetableParser::<>f__switch$map1
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map1_0;
+	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> SPBUTimetable.TimetableParser::<>f__switch$map2
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map2_0;
 
 public:
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map1_0() { return static_cast<int32_t>(offsetof(TimetableParser_t319660846_StaticFields, ___U3CU3Ef__switchU24map1_0)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map1_0() const { return ___U3CU3Ef__switchU24map1_0; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map1_0() { return &___U3CU3Ef__switchU24map1_0; }
-	inline void set_U3CU3Ef__switchU24map1_0(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map2_0() { return static_cast<int32_t>(offsetof(TimetableParser_t319660846_StaticFields, ___U3CU3Ef__switchU24map2_0)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map2_0() const { return ___U3CU3Ef__switchU24map2_0; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map2_0() { return &___U3CU3Ef__switchU24map2_0; }
+	inline void set_U3CU3Ef__switchU24map2_0(Dictionary_2_t1974256870 * value)
 	{
-		___U3CU3Ef__switchU24map1_0 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map1_0, value);
+		___U3CU3Ef__switchU24map2_0 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map2_0, value);
 	}
 };
 

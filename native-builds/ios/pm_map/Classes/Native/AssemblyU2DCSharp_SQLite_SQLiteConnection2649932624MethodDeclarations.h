@@ -172,11 +172,11 @@ extern "C"  void SQLiteConnection_Dispose_m367281084 (SQLiteConnection_t26499326
 extern "C"  void SQLiteConnection_Dispose_m1664860211 (SQLiteConnection_t2649932624 * __this, bool ___disposing0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SQLite.SQLiteConnection::Close()
 extern "C"  void SQLiteConnection_Close_m768331861 (SQLiteConnection_t2649932624 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.String SQLite.SQLiteConnection::<CreateTable>m__5D(SQLite.TableMapping/Column)
-extern "C"  String_t* SQLiteConnection_U3CCreateTableU3Em__5D_m3052362067 (SQLiteConnection_t2649932624 * __this, Column_t1611479651 * ___p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 SQLite.SQLiteConnection::<CreateTable>m__5E(SQLite.SQLiteConnection/IndexedColumn)
-extern "C"  int32_t SQLiteConnection_U3CCreateTableU3Em__5E_m4207736578 (Il2CppObject * __this /* static, unused */, IndexedColumn_t1407024228  ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.String SQLite.SQLiteConnection::<CreateTable>m__5F(SQLite.SQLiteConnection/IndexedColumn)
-extern "C"  String_t* SQLiteConnection_U3CCreateTableU3Em__5F_m3383778486 (Il2CppObject * __this /* static, unused */, IndexedColumn_t1407024228  ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.String SQLite.SQLiteConnection::<Update>m__65(SQLite.TableMapping/Column)
-extern "C"  String_t* SQLiteConnection_U3CUpdateU3Em__65_m534594512 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String SQLite.SQLiteConnection::<CreateTable>m__60(SQLite.TableMapping/Column)
+extern "C"  String_t* SQLiteConnection_U3CCreateTableU3Em__60_m2086546142 (SQLiteConnection_t2649932624 * __this, Column_t1611479651 * ___p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 SQLite.SQLiteConnection::<CreateTable>m__61(SQLite.SQLiteConnection/IndexedColumn)
+extern "C"  int32_t SQLiteConnection_U3CCreateTableU3Em__61_m3105247383 (Il2CppObject * __this /* static, unused */, IndexedColumn_t1407024228  ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String SQLite.SQLiteConnection::<CreateTable>m__62(SQLite.SQLiteConnection/IndexedColumn)
+extern "C"  String_t* SQLiteConnection_U3CCreateTableU3Em__62_m2281289291 (Il2CppObject * __this /* static, unused */, IndexedColumn_t1407024228  ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String SQLite.SQLiteConnection::<Update>m__68(SQLite.TableMapping/Column)
+extern "C"  String_t* SQLiteConnection_U3CUpdateU3Em__68_m2613899603 (Il2CppObject * __this /* static, unused */, Column_t1611479651 * ___c0, const MethodInfo* method) IL2CPP_METHOD_ATTR;

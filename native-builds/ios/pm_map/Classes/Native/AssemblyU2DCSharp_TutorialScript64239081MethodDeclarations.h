@@ -35,9 +35,9 @@ extern "C"  void TutorialScript_ShowTutorial_m1012303853 (TutorialScript_t642390
 extern "C"  void TutorialScript_HideTutorial_m2845521906 (TutorialScript_t64239081 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void TutorialScript::Update()
 extern "C"  void TutorialScript_Update_m3951968379 (TutorialScript_t64239081 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void TutorialScript::<Start>m__58(FacilityScript)
-extern "C"  void TutorialScript_U3CStartU3Em__58_m3515203996 (TutorialScript_t64239081 * __this, FacilityScript_t3002937710 * ___f0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void TutorialScript::<Start>m__59(System.String)
-extern "C"  void TutorialScript_U3CStartU3Em__59_m2051955223 (TutorialScript_t64239081 * __this, String_t* ___query0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void TutorialScript::<Start>m__5A()
-extern "C"  void TutorialScript_U3CStartU3Em__5A_m1400374483 (TutorialScript_t64239081 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void TutorialScript::<Start>m__5B(FacilityScript)
+extern "C"  void TutorialScript_U3CStartU3Em__5B_m4163399078 (TutorialScript_t64239081 * __this, FacilityScript_t3002937710 * ___f0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void TutorialScript::<Start>m__5C(System.String)
+extern "C"  void TutorialScript_U3CStartU3Em__5C_m1241580749 (TutorialScript_t64239081 * __this, String_t* ___query0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void TutorialScript::<Start>m__5D()
+extern "C"  void TutorialScript_U3CStartU3Em__5D_m1400377366 (TutorialScript_t64239081 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

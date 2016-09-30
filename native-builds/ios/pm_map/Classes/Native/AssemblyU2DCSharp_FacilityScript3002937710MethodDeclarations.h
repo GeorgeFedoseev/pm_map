@@ -43,5 +43,5 @@ extern "C"  int32_t FacilityScript_getFloor_m4187076347 (FacilityScript_t3002937
 extern "C"  float FacilityScript_getSize_m1440852246 (FacilityScript_t3002937710 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 FacilityScript::GetGameObjectFloor(UnityEngine.GameObject)
 extern "C"  int32_t FacilityScript_GetGameObjectFloor_m1636409986 (Il2CppObject * __this /* static, unused */, GameObject_t3674682005 * ___go0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void FacilityScript::<OnMouseUp>m__7()
-extern "C"  void FacilityScript_U3COnMouseUpU3Em__7_m1004577198 (FacilityScript_t3002937710 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void FacilityScript::<OnMouseUp>m__8()
+extern "C"  void FacilityScript_U3COnMouseUpU3Em__8_m1004578159 (FacilityScript_t3002937710 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

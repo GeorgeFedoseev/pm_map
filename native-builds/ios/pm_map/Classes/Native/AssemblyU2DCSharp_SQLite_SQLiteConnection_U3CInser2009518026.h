@@ -12,8 +12,8 @@
 
 // System.Collections.IEnumerable
 struct IEnumerable_t3464557803;
-// System.Type
-struct Type_t;
+// System.String
+struct String_t;
 // SQLite.SQLiteConnection
 struct SQLiteConnection_t2649932624;
 
@@ -31,8 +31,8 @@ struct  U3CInsertAllU3Ec__AnonStorey3E_t2009518026  : public Il2CppObject
 public:
 	// System.Collections.IEnumerable SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E::objects
 	Il2CppObject * ___objects_0;
-	// System.Type SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E::objType
-	Type_t * ___objType_1;
+	// System.String SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E::extra
+	String_t* ___extra_1;
 	// System.Int32 SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E::c
 	int32_t ___c_2;
 	// SQLite.SQLiteConnection SQLite.SQLiteConnection/<InsertAll>c__AnonStorey3E::<>f__this
@@ -48,13 +48,13 @@ public:
 		Il2CppCodeGenWriteBarrier(&___objects_0, value);
 	}
 
-	inline static int32_t get_offset_of_objType_1() { return static_cast<int32_t>(offsetof(U3CInsertAllU3Ec__AnonStorey3E_t2009518026, ___objType_1)); }
-	inline Type_t * get_objType_1() const { return ___objType_1; }
-	inline Type_t ** get_address_of_objType_1() { return &___objType_1; }
-	inline void set_objType_1(Type_t * value)
+	inline static int32_t get_offset_of_extra_1() { return static_cast<int32_t>(offsetof(U3CInsertAllU3Ec__AnonStorey3E_t2009518026, ___extra_1)); }
+	inline String_t* get_extra_1() const { return ___extra_1; }
+	inline String_t** get_address_of_extra_1() { return &___extra_1; }
+	inline void set_extra_1(String_t* value)
 	{
-		___objType_1 = value;
-		Il2CppCodeGenWriteBarrier(&___objType_1, value);
+		___extra_1 = value;
+		Il2CppCodeGenWriteBarrier(&___extra_1, value);
 	}
 
 	inline static int32_t get_offset_of_c_2() { return static_cast<int32_t>(offsetof(U3CInsertAllU3Ec__AnonStorey3E_t2009518026, ___c_2)); }

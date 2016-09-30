@@ -1831,56 +1831,57 @@
 #include "AssemblyU2DCSharp_YesNoDialogScript3285035835.h"
 #include "AssemblyU2DCSharp_Alerts1963757239.h"
 #include "AssemblyU2DCSharp_Alerts_U3CAskYesNoU3Ec__AnonStor2142146331.h"
-#include "AssemblyU2DCSharp_Alerts_U3CeditPairU3Ec__AnonStore355735793.h"
-#include "AssemblyU2DCSharp_Alerts_U3CaddPairU3Ec__AnonStore1668863937.h"
+#include "AssemblyU2DCSharp_Alerts_U3CInfoOkU3Ec__AnonStorey1314778423.h"
+#include "AssemblyU2DCSharp_Alerts_U3CeditPairU3Ec__AnonStore355735794.h"
+#include "AssemblyU2DCSharp_Alerts_U3CaddPairU3Ec__AnonStore1668863938.h"
 #include "AssemblyU2DCSharp_BottomPanelScript140445860.h"
-#include "AssemblyU2DCSharp_BottomPanelScript_U3CshowPairU3E3838265875.h"
-#include "AssemblyU2DCSharp_BottomPanelScript_U3CshowFacilit1678491963.h"
+#include "AssemblyU2DCSharp_BottomPanelScript_U3CshowPairU3E3838265876.h"
+#include "AssemblyU2DCSharp_BottomPanelScript_U3CshowFacilit1678491964.h"
 #include "AssemblyU2DCSharp_CenterPanelScript1133230138.h"
 #include "AssemblyU2DCSharp_FloorSwitchScript2794668843.h"
 #include "AssemblyU2DCSharp_ImageBlinkScript3190153996.h"
 #include "AssemblyU2DCSharp_ScrollRectSnap3827508699.h"
 #include "AssemblyU2DCSharp_SearchBoxScript2166998414.h"
-#include "AssemblyU2DCSharp_SearchBoxScript_U3CsearchInputChan66699418.h"
-#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestio3485866537.h"
-#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestion859833583.h"
-#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestion851249898.h"
+#include "AssemblyU2DCSharp_SearchBoxScript_U3CsearchInputChan66699419.h"
+#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestio3485866538.h"
+#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestio1885325583.h"
+#include "AssemblyU2DCSharp_SearchBoxScript_U3CfindSuggestio1268665042.h"
 #include "AssemblyU2DCSharp_SubmitInputField2681522600.h"
 #include "AssemblyU2DCSharp_TTPanelScript1983791439.h"
-#include "AssemblyU2DCSharp_TTPanelScript_U3CUpdateContentsU4148055480.h"
-#include "AssemblyU2DCSharp_TTPanelScript_U3CUpdateLayoutU3E2446011145.h"
-#include "AssemblyU2DCSharp_TTPanelScript_U3CaddPairClickedU2755091744.h"
+#include "AssemblyU2DCSharp_TTPanelScript_U3CUpdateContentsU4148055481.h"
+#include "AssemblyU2DCSharp_TTPanelScript_U3CUpdateLayoutU3E2446011146.h"
+#include "AssemblyU2DCSharp_TTPanelScript_U3CaddPairClickedU2755091745.h"
 #include "AssemblyU2DCSharp_TTAddPairButtonScript1281654456.h"
 #include "AssemblyU2DCSharp_TTDayScript1438646503.h"
 #include "AssemblyU2DCSharp_TTPairScript2741164773.h"
 #include "AssemblyU2DCSharp_TTTimeScript109037720.h"
-#include "AssemblyU2DCSharp_TTTimeScript_U3CaddPairU3Ec__Ano1290390801.h"
-#include "AssemblyU2DCSharp_TTTimeScript_U3CaddPairU3Ec__Ano1290390803.h"
-#include "AssemblyU2DCSharp_TTTimeScript_U3CaddPairU3Ec__Ano2054633719.h"
-#include "AssemblyU2DCSharp_TTTimeScript_U3CDeletePairFromTim740818279.h"
-#include "AssemblyU2DCSharp_TTTimeScript_U3CDeletePairFromTi2574923447.h"
+#include "AssemblyU2DCSharp_TTTimeScript_U3CaddPairU3Ec__Ano1290390802.h"
+#include "AssemblyU2DCSharp_TTTimeScript_U3CaddPairU3Ec__Ano1290390812.h"
+#include "AssemblyU2DCSharp_TTTimeScript_U3CaddPairU3Ec__Ano2333811983.h"
+#include "AssemblyU2DCSharp_TTTimeScript_U3CDeletePairFromTim740818280.h"
+#include "AssemblyU2DCSharp_TTTimeScript_U3CDeletePairFromTi2904689209.h"
 #include "AssemblyU2DCSharp_TTWeekScript2426821759.h"
 #include "AssemblyU2DCSharp_TTChoosePageScript3515344977.h"
-#include "AssemblyU2DCSharp_TTChoosePageScript_U3CshowErrorU1958477045.h"
+#include "AssemblyU2DCSharp_TTChoosePageScript_U3CshowErrorU1958477046.h"
 #include "AssemblyU2DCSharp_TTDoneSetupScript3598672422.h"
 #include "AssemblyU2DCSharp_TTGroupSelectSript1226890355.h"
-#include "AssemblyU2DCSharp_TTGroupSelectSript_U3CloadU3Ec__3711554735.h"
-#include "AssemblyU2DCSharp_TTGroupSelectSript_U3COnSelectU3E897131941.h"
-#include "AssemblyU2DCSharp_TTLevelSelectSript_U3CloadU3Ec__2415961164.h"
-#include "AssemblyU2DCSharp_TTLevelSelectSript_U3COnSelectU32194190274.h"
+#include "AssemblyU2DCSharp_TTGroupSelectSript_U3CloadU3Ec__3711554736.h"
+#include "AssemblyU2DCSharp_TTGroupSelectSript_U3COnSelectU3E897131942.h"
+#include "AssemblyU2DCSharp_TTLevelSelectSript_U3CloadU3Ec__2415961165.h"
+#include "AssemblyU2DCSharp_TTLevelSelectSript_U3COnSelectU32194190275.h"
 #include "AssemblyU2DCSharp_TTProgramSelectSript1986578254.h"
-#include "AssemblyU2DCSharp_TTProgramSelectSript_U3CloadU3Ec2579781966.h"
-#include "AssemblyU2DCSharp_TTProgramSelectSript_U3COnSelect3920225476.h"
+#include "AssemblyU2DCSharp_TTProgramSelectSript_U3CloadU3Ec2579781967.h"
+#include "AssemblyU2DCSharp_TTProgramSelectSript_U3COnSelect3920225477.h"
 #include "AssemblyU2DCSharp_TTYearSelectSript297432757.h"
-#include "AssemblyU2DCSharp_TTYearSelectSript_U3CloadU3Ec__An873296247.h"
-#include "AssemblyU2DCSharp_TTYearSelectSript_U3COnSelectU3E2345439604.h"
+#include "AssemblyU2DCSharp_TTYearSelectSript_U3CloadU3Ec__An873296255.h"
+#include "AssemblyU2DCSharp_TTYearSelectSript_U3COnSelectU3E2345439605.h"
 #include "AssemblyU2DCSharp_TutorialScript64239081.h"
 #include "AssemblyU2DCSharp_BottomPanelRowScript1471559884.h"
 #include "AssemblyU2DCSharp_CenterPanelPageScript675237929.h"
 #include "AssemblyU2DCSharp_SuggestionRowScript435637633.h"
 #include "AssemblyU2DCSharp_Loom2374337.h"
 #include "AssemblyU2DCSharp_Loom_DelayedQueueItem3219765808.h"
-#include "AssemblyU2DCSharp_Loom_U3CremoveByNameU3Ec__AnonSto855128780.h"
+#include "AssemblyU2DCSharp_Loom_U3CremoveByNameU3Ec__AnonSto855128781.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteException1817335141.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteOpenFlags1858714483.h"
 #include "AssemblyU2DCSharp_SQLite_CreateFlags971888045.h"
@@ -1888,11 +1889,11 @@
 #include "AssemblyU2DCSharp_SQLite_SQLiteConnection_IndexedC1407024228.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteConnection_IndexInf1199365085.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteConnection_ColumnIn4283098503.h"
-#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CInser2009518024.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CInser2009518025.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CInser2009518026.h"
-#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CUpdate430507262.h"
-#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CUpdat3049586628.h"
+#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CInser2009518027.h"
+#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CUpdate430507271.h"
+#include "AssemblyU2DCSharp_SQLite_SQLiteConnection_U3CUpdat3049586629.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteConnectionString2984844929.h"
 #include "AssemblyU2DCSharp_SQLite_TableAttribute3844348468.h"
 #include "AssemblyU2DCSharp_SQLite_ColumnAttribute2686047144.h"
@@ -1901,8 +1902,8 @@
 #include "AssemblyU2DCSharp_SQLite_CollationAttribute864450521.h"
 #include "AssemblyU2DCSharp_SQLite_TableMapping2817029478.h"
 #include "AssemblyU2DCSharp_SQLite_TableMapping_Column1611479651.h"
-#include "AssemblyU2DCSharp_SQLite_TableMapping_U3CFindColumn612555082.h"
-#include "AssemblyU2DCSharp_SQLite_TableMapping_U3CFindColumn566048581.h"
+#include "AssemblyU2DCSharp_SQLite_TableMapping_U3CFindColumn612555083.h"
+#include "AssemblyU2DCSharp_SQLite_TableMapping_U3CFindColumn566048582.h"
 #include "AssemblyU2DCSharp_SQLite_Orm2150950828.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteCommand3677067489.h"
 #include "AssemblyU2DCSharp_SQLite_SQLiteCommand_Binding987537811.h"
@@ -1930,14 +1931,14 @@
 #include "AssemblyU2DCSharp_CUDLR_RouteAttribute3016220049.h"
 #include "AssemblyU2DCSharp_CUDLR_QueuedCommand2340564842.h"
 #include "AssemblyU2DCSharp_CUDLR_Console1942719977.h"
-#include "AssemblyU2DCSharp_CUDLR_Console_U3CRegisterAttribu1478417744.h"
+#include "AssemblyU2DCSharp_CUDLR_Console_U3CRegisterAttribu1478417745.h"
 #include "AssemblyU2DCSharp_CUDLR_CommandTree1692351771.h"
 #include "AssemblyU2DCSharp_CUDLR_RequestContext2839801694.h"
 #include "AssemblyU2DCSharp_CUDLR_Server1489864833.h"
 #include "AssemblyU2DCSharp_CUDLR_Server_U3CHandleRequestsU32177705841.h"
-#include "AssemblyU2DCSharp_CUDLR_Server_U3CRegisterFileHand1201858647.h"
+#include "AssemblyU2DCSharp_CUDLR_Server_U3CRegisterFileHand1201858648.h"
 #include "AssemblyU2DCSharp_Example041939375310.h"
-#include "AssemblyU2DCSharp_Example04_U3CaddToggleListenerU33695088536.h"
+#include "AssemblyU2DCSharp_Example04_U3CaddToggleListenerU33695088537.h"
 #include "AssemblyU2DCSharp_Example051939375311.h"
 #include "AssemblyU2DCSharp_MaterialUI_EZStruct3748314742.h"
 #include "AssemblyU2DCSharp_MaterialUI_AnimType2264732311.h"
@@ -2039,12 +2040,12 @@
 #include "AssemblyU2DCSharp_TMPro_InlineGraphicManager3583857972.h"
 #include "AssemblyU2DCSharp_TMPro_MaterialManager2047249960.h"
 #include "AssemblyU2DCSharp_TMPro_MaterialManager_MaskingMat2640101498.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CGetSten1936614865.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CGetBase1629669825.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CAddMask3048050914.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CRemoveS2712846036.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CRelease1649808252.h"
-#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CReleaseS584774284.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CGetSten1936614866.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CGetBase1629669826.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CAddMask3048050915.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CRemoveS2712846044.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CRelease1649808253.h"
+#include "AssemblyU2DCSharp_TMPro_MaterialManager_U3CReleaseS584774285.h"
 #include "AssemblyU2DCSharp_TMPro_SpriteAsset3304235981.h"
 #include "AssemblyU2DCSharp_TMPro_TMP_Compatibility_AnchorPo2956782356.h"
 #include "AssemblyU2DCSharp_TMPro_Compute_DistanceTransform_4075892261.h"
@@ -2057,8 +2058,8 @@
 #include "AssemblyU2DCSharp_TMPro_KerningPairKey1268119183.h"
 #include "AssemblyU2DCSharp_TMPro_KerningPair1904833704.h"
 #include "AssemblyU2DCSharp_TMPro_KerningTable618956984.h"
-#include "AssemblyU2DCSharp_TMPro_KerningTable_U3CAddKerning1553396934.h"
-#include "AssemblyU2DCSharp_TMPro_KerningTable_U3CRemoveKerni841739986.h"
+#include "AssemblyU2DCSharp_TMPro_KerningTable_U3CAddKerning1553396935.h"
+#include "AssemblyU2DCSharp_TMPro_KerningTable_U3CRemoveKerni841739987.h"
 #include "AssemblyU2DCSharp_TMPro_LineBreakingTable1570184089.h"
 #include "AssemblyU2DCSharp_TMPro_TMP_MeshInfo801067801.h"
 #include "AssemblyU2DCSharp_TMPro_TMP_CharacterType3969016029.h"
@@ -2900,7 +2901,7 @@
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-extern const int32_t g_FieldOffsetTable[14283] = 
+extern const int32_t g_FieldOffsetTable[14287] = 
 {
 	0,
 	0,
@@ -14594,13 +14595,15 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	AppScript_t3488119340::get_offset_of_centerPanelContainer_26(),
 	AppScript_t3488119340::get_offset_of_timetablePanel_27(),
 	AppScript_t3488119340::get_offset_of_ready_28(),
-	AppScript_t3488119340::get_offset_of__savedSkybox_29(),
-	AppScript_t3488119340_StaticFields::get_offset_of_U3CU3Ef__amU24cache1C_30(),
+	AppScript_t3488119340::get_offset_of_lastDeepLink_29(),
+	AppScript_t3488119340::get_offset_of__savedSkybox_30(),
 	AppScript_t3488119340_StaticFields::get_offset_of_U3CU3Ef__amU24cache1D_31(),
 	AppScript_t3488119340_StaticFields::get_offset_of_U3CU3Ef__amU24cache1E_32(),
 	AppScript_t3488119340_StaticFields::get_offset_of_U3CU3Ef__amU24cache1F_33(),
 	AppScript_t3488119340_StaticFields::get_offset_of_U3CU3Ef__amU24cache20_34(),
 	AppScript_t3488119340_StaticFields::get_offset_of_U3CU3Ef__amU24cache21_35(),
+	AppScript_t3488119340_StaticFields::get_offset_of_U3CU3Ef__amU24cache22_36(),
+	AppScript_t3488119340_StaticFields::get_offset_of_U3CU3Ef__switchU24map1_37(),
 	0,
 	ApplicationChrome_t3150366666_StaticFields::get_offset_of__statusBarState_1(),
 	ApplicationChrome_t3150366666_StaticFields::get_offset_of__navigationBarState_2(),
@@ -14769,17 +14772,19 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	Alerts_t1963757239_StaticFields::get_offset_of_U3CU3Ef__amU24cache5_7(),
 	Alerts_t1963757239_StaticFields::get_offset_of_U3CU3Ef__amU24cache6_8(),
 	Alerts_t1963757239_StaticFields::get_offset_of_U3CU3Ef__amU24cache7_9(),
+	Alerts_t1963757239_StaticFields::get_offset_of_U3CU3Ef__amU24cache8_10(),
 	U3CAskYesNoU3Ec__AnonStorey21_t2142146331::get_offset_of_redYes_0(),
-	U3CeditPairU3Ec__AnonStorey22_t355735793::get_offset_of_pair_0(),
-	U3CeditPairU3Ec__AnonStorey22_t355735793::get_offset_of_title_1(),
-	U3CeditPairU3Ec__AnonStorey22_t355735793::get_offset_of_okButtonTitle_2(),
-	U3CeditPairU3Ec__AnonStorey22_t355735793::get_offset_of_cancelButtonTitle_3(),
-	U3CeditPairU3Ec__AnonStorey22_t355735793::get_offset_of_yesAction_4(),
-	U3CaddPairU3Ec__AnonStorey23_t1668863937::get_offset_of_title_0(),
-	U3CaddPairU3Ec__AnonStorey23_t1668863937::get_offset_of_okButtonTitle_1(),
-	U3CaddPairU3Ec__AnonStorey23_t1668863937::get_offset_of_cancelButtonTitle_2(),
-	U3CaddPairU3Ec__AnonStorey23_t1668863937::get_offset_of_week_3(),
-	U3CaddPairU3Ec__AnonStorey23_t1668863937::get_offset_of_yesAction_4(),
+	U3CInfoOkU3Ec__AnonStorey22_t1314778423::get_offset_of_redYes_0(),
+	U3CeditPairU3Ec__AnonStorey23_t355735794::get_offset_of_pair_0(),
+	U3CeditPairU3Ec__AnonStorey23_t355735794::get_offset_of_title_1(),
+	U3CeditPairU3Ec__AnonStorey23_t355735794::get_offset_of_okButtonTitle_2(),
+	U3CeditPairU3Ec__AnonStorey23_t355735794::get_offset_of_cancelButtonTitle_3(),
+	U3CeditPairU3Ec__AnonStorey23_t355735794::get_offset_of_yesAction_4(),
+	U3CaddPairU3Ec__AnonStorey24_t1668863938::get_offset_of_title_0(),
+	U3CaddPairU3Ec__AnonStorey24_t1668863938::get_offset_of_okButtonTitle_1(),
+	U3CaddPairU3Ec__AnonStorey24_t1668863938::get_offset_of_cancelButtonTitle_2(),
+	U3CaddPairU3Ec__AnonStorey24_t1668863938::get_offset_of_week_3(),
+	U3CaddPairU3Ec__AnonStorey24_t1668863938::get_offset_of_yesAction_4(),
 	BottomPanelScript_t140445860::get_offset_of_app_2(),
 	BottomPanelScript_t140445860::get_offset_of_rect_3(),
 	BottomPanelScript_t140445860::get_offset_of_scrollRect_4(),
@@ -14802,12 +14807,12 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	BottomPanelScript_t140445860::get_offset_of_fullFoldDistance_21(),
 	BottomPanelScript_t140445860::get_offset_of_oldScreenSize_22(),
 	BottomPanelScript_t140445860_StaticFields::get_offset_of_U3CU3Ef__amU24cache15_23(),
-	U3CshowPairU3Ec__AnonStorey24_t3838265875::get_offset_of_room_0(),
-	U3CshowPairU3Ec__AnonStorey24_t3838265875::get_offset_of_r_1(),
-	U3CshowPairU3Ec__AnonStorey24_t3838265875::get_offset_of_U3CU3Ef__this_2(),
-	U3CshowFacilitiesU3Ec__AnonStorey25_t1678491963::get_offset_of__f_0(),
-	U3CshowFacilitiesU3Ec__AnonStorey25_t1678491963::get_offset_of_r_1(),
-	U3CshowFacilitiesU3Ec__AnonStorey25_t1678491963::get_offset_of_U3CU3Ef__this_2(),
+	U3CshowPairU3Ec__AnonStorey25_t3838265876::get_offset_of_room_0(),
+	U3CshowPairU3Ec__AnonStorey25_t3838265876::get_offset_of_r_1(),
+	U3CshowPairU3Ec__AnonStorey25_t3838265876::get_offset_of_U3CU3Ef__this_2(),
+	U3CshowFacilitiesU3Ec__AnonStorey26_t1678491964::get_offset_of__f_0(),
+	U3CshowFacilitiesU3Ec__AnonStorey26_t1678491964::get_offset_of_r_1(),
+	U3CshowFacilitiesU3Ec__AnonStorey26_t1678491964::get_offset_of_U3CU3Ef__this_2(),
 	CenterPanelScript_t1133230138::get_offset_of_app_2(),
 	CenterPanelScript_t1133230138::get_offset_of_rect_3(),
 	CenterPanelScript_t1133230138::get_offset_of_title_4(),
@@ -14850,14 +14855,14 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	SearchBoxScript_t2166998414::get_offset_of__placeholder_update_time_12(),
 	SearchBoxScript_t2166998414::get_offset_of_placeholderValues_13(),
 	SearchBoxScript_t2166998414::get_offset_of_lastRandomIndex_14(),
-	U3CsearchInputChangedU3Ec__AnonStorey26_t66699418::get_offset_of_query_0(),
-	U3CsearchInputChangedU3Ec__AnonStorey26_t66699418::get_offset_of_U3CU3Ef__this_1(),
-	U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537::get_offset_of_query_0(),
-	U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537::get_offset_of_U3CU3Ef__this_1(),
-	U3CfindSuggestionsU3Ec__AnonStorey28_t859833583::get_offset_of_found_facilities_0(),
-	U3CfindSuggestionsU3Ec__AnonStorey28_t859833583::get_offset_of_U3CU3Ef__refU2439_1(),
-	U3CfindSuggestionsU3Ec__AnonStorey29_t851249898::get_offset_of__f_0(),
-	U3CfindSuggestionsU3Ec__AnonStorey29_t851249898::get_offset_of_U3CU3Ef__refU2439_1(),
+	U3CsearchInputChangedU3Ec__AnonStorey27_t66699419::get_offset_of_query_0(),
+	U3CsearchInputChangedU3Ec__AnonStorey27_t66699419::get_offset_of_U3CU3Ef__this_1(),
+	U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538::get_offset_of_query_0(),
+	U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538::get_offset_of_U3CU3Ef__this_1(),
+	U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583::get_offset_of_found_facilities_0(),
+	U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583::get_offset_of_U3CU3Ef__refU2440_1(),
+	U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042::get_offset_of__f_0(),
+	U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042::get_offset_of_U3CU3Ef__refU2440_1(),
 	SubmitInputField_t2681522600::get_offset_of_m_keyboardDone_64(),
 	SubmitInputField_t2681522600::get_offset_of_m_keyboardCancel_65(),
 	TTPanelScript_t1983791439::get_offset_of_currentWeek_9(),
@@ -14878,12 +14883,12 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	TTPanelScript_t1983791439::get_offset_of_lastCurrentWeekScrollPos_24(),
 	TTPanelScript_t1983791439::get_offset_of_lastNextWeekScrollPos_25(),
 	TTPanelScript_t1983791439::get_offset_of__subscribed_to_time_updates_26(),
-	U3CUpdateContentsU3Ec__AnonStorey2B_t4148055480::get_offset_of_editMode_0(),
-	U3CUpdateContentsU3Ec__AnonStorey2B_t4148055480::get_offset_of_U3CU3Ef__this_1(),
-	U3CUpdateLayoutU3Ec__AnonStorey2C_t2446011145::get_offset_of_editMode_0(),
-	U3CUpdateLayoutU3Ec__AnonStorey2C_t2446011145::get_offset_of_U3CU3Ef__this_1(),
-	U3CaddPairClickedU3Ec__AnonStorey2A_t2755091744::get_offset_of_newPair_0(),
-	U3CaddPairClickedU3Ec__AnonStorey2A_t2755091744::get_offset_of_U3CU3Ef__this_1(),
+	U3CUpdateContentsU3Ec__AnonStorey2C_t4148055481::get_offset_of_editMode_0(),
+	U3CUpdateContentsU3Ec__AnonStorey2C_t4148055481::get_offset_of_U3CU3Ef__this_1(),
+	U3CUpdateLayoutU3Ec__AnonStorey2D_t2446011146::get_offset_of_editMode_0(),
+	U3CUpdateLayoutU3Ec__AnonStorey2D_t2446011146::get_offset_of_U3CU3Ef__this_1(),
+	U3CaddPairClickedU3Ec__AnonStorey2B_t2755091745::get_offset_of_newPair_0(),
+	U3CaddPairClickedU3Ec__AnonStorey2B_t2755091745::get_offset_of_U3CU3Ef__this_1(),
 	TTAddPairButtonScript_t1281654456::get_offset_of_week_2(),
 	TTDayScript_t1438646503::get_offset_of__day_2(),
 	TTDayScript_t1438646503::get_offset_of_dayTitle_3(),
@@ -14906,18 +14911,18 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	TTTimeScript_t109037720::get_offset_of_app_2(),
 	TTTimeScript_t109037720::get_offset_of_timeTitle_3(),
 	TTTimeScript_t109037720::get_offset_of_pairsContainer_4(),
-	U3CaddPairU3Ec__AnonStorey2D_t1290390801::get_offset_of_pair_0(),
-	U3CaddPairU3Ec__AnonStorey2D_t1290390801::get_offset_of_U3CU3Ef__this_1(),
-	U3CaddPairU3Ec__AnonStorey2F_t1290390803::get_offset_of__pair_el_0(),
-	U3CaddPairU3Ec__AnonStorey2F_t1290390803::get_offset_of_U3CU3Ef__refU2445_1(),
-	U3CaddPairU3Ec__AnonStorey2F_t1290390803::get_offset_of_U3CU3Ef__this_2(),
-	U3CaddPairU3Ec__AnonStorey2E_t2054633719::get_offset_of_oldPair_0(),
-	U3CaddPairU3Ec__AnonStorey2E_t2054633719::get_offset_of_newPair_1(),
-	U3CaddPairU3Ec__AnonStorey2E_t2054633719::get_offset_of_U3CU3Ef__refU2447_2(),
-	U3CDeletePairFromTimeU3Ec__AnonStorey30_t740818279::get_offset_of_p_0(),
-	U3CDeletePairFromTimeU3Ec__AnonStorey30_t740818279::get_offset_of_U3CU3Ef__this_1(),
-	U3CDeletePairFromTimeU3Ec__AnonStorey31_t2574923447::get_offset_of_time_el_0(),
-	U3CDeletePairFromTimeU3Ec__AnonStorey31_t2574923447::get_offset_of_U3CU3Ef__refU2448_1(),
+	U3CaddPairU3Ec__AnonStorey2E_t1290390802::get_offset_of_pair_0(),
+	U3CaddPairU3Ec__AnonStorey2E_t1290390802::get_offset_of_U3CU3Ef__this_1(),
+	U3CaddPairU3Ec__AnonStorey30_t1290390812::get_offset_of__pair_el_0(),
+	U3CaddPairU3Ec__AnonStorey30_t1290390812::get_offset_of_U3CU3Ef__refU2446_1(),
+	U3CaddPairU3Ec__AnonStorey30_t1290390812::get_offset_of_U3CU3Ef__this_2(),
+	U3CaddPairU3Ec__AnonStorey2F_t2333811983::get_offset_of_oldPair_0(),
+	U3CaddPairU3Ec__AnonStorey2F_t2333811983::get_offset_of_newPair_1(),
+	U3CaddPairU3Ec__AnonStorey2F_t2333811983::get_offset_of_U3CU3Ef__refU2448_2(),
+	U3CDeletePairFromTimeU3Ec__AnonStorey31_t740818280::get_offset_of_p_0(),
+	U3CDeletePairFromTimeU3Ec__AnonStorey31_t740818280::get_offset_of_U3CU3Ef__this_1(),
+	U3CDeletePairFromTimeU3Ec__AnonStorey32_t2904689209::get_offset_of_time_el_0(),
+	U3CDeletePairFromTimeU3Ec__AnonStorey32_t2904689209::get_offset_of_U3CU3Ef__refU2449_1(),
 	TTWeekScript_t2426821759::get_offset_of__week_2(),
 	TTWeekScript_t2426821759::get_offset_of_daysContainer_3(),
 	TTWeekScript_t2426821759::get_offset_of_scrollRect_4(),
@@ -14926,33 +14931,33 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	TTChoosePageScript_t3515344977::get_offset_of_loadingText_3(),
 	TTChoosePageScript_t3515344977::get_offset_of_nextButton_4(),
 	TTChoosePageScript_t3515344977::get_offset_of_chosen_5(),
-	U3CshowErrorU3Ec__AnonStorey32_t1958477045::get_offset_of_msg_0(),
-	U3CshowErrorU3Ec__AnonStorey32_t1958477045::get_offset_of_U3CU3Ef__this_1(),
+	U3CshowErrorU3Ec__AnonStorey33_t1958477046::get_offset_of_msg_0(),
+	U3CshowErrorU3Ec__AnonStorey33_t1958477046::get_offset_of_U3CU3Ef__this_1(),
 	TTDoneSetupScript_t3598672422::get_offset_of_loadingText_2(),
 	TTDoneSetupScript_t3598672422::get_offset_of_doneText_3(),
 	TTDoneSetupScript_t3598672422::get_offset_of_doneButton_4(),
 	TTGroupSelectSript_t1226890355::get_offset_of_groupLinks_6(),
 	TTGroupSelectSript_t1226890355::get_offset_of_year_link_7(),
-	U3CloadU3Ec__AnonStorey33_t3711554735::get_offset_of_groups_0(),
-	U3CloadU3Ec__AnonStorey33_t3711554735::get_offset_of_U3CU3Ef__this_1(),
-	U3COnSelectU3Ec__AnonStorey34_t897131941::get_offset_of_id_0(),
-	U3COnSelectU3Ec__AnonStorey34_t897131941::get_offset_of_U3CU3Ef__this_1(),
-	U3CloadU3Ec__AnonStorey35_t2415961164::get_offset_of_studyLevels_0(),
-	U3CloadU3Ec__AnonStorey35_t2415961164::get_offset_of_U3CU3Ef__this_1(),
-	U3COnSelectU3Ec__AnonStorey36_t2194190274::get_offset_of_id_0(),
-	U3COnSelectU3Ec__AnonStorey36_t2194190274::get_offset_of_U3CU3Ef__this_1(),
+	U3CloadU3Ec__AnonStorey34_t3711554736::get_offset_of_groups_0(),
+	U3CloadU3Ec__AnonStorey34_t3711554736::get_offset_of_U3CU3Ef__this_1(),
+	U3COnSelectU3Ec__AnonStorey35_t897131942::get_offset_of_id_0(),
+	U3COnSelectU3Ec__AnonStorey35_t897131942::get_offset_of_U3CU3Ef__this_1(),
+	U3CloadU3Ec__AnonStorey36_t2415961165::get_offset_of_studyLevels_0(),
+	U3CloadU3Ec__AnonStorey36_t2415961165::get_offset_of_U3CU3Ef__this_1(),
+	U3COnSelectU3Ec__AnonStorey37_t2194190275::get_offset_of_id_0(),
+	U3COnSelectU3Ec__AnonStorey37_t2194190275::get_offset_of_U3CU3Ef__this_1(),
 	TTProgramSelectSript_t1986578254::get_offset_of_level_6(),
-	U3CloadU3Ec__AnonStorey37_t2579781966::get_offset_of_studyLevels_0(),
-	U3CloadU3Ec__AnonStorey37_t2579781966::get_offset_of_U3CU3Ef__this_1(),
-	U3COnSelectU3Ec__AnonStorey38_t3920225476::get_offset_of_id_0(),
-	U3COnSelectU3Ec__AnonStorey38_t3920225476::get_offset_of_U3CU3Ef__this_1(),
+	U3CloadU3Ec__AnonStorey38_t2579781967::get_offset_of_studyLevels_0(),
+	U3CloadU3Ec__AnonStorey38_t2579781967::get_offset_of_U3CU3Ef__this_1(),
+	U3COnSelectU3Ec__AnonStorey39_t3920225477::get_offset_of_id_0(),
+	U3COnSelectU3Ec__AnonStorey39_t3920225477::get_offset_of_U3CU3Ef__this_1(),
 	TTYearSelectSript_t297432757::get_offset_of_level_6(),
 	TTYearSelectSript_t297432757::get_offset_of_program_7(),
 	TTYearSelectSript_t297432757::get_offset_of_yearLinks_8(),
-	U3CloadU3Ec__AnonStorey39_t873296247::get_offset_of_studyYears_0(),
-	U3CloadU3Ec__AnonStorey39_t873296247::get_offset_of_U3CU3Ef__this_1(),
-	U3COnSelectU3Ec__AnonStorey3A_t2345439604::get_offset_of_id_0(),
-	U3COnSelectU3Ec__AnonStorey3A_t2345439604::get_offset_of_U3CU3Ef__this_1(),
+	U3CloadU3Ec__AnonStorey3A_t873296255::get_offset_of_studyYears_0(),
+	U3CloadU3Ec__AnonStorey3A_t873296255::get_offset_of_U3CU3Ef__this_1(),
+	U3COnSelectU3Ec__AnonStorey3B_t2345439605::get_offset_of_id_0(),
+	U3COnSelectU3Ec__AnonStorey3B_t2345439605::get_offset_of_U3CU3Ef__this_1(),
 	TutorialScript_t64239081::get_offset_of_app_2(),
 	BottomPanelRowScript_t1471559884::get_offset_of_rect_2(),
 	BottomPanelRowScript_t1471559884::get_offset_of_bottomPanel_3(),
@@ -14983,7 +14988,7 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	DelayedQueueItem_t3219765808::get_offset_of_time_0() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	DelayedQueueItem_t3219765808::get_offset_of_action_1() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	DelayedQueueItem_t3219765808::get_offset_of_name_2() + static_cast<int32_t>(sizeof(Il2CppObject)),
-	U3CremoveByNameU3Ec__AnonStorey3B_t855128780::get_offset_of_name_0(),
+	U3CremoveByNameU3Ec__AnonStorey3C_t855128781::get_offset_of_name_0(),
 	SQLiteException_t1817335141::get_offset_of_U3CResultU3Ek__BackingField_11(),
 	SQLiteOpenFlags_t1858714483::get_offset_of_value___1() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	0,
@@ -15027,22 +15032,22 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	IndexInfo_t1199365085::get_offset_of_Unique_2() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	IndexInfo_t1199365085::get_offset_of_Columns_3() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	ColumnInfo_t4283098503::get_offset_of_U3CNameU3Ek__BackingField_0(),
-	U3CInsertAllU3Ec__AnonStorey3C_t2009518024::get_offset_of_objects_0(),
-	U3CInsertAllU3Ec__AnonStorey3C_t2009518024::get_offset_of_c_1(),
-	U3CInsertAllU3Ec__AnonStorey3C_t2009518024::get_offset_of_U3CU3Ef__this_2(),
 	U3CInsertAllU3Ec__AnonStorey3D_t2009518025::get_offset_of_objects_0(),
-	U3CInsertAllU3Ec__AnonStorey3D_t2009518025::get_offset_of_extra_1(),
-	U3CInsertAllU3Ec__AnonStorey3D_t2009518025::get_offset_of_c_2(),
-	U3CInsertAllU3Ec__AnonStorey3D_t2009518025::get_offset_of_U3CU3Ef__this_3(),
+	U3CInsertAllU3Ec__AnonStorey3D_t2009518025::get_offset_of_c_1(),
+	U3CInsertAllU3Ec__AnonStorey3D_t2009518025::get_offset_of_U3CU3Ef__this_2(),
 	U3CInsertAllU3Ec__AnonStorey3E_t2009518026::get_offset_of_objects_0(),
-	U3CInsertAllU3Ec__AnonStorey3E_t2009518026::get_offset_of_objType_1(),
+	U3CInsertAllU3Ec__AnonStorey3E_t2009518026::get_offset_of_extra_1(),
 	U3CInsertAllU3Ec__AnonStorey3E_t2009518026::get_offset_of_c_2(),
 	U3CInsertAllU3Ec__AnonStorey3E_t2009518026::get_offset_of_U3CU3Ef__this_3(),
-	U3CUpdateU3Ec__AnonStorey3F_t430507262::get_offset_of_pk_0(),
-	U3CUpdateU3Ec__AnonStorey3F_t430507262::get_offset_of_obj_1(),
-	U3CUpdateAllU3Ec__AnonStorey40_t3049586628::get_offset_of_objects_0(),
-	U3CUpdateAllU3Ec__AnonStorey40_t3049586628::get_offset_of_c_1(),
-	U3CUpdateAllU3Ec__AnonStorey40_t3049586628::get_offset_of_U3CU3Ef__this_2(),
+	U3CInsertAllU3Ec__AnonStorey3F_t2009518027::get_offset_of_objects_0(),
+	U3CInsertAllU3Ec__AnonStorey3F_t2009518027::get_offset_of_objType_1(),
+	U3CInsertAllU3Ec__AnonStorey3F_t2009518027::get_offset_of_c_2(),
+	U3CInsertAllU3Ec__AnonStorey3F_t2009518027::get_offset_of_U3CU3Ef__this_3(),
+	U3CUpdateU3Ec__AnonStorey40_t430507271::get_offset_of_pk_0(),
+	U3CUpdateU3Ec__AnonStorey40_t430507271::get_offset_of_obj_1(),
+	U3CUpdateAllU3Ec__AnonStorey41_t3049586629::get_offset_of_objects_0(),
+	U3CUpdateAllU3Ec__AnonStorey41_t3049586629::get_offset_of_c_1(),
+	U3CUpdateAllU3Ec__AnonStorey41_t3049586629::get_offset_of_U3CU3Ef__this_2(),
 	SQLiteConnectionString_t2984844929::get_offset_of_U3CConnectionStringU3Ek__BackingField_0(),
 	SQLiteConnectionString_t2984844929::get_offset_of_U3CDatabasePathU3Ek__BackingField_1(),
 	SQLiteConnectionString_t2984844929::get_offset_of_U3CStoreDateTimeAsTicksU3Ek__BackingField_2(),
@@ -15077,8 +15082,8 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	Column_t1611479651::get_offset_of_U3CIndicesU3Ek__BackingField_7(),
 	Column_t1611479651::get_offset_of_U3CIsNullableU3Ek__BackingField_8(),
 	Column_t1611479651::get_offset_of_U3CMaxStringLengthU3Ek__BackingField_9(),
-	U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_t612555082::get_offset_of_propertyName_0(),
-	U3CFindColumnU3Ec__AnonStorey42_t566048581::get_offset_of_columnName_0(),
+	U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_t612555083::get_offset_of_propertyName_0(),
+	U3CFindColumnU3Ec__AnonStorey43_t566048582::get_offset_of_columnName_0(),
 	0,
 	0,
 	0,
@@ -15188,7 +15193,7 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	Pair_t3945686594::get_offset_of_hash_11(),
 	Link_t3945575266::get_offset_of_name_0(),
 	Link_t3945575266::get_offset_of_url_1(),
-	TimetableParser_t319660846_StaticFields::get_offset_of_U3CU3Ef__switchU24map1_0(),
+	TimetableParser_t319660846_StaticFields::get_offset_of_U3CU3Ef__switchU24map2_0(),
 	iTween_t3087282050_StaticFields::get_offset_of_tweens_2(),
 	iTween_t3087282050_StaticFields::get_offset_of_cameraFade_3(),
 	iTween_t3087282050::get_offset_of_id_4(),
@@ -15227,19 +15232,19 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	iTween_t3087282050::get_offset_of_lastRealTime_37(),
 	iTween_t3087282050::get_offset_of_useRealTime_38(),
 	iTween_t3087282050::get_offset_of_thisTransform_39(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map2_40(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map3_41(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map4_42(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map5_43(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map6_44(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map7_45(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map8_46(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map9_47(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24mapA_48(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24mapB_49(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24mapC_50(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24mapD_51(),
-	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24mapE_52(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map3_40(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map4_41(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map5_42(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map6_43(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map7_44(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map8_45(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24map9_46(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24mapA_47(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24mapB_48(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24mapC_49(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24mapD_50(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24mapE_51(),
+	iTween_t3087282050_StaticFields::get_offset_of_U3CU3Ef__switchU24mapF_52(),
 	EaseType_t2734598229::get_offset_of_value___1() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	0,
 	0,
@@ -15328,7 +15333,7 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	Console_t1942719977::get_offset_of_m_history_6(),
 	Console_t1942719977::get_offset_of_m_help_7(),
 	Console_t1942719977::get_offset_of_m_commandQueue_8(),
-	U3CRegisterAttributesU3Ec__AnonStorey43_t1478417744::get_offset_of_cbs_0(),
+	U3CRegisterAttributesU3Ec__AnonStorey44_t1478417745::get_offset_of_cbs_0(),
 	CommandTree_t1692351771::get_offset_of_m_subcommands_0(),
 	CommandTree_t1692351771::get_offset_of_m_command_1(),
 	CommandTree_t1692351771_StaticFields::get_offset_of_emptyArgs_2(),
@@ -15350,14 +15355,14 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	U3CHandleRequestsU3Ec__Iterator6_t2177705841::get_offset_of_U24PC_2(),
 	U3CHandleRequestsU3Ec__Iterator6_t2177705841::get_offset_of_U24current_3(),
 	U3CHandleRequestsU3Ec__Iterator6_t2177705841::get_offset_of_U3CU3Ef__this_4(),
-	U3CRegisterFileHandlersU3Ec__AnonStorey44_t1201858647::get_offset_of_callback_0(),
+	U3CRegisterFileHandlersU3Ec__AnonStorey45_t1201858648::get_offset_of_callback_0(),
 	Example04_t1939375310::get_offset_of_m_selectedValue1Text_2(),
 	Example04_t1939375310::get_offset_of_m_selectedValue2Text_3(),
 	Example04_t1939375310::get_offset_of_m_radioButtonsParent_4(),
 	Example04_t1939375310::get_offset_of_m_radioButtonDraftPrefab_5(),
 	Example04_t1939375310::get_offset_of_m_selectedValue3Text_6(),
-	U3CaddToggleListenerU3Ec__AnonStorey45_t3695088536::get_offset_of_toggle_0(),
-	U3CaddToggleListenerU3Ec__AnonStorey45_t3695088536::get_offset_of_U3CU3Ef__this_1(),
+	U3CaddToggleListenerU3Ec__AnonStorey46_t3695088537::get_offset_of_toggle_0(),
+	U3CaddToggleListenerU3Ec__AnonStorey46_t3695088537::get_offset_of_U3CU3Ef__this_1(),
 	Example05_t1939375311::get_offset_of_m_sliderTextR_2(),
 	Example05_t1939375311::get_offset_of_m_sliderTextG_3(),
 	Example05_t1939375311::get_offset_of_m_sliderTextB_4(),
@@ -16268,13 +16273,13 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	MaskingMaterial_t2640101498::get_offset_of_stencilMaterial_1(),
 	MaskingMaterial_t2640101498::get_offset_of_count_2(),
 	MaskingMaterial_t2640101498::get_offset_of_stencilID_3(),
-	U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865::get_offset_of_baseMaterial_0(),
-	U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865::get_offset_of_stencilID_1(),
-	U3CGetBaseMaterialU3Ec__AnonStorey47_t1629669825::get_offset_of_stencilMaterial_0(),
-	U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914::get_offset_of_stencilMaterial_0(),
-	U3CRemoveStencilMaterialU3Ec__AnonStorey49_t2712846036::get_offset_of_stencilMaterial_0(),
-	U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252::get_offset_of_baseMaterial_0(),
-	U3CReleaseStencilMaterialU3Ec__AnonStorey4B_t584774284::get_offset_of_stencilMaterial_0(),
+	U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866::get_offset_of_baseMaterial_0(),
+	U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866::get_offset_of_stencilID_1(),
+	U3CGetBaseMaterialU3Ec__AnonStorey48_t1629669826::get_offset_of_stencilMaterial_0(),
+	U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915::get_offset_of_stencilMaterial_0(),
+	U3CRemoveStencilMaterialU3Ec__AnonStorey4A_t2712846044::get_offset_of_stencilMaterial_0(),
+	U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253::get_offset_of_baseMaterial_0(),
+	U3CReleaseStencilMaterialU3Ec__AnonStorey4C_t584774285::get_offset_of_stencilMaterial_0(),
 	SpriteAsset_t3304235981::get_offset_of_spriteSheet_2(),
 	SpriteAsset_t3304235981::get_offset_of_material_3(),
 	SpriteAsset_t3304235981::get_offset_of_spriteInfoList_4(),
@@ -16362,10 +16367,10 @@ extern const int32_t g_FieldOffsetTable[14283] =
 	KerningTable_t618956984::get_offset_of_kerningPairs_0(),
 	KerningTable_t618956984_StaticFields::get_offset_of_U3CU3Ef__amU24cache1_1(),
 	KerningTable_t618956984_StaticFields::get_offset_of_U3CU3Ef__amU24cache2_2(),
-	U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934::get_offset_of_left_0(),
-	U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934::get_offset_of_right_1(),
-	U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986::get_offset_of_left_0(),
-	U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986::get_offset_of_right_1(),
+	U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935::get_offset_of_left_0(),
+	U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935::get_offset_of_right_1(),
+	U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987::get_offset_of_left_0(),
+	U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987::get_offset_of_right_1(),
 	LineBreakingTable_t1570184089::get_offset_of_leadingCharacters_0(),
 	LineBreakingTable_t1570184089::get_offset_of_followingCharacters_1(),
 	TMP_MeshInfo_t801067801::get_offset_of_vertices_0() + static_cast<int32_t>(sizeof(Il2CppObject)),
@@ -17189,7 +17194,7 @@ extern const int32_t g_FieldOffsetTable[14283] =
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[3170] = 
+extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[3171] = 
 {
 	sizeof (U3CModuleU3E_t86524790), -1, 0, 0,
 	sizeof (Il2CppObject), -1, 0, 0,
@@ -20036,53 +20041,54 @@ extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[3170] =
 	sizeof (YesNoDialogScript_t3285035835), -1, 0, 0,
 	sizeof (Alerts_t1963757239), -1, sizeof(Alerts_t1963757239_StaticFields), 0,
 	sizeof (U3CAskYesNoU3Ec__AnonStorey21_t2142146331), -1, 0, 0,
-	sizeof (U3CeditPairU3Ec__AnonStorey22_t355735793), -1, 0, 0,
-	sizeof (U3CaddPairU3Ec__AnonStorey23_t1668863937), -1, 0, 0,
+	sizeof (U3CInfoOkU3Ec__AnonStorey22_t1314778423), -1, 0, 0,
+	sizeof (U3CeditPairU3Ec__AnonStorey23_t355735794), -1, 0, 0,
+	sizeof (U3CaddPairU3Ec__AnonStorey24_t1668863938), -1, 0, 0,
 	sizeof (BottomPanelScript_t140445860), -1, sizeof(BottomPanelScript_t140445860_StaticFields), 0,
-	sizeof (U3CshowPairU3Ec__AnonStorey24_t3838265875), -1, 0, 0,
-	sizeof (U3CshowFacilitiesU3Ec__AnonStorey25_t1678491963), -1, 0, 0,
+	sizeof (U3CshowPairU3Ec__AnonStorey25_t3838265876), -1, 0, 0,
+	sizeof (U3CshowFacilitiesU3Ec__AnonStorey26_t1678491964), -1, 0, 0,
 	sizeof (CenterPanelScript_t1133230138), -1, 0, 0,
 	sizeof (FloorSwitchScript_t2794668843), -1, 0, 0,
 	sizeof (ImageBlinkScript_t3190153996), -1, 0, 0,
 	sizeof (ScrollRectSnap_t3827508699), -1, sizeof(ScrollRectSnap_t3827508699_StaticFields), 0,
 	sizeof (SearchBoxScript_t2166998414), -1, 0, 0,
-	sizeof (U3CsearchInputChangedU3Ec__AnonStorey26_t66699418), -1, 0, 0,
-	sizeof (U3CfindSuggestionsU3Ec__AnonStorey27_t3485866537), -1, 0, 0,
-	sizeof (U3CfindSuggestionsU3Ec__AnonStorey28_t859833583), -1, 0, 0,
-	sizeof (U3CfindSuggestionsU3Ec__AnonStorey29_t851249898), -1, 0, 0,
+	sizeof (U3CsearchInputChangedU3Ec__AnonStorey27_t66699419), -1, 0, 0,
+	sizeof (U3CfindSuggestionsU3Ec__AnonStorey28_t3485866538), -1, 0, 0,
+	sizeof (U3CfindSuggestionsU3Ec__AnonStorey29_t1885325583), -1, 0, 0,
+	sizeof (U3CfindSuggestionsU3Ec__AnonStorey2A_t1268665042), -1, 0, 0,
 	sizeof (SubmitInputField_t2681522600), -1, 0, 0,
 	sizeof (KeyboardDoneEvent_t534500170), -1, 0, 0,
 	sizeof (KeyboardCancelEvent_t1635804882), -1, 0, 0,
 	sizeof (TTPanelScript_t1983791439), -1, 0, 0,
-	sizeof (U3CUpdateContentsU3Ec__AnonStorey2B_t4148055480), -1, 0, 0,
-	sizeof (U3CUpdateLayoutU3Ec__AnonStorey2C_t2446011145), -1, 0, 0,
-	sizeof (U3CaddPairClickedU3Ec__AnonStorey2A_t2755091744), -1, 0, 0,
+	sizeof (U3CUpdateContentsU3Ec__AnonStorey2C_t4148055481), -1, 0, 0,
+	sizeof (U3CUpdateLayoutU3Ec__AnonStorey2D_t2446011146), -1, 0, 0,
+	sizeof (U3CaddPairClickedU3Ec__AnonStorey2B_t2755091745), -1, 0, 0,
 	sizeof (TTTourPanelScript_t45508567), -1, 0, 0,
 	sizeof (TTAddPairButtonScript_t1281654456), -1, 0, 0,
 	sizeof (TTDayScript_t1438646503), -1, 0, 0,
 	sizeof (TTPairScript_t2741164773), -1, 0, 0,
 	sizeof (TTTimeScript_t109037720), -1, 0, 0,
-	sizeof (U3CaddPairU3Ec__AnonStorey2D_t1290390801), -1, 0, 0,
-	sizeof (U3CaddPairU3Ec__AnonStorey2F_t1290390803), -1, 0, 0,
-	sizeof (U3CaddPairU3Ec__AnonStorey2E_t2054633719), -1, 0, 0,
-	sizeof (U3CDeletePairFromTimeU3Ec__AnonStorey30_t740818279), -1, 0, 0,
-	sizeof (U3CDeletePairFromTimeU3Ec__AnonStorey31_t2574923447), -1, 0, 0,
+	sizeof (U3CaddPairU3Ec__AnonStorey2E_t1290390802), -1, 0, 0,
+	sizeof (U3CaddPairU3Ec__AnonStorey30_t1290390812), -1, 0, 0,
+	sizeof (U3CaddPairU3Ec__AnonStorey2F_t2333811983), -1, 0, 0,
+	sizeof (U3CDeletePairFromTimeU3Ec__AnonStorey31_t740818280), -1, 0, 0,
+	sizeof (U3CDeletePairFromTimeU3Ec__AnonStorey32_t2904689209), -1, 0, 0,
 	sizeof (TTWeekScript_t2426821759), -1, sizeof(TTWeekScript_t2426821759_StaticFields), 0,
 	sizeof (TTChoosePageScript_t3515344977), -1, 0, 0,
-	sizeof (U3CshowErrorU3Ec__AnonStorey32_t1958477045), -1, 0, 0,
+	sizeof (U3CshowErrorU3Ec__AnonStorey33_t1958477046), -1, 0, 0,
 	sizeof (TTDoneSetupScript_t3598672422), -1, 0, 0,
 	sizeof (TTGroupSelectSript_t1226890355), -1, 0, 0,
-	sizeof (U3CloadU3Ec__AnonStorey33_t3711554735), -1, 0, 0,
-	sizeof (U3COnSelectU3Ec__AnonStorey34_t897131941), -1, 0, 0,
+	sizeof (U3CloadU3Ec__AnonStorey34_t3711554736), -1, 0, 0,
+	sizeof (U3COnSelectU3Ec__AnonStorey35_t897131942), -1, 0, 0,
 	sizeof (TTLevelSelectSript_t1190089294), -1, 0, 0,
-	sizeof (U3CloadU3Ec__AnonStorey35_t2415961164), -1, 0, 0,
-	sizeof (U3COnSelectU3Ec__AnonStorey36_t2194190274), -1, 0, 0,
+	sizeof (U3CloadU3Ec__AnonStorey36_t2415961165), -1, 0, 0,
+	sizeof (U3COnSelectU3Ec__AnonStorey37_t2194190275), -1, 0, 0,
 	sizeof (TTProgramSelectSript_t1986578254), -1, 0, 0,
-	sizeof (U3CloadU3Ec__AnonStorey37_t2579781966), -1, 0, 0,
-	sizeof (U3COnSelectU3Ec__AnonStorey38_t3920225476), -1, 0, 0,
+	sizeof (U3CloadU3Ec__AnonStorey38_t2579781967), -1, 0, 0,
+	sizeof (U3COnSelectU3Ec__AnonStorey39_t3920225477), -1, 0, 0,
 	sizeof (TTYearSelectSript_t297432757), -1, 0, 0,
-	sizeof (U3CloadU3Ec__AnonStorey39_t873296247), -1, 0, 0,
-	sizeof (U3COnSelectU3Ec__AnonStorey3A_t2345439604), -1, 0, 0,
+	sizeof (U3CloadU3Ec__AnonStorey3A_t873296255), -1, 0, 0,
+	sizeof (U3COnSelectU3Ec__AnonStorey3B_t2345439605), -1, 0, 0,
 	sizeof (TutorialScript_t64239081), -1, 0, 0,
 	sizeof (BottomPanelRowScript_t1471559884), -1, 0, 0,
 	sizeof (CenterPanelPageScript_t675237929), -1, 0, 0,
@@ -20090,7 +20096,7 @@ extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[3170] =
 	sizeof (Utils_t82059409), -1, 0, 0,
 	sizeof (Loom_t2374337), -1, sizeof(Loom_t2374337_StaticFields), 0,
 	sizeof (DelayedQueueItem_t3219765808)+ sizeof (Il2CppObject), -1, 0, 0,
-	sizeof (U3CremoveByNameU3Ec__AnonStorey3B_t855128780), -1, 0, 0,
+	sizeof (U3CremoveByNameU3Ec__AnonStorey3C_t855128781), -1, 0, 0,
 	sizeof (SQLiteException_t1817335141), -1, 0, 0,
 	sizeof (SQLiteOpenFlags_t1858714483)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0,
 	sizeof (CreateFlags_t971888045)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0,
@@ -20098,11 +20104,11 @@ extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[3170] =
 	sizeof (IndexedColumn_t1407024228)+ sizeof (Il2CppObject), sizeof(IndexedColumn_t1407024228_marshaled_pinvoke), 0, 0,
 	sizeof (IndexInfo_t1199365085)+ sizeof (Il2CppObject), -1, 0, 0,
 	sizeof (ColumnInfo_t4283098503), -1, 0, 0,
-	sizeof (U3CInsertAllU3Ec__AnonStorey3C_t2009518024), -1, 0, 0,
 	sizeof (U3CInsertAllU3Ec__AnonStorey3D_t2009518025), -1, 0, 0,
 	sizeof (U3CInsertAllU3Ec__AnonStorey3E_t2009518026), -1, 0, 0,
-	sizeof (U3CUpdateU3Ec__AnonStorey3F_t430507262), -1, 0, 0,
-	sizeof (U3CUpdateAllU3Ec__AnonStorey40_t3049586628), -1, 0, 0,
+	sizeof (U3CInsertAllU3Ec__AnonStorey3F_t2009518027), -1, 0, 0,
+	sizeof (U3CUpdateU3Ec__AnonStorey40_t430507271), -1, 0, 0,
+	sizeof (U3CUpdateAllU3Ec__AnonStorey41_t3049586629), -1, 0, 0,
 	sizeof (SQLiteConnectionString_t2984844929), -1, 0, 0,
 	sizeof (TableAttribute_t3844348468), -1, 0, 0,
 	sizeof (ColumnAttribute_t2686047144), -1, 0, 0,
@@ -20115,8 +20121,8 @@ extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[3170] =
 	sizeof (CollationAttribute_t864450521), -1, 0, 0,
 	sizeof (TableMapping_t2817029478), -1, sizeof(TableMapping_t2817029478_StaticFields), 0,
 	sizeof (Column_t1611479651), -1, 0, 0,
-	sizeof (U3CFindColumnWithPropertyNameU3Ec__AnonStorey41_t612555082), -1, 0, 0,
-	sizeof (U3CFindColumnU3Ec__AnonStorey42_t566048581), -1, 0, 0,
+	sizeof (U3CFindColumnWithPropertyNameU3Ec__AnonStorey42_t612555083), -1, 0, 0,
+	sizeof (U3CFindColumnU3Ec__AnonStorey43_t566048582), -1, 0, 0,
 	sizeof (Orm_t2150950828), -1, 0, 0,
 	sizeof (SQLiteCommand_t3677067489), -1, sizeof(SQLiteCommand_t3677067489_StaticFields), 0,
 	sizeof (Binding_t987537811), -1, 0, 0,
@@ -20159,16 +20165,16 @@ extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[3170] =
 	sizeof (Callback_t1331021739), sizeof(Il2CppMethodPointer), 0, 0,
 	sizeof (QueuedCommand_t2340564842)+ sizeof (Il2CppObject), -1, 0, 0,
 	sizeof (Console_t1942719977), -1, sizeof(Console_t1942719977_StaticFields), 0,
-	sizeof (U3CRegisterAttributesU3Ec__AnonStorey43_t1478417744), -1, 0, 0,
+	sizeof (U3CRegisterAttributesU3Ec__AnonStorey44_t1478417745), -1, 0, 0,
 	sizeof (CommandTree_t1692351771), -1, sizeof(CommandTree_t1692351771_StaticFields), 0,
 	sizeof (ResponseExtension_t1398317278), -1, 0, 0,
 	sizeof (RequestContext_t2839801694), -1, 0, 0,
 	sizeof (Server_t1489864833), -1, sizeof(Server_t1489864833_StaticFields), 0,
 	sizeof (FileHandlerDelegate_t2153839005), sizeof(Il2CppMethodPointer), 0, 0,
 	sizeof (U3CHandleRequestsU3Ec__Iterator6_t2177705841), -1, 0, 0,
-	sizeof (U3CRegisterFileHandlersU3Ec__AnonStorey44_t1201858647), -1, 0, 0,
+	sizeof (U3CRegisterFileHandlersU3Ec__AnonStorey45_t1201858648), -1, 0, 0,
 	sizeof (Example04_t1939375310), -1, 0, 0,
-	sizeof (U3CaddToggleListenerU3Ec__AnonStorey45_t3695088536), -1, 0, 0,
+	sizeof (U3CaddToggleListenerU3Ec__AnonStorey46_t3695088537), -1, 0, 0,
 	sizeof (Example05_t1939375311), -1, 0, 0,
 	sizeof (Anim_t354337085), -1, 0, 0,
 	sizeof (Cube_t2689258848), -1, 0, 0,
@@ -20275,12 +20281,12 @@ extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[3170] =
 	sizeof (InlineGraphicManager_t3583857972), -1, 0, 0,
 	sizeof (MaterialManager_t2047249960), -1, sizeof(MaterialManager_t2047249960_StaticFields), 0,
 	sizeof (MaskingMaterial_t2640101498), -1, 0, 0,
-	sizeof (U3CGetStencilMaterialU3Ec__AnonStorey46_t1936614865), -1, 0, 0,
-	sizeof (U3CGetBaseMaterialU3Ec__AnonStorey47_t1629669825), -1, 0, 0,
-	sizeof (U3CAddMaskingMaterialU3Ec__AnonStorey48_t3048050914), -1, 0, 0,
-	sizeof (U3CRemoveStencilMaterialU3Ec__AnonStorey49_t2712846036), -1, 0, 0,
-	sizeof (U3CReleaseBaseMaterialU3Ec__AnonStorey4A_t1649808252), -1, 0, 0,
-	sizeof (U3CReleaseStencilMaterialU3Ec__AnonStorey4B_t584774284), -1, 0, 0,
+	sizeof (U3CGetStencilMaterialU3Ec__AnonStorey47_t1936614866), -1, 0, 0,
+	sizeof (U3CGetBaseMaterialU3Ec__AnonStorey48_t1629669826), -1, 0, 0,
+	sizeof (U3CAddMaskingMaterialU3Ec__AnonStorey49_t3048050915), -1, 0, 0,
+	sizeof (U3CRemoveStencilMaterialU3Ec__AnonStorey4A_t2712846044), -1, 0, 0,
+	sizeof (U3CReleaseBaseMaterialU3Ec__AnonStorey4B_t1649808253), -1, 0, 0,
+	sizeof (U3CReleaseStencilMaterialU3Ec__AnonStorey4C_t584774285), -1, 0, 0,
 	sizeof (SpriteAsset_t3304235981), -1, 0, 0,
 	sizeof (TMP_Compatibility_t3473941578), -1, 0, 0,
 	sizeof (AnchorPositions_t2956782356)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0,
@@ -20296,8 +20302,8 @@ extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[3170] =
 	sizeof (KerningPairKey_t1268119183)+ sizeof (Il2CppObject), sizeof(KerningPairKey_t1268119183_marshaled_pinvoke), 0, 0,
 	sizeof (KerningPair_t1904833704), -1, 0, 0,
 	sizeof (KerningTable_t618956984), -1, sizeof(KerningTable_t618956984_StaticFields), 0,
-	sizeof (U3CAddKerningPairU3Ec__AnonStorey4C_t1553396934), -1, 0, 0,
-	sizeof (U3CRemoveKerningPairU3Ec__AnonStorey4D_t841739986), -1, 0, 0,
+	sizeof (U3CAddKerningPairU3Ec__AnonStorey4D_t1553396935), -1, 0, 0,
+	sizeof (U3CRemoveKerningPairU3Ec__AnonStorey4E_t841739987), -1, 0, 0,
 	sizeof (LineBreakingTable_t1570184089), -1, 0, 0,
 	sizeof (TMP_MeshInfo_t801067801)+ sizeof (Il2CppObject), sizeof(TMP_MeshInfo_t801067801_marshaled_pinvoke), 0, 0,
 	sizeof (TMP_CharacterType_t3969016029)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0,

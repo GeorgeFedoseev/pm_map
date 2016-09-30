@@ -22,7 +22,7 @@ struct Pair_t3945686594;
 
 // System.Void TimetableManger/<saveTimetableToDatabase>c__AnonStorey1F::.ctor()
 extern "C"  void U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F__ctor_m579702411 (U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_t912060944 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean TimetableManger/<saveTimetableToDatabase>c__AnonStorey1F::<>m__18(SPBUTimetable.Pair)
-extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__18_m1239279600 (U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_t912060944 * __this, Pair_t3945686594 * ___x0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean TimetableManger/<saveTimetableToDatabase>c__AnonStorey1F::<>m__19(SPBUTimetable.Pair)
 extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__19_m1450630513 (U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_t912060944 * __this, Pair_t3945686594 * ___x0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean TimetableManger/<saveTimetableToDatabase>c__AnonStorey1F::<>m__1A(SPBUTimetable.Pair)
+extern "C"  bool U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_U3CU3Em__1A_m3141437817 (U3CsaveTimetableToDatabaseU3Ec__AnonStorey1F_t912060944 * __this, Pair_t3945686594 * ___x0, const MethodInfo* method) IL2CPP_METHOD_ATTR;

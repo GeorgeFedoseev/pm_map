@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using System.Runtime.InteropServices;
 
 
 public class AppScript : MonoBehaviour {
@@ -71,6 +72,15 @@ public class AppScript : MonoBehaviour {
 
 	public bool ready = false;
 
+	#if UNITY_IOS
+
+	[DllImport ("__Internal")]
+	private static extern string _GetDeepLink();
+
+	#endif
+
+	string lastDeepLink = "none";
+
 	#if UNITY_ANDROID
 	static int getSDKInt() {
 		using (var version = new AndroidJavaClass("android.os.Build$VERSION")) {
@@ -81,6 +91,9 @@ public class AppScript : MonoBehaviour {
 
 	void Awake(){
 
+		#if UNITY_EDITOR
+		OnOpenURLComplete ("pmmap://room/208Д");
+		#endif
 
 
 		/*DEBUG*/
@@ -156,15 +169,18 @@ public class AppScript : MonoBehaviour {
 		ready = true;
 
 
-		if (timetableManager.hasTimetable ()) {
-			openTimetable ();
+		if (HasNewDeepLink ()) {
+			Loom.QueueOnMainThread (() => {
+				ProcessDeepLinking ();	
+			}, 0.5f);
+		} else {
+			if (timetableManager.hasTimetable ()) {
+				openTimetable ();
+			}
 		}
-
 
 		// update time based elements every 3 sec
 		InvokeRepeating("UpdateTimeBasedElements", 0, 3f);
-
-		ProcessDeepLinking ();
 	}
 	
 
@@ -295,9 +311,81 @@ public class AppScript : MonoBehaviour {
 	}
 
 
+	void OnOpenURLComplete(string link){
+		
+
+	}
+
+	void DeepLinkFocusRoom(string room){
+		Debug.LogWarning ("focus room "+room);
+
+		// hide all timetables and stuff
+		disableAllInCentralPanelContainer();
+
+		if(facilities.hasRoom(room)){
+			facilities.focusFacility(facilities.getRoom(room), showInfo:true);
+		}else{
+			Debug.LogWarning ("Room not found "+room);
+		}		
+	}
+
+
+
+	bool HasNewDeepLink(){
+		#if UNITY_IOS && !UNITY_EDITOR
+
+		var link = _GetDeepLink ();
+
+		if (link == lastDeepLink) {
+			return false;
+		}
+
+		return true;
+
+		#endif
+
+		return false;
+	}
+
+
 	void ProcessDeepLinking(){
-		Facebook.Unity.FB.GetAppLink ((result) => {
-			Alerts.InfoOk("Deep Link", result.Url);
-		});
+		#if UNITY_IOS && !UNITY_EDITOR
+
+		var link = _GetDeepLink ();
+
+		if (link == lastDeepLink) {
+			return;
+		}
+
+		lastDeepLink = link;
+
+		link = Uri.UnescapeDataString (link);
+		Debug.LogWarning ("Deep link: "+link);	
+
+		if (link.Contains ("pmmap://")) {
+			link = link.Replace ("pmmap://", "").Trim();
+			var link_parts = link.Split('/');
+
+			if (link_parts.Length > 0) {
+				switch (link_parts [0]) {
+				case "room":
+					if (link_parts.Length > 1) {
+						DeepLinkFocusRoom (link_parts [1]);
+					} else {
+						Debug.LogWarning ("Deep link: no room paramenter for link " + link);	
+					}
+					break;
+				default:
+					Debug.LogWarning ("Unknown deep link action " + link_parts [0] + " for link " + link);	
+					break;
+				}
+			}else{
+				Debug.LogWarning ("Empty deep link: "+link);	
+			}
+		} else {
+			Debug.LogWarning ("Unknown deep link: "+link);	
+		}
+
+		#endif
 	}
 }

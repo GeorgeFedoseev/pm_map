@@ -32,5 +32,5 @@ extern "C"  void LoadSceneScript_SyncLoadLevel_m1249561767 (LoadSceneScript_t133
 extern "C"  Il2CppObject * LoadSceneScript_Load_m4067863336 (LoadSceneScript_t1338370961 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void LoadSceneScript::OnGUI()
 extern "C"  void LoadSceneScript_OnGUI_m442479604 (LoadSceneScript_t1338370961 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void LoadSceneScript::<Start>m__9()
-extern "C"  void LoadSceneScript_U3CStartU3Em__9_m3326455356 (LoadSceneScript_t1338370961 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void LoadSceneScript::<Start>m__A()
+extern "C"  void LoadSceneScript_U3CStartU3Em__A_m3326463044 (LoadSceneScript_t1338370961 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
