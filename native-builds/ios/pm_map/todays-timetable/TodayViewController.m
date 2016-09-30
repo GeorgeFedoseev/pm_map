@@ -12,14 +12,7 @@
 #import "fmdb/FMDatabase.h"
 #import "PairCellController.h"
 
-@interface Pair : NSObject
-    @property NSString *name;
-    @property NSString *lecturer;
-    @property NSString *startTime;
-    @property NSString *endTime;
-    @property NSString *room;
-    @property NSString *location;
-@end
+
 
 @implementation Pair
 
@@ -27,7 +20,7 @@
 
 @interface TodayViewController () <NCWidgetProviding>
 
-@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
 @property NSArray *todayPairs;
@@ -50,7 +43,7 @@ static NSString *CellIdentifier = @"PairCell";
     
      [self.table registerNib:[UINib nibWithNibName:@"PairCell" bundle:nil] forCellReuseIdentifier:CellIdentifier];
     
-    self.table.allowsSelection = NO;
+    //self.table.allowsSelection = NO;
     
     _todayPairs = [NSArray array];
     Pair *p = [[Pair alloc] init];
@@ -99,13 +92,19 @@ static NSString *CellIdentifier = @"PairCell";
     PairCellController *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[PairCellController alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        // never reaches here
     }
+    
+    cell.todayViewController = self;
+    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     cell.view.backgroundColor = [UIColor clearColor];
     
     cell.name.text = ((Pair*)_todayPairs[indexPath.row]).name;
     cell.lecturer.text = ((Pair*)_todayPairs[indexPath.row]).lecturer;
-    cell.room.text = ((Pair*)_todayPairs[indexPath.row]).room;
+    NSString *roomNumber = ((Pair*)_todayPairs[indexPath.row]).room;
+    [cell.room setTitle:roomNumber forState:UIControlStateNormal];
     
     cell.startTime.text = ((Pair*)_todayPairs[indexPath.row]).startTime;
     cell.endTime.text = ((Pair*)_todayPairs[indexPath.row]).endTime;
@@ -117,6 +116,7 @@ static NSString *CellIdentifier = @"PairCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    //[_messageLabel setText:@"row click"];
  
 
 }
@@ -236,7 +236,7 @@ static NSString *CellIdentifier = @"PairCell";
     }
     
     
-    [_messageLabel setText: str ];
+    //[_messageLabel setText: str ];
     
     
     

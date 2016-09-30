@@ -35,9 +35,13 @@ public class Alerts : MonoBehaviour {
 		hideAll ();
 		current.overlay.SetActive (true);
 
+
+
 		current.yesNoDialog.title.text = title;
 		current.yesNoDialog.text.text = text;
 		current.yesNoDialog.yesTitle.text = yesTitle;
+
+		current.yesNoDialog.noTitle.gameObject.SetActive (true);
 		current.yesNoDialog.noTitle.text = noTitle;
 
 		current.yesNoDialog.gameObject.SetActive (true);
@@ -62,12 +66,35 @@ public class Alerts : MonoBehaviour {
 			current.yesNoDialog.yesButton.GetComponent<Image> ().color = redYes ? new Color (255f/255f, 32f/255f, 0f/255f) : new Color (225f/255f, 225f/255f, 225f/255f);
 			current.yesNoDialog.yesTitle.color = redYes ? Color.white : new Color (32f/255f, 32f/255f, 32f/255f);	
 		});
-
-
-
-
 	}
 
+
+	public static void InfoOk(string title, string text, string okTitle = "OK"){
+		hideAll ();
+		current.overlay.SetActive (true);
+
+		current.yesNoDialog.title.text = title;
+		current.yesNoDialog.text.text = text;
+		current.yesNoDialog.yesTitle.text = okTitle;
+		current.yesNoDialog.noTitle.gameObject.SetActive (false);
+
+
+		current.yesNoDialog.gameObject.SetActive (true);
+
+		current.yesNoDialog.yesButton.onClick.RemoveAllListeners();
+		current.yesNoDialog.noButton.onClick.RemoveAllListeners();
+
+		current.yesNoDialog.yesButton.onClick.AddListener (() => {
+			hideAll ();
+		});
+
+		var redYes = false;
+
+		Loom.QueueOnMainThread (()=>{
+			current.yesNoDialog.yesButton.GetComponent<Image> ().color = redYes ? new Color (255f/255f, 32f/255f, 0f/255f) : new Color (225f/255f, 225f/255f, 225f/255f);
+			current.yesNoDialog.yesTitle.color = redYes ? Color.white : new Color (32f/255f, 32f/255f, 32f/255f);	
+		});
+	}
 
 	public static void editPair(string title, Pair pair, Action<Pair, Pair> yesAction, string okButtonTitle = "СОХРАНИТЬ", string cancelButtonTitle = "ОТМЕНА"){
 		hideAll ();

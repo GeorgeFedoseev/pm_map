@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
+
 public class AppScript : MonoBehaviour {
 
 	public static bool DEBUG = false;
@@ -79,6 +80,8 @@ public class AppScript : MonoBehaviour {
 	#endif
 
 	void Awake(){
+
+
 
 		/*DEBUG*/
 		if (CLEAN_EVERYTHING_ON_START) {
@@ -160,6 +163,8 @@ public class AppScript : MonoBehaviour {
 
 		// update time based elements every 3 sec
 		InvokeRepeating("UpdateTimeBasedElements", 0, 3f);
+
+		ProcessDeepLinking ();
 	}
 	
 
@@ -285,6 +290,14 @@ public class AppScript : MonoBehaviour {
 	void OnApplicationPause(bool pause) {
 		if (!pause && ready) {
 			OnUpdateTimeBasedElements ();
+			ProcessDeepLinking ();
 		}
+	}
+
+
+	void ProcessDeepLinking(){
+		Facebook.Unity.FB.GetAppLink ((result) => {
+			Alerts.InfoOk("Deep Link", result.Url);
+		});
 	}
 }
