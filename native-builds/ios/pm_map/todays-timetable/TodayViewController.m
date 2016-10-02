@@ -255,7 +255,7 @@ static NSString *CellIdentifier = @"PairCell";
                 
                 
                 bool _evenWeek = [results intForColumn:@"weekType"] == 1;
-                int weekDay = [results intForColumn:@"day"];
+                int weekDay = [results intForColumn:@"day"]-1;
                 
                 
                 NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -292,21 +292,41 @@ static NSString *CellIdentifier = @"PairCell";
             
             
             if(resultsCount > 0){
-                if(resultsCount == 1){
-                    [self.message setTitle:@"Сегодня 1 пара:"  forState:UIControlStateNormal];
-                }else if (resultsCount%10 <= 4){
-                    [self.message setTitle:[NSString stringWithFormat:@"Сегодня %i пары:", resultsCount] forState:UIControlStateNormal];
+                NSString *first_part = @"";
+                NSString *last_part = @"";
+                
+                if(resultsCount < 3){
+                    first_part = @"Сегодня всего";
+                    last_part = @"! 😃";
+                }else if(resultsCount < 4){
+                    first_part = @"Сегодня";
+                    last_part = @" 🙃";
+                }else if(resultsCount < 5){
+                    first_part = @"Сегодня";
+                    last_part = @" 🙂";
                 }else {
-                    [self.message setTitle:[NSString stringWithFormat:@"Сегодня %i пар:", resultsCount] forState:UIControlStateNormal];
+                    first_part = @"Сегодня ";
+                    last_part = @" 😬";
+                }
+                
+                
+                if(resultsCount)
+                
+                if(resultsCount == 1){
+                    [self.message setTitle:[NSString stringWithFormat:@"%@ 1 пара%@", first_part, last_part]  forState:UIControlStateNormal];
+                }else if (resultsCount <= 4 || (resultsCount%10 <= 4 && resultsCount > 20)){
+                    [self.message setTitle:[NSString stringWithFormat:@"%@ %i пары%@", first_part, resultsCount, last_part] forState:UIControlStateNormal];
+                }else {
+                    [self.message setTitle:[NSString stringWithFormat:@"%@ %i пар%@", first_part, resultsCount, last_part] forState:UIControlStateNormal];
                 }
                 // expand height
                 self.preferredContentSize = CGSizeMake(0, 20 + 46*resultsCount);
             }else{
                 
                 if(allResultsCount > 0){
-                    [self.message setTitle:@"Сегодня нет пар!" forState:UIControlStateNormal];
+                    [self.message setTitle:@"Сегодня нет пар! 🎉" forState:UIControlStateNormal];
                 }else{
-                    [self.message setTitle:@"Настройте расписание >>" forState:UIControlStateNormal];
+                    [self.message setTitle:@"Настройте расписание ⚙" forState:UIControlStateNormal];
                 }
                 
                 

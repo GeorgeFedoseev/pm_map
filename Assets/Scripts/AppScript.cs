@@ -330,7 +330,7 @@ public class AppScript : MonoBehaviour {
 		var link_r = link.Replace ("pmmap://", "").Trim();
 		var link_parts = link_r.Split('/');
 
-		if (link == lastDeepLink || link_parts.Length > 0) {
+		if (link == lastDeepLink || link_parts.Length == 0) {
 			return false;
 		}
 
