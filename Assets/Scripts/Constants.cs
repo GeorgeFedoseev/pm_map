@@ -15,6 +15,7 @@ public class Constants {
 	public static string getDBPath(string db_name, bool overwrite = true){
 		var db_path = "";
 		if (Application.platform == RuntimePlatform.IPhonePlayer) {
+			#if UNITY_IOS
 			var openPath = Application.dataPath + "/Raw/"+db_name;
 
 			var group_container_path = _GetSharedFolderPathCharArray ("groups.pm_map_container");
@@ -32,7 +33,7 @@ public class Constants {
 					File.Copy(openPath, db_path, true);
 				}
 			}
-
+			#endif
 		}else if(Application.platform == RuntimePlatform.Android){
 			Debug.LogError ("CHECK ANDROID DB PATHS!!!");
 			var openPath = "jar:file://" + Application.dataPath + "!/assets/"+db_name;

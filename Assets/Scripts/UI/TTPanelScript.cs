@@ -245,8 +245,8 @@ public class TTPanelScript : CenterPanelScript {
 
 			Loom.QueueOnMainThread (()=>{
 				if(editMode){
-					currentWeek.addAddPairButton();
-					nextWeek.addAddPairButton();	
+					//currentWeek.addAddPairButton();
+					//nextWeek.addAddPairButton();	
 				}
 
 
@@ -278,8 +278,8 @@ public class TTPanelScript : CenterPanelScript {
 				}
 
 				if(editMode){
-					currentWeek.addAddPairButton();
-					nextWeek.addAddPairButton();	
+					//currentWeek.addAddPairButton();
+					//nextWeek.addAddPairButton();	
 				}
 
 

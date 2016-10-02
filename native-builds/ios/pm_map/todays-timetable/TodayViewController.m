@@ -13,7 +13,6 @@
 #import "PairCellController.h"
 
 
-
 @implementation Pair
 
 @end
@@ -35,7 +34,9 @@ static NSString *CellIdentifier = @"PairCell";
 
 
 - (void)viewDidLoad {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    
+    
     
     
     // Do any additional setup after loading the view from its nib.
@@ -237,10 +238,12 @@ static NSString *CellIdentifier = @"PairCell";
             
             bool evenWeek = [self isWeekEven];
             
+            int allResultsCount = 0;
             int resultsCount = 0;
             
             NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];
             while([results next]){
+                allResultsCount++;
                 
                 [dateFormatter setDateFormat:@"yyyy-MM-DD HH:mm:ss"];
 
@@ -252,7 +255,7 @@ static NSString *CellIdentifier = @"PairCell";
                 
                 
                 bool _evenWeek = [results intForColumn:@"weekType"] == 1;
-                int weekDay = [results intForColumn:@"day"]-1;
+                int weekDay = [results intForColumn:@"day"];
                 
                 
                 NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -300,7 +303,13 @@ static NSString *CellIdentifier = @"PairCell";
                 self.preferredContentSize = CGSizeMake(0, 20 + 46*resultsCount);
             }else{
                 
-                [self.message setTitle:@"Сегодня нет пар!" forState:UIControlStateNormal];
+                if(allResultsCount > 0){
+                    [self.message setTitle:@"Сегодня нет пар!" forState:UIControlStateNormal];
+                }else{
+                    [self.message setTitle:@"Настройте расписание >>" forState:UIControlStateNormal];
+                }
+                
+                
                 self.preferredContentSize = CGSizeMake(0, 20);
             }
             
@@ -314,7 +323,7 @@ static NSString *CellIdentifier = @"PairCell";
 
     }else{
         /*str = [str stringByAppendingString:[NSString stringWithFormat:@"\ndb file doesnt exist %@", db_path]];*/
-        [self.message setTitle:@"Настройте расписание" forState:UIControlStateNormal];
+        [self.message setTitle:@"Настройте расписание >>" forState:UIControlStateNormal];
     }
     
     //[self.messageLabel setText:str];

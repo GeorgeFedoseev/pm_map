@@ -100,13 +100,13 @@ public class AppScript : MonoBehaviour {
 		// enable Status Bar on Android
 		if(getSDKInt() >= 20){
 			ApplicationChrome.statusBarState = ApplicationChrome.States.VisibleOverContent;
-			//ApplicationChrome.navigationBarState = ApplicationChrome.States.Hidden;
-			ApplicationChrome.statusBarColor = 0xD73C17FF;
+			ApplicationChrome.navigationBarState = ApplicationChrome.States.Visible;
+			ApplicationChrome.statusBarColor = 0xd83c18;
 			//Screen.fullScreen = false;	
 		}else{
 			ApplicationChrome.statusBarState = ApplicationChrome.States.Visible;
-			//ApplicationChrome.navigationBarState = ApplicationChrome.States.Hidden;
-			ApplicationChrome.statusBarColor = 0xD73C17FF;
+			ApplicationChrome.navigationBarState = ApplicationChrome.States.Visible;
+			ApplicationChrome.statusBarColor = 0xd83c18;
 		}
 
 		#endif

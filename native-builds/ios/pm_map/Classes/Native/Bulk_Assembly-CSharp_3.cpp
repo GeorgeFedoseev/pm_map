@@ -51658,263 +51658,239 @@ extern "C"  void U3CUpdateContentsU3Ec__AnonStorey2C_U3CU3Em__3F_m1986349006 (U3
 		bool L_0 = __this->get_editMode_0();
 		if (!L_0)
 		{
-			goto IL_002b;
+			goto IL_000b;
 		}
 	}
+
+IL_000b:
 	{
 		TTPanelScript_t1983791439 * L_1 = __this->get_U3CU3Ef__this_1();
 		NullCheck(L_1);
-		TTWeekScript_t2426821759 * L_2 = L_1->get_currentWeek_9();
+		AppScript_t3488119340 * L_2 = ((CenterPanelScript_t1133230138 *)L_1)->get_app_2();
 		NullCheck(L_2);
-		TTWeekScript_addAddPairButton_m2405553716(L_2, /*hidden argument*/NULL);
-		TTPanelScript_t1983791439 * L_3 = __this->get_U3CU3Ef__this_1();
+		TimetableManger_t3141655579 * L_3 = L_2->get_timetableManager_8();
 		NullCheck(L_3);
-		TTWeekScript_t2426821759 * L_4 = L_3->get_nextWeek_10();
+		WeekTimetable_t3211448027 * L_4 = L_3->get_currentWeek_2();
 		NullCheck(L_4);
-		TTWeekScript_addAddPairButton_m2405553716(L_4, /*hidden argument*/NULL);
-	}
-
-IL_002b:
-	{
-		TTPanelScript_t1983791439 * L_5 = __this->get_U3CU3Ef__this_1();
+		List_1_t2421603869 * L_5 = L_4->get_days_1();
 		NullCheck(L_5);
-		AppScript_t3488119340 * L_6 = ((CenterPanelScript_t1133230138 *)L_5)->get_app_2();
-		NullCheck(L_6);
-		TimetableManger_t3141655579 * L_7 = L_6->get_timetableManager_8();
-		NullCheck(L_7);
-		WeekTimetable_t3211448027 * L_8 = L_7->get_currentWeek_2();
-		NullCheck(L_8);
-		List_1_t2421603869 * L_9 = L_8->get_days_1();
-		NullCheck(L_9);
-		int32_t L_10 = List_1_get_Count_m549888511(L_9, /*hidden argument*/List_1_get_Count_m549888511_MethodInfo_var);
-		if ((((int32_t)L_10) <= ((int32_t)0)))
+		int32_t L_6 = List_1_get_Count_m549888511(L_5, /*hidden argument*/List_1_get_Count_m549888511_MethodInfo_var);
+		if ((((int32_t)L_6) <= ((int32_t)0)))
 		{
-			goto IL_00c8;
+			goto IL_00a8;
 		}
 	}
 	{
-		TTPanelScript_t1983791439 * L_11 = __this->get_U3CU3Ef__this_1();
+		TTPanelScript_t1983791439 * L_7 = __this->get_U3CU3Ef__this_1();
+		NullCheck(L_7);
+		GameObject_t3674682005 * L_8 = L_7->get_no_pairs_label_currentWeek_11();
+		NullCheck(L_8);
+		GameObject_SetActive_m3538205401(L_8, (bool)0, /*hidden argument*/NULL);
+		TTPanelScript_t1983791439 * L_9 = __this->get_U3CU3Ef__this_1();
+		NullCheck(L_9);
+		AppScript_t3488119340 * L_10 = ((CenterPanelScript_t1133230138 *)L_9)->get_app_2();
+		NullCheck(L_10);
+		TimetableManger_t3141655579 * L_11 = L_10->get_timetableManager_8();
 		NullCheck(L_11);
-		GameObject_t3674682005 * L_12 = L_11->get_no_pairs_label_currentWeek_11();
+		WeekTimetable_t3211448027 * L_12 = L_11->get_currentWeek_2();
 		NullCheck(L_12);
-		GameObject_SetActive_m3538205401(L_12, (bool)0, /*hidden argument*/NULL);
-		TTPanelScript_t1983791439 * L_13 = __this->get_U3CU3Ef__this_1();
+		List_1_t2421603869 * L_13 = L_12->get_days_1();
 		NullCheck(L_13);
-		AppScript_t3488119340 * L_14 = ((CenterPanelScript_t1133230138 *)L_13)->get_app_2();
-		NullCheck(L_14);
-		TimetableManger_t3141655579 * L_15 = L_14->get_timetableManager_8();
-		NullCheck(L_15);
-		WeekTimetable_t3211448027 * L_16 = L_15->get_currentWeek_2();
-		NullCheck(L_16);
-		List_1_t2421603869 * L_17 = L_16->get_days_1();
-		NullCheck(L_17);
-		Enumerator_t2441276639  L_18 = List_1_GetEnumerator_m2546615738(L_17, /*hidden argument*/List_1_GetEnumerator_m2546615738_MethodInfo_var);
-		V_1 = L_18;
+		Enumerator_t2441276639  L_14 = List_1_GetEnumerator_m2546615738(L_13, /*hidden argument*/List_1_GetEnumerator_m2546615738_MethodInfo_var);
+		V_1 = L_14;
 	}
 
-IL_0081:
+IL_0061:
 	try
 	{ // begin try (depth: 1)
 		{
-			goto IL_00a6;
+			goto IL_0086;
+		}
+
+IL_0066:
+		{
+			DayTimetable_t1053418317 * L_15 = Enumerator_get_Current_m1472331494((&V_1), /*hidden argument*/Enumerator_get_Current_m1472331494_MethodInfo_var);
+			V_0 = L_15;
+			TTPanelScript_t1983791439 * L_16 = __this->get_U3CU3Ef__this_1();
+			NullCheck(L_16);
+			TTWeekScript_t2426821759 * L_17 = L_16->get_currentWeek_9();
+			DayTimetable_t1053418317 * L_18 = V_0;
+			bool L_19 = __this->get_editMode_0();
+			NullCheck(L_17);
+			TTWeekScript_addDay_m1174807515(L_17, L_18, L_19, (-1), /*hidden argument*/NULL);
 		}
 
 IL_0086:
 		{
-			DayTimetable_t1053418317 * L_19 = Enumerator_get_Current_m1472331494((&V_1), /*hidden argument*/Enumerator_get_Current_m1472331494_MethodInfo_var);
-			V_0 = L_19;
-			TTPanelScript_t1983791439 * L_20 = __this->get_U3CU3Ef__this_1();
-			NullCheck(L_20);
-			TTWeekScript_t2426821759 * L_21 = L_20->get_currentWeek_9();
-			DayTimetable_t1053418317 * L_22 = V_0;
-			bool L_23 = __this->get_editMode_0();
-			NullCheck(L_21);
-			TTWeekScript_addDay_m1174807515(L_21, L_22, L_23, (-1), /*hidden argument*/NULL);
-		}
-
-IL_00a6:
-		{
-			bool L_24 = Enumerator_MoveNext_m995272630((&V_1), /*hidden argument*/Enumerator_MoveNext_m995272630_MethodInfo_var);
-			if (L_24)
+			bool L_20 = Enumerator_MoveNext_m995272630((&V_1), /*hidden argument*/Enumerator_MoveNext_m995272630_MethodInfo_var);
+			if (L_20)
 			{
-				goto IL_0086;
+				goto IL_0066;
 			}
 		}
 
-IL_00b2:
+IL_0092:
 		{
-			IL2CPP_LEAVE(0xC3, FINALLY_00b7);
+			IL2CPP_LEAVE(0xA3, FINALLY_0097);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t3991598821 *)e.ex;
-		goto FINALLY_00b7;
+		goto FINALLY_0097;
 	}
 
-FINALLY_00b7:
+FINALLY_0097:
 	{ // begin finally (depth: 1)
-		Enumerator_t2441276639  L_25 = V_1;
-		Enumerator_t2441276639  L_26 = L_25;
-		Il2CppObject * L_27 = Box(Enumerator_t2441276639_il2cpp_TypeInfo_var, &L_26);
-		NullCheck((Il2CppObject *)L_27);
-		InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t1423340799_il2cpp_TypeInfo_var, (Il2CppObject *)L_27);
-		IL2CPP_END_FINALLY(183)
+		Enumerator_t2441276639  L_21 = V_1;
+		Enumerator_t2441276639  L_22 = L_21;
+		Il2CppObject * L_23 = Box(Enumerator_t2441276639_il2cpp_TypeInfo_var, &L_22);
+		NullCheck((Il2CppObject *)L_23);
+		InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t1423340799_il2cpp_TypeInfo_var, (Il2CppObject *)L_23);
+		IL2CPP_END_FINALLY(151)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(183)
+	IL2CPP_CLEANUP(151)
 	{
-		IL2CPP_JUMP_TBL(0xC3, IL_00c3)
+		IL2CPP_JUMP_TBL(0xA3, IL_00a3)
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t3991598821 *)
 	}
 
-IL_00c3:
+IL_00a3:
 	{
-		goto IL_00d9;
+		goto IL_00b9;
 	}
 
-IL_00c8:
+IL_00a8:
 	{
-		TTPanelScript_t1983791439 * L_28 = __this->get_U3CU3Ef__this_1();
+		TTPanelScript_t1983791439 * L_24 = __this->get_U3CU3Ef__this_1();
+		NullCheck(L_24);
+		GameObject_t3674682005 * L_25 = L_24->get_no_pairs_label_currentWeek_11();
+		NullCheck(L_25);
+		GameObject_SetActive_m3538205401(L_25, (bool)1, /*hidden argument*/NULL);
+	}
+
+IL_00b9:
+	{
+		TTPanelScript_t1983791439 * L_26 = __this->get_U3CU3Ef__this_1();
+		NullCheck(L_26);
+		AppScript_t3488119340 * L_27 = ((CenterPanelScript_t1133230138 *)L_26)->get_app_2();
+		NullCheck(L_27);
+		TimetableManger_t3141655579 * L_28 = L_27->get_timetableManager_8();
 		NullCheck(L_28);
-		GameObject_t3674682005 * L_29 = L_28->get_no_pairs_label_currentWeek_11();
+		WeekTimetable_t3211448027 * L_29 = L_28->get_nextWeek_3();
 		NullCheck(L_29);
-		GameObject_SetActive_m3538205401(L_29, (bool)1, /*hidden argument*/NULL);
-	}
-
-IL_00d9:
-	{
-		TTPanelScript_t1983791439 * L_30 = __this->get_U3CU3Ef__this_1();
+		List_1_t2421603869 * L_30 = L_29->get_days_1();
 		NullCheck(L_30);
-		AppScript_t3488119340 * L_31 = ((CenterPanelScript_t1133230138 *)L_30)->get_app_2();
-		NullCheck(L_31);
-		TimetableManger_t3141655579 * L_32 = L_31->get_timetableManager_8();
-		NullCheck(L_32);
-		WeekTimetable_t3211448027 * L_33 = L_32->get_nextWeek_3();
-		NullCheck(L_33);
-		List_1_t2421603869 * L_34 = L_33->get_days_1();
-		NullCheck(L_34);
-		int32_t L_35 = List_1_get_Count_m549888511(L_34, /*hidden argument*/List_1_get_Count_m549888511_MethodInfo_var);
-		if ((((int32_t)L_35) <= ((int32_t)0)))
+		int32_t L_31 = List_1_get_Count_m549888511(L_30, /*hidden argument*/List_1_get_Count_m549888511_MethodInfo_var);
+		if ((((int32_t)L_31) <= ((int32_t)0)))
 		{
-			goto IL_0176;
+			goto IL_0156;
 		}
 	}
 	{
-		TTPanelScript_t1983791439 * L_36 = __this->get_U3CU3Ef__this_1();
+		TTPanelScript_t1983791439 * L_32 = __this->get_U3CU3Ef__this_1();
+		NullCheck(L_32);
+		GameObject_t3674682005 * L_33 = L_32->get_no_pairs_label_nextWeek_12();
+		NullCheck(L_33);
+		GameObject_SetActive_m3538205401(L_33, (bool)0, /*hidden argument*/NULL);
+		TTPanelScript_t1983791439 * L_34 = __this->get_U3CU3Ef__this_1();
+		NullCheck(L_34);
+		AppScript_t3488119340 * L_35 = ((CenterPanelScript_t1133230138 *)L_34)->get_app_2();
+		NullCheck(L_35);
+		TimetableManger_t3141655579 * L_36 = L_35->get_timetableManager_8();
 		NullCheck(L_36);
-		GameObject_t3674682005 * L_37 = L_36->get_no_pairs_label_nextWeek_12();
+		WeekTimetable_t3211448027 * L_37 = L_36->get_nextWeek_3();
 		NullCheck(L_37);
-		GameObject_SetActive_m3538205401(L_37, (bool)0, /*hidden argument*/NULL);
-		TTPanelScript_t1983791439 * L_38 = __this->get_U3CU3Ef__this_1();
+		List_1_t2421603869 * L_38 = L_37->get_days_1();
 		NullCheck(L_38);
-		AppScript_t3488119340 * L_39 = ((CenterPanelScript_t1133230138 *)L_38)->get_app_2();
-		NullCheck(L_39);
-		TimetableManger_t3141655579 * L_40 = L_39->get_timetableManager_8();
-		NullCheck(L_40);
-		WeekTimetable_t3211448027 * L_41 = L_40->get_nextWeek_3();
-		NullCheck(L_41);
-		List_1_t2421603869 * L_42 = L_41->get_days_1();
-		NullCheck(L_42);
-		Enumerator_t2441276639  L_43 = List_1_GetEnumerator_m2546615738(L_42, /*hidden argument*/List_1_GetEnumerator_m2546615738_MethodInfo_var);
-		V_3 = L_43;
+		Enumerator_t2441276639  L_39 = List_1_GetEnumerator_m2546615738(L_38, /*hidden argument*/List_1_GetEnumerator_m2546615738_MethodInfo_var);
+		V_3 = L_39;
 	}
 
-IL_012f:
+IL_010f:
 	try
 	{ // begin try (depth: 1)
 		{
-			goto IL_0154;
+			goto IL_0134;
+		}
+
+IL_0114:
+		{
+			DayTimetable_t1053418317 * L_40 = Enumerator_get_Current_m1472331494((&V_3), /*hidden argument*/Enumerator_get_Current_m1472331494_MethodInfo_var);
+			V_2 = L_40;
+			TTPanelScript_t1983791439 * L_41 = __this->get_U3CU3Ef__this_1();
+			NullCheck(L_41);
+			TTWeekScript_t2426821759 * L_42 = L_41->get_nextWeek_10();
+			DayTimetable_t1053418317 * L_43 = V_2;
+			bool L_44 = __this->get_editMode_0();
+			NullCheck(L_42);
+			TTWeekScript_addDay_m1174807515(L_42, L_43, L_44, (-1), /*hidden argument*/NULL);
 		}
 
 IL_0134:
 		{
-			DayTimetable_t1053418317 * L_44 = Enumerator_get_Current_m1472331494((&V_3), /*hidden argument*/Enumerator_get_Current_m1472331494_MethodInfo_var);
-			V_2 = L_44;
-			TTPanelScript_t1983791439 * L_45 = __this->get_U3CU3Ef__this_1();
-			NullCheck(L_45);
-			TTWeekScript_t2426821759 * L_46 = L_45->get_nextWeek_10();
-			DayTimetable_t1053418317 * L_47 = V_2;
-			bool L_48 = __this->get_editMode_0();
-			NullCheck(L_46);
-			TTWeekScript_addDay_m1174807515(L_46, L_47, L_48, (-1), /*hidden argument*/NULL);
-		}
-
-IL_0154:
-		{
-			bool L_49 = Enumerator_MoveNext_m995272630((&V_3), /*hidden argument*/Enumerator_MoveNext_m995272630_MethodInfo_var);
-			if (L_49)
+			bool L_45 = Enumerator_MoveNext_m995272630((&V_3), /*hidden argument*/Enumerator_MoveNext_m995272630_MethodInfo_var);
+			if (L_45)
 			{
-				goto IL_0134;
+				goto IL_0114;
 			}
 		}
 
-IL_0160:
+IL_0140:
 		{
-			IL2CPP_LEAVE(0x171, FINALLY_0165);
+			IL2CPP_LEAVE(0x151, FINALLY_0145);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t3991598821 *)e.ex;
-		goto FINALLY_0165;
+		goto FINALLY_0145;
 	}
 
-FINALLY_0165:
+FINALLY_0145:
 	{ // begin finally (depth: 1)
-		Enumerator_t2441276639  L_50 = V_3;
-		Enumerator_t2441276639  L_51 = L_50;
-		Il2CppObject * L_52 = Box(Enumerator_t2441276639_il2cpp_TypeInfo_var, &L_51);
-		NullCheck((Il2CppObject *)L_52);
-		InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t1423340799_il2cpp_TypeInfo_var, (Il2CppObject *)L_52);
-		IL2CPP_END_FINALLY(357)
+		Enumerator_t2441276639  L_46 = V_3;
+		Enumerator_t2441276639  L_47 = L_46;
+		Il2CppObject * L_48 = Box(Enumerator_t2441276639_il2cpp_TypeInfo_var, &L_47);
+		NullCheck((Il2CppObject *)L_48);
+		InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t1423340799_il2cpp_TypeInfo_var, (Il2CppObject *)L_48);
+		IL2CPP_END_FINALLY(325)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(357)
+	IL2CPP_CLEANUP(325)
 	{
-		IL2CPP_JUMP_TBL(0x171, IL_0171)
+		IL2CPP_JUMP_TBL(0x151, IL_0151)
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t3991598821 *)
 	}
 
-IL_0171:
+IL_0151:
 	{
-		goto IL_0187;
+		goto IL_0167;
 	}
 
-IL_0176:
+IL_0156:
 	{
-		TTPanelScript_t1983791439 * L_53 = __this->get_U3CU3Ef__this_1();
-		NullCheck(L_53);
-		GameObject_t3674682005 * L_54 = L_53->get_no_pairs_label_nextWeek_12();
-		NullCheck(L_54);
-		GameObject_SetActive_m3538205401(L_54, (bool)1, /*hidden argument*/NULL);
+		TTPanelScript_t1983791439 * L_49 = __this->get_U3CU3Ef__this_1();
+		NullCheck(L_49);
+		GameObject_t3674682005 * L_50 = L_49->get_no_pairs_label_nextWeek_12();
+		NullCheck(L_50);
+		GameObject_SetActive_m3538205401(L_50, (bool)1, /*hidden argument*/NULL);
 	}
 
-IL_0187:
+IL_0167:
 	{
-		bool L_55 = __this->get_editMode_0();
-		if (!L_55)
+		bool L_51 = __this->get_editMode_0();
+		if (!L_51)
 		{
-			goto IL_01b2;
+			goto IL_0172;
 		}
 	}
-	{
-		TTPanelScript_t1983791439 * L_56 = __this->get_U3CU3Ef__this_1();
-		NullCheck(L_56);
-		TTWeekScript_t2426821759 * L_57 = L_56->get_currentWeek_9();
-		NullCheck(L_57);
-		TTWeekScript_addAddPairButton_m2405553716(L_57, /*hidden argument*/NULL);
-		TTPanelScript_t1983791439 * L_58 = __this->get_U3CU3Ef__this_1();
-		NullCheck(L_58);
-		TTWeekScript_t2426821759 * L_59 = L_58->get_nextWeek_10();
-		NullCheck(L_59);
-		TTWeekScript_addAddPairButton_m2405553716(L_59, /*hidden argument*/NULL);
-	}
 
-IL_01b2:
+IL_0172:
 	{
-		TTPanelScript_t1983791439 * L_60 = __this->get_U3CU3Ef__this_1();
-		bool L_61 = __this->get_editMode_0();
-		NullCheck(L_60);
-		TTPanelScript_UpdateLayout_m498422930(L_60, L_61, /*hidden argument*/NULL);
+		TTPanelScript_t1983791439 * L_52 = __this->get_U3CU3Ef__this_1();
+		bool L_53 = __this->get_editMode_0();
+		NullCheck(L_52);
+		TTPanelScript_UpdateLayout_m498422930(L_52, L_53, /*hidden argument*/NULL);
 		return;
 	}
 }
