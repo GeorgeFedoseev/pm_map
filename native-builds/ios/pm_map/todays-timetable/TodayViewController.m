@@ -22,6 +22,8 @@
 
 //@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (weak, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet UIButton *message;
+
 
 @property NSArray *todayPairs;
 
@@ -54,7 +56,7 @@ static NSString *CellIdentifier = @"PairCell";
     self.preferredContentSize = CGSizeMake(0, 200);
     
     
-    [self loadFile];
+    [self update];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,7 +71,7 @@ static NSString *CellIdentifier = @"PairCell";
     // If there's no update required, use NCUpdateResultNoData
     // If there's an update, use NCUpdateResultNewData
     
-    [self loadFile];
+    [self update];
 
     completionHandler(NCUpdateResultNewData);
 }
@@ -130,7 +132,26 @@ static NSString *CellIdentifier = @"PairCell";
 
 }
 
-- (void) loadFile {
+- (IBAction)goToAppClick:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"pmmap://"];
+    
+    [self.extensionContext openURL:url completionHandler:^(BOOL success) {
+        if (success) {
+            
+            // Success
+            //[self.room setTitle:@"success" forState:UIControlStateNormal];
+        }
+        
+        else {
+            
+            // Fail
+            //[self.room setTitle:@"fail" forState:UIControlStateNormal];
+        }
+    }];
+
+}
+
+- (void) update {
     _todayPairs = [NSArray array];
     
     NSString *str = @"";
@@ -197,7 +218,7 @@ static NSString *CellIdentifier = @"PairCell";
                 
                 
                 bool _evenWeek = [results intForColumn:@"weekType"] == 1;
-                int weekDay = [results intForColumn:@"day"];
+                int weekDay = [results intForColumn:@"day"]-1;
                 
                 
                 NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -230,8 +251,25 @@ static NSString *CellIdentifier = @"PairCell";
             
             str = [str stringByAppendingString:[NSString stringWithFormat:@"results: %i", resultsCount]];
             
-            // expand height
-            self.preferredContentSize = CGSizeMake(0, 46*resultsCount);
+            
+            
+            
+            if(resultsCount > 0){
+                if(resultsCount == 1){
+                    [self.message setTitle:@"Сегодня 1 пара:"  forState:UIControlStateNormal];
+                }else if (resultsCount%10 <= 4){
+                    [self.message setTitle:[NSString stringWithFormat:@"Сегодня %i пары:", resultsCount] forState:UIControlStateNormal];
+                }else {
+                    [self.message setTitle:[NSString stringWithFormat:@"Сегодня %i пар:", resultsCount] forState:UIControlStateNormal];
+                }
+                // expand height
+                self.preferredContentSize = CGSizeMake(0, 20 + 46*resultsCount);
+            }else{
+                
+                [self.message setTitle:@"Сегодня нет пар!" forState:UIControlStateNormal];
+                self.preferredContentSize = CGSizeMake(0, 20);
+            }
+            
             
             
         }else{
@@ -241,15 +279,11 @@ static NSString *CellIdentifier = @"PairCell";
         [database close];
 
     }else{
-        str = [str stringByAppendingString:[NSString stringWithFormat:@"\ndb file doesnt exist %@", db_path]];
+        /*str = [str stringByAppendingString:[NSString stringWithFormat:@"\ndb file doesnt exist %@", db_path]];*/
+        [self.message setTitle:@"Настройте расписание" forState:UIControlStateNormal];
     }
     
-    
-    //[_messageLabel setText: str ];
-    
-    
-    
-    
+    //[self.messageLabel setText:str];
 }
 
 - (bool) isWeekEven {

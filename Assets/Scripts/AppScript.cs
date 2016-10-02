@@ -91,11 +91,6 @@ public class AppScript : MonoBehaviour {
 
 	void Awake(){
 
-		#if UNITY_EDITOR
-		OnOpenURLComplete ("pmmap://room/208Д");
-		#endif
-
-
 		/*DEBUG*/
 		if (CLEAN_EVERYTHING_ON_START) {
 			PlayerPrefs.DeleteAll ();
@@ -311,10 +306,7 @@ public class AppScript : MonoBehaviour {
 	}
 
 
-	void OnOpenURLComplete(string link){
-		
 
-	}
 
 	void DeepLinkFocusRoom(string room){
 		Debug.LogWarning ("focus room "+room);
@@ -335,8 +327,10 @@ public class AppScript : MonoBehaviour {
 		#if UNITY_IOS && !UNITY_EDITOR
 
 		var link = _GetDeepLink ();
+		var link_r = link.Replace ("pmmap://", "").Trim();
+		var link_parts = link_r.Split('/');
 
-		if (link == lastDeepLink) {
+		if (link == lastDeepLink || link_parts.Length > 0) {
 			return false;
 		}
 
