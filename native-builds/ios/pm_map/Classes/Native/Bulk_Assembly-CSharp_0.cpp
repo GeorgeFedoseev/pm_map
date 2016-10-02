@@ -470,10 +470,10 @@ struct Anim_t354337085;
 #include "UnityEngine_UnityEngine_Quaternion1553702882.h"
 #include "AssemblyU2DCSharp_TTPanelScript1983791439.h"
 #include "AssemblyU2DCSharp_RoomScript2905000358.h"
+#include "mscorlib_System_Char2862622538.h"
 #include "System_System_Uri1116831938MethodDeclarations.h"
 #include "mscorlib_System_Collections_Generic_Dictionary_2_g1974256870MethodDeclarations.h"
 #include "mscorlib_System_Collections_Generic_Dictionary_2_g1974256870.h"
-#include "mscorlib_System_Char2862622538.h"
 #include "AssemblyU2DCSharp_ArrowPointerScript1893640191.h"
 #include "AssemblyU2DCSharp_ArrowPointerScript1893640191MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Renderer3076687687MethodDeclarations.h"
@@ -4683,13 +4683,6 @@ IL_0022:
 		return;
 	}
 }
-// System.Void AppScript::OnOpenURLComplete(System.String)
-extern "C"  void AppScript_OnOpenURLComplete_m468396326 (AppScript_t3488119340 * __this, String_t* ___link0, const MethodInfo* method)
-{
-	{
-		return;
-	}
-}
 // System.Void AppScript::DeepLinkFocusRoom(System.String)
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral265945437;
@@ -4745,6 +4738,8 @@ IL_0058:
 // System.Boolean AppScript::HasNewDeepLink()
 extern Il2CppClass* AppScript_t3488119340_il2cpp_TypeInfo_var;
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* CharU5BU5D_t3324145743_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral3088435451;
 extern const uint32_t AppScript_HasNewDeepLink_m3345536829_MetadataUsageId;
 extern "C"  bool AppScript_HasNewDeepLink_m3345536829 (AppScript_t3488119340 * __this, const MethodInfo* method)
 {
@@ -4755,24 +4750,51 @@ extern "C"  bool AppScript_HasNewDeepLink_m3345536829 (AppScript_t3488119340 * _
 		s_Il2CppMethodIntialized = true;
 	}
 	String_t* V_0 = NULL;
+	String_t* V_1 = NULL;
+	StringU5BU5D_t4054002952* V_2 = NULL;
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(AppScript_t3488119340_il2cpp_TypeInfo_var);
 		String_t* L_0 = AppScript__GetDeepLink_m2694011679(NULL /*static, unused*/, /*hidden argument*/NULL);
 		V_0 = L_0;
 		String_t* L_1 = V_0;
-		String_t* L_2 = __this->get_lastDeepLink_29();
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		bool L_3 = String_op_Equality_m1260523650(NULL /*static, unused*/, L_1, L_2, /*hidden argument*/NULL);
-		if (!L_3)
+		String_t* L_2 = ((String_t_StaticFields*)String_t_il2cpp_TypeInfo_var->static_fields)->get_Empty_2();
+		NullCheck(L_1);
+		String_t* L_3 = String_Replace_m2915759397(L_1, _stringLiteral3088435451, L_2, /*hidden argument*/NULL);
+		NullCheck(L_3);
+		String_t* L_4 = String_Trim_m1030489823(L_3, /*hidden argument*/NULL);
+		V_1 = L_4;
+		String_t* L_5 = V_1;
+		CharU5BU5D_t3324145743* L_6 = ((CharU5BU5D_t3324145743*)SZArrayNew(CharU5BU5D_t3324145743_il2cpp_TypeInfo_var, (uint32_t)1));
+		NullCheck(L_6);
+		IL2CPP_ARRAY_BOUNDS_CHECK(L_6, 0);
+		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(0), (Il2CppChar)((int32_t)47));
+		NullCheck(L_5);
+		StringU5BU5D_t4054002952* L_7 = String_Split_m290179486(L_5, L_6, /*hidden argument*/NULL);
+		V_2 = L_7;
+		String_t* L_8 = V_0;
+		String_t* L_9 = __this->get_lastDeepLink_29();
+		bool L_10 = String_op_Equality_m1260523650(NULL /*static, unused*/, L_8, L_9, /*hidden argument*/NULL);
+		if (L_10)
 		{
-			goto IL_0019;
+			goto IL_0048;
 		}
 	}
+	{
+		StringU5BU5D_t4054002952* L_11 = V_2;
+		NullCheck(L_11);
+		if ((((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_11)->max_length))))) <= ((int32_t)0)))
+		{
+			goto IL_004a;
+		}
+	}
+
+IL_0048:
 	{
 		return (bool)0;
 	}
 
-IL_0019:
+IL_004a:
 	{
 		return (bool)1;
 	}

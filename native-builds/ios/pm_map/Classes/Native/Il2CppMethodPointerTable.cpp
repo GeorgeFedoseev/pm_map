@@ -19059,7 +19059,6 @@ extern "C" void AppScript_openTimetableTour_m2259949868 ();
 extern "C" void AppScript_closeTimetable_m2528544590 ();
 extern "C" void AppScript_UpdateTimeBasedElements_m1799663633 ();
 extern "C" void AppScript_OnApplicationPause_m1231330017 ();
-extern "C" void AppScript_OnOpenURLComplete_m468396326 ();
 extern "C" void AppScript_DeepLinkFocusRoom_m4059669816 ();
 extern "C" void AppScript_HasNewDeepLink_m3345536829 ();
 extern "C" void AppScript_ProcessDeepLinking_m3381373842 ();
@@ -21499,7 +21498,7 @@ extern "C" void VertPivot_Sphere_Start_m1706900725 ();
 extern "C" void VertPivot_Sphere_Update_m1380167096 ();
 extern "C" void VertPivot_Sphere_ClampAngle_m2361377154 ();
 extern "C" void VertPivot_Sphere_Main_m3745296936 ();
-extern const Il2CppMethodPointer g_MethodPointers[21488] = 
+extern const Il2CppMethodPointer g_MethodPointers[21487] = 
 {
 	Locale_GetText_m2389348044,
 	Locale_GetText_m2218462520,
@@ -40549,7 +40548,6 @@ extern const Il2CppMethodPointer g_MethodPointers[21488] =
 	AppScript_closeTimetable_m2528544590,
 	AppScript_UpdateTimeBasedElements_m1799663633,
 	AppScript_OnApplicationPause_m1231330017,
-	AppScript_OnOpenURLComplete_m468396326,
 	AppScript_DeepLinkFocusRoom_m4059669816,
 	AppScript_HasNewDeepLink_m3345536829,
 	AppScript_ProcessDeepLinking_m3381373842,

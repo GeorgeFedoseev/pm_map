@@ -117,11 +117,45 @@ static NSString *CellIdentifier = @"PairCell";
     }
     
     
-    cell.startTime.text = ((Pair*)_todayPairs[indexPath.row]).startTime;
-    cell.endTime.text = ((Pair*)_todayPairs[indexPath.row]).endTime;
+    NSString *startTimeStr = ((Pair*)_todayPairs[indexPath.row]).startTime;
+    cell.startTime.text = startTimeStr;
+    
+    NSString *endTimeStr = ((Pair*)_todayPairs[indexPath.row]).endTime;
+    cell.endTime.text = endTimeStr;
+    
+    NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm"];
+    
+    [dateFormatter setDefaultDate:[NSDate date]];
+    
+    
+    
+    NSDate *startDate = [dateFormatter dateFromString:startTimeStr];
+    
+    NSDate *endDate = [dateFormatter dateFromString:endTimeStr];
+    
+    if([self isDate:[NSDate date] BetweenDate:startDate andDate:endDate])
+    {
+        // current pair
+        [cell.startTime setTextColor:[UIColor orangeColor]];
+        [cell.endTime setTextColor:[UIColor orangeColor]];
+    }else{
+        [cell.startTime setTextColor:[UIColor whiteColor]];
+        [cell.endTime setTextColor:[UIColor whiteColor]];
+    }
+    
+    [dateFormatter setDateFormat:@"HH:mm dd-MM-yyyy"];
+    
+    //[self.message setTitle: [dateFormatter stringFromDate:startDate]forState:UIControlStateNormal];
+    
+    
     
     return cell;
     
+}
+
+-(BOOL) isDate: (NSDate *) date BetweenDate:(NSDate*)beginDate andDate:(NSDate*)endDate {
+    return (([date compare:beginDate] != NSOrderedAscending) && ([date compare:endDate] != NSOrderedDescending));
 }
 
 
@@ -271,7 +305,7 @@ static NSString *CellIdentifier = @"PairCell";
             }
             
             
-            
+        
         }else{
             str = [str stringByAppendingString:[NSString stringWithFormat:@"\nfailed to open database at path: %@", db_path]];
         }
@@ -284,6 +318,7 @@ static NSString *CellIdentifier = @"PairCell";
     }
     
     //[self.messageLabel setText:str];
+    [self.table reloadData];
 }
 
 - (bool) isWeekEven {

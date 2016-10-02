@@ -61,8 +61,6 @@ extern "C"  void AppScript_closeTimetable_m2528544590 (AppScript_t3488119340 * _
 extern "C"  void AppScript_UpdateTimeBasedElements_m1799663633 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::OnApplicationPause(System.Boolean)
 extern "C"  void AppScript_OnApplicationPause_m1231330017 (AppScript_t3488119340 * __this, bool ___pause0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void AppScript::OnOpenURLComplete(System.String)
-extern "C"  void AppScript_OnOpenURLComplete_m468396326 (AppScript_t3488119340 * __this, String_t* ___link0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::DeepLinkFocusRoom(System.String)
 extern "C"  void AppScript_DeepLinkFocusRoom_m4059669816 (AppScript_t3488119340 * __this, String_t* ___room0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean AppScript::HasNewDeepLink()
