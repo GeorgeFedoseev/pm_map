@@ -4777,24 +4777,24 @@ extern "C"  bool AppScript_HasNewDeepLink_m3345536829 (AppScript_t3488119340 * _
 		bool L_10 = String_op_Equality_m1260523650(NULL /*static, unused*/, L_8, L_9, /*hidden argument*/NULL);
 		if (L_10)
 		{
-			goto IL_0048;
+			goto IL_0047;
 		}
 	}
 	{
 		StringU5BU5D_t4054002952* L_11 = V_2;
 		NullCheck(L_11);
-		if ((((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_11)->max_length))))) <= ((int32_t)0)))
+		if ((((int32_t)((int32_t)(((Il2CppArray *)L_11)->max_length)))))
 		{
-			goto IL_004a;
+			goto IL_0049;
 		}
 	}
 
-IL_0048:
+IL_0047:
 	{
 		return (bool)0;
 	}
 
-IL_004a:
+IL_0049:
 	{
 		return (bool)1;
 	}

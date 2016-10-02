@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,12 +40,12 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="It3-dB-YSa" secondAttribute="trailing" constant="25" id="HOQ-2g-akb"/>
-                            <constraint firstItem="It3-dB-YSa" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="40" id="HwX-Pg-X8a"/>
                             <constraint firstItem="46v-uA-tT1" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="K25-fB-Nwh"/>
+                            <constraint firstItem="It3-dB-YSa" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" constant="-39" id="KFy-lk-zPi"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="46v-uA-tT1" secondAttribute="bottom" id="QQv-lO-fZN"/>
                             <constraint firstItem="46v-uA-tT1" firstAttribute="top" secondItem="It3-dB-YSa" secondAttribute="bottom" id="nzb-TW-XQb"/>
                             <constraint firstItem="46v-uA-tT1" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" id="r1N-i3-xN0"/>
+                            <constraint firstItem="It3-dB-YSa" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="50" id="sra-Jx-6Zc"/>
                             <constraint firstItem="It3-dB-YSa" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="xO9-Yb-6oM"/>
                         </constraints>
                     </view>
