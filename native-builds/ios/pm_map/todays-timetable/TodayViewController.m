@@ -22,9 +22,12 @@
 //@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet UIButton *message;
+@property (weak, nonatomic) IBOutlet UIButton *bigMessage;
 
 
 @property NSArray *todayPairs;
+
+@property float desiredHeight;
 
 @end
 
@@ -37,10 +40,12 @@ static NSString *CellIdentifier = @"PairCell";
     [super viewDidLoad];
     
     
-    
-    
     // Do any additional setup after loading the view from its nib.
-    
+   /* if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+        self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
+    } else {
+        // Fallback on earlier versions
+    }*/
     
     
      [self.table registerNib:[UINib nibWithNibName:@"PairCell" bundle:nil] forCellReuseIdentifier:CellIdentifier];
@@ -54,10 +59,36 @@ static NSString *CellIdentifier = @"PairCell";
     p.name = @"Пара1";
     _todayPairs = [_todayPairs arrayByAddingObject:p];
 
-    self.preferredContentSize = CGSizeMake(0, 200);
+    self.desiredHeight = 200;
+    self.preferredContentSize = CGSizeMake(0, self.desiredHeight);
     
     
     [self update];
+    
+    
+}
+
+
+- (void) updateColors {
+    //NSLog([[UIDevice currentDevice] systemVersion]);
+    UIColor *color;
+    
+    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+        NSLog(@"iOS version >= 10");
+        color = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    } else {
+        NSLog(@"iOS version < 10");
+        color = [UIColor colorWithRed:0.666 green:0.666 blue:0.666 alpha:1];
+    }
+    
+    [self.message setTitleColor:color forState:UIControlStateNormal];
+}
+
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self updateColors];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,6 +106,15 @@ static NSString *CellIdentifier = @"PairCell";
     [self update];
 
     completionHandler(NCUpdateResultNewData);
+}
+
+- (void)widgetActiveDisplayModeDidChange:(NCWidgetDisplayMode)activeDisplayMode withMaximumSize:(CGSize)maxSize{
+    if (activeDisplayMode == NCWidgetDisplayModeCompact){
+        self.preferredContentSize = CGSizeMake(0.0, 20.0);
+    }
+    else if (activeDisplayMode == NCWidgetDisplayModeExpanded){
+        self.preferredContentSize = CGSizeMake(0.0, self.desiredHeight);
+    }
 }
 
 - (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)margins
@@ -135,25 +175,39 @@ static NSString *CellIdentifier = @"PairCell";
     
     NSDate *endDate = [dateFormatter dateFromString:endTimeStr];
     
-    if([self isDate:[NSDate date] BetweenDate:startDate andDate:endDate])
-    {
-        // current pair
-        [cell.startTime setTextColor:[UIColor orangeColor]];
-        [cell.endTime setTextColor:[UIColor orangeColor]];
-    }else{
-        [cell.startTime setTextColor:[UIColor whiteColor]];
-        [cell.endTime setTextColor:[UIColor whiteColor]];
-    }
+    
     
     [dateFormatter setDateFormat:@"HH:mm dd-MM-yyyy"];
     
     //[self.message setTitle: [dateFormatter stringFromDate:startDate]forState:UIControlStateNormal];
     
     
+    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+        [cell.startTime setTextColor:[[UIColor blackColor] colorWithAlphaComponent:0.8]];
+        [cell.endTime setTextColor:[[UIColor blackColor] colorWithAlphaComponent:0.8]];
+        [cell.name setTextColor:[[UIColor blackColor] colorWithAlphaComponent:0.8]];
+        [cell.lecturer setTextColor:[[UIColor blackColor] colorWithAlphaComponent:0.5]];
+    }else{
+        [cell.startTime setTextColor:[UIColor whiteColor]];
+        [cell.endTime setTextColor:[UIColor whiteColor]];
+    }
+    
+    
+    
+    if([self isDate:[NSDate date] BetweenDate:startDate andDate:endDate])
+    {
+        // current pair
+        [cell.startTime setTextColor: [UIColor orangeColor]];
+        [cell.endTime setTextColor:  [UIColor colorWithRed:237/255.0 green:118/255.0 blue:14/255.0 alpha:1]];
+        
+    }
+    
     
     return cell;
     
 }
+
+
 
 -(BOOL) isDate: (NSDate *) date BetweenDate:(NSDate*)beginDate andDate:(NSDate*)endDate {
     return (([date compare:beginDate] != NSOrderedAscending) && ([date compare:endDate] != NSOrderedDescending));
@@ -255,7 +309,7 @@ static NSString *CellIdentifier = @"PairCell";
                 
                 
                 bool _evenWeek = [results intForColumn:@"weekType"] == 1;
-                int weekDay = [results intForColumn:@"day"]-1;
+                int weekDay = [results intForColumn:@"day"];
                 
                 
                 NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -292,6 +346,21 @@ static NSString *CellIdentifier = @"PairCell";
             
             
             if(resultsCount > 0){
+                // table
+                
+                if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+                    self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
+                } else {
+                    // Fallback on earlier versions
+                }
+                
+                self.table.alpha = 1;
+                self.table.userInteractionEnabled = YES;
+                
+                self.message.alpha = 1;
+                self.bigMessage.alpha = 0;
+                self.bigMessage.userInteractionEnabled = NO;
+                
                 NSString *first_part = @"";
                 NSString *last_part = @"";
                 
@@ -305,12 +374,12 @@ static NSString *CellIdentifier = @"PairCell";
                     first_part = @"Сегодня";
                     last_part = @" 🙂";
                 }else {
-                    first_part = @"Сегодня ";
+                    first_part = @"Сегодня";
                     last_part = @" 😬";
                 }
                 
                 
-                if(resultsCount)
+                
                 
                 if(resultsCount == 1){
                     [self.message setTitle:[NSString stringWithFormat:@"%@ 1 пара%@", first_part, last_part]  forState:UIControlStateNormal];
@@ -320,19 +389,60 @@ static NSString *CellIdentifier = @"PairCell";
                     [self.message setTitle:[NSString stringWithFormat:@"%@ %i пар%@", first_part, resultsCount, last_part] forState:UIControlStateNormal];
                 }
                 // expand height
-                self.preferredContentSize = CGSizeMake(0, 20 + 46*resultsCount);
+                
+                self.desiredHeight = 20 + 46*resultsCount;
+                if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+                    self.desiredHeight += 5;
+                }
+                self.preferredContentSize = CGSizeMake(0, self.desiredHeight);
             }else{
                 
+                // small message
+                
+                if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+                    self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeCompact;
+                } else {
+                    // Fallback on earlier versions
+                }
+                
+                self.table.alpha = 0;
+                self.table.userInteractionEnabled = NO;
+                
+                NSString *message_txt = @"";
+                
                 if(allResultsCount > 0){
-                    [self.message setTitle:@"Сегодня нет пар! 🎉" forState:UIControlStateNormal];
+                    message_txt = @"Сегодня нет пар! 🎉";
                 }else{
-                    [self.message setTitle:@"Настройте расписание ⚙" forState:UIControlStateNormal];
+                    message_txt = @"Настройте расписание ⚙";
                 }
                 
                 
-                self.preferredContentSize = CGSizeMake(0, 20);
+                if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+                    
+                    self.message.alpha = 0;
+                    self.bigMessage.alpha = 1;
+                    self.bigMessage.userInteractionEnabled = YES;
+                    [self.bigMessage setTitle:message_txt forState:UIControlStateNormal];
+                    
+                }else{
+                    self.message.alpha = 1;
+                    self.bigMessage.alpha = 0;
+                    self.bigMessage.userInteractionEnabled = NO;
+                    [self.message setTitle:message_txt forState:UIControlStateNormal];
+                }
+                
+                
+                self.desiredHeight = 20;
+                if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+                    self.desiredHeight += 5;
+                }
+                self.preferredContentSize = CGSizeMake(0, self.desiredHeight);
+                
             }
             
+            [self.message layoutIfNeeded];
+            [self.bigMessage layoutIfNeeded];
+            [self.table layoutIfNeeded];
             
         
         }else{
@@ -343,7 +453,7 @@ static NSString *CellIdentifier = @"PairCell";
 
     }else{
         /*str = [str stringByAppendingString:[NSString stringWithFormat:@"\ndb file doesnt exist %@", db_path]];*/
-        [self.message setTitle:@"Настройте расписание >>" forState:UIControlStateNormal];
+        //[self.message setTitle:@"Настройте расписание >>" forState:UIControlStateNormal];
     }
     
     //[self.messageLabel setText:str];

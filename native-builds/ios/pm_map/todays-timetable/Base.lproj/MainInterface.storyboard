@@ -18,6 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BQ-vz-7Qa" userLabel="BigMessage">
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Сегодня нет пар!">
+                                    <color key="titleColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToAppClick:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="gcV-yn-geu"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="46" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="46v-uA-tT1">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -26,13 +35,13 @@
                                     <outlet property="delegate" destination="M4Y-Lb-cyx" id="yk3-w6-3ev"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="It3-dB-YSa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="It3-dB-YSa">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="OSd-m3-I8k"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Сегодня нет пар!">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="goToAppClick:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="tmf-P6-gSH"/>
@@ -40,10 +49,14 @@
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="5BQ-vz-7Qa" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="5yh-5j-OOS"/>
                             <constraint firstItem="46v-uA-tT1" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="K25-fB-Nwh"/>
-                            <constraint firstItem="It3-dB-YSa" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" constant="-39" id="KFy-lk-zPi"/>
+                            <constraint firstItem="It3-dB-YSa" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" constant="-50" id="KFy-lk-zPi"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="46v-uA-tT1" secondAttribute="bottom" id="QQv-lO-fZN"/>
+                            <constraint firstItem="5BQ-vz-7Qa" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" id="hSw-2X-AV8"/>
+                            <constraint firstItem="5BQ-vz-7Qa" firstAttribute="height" secondItem="S3S-Oj-5AN" secondAttribute="height" id="lTz-J4-qa1"/>
                             <constraint firstItem="46v-uA-tT1" firstAttribute="top" secondItem="It3-dB-YSa" secondAttribute="bottom" id="nzb-TW-XQb"/>
+                            <constraint firstItem="5BQ-vz-7Qa" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="qqy-fD-TJx"/>
                             <constraint firstItem="46v-uA-tT1" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" id="r1N-i3-xN0"/>
                             <constraint firstItem="It3-dB-YSa" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="50" id="sra-Jx-6Zc"/>
                             <constraint firstItem="It3-dB-YSa" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="xO9-Yb-6oM"/>
@@ -57,6 +70,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="300"/>
                     <connections>
+                        <outlet property="bigMessage" destination="5BQ-vz-7Qa" id="4Kh-tb-Cid"/>
                         <outlet property="message" destination="It3-dB-YSa" id="f8j-yY-yWK"/>
                         <outlet property="table" destination="46v-uA-tT1" id="PUl-3V-BQN"/>
                     </connections>
