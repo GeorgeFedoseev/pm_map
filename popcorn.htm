@@ -1,0 +1,779 @@
+<html><head><title>popcorn-engine logfile</title>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<style>body
+{
+	padding-top: 44px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background: #bbbbbb;
+	margin: 0px;
+	color: #000000;
+	font-family: Consolas, Courier;
+	font-size: 10pt;
+}
+.header2
+{
+	font-size: 72px;
+	left: 5px;
+	color: #8a98b0;
+	position: absolute;
+	top: -22px
+}
+.header
+{
+	left: 0px;
+	overflow: hidden;
+	width: 100%;
+	color: #ffffff;
+	font-family: Verdana, Arial;
+	position: absolute;
+	top: 0px;
+	height: 44px;
+	background-color: #7b8aa6
+}
+.pagetitle
+{
+	font-size: 22px;
+	z-index: 100;
+	left: 5px;
+	color: #ffffff;
+	position: absolute;
+	top: 14px;
+}
+.copyright
+{
+	font-size: 10px;
+	z-index: 60;
+	left: -8px;
+	width: 100%;
+	color: #acb6c8;
+	position: absolute;
+	top: 1px;
+	text-align: right;
+	text-decoration: none;
+}
+.build
+{
+	font-size: 12px;
+	color: #eeeeee;
+	text-decoration: none;
+}
+a.header1:link
+{
+	font-size: 30px;
+	z-index: 50;
+	left: -8px;
+	width: 100%;
+	color: #a0acc0;
+	position: absolute;
+	top: 6px;
+	text-align: right;
+	text-decoration: none;
+}
+a.header1:visited
+{
+	font-size: 30px;
+	z-index: 50;
+	left: -8px;
+	width: 100%;
+	color: #a0acc0;
+	position: absolute;
+	top: 6px;
+	text-align: right;
+	text-decoration: none;
+}
+a.header1:hover
+{
+	font-size: 30px;
+	z-index: 50;
+	left: -8px;
+	width: 100%;
+	color: #acb6c8;
+	position: absolute;
+	top: 6px;
+	text-align: right;
+	text-decoration: none;
+}
+.log_caller { color: #666666; }
+.dll { color: #800070; }
+.M   { color: #000000; background-color: #DDDDDD; white-space: pre; }
+.W   { color: #000000; background-color: #FFAA33; white-space: pre; }
+.E   { color: #FFFFFF; background-color: #DD1100; white-space: pre; }
+.EC  { color: #FFFFFF; background-color: #DD0000; white-space: pre; }
+.EI  { color: #FFFFFF; background-color: #EE0000; white-space: pre; }
+.EF  { color: #FFFFFF; background-color: #FF0000; white-space: pre; }
+</style>
+</head>
+<body>
+<div class=header id=header>
+	<a class=header1 id=header1 href="http://www.popcornfx.com/">www.popcornfx.com</a>
+	<div class=copyright id=copyright>Copyright (c) Persistant Studios 2010-2016</div>
+	<div class=header2 id=header2>PopcornFX</div>
+	<div class=pagetitle id=pagetitle>PopcornFX logfile. <font class=build>build 1.10.6.31633, Wed Oct 5 13:15:54 2016 +0200</font></i></div>
+</div><div class=M><center>... STARTUP ...</center></div>
+<div class=M>[BOOT]> License keycode: "DiscoveryPlugin-{169612C6056451B3}"</div>
+<div class=M>[BOOT]> Popcorn runtime build config: .... RELEASE</div>
+<div class=M>[BOOT]> Has debug asserts: .................... NO</div>
+<div class=M>[BOOT]> Has release asserts: ................. YES</div>
+<div class=M>[BOOT]> Has anonymous asserts: ................ NO</div>
+<div class=M>[BOOT]> Has containers monitoring: ............ NO</div>
+<div class=M>[BOOT]> Has iterators debug checks: ........... NO</div>
+<div class=M>[BOOT]> Mem debug level: ....................... 0</div>
+<div class=M>[BOOT]> Has default mem allocators: .......... YES</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING HH_KERNEL ...</div>
+<div class=M>[BOOT]> [KR_CALLSTACK             ]:Startup         0 usec         0 bytes      0 KbTotal</div>
+<div class=M>[BOOT]> [KR_PERFMONITOR           ]:Startup         0 usec       158 bytes      1 KbTotal</div>
+<div class=M>[BOOT]> [KR_MEM                   ]:Startup         0 usec        99 bytes      1 KbTotal</div>
+<div class=M>[BOOT]> [KR_CONTAINERS            ]:Startup         0 usec         0 bytes      1 KbTotal</div>
+<div class=M>[BOOT]> [KR_ASSERT                ]:Startup         1 usec         0 bytes      1 KbTotal</div>
+<div class=M>[BOOT]> [KR_BUFFER                ]:Startup         9 usec      8219 bytes      9 KbTotal</div>
+<div class=M>[BOOT]> [KR_STRING                ]:Startup         0 usec      2102 bytes     11 KbTotal</div>
+<div class=M>[BOOT]> [KR_RTTI                  ]:Startup         0 usec         0 bytes     11 KbTotal</div>
+<div class=M>[BOOT]> [KR_THREADS               ]:Startup         4 usec         0 bytes     11 KbTotal</div>
+<div class=M>[BOOT]> [KR_THREAD_POOL           ]:Startup         0 usec         0 bytes     12 KbTotal</div>
+<div class=M>[KR_THREADS]> Thread 7fff7722d000 priority set to 'Critical' (46)</div>
+<div class=M>[KR_THREADS]> Thread 7fff7722d000 priority set to 'Normal' (33)</div>
+<div class=W>[KR_CAPS_CPU]> The process is running with reduced affinity rights, performance might be reduced. 4/4 hardware threads were disabled for this process.</div>
+<div class=M>[KR_CAPS_CPU]> Multi-Core system, Single-threaded cores</div>
+<div class=M>[KR_CAPS_CPU]>      Logical processors reported by OS : 4</div>
+<div class=M>[KR_CAPS_CPU]>      Visible logical processors        : 4</div>
+<div class=M>[KR_CAPS_CPU]>      Cores                             : 4</div>
+<div class=M>[KR_CAPS_CPU]>      Physical packages                 : 1</div>
+<div class=M>[KR_CAPS_CPU]> ---- Package 0 -------------------------</div>
+<div class=M>[KR_CAPS_CPU]>      Vendor                            : GenuineIntel</div>
+<div class=M>[KR_CAPS_CPU]>      CPU Name                          : "        Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz"</div>
+<div class=M>[KR_CAPS_CPU]>      Frequency                         : 3090.0 MHz (3091.401 measured)</div>
+<div class=M>[KR_CAPS_CPU]>      Microarchitecture                 : Sandy bridge, 64-bits</div>
+<div class=M>[KR_CAPS_CPU]>      Extensions                        : VirMode DBG     PageSz4 RDTSC   MSR     PAE     MCE     CXCHG8  APIC    SEP     MTRR    PGE     </div>
+<div class=M>[KR_CAPS_CPU]>                                          MCA     CMOV    PAT     PSE36   CLFlush DebugSt ACPI    FXSR    SSnoop  HThread ThMon   ThMon2  </div>
+<div class=M>[KR_CAPS_CPU]>                                          IA64Ext PBE     ExecDis DTES64  MONITOR DS_CPL  VMEXT   ESpdStp CXCHG16 XTPR    PDCM    XSave   </div>
+<div class=M>[KR_CAPS_CPU]>                                          OsXSave TSCInv  POPCNT  CLMUL   MMX     SSE     SSE2    SSE3    SSSE3   SSE4_1  SSE4_2  </div>
+<div class=M>[KR_CAPS_CPU]>      CPUID Leaves                      : 0000000D-00000008</div>
+<div class=M>[KR_CAPS_CPU]>      CACHE TYPE                  SIZE         ASSOCIATIVITY  LINE-SIZE</div>
+<div class=M>[KR_CAPS_CPU]>         L1 Instruction cache       32 KB             2 ways   64-bytes</div>
+<div class=M>[KR_CAPS_CPU]>         L1 Data cache              32 KB             4 ways   64-bytes</div>
+<div class=M>[KR_CAPS_CPU]>         L2 Data cache            1024 KB             8 ways   64-bytes</div>
+<div class=M>[KR_CAPS_CPU]>      PROCESSOR  APIC_ID  PACKAGE     CORE   THREAD    CACHES</div>
+<div class=M>[KR_CAPS_CPU]>              0     0000        0        0        0    L1I[0] L1D[0] L2D[0]</div>
+<div class=M>[KR_CAPS_CPU]>              1     0000        0        1        1    L1I[1] L1D[1] L2D[0]</div>
+<div class=M>[KR_CAPS_CPU]>              2     0000        0        2        2    L1I[2] L1D[2] L2D[0]</div>
+<div class=M>[KR_CAPS_CPU]>              3     0000        0        3        3    L1I[3] L1D[3] L2D[0]</div>
+<div class=M>[BOOT]> [KR_CAPS_CPU              ]:Startup      2553 usec      1369 bytes     13 KbTotal</div>
+<div class=M>[KR_CAPS_MEM]> <b>Detecting memory:</b></div>
+<div class=M>[KR_CAPS_MEM]>      MEMORY        :          USED     AVAILABLE         TOTAL</div>
+<div class=M>[KR_CAPS_MEM]>      physical      :     1072.0 Mb 134214608.0 Mb 134215680.0 Mb</div>
+<div class=M>[KR_CAPS_MEM]>      page file     :     1072.0 Mb 134214608.0 Mb 134215680.0 Mb</div>
+<div class=M>[KR_CAPS_MEM]>      virtual       :     1072.0 Mb 134214608.0 Mb 134215680.0 Mb</div>
+<div class=M>[KR_CAPS_MEM]>      Address range : 0x80000000 - 0x0</div>
+<div class=M>[BOOT]> [KR_CAPS_MEM              ]:Startup        30 usec        99 bytes     13 KbTotal</div>
+<div class=M>[BOOT]> [KR_PROFILER              ]:Startup         5 usec      2645 bytes     16 KbTotal</div>
+<div class=M>[BOOT]> [KR_CHECKSUM              ]:Startup         0 usec         0 bytes     16 KbTotal</div>
+<div class=M>[BOOT]> [KR_COMPRESSION           ]:Startup         0 usec         0 bytes     16 KbTotal</div>
+<div class=M>[BOOT]> [KR_FILE                  ]:Startup         0 usec        35 bytes     16 KbTotal</div>
+<div class=M>[BOOT]> [KR_PLUGINS               ]:Startup         0 usec        83 bytes     16 KbTotal</div>
+<div class=M>[KR_THREADS]> Thread 700000932000 priority set to 'High' (39)</div>
+<div class=M>[KR_THREADS]> Thread 700009cf9000 priority set to 'High' (39)</div>
+<div class=M>[KR_THREADS]> Thread 70000b1fe000 priority set to 'High' (39)</div>
+<div class=M>[BOOT]> [KR_SCHEDULER             ]:Startup       166 usec     16854 bytes     33 KbTotal</div>
+<div class=M>[BOOT]> [KR_RESOURCES             ]:Startup         0 usec       147 bytes     33 KbTotal</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING KR_BASE_OBJECT ...</div>
+<div class=M>[BOOT]> [KR_BASE_OBJECT           ]:Startup        15 usec     17911 bytes     51 KbTotal</div>
+<div class=M>[BOOT]> [BASE_OBJECT_HBO_SCOPE    ]:Startup        53 usec     99827 bytes    148 KbTotal</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING HH-EngineUtils ...</div>
+<div class=M>[BOOT]> [KR_RANDOM                ]:Startup         3 usec      5137 bytes    154 KbTotal</div>
+<div class=M>[BOOT]> [KR_TIMELINE              ]:Startup         0 usec         0 bytes    154 KbTotal</div>
+<div class=M>[BOOT]> [KR_ACTIONS               ]:Startup        58 usec     21532 bytes    175 KbTotal</div>
+<div class=M>[BOOT]> [KR_CORE                  ]:Startup        82 usec     14330 bytes    189 KbTotal</div>
+<div class=M>[BOOT]> [KR_SAMPLERS              ]:Startup        31 usec      7810 bytes    196 KbTotal</div>
+<div class=M>[BOOT]> [EU_SKELETON              ]:Startup        11 usec      3735 bytes    200 KbTotal</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING HH_COMPILER ...</div>
+<div class=M>[BOOT]> [HH_COMPILER              ]:Startup       153 usec     19091 bytes    219 KbTotal</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING HH_GEOMETRICS ...</div>
+<div class=M>[BOOT]> [GE_SKELETON              ]:Startup         0 usec         0 bytes    219 KbTotal</div>
+<div class=M>[BOOT]> [GE_MESH                  ]:Startup       125 usec      8324 bytes    227 KbTotal</div>
+<div class=M>[GF_MESH_DEFORMERS]> CPU Dispatch mapped implementation of Skeletal Skinner to 'SIMD'</div>
+<div class=M>[BOOT]> [GF_MESH_DEFORMERS        ]:Startup        30 usec     47825 bytes    274 KbTotal</div>
+<div class=M>[BOOT]> [GE_MESH_RESOURCE         ]:Startup         5 usec      4710 bytes    279 KbTotal</div>
+<div class=M>[BOOT]> [GE_MESH_KDTREE           ]:Startup         0 usec         0 bytes    279 KbTotal</div>
+<div class=M>[BOOT]> [GE_SHAPES                ]:Startup        78 usec     11920 bytes    291 KbTotal</div>
+<div class=M>[BOOT]> [GE_COLLIDERS             ]:Startup         0 usec         0 bytes    291 KbTotal</div>
+<div class=M>[BOOT]> [GE_BILLBOARDS            ]:Startup         0 usec         0 bytes    291 KbTotal</div>
+<div class=M>[BOOT]> [GE_RECTANGLE_LIST        ]:Startup         4 usec      4353 bytes    295 KbTotal</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING HH_IMAGING ...</div>
+<div class=M>[BOOT]> [IM_IMAGES                ]:Startup        19 usec      4515 bytes    300 KbTotal</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING HH_PARTICLES ...</div>
+<div class=M>[BOOT]> [HH_PARTICLES             ]:Startup      1837 usec    908625 bytes   1187 KbTotal</div>
+<div class=M>[BOOT]> [HH-CompilerBackend_CPU_Emulation]:Startup         4 usec     10327 bytes   1193 KbTotal</div>
+<div class=M>[KR_PLUGINS]> Registering module "CompilerBackend_CPU_Emulation" to handler "hh_compiler".</div>
+<div class=M>[KR_PLUGINS]> Registering module "PopcornFX-Image codec dds" to handler "im_codec".</div>
+<div class=M>[KR_PLUGINS]> Registering module "PopcornFX-Image codec png" to handler "im_codec".</div>
+<div class=M>[KR_PLUGINS]> Registering module "PopcornFX-Image codec targa" to handler "im_codec".</div>
+<div class=M>[KR_PLUGINS]> Registering module "PopcornFX-Image codec jpeg" to handler "im_codec".</div>
+<div class=M>[BOOT]> [PK_UNITY_PLUGIN          ]:Startup         0 usec         0 bytes   1194 KbTotal</div>
+<div class=E>[KR_FILE]> failed creating watcher thread for path "Assets/StreamingAssets/PackFx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Added Assets/StreamingAssets/PackFx for watching.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Exploring pack Assets/StreamingAssets/PackFx...</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/ButterFly_sceneIntersect.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/CampFire_Events.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/CarHud_TextSampler.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/CoallBurn_SpatialLayers.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/ElectricalBall_pCoords.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Explosion_vrandFunction.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/FireFly_Attractor.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Fish_Flocking.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/FlameThrower_Ribbon.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Grenade_MeshRenderer.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Lightning_FpsConstraint.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Link_lerpFunction.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/MagicSpell_Dynamic.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/MagicSpell_Static.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Orb_rotateFunction.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Pentacle_AnimTrack.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Rain_ViewPosition.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Snow_TurbSampler.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Soul_parentFunction.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Spark_ExternEvents.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Spark_Triggered.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/WorldMap_TextureSampler.pkfx</div>
+<div class=M>[???]> ##### PDF 2D BUILD ################</div>
+<div class=M>[???]> ## size              : 1024 x 512</div>
+<div class=M>[???]> ## min treshold      : 0.000e+00</div>
+<div class=M>[???]> ## remap discrepancy : 1.000e+00</div>
+<div class=M>[???]> ##### 5.393 ms ######################</div>
+<div class=M>[???]> ##### PDF 2D O(1) BUILD ################</div>
+<div class=M>[???]> ## size              : 1024 x 512</div>
+<div class=M>[???]> ##### 8.908 ms ######################</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/SceneButterflies.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=24.8 Kb (50.0 %), nodes=141.9 Kb, total=166.8 Kb (expanded=191.6 Kb)</div>
+<div class=W>[PK_UNITY_PLUGIN]> [MeshBuilder::LoadPkmm] "Meshes/SceneButterflies.pkmm" OK (primitives count: 336)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/ButterFly_sceneIntersect.pkfx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/FireFly_Attractor.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/ButterFly_02.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/ButterFly_02.png) : 4.503 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 3.492 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.068 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.854 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Glow_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Glow_01.png) : 0.885 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 1.837 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.040 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.792 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/SceneButterflies.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=24.8 Kb (50.0 %), nodes=141.9 Kb, total=166.8 Kb (expanded=191.6 Kb)</div>
+<div class=W>[PK_UNITY_PLUGIN]> [MeshBuilder::LoadPkmm] "Meshes/SceneButterflies.pkmm" OK (primitives count: 336)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Explosion_vrandFunction.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Fire_02.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Fire_02.png) : 64.170 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2addd5-0x14a2ae33e) : 2.112 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ad27d-0x14a2ad72f) : 1.254 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.808 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Debris_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Debris_01.png) : 1.663 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2addd5-0x14a2ae33e) : 2.036 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ad27d-0x14a2ad72f) : 1.376 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.827 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Distortion_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Distortion_01.png) : 1.076 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2af3b4) : 4.349 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.084 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.806 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/SceneButterflies.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=24.8 Kb (50.0 %), nodes=141.9 Kb, total=166.8 Kb (expanded=191.6 Kb)</div>
+<div class=W>[PK_UNITY_PLUGIN]> [MeshBuilder::LoadPkmm] "Meshes/SceneButterflies.pkmm" OK (primitives count: 336)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/CoallBurn_SpatialLayers.pkfx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/FlameThrower_Ribbon.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Coal_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Coal_01.png) : 6.660 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 1.930 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.173 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.814 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/SymmetricGradient_02.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/SymmetricGradient_02.png) : 0.465 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.055 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.779 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x1310bc0b8 buffers to 320 vertices (14080), 416 indices</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Fire_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Fire_01.png) : 29.296 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2addd5-0x14a2ae33e) : 2.245 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ad27d-0x14a2ad72f) : 1.277 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.920 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Smoke_03.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Smoke_03.png) : 2.836 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2addd5-0x14a2ae33e) : 2.052 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ad27d-0x14a2ad72f) : 1.234 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.871 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Grenade_MeshRenderer.pkfx"</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 954 indicies 16b, 231 vertices, 318 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 8.951 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.843 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.820 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1476 indicies 16b, 299 vertices, 492 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.609 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.813 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.532 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1260 indicies 16b, 265 vertices, 420 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 3.635 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.787 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.466 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1512 indicies 16b, 329 vertices, 504 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.679 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.794 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.560 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1098 indicies 16b, 261 vertices, 366 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.566 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.815 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.438 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1398 indicies 16b, 341 vertices, 466 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.552 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.922 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.531 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1074 indicies 16b, 216 vertices, 358 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.526 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.792 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.455 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1632 indicies 16b, 368 vertices, 544 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.661 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.798 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.473 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 954 indicies 16b, 231 vertices, 318 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.598 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.803 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.802 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1476 indicies 16b, 299 vertices, 492 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.531 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.836 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.477 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1260 indicies 16b, 265 vertices, 420 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.720 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.779 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.455 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1512 indicies 16b, 329 vertices, 504 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.545 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.772 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.442 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1098 indicies 16b, 261 vertices, 366 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.592 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.881 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.487 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1398 indicies 16b, 341 vertices, 466 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.550 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.786 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.462 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1074 indicies 16b, 216 vertices, 358 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.738 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.769 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.442 ms</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Debris.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=11.5 Kb (50.0 %), nodes=28.7 Kb, total=40.2 Kb (expanded=51.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.7 Kb (50.0 %), nodes=47.8 Kb, total=66.5 Kb (expanded=85.3 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=15.9 Kb (50.0 %), nodes=40.2 Kb, total=56.1 Kb (expanded=72.0 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=18.8 Kb (50.0 %), nodes=45.3 Kb, total=64.1 Kb (expanded=82.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=13.4 Kb (50.0 %), nodes=34.6 Kb, total=48.1 Kb (expanded=61.5 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=17.9 Kb (50.0 %), nodes=44.0 Kb, total=62.0 Kb (expanded=79.9 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=12.9 Kb (50.0 %), nodes=32.9 Kb, total=45.8 Kb (expanded=58.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=20.5 Kb (50.0 %), nodes=52.2 Kb, total=72.7 Kb (expanded=93.2 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 1632 indicies 16b, 368 vertices, 544 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Rock.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Rock.png) : 4.827 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.771 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.453 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/DistortionRing_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/DistortionRing_01.png) : 0.880 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2af3b4) : 2.187 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.043 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.815 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Smoke_03.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Smoke_03.png) : 2.603 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 1.813 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.052 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.819 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Debris_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Debris_01.png) : 1.723 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 1.805 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.283 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.833 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Smoke_03.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Smoke_03.png) : 2.641 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 1.831 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.022 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.802 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x11ebc1968 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123ec5b08 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123ec6ee8 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x12f3bdd98 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x11ebc9fd8 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123e01138 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123eabda8 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x11ebc14a8 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123ea2cd8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x12f3ad1f8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x12f3aa1f8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123e733f8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x12266b228 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x12f3a40c8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123e527a8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123e6f7d8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/MagicSpell_Dynamic.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Flame_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Flame_01.png) : 0.913 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2addd5-0x14a2ae33e) : 2.279 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ad27d-0x14a2ad72f) : 1.346 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.816 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Trail_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Trail_01.png) : 0.549 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b4d34-0x14a2b581f) : 2.703 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.850 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 320 vertices (19200), 416 indices</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Smoke_04.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Smoke_04.png) : 2.774 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2addd5-0x14a2ae33e) : 2.343 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ad27d-0x14a2ad72f) : 1.294 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.788 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 674 vertices (40440), 947 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 1142 vertices (68520), 1649 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 1814 vertices (108840), 2657 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 2792 vertices (167520), 4124 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 4610 vertices (276600), 6851 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 6992 vertices (419520), 10424 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 10652 vertices (639120), 15914 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 16550 vertices (993000), 24761 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 25022 vertices (1501320), 37469 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 38294 vertices (2297640), 57377 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x1310bc0b8 buffers to 548 vertices (24112), 758 indices</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/SceneButterflies.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=24.8 Kb (50.0 %), nodes=141.9 Kb, total=166.8 Kb (expanded=191.6 Kb)</div>
+<div class=W>[PK_UNITY_PLUGIN]> [MeshBuilder::LoadPkmm] "Meshes/SceneButterflies.pkmm" OK (primitives count: 336)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/SceneButterflies.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=24.8 Kb (50.0 %), nodes=141.9 Kb, total=166.8 Kb (expanded=191.6 Kb)</div>
+<div class=W>[PK_UNITY_PLUGIN]> [MeshBuilder::LoadPkmm] "Meshes/SceneButterflies.pkmm" OK (primitives count: 336)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/SceneButterflies.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=24.8 Kb (50.0 %), nodes=141.9 Kb, total=166.8 Kb (expanded=191.6 Kb)</div>
+<div class=W>[PK_UNITY_PLUGIN]> [MeshBuilder::LoadPkmm] "Meshes/SceneButterflies.pkmm" OK (primitives count: 336)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Soul_parentFunction.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Branch_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Branch_01.png) : 2.397 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b4d34-0x14a2b581f) : 2.422 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 1.017 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 320 vertices (19200), 416 indices</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Smoke_02.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Smoke_02.png) : 2.499 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 1.891 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.257 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.851 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Smoke_02.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Smoke_02.png) : 2.483 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 2.049 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.079 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.911 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Glow_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Glow_01.png) : 0.533 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 1.992 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.129 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.916 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 560 vertices (33600), 776 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 1040 vertices (62400), 1496 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 1652 vertices (99120), 2414 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 2546 vertices (152760), 3755 indices</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/SceneButterflies.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=24.8 Kb (50.0 %), nodes=141.9 Kb, total=166.8 Kb (expanded=191.6 Kb)</div>
+<div class=W>[PK_UNITY_PLUGIN]> [MeshBuilder::LoadPkmm] "Meshes/SceneButterflies.pkmm" OK (primitives count: 336)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 536 vertices (32160), 740 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 950 vertices (57000), 1361 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 1520 vertices (91200), 2216 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 2348 vertices (140880), 3458 indices</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/SceneButterflies.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=24.8 Kb (50.0 %), nodes=141.9 Kb, total=166.8 Kb (expanded=191.6 Kb)</div>
+<div class=W>[PK_UNITY_PLUGIN]> [MeshBuilder::LoadPkmm] "Meshes/SceneButterflies.pkmm" OK (primitives count: 336)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 506 vertices (30360), 695 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 842 vertices (50520), 1199 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 1340 vertices (80400), 1946 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15d5a6988 buffers to 2078 vertices (124680), 3053 indices</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x11ebc1968 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123ec5b08 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123ec6ee8 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x12f3bdd98 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x11ebc9fd8 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123e01138 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123eabda8 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x11ebc14a8 Resize instance buffers to 137</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123ea2cd8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x12f3ad1f8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x12f3aa1f8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123e733f8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x12266b228 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x12f3a40c8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123e527a8 Resize instance buffers to 146</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x123e6f7d8 Resize instance buffers to 146</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/CampFire_Events.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Fire_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Fire_01.png) : 29.342 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2addd5-0x14a2ae33e) : 2.290 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ad27d-0x14a2ad72f) : 1.422 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.830 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Smoke_03.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Smoke_03.png) : 2.732 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2addd5-0x14a2ae33e) : 1.999 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ad27d-0x14a2ad72f) : 1.308 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.812 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/ElectricalBall_pCoords.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Lightning_05.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Lightning_05.png) : 1.574 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.176 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.791 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15f0e32a8 buffers to 320 vertices (14080), 416 indices</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Geosphere.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=6.8 Kb (50.0 %), nodes=14.6 Kb, total=21.5 Kb (expanded=28.3 Kb)</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: setup mesh 960 indicies 16b, 181 vertices, 320 primitives</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/EnergyBall_02.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/EnergyBall_02.png) : 6.189 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab98f) : 1.903 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2b464d-0x14a2ab32a) : 1.408 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Glow_02.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Glow_02.png) : 2.350 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 1.842 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.015 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.815 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> RenderBuffer Mesh: 0x15f022d28 Resize instance buffers to 129</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x15f0e32a8 buffers to 584 vertices (25696), 812 indices</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Lightning_FpsConstraint.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Orb_rotateFunction.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Glow_03.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Glow_03.png) : 0.539 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 2.012 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.037 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.802 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Pentacle_AnimTrack.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Flame_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Flame_01.png) : 0.969 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 1.929 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.076 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.797 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 218 vertices (13080), 263 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 428 vertices (25680), 578 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 734 vertices (44040), 1037 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 1250 vertices (75000), 1811 indices</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 2084 vertices (125040), 3062 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 3278 vertices (196680), 4853 indices</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 5216 vertices (312960), 7760 indices</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing GL RenderBuffer_Ribbon 0x12f37c2b8 buffers to 8120 vertices (487200), 12116 indices</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Spark_ExternEvents.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Spark_03.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Spark_03.png) : 0.462 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 1.875 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.053 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.784 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Glow_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Glow_01.png) : 0.517 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 1.802 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.035 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.896 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: runtime generation of mipmaps (Textures/Fx/Spark_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Fx/Spark_01.png) : 0.562 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2abf16-0x14a2ac35e) : 2.092 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab619-0x14a2ab98f) : 1.475 ms</div>
+<div class=M>[KR_PROFILER]> Compiled Shaders (0x14a2ab201-0x14a2ab32a) : 0.937 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
