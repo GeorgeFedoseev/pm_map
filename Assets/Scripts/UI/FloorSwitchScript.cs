@@ -6,7 +6,7 @@ public class FloorSwitchScript : MonoBehaviour {
 
 	AppScript app;
 
-	float imageAlpha = 50f;
+	float imageAlpha = 100f;
 	float textAlpha = 180f;
 
 
@@ -35,9 +35,11 @@ public class FloorSwitchScript : MonoBehaviour {
 	}
 
 	private void setButtonDefault(int i){
-		getImage (i).color = new Color (255f / 255f, 255f / 255f, 255f / 255f, imageAlpha / 255f);
+		//getImage (i).color = new Color (255f / 255f, 255f / 255f, 255f / 255f, imageAlpha / 255f);
+		getImage (i).color = new Color (0f / 255f, 255f / 255f, 0f / 255f, imageAlpha / 255f);
 		//getText(i).color = new Color (0f / 255f, 0f / 255f, 0f / 255f, 21f / 255f);
-		getText(i).color = new Color (255f / 255f, 255f / 255f, 255f / 255f, textAlpha / 255f);
+		//getText(i).color = new Color (255f / 255f, 255f / 255f, 255f / 255f, textAlpha / 255f);
+		getText(i).color = new Color (219f / 255f, 56f / 255f, 18f / 255f,imageAlpha+10f / 255f);
 	}
 
 	private Button getButton(int i){

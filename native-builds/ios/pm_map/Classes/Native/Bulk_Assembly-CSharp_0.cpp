@@ -7626,7 +7626,7 @@ extern "C"  void CameraScript__ctor_m3382299691 (CameraScript_t3510117488 * __th
 		__this->set_canMove_14((bool)1);
 		__this->set_firstTouchInRotateMode_15((bool)1);
 		__this->set_minHeight_19((-10.0f));
-		__this->set_maxHeight_20((250.0f));
+		__this->set_maxHeight_20((300.0f));
 		__this->set_minAngle_21((10.0f));
 		__this->set_maxAngle_22((85.0f));
 		__this->set_lookHeight_29((10.0f));
@@ -22668,7 +22668,7 @@ extern "C"  void FacilityScript_U3COnMouseUpU3Em__8_m1004578159 (FacilityScript_
 extern "C"  void FloorSwitchScript__ctor_m3885091488 (FloorSwitchScript_t2794668843 * __this, const MethodInfo* method)
 {
 	{
-		__this->set_imageAlpha_3((50.0f));
+		__this->set_imageAlpha_3((100.0f));
 		__this->set_textAlpha_4((180.0f));
 		MonoBehaviour__ctor_m2022291967(__this, /*hidden argument*/NULL);
 		return;
@@ -22776,15 +22776,15 @@ extern "C"  void FloorSwitchScript_setButtonDefault_m3685453826 (FloorSwitchScri
 		float L_2 = __this->get_imageAlpha_3();
 		Color_t4194546905  L_3;
 		memset(&L_3, 0, sizeof(L_3));
-		Color__ctor_m2252924356(&L_3, (1.0f), (1.0f), (1.0f), ((float)((float)L_2/(float)(255.0f))), /*hidden argument*/NULL);
+		Color__ctor_m2252924356(&L_3, (0.0f), (1.0f), (0.0f), ((float)((float)L_2/(float)(255.0f))), /*hidden argument*/NULL);
 		NullCheck(L_1);
 		VirtActionInvoker1< Color_t4194546905  >::Invoke(22 /* System.Void UnityEngine.UI.Graphic::set_color(UnityEngine.Color) */, L_1, L_3);
 		int32_t L_4 = ___i0;
 		Text_t9039225 * L_5 = FloorSwitchScript_getText_m380213621(__this, L_4, /*hidden argument*/NULL);
-		float L_6 = __this->get_textAlpha_4();
+		float L_6 = __this->get_imageAlpha_3();
 		Color_t4194546905  L_7;
 		memset(&L_7, 0, sizeof(L_7));
-		Color__ctor_m2252924356(&L_7, (1.0f), (1.0f), (1.0f), ((float)((float)L_6/(float)(255.0f))), /*hidden argument*/NULL);
+		Color__ctor_m2252924356(&L_7, (0.858823538f), (0.219607845f), (0.07058824f), ((float)((float)L_6+(float)(0.0392156877f))), /*hidden argument*/NULL);
 		NullCheck(L_5);
 		VirtActionInvoker1< Color_t4194546905  >::Invoke(22 /* System.Void UnityEngine.UI.Graphic::set_color(UnityEngine.Color) */, L_5, L_7);
 		return;
@@ -52200,7 +52200,7 @@ IL_0054:
 	}
 }
 // System.Void LoadSceneScript::<Start>m__A()
-extern Il2CppCodeGenString* _stringLiteral4032351827;
+extern Il2CppCodeGenString* _stringLiteral3477148209;
 extern const uint32_t LoadSceneScript_U3CStartU3Em__A_m3326463044_MetadataUsageId;
 extern "C"  void LoadSceneScript_U3CStartU3Em__A_m3326463044 (LoadSceneScript_t1338370961 * __this, const MethodInfo* method)
 {
@@ -52211,7 +52211,7 @@ extern "C"  void LoadSceneScript_U3CStartU3Em__A_m3326463044 (LoadSceneScript_t1
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		LoadSceneScript_SyncLoadLevel_m1249561767(__this, _stringLiteral4032351827, /*hidden argument*/NULL);
+		LoadSceneScript_SyncLoadLevel_m1249561767(__this, _stringLiteral3477148209, /*hidden argument*/NULL);
 		return;
 	}
 }

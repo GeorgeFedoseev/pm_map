@@ -34,7 +34,7 @@ public class CameraScript : MonoBehaviour {
 	Vector3 oldCamPos;
 	Quaternion oldCamRot;
 	float minHeight = -10f;
-	float maxHeight = 250f;
+	float maxHeight = 300f;
 	float minAngle = 10f;
 	float maxAngle = 85f;
 
