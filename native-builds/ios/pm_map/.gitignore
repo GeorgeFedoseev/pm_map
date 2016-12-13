@@ -6,6 +6,8 @@
 build/
 DerivedData/
 
+libiPhone-lib.a
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
