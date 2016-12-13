@@ -17,7 +17,13 @@ public class LoadSceneScript : MonoBehaviour {
 	void Start(){
 		Debug.Log ("start level loading");
 		Loom.QueueOnMainThread (() => {
-			SyncLoadLevel ("mainScene_winter");
+
+			if(AppScript.isNewYear()){
+				SyncLoadLevel ("mainScene_winter");	
+			}else{
+				SyncLoadLevel ("mainScene");	
+			}
+
 		}, 0f);
 
 		image.fillAmount = 0;

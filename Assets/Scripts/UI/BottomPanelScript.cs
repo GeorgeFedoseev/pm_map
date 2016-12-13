@@ -84,7 +84,11 @@ public class BottomPanelScript : MonoBehaviour {
 
 		if (app != null && app.openTimetableButton != null && rect != null) {
 			app.openTimetableButton.anchoredPosition = new Vector2 (rect.offsetMin.x + 50f, rect.anchoredPosition.y+rect.sizeDelta.y+20f);
-		}			
+		}	
+
+		if (app != null && app.openExamsButton != null && rect != null) {
+			app.openExamsButton.anchoredPosition = new Vector2 (app.openExamsButton.anchoredPosition.x, rect.anchoredPosition.y+rect.sizeDelta.y+20f);
+		}
 	}
 
 

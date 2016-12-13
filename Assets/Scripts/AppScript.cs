@@ -11,8 +11,8 @@ public class AppScript : MonoBehaviour {
 
 	public static bool DEBUG = false;
 	#if UNITY_EDITOR
-	public static bool CLEAN_EVERYTHING_ON_START = true;
-	public static bool UPDATE_FACILITIES_DB_ON_START = true;
+	public static bool CLEAN_EVERYTHING_ON_START = false;
+	public static bool UPDATE_FACILITIES_DB_ON_START = false;
 	#else
 	public static bool CLEAN_EVERYTHING_ON_START = false;
 	public static bool UPDATE_FACILITIES_DB_ON_START = false;
@@ -64,6 +64,8 @@ public class AppScript : MonoBehaviour {
 	public BottomPanelScript bottomPanel;
 	[HideInInspector]
 	public RectTransform openTimetableButton;
+	[HideInInspector]
+	public RectTransform openExamsButton;
 	[HideInInspector]
 	public Transform centerPanelContainer;
 
@@ -147,6 +149,7 @@ public class AppScript : MonoBehaviour {
 			Debug.LogError ("cant find center panel container");
 
 		openTimetableButton = GameObject.Find ("OpenTimetableButton").GetComponent<RectTransform> ();
+		openExamsButton = GameObject.Find ("OpenExamsButton").GetComponent<RectTransform> ();
 
 
 		facilities = new FacilitiesManager ();
@@ -154,8 +157,29 @@ public class AppScript : MonoBehaviour {
 
 
 
+		SetupTimeSpecialContent ();
+
 
 		clearCenterPanelContainer ();
+	}
+
+	public static bool isNewYear(){
+		var currentMonth = new DateTime ().Month;
+		return currentMonth == 12 || currentMonth == 1;
+	}
+
+	void SetupTimeSpecialContent(){
+		var currentMonth = new DateTime ().Month;
+
+		// if Dec, Jan, May or June show exams button
+		if (
+			(currentMonth == 12 || currentMonth == 1 || currentMonth == 5 || currentMonth == 6)
+			&& PlayerPrefs.HasKey("tt_study_group_link")) {
+			// show exams button
+			openExamsButton.gameObject.SetActive (true);
+		} else {
+			openExamsButton.gameObject.SetActive (false);
+		}
 	}
 
 	void Start () {
@@ -251,6 +275,19 @@ public class AppScript : MonoBehaviour {
 	}
 
 
+
+	WebViewObject webViewObject;
+	// EXAMS
+	public void openExamsView() {
+		Debug.LogWarning ("open exams web view");
+
+		webViewObject = (new GameObject("WebViewObject")).AddComponent<WebViewObject>();
+		webViewObject.Init(enableWKWebView: true);
+		webViewObject.SetMargins(5, 100, 5, Screen.height / 4);
+		webViewObject.SetVisibility(true);
+		webViewObject.LoadURL("http://google.com");
+	}
+
 	// TIMETABLE
 
 	public void openTimetable(){
@@ -292,6 +329,7 @@ public class AppScript : MonoBehaviour {
 	public void closeTimetable(){
 		Debug.LogWarning ("Close Panel");
 		disableAllInCentralPanelContainer ();
+		SetupTimeSpecialContent ();
 	}
 
 	void UpdateTimeBasedElements(){

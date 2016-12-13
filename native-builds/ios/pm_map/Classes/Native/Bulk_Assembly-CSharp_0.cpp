@@ -7626,7 +7626,7 @@ extern "C"  void CameraScript__ctor_m3382299691 (CameraScript_t3510117488 * __th
 		__this->set_canMove_14((bool)1);
 		__this->set_firstTouchInRotateMode_15((bool)1);
 		__this->set_minHeight_19((-10.0f));
-		__this->set_maxHeight_20((300.0f));
+		__this->set_maxHeight_20((600.0f));
 		__this->set_minAngle_21((10.0f));
 		__this->set_maxAngle_22((85.0f));
 		__this->set_lookHeight_29((10.0f));
@@ -22773,20 +22773,19 @@ extern "C"  void FloorSwitchScript_setButtonDefault_m3685453826 (FloorSwitchScri
 	{
 		int32_t L_0 = ___i0;
 		Image_t538875265 * L_1 = FloorSwitchScript_getImage_m1165383701(__this, L_0, /*hidden argument*/NULL);
-		float L_2 = __this->get_imageAlpha_3();
-		Color_t4194546905  L_3;
-		memset(&L_3, 0, sizeof(L_3));
-		Color__ctor_m2252924356(&L_3, (0.0f), (1.0f), (0.0f), ((float)((float)L_2/(float)(255.0f))), /*hidden argument*/NULL);
+		Color_t4194546905  L_2;
+		memset(&L_2, 0, sizeof(L_2));
+		Color__ctor_m2252924356(&L_2, (0.03529412f), (0.490196079f), (0.0f), (1.0f), /*hidden argument*/NULL);
 		NullCheck(L_1);
-		VirtActionInvoker1< Color_t4194546905  >::Invoke(22 /* System.Void UnityEngine.UI.Graphic::set_color(UnityEngine.Color) */, L_1, L_3);
-		int32_t L_4 = ___i0;
-		Text_t9039225 * L_5 = FloorSwitchScript_getText_m380213621(__this, L_4, /*hidden argument*/NULL);
-		float L_6 = __this->get_imageAlpha_3();
-		Color_t4194546905  L_7;
-		memset(&L_7, 0, sizeof(L_7));
-		Color__ctor_m2252924356(&L_7, (0.858823538f), (0.219607845f), (0.07058824f), ((float)((float)L_6+(float)(0.0392156877f))), /*hidden argument*/NULL);
-		NullCheck(L_5);
-		VirtActionInvoker1< Color_t4194546905  >::Invoke(22 /* System.Void UnityEngine.UI.Graphic::set_color(UnityEngine.Color) */, L_5, L_7);
+		VirtActionInvoker1< Color_t4194546905  >::Invoke(22 /* System.Void UnityEngine.UI.Graphic::set_color(UnityEngine.Color) */, L_1, L_2);
+		int32_t L_3 = ___i0;
+		Text_t9039225 * L_4 = FloorSwitchScript_getText_m380213621(__this, L_3, /*hidden argument*/NULL);
+		float L_5 = __this->get_textAlpha_4();
+		Color_t4194546905  L_6;
+		memset(&L_6, 0, sizeof(L_6));
+		Color__ctor_m2252924356(&L_6, (1.0f), (1.0f), (1.0f), ((float)((float)L_5/(float)(255.0f))), /*hidden argument*/NULL);
+		NullCheck(L_4);
+		VirtActionInvoker1< Color_t4194546905  >::Invoke(22 /* System.Void UnityEngine.UI.Graphic::set_color(UnityEngine.Color) */, L_4, L_6);
 		return;
 	}
 }
