@@ -1,4 +1,4 @@
-//Generated on : 12/13/2016 7:30:05 PM
+//Generated on : 12/13/2016 9:49:09 PM
 void RegisterAllStrippedInternalCalls()
 {
 	//Start Registrations for type : UnityEngine.AnimationCurve
@@ -3014,6 +3014,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Boolean UnityEngine.TouchScreenKeyboard::get_done()
 		void Register_UnityEngine_TouchScreenKeyboard_get_done();
 		Register_UnityEngine_TouchScreenKeyboard_get_done();
+
+		//System.Boolean UnityEngine.TouchScreenKeyboard::get_visible()
+		void Register_UnityEngine_TouchScreenKeyboard_get_visible();
+		Register_UnityEngine_TouchScreenKeyboard_get_visible();
 
 		//System.Boolean UnityEngine.TouchScreenKeyboard::get_wasCanceled()
 		void Register_UnityEngine_TouchScreenKeyboard_get_wasCanceled();

@@ -37,7 +37,7 @@ extern "C"  int32_t GroupCollection_get_Count_m1046622944 (GroupCollection_t9825
 // System.Boolean System.Text.RegularExpressions.GroupCollection::get_IsSynchronized()
 extern "C"  bool GroupCollection_get_IsSynchronized_m3587250101 (GroupCollection_t982584267 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.RegularExpressions.Group System.Text.RegularExpressions.GroupCollection::get_Item(System.Int32)
-extern "C"  Group_t2151468941 * GroupCollection_get_Item_m3306908978 (GroupCollection_t982584267 * __this, int32_t ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  Group_t2151468941 * GroupCollection_get_Item_m180115662 (GroupCollection_t982584267 * __this, int32_t ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.GroupCollection::SetValue(System.Text.RegularExpressions.Group,System.Int32)
 extern "C"  void GroupCollection_SetValue_m3728413090 (GroupCollection_t982584267 * __this, Group_t2151468941 * ___g0, int32_t ___i1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.RegularExpressions.Group System.Text.RegularExpressions.GroupCollection::get_Item(System.String)

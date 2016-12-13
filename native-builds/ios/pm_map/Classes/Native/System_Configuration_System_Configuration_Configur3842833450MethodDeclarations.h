@@ -49,7 +49,7 @@ struct XmlWriter_t4278601340;
 #include "System_Configuration_System_Configuration_Configur1929345356.h"
 
 // System.Void System.Configuration.ConfigurationElement::.ctor()
-extern "C"  void ConfigurationElement__ctor_m3730513869 (ConfigurationElement_t3842833450 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void ConfigurationElement__ctor_m3297756581 (ConfigurationElement_t3842833450 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Configuration.Configuration System.Configuration.ConfigurationElement::get_Configuration()
 extern "C"  Configuration_t710589292 * ConfigurationElement_get_Configuration_m1316584128 (ConfigurationElement_t3842833450 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationElement::set_Configuration(System.Configuration.Configuration)
@@ -81,13 +81,13 @@ extern "C"  ConfigurationPropertyCollection_t55611423 * ConfigurationElement_Get
 // System.Configuration.ConfigurationElementCollection System.Configuration.ConfigurationElement::GetDefaultCollection()
 extern "C"  ConfigurationElementCollection_t1978119848 * ConfigurationElement_GetDefaultCollection_m2655648688 (ConfigurationElement_t3842833450 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Configuration.ConfigurationElement::get_Item(System.Configuration.ConfigurationProperty)
-extern "C"  Il2CppObject * ConfigurationElement_get_Item_m2616928522 (ConfigurationElement_t3842833450 * __this, ConfigurationProperty_t3009015393 * ___property0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  Il2CppObject * ConfigurationElement_get_Item_m882145330 (ConfigurationElement_t3842833450 * __this, ConfigurationProperty_t3009015393 * ___property0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationElement::set_Item(System.Configuration.ConfigurationProperty,System.Object)
-extern "C"  void ConfigurationElement_set_Item_m3293325985 (ConfigurationElement_t3842833450 * __this, ConfigurationProperty_t3009015393 * ___property0, Il2CppObject * ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void ConfigurationElement_set_Item_m4074765769 (ConfigurationElement_t3842833450 * __this, ConfigurationProperty_t3009015393 * ___property0, Il2CppObject * ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Configuration.ConfigurationElement::get_Item(System.String)
-extern "C"  Il2CppObject * ConfigurationElement_get_Item_m966435172 (ConfigurationElement_t3842833450 * __this, String_t* ___property_name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  Il2CppObject * ConfigurationElement_get_Item_m3549593916 (ConfigurationElement_t3842833450 * __this, String_t* ___property_name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationElement::set_Item(System.String,System.Object)
-extern "C"  void ConfigurationElement_set_Item_m207464521 (ConfigurationElement_t3842833450 * __this, String_t* ___property_name0, Il2CppObject * ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void ConfigurationElement_set_Item_m3440149537 (ConfigurationElement_t3842833450 * __this, String_t* ___property_name0, Il2CppObject * ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Configuration.ConfigurationPropertyCollection System.Configuration.ConfigurationElement::get_Properties()
 extern "C"  ConfigurationPropertyCollection_t55611423 * ConfigurationElement_get_Properties_m1602766206 (ConfigurationElement_t3842833450 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Configuration.ConfigurationElement::Equals(System.Object)
@@ -99,7 +99,7 @@ extern "C"  bool ConfigurationElement_HasValues_m2077527173 (ConfigurationElemen
 // System.Boolean System.Configuration.ConfigurationElement::HasLocalModifications()
 extern "C"  bool ConfigurationElement_HasLocalModifications_m1860323983 (ConfigurationElement_t3842833450 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationElement::DeserializeElement(System.Xml.XmlReader,System.Boolean)
-extern "C"  void ConfigurationElement_DeserializeElement_m526511341 (ConfigurationElement_t3842833450 * __this, XmlReader_t4123196108 * ___reader0, bool ___serializeCollectionKey1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void ConfigurationElement_DeserializeElement_m2582807237 (ConfigurationElement_t3842833450 * __this, XmlReader_t4123196108 * ___reader0, bool ___serializeCollectionKey1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Configuration.ConfigurationElement::OnDeserializeUnrecognizedAttribute(System.String,System.String)
 extern "C"  bool ConfigurationElement_OnDeserializeUnrecognizedAttribute_m1006639416 (ConfigurationElement_t3842833450 * __this, String_t* ___name0, String_t* ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Configuration.ConfigurationElement::OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)
@@ -109,7 +109,7 @@ extern "C"  Il2CppObject * ConfigurationElement_OnRequiredPropertyNotFound_m2624
 // System.Void System.Configuration.ConfigurationElement::PreSerialize(System.Xml.XmlWriter)
 extern "C"  void ConfigurationElement_PreSerialize_m1216817032 (ConfigurationElement_t3842833450 * __this, XmlWriter_t4278601340 * ___writer0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationElement::PostDeserialize()
-extern "C"  void ConfigurationElement_PostDeserialize_m4269718378 (ConfigurationElement_t3842833450 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void ConfigurationElement_PostDeserialize_m3152016194 (ConfigurationElement_t3842833450 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationElement::InitializeDefault()
 extern "C"  void ConfigurationElement_InitializeDefault_m838875156 (ConfigurationElement_t3842833450 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Configuration.ConfigurationElement::IsModified()

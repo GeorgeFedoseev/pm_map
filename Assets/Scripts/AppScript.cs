@@ -67,6 +67,8 @@ public class AppScript : MonoBehaviour {
 	[HideInInspector]
 	public RectTransform openExamsButton;
 	[HideInInspector]
+	public GameObject examsHeader;
+	[HideInInspector]
 	public Transform centerPanelContainer;
 
 	[HideInInspector]
@@ -151,6 +153,8 @@ public class AppScript : MonoBehaviour {
 		openTimetableButton = GameObject.Find ("OpenTimetableButton").GetComponent<RectTransform> ();
 		openExamsButton = GameObject.Find ("OpenExamsButton").GetComponent<RectTransform> ();
 
+		examsHeader = GameObject.Find ("ExamsHeader");
+
 
 		facilities = new FacilitiesManager ();
 		timetableManager = new TimetableManger ();
@@ -180,6 +184,8 @@ public class AppScript : MonoBehaviour {
 		} else {
 			openExamsButton.gameObject.SetActive (false);
 		}
+
+		closeExamsView ();
 	}
 
 	void Start () {
@@ -276,16 +282,30 @@ public class AppScript : MonoBehaviour {
 
 
 
-	WebViewObject webViewObject;
+
 	// EXAMS
+	WebViewObject webViewObject;
 	public void openExamsView() {
 		Debug.LogWarning ("open exams web view");
 
 		webViewObject = (new GameObject("WebViewObject")).AddComponent<WebViewObject>();
 		webViewObject.Init(enableWKWebView: true);
-		webViewObject.SetMargins(5, 100, 5, Screen.height / 4);
+		webViewObject.SetMargins(0, (int)(scaleFactorRefCanvas.scaleFactor*64), 0, 0);
 		webViewObject.SetVisibility(true);
-		webViewObject.LoadURL("http://google.com");
+
+
+		var url = "http://timetable.spbu.ru/" + PlayerPrefs.GetString ("tt_study_group_link").Replace("Primary", "Attestation");
+		webViewObject.LoadURL(url);
+
+		examsHeader.SetActive (true);
+	}
+
+
+	public void closeExamsView(){
+		examsHeader.SetActive (false);	
+		if (webViewObject != null) {
+			webViewObject.SetVisibility (false);
+		}
 	}
 
 	// TIMETABLE

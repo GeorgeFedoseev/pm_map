@@ -13,9 +13,9 @@
 #include <exception>
 
 // System.MonoTODOAttribute
-struct MonoTODOAttribute_t2091695243;
+struct MonoTODOAttribute_t2091695242;
 
 #include "codegen/il2cpp-codegen.h"
 
 // System.Void System.MonoTODOAttribute::.ctor()
-extern "C"  void MonoTODOAttribute__ctor_m821822065 (MonoTODOAttribute_t2091695243 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void MonoTODOAttribute__ctor_m821822065 (MonoTODOAttribute_t2091695242 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

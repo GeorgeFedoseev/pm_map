@@ -4718,7 +4718,7 @@ extern Il2CppCodeGenString* _stringLiteral62;
 extern Il2CppCodeGenString* _stringLiteral1983;
 extern Il2CppCodeGenString* _stringLiteral1920;
 extern Il2CppCodeGenString* _stringLiteral60;
-extern Il2CppCodeGenString* _stringLiteral1922;
+extern Il2CppCodeGenString* _stringLiteral1921;
 extern Il2CppCodeGenString* _stringLiteral37;
 extern Il2CppCodeGenString* _stringLiteral42;
 extern Il2CppCodeGenString* _stringLiteral1084;
@@ -4980,7 +4980,7 @@ IL_00f8:
 
 IL_00fe:
 	{
-		return _stringLiteral1922;
+		return _stringLiteral1921;
 	}
 
 IL_0104:

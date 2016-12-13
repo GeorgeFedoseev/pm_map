@@ -20,7 +20,7 @@
 #endif
 
 // System.MonoInternalNoteAttribute
-struct  MonoInternalNoteAttribute_t254854272  : public MonoTODOAttribute_t2091695244
+struct  MonoInternalNoteAttribute_t254854272  : public MonoTODOAttribute_t2091695243
 {
 public:
 

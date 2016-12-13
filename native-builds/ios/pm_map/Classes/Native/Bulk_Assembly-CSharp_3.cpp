@@ -48869,7 +48869,7 @@ IL_001c:
 	{
 		AppScript_t3488119340 * L_2 = V_0;
 		NullCheck(L_2);
-		TTPanelScript_t1983791439 * L_3 = L_2->get_timetablePanel_27();
+		TTPanelScript_t1983791439 * L_3 = L_2->get_timetablePanel_29();
 		WeekTimetable_t3211448027 * L_4 = __this->get_week_2();
 		NullCheck(L_3);
 		TTPanelScript_addPairClicked_m1477888558(L_3, L_4, /*hidden argument*/NULL);
@@ -50481,7 +50481,7 @@ extern "C"  void TTPanelScript_OnEnable_m1998335242 (TTPanelScript_t1983791439 *
 	{
 		AppScript_t3488119340 * L_0 = ((CenterPanelScript_t1133230138 *)__this)->get_app_2();
 		NullCheck(L_0);
-		bool L_1 = L_0->get_ready_28();
+		bool L_1 = L_0->get_ready_30();
 		if (!L_1)
 		{
 			goto IL_0016;
@@ -51416,7 +51416,7 @@ extern "C"  void TTPanelScript_U3CupdateTimetableClickedU3Em__3D_m152848613 (TTP
 		TimetableManger_initTimetable_m2485135283(L_1, (bool)1, (bool)1, /*hidden argument*/NULL);
 		AppScript_t3488119340 * L_2 = ((CenterPanelScript_t1133230138 *)__this)->get_app_2();
 		NullCheck(L_2);
-		TTPanelScript_t1983791439 * L_3 = L_2->get_timetablePanel_27();
+		TTPanelScript_t1983791439 * L_3 = L_2->get_timetablePanel_29();
 		NullCheck(L_3);
 		TTPanelScript_UpdateContents_m2588513979(L_3, (bool)0, (bool)0, /*hidden argument*/NULL);
 		return;
@@ -51469,7 +51469,7 @@ extern "C"  void U3CaddPairClickedU3Ec__AnonStorey2B_U3CU3Em__41_m2896702704 (U3
 		NullCheck(L_0);
 		AppScript_t3488119340 * L_1 = ((CenterPanelScript_t1133230138 *)L_0)->get_app_2();
 		NullCheck(L_1);
-		TTPanelScript_t1983791439 * L_2 = L_1->get_timetablePanel_27();
+		TTPanelScript_t1983791439 * L_2 = L_1->get_timetablePanel_29();
 		NullCheck(L_2);
 		TTPanelScript_UpdateContents_m2588513979(L_2, (bool)1, (bool)0, /*hidden argument*/NULL);
 		return;
@@ -52976,7 +52976,7 @@ extern "C"  void TTTimeScript_DeletePairFromTime_m2856736888 (TTTimeScript_t1090
 		L_3->set_U3CU3Ef__this_1(__this);
 		AppScript_t3488119340 * L_4 = __this->get_app_2();
 		NullCheck(L_4);
-		TTPanelScript_t1983791439 * L_5 = L_4->get_timetablePanel_27();
+		TTPanelScript_t1983791439 * L_5 = L_4->get_timetablePanel_29();
 		NullCheck(L_5);
 		TTPanelScript_EnableLayout_m1016764876(L_5, (bool)1, /*hidden argument*/NULL);
 		U3CDeletePairFromTimeU3Ec__AnonStorey31_t740818280 * L_6 = V_0;
@@ -53352,7 +53352,7 @@ extern "C"  void U3CaddPairU3Ec__AnonStorey30_U3CU3Em__4A_m3539543589 (U3CaddPai
 		NullCheck(L_11);
 		AppScript_t3488119340 * L_12 = L_11->get_app_2();
 		NullCheck(L_12);
-		TTPanelScript_t1983791439 * L_13 = L_12->get_timetablePanel_27();
+		TTPanelScript_t1983791439 * L_13 = L_12->get_timetablePanel_29();
 		NullCheck(L_13);
 		TTPanelScript_UpdateContents_m2588513979(L_13, (bool)1, (bool)1, /*hidden argument*/NULL);
 		TTTimeScript_t109037720 * L_14 = __this->get_U3CU3Ef__this_2();
@@ -53414,7 +53414,7 @@ extern "C"  void U3CaddPairU3Ec__AnonStorey2F_U3CU3Em__4B_m2377085763 (U3CaddPai
 		NullCheck(L_1);
 		AppScript_t3488119340 * L_2 = L_1->get_app_2();
 		NullCheck(L_2);
-		TTPanelScript_t1983791439 * L_3 = L_2->get_timetablePanel_27();
+		TTPanelScript_t1983791439 * L_3 = L_2->get_timetablePanel_29();
 		NullCheck(L_3);
 		TTPanelScript_UpdateContents_m2588513979(L_3, (bool)1, (bool)0, /*hidden argument*/NULL);
 		return;
@@ -53632,7 +53632,7 @@ extern "C"  void U3CDeletePairFromTimeU3Ec__AnonStorey32_U3CU3Em__4E_m793016604 
 		NullCheck(L_1);
 		AppScript_t3488119340 * L_2 = L_1->get_app_2();
 		NullCheck(L_2);
-		TTPanelScript_t1983791439 * L_3 = L_2->get_timetablePanel_27();
+		TTPanelScript_t1983791439 * L_3 = L_2->get_timetablePanel_29();
 		NullCheck(L_3);
 		TTPanelScript_EnableLayout_m1016764876(L_3, (bool)0, /*hidden argument*/NULL);
 		return;

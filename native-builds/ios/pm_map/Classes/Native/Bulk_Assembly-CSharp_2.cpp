@@ -12868,7 +12868,7 @@ extern "C"  void U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__11_m2323936094 (U3C
 		NullCheck(L_3);
 		AppScript_t3488119340 * L_4 = L_3->get_app_0();
 		NullCheck(L_4);
-		TTPanelScript_t1983791439 * L_5 = L_4->get_timetablePanel_27();
+		TTPanelScript_t1983791439 * L_5 = L_4->get_timetablePanel_29();
 		NullCheck(L_5);
 		L_5->set_firstLoadDone_21((bool)0);
 		IntPtr_t L_6;
@@ -12924,7 +12924,7 @@ extern "C"  void U3CinitTimetableU3Ec__AnonStorey1E_U3CU3Em__1E_m2323955314 (U3C
 		NullCheck(L_0);
 		AppScript_t3488119340 * L_1 = L_0->get_app_0();
 		NullCheck(L_1);
-		TTPanelScript_t1983791439 * L_2 = L_1->get_timetablePanel_27();
+		TTPanelScript_t1983791439 * L_2 = L_1->get_timetablePanel_29();
 		NullCheck(L_2);
 		TTPanelScript_UpdateContents_m2588513979(L_2, (bool)0, (bool)0, /*hidden argument*/NULL);
 		return;

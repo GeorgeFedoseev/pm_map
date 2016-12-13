@@ -2180,7 +2180,7 @@ extern "C"  void XPathNavigator__ctor_m2215010048 (XPathNavigator_t1075073278 * 
 // System.Void System.Xml.XPath.XPathNavigator::.cctor()
 extern Il2CppClass* CharU5BU5D_t3324145743_il2cpp_TypeInfo_var;
 extern Il2CppClass* XPathNavigator_t1075073278_il2cpp_TypeInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238935____U24U24fieldU2D18_9_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D18_9_FieldInfo_var;
 extern const uint32_t XPathNavigator__cctor_m3758705837_MetadataUsageId;
 extern "C"  void XPathNavigator__cctor_m3758705837 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
@@ -2205,7 +2205,7 @@ extern "C"  void XPathNavigator__cctor_m3758705837 (Il2CppObject * __this /* sta
 		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(2), (Il2CppChar)((int32_t)62));
 		((XPathNavigator_t1075073278_StaticFields*)XPathNavigator_t1075073278_il2cpp_TypeInfo_var->static_fields)->set_escape_text_chars_0(L_2);
 		CharU5BU5D_t3324145743* L_3 = ((CharU5BU5D_t3324145743*)SZArrayNew(CharU5BU5D_t3324145743_il2cpp_TypeInfo_var, (uint32_t)6));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_3, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238935____U24U24fieldU2D18_9_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_3, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D18_9_FieldInfo_var), /*hidden argument*/NULL);
 		((XPathNavigator_t1075073278_StaticFields*)XPathNavigator_t1075073278_il2cpp_TypeInfo_var->static_fields)->set_escape_attr_chars_1(L_3);
 		return;
 	}

@@ -19,7 +19,7 @@
 #endif
 
 // <Module>
-struct  U3CModuleU3E_t86524805 
+struct  U3CModuleU3E_t86524806 
 {
 public:
 

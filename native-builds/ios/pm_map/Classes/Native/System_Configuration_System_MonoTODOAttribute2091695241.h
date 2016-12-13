@@ -22,14 +22,14 @@ struct String_t;
 #endif
 
 // System.MonoTODOAttribute
-struct  MonoTODOAttribute_t2091695244  : public Attribute_t2523058482
+struct  MonoTODOAttribute_t2091695243  : public Attribute_t2523058482
 {
 public:
 	// System.String System.MonoTODOAttribute::comment
 	String_t* ___comment_0;
 
 public:
-	inline static int32_t get_offset_of_comment_0() { return static_cast<int32_t>(offsetof(MonoTODOAttribute_t2091695244, ___comment_0)); }
+	inline static int32_t get_offset_of_comment_0() { return static_cast<int32_t>(offsetof(MonoTODOAttribute_t2091695243, ___comment_0)); }
 	inline String_t* get_comment_0() const { return ___comment_0; }
 	inline String_t** get_address_of_comment_0() { return &___comment_0; }
 	inline void set_comment_0(String_t* value)

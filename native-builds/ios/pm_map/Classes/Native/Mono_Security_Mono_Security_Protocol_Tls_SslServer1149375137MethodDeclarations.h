@@ -51,15 +51,15 @@ struct AsymmetricAlgorithm_t1241690687;
 #include "Mono_Security_Mono_Security_X509_X509CertificateCo4135795357.h"
 
 // System.Void Mono.Security.Protocol.Tls.SslServerStream::.ctor(System.IO.Stream,System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Boolean)
-extern "C"  void SslServerStream__ctor_m1114421790 (SslServerStream_t1149375137 * __this, Stream_t1561764144 * ___stream0, X509Certificate_t3076817455 * ___serverCertificate1, bool ___clientCertificateRequired2, bool ___ownsStream3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void SslServerStream__ctor_m2883765690 (SslServerStream_t1149375137 * __this, Stream_t1561764144 * ___stream0, X509Certificate_t3076817455 * ___serverCertificate1, bool ___clientCertificateRequired2, bool ___ownsStream3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.SslServerStream::.ctor(System.IO.Stream,System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Boolean,Mono.Security.Protocol.Tls.SecurityProtocolType)
 extern "C"  void SslServerStream__ctor_m2654280462 (SslServerStream_t1149375137 * __this, Stream_t1561764144 * ___stream0, X509Certificate_t3076817455 * ___serverCertificate1, bool ___clientCertificateRequired2, bool ___ownsStream3, int32_t ___securityProtocolType4, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.SslServerStream::.ctor(System.IO.Stream,System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Boolean,System.Boolean,Mono.Security.Protocol.Tls.SecurityProtocolType)
 extern "C"  void SslServerStream__ctor_m965370327 (SslServerStream_t1149375137 * __this, Stream_t1561764144 * ___stream0, X509Certificate_t3076817455 * ___serverCertificate1, bool ___clientCertificateRequired2, bool ___requestClientCertificate3, bool ___ownsStream4, int32_t ___securityProtocolType5, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // Mono.Security.Protocol.Tls.PrivateKeySelectionCallback Mono.Security.Protocol.Tls.SslServerStream::get_PrivateKeyCertSelectionDelegate()
-extern "C"  PrivateKeySelectionCallback_t3559239239 * SslServerStream_get_PrivateKeyCertSelectionDelegate_m2533633929 (SslServerStream_t1149375137 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  PrivateKeySelectionCallback_t3559239239 * SslServerStream_get_PrivateKeyCertSelectionDelegate_m2686957933 (SslServerStream_t1149375137 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.SslServerStream::set_PrivateKeyCertSelectionDelegate(Mono.Security.Protocol.Tls.PrivateKeySelectionCallback)
-extern "C"  void SslServerStream_set_PrivateKeyCertSelectionDelegate_m902742742 (SslServerStream_t1149375137 * __this, PrivateKeySelectionCallback_t3559239239 * ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void SslServerStream_set_PrivateKeyCertSelectionDelegate_m344121970 (SslServerStream_t1149375137 * __this, PrivateKeySelectionCallback_t3559239239 * ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.SslServerStream::Finalize()
 extern "C"  void SslServerStream_Finalize_m3597319539 (SslServerStream_t1149375137 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.SslServerStream::Dispose(System.Boolean)

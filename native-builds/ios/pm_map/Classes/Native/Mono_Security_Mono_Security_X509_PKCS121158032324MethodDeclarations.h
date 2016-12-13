@@ -52,9 +52,9 @@ struct Il2CppObject;
 // System.Void Mono.Security.X509.PKCS12::.ctor()
 extern "C"  void PKCS12__ctor_m2645615037 (PKCS12_t1158032325 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.X509.PKCS12::.ctor(System.Byte[])
-extern "C"  void PKCS12__ctor_m1570997648 (PKCS12_t1158032325 * __this, ByteU5BU5D_t4260760469* ___data0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void PKCS12__ctor_m721197356 (PKCS12_t1158032325 * __this, ByteU5BU5D_t4260760469* ___data0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.X509.PKCS12::.ctor(System.Byte[],System.String)
-extern "C"  void PKCS12__ctor_m3732648396 (PKCS12_t1158032325 * __this, ByteU5BU5D_t4260760469* ___data0, String_t* ___password1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void PKCS12__ctor_m3870049384 (PKCS12_t1158032325 * __this, ByteU5BU5D_t4260760469* ___data0, String_t* ___password1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.X509.PKCS12::.cctor()
 extern "C"  void PKCS12__cctor_m4222558608 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.X509.PKCS12::Decode(System.Byte[])
@@ -68,9 +68,9 @@ extern "C"  int32_t PKCS12_get_IterationCount_m1936461050 (PKCS12_t1158032325 * 
 // System.Void Mono.Security.X509.PKCS12::set_IterationCount(System.Int32)
 extern "C"  void PKCS12_set_IterationCount_m4214894503 (PKCS12_t1158032325 * __this, int32_t ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.ArrayList Mono.Security.X509.PKCS12::get_Keys()
-extern "C"  ArrayList_t3948406897 * PKCS12_get_Keys_m3197281000 (PKCS12_t1158032325 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  ArrayList_t3948406897 * PKCS12_get_Keys_m4003825612 (PKCS12_t1158032325 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // Mono.Security.X509.X509CertificateCollection Mono.Security.X509.PKCS12::get_Certificates()
-extern "C"  X509CertificateCollection_t4135795358 * PKCS12_get_Certificates_m425759547 (PKCS12_t1158032325 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  X509CertificateCollection_t4135795358 * PKCS12_get_Certificates_m1930169375 (PKCS12_t1158032325 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Security.Cryptography.RandomNumberGenerator Mono.Security.X509.PKCS12::get_RNG()
 extern "C"  RandomNumberGenerator_t1757673517 * PKCS12_get_RNG_m944600768 (PKCS12_t1158032325 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.X509.PKCS12::Compare(System.Byte[],System.Byte[])

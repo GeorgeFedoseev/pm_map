@@ -36,13 +36,13 @@ struct XmlReader_t4123196108;
 // System.Void System.Configuration.ConfigurationErrorsException::.ctor()
 extern "C"  void ConfigurationErrorsException__ctor_m1016638077 (ConfigurationErrorsException_t1727501650 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationErrorsException::.ctor(System.String)
-extern "C"  void ConfigurationErrorsException__ctor_m3985553021 (ConfigurationErrorsException_t1727501650 * __this, String_t* ___message0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void ConfigurationErrorsException__ctor_m1643685797 (ConfigurationErrorsException_t1727501650 * __this, String_t* ___message0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationErrorsException::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
 extern "C"  void ConfigurationErrorsException__ctor_m4273575486 (ConfigurationErrorsException_t1727501650 * __this, SerializationInfo_t2185721892 * ___info0, StreamingContext_t2761351129  ___context1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationErrorsException::.ctor(System.String,System.Exception)
 extern "C"  void ConfigurationErrorsException__ctor_m3158621233 (ConfigurationErrorsException_t1727501650 * __this, String_t* ___message0, Exception_t3991598821 * ___inner1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationErrorsException::.ctor(System.String,System.Xml.XmlNode)
-extern "C"  void ConfigurationErrorsException__ctor_m4112141190 (ConfigurationErrorsException_t1727501650 * __this, String_t* ___message0, XmlNode_t856910923 * ___node1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void ConfigurationErrorsException__ctor_m2049587550 (ConfigurationErrorsException_t1727501650 * __this, String_t* ___message0, XmlNode_t856910923 * ___node1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationErrorsException::.ctor(System.String,System.Xml.XmlReader)
 extern "C"  void ConfigurationErrorsException__ctor_m1524630781 (ConfigurationErrorsException_t1727501650 * __this, String_t* ___message0, XmlReader_t4123196108 * ___reader1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationErrorsException::.ctor(System.String,System.Exception,System.String,System.Int32)

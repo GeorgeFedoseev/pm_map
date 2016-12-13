@@ -19,6 +19,7 @@ extern "C" void DelegatePInvokeWrapper_WriteDelegate_t2583486074 ();
 extern "C" void DelegatePInvokeWrapper_CrossContextDelegate_t651537830 ();
 extern "C" void DelegatePInvokeWrapper_CallbackHandler_t1474775431 ();
 extern "C" void DelegatePInvokeWrapper_ThreadStart_t124146534 ();
+extern "C" void DelegatePInvokeWrapper_CharGetter_t4120438118 ();
 extern "C" void DelegatePInvokeWrapper_ReadMethod_t1873379884 ();
 extern "C" void DelegatePInvokeWrapper_UnmanagedReadOrWrite_t2055733333 ();
 extern "C" void DelegatePInvokeWrapper_WriteMethod_t3250749483 ();
@@ -26,7 +27,6 @@ extern "C" void DelegatePInvokeWrapper_ReadDelegate_t3891738222 ();
 extern "C" void DelegatePInvokeWrapper_WriteDelegate_t1637408689 ();
 extern "C" void DelegatePInvokeWrapper_SocketAsyncCall_t742231849 ();
 extern "C" void DelegatePInvokeWrapper_CostDelegate_t1292950321 ();
-extern "C" void DelegatePInvokeWrapper_CharGetter_t4120438118 ();
 extern "C" void DelegatePInvokeWrapper_Action_t3771233898 ();
 extern "C" void DelegatePInvokeWrapper_LogCallback_t2984951347 ();
 extern "C" void DelegatePInvokeWrapper_PCMReaderCallback_t83861602 ();
@@ -60,6 +60,7 @@ extern const Il2CppMethodPointer g_DelegateWrappersManagedToNative[39] =
 	DelegatePInvokeWrapper_CrossContextDelegate_t651537830,
 	DelegatePInvokeWrapper_CallbackHandler_t1474775431,
 	DelegatePInvokeWrapper_ThreadStart_t124146534,
+	DelegatePInvokeWrapper_CharGetter_t4120438118,
 	DelegatePInvokeWrapper_ReadMethod_t1873379884,
 	DelegatePInvokeWrapper_UnmanagedReadOrWrite_t2055733333,
 	DelegatePInvokeWrapper_WriteMethod_t3250749483,
@@ -67,7 +68,6 @@ extern const Il2CppMethodPointer g_DelegateWrappersManagedToNative[39] =
 	DelegatePInvokeWrapper_WriteDelegate_t1637408689,
 	DelegatePInvokeWrapper_SocketAsyncCall_t742231849,
 	DelegatePInvokeWrapper_CostDelegate_t1292950321,
-	DelegatePInvokeWrapper_CharGetter_t4120438118,
 	DelegatePInvokeWrapper_Action_t3771233898,
 	DelegatePInvokeWrapper_LogCallback_t2984951347,
 	DelegatePInvokeWrapper_PCMReaderCallback_t83861602,

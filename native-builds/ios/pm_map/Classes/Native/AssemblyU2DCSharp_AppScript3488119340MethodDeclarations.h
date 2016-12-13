@@ -35,6 +35,10 @@ extern "C"  AppScript_t3488119340 * AppScript_getSharedInstance_m3091938420 (Il2
 extern "C"  String_t* AppScript__GetDeepLink_m2694011679 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::Awake()
 extern "C"  void AppScript_Awake_m484761122 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean AppScript::isNewYear()
+extern "C"  bool AppScript_isNewYear_m3740530788 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void AppScript::SetupTimeSpecialContent()
+extern "C"  void AppScript_SetupTimeSpecialContent_m2847733607 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::Start()
 extern "C"  void AppScript_Start_m3489260991 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::Update()
@@ -51,6 +55,10 @@ extern "C"  void AppScript_clearCenterPanelContainer_m1326885052 (AppScript_t348
 extern "C"  void AppScript_disableAllInCentralPanelContainer_m2871540913 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.GameObject AppScript::loadCenterPanel(System.String)
 extern "C"  GameObject_t3674682005 * AppScript_loadCenterPanel_m3492800263 (AppScript_t3488119340 * __this, String_t* ___name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void AppScript::openExamsView()
+extern "C"  void AppScript_openExamsView_m2350208012 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void AppScript::closeExamsView()
+extern "C"  void AppScript_closeExamsView_m841355558 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::openTimetable()
 extern "C"  void AppScript_openTimetable_m4037397044 (AppScript_t3488119340 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AppScript::openTimetableTour()

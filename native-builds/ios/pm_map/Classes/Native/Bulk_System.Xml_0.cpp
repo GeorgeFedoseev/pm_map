@@ -634,25 +634,25 @@ struct XsdNormalizedString_t3069561175;
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // Conversion methods for marshalling of: <PrivateImplementationDetails>/$ArrayType$12
-extern "C" void U24ArrayTypeU2412_t3379220350_marshal_pinvoke(const U24ArrayTypeU2412_t3379220350& unmarshaled, U24ArrayTypeU2412_t3379220350_marshaled_pinvoke& marshaled)
+extern "C" void U24ArrayTypeU2412_t3379220349_marshal_pinvoke(const U24ArrayTypeU2412_t3379220349& unmarshaled, U24ArrayTypeU2412_t3379220349_marshaled_pinvoke& marshaled)
 {
 }
-extern "C" void U24ArrayTypeU2412_t3379220350_marshal_pinvoke_back(const U24ArrayTypeU2412_t3379220350_marshaled_pinvoke& marshaled, U24ArrayTypeU2412_t3379220350& unmarshaled)
+extern "C" void U24ArrayTypeU2412_t3379220349_marshal_pinvoke_back(const U24ArrayTypeU2412_t3379220349_marshaled_pinvoke& marshaled, U24ArrayTypeU2412_t3379220349& unmarshaled)
 {
 }
 // Conversion method for clean up from marshalling of: <PrivateImplementationDetails>/$ArrayType$12
-extern "C" void U24ArrayTypeU2412_t3379220350_marshal_pinvoke_cleanup(U24ArrayTypeU2412_t3379220350_marshaled_pinvoke& marshaled)
+extern "C" void U24ArrayTypeU2412_t3379220349_marshal_pinvoke_cleanup(U24ArrayTypeU2412_t3379220349_marshaled_pinvoke& marshaled)
 {
 }
 // Conversion methods for marshalling of: <PrivateImplementationDetails>/$ArrayType$12
-extern "C" void U24ArrayTypeU2412_t3379220350_marshal_com(const U24ArrayTypeU2412_t3379220350& unmarshaled, U24ArrayTypeU2412_t3379220350_marshaled_com& marshaled)
+extern "C" void U24ArrayTypeU2412_t3379220349_marshal_com(const U24ArrayTypeU2412_t3379220349& unmarshaled, U24ArrayTypeU2412_t3379220349_marshaled_com& marshaled)
 {
 }
-extern "C" void U24ArrayTypeU2412_t3379220350_marshal_com_back(const U24ArrayTypeU2412_t3379220350_marshaled_com& marshaled, U24ArrayTypeU2412_t3379220350& unmarshaled)
+extern "C" void U24ArrayTypeU2412_t3379220349_marshal_com_back(const U24ArrayTypeU2412_t3379220349_marshaled_com& marshaled, U24ArrayTypeU2412_t3379220349& unmarshaled)
 {
 }
 // Conversion method for clean up from marshalling of: <PrivateImplementationDetails>/$ArrayType$12
-extern "C" void U24ArrayTypeU2412_t3379220350_marshal_com_cleanup(U24ArrayTypeU2412_t3379220350_marshaled_com& marshaled)
+extern "C" void U24ArrayTypeU2412_t3379220349_marshal_com_cleanup(U24ArrayTypeU2412_t3379220349_marshaled_com& marshaled)
 {
 }
 // Conversion methods for marshalling of: <PrivateImplementationDetails>/$ArrayType$1280
@@ -3682,7 +3682,7 @@ IL_0060:
 		{
 			String_t* L_9 = VirtFuncInvoker0< String_t* >::Invoke(7 /* System.String Mono.Xml.DTDNode::get_BaseURI() */, __this);
 			Uri_t1116831938 * L_10 = (Uri_t1116831938 *)il2cpp_codegen_object_new(Uri_t1116831938_il2cpp_TypeInfo_var);
-			Uri__ctor_m1721267859(L_10, L_9, /*hidden argument*/NULL);
+			Uri__ctor_m2693266474(L_10, L_9, /*hidden argument*/NULL);
 			V_0 = L_10;
 		}
 
@@ -3714,7 +3714,7 @@ IL_0077:
 		__this->set_absUri_11(L_14);
 		Uri_t1116831938 * L_15 = __this->get_absUri_11();
 		IL2CPP_RUNTIME_CLASS_INIT(Uri_t1116831938_il2cpp_TypeInfo_var);
-		bool L_16 = Uri_op_Inequality_m2899852498(NULL /*static, unused*/, L_15, (Uri_t1116831938 *)NULL, /*hidden argument*/NULL);
+		bool L_16 = Uri_op_Inequality_m2875066843(NULL /*static, unused*/, L_15, (Uri_t1116831938 *)NULL, /*hidden argument*/NULL);
 		G_B12_0 = __this;
 		if (!L_16)
 		{
@@ -5563,7 +5563,7 @@ IL_003b:
 		NullCheck(L_10);
 		String_t* L_11 = VirtFuncInvoker0< String_t* >::Invoke(7 /* System.String Mono.Xml.DTDNode::get_BaseURI() */, L_10);
 		Uri_t1116831938 * L_12 = (Uri_t1116831938 *)il2cpp_codegen_object_new(Uri_t1116831938_il2cpp_TypeInfo_var);
-		Uri__ctor_m1721267859(L_12, L_11, /*hidden argument*/NULL);
+		Uri__ctor_m2693266474(L_12, L_11, /*hidden argument*/NULL);
 		G_B6_0 = L_12;
 	}
 
@@ -12847,7 +12847,7 @@ IL_0018:
 		bool L_4 = ___formal1;
 		NullCheck(G_B3_1);
 		IL2CPP_RUNTIME_CLASS_INIT(Uri_t1116831938_il2cpp_TypeInfo_var);
-		Uri__ctor_m1689224330(G_B3_1, G_B3_0, (bool)((((int32_t)L_4) == ((int32_t)0))? 1 : 0), /*hidden argument*/NULL);
+		Uri__ctor_m70204947(G_B3_1, G_B3_0, (bool)((((int32_t)L_4) == ((int32_t)0))? 1 : 0), /*hidden argument*/NULL);
 		String_t* L_5 = ___src0;
 		__this->set_value_38(L_5);
 		return;
@@ -13917,7 +13917,7 @@ IL_00a5:
 		StringCollection_t3266201207 * L_24 = XmlSchemaAny_get_ResolvedNamespaces_m3582517194(L_23, /*hidden argument*/NULL);
 		int32_t L_25 = V_0;
 		NullCheck(L_24);
-		String_t* L_26 = StringCollection_get_Item_m2870174736(L_24, L_25, /*hidden argument*/NULL);
+		String_t* L_26 = StringCollection_get_Item_m458216537(L_24, L_25, /*hidden argument*/NULL);
 		String_t* L_27 = ___ns0;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
 		bool L_28 = String_op_Equality_m1260523650(NULL /*static, unused*/, L_26, L_27, /*hidden argument*/NULL);
@@ -13943,7 +13943,7 @@ IL_00c7:
 		NullCheck(L_31);
 		StringCollection_t3266201207 * L_32 = XmlSchemaAny_get_ResolvedNamespaces_m3582517194(L_31, /*hidden argument*/NULL);
 		NullCheck(L_32);
-		int32_t L_33 = StringCollection_get_Count_m2308791826(L_32, /*hidden argument*/NULL);
+		int32_t L_33 = StringCollection_get_Count_m1158755291(L_32, /*hidden argument*/NULL);
 		if ((((int32_t)L_30) < ((int32_t)L_33)))
 		{
 			goto IL_00a5;

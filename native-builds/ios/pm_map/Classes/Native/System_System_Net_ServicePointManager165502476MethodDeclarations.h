@@ -30,13 +30,13 @@ struct IWebProxy_t354717117;
 // System.Void System.Net.ServicePointManager::.cctor()
 extern "C"  void ServicePointManager__cctor_m1197717107 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Net.ICertificatePolicy System.Net.ServicePointManager::get_CertificatePolicy()
-extern "C"  Il2CppObject * ServicePointManager_get_CertificatePolicy_m2939782421 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  Il2CppObject * ServicePointManager_get_CertificatePolicy_m16190897 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Net.ServicePointManager::get_CheckCertificateRevocationList()
-extern "C"  bool ServicePointManager_get_CheckCertificateRevocationList_m2088706324 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  bool ServicePointManager_get_CheckCertificateRevocationList_m838738096 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Net.SecurityProtocolType System.Net.ServicePointManager::get_SecurityProtocol()
-extern "C"  int32_t ServicePointManager_get_SecurityProtocol_m2377079580 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  int32_t ServicePointManager_get_SecurityProtocol_m1940055552 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Net.Security.RemoteCertificateValidationCallback System.Net.ServicePointManager::get_ServerCertificateValidationCallback()
-extern "C"  RemoteCertificateValidationCallback_t1894914657 * ServicePointManager_get_ServerCertificateValidationCallback_m258265119 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  RemoteCertificateValidationCallback_t1894914657 * ServicePointManager_get_ServerCertificateValidationCallback_m451731131 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Net.ServicePoint System.Net.ServicePointManager::FindServicePoint(System.Uri,System.Net.IWebProxy)
 extern "C"  ServicePoint_t4193060341 * ServicePointManager_FindServicePoint_m543399130 (Il2CppObject * __this /* static, unused */, Uri_t1116831938 * ___address0, Il2CppObject * ___proxy1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Net.ServicePointManager::RecycleServicePoints()

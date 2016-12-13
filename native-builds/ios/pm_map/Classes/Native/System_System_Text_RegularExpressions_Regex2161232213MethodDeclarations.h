@@ -42,7 +42,7 @@ struct Int32U5BU5D_t3230847821;
 // System.Void System.Text.RegularExpressions.Regex::.ctor()
 extern "C"  void Regex__ctor_m523653122 (Regex_t2161232213 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Regex::.ctor(System.String)
-extern "C"  void Regex__ctor_m2980635200 (Regex_t2161232213 * __this, String_t* ___pattern0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void Regex__ctor_m995952919 (Regex_t2161232213 * __this, String_t* ___pattern0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Regex::.ctor(System.String,System.Text.RegularExpressions.RegexOptions)
 extern "C"  void Regex__ctor_m2068483208 (Regex_t2161232213 * __this, String_t* ___pattern0, int32_t ___options1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Regex::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
@@ -74,7 +74,7 @@ extern "C"  int32_t Regex_GetGroupIndex_m547759882 (Regex_t2161232213 * __this, 
 // System.Int32 System.Text.RegularExpressions.Regex::default_startat(System.String)
 extern "C"  int32_t Regex_default_startat_m996366267 (Regex_t2161232213 * __this, String_t* ___input0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Text.RegularExpressions.Regex::IsMatch(System.String)
-extern "C"  bool Regex_IsMatch_m2967892253 (Regex_t2161232213 * __this, String_t* ___input0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  bool Regex_IsMatch_m1589377190 (Regex_t2161232213 * __this, String_t* ___input0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Text.RegularExpressions.Regex::IsMatch(System.String,System.Int32)
 extern "C"  bool Regex_IsMatch_m3759940314 (Regex_t2161232213 * __this, String_t* ___input0, int32_t ___startat1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.RegularExpressions.Match System.Text.RegularExpressions.Regex::Match(System.String)
@@ -82,7 +82,7 @@ extern "C"  Match_t2156507859 * Regex_Match_m2003175236 (Regex_t2161232213 * __t
 // System.Text.RegularExpressions.Match System.Text.RegularExpressions.Regex::Match(System.String,System.Int32)
 extern "C"  Match_t2156507859 * Regex_Match_m1021969427 (Regex_t2161232213 * __this, String_t* ___input0, int32_t ___startat1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.RegularExpressions.MatchCollection System.Text.RegularExpressions.Regex::Matches(System.String)
-extern "C"  MatchCollection_t3437694865 * Regex_Matches_m3092142232 (Regex_t2161232213 * __this, String_t* ___input0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  MatchCollection_t3437694865 * Regex_Matches_m4260316212 (Regex_t2161232213 * __this, String_t* ___input0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.RegularExpressions.MatchCollection System.Text.RegularExpressions.Regex::Matches(System.String,System.Int32)
 extern "C"  MatchCollection_t3437694865 * Regex_Matches_m4271078207 (Regex_t2161232213 * __this, String_t* ___input0, int32_t ___startat1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Text.RegularExpressions.Regex::Replace(System.String,System.String)

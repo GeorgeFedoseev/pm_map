@@ -28,7 +28,7 @@ struct IEnumerator_t3464575207;
 #include "System_Configuration_System_Configuration_Configur3009015393.h"
 
 // System.Void System.Configuration.ConfigurationPropertyCollection::.ctor()
-extern "C"  void ConfigurationPropertyCollection__ctor_m1405460746 (ConfigurationPropertyCollection_t55611423 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void ConfigurationPropertyCollection__ctor_m1116431410 (ConfigurationPropertyCollection_t55611423 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationPropertyCollection::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
 extern "C"  void ConfigurationPropertyCollection_System_Collections_ICollection_CopyTo_m2054733138 (ConfigurationPropertyCollection_t55611423 * __this, Il2CppArray * ___array0, int32_t ___index1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Configuration.ConfigurationPropertyCollection::get_Count()
@@ -38,6 +38,6 @@ extern "C"  bool ConfigurationPropertyCollection_get_IsSynchronized_m741315871 (
 // System.Object System.Configuration.ConfigurationPropertyCollection::get_SyncRoot()
 extern "C"  Il2CppObject * ConfigurationPropertyCollection_get_SyncRoot_m1512912301 (ConfigurationPropertyCollection_t55611423 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationPropertyCollection::Add(System.Configuration.ConfigurationProperty)
-extern "C"  void ConfigurationPropertyCollection_Add_m2617296181 (ConfigurationPropertyCollection_t55611423 * __this, ConfigurationProperty_t3009015393 * ___property0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void ConfigurationPropertyCollection_Add_m2609791069 (ConfigurationPropertyCollection_t55611423 * __this, ConfigurationProperty_t3009015393 * ___property0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.IEnumerator System.Configuration.ConfigurationPropertyCollection::GetEnumerator()
 extern "C"  Il2CppObject * ConfigurationPropertyCollection_GetEnumerator_m667009104 (ConfigurationPropertyCollection_t55611423 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

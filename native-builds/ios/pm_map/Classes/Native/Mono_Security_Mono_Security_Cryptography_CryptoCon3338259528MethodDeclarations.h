@@ -33,7 +33,7 @@ extern "C"  RSA_t2466814310 * CryptoConvert_FromCapiPrivateKeyBlob_m2969089254 (
 // System.Security.Cryptography.RSA Mono.Security.Cryptography.CryptoConvert::FromCapiPrivateKeyBlob(System.Byte[],System.Int32)
 extern "C"  RSA_t2466814310 * CryptoConvert_FromCapiPrivateKeyBlob_m1882328497 (Il2CppObject * __this /* static, unused */, ByteU5BU5D_t4260760469* ___blob0, int32_t ___offset1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.Cryptography.CryptoConvert::ToHex(System.Byte[])
-extern "C"  String_t* CryptoConvert_ToHex_m1331445157 (Il2CppObject * __this /* static, unused */, ByteU5BU5D_t4260760469* ___input0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  String_t* CryptoConvert_ToHex_m1540445577 (Il2CppObject * __this /* static, unused */, ByteU5BU5D_t4260760469* ___input0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Byte Mono.Security.Cryptography.CryptoConvert::FromHexChar(System.Char)
 extern "C"  uint8_t CryptoConvert_FromHexChar_m4171886399 (Il2CppObject * __this /* static, unused */, Il2CppChar ___c0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Byte[] Mono.Security.Cryptography.CryptoConvert::FromHex(System.String)

@@ -75,7 +75,7 @@ extern "C"  void HttpWebRequest_System_Runtime_Serialization_ISerializable_GetOb
 // System.Void System.Net.HttpWebRequest::set_Accept(System.String)
 extern "C"  void HttpWebRequest_set_Accept_m1873716368 (HttpWebRequest_t3949036893 * __this, String_t* ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Uri System.Net.HttpWebRequest::get_Address()
-extern "C"  Uri_t1116831938 * HttpWebRequest_get_Address_m3157794738 (HttpWebRequest_t3949036893 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  Uri_t1116831938 * HttpWebRequest_get_Address_m1203539790 (HttpWebRequest_t3949036893 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Net.DecompressionMethods System.Net.HttpWebRequest::get_AutomaticDecompression()
 extern "C"  int32_t HttpWebRequest_get_AutomaticDecompression_m2503915258 (HttpWebRequest_t3949036893 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Net.HttpWebRequest::get_InternalAllowBuffering()
@@ -117,7 +117,7 @@ extern "C"  Uri_t1116831938 * HttpWebRequest_get_RequestUri_m2277170497 (HttpWeb
 // System.Boolean System.Net.HttpWebRequest::get_SendChunked()
 extern "C"  bool HttpWebRequest_get_SendChunked_m2844571814 (HttpWebRequest_t3949036893 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Net.ServicePoint System.Net.HttpWebRequest::get_ServicePoint()
-extern "C"  ServicePoint_t4193060341 * HttpWebRequest_get_ServicePoint_m146133801 (HttpWebRequest_t3949036893 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  ServicePoint_t4193060341 * HttpWebRequest_get_ServicePoint_m1869616069 (HttpWebRequest_t3949036893 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Net.HttpWebRequest::get_TransferEncoding()
 extern "C"  String_t* HttpWebRequest_get_TransferEncoding_m4082338001 (HttpWebRequest_t3949036893 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Net.HttpWebRequest::set_UserAgent(System.String)

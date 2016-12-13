@@ -9,6 +9,8 @@
 #endif
 
 
+// System.Text.RegularExpressions.Regex
+struct Regex_t2161232213;
 // System.ComponentModel.PropertyDescriptor
 struct PropertyDescriptor_t2073374448;
 // System.ComponentModel.MemberDescriptor
@@ -27,8 +29,6 @@ struct IPAddress_t3525271463;
 struct Capture_t754001812;
 // System.Text.RegularExpressions.Group
 struct Group_t2151468941;
-// System.Text.RegularExpressions.Regex
-struct Regex_t2161232213;
 // System.Collections.Generic.LinkedListNode`1<System.Action`2<System.Object,System.Object>>
 struct LinkedListNode_1_t3909799170;
 // System.Collections.Generic.LinkedListNode`1<System.Action`2<System.Object,TMPro.Compute_DT_EventArgs>>
@@ -61,6 +61,7 @@ struct LinkedListNode_1_t3084029502;
 struct LinkedListNode_1_t3387968605;
 
 #include "mscorlib_System_Array1146569071.h"
+#include "System_System_Text_RegularExpressions_Regex2161232213.h"
 #include "System_System_ComponentModel_PropertyDescriptor2073374448.h"
 #include "System_System_ComponentModel_MemberDescriptor2617136693.h"
 #include "System_System_ComponentModel_TypeDescriptionProvid3543085017.h"
@@ -73,7 +74,6 @@ struct LinkedListNode_1_t3387968605;
 #include "System_System_Text_RegularExpressions_Group2151468941.h"
 #include "System_System_Text_RegularExpressions_Mark3811539797.h"
 #include "System_System_Uri_UriScheme1290668975.h"
-#include "System_System_Text_RegularExpressions_Regex2161232213.h"
 #include "System_System_Collections_Generic_LinkedListNode_13909799170.h"
 #include "System_System_Collections_Generic_LinkedListNode_12074768565.h"
 #include "System_System_Collections_Generic_LinkedListNode_11962478315.h"
@@ -91,6 +91,21 @@ struct LinkedListNode_1_t3387968605;
 #include "System_System_Collections_Generic_LinkedListNode_13387968605.h"
 
 #pragma once
+// System.Text.RegularExpressions.Regex[]
+struct RegexU5BU5D_t3722511800  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) Regex_t2161232213 * m_Items[1];
+
+public:
+	inline Regex_t2161232213 * GetAt(il2cpp_array_size_t index) const { return m_Items[index]; }
+	inline Regex_t2161232213 ** GetAddressAt(il2cpp_array_size_t index) { return m_Items + index; }
+	inline void SetAt(il2cpp_array_size_t index, Regex_t2161232213 * value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+};
 // System.ComponentModel.PropertyDescriptor[]
 struct PropertyDescriptorU5BU5D_t917702481  : public Il2CppArray
 {
@@ -266,21 +281,6 @@ public:
 	inline void SetAt(il2cpp_array_size_t index, UriScheme_t1290668975  value)
 	{
 		m_Items[index] = value;
-	}
-};
-// System.Text.RegularExpressions.Regex[]
-struct RegexU5BU5D_t3722511800  : public Il2CppArray
-{
-public:
-	ALIGN_FIELD (8) Regex_t2161232213 * m_Items[1];
-
-public:
-	inline Regex_t2161232213 * GetAt(il2cpp_array_size_t index) const { return m_Items[index]; }
-	inline Regex_t2161232213 ** GetAddressAt(il2cpp_array_size_t index) { return m_Items + index; }
-	inline void SetAt(il2cpp_array_size_t index, Regex_t2161232213 * value)
-	{
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier(m_Items + index, value);
 	}
 };
 // System.Collections.Generic.LinkedListNode`1<System.Action`2<System.Object,System.Object>>[]

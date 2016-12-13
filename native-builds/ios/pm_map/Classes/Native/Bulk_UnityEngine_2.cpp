@@ -14338,6 +14338,15 @@ extern "C"  bool TouchScreenKeyboard_get_wasCanceled_m3910688420 (TouchScreenKey
 	_il2cpp_icall_func = (TouchScreenKeyboard_get_wasCanceled_m3910688420_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TouchScreenKeyboard::get_wasCanceled()");
 	return _il2cpp_icall_func(__this);
 }
+// System.Boolean UnityEngine.TouchScreenKeyboard::get_visible()
+extern "C"  bool TouchScreenKeyboard_get_visible_m1414940916 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
+{
+	typedef bool (*TouchScreenKeyboard_get_visible_m1414940916_ftn) ();
+	static TouchScreenKeyboard_get_visible_m1414940916_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (TouchScreenKeyboard_get_visible_m1414940916_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TouchScreenKeyboard::get_visible()");
+	return _il2cpp_icall_func();
+}
 // Conversion methods for marshalling of: UnityEngine.TouchScreenKeyboard_InternalConstructorHelperArguments
 extern "C" void TouchScreenKeyboard_InternalConstructorHelperArguments_t705488572_marshal_pinvoke(const TouchScreenKeyboard_InternalConstructorHelperArguments_t705488572& unmarshaled, TouchScreenKeyboard_InternalConstructorHelperArguments_t705488572_marshaled_pinvoke& marshaled)
 {

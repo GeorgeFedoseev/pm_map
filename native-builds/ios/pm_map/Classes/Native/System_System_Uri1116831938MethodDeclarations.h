@@ -42,17 +42,17 @@ struct Encoding_t2012439129;
 #include "mscorlib_System_Text_Encoding2012439129.h"
 
 // System.Void System.Uri::.ctor(System.String)
-extern "C"  void Uri__ctor_m1721267859 (Uri_t1116831938 * __this, String_t* ___uriString0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void Uri__ctor_m2693266474 (Uri_t1116831938 * __this, String_t* ___uriString0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Uri::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
 extern "C"  void Uri__ctor_m4101815696 (Uri_t1116831938 * __this, SerializationInfo_t2185721892 * ___serializationInfo0, StreamingContext_t2761351129  ___streamingContext1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Uri::.ctor(System.String,System.UriKind)
-extern "C"  void Uri__ctor_m2903273618 (Uri_t1116831938 * __this, String_t* ___uriString0, int32_t ___uriKind1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void Uri__ctor_m1284254235 (Uri_t1116831938 * __this, String_t* ___uriString0, int32_t ___uriKind1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Uri::.ctor(System.String,System.UriKind,System.Boolean&)
 extern "C"  void Uri__ctor_m3285657729 (Uri_t1116831938 * __this, String_t* ___uriString0, int32_t ___uriKind1, bool* ___success2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Uri::.ctor(System.String,System.Boolean)
-extern "C"  void Uri__ctor_m1689224330 (Uri_t1116831938 * __this, String_t* ___uriString0, bool ___dontEscape1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void Uri__ctor_m70204947 (Uri_t1116831938 * __this, String_t* ___uriString0, bool ___dontEscape1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Uri::.ctor(System.Uri,System.String)
-extern "C"  void Uri__ctor_m2876888702 (Uri_t1116831938 * __this, Uri_t1116831938 * ___baseUri0, String_t* ___relativeUri1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void Uri__ctor_m182303879 (Uri_t1116831938 * __this, Uri_t1116831938 * ___baseUri0, String_t* ___relativeUri1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Uri::.ctor(System.Uri,System.String,System.Boolean)
 extern "C"  void Uri__ctor_m3555389759 (Uri_t1116831938 * __this, Uri_t1116831938 * ___baseUri0, String_t* ___relativeUri1, bool ___dontEscape2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Uri::.cctor()
@@ -62,7 +62,7 @@ extern "C"  void Uri_System_Runtime_Serialization_ISerializable_GetObjectData_m3
 // System.Void System.Uri::Merge(System.Uri,System.String)
 extern "C"  void Uri_Merge_m1925025748 (Uri_t1116831938 * __this, Uri_t1116831938 * ___baseUri0, String_t* ___relativeUri1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Uri::get_AbsolutePath()
-extern "C"  String_t* Uri_get_AbsolutePath_m198419197 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  String_t* Uri_get_AbsolutePath_m1170417812 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Uri::get_AbsoluteUri()
 extern "C"  String_t* Uri_get_AbsoluteUri_m2228269430 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Uri::get_Authority()
@@ -70,7 +70,7 @@ extern "C"  String_t* Uri_get_Authority_m1914393796 (Uri_t1116831938 * __this, c
 // System.String System.Uri::get_Fragment()
 extern "C"  String_t* Uri_get_Fragment_m219209233 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Uri::get_Host()
-extern "C"  String_t* Uri_get_Host_m1446697833 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  String_t* Uri_get_Host_m3136333645 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.UriHostNameType System.Uri::get_HostNameType()
 extern "C"  int32_t Uri_get_HostNameType_m3669497072 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Uri::get_IsDefaultPort()
@@ -82,7 +82,7 @@ extern "C"  bool Uri_get_IsLoopback_m224603913 (Uri_t1116831938 * __this, const 
 // System.Boolean System.Uri::get_IsUnc()
 extern "C"  bool Uri_get_IsUnc_m766729742 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Uri::get_LocalPath()
-extern "C"  String_t* Uri_get_LocalPath_m2505724017 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  String_t* Uri_get_LocalPath_m2374994490 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Uri::get_PathAndQuery()
 extern "C"  String_t* Uri_get_PathAndQuery_m3621173943 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Uri::get_Port()
@@ -90,13 +90,13 @@ extern "C"  int32_t Uri_get_Port_m2253782543 (Uri_t1116831938 * __this, const Me
 // System.String System.Uri::get_Query()
 extern "C"  String_t* Uri_get_Query_m1454422281 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Uri::get_Scheme()
-extern "C"  String_t* Uri_get_Scheme_m2606456870 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  String_t* Uri_get_Scheme_m1248371453 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Uri::get_UserInfo()
 extern "C"  String_t* Uri_get_UserInfo_m2585318554 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Uri::get_IsAbsoluteUri()
-extern "C"  bool Uri_get_IsAbsoluteUri_m145672153 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  bool Uri_get_IsAbsoluteUri_m2228437936 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Uri::get_OriginalString()
-extern "C"  String_t* Uri_get_OriginalString_m4143606915 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  String_t* Uri_get_OriginalString_m1931405402 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.UriHostNameType System.Uri::CheckHostName(System.String)
 extern "C"  int32_t Uri_CheckHostName_m294200959 (Il2CppObject * __this /* static, unused */, String_t* ___name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Uri::IsIPv4Address(System.String)
@@ -182,6 +182,6 @@ extern "C"  CharU5BU5D_t3324145743* Uri_GetChars_m731438051 (Il2CppObject * __th
 // System.Void System.Uri::EnsureAbsoluteUri()
 extern "C"  void Uri_EnsureAbsoluteUri_m3407571844 (Uri_t1116831938 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Uri::op_Equality(System.Uri,System.Uri)
-extern "C"  bool Uri_op_Equality_m877019543 (Il2CppObject * __this /* static, unused */, Uri_t1116831938 * ___u10, Uri_t1116831938 * ___u21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  bool Uri_op_Equality_m4072520928 (Il2CppObject * __this /* static, unused */, Uri_t1116831938 * ___u10, Uri_t1116831938 * ___u21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Uri::op_Inequality(System.Uri,System.Uri)
-extern "C"  bool Uri_op_Inequality_m2899852498 (Il2CppObject * __this /* static, unused */, Uri_t1116831938 * ___u10, Uri_t1116831938 * ___u21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  bool Uri_op_Inequality_m2875066843 (Il2CppObject * __this /* static, unused */, Uri_t1116831938 * ___u10, Uri_t1116831938 * ___u21, const MethodInfo* method) IL2CPP_METHOD_ATTR;

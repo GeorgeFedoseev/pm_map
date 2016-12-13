@@ -38,7 +38,7 @@ struct String_t;
 #include "System_Configuration_System_Configuration_Configur1929345356.h"
 
 // System.Void System.Configuration.ConfigurationSection::.ctor()
-extern "C"  void ConfigurationSection__ctor_m2065798660 (ConfigurationSection_t3180944403 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void ConfigurationSection__ctor_m1633041372 (ConfigurationSection_t3180944403 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Configuration.IConfigurationSectionHandler System.Configuration.ConfigurationSection::get_SectionHandler()
 extern "C"  Il2CppObject * ConfigurationSection_get_SectionHandler_m368337580 (ConfigurationSection_t3180944403 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Configuration.ConfigurationSection::set_SectionHandler(System.Configuration.IConfigurationSectionHandler)

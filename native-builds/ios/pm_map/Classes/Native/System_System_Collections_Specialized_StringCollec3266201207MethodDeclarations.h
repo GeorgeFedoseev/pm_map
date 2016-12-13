@@ -31,7 +31,7 @@ struct StringEnumerator_t4086853533;
 #include "mscorlib_System_String7231557.h"
 
 // System.Void System.Collections.Specialized.StringCollection::.ctor()
-extern "C"  void StringCollection__ctor_m153666782 (StringCollection_t3266201207 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void StringCollection__ctor_m915846517 (StringCollection_t3266201207 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Collections.Specialized.StringCollection::System.Collections.IList.get_IsReadOnly()
 extern "C"  bool StringCollection_System_Collections_IList_get_IsReadOnly_m2315349158 (StringCollection_t3266201207 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Collections.Specialized.StringCollection::System.Collections.IList.get_IsFixedSize()
@@ -55,19 +55,19 @@ extern "C"  void StringCollection_System_Collections_ICollection_CopyTo_m9806085
 // System.Collections.IEnumerator System.Collections.Specialized.StringCollection::System.Collections.IEnumerable.GetEnumerator()
 extern "C"  Il2CppObject * StringCollection_System_Collections_IEnumerable_GetEnumerator_m1161950369 (StringCollection_t3266201207 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Collections.Specialized.StringCollection::get_Item(System.Int32)
-extern "C"  String_t* StringCollection_get_Item_m2870174736 (StringCollection_t3266201207 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  String_t* StringCollection_get_Item_m458216537 (StringCollection_t3266201207 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.StringCollection::set_Item(System.Int32,System.String)
 extern "C"  void StringCollection_set_Item_m646958915 (StringCollection_t3266201207 * __this, int32_t ___index0, String_t* ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Collections.Specialized.StringCollection::get_Count()
-extern "C"  int32_t StringCollection_get_Count_m2308791826 (StringCollection_t3266201207 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  int32_t StringCollection_get_Count_m1158755291 (StringCollection_t3266201207 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Collections.Specialized.StringCollection::Add(System.String)
-extern "C"  int32_t StringCollection_Add_m1879838421 (StringCollection_t3266201207 * __this, String_t* ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  int32_t StringCollection_Add_m1734005996 (StringCollection_t3266201207 * __this, String_t* ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.StringCollection::Clear()
 extern "C"  void StringCollection_Clear_m1854767369 (StringCollection_t3266201207 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Collections.Specialized.StringCollection::Contains(System.String)
-extern "C"  bool StringCollection_Contains_m3621141811 (StringCollection_t3266201207 * __this, String_t* ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  bool StringCollection_Contains_m716685116 (StringCollection_t3266201207 * __this, String_t* ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.Specialized.StringEnumerator System.Collections.Specialized.StringCollection::GetEnumerator()
-extern "C"  StringEnumerator_t4086853533 * StringCollection_GetEnumerator_m2887281143 (StringCollection_t3266201207 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  StringEnumerator_t4086853533 * StringCollection_GetEnumerator_m355537934 (StringCollection_t3266201207 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Collections.Specialized.StringCollection::IndexOf(System.String)
 extern "C"  int32_t StringCollection_IndexOf_m183974317 (StringCollection_t3266201207 * __this, String_t* ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.StringCollection::Insert(System.Int32,System.String)

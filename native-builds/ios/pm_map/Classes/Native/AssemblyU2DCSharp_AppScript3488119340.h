@@ -40,12 +40,16 @@ struct FloorSwitchScript_t2794668843;
 struct BottomPanelScript_t140445860;
 // UnityEngine.RectTransform
 struct RectTransform_t972643934;
+// UnityEngine.GameObject
+struct GameObject_t3674682005;
 // TTPanelScript
 struct TTPanelScript_t1983791439;
 // System.String
 struct String_t;
 // UnityEngine.Material
 struct Material_t3870600107;
+// WebViewObject
+struct WebViewObject_t388577432;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t1974256870;
 
@@ -101,16 +105,22 @@ public:
 	BottomPanelScript_t140445860 * ___bottomPanel_24;
 	// UnityEngine.RectTransform AppScript::openTimetableButton
 	RectTransform_t972643934 * ___openTimetableButton_25;
+	// UnityEngine.RectTransform AppScript::openExamsButton
+	RectTransform_t972643934 * ___openExamsButton_26;
+	// UnityEngine.GameObject AppScript::examsHeader
+	GameObject_t3674682005 * ___examsHeader_27;
 	// UnityEngine.Transform AppScript::centerPanelContainer
-	Transform_t1659122786 * ___centerPanelContainer_26;
+	Transform_t1659122786 * ___centerPanelContainer_28;
 	// TTPanelScript AppScript::timetablePanel
-	TTPanelScript_t1983791439 * ___timetablePanel_27;
+	TTPanelScript_t1983791439 * ___timetablePanel_29;
 	// System.Boolean AppScript::ready
-	bool ___ready_28;
+	bool ___ready_30;
 	// System.String AppScript::lastDeepLink
-	String_t* ___lastDeepLink_29;
+	String_t* ___lastDeepLink_31;
 	// UnityEngine.Material AppScript::_savedSkybox
-	Material_t3870600107 * ____savedSkybox_30;
+	Material_t3870600107 * ____savedSkybox_32;
+	// WebViewObject AppScript::webViewObject
+	WebViewObject_t388577432 * ___webViewObject_33;
 
 public:
 	inline static int32_t get_offset_of_building_6() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ___building_6)); }
@@ -292,48 +302,75 @@ public:
 		Il2CppCodeGenWriteBarrier(&___openTimetableButton_25, value);
 	}
 
-	inline static int32_t get_offset_of_centerPanelContainer_26() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ___centerPanelContainer_26)); }
-	inline Transform_t1659122786 * get_centerPanelContainer_26() const { return ___centerPanelContainer_26; }
-	inline Transform_t1659122786 ** get_address_of_centerPanelContainer_26() { return &___centerPanelContainer_26; }
-	inline void set_centerPanelContainer_26(Transform_t1659122786 * value)
+	inline static int32_t get_offset_of_openExamsButton_26() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ___openExamsButton_26)); }
+	inline RectTransform_t972643934 * get_openExamsButton_26() const { return ___openExamsButton_26; }
+	inline RectTransform_t972643934 ** get_address_of_openExamsButton_26() { return &___openExamsButton_26; }
+	inline void set_openExamsButton_26(RectTransform_t972643934 * value)
 	{
-		___centerPanelContainer_26 = value;
-		Il2CppCodeGenWriteBarrier(&___centerPanelContainer_26, value);
+		___openExamsButton_26 = value;
+		Il2CppCodeGenWriteBarrier(&___openExamsButton_26, value);
 	}
 
-	inline static int32_t get_offset_of_timetablePanel_27() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ___timetablePanel_27)); }
-	inline TTPanelScript_t1983791439 * get_timetablePanel_27() const { return ___timetablePanel_27; }
-	inline TTPanelScript_t1983791439 ** get_address_of_timetablePanel_27() { return &___timetablePanel_27; }
-	inline void set_timetablePanel_27(TTPanelScript_t1983791439 * value)
+	inline static int32_t get_offset_of_examsHeader_27() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ___examsHeader_27)); }
+	inline GameObject_t3674682005 * get_examsHeader_27() const { return ___examsHeader_27; }
+	inline GameObject_t3674682005 ** get_address_of_examsHeader_27() { return &___examsHeader_27; }
+	inline void set_examsHeader_27(GameObject_t3674682005 * value)
 	{
-		___timetablePanel_27 = value;
-		Il2CppCodeGenWriteBarrier(&___timetablePanel_27, value);
+		___examsHeader_27 = value;
+		Il2CppCodeGenWriteBarrier(&___examsHeader_27, value);
 	}
 
-	inline static int32_t get_offset_of_ready_28() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ___ready_28)); }
-	inline bool get_ready_28() const { return ___ready_28; }
-	inline bool* get_address_of_ready_28() { return &___ready_28; }
-	inline void set_ready_28(bool value)
+	inline static int32_t get_offset_of_centerPanelContainer_28() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ___centerPanelContainer_28)); }
+	inline Transform_t1659122786 * get_centerPanelContainer_28() const { return ___centerPanelContainer_28; }
+	inline Transform_t1659122786 ** get_address_of_centerPanelContainer_28() { return &___centerPanelContainer_28; }
+	inline void set_centerPanelContainer_28(Transform_t1659122786 * value)
 	{
-		___ready_28 = value;
+		___centerPanelContainer_28 = value;
+		Il2CppCodeGenWriteBarrier(&___centerPanelContainer_28, value);
 	}
 
-	inline static int32_t get_offset_of_lastDeepLink_29() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ___lastDeepLink_29)); }
-	inline String_t* get_lastDeepLink_29() const { return ___lastDeepLink_29; }
-	inline String_t** get_address_of_lastDeepLink_29() { return &___lastDeepLink_29; }
-	inline void set_lastDeepLink_29(String_t* value)
+	inline static int32_t get_offset_of_timetablePanel_29() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ___timetablePanel_29)); }
+	inline TTPanelScript_t1983791439 * get_timetablePanel_29() const { return ___timetablePanel_29; }
+	inline TTPanelScript_t1983791439 ** get_address_of_timetablePanel_29() { return &___timetablePanel_29; }
+	inline void set_timetablePanel_29(TTPanelScript_t1983791439 * value)
 	{
-		___lastDeepLink_29 = value;
-		Il2CppCodeGenWriteBarrier(&___lastDeepLink_29, value);
+		___timetablePanel_29 = value;
+		Il2CppCodeGenWriteBarrier(&___timetablePanel_29, value);
 	}
 
-	inline static int32_t get_offset_of__savedSkybox_30() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ____savedSkybox_30)); }
-	inline Material_t3870600107 * get__savedSkybox_30() const { return ____savedSkybox_30; }
-	inline Material_t3870600107 ** get_address_of__savedSkybox_30() { return &____savedSkybox_30; }
-	inline void set__savedSkybox_30(Material_t3870600107 * value)
+	inline static int32_t get_offset_of_ready_30() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ___ready_30)); }
+	inline bool get_ready_30() const { return ___ready_30; }
+	inline bool* get_address_of_ready_30() { return &___ready_30; }
+	inline void set_ready_30(bool value)
 	{
-		____savedSkybox_30 = value;
-		Il2CppCodeGenWriteBarrier(&____savedSkybox_30, value);
+		___ready_30 = value;
+	}
+
+	inline static int32_t get_offset_of_lastDeepLink_31() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ___lastDeepLink_31)); }
+	inline String_t* get_lastDeepLink_31() const { return ___lastDeepLink_31; }
+	inline String_t** get_address_of_lastDeepLink_31() { return &___lastDeepLink_31; }
+	inline void set_lastDeepLink_31(String_t* value)
+	{
+		___lastDeepLink_31 = value;
+		Il2CppCodeGenWriteBarrier(&___lastDeepLink_31, value);
+	}
+
+	inline static int32_t get_offset_of__savedSkybox_32() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ____savedSkybox_32)); }
+	inline Material_t3870600107 * get__savedSkybox_32() const { return ____savedSkybox_32; }
+	inline Material_t3870600107 ** get_address_of__savedSkybox_32() { return &____savedSkybox_32; }
+	inline void set__savedSkybox_32(Material_t3870600107 * value)
+	{
+		____savedSkybox_32 = value;
+		Il2CppCodeGenWriteBarrier(&____savedSkybox_32, value);
+	}
+
+	inline static int32_t get_offset_of_webViewObject_33() { return static_cast<int32_t>(offsetof(AppScript_t3488119340, ___webViewObject_33)); }
+	inline WebViewObject_t388577432 * get_webViewObject_33() const { return ___webViewObject_33; }
+	inline WebViewObject_t388577432 ** get_address_of_webViewObject_33() { return &___webViewObject_33; }
+	inline void set_webViewObject_33(WebViewObject_t388577432 * value)
+	{
+		___webViewObject_33 = value;
+		Il2CppCodeGenWriteBarrier(&___webViewObject_33, value);
 	}
 };
 
@@ -348,20 +385,20 @@ public:
 	bool ___UPDATE_FACILITIES_DB_ON_START_4;
 	// AppScript AppScript::sharedInstance
 	AppScript_t3488119340 * ___sharedInstance_5;
-	// System.Action AppScript::<>f__am$cache1D
-	Action_t3771233898 * ___U3CU3Ef__amU24cache1D_31;
-	// System.Action`1<System.Int32> AppScript::<>f__am$cache1E
-	Action_1_t1549654636 * ___U3CU3Ef__amU24cache1E_32;
-	// System.Action`1<FacilityScript> AppScript::<>f__am$cache1F
-	Action_1_t3398753846 * ___U3CU3Ef__amU24cache1F_33;
-	// System.Action`1<FacilityScript> AppScript::<>f__am$cache20
-	Action_1_t3398753846 * ___U3CU3Ef__amU24cache20_34;
-	// System.Action`1<System.String> AppScript::<>f__am$cache21
-	Action_1_t403047693 * ___U3CU3Ef__amU24cache21_35;
-	// System.Action AppScript::<>f__am$cache22
-	Action_t3771233898 * ___U3CU3Ef__amU24cache22_36;
+	// System.Action AppScript::<>f__am$cache20
+	Action_t3771233898 * ___U3CU3Ef__amU24cache20_34;
+	// System.Action`1<System.Int32> AppScript::<>f__am$cache21
+	Action_1_t1549654636 * ___U3CU3Ef__amU24cache21_35;
+	// System.Action`1<FacilityScript> AppScript::<>f__am$cache22
+	Action_1_t3398753846 * ___U3CU3Ef__amU24cache22_36;
+	// System.Action`1<FacilityScript> AppScript::<>f__am$cache23
+	Action_1_t3398753846 * ___U3CU3Ef__amU24cache23_37;
+	// System.Action`1<System.String> AppScript::<>f__am$cache24
+	Action_1_t403047693 * ___U3CU3Ef__amU24cache24_38;
+	// System.Action AppScript::<>f__am$cache25
+	Action_t3771233898 * ___U3CU3Ef__amU24cache25_39;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> AppScript::<>f__switch$map1
-	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map1_37;
+	Dictionary_2_t1974256870 * ___U3CU3Ef__switchU24map1_40;
 
 public:
 	inline static int32_t get_offset_of_DEBUG_2() { return static_cast<int32_t>(offsetof(AppScript_t3488119340_StaticFields, ___DEBUG_2)); }
@@ -397,67 +434,67 @@ public:
 		Il2CppCodeGenWriteBarrier(&___sharedInstance_5, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__amU24cache1D_31() { return static_cast<int32_t>(offsetof(AppScript_t3488119340_StaticFields, ___U3CU3Ef__amU24cache1D_31)); }
-	inline Action_t3771233898 * get_U3CU3Ef__amU24cache1D_31() const { return ___U3CU3Ef__amU24cache1D_31; }
-	inline Action_t3771233898 ** get_address_of_U3CU3Ef__amU24cache1D_31() { return &___U3CU3Ef__amU24cache1D_31; }
-	inline void set_U3CU3Ef__amU24cache1D_31(Action_t3771233898 * value)
-	{
-		___U3CU3Ef__amU24cache1D_31 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache1D_31, value);
-	}
-
-	inline static int32_t get_offset_of_U3CU3Ef__amU24cache1E_32() { return static_cast<int32_t>(offsetof(AppScript_t3488119340_StaticFields, ___U3CU3Ef__amU24cache1E_32)); }
-	inline Action_1_t1549654636 * get_U3CU3Ef__amU24cache1E_32() const { return ___U3CU3Ef__amU24cache1E_32; }
-	inline Action_1_t1549654636 ** get_address_of_U3CU3Ef__amU24cache1E_32() { return &___U3CU3Ef__amU24cache1E_32; }
-	inline void set_U3CU3Ef__amU24cache1E_32(Action_1_t1549654636 * value)
-	{
-		___U3CU3Ef__amU24cache1E_32 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache1E_32, value);
-	}
-
-	inline static int32_t get_offset_of_U3CU3Ef__amU24cache1F_33() { return static_cast<int32_t>(offsetof(AppScript_t3488119340_StaticFields, ___U3CU3Ef__amU24cache1F_33)); }
-	inline Action_1_t3398753846 * get_U3CU3Ef__amU24cache1F_33() const { return ___U3CU3Ef__amU24cache1F_33; }
-	inline Action_1_t3398753846 ** get_address_of_U3CU3Ef__amU24cache1F_33() { return &___U3CU3Ef__amU24cache1F_33; }
-	inline void set_U3CU3Ef__amU24cache1F_33(Action_1_t3398753846 * value)
-	{
-		___U3CU3Ef__amU24cache1F_33 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache1F_33, value);
-	}
-
 	inline static int32_t get_offset_of_U3CU3Ef__amU24cache20_34() { return static_cast<int32_t>(offsetof(AppScript_t3488119340_StaticFields, ___U3CU3Ef__amU24cache20_34)); }
-	inline Action_1_t3398753846 * get_U3CU3Ef__amU24cache20_34() const { return ___U3CU3Ef__amU24cache20_34; }
-	inline Action_1_t3398753846 ** get_address_of_U3CU3Ef__amU24cache20_34() { return &___U3CU3Ef__amU24cache20_34; }
-	inline void set_U3CU3Ef__amU24cache20_34(Action_1_t3398753846 * value)
+	inline Action_t3771233898 * get_U3CU3Ef__amU24cache20_34() const { return ___U3CU3Ef__amU24cache20_34; }
+	inline Action_t3771233898 ** get_address_of_U3CU3Ef__amU24cache20_34() { return &___U3CU3Ef__amU24cache20_34; }
+	inline void set_U3CU3Ef__amU24cache20_34(Action_t3771233898 * value)
 	{
 		___U3CU3Ef__amU24cache20_34 = value;
 		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache20_34, value);
 	}
 
 	inline static int32_t get_offset_of_U3CU3Ef__amU24cache21_35() { return static_cast<int32_t>(offsetof(AppScript_t3488119340_StaticFields, ___U3CU3Ef__amU24cache21_35)); }
-	inline Action_1_t403047693 * get_U3CU3Ef__amU24cache21_35() const { return ___U3CU3Ef__amU24cache21_35; }
-	inline Action_1_t403047693 ** get_address_of_U3CU3Ef__amU24cache21_35() { return &___U3CU3Ef__amU24cache21_35; }
-	inline void set_U3CU3Ef__amU24cache21_35(Action_1_t403047693 * value)
+	inline Action_1_t1549654636 * get_U3CU3Ef__amU24cache21_35() const { return ___U3CU3Ef__amU24cache21_35; }
+	inline Action_1_t1549654636 ** get_address_of_U3CU3Ef__amU24cache21_35() { return &___U3CU3Ef__amU24cache21_35; }
+	inline void set_U3CU3Ef__amU24cache21_35(Action_1_t1549654636 * value)
 	{
 		___U3CU3Ef__amU24cache21_35 = value;
 		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache21_35, value);
 	}
 
 	inline static int32_t get_offset_of_U3CU3Ef__amU24cache22_36() { return static_cast<int32_t>(offsetof(AppScript_t3488119340_StaticFields, ___U3CU3Ef__amU24cache22_36)); }
-	inline Action_t3771233898 * get_U3CU3Ef__amU24cache22_36() const { return ___U3CU3Ef__amU24cache22_36; }
-	inline Action_t3771233898 ** get_address_of_U3CU3Ef__amU24cache22_36() { return &___U3CU3Ef__amU24cache22_36; }
-	inline void set_U3CU3Ef__amU24cache22_36(Action_t3771233898 * value)
+	inline Action_1_t3398753846 * get_U3CU3Ef__amU24cache22_36() const { return ___U3CU3Ef__amU24cache22_36; }
+	inline Action_1_t3398753846 ** get_address_of_U3CU3Ef__amU24cache22_36() { return &___U3CU3Ef__amU24cache22_36; }
+	inline void set_U3CU3Ef__amU24cache22_36(Action_1_t3398753846 * value)
 	{
 		___U3CU3Ef__amU24cache22_36 = value;
 		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache22_36, value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__switchU24map1_37() { return static_cast<int32_t>(offsetof(AppScript_t3488119340_StaticFields, ___U3CU3Ef__switchU24map1_37)); }
-	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map1_37() const { return ___U3CU3Ef__switchU24map1_37; }
-	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map1_37() { return &___U3CU3Ef__switchU24map1_37; }
-	inline void set_U3CU3Ef__switchU24map1_37(Dictionary_2_t1974256870 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__amU24cache23_37() { return static_cast<int32_t>(offsetof(AppScript_t3488119340_StaticFields, ___U3CU3Ef__amU24cache23_37)); }
+	inline Action_1_t3398753846 * get_U3CU3Ef__amU24cache23_37() const { return ___U3CU3Ef__amU24cache23_37; }
+	inline Action_1_t3398753846 ** get_address_of_U3CU3Ef__amU24cache23_37() { return &___U3CU3Ef__amU24cache23_37; }
+	inline void set_U3CU3Ef__amU24cache23_37(Action_1_t3398753846 * value)
 	{
-		___U3CU3Ef__switchU24map1_37 = value;
-		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map1_37, value);
+		___U3CU3Ef__amU24cache23_37 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache23_37, value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3Ef__amU24cache24_38() { return static_cast<int32_t>(offsetof(AppScript_t3488119340_StaticFields, ___U3CU3Ef__amU24cache24_38)); }
+	inline Action_1_t403047693 * get_U3CU3Ef__amU24cache24_38() const { return ___U3CU3Ef__amU24cache24_38; }
+	inline Action_1_t403047693 ** get_address_of_U3CU3Ef__amU24cache24_38() { return &___U3CU3Ef__amU24cache24_38; }
+	inline void set_U3CU3Ef__amU24cache24_38(Action_1_t403047693 * value)
+	{
+		___U3CU3Ef__amU24cache24_38 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache24_38, value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3Ef__amU24cache25_39() { return static_cast<int32_t>(offsetof(AppScript_t3488119340_StaticFields, ___U3CU3Ef__amU24cache25_39)); }
+	inline Action_t3771233898 * get_U3CU3Ef__amU24cache25_39() const { return ___U3CU3Ef__amU24cache25_39; }
+	inline Action_t3771233898 ** get_address_of_U3CU3Ef__amU24cache25_39() { return &___U3CU3Ef__amU24cache25_39; }
+	inline void set_U3CU3Ef__amU24cache25_39(Action_t3771233898 * value)
+	{
+		___U3CU3Ef__amU24cache25_39 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__amU24cache25_39, value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3Ef__switchU24map1_40() { return static_cast<int32_t>(offsetof(AppScript_t3488119340_StaticFields, ___U3CU3Ef__switchU24map1_40)); }
+	inline Dictionary_2_t1974256870 * get_U3CU3Ef__switchU24map1_40() const { return ___U3CU3Ef__switchU24map1_40; }
+	inline Dictionary_2_t1974256870 ** get_address_of_U3CU3Ef__switchU24map1_40() { return &___U3CU3Ef__switchU24map1_40; }
+	inline void set_U3CU3Ef__switchU24map1_40(Dictionary_2_t1974256870 * value)
+	{
+		___U3CU3Ef__switchU24map1_40 = value;
+		Il2CppCodeGenWriteBarrier(&___U3CU3Ef__switchU24map1_40, value);
 	}
 };
 

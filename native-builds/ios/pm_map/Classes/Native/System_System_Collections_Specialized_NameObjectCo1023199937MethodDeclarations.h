@@ -47,7 +47,7 @@ extern "C"  void NameObjectCollectionBase__ctor_m1741929684 (NameObjectCollectio
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::.ctor(System.Collections.IEqualityComparer,System.Collections.IComparer,System.Collections.IHashCodeProvider)
 extern "C"  void NameObjectCollectionBase__ctor_m2422988573 (NameObjectCollectionBase_t1023199937 * __this, Il2CppObject * ___equalityComparer0, Il2CppObject * ___comparer1, Il2CppObject * ___hcp2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::.ctor(System.Collections.IEqualityComparer)
-extern "C"  void NameObjectCollectionBase__ctor_m667891772 (NameObjectCollectionBase_t1023199937 * __this, Il2CppObject * ___equalityComparer0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void NameObjectCollectionBase__ctor_m1083291668 (NameObjectCollectionBase_t1023199937 * __this, Il2CppObject * ___equalityComparer0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
 extern "C"  void NameObjectCollectionBase__ctor_m355604501 (NameObjectCollectionBase_t1023199937 * __this, SerializationInfo_t2185721892 * ___info0, StreamingContext_t2761351129  ___context1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::.ctor(System.Int32,System.Collections.IHashCodeProvider,System.Collections.IComparer)
@@ -77,19 +77,19 @@ extern "C"  void NameObjectCollectionBase_OnDeserialization_m3096738610 (NameObj
 // System.Boolean System.Collections.Specialized.NameObjectCollectionBase::get_IsReadOnly()
 extern "C"  bool NameObjectCollectionBase_get_IsReadOnly_m911678543 (NameObjectCollectionBase_t1023199937 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseAdd(System.String,System.Object)
-extern "C"  void NameObjectCollectionBase_BaseAdd_m2649117518 (NameObjectCollectionBase_t1023199937 * __this, String_t* ___name0, Il2CppObject * ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void NameObjectCollectionBase_BaseAdd_m915764854 (NameObjectCollectionBase_t1023199937 * __this, String_t* ___name0, Il2CppObject * ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseClear()
-extern "C"  void NameObjectCollectionBase_BaseClear_m2193362030 (NameObjectCollectionBase_t1023199937 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void NameObjectCollectionBase_BaseClear_m481553478 (NameObjectCollectionBase_t1023199937 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.Specialized.NameObjectCollectionBase::BaseGet(System.Int32)
-extern "C"  Il2CppObject * NameObjectCollectionBase_BaseGet_m3004572221 (NameObjectCollectionBase_t1023199937 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  Il2CppObject * NameObjectCollectionBase_BaseGet_m1942289941 (NameObjectCollectionBase_t1023199937 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.Specialized.NameObjectCollectionBase::BaseGet(System.String)
-extern "C"  Il2CppObject * NameObjectCollectionBase_BaseGet_m3404124054 (NameObjectCollectionBase_t1023199937 * __this, String_t* ___name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  Il2CppObject * NameObjectCollectionBase_BaseGet_m538144446 (NameObjectCollectionBase_t1023199937 * __this, String_t* ___name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Collections.Specialized.NameObjectCollectionBase::BaseGetKey(System.Int32)
 extern "C"  String_t* NameObjectCollectionBase_BaseGetKey_m3433139160 (NameObjectCollectionBase_t1023199937 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseRemove(System.String)
-extern "C"  void NameObjectCollectionBase_BaseRemove_m793410301 (NameObjectCollectionBase_t1023199937 * __this, String_t* ___name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void NameObjectCollectionBase_BaseRemove_m2142355669 (NameObjectCollectionBase_t1023199937 * __this, String_t* ___name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseSet(System.String,System.Object)
-extern "C"  void NameObjectCollectionBase_BaseSet_m1358844717 (NameObjectCollectionBase_t1023199937 * __this, String_t* ___name0, Il2CppObject * ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void NameObjectCollectionBase_BaseSet_m3920459349 (NameObjectCollectionBase_t1023199937 * __this, String_t* ___name0, Il2CppObject * ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.Specialized.NameObjectCollectionBase/_Item System.Collections.Specialized.NameObjectCollectionBase::FindFirstMatchedItem(System.String)
 extern "C"  _Item_t1625138937 * NameObjectCollectionBase_FindFirstMatchedItem_m3932570092 (NameObjectCollectionBase_t1023199937 * __this, String_t* ___name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Collections.Specialized.NameObjectCollectionBase::Equals(System.String,System.String)

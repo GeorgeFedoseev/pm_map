@@ -26355,7 +26355,7 @@ extern "C"  void SearchBoxScript_clearInput_m3836223908 (SearchBoxScript_t216699
 extern Il2CppClass* Enumerator_t95828736_il2cpp_TypeInfo_var;
 extern Il2CppClass* IDisposable_t1423340799_il2cpp_TypeInfo_var;
 extern Il2CppClass* Int32U5BU5D_t3230847821_il2cpp_TypeInfo_var;
-extern const MethodInfo* Action_1_Invoke_m3709300246_MethodInfo_var;
+extern const MethodInfo* Action_1_Invoke_m518637026_MethodInfo_var;
 extern const MethodInfo* List_1_get_Count_m1865208875_MethodInfo_var;
 extern const MethodInfo* List_1_GetEnumerator_m3666797670_MethodInfo_var;
 extern const MethodInfo* Enumerator_get_Current_m1350879634_MethodInfo_var;
@@ -26400,7 +26400,7 @@ extern "C"  void SearchBoxScript_showSearchResults_m1431601590 (SearchBoxScript_
 		Action_1_t403047693 * L_2 = L_1->get_OnShowSearchResults_14();
 		String_t* L_3 = ___query0;
 		NullCheck(L_2);
-		Action_1_Invoke_m3709300246(L_2, L_3, /*hidden argument*/Action_1_Invoke_m3709300246_MethodInfo_var);
+		Action_1_Invoke_m518637026(L_2, L_3, /*hidden argument*/Action_1_Invoke_m518637026_MethodInfo_var);
 		AppScript_t3488119340 * L_4 = __this->get_app_2();
 		NullCheck(L_4);
 		FacilitiesManager_t429269452 * L_5 = L_4->get_facilities_7();
@@ -29358,9 +29358,9 @@ extern "C"  void Pair_parseRoom_m2146798256 (Pair_t3945686594 * __this, const Me
 		NullCheck(L_3);
 		GroupCollection_t982584267 * L_4 = VirtFuncInvoker0< GroupCollection_t982584267 * >::Invoke(4 /* System.Text.RegularExpressions.GroupCollection System.Text.RegularExpressions.Match::get_Groups() */, L_3);
 		NullCheck(L_4);
-		Group_t2151468941 * L_5 = GroupCollection_get_Item_m3306908978(L_4, 1, /*hidden argument*/NULL);
+		Group_t2151468941 * L_5 = GroupCollection_get_Item_m180115662(L_4, 1, /*hidden argument*/NULL);
 		NullCheck(L_5);
-		String_t* L_6 = Capture_get_Value_m2353629574(L_5, /*hidden argument*/NULL);
+		String_t* L_6 = Capture_get_Value_m2241099810(L_5, /*hidden argument*/NULL);
 		__this->set_room_5(L_6);
 		return;
 	}
@@ -30215,11 +30215,11 @@ extern "C"  int32_t TimetableParser_parseDayOfWeek_m3008395175 (Il2CppObject * _
 		NullCheck(L_3);
 		GroupCollection_t982584267 * L_4 = VirtFuncInvoker0< GroupCollection_t982584267 * >::Invoke(4 /* System.Text.RegularExpressions.GroupCollection System.Text.RegularExpressions.Match::get_Groups() */, L_3);
 		NullCheck(L_4);
-		Group_t2151468941 * L_5 = GroupCollection_get_Item_m3306908978(L_4, 1, /*hidden argument*/NULL);
+		Group_t2151468941 * L_5 = GroupCollection_get_Item_m180115662(L_4, 1, /*hidden argument*/NULL);
 		V_1 = L_5;
 		Group_t2151468941 * L_6 = V_1;
 		NullCheck(L_6);
-		String_t* L_7 = Capture_get_Value_m2353629574(L_6, /*hidden argument*/NULL);
+		String_t* L_7 = Capture_get_Value_m2241099810(L_6, /*hidden argument*/NULL);
 		V_2 = L_7;
 		String_t* L_8 = V_2;
 		if (!L_8)
@@ -31311,9 +31311,9 @@ IL_003b:
 			NullCheck(L_23);
 			GroupCollection_t982584267 * L_24 = VirtFuncInvoker0< GroupCollection_t982584267 * >::Invoke(4 /* System.Text.RegularExpressions.GroupCollection System.Text.RegularExpressions.Match::get_Groups() */, L_23);
 			NullCheck(L_24);
-			Group_t2151468941 * L_25 = GroupCollection_get_Item_m3306908978(L_24, 1, /*hidden argument*/NULL);
+			Group_t2151468941 * L_25 = GroupCollection_get_Item_m180115662(L_24, 1, /*hidden argument*/NULL);
 			NullCheck(L_25);
-			String_t* L_26 = Capture_get_Value_m2353629574(L_25, /*hidden argument*/NULL);
+			String_t* L_26 = Capture_get_Value_m2241099810(L_25, /*hidden argument*/NULL);
 			Link_t3945575266 * L_27 = (Link_t3945575266 *)il2cpp_codegen_object_new(Link_t3945575266_il2cpp_TypeInfo_var);
 			Link__ctor_m405402394(L_27, L_17, L_26, /*hidden argument*/NULL);
 			NullCheck(L_13);
@@ -31473,9 +31473,9 @@ IL_0047:
 			NullCheck(L_18);
 			GroupCollection_t982584267 * L_19 = VirtFuncInvoker0< GroupCollection_t982584267 * >::Invoke(4 /* System.Text.RegularExpressions.GroupCollection System.Text.RegularExpressions.Match::get_Groups() */, L_18);
 			NullCheck(L_19);
-			Group_t2151468941 * L_20 = GroupCollection_get_Item_m3306908978(L_19, 1, /*hidden argument*/NULL);
+			Group_t2151468941 * L_20 = GroupCollection_get_Item_m180115662(L_19, 1, /*hidden argument*/NULL);
 			NullCheck(L_20);
-			String_t* L_21 = Capture_get_Value_m2353629574(L_20, /*hidden argument*/NULL);
+			String_t* L_21 = Capture_get_Value_m2241099810(L_20, /*hidden argument*/NULL);
 			int32_t L_22 = Int32_Parse_m3837759498(NULL /*static, unused*/, L_21, /*hidden argument*/NULL);
 			V_7 = L_22;
 			int32_t L_23 = V_7;

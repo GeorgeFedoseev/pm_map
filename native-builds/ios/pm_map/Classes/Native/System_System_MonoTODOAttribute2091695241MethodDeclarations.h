@@ -13,7 +13,7 @@
 #include <exception>
 
 // System.MonoTODOAttribute
-struct MonoTODOAttribute_t2091695242;
+struct MonoTODOAttribute_t2091695244;
 // System.String
 struct String_t;
 
@@ -21,6 +21,6 @@ struct String_t;
 #include "mscorlib_System_String7231557.h"
 
 // System.Void System.MonoTODOAttribute::.ctor()
-extern "C"  void MonoTODOAttribute__ctor_m754636072 (MonoTODOAttribute_t2091695242 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void MonoTODOAttribute__ctor_m754636072 (MonoTODOAttribute_t2091695244 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.MonoTODOAttribute::.ctor(System.String)
-extern "C"  void MonoTODOAttribute__ctor_m3809503962 (MonoTODOAttribute_t2091695242 * __this, String_t* ___comment0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void MonoTODOAttribute__ctor_m3809503962 (MonoTODOAttribute_t2091695244 * __this, String_t* ___comment0, const MethodInfo* method) IL2CPP_METHOD_ATTR;

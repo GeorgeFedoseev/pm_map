@@ -52,3 +52,5 @@ extern "C"  void TouchScreenKeyboard_set_active_m3667959159 (TouchScreenKeyboard
 extern "C"  bool TouchScreenKeyboard_get_done_m25268130 (TouchScreenKeyboard_t1858258760 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.TouchScreenKeyboard::get_wasCanceled()
 extern "C"  bool TouchScreenKeyboard_get_wasCanceled_m3910688420 (TouchScreenKeyboard_t1858258760 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean UnityEngine.TouchScreenKeyboard::get_visible()
+extern "C"  bool TouchScreenKeyboard_get_visible_m1414940916 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -3230,7 +3230,7 @@ extern Il2CppClass* NotSupportedException_t1732551818_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral62;
 extern Il2CppCodeGenString* _stringLiteral1983;
 extern Il2CppCodeGenString* _stringLiteral60;
-extern Il2CppCodeGenString* _stringLiteral1922;
+extern Il2CppCodeGenString* _stringLiteral1921;
 extern Il2CppCodeGenString* _stringLiteral38;
 extern Il2CppCodeGenString* _stringLiteral96727;
 extern Il2CppCodeGenString* _stringLiteral124;
@@ -3296,7 +3296,7 @@ IL_0031:
 		}
 	}
 	{
-		return _stringLiteral1922;
+		return _stringLiteral1921;
 	}
 
 IL_003f:
