@@ -1,10 +1,3 @@
-// Copyright (C) 2014 Stephan Bouchard - All Rights Reserved
-// This code can only be used under the standard Unity Asset Store End User License Agreement
-// A Copy of the EULA APPENDIX 1 is available at http://unity3d.com/company/legal/as_terms
-
-
-#if UNITY_4_6 || UNITY_5
-
 using UnityEngine;
 using System.Collections;
 
@@ -13,37 +6,38 @@ namespace TMPro.Examples
 {
     public class TextConsoleSimulator : MonoBehaviour
     {
-        enum objectType { None = 0, TextMeshPro = 1, TextMeshProUI = 2 };
-        private objectType m_textObjectType = objectType.None;
-
-        private Object m_TextComponent;
-
+        private TMP_Text m_TextComponent;
+        private bool hasTextChanged;
 
         void Awake()
         {
-            m_TextComponent = gameObject.GetComponent<TextMeshPro>();
-            if (m_TextComponent == null) m_TextComponent = gameObject.GetComponent<TextMeshProUGUI>();
-
-            if (m_TextComponent as TextMeshPro != null)
-                m_textObjectType = objectType.TextMeshPro;
-            else if (m_TextComponent as TextMeshProUGUI != null)
-                m_textObjectType = objectType.TextMeshProUI;
-            else
-                m_textObjectType = objectType.None;
+            m_TextComponent = gameObject.GetComponent<TMP_Text>();
         }
 
 
         void Start()
         {
-            switch (m_textObjectType)
-            {
-                case objectType.TextMeshPro:
-                    StartCoroutine(RevealCharacters(m_TextComponent as TextMeshPro));
-                    break;
-                case objectType.TextMeshProUI:
-                    StartCoroutine(RevealCharacters(m_TextComponent as TextMeshProUGUI));
-                    break;
-            }
+            StartCoroutine(RevealCharacters(m_TextComponent));
+            //StartCoroutine(RevealWords(m_TextComponent));
+        }
+
+
+        void OnEnable()
+        {
+            // Subscribe to event fired when text object has been regenerated.
+            TMPro_EventManager.TEXT_CHANGED_EVENT.Add(ON_TEXT_CHANGED);
+        }
+
+        void OnDisable()
+        {
+            TMPro_EventManager.TEXT_CHANGED_EVENT.Remove(ON_TEXT_CHANGED);
+        }
+
+
+        // Event received when the text object has changed.
+        void ON_TEXT_CHANGED(Object obj)
+        {
+            hasTextChanged = true;
         }
 
 
@@ -51,99 +45,34 @@ namespace TMPro.Examples
         /// Method revealing the text one character at a time.
         /// </summary>
         /// <returns></returns>
-        IEnumerator RevealCharacters(TextMeshPro textComponent)
+        IEnumerator RevealCharacters(TMP_Text textComponent)
         {
+            textComponent.ForceMeshUpdate();
+
             TMP_TextInfo textInfo = textComponent.textInfo;
 
             int totalVisibleCharacters = textInfo.characterCount; // Get # of Visible Character in text object
-            int counter = 0;
             int visibleCount = 0;
 
             while (true)
             {
-                visibleCount = counter % (totalVisibleCharacters + 1);
-
-                textComponent.maxVisibleCharacters = visibleCount; // How many characters should TextMeshPro display?
-
-                // Once the last character has been revealed, wait 1.0 second and start over.
-                if (visibleCount >= totalVisibleCharacters)
+                if (hasTextChanged)
                 {
-                    yield return new WaitForSeconds(1.0f);
+                    totalVisibleCharacters = textInfo.characterCount; // Update visible character count.
+                    hasTextChanged = false; 
                 }
 
-                counter += 1;
-
-                yield return new WaitForSeconds(0.0f);
-            }
-        }
-
-
-        /// <summary>
-        /// Method revealing the text one character at a time.
-        /// </summary>
-        /// <returns></returns>
-        IEnumerator RevealCharacters(TextMeshProUGUI textComponent)
-        {
-            TMP_TextInfo textInfo = textComponent.textInfo;
-
-            int totalVisibleCharacters = textInfo.characterCount; // Get # of Visible Character in text object
-            int counter = 0;
-            int visibleCount = 0;
-
-            while (true)
-            {
-                visibleCount = counter % (totalVisibleCharacters + 1);
-
-                textComponent.maxVisibleCharacters = visibleCount; // How many characters should TextMeshPro display?
-
-                // Once the last character has been revealed, wait 1.0 second and start over.
-                if (visibleCount >= totalVisibleCharacters)
+                if (visibleCount > totalVisibleCharacters)
                 {
                     yield return new WaitForSeconds(1.0f);
-                }
-
-                counter += 1;
-
-                yield return new WaitForSeconds(0.0f);
-            }
-        }
-
-
-        /// <summary>
-        /// Method revealing the text one word at a time.
-        /// </summary>
-        /// <returns></returns>
-        IEnumerator RevealWords(TextMeshPro textComponent)
-        {
-            int totalWordCount = textComponent.textInfo.wordCount;
-            int totalVisibleCharacters = textComponent.textInfo.characterCount; // Get # of Visible Character in text object
-            int counter = 0;
-            int currentWord = 0;
-            int visibleCount = 0;
-
-            while (true)
-            {
-                currentWord = counter % (totalWordCount + 1);
-
-                // Get last character index for the current word.
-                if (currentWord == 0) // Display no words.
                     visibleCount = 0;
-                else if (currentWord < totalWordCount) // Display all other words with the exception of the last one.
-                    visibleCount = textComponent.textInfo.wordInfo[currentWord - 1].lastCharacterIndex + 1;
-                else if (currentWord == totalWordCount) // Display last word and all remaining characters.
-                    visibleCount = totalVisibleCharacters;
+                }
 
                 textComponent.maxVisibleCharacters = visibleCount; // How many characters should TextMeshPro display?
 
-                // Once the last character has been revealed, wait 1.0 second and start over.
-                if (visibleCount >= totalVisibleCharacters)
-                {
-                    yield return new WaitForSeconds(1.0f);
-                }
+                visibleCount += 1;
 
-                counter += 1;
-
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.0f);
             }
         }
 
@@ -152,8 +81,10 @@ namespace TMPro.Examples
         /// Method revealing the text one word at a time.
         /// </summary>
         /// <returns></returns>
-        IEnumerator RevealWords(TextMeshProUGUI textComponent)
+        IEnumerator RevealWords(TMP_Text textComponent)
         {
+            textComponent.ForceMeshUpdate();
+
             int totalWordCount = textComponent.textInfo.wordCount;
             int totalVisibleCharacters = textComponent.textInfo.characterCount; // Get # of Visible Character in text object
             int counter = 0;
@@ -188,4 +119,3 @@ namespace TMPro.Examples
 
     }
 }
-#endif

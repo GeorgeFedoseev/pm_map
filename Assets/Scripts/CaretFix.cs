@@ -18,7 +18,7 @@ public class CaretFix : MonoBehaviour {
 		if (inputField != null)
 		{
 			// Find the child by name. This usually isnt good but is the easiest way for the time being.
-			Transform caretGO = inputField.transform.FindChild(inputField.transform.name + " Input Caret");
+			Transform caretGO = inputField.transform.Find(inputField.transform.name + " Input Caret");
 			caretGO.GetComponent<CanvasRenderer>().SetMaterial(Graphic.defaultGraphicMaterial, Texture2D.whiteTexture);
 		}
 	}
