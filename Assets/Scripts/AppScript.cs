@@ -168,12 +168,12 @@ public class AppScript : MonoBehaviour {
 	}
 
 	public static bool isNewYear(){
-		var currentMonth = new DateTime ().Month;
+		var currentMonth = DateTime.Now.Month;
 		return currentMonth == 12 || currentMonth == 1;
 	}
 
 	void SetupTimeSpecialContent(){
-		var currentMonth = new DateTime ().Month;
+		var currentMonth = DateTime.Now.Month;
 
 		// if Dec, Jan, May or June show exams button
 		if (
